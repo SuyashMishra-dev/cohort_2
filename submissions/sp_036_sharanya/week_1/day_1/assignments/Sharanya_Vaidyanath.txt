@@ -1,4 +1,5 @@
 dummy
+dumps
 food
 junk
 lists
@@ -99,6 +100,14 @@ employee_salaries.json
 movies_collections.json
 student_marks.json
 
+data//dumps:
+2014.dump
+2015.dump
+2016.dump
+2017.dump
+2018.dump
+2019.dump
+
 data//food:
 fruits
 meats
@@ -143,21 +152,17 @@ locales.json
 tld.txt
 
 data//logs:
-acess
-dumps
-error
+access
+errors
 
-data//logs/acess:
+data//logs/access:
+2019-01-access.log
+2019-02-access.log
+2019-03-access.log
+2019-04-access.log
+2019-05-access.log
 
-data//logs/dumps:
-2014.dump
-2015.dump
-2016.dump
-2017.dump
-2018.dump
-2019.dump
-
-data//logs/error:
+data//logs/errors:
 2018-01-error.log
 2018-02-error.log
 2018-03-error.log
@@ -204,7 +209,6 @@ drax.txt
 falcon.txt
 gamora.txt
 groot.txt
-guardians
 hawkeye.txt
 hulk.txt
 iron_man.txt
@@ -216,6 +220,12 @@ thor.txt
 wasp.txt
 
 data//superheros/guardians:
+drax.txt
+gamora.txt
+groot.txt
+mantis.txt
+rocket_racoon.txt
+star-lord.txt
 
 data//superheros/justice_league:
 aquaman.txt
@@ -227,7 +237,7 @@ superman.txt
 wonder_woman.txt
 
 data//superheros/original:
-barry_allen
-bruce_wayne
-brunce_banner
-tony_stark
+barry_allen.txt
+bruce_wayne.txt
+brunce_banner.txt
+tony_stark.txt
