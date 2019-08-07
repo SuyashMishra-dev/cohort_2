@@ -102,9 +102,8 @@ movies_collections.json
 student_marks.json
 
 data/dumps:
-2014.dump
 2015.dump
-2016.dump
+2015.log
 2019.dump
 
 data/food:
@@ -181,8 +180,9 @@ odd_9.txt
 
 data/superheros:
 avengers
+guardians
 justice_league
-original
+originals
 
 data/superheros/avengers:
 ant-man.txt
@@ -206,7 +206,7 @@ star-lord.txt
 thor.txt
 wasp.txt
 
-data/superheros/avengers/guardians:
+data/superheros/guardians:
 drax.txt
 gamora.txt
 groot.txt
@@ -223,8 +223,8 @@ martin_manhunter.txt
 superman.txt
 wonder_woman.txt
 
-data/superheros/original:
-barren_allen.txt
-bruce_wayne.txt
-brunce_banner.txt
-tony_stark.txt
+data/superheros/originals:
+barry_allen
+bruce_wayne
+brunce_banner
+tony_Stark
