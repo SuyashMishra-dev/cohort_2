@@ -1,6 +1,6 @@
 data/:
 dummy
-dumps
+dump
 food
 junk
 lists
@@ -101,11 +101,7 @@ employee_salaries.json
 movies_collections.json
 student_marks.json
 
-data/dumps:
-2014.dump
-2015.dump
-2016.dump
-2017.dump
+data/dump:
 2018.dump
 2019.dump
 
@@ -221,25 +217,12 @@ thor.txt
 wasp.txt
 
 data/superheros/guardians:
-ant-man.txt
-black_panther.txt
-black_widow.txt
-captain_america.txt
-captain_marvel.txt
-doctor_strange.txt
 drax.txt
-falcon.txt
 gamora.txt
 groot.txt
-hawkeye.txt
-hulk.txt
-iron_man.txt
 mantis.txt
 rocket_racoon.txt
-spider-man.txt
 star-lord.txt
-thor.txt
-wasp.txt
 
 data/superheros/justice_league:
 aquaman.txt
@@ -254,4 +237,4 @@ data/superheros/original:
 barry_allen
 bruce_wayne
 brunce_banner
-iron_man.txt
+tony_stark
