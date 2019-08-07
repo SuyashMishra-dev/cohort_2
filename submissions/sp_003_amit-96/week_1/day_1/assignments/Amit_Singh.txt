@@ -1,5 +1,5 @@
 dummy
-dumps
+dump
 food
 junk
 lists
@@ -100,7 +100,7 @@ employee_salaries.json
 movies_collections.json
 student_marks.json
 
-data//dumps:
+data//dump:
 2014.dump
 2015.dump
 2016.dump
@@ -220,12 +220,24 @@ thor.txt
 wasp.txt
 
 data//superheros/guardians:
-drax.txt
-gamora.txt
-groot.txt
-mantis.txt
-rocket_racoon.txt
-star-lord.txt
+Drax
+Gamora
+Groot
+Mantis
+Rocket
+Star Lord
+
+data//superheros/guardians/Drax:
+
+data//superheros/guardians/Gamora:
+
+data//superheros/guardians/Groot:
+
+data//superheros/guardians/Mantis:
+
+data//superheros/guardians/Rocket:
+
+data//superheros/guardians/Star Lord:
 
 data//superheros/justice_league:
 aquaman.txt
@@ -237,7 +249,27 @@ superman.txt
 wonder_woman.txt
 
 data//superheros/original:
-barry_allen.txt
-bruce_wayne.txt
-brunce_banner.txt
-tony_stark.txt
+batman
+flash
+hulk
+iron_man
+
+data//superheros/original/batman:
+brunce_wayne
+
+data//superheros/original/batman/brunce_wayne:
+
+data//superheros/original/flash:
+berry_allen
+
+data//superheros/original/flash/berry_allen:
+
+data//superheros/original/hulk:
+brunce_banner
+
+data//superheros/original/hulk/brunce_banner:
+
+data//superheros/original/iron_man:
+tony_stark
+
+data//superheros/original/iron_man/tony_stark:
