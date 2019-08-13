@@ -231,7 +231,7 @@ Fill the below property values for the `div`
 ```
 5. Font-Size
 ```
-
+    12px
 ```
 6. Background Color
 ```
