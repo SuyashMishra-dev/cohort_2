@@ -90,7 +90,7 @@ Fill the colour of all the elements
 
 1. #id1
 ```
-red
+
 ```
 2. #id2
 ```
@@ -146,7 +146,7 @@ purple
 ```
 15. #id15
 ```
-green
+
 ```
 
 
