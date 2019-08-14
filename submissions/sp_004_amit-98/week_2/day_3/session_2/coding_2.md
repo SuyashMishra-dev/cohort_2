@@ -41,7 +41,7 @@ color text-align font-size font-weight visibility word-wrap
 ```
 2. Non-Inherited
 ```
-border margin padding width height background-color display visibility z-index position clear
+border margin padding width height background-color display visibility z-index position clear float
 ```
 
 
