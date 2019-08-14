@@ -1,0 +1,2 @@
+53
+git log | grep 2018 | wc -l > commits_2018.txt
