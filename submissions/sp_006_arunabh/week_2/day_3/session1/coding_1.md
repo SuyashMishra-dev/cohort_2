@@ -67,8 +67,8 @@ red
 ```
 2. Font Size
 
-```px
-20 px
+```
+20px
 ```
 
 Fill the below property values for the `p` having `id2`
@@ -133,7 +133,7 @@ Fill the below property values for the `div` having `id2`
 
 
 ```
-10px
+12px
 ```
 
 Fill the below property values for the `p` having `id3`
@@ -205,9 +205,10 @@ All the `div` tags whose background color will be `red`
 
 
 ```
-#id3 
+#id3
 #id5
 #id10
+#id15
 #id20
 ```
 
@@ -296,10 +297,6 @@ All the `div` tags whose background color will be `green`
 #id5
 #id6
 #id10
-#id11
-#id12
-#id13
-#id14
 #id15
 #id20
 ```
@@ -360,9 +357,9 @@ All the `p` tags whose background color will be `red`
 ```
 #id2
 #id12
-#id13 
-#id14 
-#id17 
+#id13
+#id14
+#id17
 #id21
 ```
 
@@ -372,7 +369,7 @@ All the `div` tags whose background color will be `green`
 
 
 ```
-#id3 
+#id3
 #id16
 ```
 
@@ -447,7 +444,6 @@ All the `p` tags whose background color will be `red`
 #id25
 #id27
 #id29
-
 ```
 
 All the `p` tags whose background color will be `green`
@@ -461,4 +457,5 @@ All the `p` tags whose background color will be `green`
 #id8
 #id9
 #id16
+
 ```

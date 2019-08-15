@@ -61,29 +61,29 @@ div, p {
 Fill the below property values for the `div` having `id1`
 
 1. Color
-
-```
 red
+```
+
 ```
 2. Font Size
 
-```px
-20 px
+```20px
+
 ```
 
 Fill the below property values for the `p` having `id2`
 
 3. color
 
-
-```
 red
+```
+
 ```
 4. Font Size
 
 
-```
-16px
+```16px
+
 ```
 
 ### FSD.W2.3.1_2
@@ -122,36 +122,36 @@ Fill the below property values for the `div` having `id1`
 
 1. Color
 
-
-```
 red
+```
+
 ```
 
 Fill the below property values for the `div` having `id2`
 
 2. Font Size
 
-
+10
 ```
-10px
+
 ```
 
 Fill the below property values for the `p` having `id3`
 
 3. Color
 
-
-```
 green
+```
+
 ```
 
 Fill the below property values for the `p` having `id4`
 
 4. Font Size
 
-
+10
 ```
-10px
+
 ```
 
 ### FSD.W2.3.1_3
@@ -202,13 +202,10 @@ p + div {
 All the `div` tags whose background color will be `red`
 
 1. IDs
-
+id4
 
 ```
-#id3 
-#id5
-#id10
-#id20
+
 ```
 
 
@@ -216,15 +213,10 @@ All the `p` tags whose background color will be `green`
 
 2. IDs
 
-
+id7
 ```
-#id4
-#id7
-#id9
-#id13
-#id16
-#id19
-```
+id9
+id19
 
 ### FSD.W2.3.1_4
 
@@ -275,16 +267,13 @@ All the `p` tags whose background color will be `red`
 
 1. IDs
 
-
+id4
 ```
-#id4
-#id7
-#id8
-#id9
-#id16
-#id17
-#id18
-#id19
+id7
+```
+id18
+```
+
 ```
 
 All the `div` tags whose background color will be `green`
@@ -292,17 +281,6 @@ All the `div` tags whose background color will be `green`
 2. IDs
 
 
-```
-#id5
-#id6
-#id10
-#id11
-#id12
-#id13
-#id14
-#id15
-#id20
-```
 
 ### FSD.W2.3.1_5
 
@@ -356,24 +334,18 @@ All the `p` tags whose background color will be `red`
 
 1. IDs
 
-
+id4
 ```
-#id2
-#id12
-#id13 
-#id14 
-#id17 
-#id21
+id7
 ```
-
+id21
 All the `div` tags whose background color will be `green`
 
 2. IDs
 
-
+id16
 ```
-#id3 
-#id16
+
 ```
 
 ### FSD.W2.3.1_6
@@ -440,25 +412,16 @@ All the `p` tags whose background color will be `red`
 
 1. IDs
 
-
+id21
 ```
-#id21
-#id23
-#id25
-#id27
-#id29
 
 ```
 
 All the `p` tags whose background color will be `green`
 
 2. IDs
-
-
-```
-#id2
-#id7
-#id8
-#id9
-#id16
-```
+id19
+id13
+id7
+id9
+id2
