@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Instagram</title>
+    <style>
+        #main-container{
+            margin: 100px 350px 100px 350px ;width:1100px; height:800px; background:lightgray;
+        }
+        #left-container{
+            width:450px;height:600px;padding: 100px 49px 100px 49px;float:left;border: 1px solid black;
+        }
+        #left-container img{
+            margin: 100px;
+        }
+        #right-container{
+            float: left;width:450px;height:700px;padding: 50px 49px 50px 49px;border: 1px solid black;
+        }
+        #right-inner-content-1{
+            background: white;height:550px;width:400px;padding: 10px;text-align: center;border-radius: 3px;margin-left: 13px;
+        }
+        #right-inner-content-1 input{
+            height: 25px;margin-top:5px;
+        }
+        #right-inner-content-1 button{
+            border-radius: 5px ;background: dodgerblue;color: cornsilk;width: 350px;height:40px ;line-height: 1.5;
+        }
+        #right-inner-content-2 {
+            background: white;height:50px;line-height: 50px;width:400px;padding: 10px;text-align: center;border-radius: 3px;margin-left: 13px;
+        }
+        #right-inner-content-3{
+            height:50px;width:400px;text-align: center;border-radius: 3px;margin-left: 13px;clear: left;
+        }
+        #right-inner-content-3 img{
+            width: 120px;float:left;margin:0px 30px 0px 50px; 
+        }
+    </style>
+</head>
+<body>
+    <!-- main container -->
+    <div id="main-container">
+        <!-- left inner container -->
+        <div id="left-container">
+            <img src="./phone.jpg">
+        </div>
+        <!-- Right inner container -->
+        <div id="right-container">
+            <!-- right inner container content 1-->
+            <div id="right-inner-content-1">
+                <!-- Title -->
+                <h1 style="font-family:Impact cursive;text-align: center;">Instagram</h1>
+                <p>Sign up to see the photos and<br> videos from your friends.</p>
+                
+                <button>Login with Facebook</button>
+                <p>------------OR----------------</p>
+                <!-- form -->
+                <div>
+                    <input type="text" placeholder="Moblie or Email">
+                </div>
+                <div>
+                    <input type="text" placeholder="Full Name">
+                </div>
+                <div>
+                    <input type="text" placeholder="Username">
+                </div>
+                <div>
+                    <input type="text" placeholder="Password">
+                </div>
+                <!-- end of form  -->
+                <div>
+                    &nbsp;
+                </div>
+                <!-- content p1 bottom -->
+                <div>
+                    <button>Sign up</button>
+                </div>
+                <p style="color: lightslategrey">By signing up you agree to our <br><strong>Terms ,Data Policy and Cookies Policy.</strong></p>
+
+            </div>
+            <br>
+            <!-- right content 2 -->
+            <div id="right-inner-content-2">
+                Have an account? <a href="#">Sign In</a>
+            </div>
+            <!-- download section -->
+            <div id="right-inner-content-3">
+                <p>Get the app</p>
+                <img src="./playstore.png" alt="">
+                <img src="./playstore.png" alt="">
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
