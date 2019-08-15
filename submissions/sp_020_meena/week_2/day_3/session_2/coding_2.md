@@ -37,11 +37,11 @@ Split the below mentioned properties into inherited and non-inherited
 
 1. Inherited
 ```
-color font-size text-align font-weight visibility word-wrap
+color,text-align,font-size,display,text-align,font-weight,visibility,word-wrap
 ```
 2. Non-Inherited
 ```
-padding margin background-color border display float height width overflow z-index position clear
+border,padding,margin,background-color,border,float,width,height,overflow-index,position,clear
 ```
 
 
@@ -90,7 +90,7 @@ Fill the colour of all the elements
 
 1. #id1
 ```
-
+red
 ```
 2. #id2
 ```
@@ -98,7 +98,7 @@ blue
 ```
 3. #id3
 ```
-
+purple
 ```
 4. #id4
 ```
@@ -110,7 +110,7 @@ blue
 ```
 6. #id6
 ```
-orange
+blue
 ```
 7. #id7
 ```
@@ -130,7 +130,7 @@ blue
 ```
 11. #id11
 ```
-
+purple
 ```
 12. #id12
 ```
@@ -142,11 +142,11 @@ blue
 ```
 14. #id14
 ```
-purple
+blue
 ```
 15. #id15
 ```
-
+green
 ```
 
 
@@ -173,25 +173,25 @@ Fill the specificity score for the selectors
 ```
 5. `#id1 ~ .class1 > li > a[title]`
 ```
-122
+121
 ```
 6. `nav > a:hover::before`
 ```
-13
+10
 ```
 7. `ul#primary-nav li.active`
 ```
-112
+102
 ```
 8. `li:first-child h2 .title`
 ```
-22
+   2
 ```
 9. `#nav .selected > a:hover`
 ```
-121
+100
 ```
 10. `#heading nav ul li.disabled`
 ```
-113
+101
 ```

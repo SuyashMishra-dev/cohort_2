@@ -37,11 +37,28 @@ Split the below mentioned properties into inherited and non-inherited
 
 1. Inherited
 ```
-color font-size text-align font-weight visibility word-wrap
+color
+font-size
+text-align
+font-weight
+visibility
+word-wrap
 ```
 2. Non-Inherited
 ```
-padding margin background-color border display float height width overflow z-index position clear
+padding
+margin
+background-color
+border
+display
+float
+height
+weight
+overflow
+z-index
+position
+overflow
+clear
 ```
 
 
@@ -90,7 +107,7 @@ Fill the colour of all the elements
 
 1. #id1
 ```
-
+red
 ```
 2. #id2
 ```
@@ -98,7 +115,7 @@ blue
 ```
 3. #id3
 ```
-
+black
 ```
 4. #id4
 ```
@@ -106,7 +123,7 @@ blue
 ```
 5. #id5
 ```
-
+black
 ```
 6. #id6
 ```
@@ -122,7 +139,7 @@ blue
 ```
 9. #id9
 ```
-
+black
 ```
 10. #id10
 ```
@@ -130,7 +147,7 @@ blue
 ```
 11. #id11
 ```
-
+black
 ```
 12. #id12
 ```
@@ -138,7 +155,7 @@ blue
 ```
 13. #id13
 ```
-
+black
 ```
 14. #id14
 ```
@@ -146,7 +163,7 @@ purple
 ```
 15. #id15
 ```
-
+green
 ```
 
 
@@ -157,41 +174,41 @@ Fill the specificity score for the selectors
 
 1. `div`
 ```
-1
+0001
 ```
 2. `p + div`
 ```
-2
+0002
 ```
 3. `.class1 + p`
 ```
-11
+0011
 ```
 4. `#id1 > div + p`
 ```
-102
+0102
 ```
 5. `#id1 ~ .class1 > li > a[title]`
 ```
-122
+0121
 ```
 6. `nav > a:hover::before`
 ```
-13
+0012
 ```
 7. `ul#primary-nav li.active`
 ```
-112
+0122
 ```
 8. `li:first-child h2 .title`
 ```
-22
+0022   
 ```
 9. `#nav .selected > a:hover`
 ```
-121
+0130
 ```
 10. `#heading nav ul li.disabled`
 ```
-113
+0113
 ```
