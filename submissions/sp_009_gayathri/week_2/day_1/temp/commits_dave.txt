@@ -1,0 +1,1 @@
+git log | grep Dave | wc -l
