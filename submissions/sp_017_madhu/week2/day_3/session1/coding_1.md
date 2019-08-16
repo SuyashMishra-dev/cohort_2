@@ -206,7 +206,9 @@ All the `div` tags whose background color will be `red`
 
 ```
 #id3 
-#id15
+#id5
+#id10
+#id20
 ```
 
 
@@ -216,7 +218,12 @@ All the `p` tags whose background color will be `green`
 
 
 ```
-#id2
+#id4
+#id7
+#id9
+#id13
+#id16
+#id19
 ```
 
 ### FSD.W2.3.1_4
@@ -270,10 +277,14 @@ All the `p` tags whose background color will be `red`
 
 
 ```
-#id13
-#id14 
-#id16 
-#1d17
+#id4
+#id7
+#id8
+#id9
+#id16
+#id17
+#id18
+#id19
 ```
 
 All the `div` tags whose background color will be `green`
@@ -282,8 +293,15 @@ All the `div` tags whose background color will be `green`
 
 
 ```
-#id3 
-#id16
+#id5
+#id6
+#id10
+#id11
+#id12
+#id13
+#id14
+#id15
+#id20
 ```
 
 ### FSD.W2.3.1_5
@@ -340,6 +358,8 @@ All the `p` tags whose background color will be `red`
 
 
 ```
+#id2
+#id12
 #id13 
 #id14 
 #id17 
@@ -438,6 +458,7 @@ All the `p` tags whose background color will be `green`
 ```
 #id2
 #id7
+#id8
 #id9
 #id16
 ```
