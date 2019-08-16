@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Layout 1
+        </title>
+        <style type="text/css">
+            .flex-box
+            {
+                display: flex;
+                        
+                
+            }
+            #id
+            {
+                flex-direction: row;
+                margin-left:400px;
+                margin-top:100px;
+                
+            }
+            .flex-box div
+            {
+                margin:20px;
+                border-radius: 10px;
+                height:400px;
+                width:100px;
+                background-color:teal;
+            }
+            @media(max-width: 800px)
+            {
+                .flex-box div
+                {
+                    margin:20px;
+                    border-radius:15px;
+                    height:300px;
+                    width:60px;
+                    background-color: black;
+
+                }
+            }
+            @media(min-width: 1000px)
+            {
+                .flex-box div
+                {
+                    margin:20px;
+                    border-radius:25px;
+                    height:300px;
+                    width:60px;
+                    background-color: yellow;
+
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-box" id="id">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </body>
+</html>

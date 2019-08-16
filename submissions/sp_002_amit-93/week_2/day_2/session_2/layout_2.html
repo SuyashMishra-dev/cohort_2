@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout 2</title>
+        <style type="text/css">
+            .smallbox {
+                background-color: darkcyan;
+                width: 100px;
+                height: 100px;
+                float: left;
+                border-radius: 5px;
+            }
+            .clear {
+                clear: left;
+            }
+            .mr5 {
+                margin-right: 50px;
+            }
+            .mr3 {
+                margin-right: 30px;
+            }
+            .mb6 {
+                margin-bottom: 60px;
+            }
+            #outline {
+                margin:50px 250px;
+            }
+            .bigbox{
+                width: 350px;
+                height: 100px;
+                float: left;
+                background-color: green;
+                border-radius: 5px;
+            }
+            #extend {
+                width: 410px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="outline">
+            <div>
+                <div class="smallbox mr5 mb6"></div>
+                <div class="bigbox mr5"></div>
+                <div class="smallbox"></div>
+            </div>
+            <div class="clear">
+                <div class="bigbox mr3 mb6" id="extend"></div>
+                <div class="smallbox mr3"></div>
+                <div class="smallbox"></div>
+            </div>
+            <div class="clear">
+                <div class="smallbox mr5"></div>
+                <div class="smallbox mr5"></div>
+                <div class="bigbox mr5"></div>
+            </div>
+        </div>
+    </body>
+</html> 
