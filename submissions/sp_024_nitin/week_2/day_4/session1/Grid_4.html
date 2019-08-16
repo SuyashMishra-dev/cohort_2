@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MorseCodeGrid</title>
+        <style type="text/css">
+        #box{display:grid;grid-gap:20px;height:500px;width:600px;grid-template-columns:130px 130px 130px 130px;grid-template-rows:130px 130px 130px 130px;background:white;margin:200px 10px 10px 500px }
+        #col{background:red;margin:10px 10px 10px 10px}
+        #area{grid-area: 1 / 2 / span 1 / span 2;background:red;margin:10px 10px 10px 10px}
+        #area1{grid-area:2 / 1 / span 1 / span 2;background:red;margin:10px 10px 10px 10px}
+        #area2{grid-area:3 / 3 / span 1 / span 2;background:red;margin:10px 10px 10px 10px}
+        </style>
+    </head>
+    <body>
+       <div id="box">
+           <div id="col"></div>
+           <div id="area"></div>
+           <div id="col"></div>
+           <div id="col"></div>
+           <div id="area1"></div>
+           <div id="col"></div>
+           <div id="col"></div>
+           <div id="col"></div>
+           <div id="area2"></div>
+        </div>
+    </body>
+</html>
