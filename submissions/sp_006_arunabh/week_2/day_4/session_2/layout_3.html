@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout 3</title>
+        <style>
+            .main-box{
+                margin: 100px 400px;
+            }
+            .box{
+                display: flex;
+            }
+            .box div{
+                height: 75px;
+                flex-basis: 75px;
+                background: seagreen;
+                margin: 10px;
+            }
+
+            @media(min-width: 1330px){
+                body{
+                    background: red;
+                }
+                .box div{
+                    background: white;
+                }
+            }
+
+                @media(min-width: 2500px){
+                body{
+                    background:black;
+                }
+                .box div{
+                    background: white;
+                }
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-box">
+            <div class="box">
+                <div></div>
+            </div>
+
+            <div class="box">
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </body>
+</html>
