@@ -100,11 +100,19 @@ div {
 Fill the below property values for the `div`
 1. Color
 ```
+<<<<<<< HEAD
  white
 ```
 2. Height
 ```
 100px
+=======
+  
+```
+2. Height
+```
+
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 
 ### FSD.W2.2.1_2
@@ -115,6 +123,7 @@ Fill the below property values for the `div`
 Fill the below property values for the `div`
 1. Width
 ```
+<<<<<<< HEAD
 100px
 ```
 2. Height
@@ -124,6 +133,17 @@ Fill the below property values for the `div`
 3. Padding
 ```
 4px
+=======
+
+```
+2. Height
+```
+
+```
+3. Padding
+```
+
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_3
 ```
@@ -131,6 +151,7 @@ Fill the below property values for the `div`
 ```
 1. Width
 ```
+<<<<<<< HEAD
 100px
 ```
 2. Height
@@ -152,6 +173,29 @@ Fill the below property values for the `div`
 6. Color
 ```
 black
+=======
+
+```
+2. Height
+```
+
+```
+3. Padding-Left
+```
+
+```
+4. Margin-Right
+```
+
+```
+5. Font-Size
+```
+
+```
+6. Color
+```
+
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_4
 ```
@@ -159,6 +203,7 @@ black
 ```
 1. Color
 ```
+<<<<<<< HEAD
 white
 ```
 2. Background Color
@@ -180,6 +225,29 @@ black
 6. Height
 ```
 100px
+=======
+
+```
+2. Background Color
+```
+
+```
+3. Padding-Bottom
+```
+
+```
+4. Margin-Top
+```
+
+```
+5. Font-Size
+```
+
+```
+6. Height
+```
+
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_5
 ```
@@ -187,6 +255,7 @@ black
 ```
 1. Width
 ```
+<<<<<<< HEAD
 100px
 ```
 2. Background Color
@@ -208,6 +277,29 @@ white
 6. Color
 ```
 violet
+=======
+
+```
+2. Background Color
+```
+
+```
+3. Padding-Bottom
+```
+
+```
+4. Margin-Right
+```
+
+```
+5. Font-Size
+```
+
+```
+6. Color
+```
+
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_6
 ```
@@ -215,6 +307,7 @@ violet
 ```
 1. Width
 ```
+<<<<<<< HEAD
 100px
 ```
 2. Color
@@ -236,6 +329,29 @@ red
 6. Background Color
 ```
 black
+=======
+
+```
+2. Color
+```
+
+```
+3. Padding-Right
+```
+
+```
+4. Margin-Left
+```
+
+```
+5. Font-Size
+```
+
+```
+6. Background Color
+```
+
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_7
 ```
@@ -243,6 +359,7 @@ black
 ```
 1. Width
 ```
+<<<<<<< HEAD
 75px
 ```
 2. Height
@@ -264,6 +381,29 @@ black
 6. Color
 ```
 white
+=======
+
+```
+2. Height
+```
+
+```
+3. Padding-Top
+```
+
+```
+4. Margin-Bottom
+```
+
+```
+5. Font-Size
+```
+
+```
+6. Color
+```
+
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_8
 ```
@@ -271,6 +411,7 @@ white
 ```
 1. Width
 ```
+<<<<<<< HEAD
 100px
 ```
 2. Height
@@ -292,6 +433,29 @@ white
 6. Color
 ```
 purple
+=======
+
+```
+2. Height
+```
+
+```
+3. Padding-Left
+```
+
+```
+4. Margin-Right
+```
+
+```
+5. Font-Size
+```
+
+```
+6. Color
+```
+
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_9
 ```
@@ -299,6 +463,7 @@ purple
 ```
 1. Width
 ```
+<<<<<<< HEAD
 75px
 ```
 2. Height
@@ -316,6 +481,25 @@ red
 5. Font-Size
 ```
 12px
+=======
+
+```
+2. Height
+```
+
+```
+3. Background Color
+```
+
+```
+4. Color
+```
+
+```
+5. Font-Size
+```
+
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_10
 ```
@@ -323,6 +507,7 @@ red
 ```
 1. Width
 ```
+<<<<<<< HEAD
 150px
 ```
 2. Height
@@ -344,6 +529,29 @@ red
 6. Color
 ```
 blue
+=======
+
+```
+2. Height
+```
+
+```
+3. Padding-Top
+```
+
+```
+4. Margin-Left
+```
+
+```
+5. Font-Size
+```
+
+```
+6. Color
+```
+
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_11
 ```
@@ -351,6 +559,7 @@ blue
 ```
 1. Background Color
 ```
+<<<<<<< HEAD
 black
 ```
 2. Height
@@ -372,6 +581,29 @@ black
 6. Color
 ```
 orange
+=======
+
+```
+2. Height
+```
+
+```
+3. Margin-Left
+```
+
+```
+4. Padding-Right
+```
+
+```
+5. Font-Size
+```
+
+```
+6. Color
+```
+
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_12
 ```
@@ -379,6 +611,7 @@ orange
 ```
 1. Width
 ```
+<<<<<<< HEAD
 100px
 ```
 2. Height
@@ -400,4 +633,27 @@ black
 6. Color
 ```
 white
+=======
+
+```
+2. Height
+```
+
+```
+3. Background Color
+```
+
+```
+4. Margin-Right
+```
+
+```
+5. Font-Size
+```
+
+```
+6. Color
+```
+
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```

@@ -1,2 +1,0 @@
-33
-git log | grep 2018 | wc -l
