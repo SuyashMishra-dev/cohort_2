@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css"> 
+    body{
+        background: gainsboro;
+    }
+    .phone{
+        float: left;
+        margin-left: 450px;
+        margin-top: 20px;
+        border: 1px solid black;
+    }
+    form{
+        background: white;
+        clear: right;
+        float: right;
+        margin-right: 350px;
+        margin-top:20px;
+        padding: 30px;  
+    }
+    h2{
+        text-align: center;
+        margin-top: 1px;
+    }
+    h2 + p{
+        font-size: 13px;
+        text-align: center;
+        color: gray;
+    }
+    hr{
+        width: 200px;
+    }
+    .btn1{
+        background: blue;
+        color: white;
+        padding: 0px 30px;
+        margin-left: 5px;
+    }
+    input{
+        margin: 3px;
+    }
+    .btn2{
+        background: blue;
+        color: white;
+        padding: 0px 70px;
+        margin-left: 10px;
+    }
+    .btn2 + p{
+        font-size: 10px;
+        text-align: center;
+    }
+    .act{
+        background: white;
+        clear: right;
+        float: right;
+        width: 240px;
+        height: 40px;
+        text-align: center;
+        margin-right: 360px;
+        margin-top: 20px;
+        padding: 5px;
+    }
+    .store{
+        float: right;
+        clear: right;
+        margin-right: 430px;
+        maring-top: 20px;
+    }
+    .store > img{
+        height: 20px;
+        width: 60px;
+    }
+    </style>
+    <title>Instagram</title>
+</head>
+<body>
+    <div class="phone">
+        <img src="https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/phone.jpg" alt="">
+    </div>
+    <div>
+        <form>
+            <h2>Instagram</h2>
+            <p>Sign up to see photos and <br> videos from your friends</p>
+            <button class="btn1">Log in with facebook</button>
+            <hr>
+            <input type="text" placeholder="Mobilr Number or Email"> <br>
+            <input type="text" placeholder="Full Name"> <br>
+            <input type="text" placeholder="Username"> <br>
+            <input type="text" placeholder="Password"> <br>
+            <button class="btn2">Sign up</button>
+            <p>By sigining up, you agree to our <br><b>Tearms, Data <br> Policy and Cookies Policy</BR></b></p>
+        </form>
+    </div>
+    <div class="act">
+        <p>Have an account? <a href="">Log in</a></p>
+    </div>
+    <div class="store">
+        <img src="https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/appstore.png" alt="">
+        <img src="https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/playstore.png" alt="">
+    </div>
+</body>
+</html>

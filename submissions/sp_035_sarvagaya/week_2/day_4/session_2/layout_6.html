@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Grid 3
+        </title>
+        <style type="text/css">
+        
+            .grid
+            {
+                display: grid;
+                grid-gap:20px;
+                grid-template-columns: 100px 100px 100px 100px;
+                grid-template-rows: 100px 100px 100px 100px;
+            }
+            .grid div
+            {
+                height:100px;
+                width:100px;
+                border-radius: 5px;
+                background-color: teal;
+            }
+            .class
+            {
+                margin-left:500px;
+                margin-top:100px;
+            }
+            
+            @media(max-width: 800px)
+            {
+                .grid div
+            {
+                height:80px;
+                width:80px;
+                border-radius: 15px;
+                background-color: black;
+            }   
+            }
+            @media(min-width: 1000px)
+            {
+                .grid div
+            {
+                height:50px;
+                width:50px;
+                border-radius: 25px;
+                background-color: red;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="class">
+            <div class="grid">
+                <div id="id1"></div>
+                <div id="id2"></div>
+                <div id="id3"></div>
+                <div id="id4"></div>
+                <div id="id5"></div>
+                <div id="id6"></div>
+                <div id="id7"></div>
+                <br>
+                <div id="id8"></div>
+                <div id="id9"></div>
+                <span></span>
+                <br>
+                <div id="id10"></div>
+            </div>
+        </div>   
+    </body>
+</html>

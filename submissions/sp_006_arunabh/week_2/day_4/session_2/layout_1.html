@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout 1</title>
+        <style>
+            body{
+                background: yellowgreen;
+            }
+            .box{
+                display: flex;
+                flex-direction: row;
+                margin: 140px 400px;
+            }
+            #id1 div{
+                height: 300px;
+                flex-basis: 75px;
+                margin: 15px;
+                background: seagreen;
+            }
+
+                @media (max-width: 1950px) {
+                body{
+                    background: red;
+                }
+                #id1 div{
+                    background: white;
+                }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="box" id="id1">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </body>
+</html>

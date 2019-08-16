@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flex 3</title>
+        <style>
+            .flex {
+                display: flex;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+                background: #217867;
+                margin: 10px;
+                border-radius: 5px; 
+            }
+            @media (max-width: 800px) {
+                .flex {
+                    flex-direction: row-reverse;
+                }
+                .box {
+                    background: black;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex">
+            <div class="box"></div>
+        </div>
+        <div class="flex">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="flex">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="flex">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </body>
+</html>

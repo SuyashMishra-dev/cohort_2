@@ -1,0 +1,7 @@
+1. grep commit commit.txt | wc -l
+2. git shortlog -sn |wc -l
+3. git shortlog -sn | head -n 1
+4.grep  2018 commit.txt | grep Jan | wc -l
+5. grep -i sun commit.txt | wc -l
+
+  
