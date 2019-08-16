@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout 5</title>
+        <style>
+            .box{
+                display: grid;
+                grid-gap: 20px;
+                grid-template-columns: 150px auto;
+                grid-template-rows: 75px 400px;
+                margin: 100px 400px;
+            }
+            #id1 div:first-child{
+                background: red;
+                grid-area: 1 / 1 / span 1 / span 2;
+            }
+            #id1 div:nth-of-type(2n){
+                background: lightgreen;
+            }
+            #id1 div:last-child{
+                background: seagreen;
+            }
+            @media(max-width: 1000px){
+                body{
+                    background: black;
+                }
+                #id1 div{
+                    background: pink;
+                    visibility: hidden;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="box" id="id1">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </body>
+</html>
