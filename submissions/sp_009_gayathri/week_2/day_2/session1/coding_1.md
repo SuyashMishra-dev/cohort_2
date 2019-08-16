@@ -100,11 +100,19 @@ div {
 Fill the below property values for the `div`
 1. Color
 ```
+<<<<<<< HEAD
+ white
+```
+2. Height
+```
+100px
+=======
   
 ```
 2. Height
 ```
 
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 
 ### FSD.W2.2.1_2
@@ -115,6 +123,17 @@ Fill the below property values for the `div`
 Fill the below property values for the `div`
 1. Width
 ```
+<<<<<<< HEAD
+100px
+```
+2. Height
+```
+50px
+```
+3. Padding
+```
+4px
+=======
 
 ```
 2. Height
@@ -124,6 +143,7 @@ Fill the below property values for the `div`
 3. Padding
 ```
 
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_3
 ```
@@ -131,6 +151,29 @@ Fill the below property values for the `div`
 ```
 1. Width
 ```
+<<<<<<< HEAD
+100px
+```
+2. Height
+```
+100px
+```
+3. Padding-Left
+```
+4px
+```
+4. Margin-Right
+```
+6px
+```
+5. Font-Size
+```
+16px
+```
+6. Color
+```
+black
+=======
 
 ```
 2. Height
@@ -152,6 +195,7 @@ Fill the below property values for the `div`
 6. Color
 ```
 
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_4
 ```
@@ -159,6 +203,29 @@ Fill the below property values for the `div`
 ```
 1. Color
 ```
+<<<<<<< HEAD
+white
+```
+2. Background Color
+```
+black
+```
+3. Padding-Bottom
+```
+4px
+```
+4. Margin-Top
+```
+6px
+```
+5. Font-Size
+```
+12px
+```
+6. Height
+```
+100px
+=======
 
 ```
 2. Background Color
@@ -180,6 +247,7 @@ Fill the below property values for the `div`
 6. Height
 ```
 
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_5
 ```
@@ -187,6 +255,29 @@ Fill the below property values for the `div`
 ```
 1. Width
 ```
+<<<<<<< HEAD
+100px
+```
+2. Background Color
+```
+white
+```
+3. Padding-Bottom
+```
+4px
+```
+4. Margin-Right
+```
+6px
+```
+5. Font-Size
+```
+11px
+```
+6. Color
+```
+violet
+=======
 
 ```
 2. Background Color
@@ -208,6 +299,7 @@ Fill the below property values for the `div`
 6. Color
 ```
 
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_6
 ```
@@ -215,6 +307,29 @@ Fill the below property values for the `div`
 ```
 1. Width
 ```
+<<<<<<< HEAD
+100px
+```
+2. Color
+```
+red
+```
+3. Padding-Right
+```
+20px
+```
+4. Margin-Left
+```
+6px
+```
+5. Font-Size
+```
+12px
+```
+6. Background Color
+```
+black
+=======
 
 ```
 2. Color
@@ -236,6 +351,7 @@ Fill the below property values for the `div`
 6. Background Color
 ```
 
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_7
 ```
@@ -243,6 +359,29 @@ Fill the below property values for the `div`
 ```
 1. Width
 ```
+<<<<<<< HEAD
+75px
+```
+2. Height
+```
+100px
+```
+3. Padding-Top
+```
+4px
+```
+4. Margin-Bottom
+```
+10px
+```
+5. Font-Size
+```
+22px
+```
+6. Color
+```
+white
+=======
 
 ```
 2. Height
@@ -264,6 +403,7 @@ Fill the below property values for the `div`
 6. Color
 ```
 
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_8
 ```
@@ -271,6 +411,29 @@ Fill the below property values for the `div`
 ```
 1. Width
 ```
+<<<<<<< HEAD
+100px
+```
+2. Height
+```
+50px
+```
+3. Padding-Left
+```
+6px
+```
+4. Margin-Right
+```
+6px
+```
+5. Font-Size
+```
+20px
+```
+6. Color
+```
+purple
+=======
 
 ```
 2. Height
@@ -292,6 +455,7 @@ Fill the below property values for the `div`
 6. Color
 ```
 
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_9
 ```
@@ -299,6 +463,25 @@ Fill the below property values for the `div`
 ```
 1. Width
 ```
+<<<<<<< HEAD
+75px
+```
+2. Height
+```
+100px
+```
+3. Background Color
+```
+black
+```
+4. Color
+```
+red
+```
+5. Font-Size
+```
+12px
+=======
 
 ```
 2. Height
@@ -316,6 +499,7 @@ Fill the below property values for the `div`
 5. Font-Size
 ```
 
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_10
 ```
@@ -323,6 +507,29 @@ Fill the below property values for the `div`
 ```
 1. Width
 ```
+<<<<<<< HEAD
+150px
+```
+2. Height
+```
+100px
+```
+3. Padding-Top
+```
+4px
+```
+4. Margin-Left
+```
+22px
+```
+5. Font-Size
+```
+14px
+```
+6. Color
+```
+blue
+=======
 
 ```
 2. Height
@@ -344,6 +551,7 @@ Fill the below property values for the `div`
 6. Color
 ```
 
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_11
 ```
@@ -351,6 +559,29 @@ Fill the below property values for the `div`
 ```
 1. Background Color
 ```
+<<<<<<< HEAD
+black
+```
+2. Height
+```
+100px
+```
+3. Margin-Left
+```
+20px
+```
+4. Padding-Right
+```
+20px
+```
+5. Font-Size
+```
+28px
+```
+6. Color
+```
+orange
+=======
 
 ```
 2. Height
@@ -372,6 +603,7 @@ Fill the below property values for the `div`
 6. Color
 ```
 
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
 ### FSD.W2.2.1_12
 ```
@@ -379,6 +611,29 @@ Fill the below property values for the `div`
 ```
 1. Width
 ```
+<<<<<<< HEAD
+100px
+```
+2. Height
+```
+100px
+```
+3. Background Color
+```
+black
+```
+4. Margin-Right
+```
+10px
+```
+5. Font-Size
+```
+20px
+```
+6. Color
+```
+white
+=======
 
 ```
 2. Height
@@ -400,4 +655,5 @@ Fill the below property values for the `div`
 6. Color
 ```
 
+>>>>>>> 3e0e0a5b1185340c88953ed8051a4c7eada2adae
 ```
