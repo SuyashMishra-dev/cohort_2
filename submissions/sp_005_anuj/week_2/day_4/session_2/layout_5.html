@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Layout5</title>
+	<style type="text/css">
+		.top
+		{
+			display: grid;
+			grid-template-columns: auto;
+			grid-template-rows: 50px;
+		}
+		#red
+		{
+			background-color: red;
+			border-radius: 5px;
+		}.end
+		{
+			display: grid;
+			grid-gap: 150px;
+			margin-top: 20px;
+			grid-template-columns: 300px 885px;
+			grid-template-rows: 550px 550px;
+		}
+		#left
+		{
+			background-color: green;
+			border-radius: 5px;
+		}
+		#right
+		{
+			background-color: #217867;
+			border-radius: 5px;
+		}
+		@media (max-width: 600px) {
+			#red{
+				background-color: green;
+			}
+			#left{
+				background-color: red;
+			}	
+			#right{
+				background-color: blue;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<div id="red"></div>
+	</div>
+	<div class="end">
+		<div id="left"></div>
+		<div id="right"></div>
+	</div>
+</body>
+</html>
