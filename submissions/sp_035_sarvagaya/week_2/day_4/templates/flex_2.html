@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Flex 2
+        </title>
+        <style type="text/css">
+            .flex-box
+            {
+                display:flex;
+                background-color: black;
+            }
+            #id
+            {
+                
+                flex-direction: row;
+                height:100px;
+                background-color: red;
+            }
+            .flex-box div
+            {
+                background-color:teal;
+                margin:20px;
+                flex-basis: 300px;
+
+            }
+            #id div:nth-of-type(2)
+            {
+                flex-shrink: 3;
+            }
+            #id div:nth-of-type(odd)
+            {
+                width:100px;
+            }
+            .class
+            {
+            }
+            #id0
+            {
+                margin-top:20px;
+                flex-direction: row;
+                height:100px;
+                background-color: red;
+            } 
+            #id0 div:nth-of-type(1)
+            {
+                width:300px;
+            }
+            #id0 div:nth-of-type(2)
+            {
+                flex-shrink: 1;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="class">
+            <div class="flex-box" id="id">
+                <div>1</div>
+                <div>2</div>
+                <div>3  </div>
+            </div>
+            <div class="flex-box" id="id0">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+                <div class="flex-box" id="id1">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </body>
+</html>
