@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <style>
+       .flex-box{
+        display: flex;
+       margin:20px;
+       }
+
+
+       .flex-box div {
+  margin: 10px;
+}
+#box1 {
+    flex-direction: row;
+    background: seagreen;
+    height:140px;
+    width:140px;
+}
+
+#box2 {
+    margin:10px;
+    background: seagreen;
+    height:140px;
+    width:350px;
+    flex-direction: column-reverse;
+
+}
+
+
+
+    </style>
+    </head>
+    <body>
+    <div class="flex-box">
+        <div id="box1"></div>
+            <div id="box2"></div>
+                <div id="box1"></div>
+
+    </div>
+    <div class="flex-box">
+            <div id="box2"></div>
+                <div id="box1"></div>
+                    <div id="box1"></div>
+
+                    </div>
+                    <div class="flex-box">
+                            <div id="box1"></div>
+                                <div id="box1"></div>
+                                    <div id="box2"></div>
+                
+                                    </div>
+    
+    </body>
+</html>
