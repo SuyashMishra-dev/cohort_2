@@ -1,0 +1,15 @@
+/home/rohit/coding/week_2/day_1/session1/course
+/home/rohit/coding/week_2/day_1/session1/course/all
+/home/rohit/coding/week_2/day_1/session1/course/week_2
+/home/rohit/coding/week_2/day_1/session1/course/week_2/day_5
+/home/rohit/coding/week_2/day_1/session1/course/week_2/day_1
+/home/rohit/coding/week_2/day_1/session1/course/week_2/day_3
+/home/rohit/coding/week_2/day_1/session1/course/week_2/day-4
+/home/rohit/coding/week_2/day_1/session1/course/week_2/day_2
+/home/rohit/coding/week_2/day_1/session1/course/week_1
+/home/rohit/coding/week_2/day_1/session1/course/week_1/day_5
+/home/rohit/coding/week_2/day_1/session1/course/week_1/.day_6
+/home/rohit/coding/week_2/day_1/session1/course/week_1/day_1
+/home/rohit/coding/week_2/day_1/session1/course/week_1/day_3
+/home/rohit/coding/week_2/day_1/session1/course/week_1/day_4
+/home/rohit/coding/week_2/day_1/session1/course/week_1/day_2
