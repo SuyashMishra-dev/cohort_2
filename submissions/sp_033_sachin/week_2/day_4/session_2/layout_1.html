@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <title>Flex 1</title>
+    <style>
+        #container-1{
+            display: flex;
+            margin: 200px 100px 100px 400px;
+            /* border: 1px solid black; */
+            height: 500px;
+        }
+        #container-1 div{            
+            margin-left: 30px;
+            flex-direction: column;
+            background: darkcyan;
+            flex-basis: 180px;
+            border-radius: 5px;
+        }
+        @media(max-width : 800px){
+            #container-1 {
+                margin: auto;
+                display: grid;
+                grid-template-rows: 250px 250px;
+                grid-template-columns: 50% 50%;
+                grid-gap: 5px;
+            }
+            #container-1 div{
+                background: orange;
+                margin-left:5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container-1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</body>
+</html>
