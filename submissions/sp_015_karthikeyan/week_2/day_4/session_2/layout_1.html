@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flex 1</title>
+        <style>
+            #main {
+                display: flex;
+            }
+           .box {
+               height: 400px;
+               flex-basis: 100px;
+               background: #217867;
+               margin: 20px; 
+               border-radius: 5px; 
+           }
+           @media (max-width:600px) {
+               #main {
+                   margin: 0px;
+                   flex-direction: column;
+               }
+               .box {
+                   background: red;
+               }
+           } ;
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </body>
+</html>
