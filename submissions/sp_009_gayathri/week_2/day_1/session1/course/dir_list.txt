@@ -1,0 +1,15 @@
+.
+./week_2
+./week_2/day_5
+./week_2/day-4
+./week_2/day_3
+./week_2/day_2
+./week_2/day_1
+./all
+./week_1
+./week_1/day_5
+./week_1/day_3
+./week_1/day_2
+./week_1/day_1
+./week_1/.day_6
+./week_1/day_4

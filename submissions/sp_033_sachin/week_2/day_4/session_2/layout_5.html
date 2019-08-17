@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid 2</title>
+    <style>
+    .cont-1{
+        display: grid;
+        grid-template-rows: 60px 200px 600px;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+    .cont-1 div{
+        border-radius: 5px;
+    }
+    #el1{
+        background: red;
+        /* grid-area: 1 / 1 / 2 / span 2; */
+    }
+    #el2{
+        background: greenyellow;        
+    }
+    #el3{
+        background: green;
+    }
+    @media(min-width: 800px){
+        .cont-1{
+            display: grid;
+            grid-template-rows: 60px 800px;
+            grid-template-columns: 1fr 2fr;
+            grid-gap: 20px;
+        }
+        .cont-1 div{
+            border-radius: 5px;
+        }
+        #el1{
+            background: red;
+            grid-area: 1 / 1 / 2 / span 2;
+        }
+        #el2{
+            background: greenyellow;        
+        }
+        #el3{
+            background: green;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="cont-1">
+        <div id="el1"></div>
+        <div id="el2"></div>
+        <div id="el3"></div>
+    </div>
+</body>
+</html>
