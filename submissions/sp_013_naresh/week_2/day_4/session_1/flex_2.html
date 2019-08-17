@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style type="text/css">
+        .flexbox
+        {
+           display: flex;
+           margin: 50px 80px 30px 320px;
+           text-align:center;
+
+        }
+        .flexbox div{
+            margin: 10px;
+            padding: 50px;
+            height: 80px;
+            width: 20px;
+            background:darkcyan;
+        }
+        #box1 div:nth-of-type(2)
+        {
+            flex-grow: 0.2;
+        }
+        #box2 div:first-of-type
+        {
+            flex-grow: 0.2;
+        }
+        #box3 div:last-of-type
+        {
+            flex-grow: 0.2;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="flexbox" id="box1">
+<div></div>
+<div></div>
+<div></div>
+
+        </div>
+        <div class="flexbox" id="box2">
+            <div></div>
+            <div></div>
+            <div></div>
+             </div>   
+        </div>
+        <div class="flexbox" id="box3">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>    
+    </body>
+</html>
