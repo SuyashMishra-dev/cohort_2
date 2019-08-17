@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>
+Flex_3
+</title>
+<style>
+.flex-box {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px
+}
+
+#cont {
+  display: grid;
+  grid-template-columns:60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+  grid-template-rows: 60px;
+  grid-gap: 10px
+}
+
+#cont1 {
+  display: grid;
+  grid-template-columns:60px 60px;
+  grid-template-rows: 60px 60px 60px 60px;
+  grid-gap: 10px
+}
+#cont2 {
+  display: grid;
+  grid-template-columns:60px;
+  grid-template-rows: 60px 60px 60px 60px;
+  grid-gap: 10px;
+  margin-left: 10px;
+  margin-right: 10px
+}
+#cont3 {
+  display: grid;
+  grid-template-columns:60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+  grid-template-rows: 60px 60px 60px 60px;
+  grid-gap: 10px
+}
+#cont4 {
+  display: grid;
+  grid-template-columns:60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px;
+  grid-template-rows: 60px 60px;
+  grid-gap: 10px;
+    margin-top: 10px
+}
+.grid1 {
+grid-area: 1/ 18/ 1/ 18
+}
+.grid2 {
+grid-area: 3/ 1/ 3/ 1
+}
+.grid3 {
+grid-area: 4/ 1/ 4/ 1
+}
+.grid4 {
+grid-area: 1/ 18/ 1/ 18
+}
+.grid5 {
+grid-area: 2/ 1/ 2/ 1
+}
+.grid6 {
+grid-area: 2/ 2/ 2/ 2
+}
+.grid7 {
+grid-area: 1/ 13/ 1/ 13
+}
+.grid8 {
+grid-area: 1/ 14/ 1/ 14
+}
+.grid9 {
+grid-area: 1/ 15/ 1/ 15
+}
+.grid10 {
+grid-area: 1/ 16/ 1/ 16
+}
+.grid11 {
+grid-area: 1/ 17/ 1/ 17
+}
+.grid12 {
+grid-area: 1/ 18/ 1/ 18
+}
+.grid13 {
+grid-area: 2/ 13/ 2/ 13
+}
+.grid14 {
+grid-area: 2/ 14/ 2/ 14
+}
+.grid15 {
+grid-area: 2/ 15/ 2/ 15
+}
+.grid16 {
+grid-area: 2/ 16/ 2/ 16
+}
+.grid17 {
+grid-area: 2/ 17/ 2/ 17
+}
+.grid18 {
+grid-area: 2/ 18/ 2/ 18
+}
+#yellow {
+    background:yellow;    
+    border: 1px solid black
+}
+#maroon{
+  background:maroon;
+  border: 1px solid black
+}
+#green1{
+  background:rgb(41, 156, 41);
+  border: 1px solid black
+}
+#green2{
+  background:rgb(27, 104, 27);
+  border: 1px solid black
+}
+#pink1{
+  background:#f86981;
+  border: 1px solid black
+}
+#pink2{
+  background:rgb(221, 41, 71);
+  border: 1px solid black
+}
+#black{
+  background:black;
+  border: 1px solid black
+}
+#blue{
+  background:rgb(30, 30, 153);
+  border: 1px solid black
+}
+#grey{
+  background:rgb(95, 94, 94);
+  border: 1px solid black
+}
+#orange{
+  background:orangered;
+  border: 1px solid black
+}
+#purple{
+  background:purple;
+  border: 1px solid black
+}
+.margins {
+    margin-left: 300px;
+    margin-top: 200px
+}
+</style>
+<body>
+    <div class="margins">
+    <div id="cont">
+    <div id="maroon"> </div>
+    <div class="grid1" id="yellow"> </div> 
+    </div>
+    <div id="cont4">
+            <div id="green1" ></div>
+            <div id="pink1"></div>
+            <div class="grid5" id="green1" ></div>
+            <div class="grid6" id="pink1"></div>
+            <div class="grid7" id="purple" ></div>
+            <div class="grid8" id="green2"></div>
+            <div class="grid9" id="green2" ></div>
+            <div class="grid10" id="green2"></div>
+            <div class="grid11" id="pink2" ></div>
+            <div class="grid12" id="yellow"></div>
+            <div class="grid13" id="orange"></div>
+            <div class="grid14" id="purple" ></div>
+            <div class="grid15" id="green2"></div>
+            <div class="grid16" id="green2" ></div>
+            <div class="grid17" id="pink2" ></div>
+            <div class="grid18" id="yellow"></div>
+            </div>
+
+    <div class="flex-box" >
+        <div id="cont1">
+<div id="green1" ></div>
+<div id="pink1"></div>
+<div id="green1" ></div>
+<div id="pink1"></div>
+<div id="green1" ></div>
+<div id="pink1"></div>
+<div id="green1" ></div>
+<div id="pink1"></div>
+</div>
+<div id="cont2">
+        <div class="grid2" id="black" ></div>
+        <div class="grid3" id="black"></div>
+        </div>
+        <div id="cont3">
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="orange" ></div>
+                <div id="purple" ></div>
+                <div id="purple"></div>
+                <div id="green2" ></div>
+                <div id="pink2" ></div>
+                <div id="yellow"></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="orange"></div>
+                <div id="orange"></div>
+                <div id="purple" ></div>
+                <div id="purple"></div>
+                <div id="pink2" ></div>
+                <div id="yellow"></div>
+               <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="orange"></div>
+                    <div id="orange"></div>
+                    <div id="orange"></div>
+                    <div id="purple"></div>
+                    <div id="pink2" ></div>
+                    <div id="yellow"></div>
+                    <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>
+                <div id="blue" ></div>
+                <div id="blue"></div>    
+                    <div id="grey" ></div>
+                    <div id="grey" ></div>
+                    <div id="grey" ></div>
+                    <div id="grey" ></div>
+                    <div id="grey" ></div>
+                    <div id="grey" ></div>
+                    
+                </div>
+
+
+
+</div>
+</div>
+
+</body>
+
+</html>
