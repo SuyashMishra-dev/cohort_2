@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout 2</title>
+        <style>
+            .box1{
+                display: flex;
+                width: 450px;
+                margin: 0px 450px;
+            }
+            .box1 div{
+                width: 75px;
+                height: 75px;
+                background: seagreen;
+                margin: 10px;
+            }
+
+            #id1 div:nth-of-type(2n),#id2 div:first-child,#id3 div:last-child{
+                flex-basis: 225px;
+                background: white;
+            }
+
+            @media(max-width: 1500px){
+                body{
+                    background: black;
+                }
+                .box1 div{
+                    background: pink;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="box1" id="id1">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box1" id="id2">
+                <div></div>
+                <div></div>
+                <div></div>
+        </div>
+        <div class="box1" id="id3">
+                <div></div>
+                <div></div>
+                <div></div>
+        </div>
+    </body>
+</html>

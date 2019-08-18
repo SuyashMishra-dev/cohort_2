@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Grid 3</title>
+        <style>
+        .class1 {
+            display: grid;
+            grid-template-columns: 120px 120px 120px 120px;
+            grid-template-rows: 120px 120px 120px 120px;
+            grid-gap: 20px;
+            margin-left: 350px;
+            margin-top: 50px;
+        }
+        .class1 div {
+            background: #277867;
+        }
+        #id1 {
+            grid-area: 3 / 1 / 3 / 1;
+        }
+        #id2{
+            grid-area: 3 / 2 / 3 / 2;
+        }
+        #id3 {
+            grid-area: 4 / 1 / 4 / 1;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="class1">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div id="id1"></div>
+            <div id="id2"></div>
+            <div id="id3"></div>
+        </div>
+    </body>
+</html>

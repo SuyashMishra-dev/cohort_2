@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Periodic Table</title>
+        <style>
+            #main-flex {
+                display: flex;
+                margin: 100px 120px;
+            }
+            #container-1 {
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: 50px 50px 50px;
+                grid-template-rows: 50px 50px 50px 50px 50px 50px 50px;
+            }
+            #container-2 {
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+                grid-template-rows: 50px 50px 50px 50px 50px 50px 50px ; 
+            }
+            #gap {
+                grid-area: 1 / 1 / span 3 / span 9;
+            }
+            #container-3 {
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: 50px 50px 50px 50px 50px 50px;
+                grid-template-rows: 50px 50px 50px 50px 50px 50px 50px ; 
+            }
+            #small-gap {
+                grid-area: 1 / 1 / span 1 / span 5;
+            }
+            .box {
+                border: 2px solid black;
+            }
+            .olive {
+                background: #89a02c;
+            } 
+            .lpink {
+                background: #ff5555;
+            }
+            .black {
+                background: black;
+            }
+            .blue {
+                background: #0000fe;
+            }
+            .red {
+                background: #aa0000;
+            }
+            .purple {
+                background: #aa0087;
+            }
+            .orange {
+                background: #ff6600;
+            }
+            .green {
+                background: #5aa02c;
+            }
+            .dpink {
+                background: #ff0066;
+            }
+            .grey {
+                background: #6d535e;
+            }
+            .yellow {
+                background: yellow;
+            }
+            .seperator {
+                width: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main-flex">
+            <div id="container-1">
+                <div class="red box"></div>
+                <div></div>
+                <div></div>
+                <div class="olive box"></div>
+                <div class="lpink box"></div>
+                <div></div>
+                <div class="olive box"></div>
+                <div class="lpink box"></div>
+                <div></div>
+                <div class="olive box"></div>
+                <div class="lpink box"></div>
+                <div></div>
+                <div class="olive box"></div>
+                <div class="lpink box"></div>
+                <div></div>
+                <div class="olive box"></div>
+                <div class="lpink box"></div>
+                <div class="black box"></div>
+                <div class="olive box"></div>
+                <div class="lpink box"></div>
+                <div class="black box"></div>
+            </div>
+            <div class="seperator"></div>
+            <div id="container-2">
+                <div id="gap"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+                <div class="blue box"></div>
+            </div>
+            <div class="seperator"></div>
+            <div id="container-3">
+                <div id="small-gap"></div>
+                <div class="yellow box"></div>
+                <div class="purple box"></div>
+                <div class="green box"></div>
+                <div class="green box"></div>
+                <div class="green box"></div>
+                <div class="dpink box"></div>
+                <div class="yellow box"></div>
+                <div class="orange box"></div>
+                <div class="purple box"></div>
+                <div class="green box"></div>
+                <div class="green box"></div>
+                <div class="dpink box"></div>
+                <div class="yellow box"></div>
+                <div class="orange box"></div>
+                <div class="purple box"></div>
+                <div class="purple box"></div>
+                <div class="green box"></div>
+                <div class="dpink box"></div>
+                <div class="yellow box"></div>
+                <div class="orange box"></div>
+                <div class="orange box"></div>
+                <div class="purple box"></div>
+                <div class="purple box"></div>
+                <div class="dpink box"></div>
+                <div class="yellow box"></div>
+                <div class="orange box"></div>
+                <div class="orange box"></div>
+                <div class="orange box"></div>
+                <div class="purple box"></div>
+                <div class="dpink box"></div>
+                <div class="yellow box"></div>
+                <div class="grey box"></div>
+                <div class="grey box"></div>
+                <div class="grey box"></div>
+                <div class="grey box"></div>
+                <div class="grey box"></div>
+                <div class="grey box"></div>
+            </div>
+        </div>
+    </body>
+</html>

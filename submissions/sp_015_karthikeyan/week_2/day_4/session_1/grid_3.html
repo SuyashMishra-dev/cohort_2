@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grid 3</title>
+        <style>
+            #main {
+                display: grid;
+                grid-template-areas: 
+                "a b c d"
+                "e f g h"
+                "i j k l"
+                "m n o p";
+                grid-template-rows: 100px 100px 100px 100px;
+                grid-template-columns: 100px 100px 100px 100px;
+                grid-gap: 30px;
+                margin: 100px 400px;
+            }
+            .box {
+                background: #217867;
+                border-radius: 5px;
+            }
+            #one {
+                grid-area: i;
+            }
+            #two {
+                grid-area: j;
+            }
+            #three {
+                grid-area: m;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box" id="one"></div>
+            <div class="box" id="two"></div>
+            <div class="box" id="three"></div>
+        </div>
+    </body>
+</html>
