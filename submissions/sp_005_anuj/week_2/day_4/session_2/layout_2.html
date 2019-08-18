@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Layout2</title>
+	<style type="text/css">
+		.flex-box
+		{
+			display: flex;
+			height: 150px;
+			margin-left: 25%;
+		}
+		.flex-box div
+		{
+			margin-top: 20px;
+			margin-left: 20px;
+			border-radius: 5px;
+			background-color: green;
+			flex-basis: 150px;
+		}
+		
+		#box-1 div:nth-of-type(2)
+		{
+			flex-basis: 25%;
+		}
+		#box-2 div:nth-of-type(1)
+		{
+			flex-basis: 25%;
+		}
+		#box-3 div:nth-of-type(3)
+		{
+			flex-basis: 25%;
+		}
+		@media (max-width: 600px){
+			.flex-box div{
+				background-color: red;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="flex-box" id="box-1">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div class="flex-box" id="box-2">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div class="flex-box" id="box-3">
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</body>
+</html>

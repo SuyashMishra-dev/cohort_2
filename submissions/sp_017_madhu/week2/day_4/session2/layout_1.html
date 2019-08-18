@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+<title>Flex 1</title>
+    <style type="text/css">
+          .flex-box{
+              display: flex;
+              margin:20px;
+          }
+          .flex-box div {
+  margin: 30px;
+  padding: 10px;
+  background: teal;
+  width: 50px;
+  height: 300px;
+  margin-top:100px;
+            }
+
+          #box1 {
+  flex-direction:row;
+}
+#box2{
+    margin-left:200px;
+}
+body{
+    background:white;
+}
+
+@media (max-width: 1000px) {
+  body {
+    background: red !important;
+  }
+  
+}
+    </style>
+    </head>
+    <body>
+        <div class="flex-box" id="box1">
+            <div id="box2"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </body>
+</html> 
