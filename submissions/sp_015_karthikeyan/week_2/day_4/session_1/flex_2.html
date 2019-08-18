@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flex 2</title>
+        <style>
+            body {
+                margin: 150px 350px;
+                width: 600px;
+            }
+            .smallbox {
+                width: 100px;
+                height: 100px;
+                background: #217867;
+                margin: 10px;
+            }
+            .bigbox {
+                flex-grow: 3;
+                background: #217867;
+                margin: 10px;
+            }
+            .row {
+                display: flex;
+            }
+            #extend {
+                width: 430px;
+            }
+            div > div {
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="row">
+            <div class="smallbox"></div>
+            <div class="bigbox"></div>
+            <div class="smallbox"></div>
+        </div>
+        <div class="row">
+            <div id="extend" class="bigbox"></div>
+            <div class="smallbox"></div>
+            <div class="smallbox"></div>
+        </div>
+        <div class="row">
+            <div class="smallbox"></div>
+            <div class="smallbox"></div>
+            <div class="bigbox"></div>
+        </div>
+    </body>
+</html>
