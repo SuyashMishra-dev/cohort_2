@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <title>Layout_3</title>
+    <style type="text/css">
+    
+    #cont1 {
+  display: grid;
+  grid-gap:10px;
+  grid-template-columns: 200px;
+  grid-template-rows: 200px ; 
+  background: white;
+}
+#cont2 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 200px; 
+  background: white;
+}
+#cont3 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 200px ; 
+  background: white;
+}
+#cont4 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 200px ; 
+  background: white;
+}
+
+#cont4 div {
+   background:lightseagreen; 
+   margin:10px;
+   border-radius:10px;
+  
+}
+#cont1 div {
+   background:lightseagreen; 
+   margin:10px;
+   border-radius:10px;
+  
+}
+#cont2 div {
+   background:lightseagreen; 
+   margin:10px;
+  border-radius:10px;
+  
+}
+#cont3 div {
+   background:lightseagreen; 
+   margin:10px;
+  border-radius:10px;
+  
+}
+@media (max-width: 660px) {
+  #cont1{
+    grid-template-columns: 100px;
+  grid-template-rows: 100px; 
+  margin: 0;
+  }
+  #cont2{
+    grid-template-columns: 100px 100px;
+  grid-template-rows: 100px; 
+  margin: 0;
+  }
+  #cont3{
+    grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px; 
+  margin: 0;
+  }
+  #cont4{
+    grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px; 
+  margin: 0;
+  }
+
+}
+    
+    </style>
+  </head>
+  <body>
+    <div id="cont1">
+      <div></div>
+    </div>
+     <div id="cont2">
+        <div></div>
+       <div></div>
+       
+    </div>
+    <div id="cont3">
+        <div></div>
+       <div></div>
+       <div></div>
+    </div>
+    <div id="cont4">
+       <div></div>
+      <div></div> 
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
