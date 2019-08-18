@@ -1,0 +1,47 @@
+<html>
+    <head>
+    <style>
+    .flex-box { 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        height: auto;   
+        flex-flow: wrap; 
+         
+    }
+
+        .flex-box div {
+        margin: 10px;
+        width: 200px;
+        height: 500px;
+        background: aqua;
+        
+        }
+    @media (min-width: 1200px){
+
+          .flex-box{
+                width:50%;
+          }
+    }
+    @media (max-width: 600px){
+
+            .flex-box{
+                width:40%;
+            }
+            }
+
+}
+    </style>
+
+    </head>
+    <body>
+        <div class="flex-box">
+            <div ></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+    </body>
+</html>

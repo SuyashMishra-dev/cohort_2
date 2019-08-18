@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Grid</title>
+    <style type="text/css">
+    #cont1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      height: auto;   
+      flex-flow: wrap;
+      padding: 10px;
+}
+    #item1 {
+        background:red;
+        height: 70px;
+        width: 100%;
+    }
+    #item2 {
+      background:limegreen;
+      height: 500px;
+      width: 30%;
+     padding: 20px;
+    }
+
+    #item3 {
+      background: cadetblue;
+      height:500px;
+      width: 66%;
+      
+    }
+    @media (max-width: 700px){
+
+#cont1{
+      width:50%;
+}
+
+  }
+    </style>
+  </head>
+  <body>
+   
+    <div id="cont1">
+      <div id="item1"></div>
+    </div>
+    <div id="cont1">
+      <div id="item2"></div>
+      <div id="item3"></div>
+      
+      
+    </div>
+     
+ 
+  </body>
+</html>
