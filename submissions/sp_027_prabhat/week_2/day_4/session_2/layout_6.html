@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>layout_6</title>
+        <style>
+            #grid {
+                display:grid;
+                grid-template-columns: 100px 100px 100px 100px;
+                grid-template-rows: 100px 20px;
+                grid-gap: 50px;
+                margin-left: 20%
+            }
+            #grid div {
+                background: skyblue;
+            }
+            .top {
+                margin-top: 200px;
+            }
+
+            @media (max-width: 1200px) {
+                #grid {
+                display:grid;
+                grid-template-columns: 80px 80px 80px 80px;
+                grid-template-rows: 80px 15px;
+                grid-gap: 40px;
+                margin-left: 20%;
+                }
+                #grid div {
+                    background:blue;
+                }
+                .top {
+                margin-top: 80px;
+                }
+            }
+        </style>
+    </head>
+    <body class="top" >
+       
+        <div id="grid" >
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+        </div>
+        <div id="grid" >
+                <div></div>
+                <div></div>
+                <div></div>
+        </div>
+        <div id="grid" >
+                <div></div>
+                <div></div>
+        </div>
+        <div id="grid" >
+                <div></div>
+        </div>
+    </body>
+</html>
