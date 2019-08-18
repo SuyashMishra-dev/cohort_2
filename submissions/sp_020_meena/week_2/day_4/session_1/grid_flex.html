@@ -1,0 +1,423 @@
+<html>
+    <head>
+        <style type="text/css">
+        .grid-box{
+            display:grid;
+            grid-gap:20px;
+            margin:20px;
+            padding:10px;
+            grid-template-columns:50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+            grid-template-rows:50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px ;
+        }
+        .grid-box div{
+            background-color:yellowgreen;
+            border:1px solid black;
+        }
+        #item1{
+         grid-area: 2/1  /2 /1;
+        }
+        #item2{
+         grid-area: 3/ 1 /3 /1;
+        }
+        #item3{
+         grid-area: 4/ 1 /4 /1;
+        }
+        #item4{
+         grid-area: 5/ 1 /5 /1;
+        }
+        #item5{
+         grid-area: 6/ 1 /6 /1;
+        }
+        #item6{
+         grid-area: 7/ 1 /7 /1;
+        }
+        #item7{
+         grid-area: 2/2 /2 /2;
+         background-color:crimson;
+        }
+        #item8{
+         grid-area: 3/ 2 /3 /2;
+         background-color:crimson;
+        }
+        #item9{
+         grid-area: 4/ 2 /4 /2;
+         background-color:crimson;
+        }
+        #item10{
+         grid-area: 5/ 2 /5 /2;
+         background-color:crimson;
+        }
+        #item11{
+         grid-area: 6/ 2 /6 /2;
+         background-color:crimson;
+        }
+        #item12{
+         grid-area: 7/ 2 /7 /2;
+         background-color:crimson;
+        }
+        #item13{
+         grid-area: 6/ 3/6 /3;
+         background-color:black;
+        }
+        #item14{
+         grid-area: 7/ 3 /7 /3;
+         background-color:black;
+        }
+        #item15{
+         grid-area: 4/ 4 /4 /4;
+         background-color:blue;
+        }
+        #item16{
+         grid-area: 5/ 4 /5 /4;
+         background-color:blue;
+        }
+        #item17{
+         grid-area: 6/ 4/6 /4;
+         background-color:blue;
+        }
+        #item18{
+         grid-area: 7/ 4 /7 /4;
+         background-color:blue;
+        }
+        #item19{
+         grid-area: 5/ 4 /5 /4;
+         background-color:blue;
+        }
+        #item20{
+         grid-area: 4/ 5/4 /5;
+         background-color:blue;
+        }
+        #item21{
+         grid-area: 5/ 5 /5 /5;
+         background-color:blue;
+        }
+        #item22{
+         grid-area: 6/ 5/6 /5;
+         background-color:blue;
+        }
+        #item23{
+         grid-area: 7/ 5 /7 /5;
+         background-color:blue;
+        }
+        #item24{
+         grid-area: 4/ 6/4 /6;
+         background-color:blue;
+        }
+        #item25{
+         grid-area: 5/ 6 /5 /6;
+         background-color:blue;
+        }
+        #item26{
+         grid-area: 6/ 6/6 /6;
+         background-color:blue;
+        }
+        #item27{
+         grid-area: 7/ 6 /7 /6;
+         background-color:blue;
+        }
+        #item28{
+         grid-area: 4/ 7/4 /7;
+         background-color:blue;
+        }
+        #item29{
+         grid-area: 5/ 7 /5 /7;
+         background-color:blue;
+        }
+        #item30{
+         grid-area: 6/ 7/6 /7;
+         background-color:blue;
+        }
+        #item31{
+         grid-area: 7/ 7 /7 /7;
+         background-color:blue;
+        }
+        #item32{
+         grid-area: 4/ 8/4 /8;
+         background-color:blue;
+        }
+        #item33{
+         grid-area: 5/ 8 /5 /8;
+         background-color:blue;
+        }
+        #item34{
+         grid-area: 6/ 8/6 /8;
+         background-color:blue;
+        }
+        #item35{
+         grid-area: 7/ 8 /7 /8;
+         background-color:blue;
+        }
+        #item36{
+         grid-area: 4/ 9/4 /9;
+         background-color:blue;
+        }
+        #item37{
+         grid-area: 5/ 9 /5 /9;
+         background-color:blue;
+        }
+        #item38{
+         grid-area: 6/ 9/6 /9;
+         background-color:blue;
+        }
+        #item39{
+         grid-area: 7/ 9 /7 /9;
+         background-color:blue;
+        }
+        #item40{
+         grid-area: 4/ 10/4 /10;
+         background-color:blue;
+        }
+        #item41{
+         grid-area: 5/ 10 /5 /10;
+         background-color:blue;
+        }
+        #item42{
+         grid-area: 6/ 10/6 /10;
+         background-color:blue;
+        }
+        #item43{
+         grid-area: 7/ 10 /7 /10;
+         background-color:blue;
+        }
+        #item44{
+         grid-area: 4/ 11/4 /11;
+         background-color:blue;
+        }
+        #item45{
+         grid-area: 5/ 11 /5 /11;
+         background-color:blue;
+        }
+        #item46{
+         grid-area: 6/ 11/6 /11;
+         background-color:blue;
+        }
+        #item47{
+         grid-area: 7/ 11 /7 /11;
+         background-color:blue;
+        }
+        #item48{
+         grid-area: 4/ 12/4 /12;
+         background-color:blue;
+        }
+        #item49{
+         grid-area: 5/ 12 /5 /12;
+         background-color:blue;
+        }
+        #item50{
+         grid-area: 6/ 12/6 /12;
+         background-color:blue;
+        }
+        #item51{
+         grid-area: 7/ 12 /7 /12;
+         background-color:blue;
+        }
+        #item52{
+         grid-area: 2/ 13/2 /13;
+         background-color:violet;
+        }
+        #item53{
+         grid-area: 3/ 13 /3 /13;
+         background-color:orange;
+        }
+        #item54{
+         grid-area: 4/ 13/4 /13;
+         background-color:orange;
+        }
+        #item55{
+         grid-area: 5/ 13 /5 /13;
+         background-color:orange;
+        }
+        #item56{
+         grid-area: 6/ 13/6 /13;
+         background-color:orange;
+        }
+        #item57{
+         grid-area: 7/ 13 /7 /13;
+         background-color:gray;
+        }
+        #item58{
+         grid-area: 2/ 14/2 /14;
+         background-color:orange;
+        }
+        #item59{
+         grid-area: 3/ 14 /3 /14;
+         background-color:violet;
+        }
+        #item60{
+         grid-area: 4/ 14/4 /14;
+         background-color:orange;
+        }
+        #item61{
+         grid-area: 5/ 14 /5 /14;
+         background-color:orange;
+        }
+        #item62{
+         grid-area: 6/ 14/6 /14;
+         background-color:orange;
+        }
+        #item63{
+         grid-area: 7/ 14 /7 /14;
+         background-color:gray;
+        }
+        #item64{
+         grid-area: 2/ 15/2 /15;
+         background-color:orange;
+        }
+        #item65{
+         grid-area: 3/ 15 /3 /15;
+         background-color:orange;
+        }
+        #item66{
+         grid-area: 4/ 15/4 /15;
+         background-color:violet;
+        }
+        #item67{
+         grid-area: 5/ 15 /5 /15;
+         background-color:violet;
+        }
+        #item68{
+         grid-area: 6/ 15/6 /15;
+         background-color:orange;
+        }
+        #item69{
+         grid-area: 7/ 15 /7 /15;
+         background-color:gray;
+        }
+        #item70{
+         grid-area: 2/ 16/2 /16;
+         background-color:orange;
+        }
+        #item71{
+         grid-area: 3/ 16 /3 /16;
+         background-color:orange;
+        }
+        #item72{
+         grid-area: 4/ 16/4 /16;
+         background-color:orange;
+        }
+        #item73{
+         grid-area: 5/ 16 /5 /16;
+         background-color:orange;
+        }
+        #item74{
+         grid-area: 6/ 16/6 /16;
+         background-color:violet;
+        }
+        #item75{
+         grid-area: 7/ 16 /7 /16;
+         background-color:gray;
+        }
+        #item76{
+         grid-area: 2/ 17/2 /17;
+         background-color:salmon;
+        }
+        #item77{
+         grid-area: 3/ 17 /3 /17;
+         background-color:salmon;
+        }
+        #item78{
+         grid-area: 4/ 17/4 /17;
+         background-color:salmon;
+        }
+        #item79{
+         grid-area: 5/ 17 /5 /17;
+         background-color:salmon;
+        }
+        #item80{
+         grid-area: 6/ 17/6 /17;
+         background-color:salmon;
+        }
+        #item81{
+         grid-area: 7/ 17 /7 /17;
+         background-color:salmon;
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div class="grid-box">
+            <div style="background-color:brown"></div>
+            <div id="item1">1</div>
+            <div id="item2">2</div>
+            <div id="item3">3</div>
+            <div id="item4">4</div>
+            <div id="item5">5</div>
+            <div id="item6">6</div>
+            <div id="item7">1</div>
+            <div id="item8">2</div>
+            <div id="item9">3</div>
+            <div id="item10">4</div>
+            <div id="item11">5</div>
+            <div id="item12">6</div>
+            <div id="item13">5</div>
+            <div id="item14">6</div>
+            <div id="item15">6</div>
+            <div id="item16">5</div>
+            <div id="item17">6</div>
+            <div id="item18">6</div>
+            <div id="item19">6</div>
+            <div id="item20">5</div>
+            <div id="item21">6</div>
+            <div id="item22">6</div>
+            <div id="item23">6</div>
+            <div id="item24">5</div>
+            <div id="item25">6</div>
+            <div id="item26">6</div>
+            <div id="item27">6</div>
+            <div id="item28">5</div>
+            <div id="item29">6</div>
+            <div id="item30">6</div>
+            <div id="item31">6</div>
+            <div id="item32">5</div>
+            <div id="item33">6</div>
+            <div id="item34">6</div>
+            <div id="item35">6</div>
+            <div id="item36">5</div>
+            <div id="item37">6</div>
+            <div id="item38">6</div>
+            <div id="item39">6</div>
+            <div id="item40">5</div>
+            <div id="item41">6</div>
+            <div id="item42">6</div>
+            <div id="item43">6</div>
+            <div id="item44">5</div>
+            <div id="item45">6</div>
+            <div id="item46">6</div>
+            <div id="item47">6</div>
+            <div id="item48">5</div>
+            <div id="item49">6</div>
+            <div id="item50">6</div>
+            <div id="item51">6</div>
+            <div id="item52">6</div>
+            <div id="item53">6</div>
+            <div id="item54">5</div>
+            <div id="item55">6</div>
+            <div id="item56">6</div>
+            <div id="item57">6</div>
+            <div id="item58">6</div>
+            <div id="item59">6</div>
+            <div id="item60">5</div>
+            <div id="item61">6</div>
+            <div id="item62">6</div>
+            <div id="item63">6</div>
+            <div id="item64">6</div>
+            <div id="item65">6</div>
+            <div id="item66">5</div>
+            <div id="item67">6</div>
+            <div id="item68">6</div>
+            <div id="item69">6</div>
+            <div id="item70">6</div>
+            <div id="item71">6</div>
+            <div id="item72">5</div>
+            <div id="item73">6</div>
+            <div id="item74">6</div>
+            <div id="item75">6</div>
+            <div id="item76">6</div>
+            <div id="item77">6</div>
+            <div id="item78">5</div>
+            <div id="item79">6</div>
+            <div id="item80">6</div>
+            <div id="item81">6</div>
+        </div>
+    </body>
+</html>
