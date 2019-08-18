@@ -1,0 +1,4 @@
+iron_man > tony_stark
+batman > bruce_wayne
+flash > barry_allen
+hulk > bruce_banner
