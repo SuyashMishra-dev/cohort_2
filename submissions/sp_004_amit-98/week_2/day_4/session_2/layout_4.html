@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Grid_1</title>
+    <style type="text/css">
+  
+    #cont1 {
+  display: grid;
+  grid-gap:10px;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+  grid-template-rows: 200px ; 
+  background: white;
+  margin-top:200px;
+  margin-left:200px;
+}
+#cont2 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+  grid-template-rows: 200px; 
+  background: white;
+  margin-left:200px;
+}
+#cont1 div {
+   background:lightseagreen; 
+   margin:10px;
+   border-radius:5px; 
+}
+#cont2 div {
+   background:lightseagreen; 
+   margin:10px;
+  border-radius:5px;
+}
+@media (max-width: 660px) {
+  #cont1{
+    grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-template-rows: 100px; 
+  margin:100px 0px 0px 0px;
+  
+  }
+  #cont2{
+    grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-template-rows: 100px; 
+  margin: 0;
+  }}
+    </style>
+  </head>
+  <body>
+    <div id="cont1">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+     <div id="cont2">
+        <div></div>
+       <div></div>
+        <div></div>
+       <div></div>
+        <div></div>
+    </div>
+ 
+  </body>
+</html>
