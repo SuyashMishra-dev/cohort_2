@@ -1,0 +1,82 @@
+body{
+        background:#cdcf6d;
+    }
+
+.flex-box{
+        display:flex; height:auto; width:auto; margin:50px 10px 10px 300px;
+}
+
+.flex-box div{
+        height:auto; width:auto; margin:10px 10px 10px 40px;
+}
+.flex-box1{
+    display:flex; height:auto; width:auto; margin:10px 10px 10px 10px;
+}
+
+.flex-box1 div{
+    height:auto; width:auto; margin:10px 10px 10px 40px;
+}
+.margin{
+        margin:80px 10px 10px 700px; font-family:'Times New Roman', Times, serif;font-size:100px
+}
+@media(max-width:900px) {.margin{font-size:auto;margin:10px}}
+
+.margin1{
+    margin:80px 10px 10px 500px; font-family:'Times New Roman', Times, serif;font-size:100px
+}
+@media(max-width:900px) {.margin1{font-size:auto;margin:10px}}
+
+.dimen0{
+    height:auto;width:1200px;
+}
+.dimen{
+    height:450px;width:300px; margin: 10px 10px 10px 10px
+}
+.dimen1{
+    height:450px;width:450px; margin:10px 10px 10px 10px
+}   
+.dimen2{
+    height:500px;width:400px; margin:10px 10px 10px 10px
+}
+.dimen3{
+    height:500px; width:600px; margin:10px 10px 10px 10px
+}
+.dimen4{
+    height:600px; width:400px; margin:10px 10px 10px 10px
+}
+.dimen5{
+    height:600px; width:900px; margin:10px 10px 10px 250px
+}
+#box1{
+    flex-direction:row
+}
+.fl{
+    float:right
+}
+.box2{
+    background:yellowgreen; height:40px; width: 80px; border:5px solid black; font-size:30px
+}
+#font{
+    font-family:sans-serif; color:blue;
+}
+#font1{
+    font-size:40px;
+}
+#font2{
+    font-size:30px;
+}
+#font3{
+    font-size:20px;
+}
+@media(max-width:900px) {#box1{flex-wrap:wrap;flex-direction:row; margin:10px 10px 10px 10px;font-size:30px }
+                                
+    
+}
+@media(max-width:900px) {.flex-box{flex-wrap:wrap; margin:10px 10px 10px 10px; height:auto;width:600px}}
+
+@media (any-hover: hover) {
+    a:hover {
+      background: yellow;
+    }
+  }
+@media(width:900px) {#flex-box1{flex-wrap:wrap;height:auto;width:auto}} 

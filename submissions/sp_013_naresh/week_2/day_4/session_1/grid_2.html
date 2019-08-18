@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style type="text/css">
+        #cont
+        {
+            display:grid;
+            grid-template-rows: 100px 500px;
+            grid-template-columns: 400px 500px;
+            grid-gap:10px;
+            margin: 50px 50px 50px 150px;
+        }
+        #box1
+        {
+            background: red;
+            grid-area: 1 / 1 /span 1 / span 2;
+            
+        }
+        #box2
+        {
+            background: green;
+            margin-bottom: 1px; 
+
+        }
+        #box3
+        {
+            background: lightgreen;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="cont">
+            <div id="box1"></div>
+            <div id="box2"></div>
+            <div id="box3"></div>
+        </div>
+    </body>
+    </html>

@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Flex_2</title>
+    <style type="text/css">
+.flex-box {
+  display: flex;
+  margin-left: 300px;
+}
+.box1{
+  flex-direction: row;
+  flex-basis:100px;
+  height:100px;
+  margin:10px;
+  padding:10px;
+  border-radius:5px;
+  background:lightseagreen;
+}
+.box2{
+  flex-direction: row;
+  height:100px;
+  margin:10px;
+  padding:10px;
+  background:lightseagreen;
+ flex-basis:300px;
+  border-radius:5px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="flex-box">
+       <div class="box1"></div>
+       <div class="box2"></div>
+       <div  class="box1"></div>
+    </div>
+    
+    <div class="flex-box">
+       <div  class="box2"></div>
+       <div class="box1"></div>
+       <div  class="box1"></div> 
+    </div>
+    
+    <div class="flex-box">
+     <div  class="box1"></div>
+     <div class="box1"></div>
+     <div  class="box2"></div> 
+    </div>
+  </body>
+</html>
