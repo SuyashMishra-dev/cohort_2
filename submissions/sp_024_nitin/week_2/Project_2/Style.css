@@ -9,12 +9,23 @@ body{
 .flex-box div{
         height:auto; width:auto; margin:10px 10px 10px 40px;
 }
+.flex-box1{
+    display:flex; height:auto; width:auto; margin:10px 10px 10px 10px;
+}
+
+.flex-box1 div{
+    height:auto; width:auto; margin:10px 10px 10px 40px;
+}
 .margin{
         margin:80px 10px 10px 700px; font-family:'Times New Roman', Times, serif;font-size:100px
 }
+@media(max-width:900px) {.margin{font-size:auto;margin:10px}}
+
 .margin1{
     margin:80px 10px 10px 500px; font-family:'Times New Roman', Times, serif;font-size:100px
 }
+@media(max-width:900px) {.margin1{font-size:auto;margin:10px}}
+
 .dimen0{
     height:auto;width:1200px;
 }
@@ -57,3 +68,15 @@ body{
 #font3{
     font-size:20px;
 }
+@media(max-width:900px) {#box1{flex-wrap:wrap;flex-direction:row; margin:10px 10px 10px 10px;font-size:30px }
+                                
+    
+}
+@media(max-width:900px) {.flex-box{flex-wrap:wrap; margin:10px 10px 10px 10px; height:auto;width:600px}}
+
+@media (any-hover: hover) {
+    a:hover {
+      background: yellow;
+    }
+  }
+@media(width:900px) {#flex-box1{flex-wrap:wrap;height:auto;width:auto}} 
