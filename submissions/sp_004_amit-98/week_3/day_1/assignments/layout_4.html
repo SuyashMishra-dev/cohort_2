@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    #navigation{
+        width:91%;
+        height:100px;
+        background:yellow;
+        margin:100px 0px 0px 20px;
+        font-size:60px;
+    }
+    .box{
+        display:flex;
+        flex-direction:row;
+       
+    }
+    #id1 div{
+        width:403px;
+        height:300px;
+        margin:20px;
+    }
+    #red{
+        background:red;
+        font-size:30px;
+    }
+    #green{
+        background:lightgreen;
+        font-size:30px;
+    }
+    #blue{
+        background:blue;
+        font-size:30px;
+    }
+    #gray{
+        background:gray;
+        font-size:30px;
+    }
+    @media (max-width:1200px){
+        #navigation{
+            width:855px;
+            font-size:40px;
+            height:90px;
+            
+        }
+        #id1{
+            display:grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+
+        }
+    }
+    @media (max-width:660px){
+        #navigation{
+            width:500px;
+            font-size: 30px;
+        }
+       
+        #id1{
+             display:flex;
+            flex-direction:column;
+            width:500px;
+            height:300px;
+            
+        }
+    }
+    
+    </style>
+    <body>
+        <div id="navigation">Navigation</div>
+        <div class="box" id="id1">
+            <div id="red">Box 1</div>
+            <div id="green">Box 2</div>
+            <div id="blue"> Box 3</div>
+            <div id="gray"> Box 4</div>
+
+        </div>
+    </body>
+</html>
