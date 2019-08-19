@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>layout_1</title>
+        <style>
+           .flex-box { display: flex; margin: 200px;
+            }
+           .flex-box div {height: 500px; width:130px; margin-left: 100px; border: 1px solid black; background:royalblue;
+            }
+           #box1 {
+            flex-direction: row;
+            }
+
+            @media (max-width: 1280px) {
+                .flex-box {
+                    display: flex ; margin:100px;
+                    flex-direction: row;
+                }
+                .flex-box div {
+                    height: 450px; width: 120px; margin-left: 80px;
+                }    
+            }
+
+            @media (max-width:800px) {
+                .flex-box {
+                    display: flex; margin: 50px;                
+                    flex-direction: row;
+                }
+                .flex-box div {
+                    height: 300px; width: 100px; margin-left: 60px;
+                }
+
+        </style>
+    </head>
+    <body>
+        <div class="flex-box" id="box1"> 
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </body>
+</html>

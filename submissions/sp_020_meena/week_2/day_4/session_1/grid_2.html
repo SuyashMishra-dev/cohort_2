@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <style type="text/css">
+        .grid-box1{
+            display:grid;
+            grid-gap:20px;
+            padding:10px;
+            grid-template-columns:auto auto auto auto;
+            grid-template-rows:50px 50px 50px;
+            margin:30px;
+        }
+        #item1{
+            background:yellowgreen;
+            grid-area:1 / 2 / 1 / 10;
+        }
+        #item2{
+            grid-area: 2 / 2 / 10 /4;
+            background:blue;
+        }
+        #item3{
+            grid-area: 2/ 4/ 10 /10;
+            background:red;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="grid-box1">
+        <div id="item1"></div>
+        <div id="item2"></div>
+        <div id="item3"></div>
+           </div>
+    </body>
+    </html>
