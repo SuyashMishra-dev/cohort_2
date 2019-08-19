@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layout 1</title>
+    <style>
+        body{
+            margin: 20px;
+        }
+        #nav-yellow{
+            width: 100%;
+            height: 70px;
+            background: yellow;
+            line-height: 70px;
+        }
+        #nav-yellow h1{
+            font-size: 40px;
+            margin-left: 10px;
+        }
+        #main-content{
+            display: flex;
+            height: 700px;            
+        }
+        #main-content div{
+            flex-direction: column;
+            flex-basis: 50%;
+            background: red;
+            margin: 20px 0px 0px 0px;
+            font-size: 30px;
+            color: gray;
+            padding: 20px;
+        }
+
+        #main-content div:nth-child(2){
+            background: greenyellow;
+            margin-left: 70px;
+        }
+
+        @media(max-width: 600px){
+            #main-content{
+                display: block;
+                width: 100%;
+            }
+            #main-content div{
+                display: flex;
+                flex-direction: row;
+                height: 300px;
+                background: greenyellow;                
+            }
+            #main-content div:nth-child(2){
+                background: red;
+                margin-left: 0px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div id="nav-yellow">
+        <h1>NAVIGATION</h1>
+    </div>
+    <div id="main-content">
+        <div>LEFT BOX</div>
+        <div>RIGHT BOX</div>
+    </div>
+
+</body>
+</html>
