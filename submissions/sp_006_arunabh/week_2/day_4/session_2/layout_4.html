@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout 4</title>
+        <style>
+            .box{
+                display: grid;
+                grid-gap: 20px;
+                grid-template-columns: 75px 75px 75px 75px 75px;
+                grid-template-rows: 75px 75px 75px 75px 75px;
+                margin: 100px 400px;
+            }
+            .box div{
+                background:seagreen;
+            }
+
+            @media(max-width: 1630px){
+                body{
+                    background: lightcoral;
+                }
+                .box div{
+                    background: black;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </body>
+</html>

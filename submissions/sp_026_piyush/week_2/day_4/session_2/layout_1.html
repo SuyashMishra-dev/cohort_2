@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>layout_1</title>
+  <style>
+      .class1 {
+        background-color: teal;
+        height: 400px;
+        width: 100px;
+        margin-left: 35px;
+        float: left;
+      }
+      .class2 {
+        margin-left: 600px; 
+        margin-top: 300px;
+      }
+      #id1 {
+        margin-left: 100px;
+      } 
+      @media (max-width: 600px) {
+        .class2 div {
+          background: red;
+        }
+        .class2 {
+          margin-left: 0px;
+          margin-top: 0px;
+        }
+        #id1 {
+        margin-left: 10px;
+        } 
+        .class1 {
+        margin-left: 5px;
+        }
+      }
+      
+  </style>
+</head>
+<body>
+  <div class="class2">
+    <div class="class1" id="id1"></div>
+    <div class="class1"></div>
+    <div class="class1"></div>
+    <div class="class1"></div>
+    
+  </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+
+Following Commands Were Used:
+
+
+1. grep commit filename.txt | wc -l
+2. grep Author filename.txt | uniq | wc -l
+3. grep Author filename.txt | uniq-c | sort -n | tail -n 1
+4. grep 2018 filename.txt | grep Jan filename.txt | wc -l
+5. grep 2019 filename.txt | grep Sep filename.txt | wc -l

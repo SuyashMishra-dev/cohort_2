@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout_6</title>
+        <style type="text/css">
+        #grid4{
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 150px 150px 150px 150px;
+            grid-template-rows: 150px ; 
+            margin-top: 200px; 
+            margin-left: 500px;    
+        }
+        #grid4 div{
+            background: darkcyan;
+
+        }
+        @media(max-width:600px){
+            #grid4{
+                margin-left: 100px;
+            }
+            #grid4 div{
+                background-color: black;
+            }
+
+        }
+
+        </style>
+    </head>
+    <body>
+        <div id="grid4">
+            <div id="box1"></div>
+            <div id="box2"></div>
+            <div id="box3"></div>
+            <div id="box4"></div>
+        </div>
+        <div id="grid4" style="margin-top: 20px">
+            <div id="box5"></div>
+            <div id="box6"></div>
+            <div id="box7"></div>
+        </div>
+        <div id="grid4" style="margin-top: 20px">
+            <div id="box8"></div>
+            <div id="box9"></div>
+        </div>
+        <div id="grid4" style="margin-top: 20px">
+            <div id="box10"></div>
+        </div>
+    </body>
+</html>

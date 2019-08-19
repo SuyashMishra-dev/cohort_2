@@ -1,0 +1,2 @@
+32
+git log | grep Apr | wc -l > commits_apr.txt

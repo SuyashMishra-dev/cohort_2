@@ -1,0 +1,5 @@
+git log | grep -i commit | wc -l
+git log | grep -i contributor | wc -l
+git log | grep -i author | sort | uniq -c | sort
+git log | grep -i jan | grep 2018
+git log | grep -i sun | grep 2019
