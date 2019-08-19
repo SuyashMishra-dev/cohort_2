@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout_1</title>
+        <style type="text/css">
+        .flex1 {
+            display: flex;
+        }
+        .flex1 div{
+            background-color: darkcyan;
+            height: 500px;
+            width: 120px;
+            margin: 15px;
+        }
+        #box{
+            flex-direction: row;
+            margin-top: 200px;
+            margin-left: 500px;
+        }
+        @media (max-width:600px){
+            #box{
+                flex-direction: column;
+                margin-left: 300px;
+            }
+            .flex1 div{
+                background-color: black;
+            }
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class="flex1" id="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+
+        </div>
+    </body>
+</html>
+
