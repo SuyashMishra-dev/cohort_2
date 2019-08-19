@@ -1,0 +1,88 @@
+<html>
+    <head>
+        
+        <style>
+            #box {
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                grid-template-rows: auto;
+                grid-gap: 30px; 
+            }
+            #box1 {
+                background: yellow;
+                height: 100px;
+                margin-bottom: 30px;
+            }
+            #box1 > p {
+                font-size: 35px;
+                padding-left: 10px;
+            }
+            #box2 {
+                background: red;
+            }
+            #box3 {
+                background: green;
+            }
+            #box4 {
+                background: blue;
+            }
+            #box5 {
+                background: grey;
+            }
+            .row2 {
+                height: 200px;
+            }
+            .row2 > p {
+                color: darkgrey;
+                padding-left: 10px;
+                font-size: 20px;
+            }
+            @media (max-width: 700px) {
+                #box {
+                    grid-template-columns: auto auto;
+                }
+                #box4 {
+                    grid-area: 1 / 2;
+                }
+            }
+            @media (max-width: 600px) {
+                #box {
+                    grid-template-columns: auto;
+                }
+                #box2 {
+                    grid-area: 1 / 1;
+                }
+                #box5 {
+                    grid-area: 2 / 1;
+                }
+                #box3 {
+                    grid-area: 3 / 1;
+                }
+                #box4 {
+                    grid-area: 4 / 1;
+                }
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <div id="box1">
+                <p>Navigation</p>
+        </div>
+        <div id="box">
+            <div id="box2" class="row2">
+                <p>BOX 1</p>
+            </div>
+            <div id="box3" class="row2">
+                <p>BOX 2</p>
+            </div>
+            <div id="box4" class="row2">
+                <p>BOX 3</p>
+            </div>
+            <div id="box5" class="row2">
+                <p>BOX 4</p>
+            </div>
+        </div>
+    </body>
+</html>
