@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style type="text/css">
+        .grid-box{
+            display:grid;
+            grid-gap:20px;
+            margin-left:200px;
+            padding:10px;
+            grid-template-columns:100px 100px 100px 100px;
+            grid-template-rows:100px 100px 100px 100px;
+        }
+        .grid-box div{
+            background-color:yellowgreen;
+        }
+        #item1{
+         grid-area: 2/ 1 /2 /1;
+        }
+        #item2{
+         grid-area: 2/ 2 /2 /2;
+        }
+        #item3{
+         grid-area: 2/ 3 /2 /3;
+        }
+        #item4{
+         grid-area: 3/ 1 /3 /1;
+        }
+        #item5{
+         grid-area: 3/ 2 /3 /2;
+        }
+        #item6{
+         grid-area: 4/ 1 /4 /1;
+        }
+       </style>
+   </head>
+        <body>
+            <div class="grid-box">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div id="item1">7</div>
+                <div id="item2">8</div>
+                <div id="item3">9</div>
+                <div id="item4">10</div>
+                <div id="item5">11</div>
+                <div id="item6">12</div>
+                
+                
+            </div>
+        </body>
+        </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Grid</title>
+    <style type="text/css">
+ #cont {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px; 
+  padding: 40px;
+  grid-column-end:inherit;
+  margin:150px;
+}
+
+#cont div {
+  background:teal;
+}
+
+#box1{
+    grid-area: 1 / 2 /span 1 / span 2;
+}
+#box2{
+    grid-area: 2 / 1 /span 1 / span 2;
+}
+#box3{
+    grid-area: 3 / 3 /span 1 / span 2;
+}
+    </style>
+  
+</head>
+  <body>
+    <div id="cont">
+      <div></div>
+      <div id="box1"></div>
+      <div></div>
+      <div id="box2"></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div id="box3"></div>
+    </div>
+
+    
+  </body>
+</html>
