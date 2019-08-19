@@ -100,7 +100,7 @@ div {
 Fill the below property values for the `div`
 1. Color
 ```
-  white
+white
 ```
 2. Height
 ```
@@ -191,7 +191,7 @@ black
 ```
 2. Background Color
 ```
-red
+white
 ```
 3. Padding-Bottom
 ```
@@ -207,7 +207,7 @@ red
 ```
 6. Color
 ```
-violet
+black
 ```
 ### FSD.W2.2.1_6
 ```
@@ -223,11 +223,11 @@ red
 ```
 3. Padding-Right
 ```
-20px
+
 ```
 4. Margin-Left
 ```
-6px
+15px
 ```
 5. Font-Size
 ```
@@ -243,11 +243,11 @@ black
 ```
 1. Width
 ```
-75px
+150px
 ```
 2. Height
 ```
-100px
+50px
 ```
 3. Padding-Top
 ```
@@ -255,15 +255,15 @@ black
 ```
 4. Margin-Bottom
 ```
-10px
+6px
 ```
 5. Font-Size
 ```
-22px
+20px
 ```
 6. Color
 ```
-white
+black
 ```
 ### FSD.W2.2.1_8
 ```
@@ -283,7 +283,7 @@ white
 ```
 4. Margin-Right
 ```
-6px
+8px
 ```
 5. Font-Size
 ```
@@ -299,7 +299,7 @@ purple
 ```
 1. Width
 ```
-75px
+200px
 ```
 2. Height
 ```
@@ -307,7 +307,7 @@ purple
 ```
 3. Background Color
 ```
-red
+black
 ```
 4. Color
 ```
@@ -315,7 +315,7 @@ red
 ```
 5. Font-Size
 ```
-20px
+12px
 ```
 ### FSD.W2.2.1_10
 ```
@@ -323,7 +323,7 @@ red
 ```
 1. Width
 ```
-150px
+100px
 ```
 2. Height
 ```
@@ -339,11 +339,11 @@ red
 ```
 5. Font-Size
 ```
-14px
+12px
 ```
 6. Color
 ```
-blue
+purple
 ```
 ### FSD.W2.2.1_11
 ```
@@ -351,7 +351,7 @@ blue
 ```
 1. Background Color
 ```
-black   
+bclack
 ```
 2. Height
 ```
@@ -379,7 +379,7 @@ orange
 ```
 1. Width
 ```
-75px
+100px
 ```
 2. Height
 ```
@@ -387,11 +387,11 @@ orange
 ```
 3. Background Color
 ```
-black
+red
 ```
 4. Margin-Right
 ```
-10px
+20px
 ```
 5. Font-Size
 ```
@@ -399,5 +399,5 @@ black
 ```
 6. Color
 ```
-white
+black
 ```
