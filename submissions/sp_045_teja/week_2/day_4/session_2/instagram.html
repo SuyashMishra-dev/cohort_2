@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>INSTAGRAM</title>
+        <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Acme|Cookie|Courgette|Satisfy&display=swap" rel="stylesheet">
+        <style type="text/css">
+        #grid{
+            display: grid;
+            grid-template-columns: auto auto; 
+            grid-template-rows: auto;     
+        }
+        #insta{
+            width: 500px;
+            height: 800px;
+            grid-area: 1 / 1 / span 18 / span 1;
+
+        }
+        #first-heading{
+            font-size: 50px;
+            font-family: 'Cookie', cursive;
+            grid-area: 1 / 2 / span 1 / span 17;
+        }
+        #first-para{
+            font-size: 20px;
+            font-family: 'Acme', sans-serif;
+            grid-area: 2 / 2 / span 1 / span 2;
+        }
+        #b1{
+            background: dodgerblue;
+            height: 30px;
+            width:300px;
+            color: white;
+            font-size: 15px;
+            grid-area: 4 / 2 / span 1 / span 2;
+        }
+        #second-para{
+            font-size: 15px;
+            font-family: unset;
+            grid-area: 5 / 2 / span 1 / span 2;
+        }
+        #third-para{
+            font-size: 20px;
+            font-family: 'Acme', sans-serif;
+            grid-area: 11 / 2 / span 1 / span 2;
+        }
+        #fourth-para{
+            font-size: 20px;
+            font-family: 'Acme', sans-serif;
+            grid-area: 12 / 2 / span 1 / span 1;
+        }
+        #fivth-para{
+            font-size: 20px;
+            font-family: 'Acme', sans-serif;
+            grid-area: 13 / 2 / span 1 / span 2;
+        }
+       
+        #in1{
+            background-color: gray;
+            height: 30px;
+            width:300px;
+            color: white;
+            font-size: 15px;
+            grid-area: 6 / 2 / span 1 / span 2;
+        }
+        #in2{
+            background-color: gray;
+            height: 30px;
+            width:300px;
+            color: white;
+            font-size: 15px;
+            grid-area: 7 / 2 / span 1 / span 2;
+        }
+        #in3{
+            background-color: gray;
+            height: 30px;
+            width:300px;
+            color: white;
+            font-size: 15px;
+            grid-area: 8 / 2 / span 1 / span 2;
+        }
+        #in4{
+            background-color: gray;
+            height: 30px;
+            width:300px;
+            color: white;
+            font-size: 15px;
+            grid-area: 9 / 2 / span 1 / span 2;
+        }
+        #b2{
+            background: dodgerblue;
+            height: 30px;
+            width:300px;
+            color: white;
+            font-size: 15px;
+            grid-area: 10 / 2 / span 1 / span 2;
+        }
+        #gp{
+            width: 120px;
+            height: 50px;
+            grid-area: 14 / 2 / span 1 / span 2;
+        }
+        #ap{
+            width: 120px;
+            height: 50px;
+            grid-area: 14 / 3 / span 1 / span 2;
+        }
+        @media (max-width:600px){
+            #grid{
+                grid-template-columns: auto;
+            }
+            body{
+                background: red;
+            }
+            #insta{
+                display: none;
+            }
+            #first-heading{
+                grid-area: unset;
+            }
+            #first-para{
+                grid-area: unset;
+            }
+            #b1{
+                grid-area: unset;
+            }
+            #second-para{
+                grid-area: unset;
+            }
+            #in1{
+                grid-area: unset;
+            }
+            #in2{
+                grid-area: unset;
+            }
+            #in3{
+                grid-area: unset;
+            }
+            #in4{
+                grid-area: unset;
+            }
+            #b2{
+                grid-area: unset;
+            }
+            #third-para{
+                grid-area: unset;
+            }
+            #fourth-para{
+                grid-area: unset;
+            }
+            #fivth-para{
+                grid-area: unset;
+            }
+            #gp{
+                grid-area: unset;
+            }
+            #ap{
+                grid-area: unset;
+            }
+
+            
+        }
+        </style>
+    </head>
+    <body>
+        <div id="grid">
+            <img id="insta" src="resources/70806-development-instagram-mobile-marketing-app-iphone-user.png" alt="">
+            <h1 id="first-heading">INSTAGRAM</h1>
+            <P id="first-para">Sign up to see photos and <br>videos from friends</P>
+            <input id="b1" type="button"  value="Log in with facebook">
+            <p id="second-para">---------------------------OR------------------------------</p>
+            <input id="in1" type="text" value="Mobile Number or Email" >
+            <input id="in2" type="text" value="FULL NAME">
+            <input id="in3" type="text" value="Username" >
+            <input id="in4" type="text" value="Password">
+             <input id="b2" type="button" value="Signup">
+             <p id="third-para">By signing up, you agree to our<br>
+                <b> Terms </b>,<b>Data Policy</b> and <b>Cookies</b><br><b> Policy</b></p>
+             <p id="fourth-para">Have an account? <a href="#">Login</a></p>
+             <p id="fivth-para">Get the app</p>
+             <img id="gp" src="https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/playstore.png" alt="">
+             <img id="ap" src="https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/appstore.png" alt="">
+
+        </div>
+    </body>
+</html>
