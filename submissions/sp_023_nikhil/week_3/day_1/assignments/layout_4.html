@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+    #main{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-gap: 30px;
+    }
+    #nav{
+        background: yellow;
+        grid-area: 1 / 1 / 4 / 9;
+    }
+    #red{
+        background: red;
+        grid-area: 5 / 1 / 12 / 3;
+    }
+    #green{
+        background: green;
+        grid-area: 5 / 3 / 12 / 5;
+    }
+    #blue{
+        background: skyblue;
+        grid-area: 5 / 5 / 12 / 7;
+    }
+    #gray{
+        background: gray;
+        grid-area: 5 / 7 / 12 / 9;        
+    }
+    @media(max-width: 1000px){
+    #nav{
+        background: yellow;
+        grid-area: 1 / 1 / 4 / 5;
+    }
+    #red{
+        background: red;
+        grid-area: 5 / 1 / 12 / 3;
+    }
+    #green{
+        background: green;
+        grid-area: 5 / 3 / 12 / 5;
+    }
+    #blue{
+        background: skyblue;
+        grid-area: 13 / 1 / 20 / 3;
+    }
+    #gray{
+        background: gray;
+        grid-area: 13 / 3 / 20 / 5;        
+    }
+    @media(max-width: 760px){
+    #nav{
+        background: yellow;
+        grid-area: 1 / 1 / 4 / 5;
+    }
+    #red{
+        background: red;
+        grid-area: 5 / 1 / 10 / 5;
+    }
+    #green{
+        background: green;
+        grid-area: 15 / 1 / 20 / 5;
+    }
+    #blue{
+        background: skyblue;
+        grid-area: 20 / 1 / 25 / 5;
+    }
+    #gray{
+        background: gray;
+        grid-area: 10 / 1 / 15 / 5;        
+    }
+    }
+}
+    </style>
+    <title>Layout 4</title>
+</head>
+<body>
+    <div id="main">
+        <div id="nav"></div>
+        <div id="red"></div>
+        <div id="green"></div>
+        <div id="blue"></div>
+        <div id="gray"></div>
+    </div> 
+</body>
+</html>
