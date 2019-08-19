@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout 1</title>
+    </head>
+    <style>
+        #container {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 5% 5%;
+            margin: 3%;
+        }
+        #yellow {
+            background-color: #f7ff00;
+            grid-area: 1 / 1 / span 1 / span 2;
+        }
+        #red {
+            background-color: red;
+            height: 500px;
+            padding-bottom: 5px solid red;
+        }
+        #green {
+            background-color: #00ff2a;
+        }
+        #yellow > p {
+            font-size: 60px;
+            color: black;
+        }
+        p {
+            font-size: 30px;
+            color: grey;
+            margin: 0px;
+            padding: 10px 0px 0px 10px;
+        }
+        @media (max-width: 500px){
+            #container {
+                grid-template-columns: auto;
+            }
+            #yellow {
+                grid-area: unset;
+            }
+            #red, #green {
+                height: 200px;
+                padding-bottom: 0px;
+            }
+        }
+    </style>
+    <body>
+        <div id="container">
+            <div id="yellow">
+                <p>Navigation</p>
+            </div>
+            <div id="red">
+                <p>LEFT BOX</p>
+            </div>
+            <div id="green">
+                <p>RIGHT BOX</p>
+            </div>
+        </div>
+    </body>
+</html>
