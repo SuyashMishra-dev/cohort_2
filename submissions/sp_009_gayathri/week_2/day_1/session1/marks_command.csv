@@ -1,1 +1,0 @@
-sort -n  marks_rand_2000.csv | grep India | head -5
