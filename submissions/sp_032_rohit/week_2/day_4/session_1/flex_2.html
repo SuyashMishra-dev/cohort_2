@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>
+Flex_2
+</title>
+<style>
+.flex-box {
+    display: flex;
+    flex-direction: row
+}
+.top-margin {
+    margin-top: 200px
+}
+.flex-box div{
+  margin: 15px;
+  height: 130px;
+  width: 130px;
+  background-color: rgb(3, 100, 100);
+  border-radius: 10px;
+}
+.box1 {
+    margin-left: 550px !important
+}
+#width {
+    flex-grow: .4;
+}
+
+
+
+</style>
+<body>
+    <div class="flex-box top-margin" >
+        <div class="box1"></div>
+        <div id="width"></div>
+        <div></div>
+      </div>
+   
+
+
+      <div class="flex-box" >
+        <div id="width" class="box1"></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="flex-box" >
+        <div class="box1"></div>
+        <div></div>
+        <div id="width"></div>
+      </div>
+
+
+
+</body>
+
+</html>
