@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Layout 3</title>
+        <style type="text/css">
+            .box{
+                display: grid;
+                grid-template-columns: 350px 150px;
+                grid-template-rows: 75px 100px 100px 100px;
+                grid-gap: 20px;
+                margin: 75px 150px;
+            }
+            .box .top-box{
+                grid-area: 1 / 1 / span 1 / span 2;
+                background: yellow;
+            }
+            .box .left-box{
+                grid-area: 2 / 1 / span 3 / span 1;
+                background: red;
+            }
+            .box .right-box1{
+                grid-area: 2 / 2 / span 1 / span 1;
+                background: lightgreen;
+            }
+            .box .right-box2{
+                grid-area: 3 / 2 / span 1 / span 1;
+                background: lightgreen;
+            }
+            .box .right-box3{
+                grid-area: 4 / 2 / span 1 / span 1;
+                background: lightgreen;
+            }
+
+           @media(max-width: 1300px){
+                .box{
+                    display: grid;
+                    grid-template-columns: 200px 200px 200px;
+                    grid-template-rows: 75px 250px 150px;
+                    grid-gap: 30px;
+                }
+            .box .top-box{
+                grid-area: 1 / 1 / span 1 / span 3;
+                background: yellow;
+            }
+            .box .left-box{
+                grid-area: 2 / 1 / span 1 / span 3;
+                background: red;
+            }
+            .box .right-box1{
+                grid-area: 3 / 1 / span 1 / span 1;
+                background: lightgreen;
+            }
+            .box .right-box2{
+                grid-area: 3 / 2 / span 1 / span 1;
+                background: lightgreen;
+            }
+            .box .right-box3{
+                grid-area: 3 / 3 / span 1 / span 1;
+                background: lightgreen;
+            }
+            }
+
+            @media(min-width: 2500px){
+                .box{
+                    display: grid;
+                    grid-template-columns: 400px;
+                    grid-template-rows: 50px 150px 75px 75px 75px;
+                    grid-gap: 30px;
+                }
+            .box .top-box{
+                grid-area: 1 / 1 / span 1 / span 1;
+                background: yellow;
+            }
+            .box .left-box{
+                grid-area: 2 / 1 / span 1 / span 1;
+                background: red;
+            }
+            .box .right-box1{
+                grid-area: 3 / 1 / span 1 / span 1;
+                background: lightgreen;
+            }
+            .box .right-box2{
+                grid-area: 4 / 1 / span 1 / span 1;
+                background: lightgreen;
+            }
+            .box .right-box3{
+                grid-area: 5 / 1 / span 1 / span 1;
+                background: lightgreen;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div class="top-box"><h1>Navigation</h1></div>
+            <div class="left-box"><p>LEFT BOX</p></div>
+            <div class="right-box1"><p>RIGHT BOX 1</p></div>
+            <div class="right-box2"><p>RIGHT BOX 2</p></div>
+            <div class="right-box3"><p>RIGHT BOX 3</p></div>
+        </div>
+    </body>
+</html>
