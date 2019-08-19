@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout 2</title>
+    </head>
+    <style>
+        .top {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 3%;
+        }
+        #yellow {
+            background-color: yellow;
+            grid-area: 1 / 1 / span 1 / span 2;
+        }
+        #red {
+            background-color: red;
+            height: 550px;
+        }
+        #green {
+            background-color: green;
+        }
+        @media (max-width: 800px){
+            .top {
+                grid-template-columns: auto;
+            }
+            #yellow {
+                grid-area: unset;
+            }
+            #red {
+                grid-area: 3 / 1;
+            }
+            #red, #green {
+                height: 200px;
+                padding-bottom: 0px;
+            }
+        }
+    </style>
+    <body>
+        <div class="top">
+            <div id="yellow">
+               <h1>Navigtion</h1></div>
+            <div id="red">
+               <h1>Left Box</h1></div>
+            <div id="green">
+               <h1>Right Box</h1></div>
+    </body>
+</html>

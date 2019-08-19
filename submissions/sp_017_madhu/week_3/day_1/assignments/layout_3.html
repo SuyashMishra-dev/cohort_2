@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <style type="text/css">
+  #cont {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: 90px 90px 90px 90px; 
+  grid-template-columns: 90px 90px 90px 90px 90px 90px 90px 90px;
+}
+
+#cont div {
+  text-align:left;
+  font-size: 30px;
+  
+}
+#box1{
+    grid-area: 1 / 1 /span 1 / span 6;
+    background: yellow;
+}
+#box2{
+    grid-area: 2 / 1 /span 4 / span 4;
+    background:red;
+}
+#box3
+{
+    grid-area: 2 / 5 /span 1 / span 2;
+    background:green;
+
+}
+#box4
+{
+    grid-area: 3 / 5 /span 1 / span 2;
+    background:green;
+
+}
+#box5
+{
+    grid-area: 4 / 5 /span 2 / span 2;
+    background:green;
+
+}
+
+@media (max-width: 1000px) {
+ 
+      #cont {
+  display:grid;
+  grid-gap: 20px;
+  grid-template-rows: 90px 90px 90px 90px 90px 90px ; 
+  grid-template-columns: 90px; 
+  padding: 20px;
+}
+#cont div {
+  text-align:left;
+  font-size: 30px;
+  
+}
+#box1{
+    grid-area: 1 / 1 /span 1 / span 6;
+    background: yellow;
+}
+#box2{
+    grid-area: 2 / 1 /span 2 / span 6;
+    background:red;
+}
+#box3
+{
+    grid-area: 4/ 1 /span 2 / span 2;
+    background:green;
+
+}
+#box4
+{
+    grid-area: 4 / 3/span 2 / span 2;
+    background:green;
+
+}
+#box5
+{
+    grid-area: 4 / 5 /span 2 / span 2;
+    background:green;
+
+}
+}
+
+@media (max-width: 600px) {
+ 
+ #cont {
+display:grid;
+grid-gap: 20px;
+grid-template-rows: 90px 90px 90px 90px 90px 90px ; 
+grid-template-columns: 90px; 
+padding: 20px;
+}
+#cont div {
+text-align:left;
+font-size: 30px;
+
+}
+#box1{
+grid-area: 1 / 1 /span 1 / span 6;
+background: yellow;
+}
+#box2{
+grid-area: 2 / 1 /span 2 / span 6;
+background:red;
+}
+#box3
+{
+grid-area: 4 / 1 /span 1 / span 6;
+background:green;
+
+}
+#box4
+{
+grid-area: 5 / 1 /span 1 / span 6;
+background:green;
+
+}
+#box5
+{
+grid-area: 6 / 1 /span 1 / span 6;
+background:green;
+
+}
+}
+
+
+  </style>
+  </head>
+  <body>
+    <div id="cont">
+        <div id="box1">Navigation</div>
+      <div id="box2">Left Box</div>
+      <div id="box3">Right Box1</div>   
+      <div id="box4">Right Box2</div>   
+      <div id="box5">Right Box3</div>
+    </div>
+  </body>
+</html>
