@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+        .box1 {
+            margin-left:20px;
+            margin-top: 100px; 
+            float: left;              
+        }
+        .box1 p{
+            font-size: 30px;
+            text-align: center;
+        }
+        .b1-r1{
+            background-color:white;
+            height: 600px;
+            width: 230px; 
+        }
+        .b1{
+            background-color: brown;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        .b2{
+            background-color: darkgreen;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+        }
+        .r2-b1{
+            background-color: indianred;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left: 80px;
+            font-size: 30px;
+            text-align: center;
+            float:left;
+        }
+        .r3-b1{
+            background-color:moccasin;
+            height: 40px;
+            width: 40px;
+            padding: 7px;
+            border: 5px solid black;
+            margin-left: 20px;
+            float: left;
+        }
+        .box2{
+            margin-top: 200px;
+            float: left;
+            margin-left: -353px;
+
+        }
+        .b2-r1{
+            background-color:white;
+            height: 600px;
+            width: 770px;
+            float: left;
+        }
+        .r4-b1{
+            background-color: darkgreen;
+            height:170px;
+            width:170px;
+            border:2px solid black;
+            float:left;
+            margin-top: 52px;
+            font-size: 25px;
+            text-align:start;
+            margin-bottom: 170px;
+        }
+        span{
+            font-size: 20px;
+            margin-left: 140px;
+            margin-top: -50px;
+            float:left;
+        }
+        .r4-b2{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top:245px;
+            margin-bottom: 20px;
+        }
+        .r4-b3{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+        }
+        .r5-b1{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left: -90px;
+            margin-top: -85px;
+            float:left;
+        }
+        .r5-b2{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left: 85px;
+            margin-top: -85px;
+            float: left;
+        }
+        .r6-b1{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left: -5px;
+            margin-top: -85px;  
+            float: left;
+        }
+        .r6-b2{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: -85px; 
+            margin-left: 170px; 
+            float: left;
+        }
+        .r7-b1{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left: 80px;
+            margin-top: -85px;
+            float: left;
+        }
+        .r7-b2{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: -85px;
+            margin-left: 255px;
+            float: left;
+        }
+        .r8-b1{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: -85px;
+            margin-left: 165px;
+            float: left;
+        }
+        .r8-b2{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: -85px;
+            margin-left: 340px;
+            float: left;
+        }
+        .r9-b1{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: -85px;
+            margin-left: 250px;
+            float: left;
+        }
+        .r9-b2{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: -85px;
+            margin-left: 425px;
+            float: left;
+        }
+        .r10-b1{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: -85px;
+            margin-left: 338px;
+            float: left;
+        }
+        .r10-b2{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: -85px;
+            margin-left: 512px;
+            float: left;
+        }
+        .r11-b1{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: -85px;
+            margin-left: 425px;
+            float: left;
+        }
+        .r11-b2{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: -85px;
+            margin-left: 600px;
+            float: left;
+        }
+        .r12-b1{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: -85px;
+            margin-left: 515px;
+            float: left;
+        }
+        .r12-b2{
+            background-color: blue;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top: -85px;
+            margin-left: 690px;
+            float: left;
+        }
+        .box3{
+            margin-left:0px;
+            margin-top: 200px; 
+            float: left;              
+        }
+        .b3-r1{
+            background-color: white;
+            height: 600px;
+            width: 500px;
+            float: left; 
+        }
+        .r13-b3{
+            background-color: violet;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+            margin-top: 75px;
+
+        }
+        .r14-b3{
+            background-color: orange;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+        }
+        .r15-b3{
+            background-color:grey;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+        }
+        .r16-b3{
+            background-color:green;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left:85px;
+            margin-top: -85px;
+            float: left;
+        }
+        .r17-b3{
+            background-color:violet;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left:85px;
+            margin-top: -85px;
+            float: left;
+        }
+        .r18-b3{
+            background-color:darkorange;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left:85px;
+            margin-top: -85px;
+            float: left;
+        }
+        .r19-b3{
+            background-color:grey;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left:85px;
+            margin-top: -85px;
+            float: left;
+        }
+        .c1{
+            background-color: green;
+        }
+        .c2{
+            background-color: orange;
+        }
+        .c3{
+            background-color: grey;
+        }
+        .c4{
+            background-color: violet;
+        }
+        .r20-b3{
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left:170px;
+            margin-top: -85px;
+            float: left;
+        }
+        .r21-b3{
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left:255px;
+            margin-top: -85px;
+            float: left;
+        }
+        .r22-b3{
+            background-color: palevioletred;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left:340px;
+            margin-top: -85px;
+            float: left;
+        }
+        .r23-b3{
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-left:340px;
+            margin-top: -85px;
+            float: left;
+        }
+        .r24-b3{
+            background-color: yellow;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+            margin-left: 425px;
+            float: left;
+        }
+        .r25-b3{
+            background-color: yellow;
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top:-85px;
+            margin-left: 425px;
+            float: left;
+        }
+        .r26-b3{
+            height: 40px;
+            width: 40px;
+            padding: 10px;
+            border: 2px solid black;
+            margin-top:-85px;
+            margin-left: 425px;
+            float: left;
+        }
+        .box4 {
+            margin-top: 40px;
+            margin-left:380px; 
+            float: left;            
+        }
+        .b4-r1{
+            background-color:white;
+            height: 200px;
+            width: 740px; 
+        }
+        .r27-b4{
+            background:darkgreen;
+            height:30px;
+            width:30px;
+            padding:10px;
+            border:1px solid black;
+            font-size: 20px;
+            text-align:left;
+            color: white;
+            float: left;
+        }
+        .r28-b4{
+            background:lightseagreen;
+            height:30px;
+            width:30px;
+            padding:10px;
+            border:1px solid black;
+            font-size: 20px;
+            text-align:left;
+            color: black;
+            float: left;
+        }
+
+        
+        
+
+        </style>
+    </head>
+    <body>
+        <div class="box1">
+            <p>THE PERIODIC TABLE OF ELEMENTS</p>
+            <div class="b1-r1">
+                <div class="b1">H</div>
+                <div class="r2-b1">4</div>
+                <div class="b2"></div>
+                <div class="r2-b1">12</div>
+                <div class="b2"></div>
+                <div class="r2-b1">20</div>
+                <div class="b2"></div>
+                <div class="r2-b1">38</div>
+                <div class="b2"></div>
+                <div class="r2-b1">56</div>
+                <div class="r3-b1"></div>
+                <div class="b2"></div>
+                <div class="r2-b1">88</div>
+                <div class="r3-b1"></div>
+                <div class="b2"></div>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="b2-r1">
+                <div class="r4-b1">Si<br>silicon<br>
+                <span>14</span></div>
+                <div class="r4-b2"></div>
+                <div class="r5-b1"></div>
+                <div class="r6-b1"></div>
+                <div class="r7-b1"></div>
+                <div class="r8-b1"></div>
+                <div class="r9-b1"></div>
+                <div class="r10-b1"></div>
+                <div class="r11-b1"></div>
+                <div class="r12-b1"></div>
+                <div class="r4-b3"></div>
+                <div class="r5-b2"></div>
+                <div class="r6-b2"></div>
+                <div class="r7-b2"></div>
+                <div class="r8-b2"></div>
+                <div class="r9-b2"></div>
+                <div class="r10-b2"></div>
+                <div class="r11-b2"></div>
+                <div class="r12-b2"></div>
+                <div class="r4-b3"></div>
+                <div class="r5-b2"></div>
+                <div class="r6-b2"></div>
+                <div class="r7-b2"></div>
+                <div class="r8-b2"></div>
+                <div class="r9-b2"></div>
+                <div class="r10-b2"></div>
+                <div class="r11-b2"></div>
+                <div class="r12-b2"></div>
+                <div class="r4-b3"></div>
+                <div class="r5-b2"></div>
+                <div class="r6-b2"></div>
+                <div class="r7-b2"></div>
+                <div class="r8-b2"></div>
+                <div class="r9-b2"></div>
+                <div class="r10-b2"></div>
+                <div class="r11-b2"></div>
+                <div class="r12-b2"></div>
+            </div>
+        </div>
+        <div class="box3">
+                <div class="b3-r1">
+                <div class="r24-b3"></div>
+                <div class="r13-b3"></div>
+                <div class="r16-b3"></div>
+                <div class="c1 r20-b3"></div>
+                <div class="c1 r21-b3"></div>
+                <div class="r25-b3"></div>
+                <div class="r22-b3"></div>
+                <div class="r14-b3"></div>
+                <div class="r17-b3"></div>
+                <div class="c1 r20-b3"></div>
+                <div class="c1 r21-b3"></div>
+                <div class="r25-b3"></div>
+                <div class="r22-b3"></div>
+                <div class="r14-b3"></div>
+                <div class="r17-b3"></div>
+                <div class="c4 r20-b3"></div>
+                <div class="c1 r21-b3"></div>
+                <div class="r25-b3"></div>
+                <div class="r22-b3"></div>
+                <div class="r14-b3"></div>
+                <div class="r18-b3"></div>
+                <div class="c4 r20-b3"></div>
+                <div class="c4 r21-b3"></div>
+                <div class="r25-b3"></div>
+                <div class="r22-b3"></div>
+                <div class="r14-b3"></div>
+                <div class="r18-b3"></div>
+                <div class="c2 r20-b3"></div>
+                <div class="c4 r21-b3"></div>
+                <div class="r25-b3"></div>
+                <div class="r22-b3"></div>
+                <div class="r15-b3"></div>
+                <div class="r18-b3"></div>
+                <div class="r19-b3"></div>
+                <div class="c3 r20-b3"></div>
+                <div class="c3 r21-b3"></div>
+                <div class="c3 r23-b3"></div>
+                <div class="c3 r26-b3"></div>
+                </div>
+                </div>
+                <div class="box4">
+                        <div class="b4-r1">
+                            <div class="r27-b4">La</div>
+                            <div class="r27-b4"></div>
+                            <div class="r27-b4"></div>
+                            <div class="r27-b4"></div>
+                            <div class="r27-b4"></div>
+                            <div class="r27-b4"></div>
+                            <div class="r27-b4"></div>
+                            <div class="r27-b4"></div>
+                            <div class="r27-b4"></div>
+                            <div class="r27-b4"></div>
+                            <div class="r27-b4"></div>
+                            <div class="r27-b4"></div>
+                            <div class="r27-b4"></div>
+                            <div class="r27-b4"></div>
+                            <div class="r28-b4"></div>
+                            <div class="r28-b4"></div>
+                            <div class="r28-b4"></div>
+                            <div class="r28-b4"></div>
+                            <div class="r28-b4"></div>
+                            <div class="r28-b4"></div>
+                            <div class="r28-b4">Am</div>
+                            <div class="r28-b4"></div>
+                            <div class="r28-b4"></div>
+                            <div class="r28-b4"></div>
+                            <div class="r28-b4"></div>
+                            <div class="r28-b4"></div>
+                            <div class="r28-b4"></div>
+                            <div class="r28-b4">No</div>
+                            </div>
+                            </div>
+        
+    </body>
+</html>

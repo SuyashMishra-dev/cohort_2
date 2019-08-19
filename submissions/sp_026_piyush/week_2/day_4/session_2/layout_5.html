@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>layout_5</title>
+  <style>
+    .class1 {
+      margin-left: 600px; 
+      margin-top: 300px
+    }
+    .class2 {
+      background-color: red; 
+      height: 50px; 
+      width: 700px;  
+      float:left;
+    }
+    .class3 {
+      background-color: green; 
+      height: 500px; 
+      width: 200px; 
+      float:left; 
+      margin-left: 5px; 
+      margin-top: 20px;
+    }
+    .class4 {
+      background-color: teal; 
+      height: 500px; 
+      width: 460px; 
+      float:left; 
+      margin-left: 30px; 
+      margin-top: 20px;
+    }
+    #id1 {
+      clear: left
+    }
+
+    @media (max-width:1340px) {
+      .class1 {
+        margin-left: 0px; 
+        margin-top: 0px;
+      }
+      .class4 {
+        background-color: green; 
+        height: 300px; 
+        width: 200px; 
+        
+      }
+      .class3 {
+        background-color: teal; 
+        height: 300px; 
+        width: 200px; 
+         
+        
+      }
+      .class2 {
+        background-color: black; 
+        height: 50px; 
+        width: 450px;  
+        float:left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="class1">
+    <div>
+        <div class="class2"></div>
+    </div>
+    <div id="id1">
+        <div class="class3"></div>
+        <div class="class4"></div>
+    </div>
+    
+
+  </div>
+</body>
+</html>

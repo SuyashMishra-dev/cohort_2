@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>layout_5</title>
+    <style type="text/css">
+
+    #cont1 {
+  display: grid;
+  grid-gap:10px;
+  grid-template-columns: 900px;
+  grid-template-rows: 100px ; 
+  background: white;
+  margin:0;
+}
+#cont2 {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns:200px 685px ;
+  grid-template-rows: 600px; 
+  background: white;
+ margin:0;
+}
+#cont1 div {
+   background:red; 
+   margin:10px;
+   border-radius:5px;
+  
+}
+#cont3{
+   background:lightgreen; 
+   margin:10px;
+  border-radius:5px;
+  
+}
+#cont4{
+   background:green; 
+   margin:10px;
+  border-radius:5px;
+  
+}
+@media (max-width: 660px)
+   {
+  #cont1{
+    grid-template-columns: 450px;
+  grid-template-rows: 50px ; 
+  }
+  #cont2{
+    grid-template-columns: 100px 343px;
+  grid-template-rows: 300px ; 
+  }
+  #cont3{
+    background:lightcoral;
+  }
+  #cont4{
+    background:lightsalmon;
+  }
+
+   }
+    
+    </style>
+  </head>
+     <body>
+     <div id="cont1">
+     <div></div>
+     </div>
+     <div id="cont2">
+     <div id="cont3"></div>
+     <div id="cont4"></div>
+    </div>
+  </body>
+</html>

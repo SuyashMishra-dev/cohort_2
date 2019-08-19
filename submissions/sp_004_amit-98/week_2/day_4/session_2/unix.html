@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Unix</title>
+	<style type="text/css">
+		.upper_box
+		{
+			height: 450px; 
+			width: 400px; 
+			background-color:lightgray; 
+			margin-left: 30%;
+		}
+		.linux_img
+		{
+			margin-left: 90px; 
+			height: 300px;
+		}
+		.linux_h1
+		{
+			color: blue; 
+			margin-left: 70px;
+		}
+		.linux_h2
+		{
+			color: black; 
+			margin-left: 20px;
+		}
+		.mid_box
+		{
+			height: 300px;
+			margin-left:10%;
+		}
+		.khan_img
+		{
+			margin-left: 50px;
+			margin-top: 50px; 
+			height: 200px;
+		}
+		.khan_h1
+		{
+			color: red; 
+			margin-top: -200px; 
+			margin-left: 250px;
+			font-size: 35px;
+		}
+		.khan_p
+		{
+			margin-left: 250px;
+			font-size: 20px; 
+		}
+		.lower_box
+		{
+			background-color: orangered; 
+			height: 200px;
+			width: 1400px;
+			margin-left:3%;
+		}
+		.lower_left_h1
+		{
+			color: white; 
+			padding-top: 50px; 
+			margin-left: 20px;
+		}
+		.lower_left_p
+		{
+			margin-left: 20px;
+			font-size: 20px;
+		}
+		.lower_divider
+		{
+			background-color: black; 
+			width: 10px; 
+			height: 150px; 
+			margin-top: -150px; 
+			margin-left: 650px
+		}
+		.lower_right_h1
+		{
+			color: white; 
+			margin-top: -130px;
+			float: right;
+			margin-right: 20px;
+		}
+		.lower_right_p
+		{
+			float: right; 
+			font-size: 20px; 
+			margin-top: -50px;
+			margin-right: 20px;
+		}
+		@media (max-width: 660px) {
+			.upper_box{ 
+			margin:auto;
+			}	
+			.midbox 
+			{
+				margin:auto;
+			}
+			.lower_divider + p{
+				
+				margin: 0%;
+			}
+			body{
+				background-color:lightcoral;
+			}
+			.lower_box{
+				width:630px;
+				height:80%;
+
+			}
+			.lower_right_p{
+				font-size: 15px;
+			}
+			.lower_left_p{
+				font-size: 15px;
+			}
+			.lower_right_h1{
+				margin-top:-20%;
+			}
+			.lower_divider{
+				margin-left:50%;
+				height:160px;
+
+			}
+
+		}
+	</style>
+</head>
+<body>
+	<div class="upper_box">
+		<img src="https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/linus.jpg" alt="Linus Torvalds" class="linux_img">
+		<h1 class="linux_h1">Linus Torvalds</h1>
+		<h2 class="linux_h2">The Creator of Linux & Git</h2>
+	</div>
+	<div class="mid_box">
+		<img src="https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/khan.jpg" alt="Sal Khan" class="khan_img">
+		<h1 class="khan_h1">Sal Khan</h1>
+		<p class="khan_p">Salman khan is the founder of the Khan Academy which has a mission<br>of providing a free world-class education for anyone, anywhere</p>
+	</div>
+	<div class="lower_box">
+		<h1 class="lower_left_h1">Ken Thompson</h1>
+		<p  class="lower_left_p">Designed and Implemented the <br>original Unix Operating System</p>
+		<div class="lower_divider"></div>
+		<h1 class="lower_right_h1">Dennis Ritchie</h1>
+		<p class="lower_right_p">The Creator of C Programming</p>
+	</div>
+</body>
+</html>

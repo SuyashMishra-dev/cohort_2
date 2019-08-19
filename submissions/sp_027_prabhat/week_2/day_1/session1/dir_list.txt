@@ -1,0 +1,13 @@
+/home/prabhat/course
+/home/prabhat/course/all
+/home/prabhat/course/all/session_wise
+/home/prabhat/course/all/session_wise/s1
+/home/prabhat/course/all/session_wise/s2
+/home/prabhat/course/practise
+/home/prabhat/course/practise/day_1
+/home/prabhat/course/practise/day_4
+/home/prabhat/course/practise/day_5
+/home/prabhat/course/practise/day_3
+/home/prabhat/course/practise/day_2
+/home/prabhat/course/w2
+/home/prabhat/course/w1
