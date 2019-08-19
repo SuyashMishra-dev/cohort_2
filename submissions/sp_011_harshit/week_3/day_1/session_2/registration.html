@@ -26,40 +26,38 @@
 	<button onclick="resetDisplay()">RESET DISPLAY</button>
 	<script type="text/javascript">
 		function showName() {
-			document.getElementById("dName").innerHTML = document.getElementById("name").value;
+			document.getElementById("dName").innerHTML = document.getElementById("name").value
 			// Show filled name inside h1
 		}
 
 		function showGender() {
-			document.getElementById("dGender").innerHTML = document.getElementById("gender").value;
+			document.getElementById("dGender").innerHTML = document.getElementById("gender").value
 			// Show the selected gender inside h2
 		}
 
 		function showEmail() {
-			document.getElementById("dEmail").innerHTML  = document.getElementById("email").value;
+			document.getElementById("dEmail").innerHTML = document.getElementById("email").value
 			// Show the filled email inside h3
 		}
 
 		function showMobile() {
-			document.getElementById("dMobile").innerHTML = document.getElementById("mobile").value;
+			document.getElementById("dMobile").innerHTML = document.getElementById("mobile").value
 			// Show the filled mobile inside h4
 		}
 
 		function resetForm() {
-			document.getElementById("name").value="";
-			document.getElementById("gender").value ="";
-			document.getElementById("email").value  ="";
-			document.getElementById("mobile").value  ="";
-		
+			document.getElementById("name").value = "";
+			document.getElementById("gender").value = "";
+			document.getElementById("email").value = "";
+			document.getElementById("mobile").value = "";
 			// Reset all the form elements to default values (blank "")
 		}
 
 		function resetDisplay() {
-			document.getElementById("dMobile").innerHTML ="";
-			document.getElementById("dGender").innerHTML ="";
-			document.getElementById("dEmail").innerHTML  ="";
-			document.getElementById("dName").innerHTML  ="";
-		
+			document.getElementById("dName").innerHTML = "NAME";
+			document.getElementById("dGender").innerHTML = "GENDER";
+			document.getElementById("dEmail").innerHTML = "EMAIL";
+			document.getElementById("dMobile").innerHTML = "MOBILE";
 			// Reset all the headings (h1, h2, h3, h4) to blank values
 		}
 	</script>
