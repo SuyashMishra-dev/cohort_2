@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Layout 1</title>
+        <style>
+            .nav {
+                background: yellow;
+                height: 50px;
+                font-size: 40px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            .layoutflex {
+                display: flex;
+            }
+            .left {
+                background: red;
+                padding: 20px;
+                font-size: 30px;
+                width: 47%;
+                height: 500px;
+                margin-right: 6%;
+            }
+            .right {
+                background:#6BE32D;
+                padding: 20px;
+                font-size: 30px;
+                width: 47%;
+                height: 500px;
+                
+            }
+            @media (max-width: 600px) {
+            .layoutflex {
+                display: flex;
+                flex-direction: column-reverse;
+                width: 950px;
+                height: 400px;
+                }
+                .left {
+                    margin-top: 30px;
+                }   
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">Navigation</div>
+        <div class="layoutflex">
+            <div class="left">LEFT BOX</div>
+            <div class="right">RIGHT BOX</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<title>
+    Layout_1
+</title>
+<style>
+    #navigation{
+        width:91%;
+        height:100px;
+        background: yellow;
+        font-size: 70px;
+        margin:30px;
+    }
+  
+    #leftBox{
+        float:left;
+        background: red;
+        width:44%;
+        height:700px;
+        margin:30px;
+        font-size:30px;
+        color:gray;
+    }
+    #rightBox{
+        float:left;
+        background: lightgreen;
+        width:44%;
+        height:700px;
+        margin:30px;
+        font-size:30px;
+        color: gray;
+    }
+    @media (max-width:660px)
+    {
+        #navigation{
+            width:500px;
+            height:90%;
+            font-size:40px;
+            margin:100px 0px 0px 30px;
+        }
+        #rightBox{
+            width:500px;
+            height:200px;
+            margin:-430px 0px 0px 30px;
+        }
+        #leftBox{
+            clear: both;
+            width:500px;
+            height:200px;
+            margin-bottom:5px;
+            margin:250px 0px 0px 30px;
+        }
+
+    }
+</style>
+<body>
+    <div id="navigation">Navigation</div>
+    <div id="leftBox"> LEFT BOX</div>
+    <div id="rightBox"> RIGHT BOX</div>
+
+</body>
+</html>
