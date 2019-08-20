@@ -48,18 +48,19 @@
 		<script type="text/javascript">
 			function check_drive() {
 				//Write javascript for FSD.W3.2.2_1 here
+				var age = Number(document.getElementById("age".value));
 
-				if (document.getElementById("age").value < 18) {
+				if (age.value < 18) {
 
 					document.getElementById("message").innerHTML = "You can't drive in India";
 				}
 
-				else if (document.getElementById("age").value > 18) {
+				else if (age.value > 18) {
 
 					document.getElementById("message").innerHTML = "You can drive in India!";
 				}
 
-				else if (document.getElementById("age").value = 18) {
+				else if (age.value = 18) {
 
 					document.getElementById("message").innerHTML = "You are just old enough to drive in India!"
 				}
