@@ -1,0 +1,50 @@
+.main
+{
+	display: grid;
+	grid-template-columns: 19% 59% 19%;
+	grid-template-rows: auto auto auto;
+	grid-gap: 1%;
+	background-color: white;
+}
+#left
+{
+	border: 2px solid black;
+}
+#mid
+{
+	border: 2px solid black;
+}
+#mid h1,h2,h3,p,table
+{
+	text-align: center;
+}
+#right
+{
+	border: 2px solid black;
+}
+#table-heading
+{
+	background-color: skyblue;
+}
+#right p
+{
+	font-size: 13px;
+}	
+#right-left
+{
+	width: 20%;
+}
+#right-left h5
+{
+	text-align: left;
+}
+#right-right
+{
+	width: 79%;
+	margin-left: 21%;
+	margin-top: -15%;
+}
+#right-right p
+{
+	text-align: left;
+}

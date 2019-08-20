@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Layout 1</title>
+        <style>
+            .nav {
+                background: yellow;
+                height: 50px;
+                font-size: 40px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            .layoutflex {
+                display: flex;
+            }
+            .left {
+                background: red;
+                padding: 20px;
+                font-size: 30px;
+                width: 60%;
+                height: 500px;
+                margin-right: 5%;
+            }
+            .right {
+                display: flex;
+                flex-direction: column;   
+            }
+            .right div {
+                background:#6BE32D;
+                padding: 20px;
+                font-size: 30px;
+                width: 163%;
+                height: 120px;
+                margin-bottom: 30px;
+            }
+            @media (max-width: 900px) {
+                div {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .left {
+                    width: 790px;
+                    height: 300px;
+                    margin-bottom: 20px;
+                }
+                .right {
+                    display: flex;
+                    flex-direction: row;
+
+                }
+                .right div {
+                    width: 200px;
+                }
+                #centerbox {
+                    margin-left: 70px;
+                    margin-right: 70px;
+                }
+            }
+            @media (max-width: 600px) {
+                div {
+                    display: flex !important;
+                    flex-direction: column !important;
+                }
+                .left {
+                    width: 430px;
+                    height: 200px;
+                }
+                .right div {
+                    height: 90px;
+                    width: 430px;
+                }
+                #centerbox {
+                    margin-left: 0px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">Navigation</div>
+        <div class="layoutflex">
+            <div class="left">LEFT BOX</div>
+            <div class="right">
+                <div>RIGHT BOX 1</div>
+                <div id="centerbox">RIGHT BOX 2</div>
+                <div>RIGHT BOX 3</div>
+            </div>
+        </div>
+    </body>
+</html>
