@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Coding Session 2</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.W3.2.2_1-->
+	<h1> Check if you can drive in India! </h1>
+	<input type="text" name = "drive" id="age">
+	<p id="drive"> 
+		
+	</p>
+	</hr>
+	<button onclick="check_drive()">Click here to check!</button>
+	<!-- These elements above are for FSD.W3.2.2_1-->
+
+	<!-- These elements below are for FSD.W3.2.2_2-->
+	<h1>Input your color in the textbox!</h1>
+	<input type="text" id="input_color">
+	<button onclick="change_color()" id="button">Click here to change my color</button>
+	
+	<!-- These elements above are for FSD.W3.2.2_2-->
+
+	<!-- These elements below are for FSD.W3.2.2_3-->
+	<h1>Find your continent!</h1>
+	<label for="country_select">Choose your Country</label>
+	<select id="continent_select">
+		<option value="Asia">India</option>
+		<option value="North America">United States of America</option>
+		<option value="Asia">China</option>
+		<option value="Asia">Nepal</option>
+		<option value="Australia">Australia</option>
+		<option value="Europe">France</option>
+		<option value="Europe">Germany</option>
+		<option value="Africa">South Africa</option>
+		<option value="Africa">Nigeria</option>
+		<option value="North America">Mexico</option>
+		<option value="South America">Argentina</option>
+		<option value="South America">Brazil</option>
+		<option value="North America">Canada</option>
+		<option value="Asia">Singapore</option>
+		<option value="Europe">Sweden</option>
+
+	</select>
+	<button onclick="find_continent()">Find Continent</button>
+	<!-- These elements above are for FSD.W3.2.2_2-->
+	<script type="text/javascript">
+		function check_drive(){
+			//Write javascript for FSD.W3.2.2_1 here
+			var check=document.getElementById("age").value;
+			{
+				if(check>18)
+				{
+					document.getElementById("drive").innerHTML="yes you can drive in India";
+				}
+				else if(check<18)
+				{
+					document.getElementById("drive").innerHTML="No you can't drive in India";
+				}
+				else
+				{
+					document.getElementById("drive").innerHTML="You are just old enough to drive in India";
+				}
+			}
+
+			
+		}
+		function change_color(){
+			//Write javascript for FSD.W3.2.2_2 here
+			var color=document.getElementById("input_color").value;
+			document.getElementById("button").style.backgroundColor=color;
+
+		}
+		function find_continent(){
+			//Write javascript for FSD.W3.2.2_3 here
+			var continent=document.getElementById("continent_select").value;
+		
+			alert("The continent is " +continent);
+			
+
+			
+		}
+	</script>
+</body>
+</html>

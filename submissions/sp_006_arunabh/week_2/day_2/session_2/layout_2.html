@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Layout 2</title>
+        <style type="text/css">
+            .class1{
+                width: 50px;
+                height: 50px;
+                background: seagreen;
+                margin: 15px;
+                float: left;
+            }
+            .class2{
+                width: 200px;
+                height: 50px;
+                background: seagreen;
+                margin: 15px;
+                float: left;
+            }
+            .classA{
+                margin: 185px 470px 0px 470px;
+            }
+            .classB{
+                margin: 0px 470px;
+            }
+            .classC{
+                margin: 0px 470px 185px 470px;
+            }
+            .clear{
+                clear: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="classA">
+            <div class="class1"></div>            
+            <div class="class2"></div>
+            <div class="class1"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="classB">
+            <div class="class2"></div>
+            <div class="class1"></div>
+            <div class="class1"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="classC">
+            <div class="class1"></div>
+            <div class="class1"></div>
+            <div class="class2"></div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout_4</title>
+        <style type="text/css">
+        #box1{
+            display: grid;
+            grid-template-columns: auto auto auto auto ;
+            grid-template-rows: auto;
+            grid-gap:30px;
+        }
+        #c1{
+            background-color: yellow;
+            height: 100px;
+            grid-area: 1 / 1  / span 1 / span 4;
+            font-size: 30px;
+        }
+        #c2{
+            background-color: red;
+            height: 300px;
+            grid-area: 2 / 1 / span 1 / span 1;
+            font-size: 30px;
+        }
+        #c3{
+            background-color: greenyellow;
+            height: 300px;
+            grid-area: 2 / 2 / span 1 / span 1;
+            font-size: 30px;
+        }
+        #c4{
+            background-color: blue;
+            height: 300px;
+            grid-area: 2 / 3 / span 1 / span 1;
+            font-size: 30px;
+        }
+        #c5{
+            background-color: gray;
+            height: 300px;
+            grid-area: 2 / 4 / span 1 / span 1;
+            font-size: 30px;
+        }
+        @media(max-width:1000px){
+            #c1{
+                grid-area: 1 / 1 / span 1 / span 2;
+            }
+            #c3{
+                grid-area: 3 / 1 / span 1 / span 1;
+            }
+            #c4{
+                grid-area: 2 / 2 / span 1 / span 1;
+            }
+            #c5{
+                grid-area: 3 / 2 / span 1 / span 1;
+            }
+        }
+        @media(max-width:500px){
+            #c1{
+                grid-area: 1 / 1 / span 1 / span 1 ;
+            }
+            #c2{
+                grid-area: 2 / 1 / span 1 / span 1 ;
+                height: 150px;
+            }
+            #c3{
+                grid-area: 3 / 1 / span 1 / span 1;
+                height: 150px;
+            }
+            #c4{
+                grid-area: 4 / 1 / span 1 / span 1;
+                height: 150px;
+            }
+            #c5{
+                grid-area: 5 / 1 / span 1 / span 1;
+                height: 150px;
+            }
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div id="box1">
+           <div id="c1">Navigation</div>
+           <div id="c2">BOX1</div>
+           <div id="c3">BOX2</div>
+           <div id="c4">BOX3</div>
+           <div id="c5">BOX4</div>
+        </div>
+    </body>
+</html>

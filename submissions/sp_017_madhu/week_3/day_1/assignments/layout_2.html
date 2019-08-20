@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <style type="text/css">
+   #cont {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: 90px 90px 90px; 
+  grid-template-columns: 90px 90px 90px 90px 90px 90px; 
+  padding: 20px;
+}
+
+#cont div {
+  text-align:left;
+  font-size: 40px;
+  
+}
+#box1{
+    grid-area: 1 / 1 /span 1 / span 6;
+    background: yellow;
+}
+#box2{
+    grid-area: 2 / 1 /span 15 / span 3;
+    background:red;
+}
+#box3
+{
+    grid-area: 2 / 4 /span 15 / span 3;
+    background:green;
+
+}
+.class-size{
+    font-size: 30px !important;
+    color: gray;
+}
+@media (max-width: 800px) {
+ 
+ #cont {
+display:grid;
+grid-gap: 20px;
+grid-template-rows: 90px 90px 90px 90px 90px; 
+grid-template-columns: 90px; 
+padding: 20px;
+}
+#cont div {
+text-align:left;
+font-size: 30px;
+
+}
+#box1{
+grid-area: 1 / 1 /span 1 / span 6;
+background: yellow;
+}
+#box2{
+grid-area: 2 / 1 /span 2 / span 6;
+background:green;
+}
+#box3
+{
+grid-area: 4 / 1 /span 2 / span 6;
+background:red;
+
+
+}
+}
+  </style>
+  </head>
+  <body>
+    <div id="cont">
+      <div id="box1">Navigation</div>
+      <div id="box2" class="class-size">LEFT BOX</div>
+      <div id="box3" class="class-size">RIGHT BOX</div>    
+    </div>
+  </body>
+</html>

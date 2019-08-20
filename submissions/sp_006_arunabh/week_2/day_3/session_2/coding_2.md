@@ -190,15 +190,15 @@ Fill the specificity score for the selectors
 ```
 5. `#id1 ~ .class1 > li > a[title]`
 ```
-0121
+0122
 ```
 6. `nav > a:hover::before`
 ```
-0012
+0013
 ```
 7. `ul#primary-nav li.active`
 ```
-0122
+0112
 ```
 8. `li:first-child h2 .title`
 ```
@@ -206,7 +206,7 @@ Fill the specificity score for the selectors
 ```
 9. `#nav .selected > a:hover`
 ```
-0130
+0121
 ```
 10. `#heading nav ul li.disabled`
 ```

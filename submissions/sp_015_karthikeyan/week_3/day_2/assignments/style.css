@@ -1,0 +1,48 @@
+body {
+    background: linear-gradient(red 50%, black 50%);
+}
+#main-grid {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 30px;
+    margin: 11% 0px;
+}
+.container {
+    display: grid;
+    grid-gap: 30px;
+}
+input {
+    border-radius: 30px;
+    font-size: 40px;
+    width: 400px;
+}
+select, input {
+    width: 300px;
+    height: 80px;
+    margin: auto;
+    background: white;
+    border-radius: 50px; 
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+}
+button {
+    margin: auto;
+    width: 300px;
+    height: 80px; 
+    border-radius: 50px; 
+    font-size: 30px;
+    background: white;
+}
+@media only screen and (min-width: 600px) {
+    #main-grid {
+        grid-template-columns: auto auto;
+        margin: 15% 0px;
+    }
+    body {
+        background: linear-gradient(to right, red 50%, black 50%);
+    }
+    button {
+        grid-area: 2 / 1 / span 1 / span 2;
+    }
+}
