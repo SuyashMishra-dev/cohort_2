@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Unit Converter</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	
+	<div class="main">
+
+		<!-- Length Converter -->
+		<div class="length">
+			<h2>Length</h2>
+			<h4>From</h4>
+			<input type="number" name="input" id="length_input" placeholder="Enter number">
+			<select id="from_length">
+				<option value="select">Select</option>
+				<option value="Meter">Meter</option>
+				<option value="Kilometer">Kilometer</option>
+				<option value="Mile">Mile</option>
+				<option value="Lightyear">Light Year</option>
+			</select>
+			<h4>To</h4>
+			<select id="to_length">
+				<option value="select">Select</option>
+				<option value="Meter">Meter</option>
+				<option value="Kilometer">Kilometer</option>
+				<option value="Mile">Mile</option>
+				<option value="Lightyear">Light Year</option>
+			</select>
+			<button onclick="length_conv()">Convert</button>
+			<input type="number" name="output" id="length_output" placeholder="Result">
+		</div>
+
+		<!-- Temperature Converter -->
+		<div class="temperature">
+			<h2>Temperature</h2>
+			<h4>From</h4>
+			<input type="number" name="input" id="temperature_input" placeholder="Enter number">
+			<select id="from_temperature">
+				<option value="select">Select</option>
+				<option value="Celsius">Celsius</option>
+				<option value="Kelvin">Kelvin</option>
+				<option value="Fahrenheit">Fahrenheit</option>
+			</select>
+			<h4>To</h4>
+			<select id="to_temperature">
+				<option value="select">Select</option>
+				<option value="Celsius">Celsius</option>
+				<option value="Kelvin">Kelvin</option>
+				<option value="Fahrenheit">Fahrenheit</option>
+			</select>
+			<input type="number" name="output" placeholder="Result">
+		</div>
+
+		<!--Volume Converter -->
+		<div class="volume">
+			<h2>Volume</h2>
+			<h4>From</h4>
+			<input type="number" name="input" id="volume_input" placeholder="Enter number">
+			<select id="from_volume">
+				<option value="select">Select</option>
+				<option value="Liter">Liter</option>
+				<option value="Mililiter">Mililiter</option>
+				<option value="US_Galon">US Galon</option>
+				<option value="Imperial_Tea_Spoon">Imperial Tea Spoon</option>
+			</select>
+			<h4>To</h4>
+			<select id="to_volume">
+				<option value="select">Select</option>
+				<option value="Liter">Liter</option>
+				<option value="Mililiter">Mililiter</option>
+				<option value="US_Galon">US Galon</option>
+				<option value="Imperial_Tea_Spoon">Imperial Tea Spoon</option>
+			</select>
+			<input type="number" name="output" placeholder="Result">
+		</div>
+	</div>
+
+	
+</body>
+<script type="text/javascript">
+
+		function length_conv(){
+			var l= document.getElementById("from_length");
+			var i= document.getElementById("length_input");
+			var o= document.getElementById("to_output");
+		    var r= document.getElementById("length_output");
+			if(l=='Meter' && o=='Kilometer') {
+				document.getElementById("length_output").value=l*0.0001;
+			}
+			else if(l=='Meter' && o=='Mile'){
+				r=l*0.0006213689;
+				document.getElementById("length_output").innerHTML='r';
+			}
+			// else if(l==Meter && o==Lightyear){
+			// 	r=l*1.057008707E-16;
+			// 	document.getElementById("length_output").innerHTML='r';
+			// }
+			// else if(l==Kilometer && o==Meter){
+
+			// }
+			// else if(l==Kilometer && o==Mile){
+
+			// }
+			// else if(l==Kilometer && o=Lightyear){
+
+			// }
+			// else if(l=Mile && o=Meter){
+
+			// }
+			// else if(l=Mile && o==Kilometer){
+
+			// }
+			// else if(l=Mile && o==Lightyear){
+
+			// }
+			// else if(l==Lightyear && o==Meter){
+
+			// }
+			// else if(l==Lightyear && o== Kilometer0){
+
+			// }
+			// else if(l==Lightyear && o==Mile){
+
+			// }
+			else{
+				alert("Please Change Your Output Option")
+			}
+		}
+
+		function temperature(){
+			document.getElementById("temperature_input")
+		}
+
+		function volume(){
+			document.getElementById("volume_input")
+		}
+	</script>
+</html>

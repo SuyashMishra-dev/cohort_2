@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Session 2</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.W3.2.2_1-->
+	<h1> Check if you can drive in India! </h1>
+	<input type="number" name = "drive" id="inputAge">
+	<p id="age"> </p>
+	</hr>
+	<button onclick="check_drive()">Click here to check!</button>
+	<!-- These elements above are for FSD.W3.2.2_1-->
+
+	<!-- These elements below are for FSD.W3.2.2_2-->
+	<h1>Input your color in the textbox!
+	<input type="text" name="color" id="inputColor">
+	<button id="colorButton" onclick="change_color()">Click here to change my color</button>
+	
+	<!-- These elements above are for FSD.W3.2.2_2-->
+
+	<!-- These elements below are for FSD.W3.2.2_3-->
+	<h1>Find your continent!</h1>
+	<label for="country_select">Choose your Country</label>
+	<select id="selectContinent">
+			<option value = "India"> India </option>	
+            <option value="United States of America">United States of America</option>
+            <option value="China">China </option>
+            <option value="Nepal">Nepal </option>
+            <option value="Australia">Australia</option>
+            <option value="France">France </option>
+            <option value="Germany">Germany </option>
+            <option value="South Africa">South Africa </option>
+            <option value="Nigeria">Nigeria </option>
+            <option value="Mexico">Mexico </option>
+            <option value="Argentina">Argentina </option>
+            <option value="Brazil">Brazil </option>
+            <option value="Canada">Canada </option>
+            <option value="Singapore">Singapore </option>
+            <option value="Swedan">Swedan </option>
+	</select>
+	<button onclick="find_continent()">Find Continent</button>
+	<!-- These elements above are for FSD.W3.2.2_2-->
+	<script type="text/javascript">
+		function check_drive(){
+			user=document.getElementById("inputAge").value;
+         if(user>18)
+         {
+           document.getElementById("age").innerHTML="You can drive in India!";
+        }
+         else if(user==18)
+        {
+         document.getElementById("age").innerHTML="You are just old enough to drive in India!";
+        }
+         else
+        {
+      document.getElementById("age").innerHTML="You can't drive in India";
+        }
+        }
+			//Write javascript for FSD.W3.2.2_1 here
+		function change_color(){
+			//Write javascript for FSD.W3.2.2_2 here
+			backgroundColor=document.getElementById("inputColor").value;
+            document.getElementById("colorButton").style.background=backgroundColor;
+		}
+		function find_continent(){
+			//Write javascript for FSD.W3.2.2_3 here
+			country=document.getElementById("selectContinent").value;
+			switch(country){
+              case "India" || "China" || "Nepal" || "Singapore" :
+			   alert('The Contienent is Asia');
+			   break;
+			   case "China" :
+			   alert('The Contienent is Asia');
+			   break;
+			   case "Nepal":
+			   alert('The Contienent is Asia');
+			   break;
+			   case "Singapore" :
+			   alert('The Contienent is Asia');
+			   break;
+			   case "Argentina" :
+			   alert('The Contienent is South America');
+			   break;
+			   case "United States of America" :
+			   alert('The Contienent is North America');
+			   break;
+			   case "France" :
+			   alert('The Contienent is Europe');
+			   break;
+			   case "Mexico" :
+			   alert('The Contienent is North America');
+			   break;
+			   case "Brazil" :
+			   alert('The Contienent is South America');
+			   break;
+			   case "Canada" :
+			   alert('The Contienent is North America');
+			   break;
+			   case "Swedan" :
+			   alert('The Contienent is Europe');
+			   break;
+			   case "South Afria" :
+			   alert('The Contienent is Africa');
+			   break;
+			   case "Nigeria" :
+			   alert('The Contienent is Africa');
+			   break;
+			   default:
+			   alert('Choose Valid country');
+			}
+		}
+	</script>
+</body>
+</html>

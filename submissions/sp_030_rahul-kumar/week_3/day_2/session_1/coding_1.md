@@ -21,7 +21,7 @@ true && true || false && false
 Answer
 
 ```
-false
+true
 ```
 2. 
 ```javascript
@@ -72,7 +72,6 @@ Answer
 false
 ```
 7.
-
 ```javascript
 var A = true 
 var B = false
@@ -167,6 +166,5 @@ var y = 12 + "12"
 ```
 Answer
 
-```
-1212
+`1212
 ```
