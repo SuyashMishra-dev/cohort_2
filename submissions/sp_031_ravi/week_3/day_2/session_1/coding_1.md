@@ -21,7 +21,7 @@ true && true || false && false
 Answer
 
 ```
-false
+true
 ```
 2. 
 ```javascript
@@ -30,7 +30,7 @@ true == false || false == false
 Answer
 
 ```
-true
+false
 ```
 3. 
 
@@ -60,7 +60,7 @@ var B = true
 Answer
 
 ```
-true
+false
 ```
 6. 
 ```javascript
@@ -69,10 +69,9 @@ true
 Answer
 
 ```
-false
+true
 ```
 7.
-
 ```javascript
 var A = true 
 var B = false
@@ -95,7 +94,7 @@ x && z || !x && y || z || y == x && z || !x && y
 Answer
 
 ```
-false
+true
 ```
 ## If statements and Arithmetic Operators: 
 9. What is the value of `d` ?
@@ -133,9 +132,8 @@ else{
 ```
 Answer
 
-```
 D
-```
+
 11. What does the following code print in the `alert` window?  
 ```javascript
 var browser = 'Brave'
@@ -168,5 +166,5 @@ var y = 12 + "12"
 Answer
 
 ```
-1212
+
 ```
