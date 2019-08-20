@@ -1,0 +1,190 @@
+<html>
+    <head>
+        <title>unit converter web application</title>
+        <style>
+            .class{
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-template-rows: auto auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Use our Unit Converter Express</h1>
+        <div>
+            <h1>Length | Temperature | Volume</h1>
+            <div class="class">
+                <div>
+                    <p>From</p>
+                    <input type="number" id="inPut">
+                </div>
+                <div>
+                    <p>To</p>
+                    <input type="number" id="outPut">
+                </div>
+                <div>
+                    <select name="from" id="from">
+                        <optgroup label="Length">
+                            <option value="fromMeter">Meter</option>
+                            <option value="fromKilometer">Kilometer</option>
+                            <option value="fromMile">Mile</option>
+                            <option value="fromLightYear">Light Year</option>
+                        </optgroup>
+                        <optgroup label="Temperature">
+                            <option value="fromCelsius">Celsius</option>
+                            <option value="fromKelvin">Kelvin</option>
+                            <option value="fromFahrenheit">Fahrenheit</option>
+                        </optgroup>
+                        <optgroup label="Volume">
+                            <option value="fromLiter">Liter</option>
+                            <option value="fromMilliliter">Milliliter</option>
+                            <option value="fromUSGallon">US Gallon</option>
+                            <option value="fromImperialTeaSpoon">Imperial Tea Spoon</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <select name="to" id="to">
+                        <optgroup label="Length">
+                            <option value="toMeter">Meter</option>
+                            <option value="toKilometer">Kilometer</option>
+                            <option value="toMile">Mile</option>
+                            <option value="toLightYear">Light Year</option>
+                        </optgroup>
+                        <optgroup label="Temperature">
+                            <option value="toCelsius">Celsius</option>
+                            <option value="toKelvin">Kelvin</option>
+                            <option value="toFahrenheit">Fahrenheit</option>
+                        </optgroup>
+                        <optgroup label="Volume">
+                            <option value="toLiter">Liter</option>
+                            <option value="toMilliliter">Milliliter</option>
+                            <option value="toUSGallon">US Gallon</option>
+                            <option value="toImperialTeaSpoon">Imperial Tea Spoon</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <button onclick="showLength()">Convert Now</button>
+            </div>
+        </div>
+        <script>
+            function showLength(){
+            var newInPut = document.getElementById("inPut").value;
+            var selectedTag = document.getElementsByTagName("option")[document.getElementById("from").options.selectedIndex].value;
+            var toIndexNumber = document.getElementById("to").selectedIndex;
+            var toOptions = document.getElementById("to").options;
+            var toTag = toOptions[toIndexNumber].text;
+            var outPutValue = 0;
+            var otherOptions = "Sorry, we can't convert same options"
+            
+            if (selectedTag == "fromMeter") {
+               if (toTag == "Kilometer") {
+                    outPutValue = newInPut / 1000;
+                }else if (toTag == "Mile") {
+                    outPutValue = newInPut / 1609.344;
+                }else if (toTag == "Light Year") {
+                    outPutValue = newInPut / 9.461e+15;
+                }else {
+                    alert(otherOptions);
+                }
+            }else if (selectedTag == "fromKilometer") {
+                if (toTag == "Meter") {
+                    outPutValue = newInPut * 1000;
+                }else if (toTag == "Mile") {
+                    outPutValue = newInPut / 1.609;
+                }else if (toTag == "Light Year") {
+                    outPutValue = newInPut / 9.461e+12;
+                }else {
+                    alert(otherOptions);
+                }
+
+            }else if (selectedTag == "fromMile") {
+                if (toTag == "Meter") {
+                    outPutValue = newInPut * 1609.344;
+                }else if (toTag == "Kilometer") {
+                    outPutValue = newInPut *1.609;
+                }else if (toTag == "Light Year") {
+                    outPutValue = newInPut / 5.879e+12;
+                }else {
+                    alert(otherOptions);
+                }
+            }else if (selectedTag == "fromLightYear") {
+                if (toTag == "Meter") {
+                    outPutValue = newInPut * 9.461e+15;
+                }else if (toTag == "Kilometer") {
+                    outPutValue = newInPut * 9.461e+12;
+                }else if (toTag == "Mile") {
+                    outPutValue = newInPut * 5.879e+12;
+                }else {
+                    alert(otherOptions);
+                }
+            }else if (selectedTag == "fromCelsius") {
+                if (toTag == "Kelvin") {
+                    outPutValue = newInPut + 273.15;
+                }else if (toTag == "Fahrenheit") {
+                    outPutValue = newInPut + 32;
+                }else {
+                    alert(otherOptions);
+                }
+            }else if (selectedTag == "fromKelvin") {
+                if (toTag == "Celsius") {
+                    outPutValue = newInPut - 273.15;
+                }else if (toTag == "Fahrenheit") {
+                    outPutValue = newInPut * 9/5 + 32;
+                }else {
+                    alert(otherOptions);
+                }
+            }else if (selectedTag == "fromFahrenheit") {
+                if (toTag == "Celsius") {
+                    outPutValue = newInPut * 5/9;
+                }else if (toTag == "Kelvin") {
+                    outPutValue = newInPut * 5/9 + 273.15;
+                }else {
+                    alert(otherOptions);
+                }
+            }else if (selectedTag == "fromLiter") {
+                if (toTag == "Milliliter") {
+                    outPutValue = newInPut * 1000;
+                }else if (toTag == "US Gallon") {
+                    outPutValue = newInPut / 3.785;
+                }else if (toTag == "Imperial Tea Spoon") {
+                    outPutValue = newInPut * 168.936;
+                }else {
+                    alert(otherOptions);
+                }
+            }else if (selectedTag == "fromMilliliter") {
+                if (toTag == "Liter") {
+                    outPutValue = newInPut / 1000;
+                }else if (toTag == "US Gallon") {
+                    outPutValue = newInPut / 3785.412;
+                }else if (toTag == "Imperial Tea Spoon") {
+                    outPutValue = newInPut / 5.919;
+                }else {
+                    alert(otherOptions);
+                }
+            }else if (selectedTag == "fromUSGallon") {
+                if (toTag == "Liter") {
+                    outPutValue = newInPut * 3.785;
+                }else if (toTag == "Milliliter") {
+                    outPutValue = newInPut * 3785.412;
+                }else if (toTag == "Imperial Tea Spoon") {
+                    outPutValue = newInPut * 639.494;
+                }else {
+                    alert(otherOptions);
+                }
+            }else if (selectedTag == "fromImperialTeaSpoon") {
+                if (toTag == "Liter") {
+                    outPutValue = newInPut / 168.936;
+                }else if (toTag == "Milliliter") {
+                    outPutValue = newInPut * 5.919;
+                }else if (toTag == "US Gallon") {
+                    outPutValue = newInPut / 639.494;
+                }else {
+                    alert(otherOptions);
+                }
+            }
+            document.getElementById("outPut").value = outPutValue;
+            }
+        </script>
+    </body>
+</html>
