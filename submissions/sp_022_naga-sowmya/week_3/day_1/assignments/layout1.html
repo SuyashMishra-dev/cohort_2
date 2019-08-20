@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Layout_1
+        </title>
+        <style>
+            .flex-box 
+            {
+                display: flex;
+                margin: 10px;
+            }
+            .flex-box div 
+            {
+                flex-basis:100%;
+                background:yellow;
+            }
+            .flex-box1 
+            {
+                display: flex;
+                margin: 10px;
+            }
+            .flex-box1 div 
+            {
+                flex-basis:50%;
+                height:500px;
+                margin:10px;
+            }
+            .flex-box1 #id1
+            {
+                background : red;
+            }
+            .flex-box1 #id2
+            {
+                background : green;
+  
+            }
+            @media (max-width: 800px)
+            {
+                .flex-box1{
+                    flex-direction: column;
+                    height: 500px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-box">
+            <div><h1>Navigation</h1></div>
+        </div>
+        <div class="flex-box1">
+            <div id = "id1">LEFT BOX</div>
+            <div id = "id2">RIGHT BOX</div>
+        </div>
+
+    </body>
+</html>
