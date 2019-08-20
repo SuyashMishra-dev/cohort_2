@@ -13,3 +13,5 @@ Build a profile page for the character assigned to you
 | sp_034 | Saket  | Dumbo | [github](https://github.com/SaketParas/masasi-week-1) 
 | sp_035 | Sarvagaya | Tweety | [github](https://github.com/sarvagaya/masai-week-1) |
 | sp_043 |Suraj Singh| Goofy | [github](https://github.com/Suraj10074/masai-week-1) |
+| sp_031 | Ravi   | Chip and Dale         |[github](https://github.com/ravigornal/masai-week-1)  |
+| sp_011 | Harshit  | Scooby Doo         |[github](https://github.com/harshit860/masai-week-1)  |
