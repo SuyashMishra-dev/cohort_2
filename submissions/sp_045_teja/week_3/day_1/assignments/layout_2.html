@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout2</title>
+        <style type="text/css">
+        #box1{
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: auto auto ;
+            grid-gap:50px;
+        }
+        #c1{
+            background-color: yellow;
+            height: 100px;
+            font-size: 40PX;
+            grid-area: 1 / 1 / span 1 / span 2 ;
+        }
+        #c2{
+            background-color: red;
+            height: 500px;
+            font-size: 40PX;
+            grid-area: 2 / 1 / span 1 / span 1;
+        }
+        #c3{
+            background-color: greenyellow;
+            height: 500px;
+            font-size: 40PX;
+            grid-area: 2 / 2 / span 1 / span 1;
+        }
+        @media(max-width:600px){
+            #c3{
+               grid-area: 2 / 1 / span 1 / span 2;
+               height: 250px;
+            }
+            #c2{
+                grid-area: 3 / 1 / span 1 / span 2;
+                height: 250px;
+                
+            }
+        }
+        
+        
+        </style>
+    </head>
+    <body>
+        <div id="box1">
+         <div id="c1">Navigation</div>
+         <div id="c2">LEFT-BOX</div>
+         <div id="c3">RIGHT-BOX</div>
+        </div>
+    </body>
+</html>
