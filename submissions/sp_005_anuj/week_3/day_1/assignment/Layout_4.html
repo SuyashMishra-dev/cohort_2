@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout 4</title>
+        <style>
+            .top {
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                grid-template-rows: auto;
+                grid-gap: 3%; 
+            }
+            #yellow {
+                background: yellow;
+                height: 100px;
+                margin-top: 2%;
+                border-radius: 15px;
+            }
+            #red {
+                background: red;
+                margin-top: 8%;
+                border-radius: 15px;
+            }
+            #green {
+                background: green;
+                margin-top: 8%;
+                border-radius: 15px;
+            }
+            #blue {
+                background: blue;
+                margin-top: 8%;
+                border-radius: 15px;
+            }
+            #grey {
+                background: grey;
+                margin-top: 8%;
+                border-radius: 15px;
+            }
+            .box {
+                height: 200px;
+            }
+            @media (max-width: 800px) {
+                .top {
+                    grid-template-columns: auto auto;
+                }
+                #blue {
+                    grid-area: 1 / 2;
+                    border-radius: 15px;
+                }
+            }
+            @media (max-width: 500px) {
+                .top {
+                    grid-template-columns: auto;
+                }
+                #red {
+                    grid-area: 1 / 1;
+                }
+                #grey {
+                    grid-area: 2 / 1;
+                }
+                #green {
+                    grid-area: 3 / 1;
+                }
+                #blue {
+                    grid-area: 4 / 1;
+                }
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <div id="yellow">
+                <h1>Navigation</h1>
+        </div>
+        <div class="top">
+            <div id="red" class="box">
+                <h1>Box 1</h1>
+            </div>
+            <div id="green" class="box">
+                <h1>Box 2</h1>
+            </div>
+            <div id="blue" class="box">
+                <h1>Box 3</h1>
+            </div>
+            <div id="grey" class="box">
+                <h1>Box 4</h1>
+            </div>
+        </div>
+    </body>
+</html>

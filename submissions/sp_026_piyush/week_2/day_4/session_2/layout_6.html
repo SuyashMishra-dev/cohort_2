@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>layout_6</title>
+  <style> 
+    .class1 {
+      display:grid;
+      grid-template-columns: 100px 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px 100px;
+      /* grid-template-columns: auto auto auto auto;
+      grid-template-rows: auto auto auto auto; */
+      grid-gap: 20px;
+      
+    }
+    .class1 div {
+      background: teal;
+    }
+
+    #id1 {
+      grid-area: 1 / 1 / 1 / 1 ;
+    }
+    #id2 {
+      grid-area: 2 / 1 / 2 / 1 ;
+    }
+    #id3 {
+      grid-area: 2 / 2 / 2 / 2 ;
+    }
+    #id4 {
+      grid-area: 3 / 1 / 3 / 1 ;
+    }
+    #id5 {
+      grid-area: 3 / 2 / 3 / 2 ;
+    }
+    #id6 {
+      grid-area: 3 / 3 / 3 / 3 ;
+    }
+    #id7 {
+      grid-area: 4 / 1 / 4 / 1 ;
+    }
+    #id8 {
+      grid-area: 4 / 2 / 4 / 2 ;
+    }
+    #id9 {
+      grid-area: 4 / 3 / 4 / 3 ;
+    }
+    #id10 {
+      grid-area: 4 / 4 / 4 / 4 ;
+    }
+
+    @media (max-width: 600px) {
+      .class1 {
+        display:grid;
+        grid-template-columns: 100px 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px 100px;
+      }
+      .class1 div {
+        background: grey;
+      }
+
+      #id1 {
+      grid-area: 1 / 1 / 1 / 1 ;
+      }
+      #id2 {
+        grid-area: 1 / 2 / 1 / 2 ;
+      }
+      #id3 {
+        grid-area: 1 / 3 / 1 / 3 ;
+      }
+      #id4 {
+        grid-area: 1 / 4 / 1 / 4 ;
+      }
+      #id5 {
+        grid-area: 2 / 1 / 2 / 1 ;
+      }
+      #id6 {
+        grid-area: 2 / 2 / 2 / 2 ;
+      }
+      #id7 {
+        grid-area: 2 / 3 / 2 / 3 ;
+      }
+      #id8 {
+        grid-area: 3 / 1 / 3 / 1 ;
+      }
+      #id9 {
+        grid-area: 3 / 2 / 3 / 2 ;
+      }
+      #id10 {
+        grid-area: 4 / 1 / 4 / 1 ;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="class1">
+    <div id="id1"></div>
+    <div id="id2"></div>
+    <div id="id3"></div>
+    <div id="id4"></div>
+    <div id="id5"></div>
+    <div id="id6"></div>
+    <div id="id7"></div>
+    <div id="id8"></div>
+    <div id="id9"></div>
+    <div id="id10"></div>
+  </div>
+</body>
+</html>

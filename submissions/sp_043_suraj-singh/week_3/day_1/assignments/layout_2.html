@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>
+Layout 2
+</title>
+<style>
+#cont {
+ display: grid;
+ grid-gap: 20px;
+ margin: 20px;
+ grid-template-columns:850px 850px;
+ grid-template-rows: 100px 750px;
+}
+#box1 {
+ grid-area: 1 / 1 / 1 / 3;
+ background-color: yellow;
+}
+#cont div{ border-radius: 10px;
+ padding: 10px
+}
+#box2 {
+   grid-area: 2 / 1 / 3 / 1;
+ background:red;
+}
+#box3 {
+   grid-area: 2 / 2 / 3 / 2;
+ background:green;
+}
+@media (max-width:800px) {
+   #cont {
+ display: grid;
+ grid-gap: 20px;
+ margin: 20px;
+ grid-template-columns:450px;
+ grid-template-rows: 300px 450px 300px;
+}
+#box1 {
+ grid-area: 1 / 1 / 1 / 1;
+ background-color: yellow;
+}
+#box2 {
+   grid-area: 3 / 1 / 4 / 1;
+ background:red;
+}
+#box3 {
+   grid-area: 2 / 1 / 3 / 1;
+ background:rgb(4, 209, 4);
+}
+}
+</style>
+ <body>
+   <div id="cont">
+     <div id="box1">Navigation</div>
+     <div id="box2">LEFT BOX</div>
+     <div id="box3">RIGHT BOX</div>
+     </div>
+ </body>
+</html>
+
