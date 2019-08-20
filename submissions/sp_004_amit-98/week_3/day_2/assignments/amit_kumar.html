@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>
-        Converter
+        Unit Converter
     </title>
     <style type="text/css">
         select {
@@ -12,27 +11,21 @@
             margin: 10px;
             font-size: 17px;
         }
-
         button {
             width: 100px;
             height: 40px;
             font-size: 17px;
             border-radius: 5px;
         }
-
         input {
             width: 200px;
             height: 40px;
             font-size: 20px;
             margin: 10px;
         }
-
         span {
             font-size: 20px;
         }
-
-        
-        
          #volUnit, #tempUnit,#lengthUnit {
             height: 60px;
             font-size: 25px;
@@ -44,7 +37,6 @@
         }
     </style>
 </head>
-
 <body>
     <h1>Select Length/Temperature/Volume Converter</h1>
     <select id="selectConverter">
@@ -53,11 +45,9 @@
         <option value="Volume">Volume</option>
     </select>
     <button id="btnSelect" onclick="selectConv()">Select</button>
-
-
+     <!-- Length Converter -->
     <div id="lengthCoverter" style="display: none">
         <h2>Length Conversion</h2>
-
         <input type="number" value="number" id="inputNumber">
         <span>From</span>
         <select id="selectUnit1">
@@ -77,10 +67,8 @@
         <span>Output:</span>
         <div id="lengthUnit"></div>
     </div>
-
     <br>
-
-
+    <!-- Temperature Converter -->
     <div id="tempConvert" style="display: none">
         <h2>Temperature Conversion</h2>
 
@@ -90,21 +78,19 @@
             <option value="Celsius"> Celsius </option>
             <option value="Kelvin">Kelvin</option>
             <option value="Fahrenheit">Fahrenheit</option>
-
         </select>
         <span>To</span>
         <select id="selectTempUnit2">
             <option value="Celsius"> Celsius </option>
             <option value="Kelvin">Kelvin</option>
             <option value="Fahrenheit">Fahrenheit</option>
-
         </select>
         <button onclick="tempConverter()">Convert</button><br>
         <span>Output:</span>
         <div id="tempUnit"></div>
-
         <br>
     </div>
+    <!-- Volume Converter -->
     <div id="volumeConverter" style="display: none">
         <h2>Volume Conversion</h2>
 
@@ -115,7 +101,6 @@
             <option value="Mililiter">Mililiter</option>
             <option value="Us Gallon">Us Gallon</option>
             <option value="Imperial Tea Spoon">Imperial Tea Spoon</option>
-
         </select>
         <span>To</span>
         <select id="selectVolUnit2">
@@ -123,14 +108,14 @@
             <option value="Mililiter">Mililiter</option>
             <option value="Us Gallon">Us Gallon</option>
             <option value="Imperial Tea Spoon">Imperial Tea Spoon</option>
-
         </select>
         <button onclick="volConverter()">Convert</button><br>
         <span>Output:</span>
         <div id="volUnit"></div>
     </div>
-
+       <!-- Script code starts here -->
     <script>
+        // Lenght Converter function 
         function lenghtConverter() {
             data = document.getElementById("inputNumber").value;
             unit1 = document.getElementById("selectUnit1").value;
@@ -165,7 +150,6 @@
                 km_Ly = (data / 9460660000000);
                 document.getElementById("lengthUnit").innerHTML = km_Ly + " Light Years";
             }
-
             else if (unit1 == "Mile" && unit2 == "Meter") {
                 mile_M = (data * 1609.35);
                 document.getElementById("lengthUnit").innerHTML = mile_M + " Meter";
@@ -197,6 +181,7 @@
                 document.getElementById("lengthUnit").innerHTML = data + " Light Year";
             }
         }
+        // Temperature converter function
         function tempConverter() {
             tempUnit1 = document.getElementById("selectTempUnit1").value;
             tempUnit2 = document.getElementById("selectTempUnit2").value;
@@ -237,6 +222,7 @@
                 document.getElementById("tempUnit").innerHTML = temp + " F";
             }
         }
+        // Volume converter function
         function volConverter() {
             volUnit1 = document.getElementById("selectVolUnit1").value;
             volUnit2 = document.getElementById("selectVolUnit2").value;
@@ -257,7 +243,6 @@
                 l_Its = (vol * 168.936);
                 document.getElementById("volUnit").innerHTML = l_Its + " Imperial Tea Spoon";
             }
-
             else if (volUnit1 == "Mililiter" && volUnit2 == "Liter") {
                 ml_L = (vol / 1000);
                 document.getElementById("volUnit").innerHTML = ml_L + " L";
@@ -273,7 +258,6 @@
             else if (volUnit1 == "Mililiter" && volUnit2 == "Mililiter") {
                 document.getElementById("volUnit").innerHTML = vol + " Ml";
             }
-
             else if (volUnit1 == "US Gallon" && volUnit2 == "Mililiter") {
                 us_Ml = (vol * 3785.412);
                 document.getElementById("volUnit").innerHTML = us_Ml + " Ml";
@@ -289,8 +273,6 @@
             else if (volUnit1 == "US Gallon" && volUnit2 == "US Gallon") {
                 document.getElementById("volUnit").innerHTML = vol + " US Gallon";
             }
-
-
             else if (volUnit1 == "Imperial Tea Spoon" && volUnit2 == "Mililiter") {
                 its_Ml = (vol * 5.919);
                 document.getElementById("volUnit").innerHTML = its_Ml + " Ml";
@@ -306,16 +288,14 @@
                 its_Us = (vol / 639.494);
                 document.getElementById("volUnit").innerHTML = vol + " US Gallon";
             }
-
-
         }
+           // Display & Hide function
         function selectConv() {
             select = document.getElementById("selectConverter").value;
             if (select == "Length") {
                 document.getElementById("lengthCoverter").style.display = 'block';
                 document.getElementById("tempConvert").style.display = "none";
                 document.getElementById("volumeConverter").style.display = "none";
-
             }
             else if (select == "Temperature") {
                 document.getElementById("tempConvert").style.display = 'block';
@@ -326,11 +306,8 @@
                 document.getElementById("volumeConverter").style.display = 'block';
                 document.getElementById("tempConvert").style.display = "none";
                 document.getElementById("lengthCoverter").style.display = "none";
-
             }
         }
-
     </script>
 </body>
-
 </html>
