@@ -11,4 +11,4 @@ Build a web page for the topic assigned to you
 |sp_005  |Anuj    | Linux | [github](https://github.com/choudharyanuj/masai-week-2)|
 | sp_035 | Sarvagaya | Cats | [github](https://github.com/sarvagaya/masai-week-2) |
 | sp_021 | Tanveer | Football | [github](https://github.com/tanveer86/masai-week-2) |
-
+| sp_043 | Suraj Singh | Chocolate | [github](https://github.com/Suraj10074/masai-week-2/tree/master/masai/week_2) |
