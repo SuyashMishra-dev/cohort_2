@@ -10,3 +10,4 @@ Build a profile page for the character assigned to you
 | sp_023 | Nikhil | Huey, Dewey and Louie | [github](https://github.com/nikhilgudur/masai-week-1) |
 | sp_025 | nitu   | Baloo                 |[github](https://github.com/nitu023/masai-week-1)     |
 | sp_031 | Ravi   | Chip and Dale         |[github](https://github.com/ravigornal/masai-week-1)  |
+| sp_011 | Harshit  | Scooby Doo         |[github](https://github.com/harshit860/masai-week-1)  |
