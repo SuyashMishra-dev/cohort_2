@@ -6,17 +6,16 @@
 <body>
 	<!-- These elements below are for FSD.W3.2.2_1-->
 	<h1> Check if you can drive in India! </h1>
-	<input type="text" name = "drive" id="age">
-	<p id="para1"></p>
+	<input type="text" name = "drive" id="age_input">
+	<p id="output"> </p>
 	</hr>
 	<button onclick="check_drive()">Click here to check!</button>
 	<!-- These elements above are for FSD.W3.2.2_1-->
 
 	<!-- These elements below are for FSD.W3.2.2_2-->
 	<h1>Input your color in the textbox!
-	<input type="text" id="change_color">	<!-- These elements below are for FSD.W3.2.2_3-->
-
-	<button onclick="change_color()">Click here to change my color</button>
+	<input type="text" id="color_input">
+	<button onclick="change_color()" id="button_color">Click here to change my color</button>
 	
 	<!-- These elements above are for FSD.W3.2.2_2-->
 
@@ -31,7 +30,7 @@
 		<option value="Australia">Australia</option>
 		<option value="France">France</option>
 		<option value="Germany">Germany</option>
-		<option value="South africa">South africa</option>
+		<option value="South Africa">South Africa</option>
 		<option value="Nigeria">Nigeria</option>
 		<option value="Mexico">Mexico</option>
 		<option value="Argentina">Argentina</option>
@@ -44,74 +43,72 @@
 	<!-- These elements above are for FSD.W3.2.2_2-->
 	<script type="text/javascript">
 		function check_drive(){
-			//Write javascript for FSD.W3.2.2_1 here
-			var a=document.getElementById("age").value;
-			//alert("hello");
-			 if(a>18){
-			 	document.getElementById("para1").innerHTML= "you can drive in India"
-			 }
-			 else if(a<18){
-			     document.getElementById("para1").innerHTML= "you can't drive in India"
-			 }
-			 else{
-			    document.getElementById("para1").innerHTML= "you are just old enough to drive in India!"
-		     }
+			var age = document.getElementById("age_input").value;
+			if (age > 18) {
+				document.getElementById("output").innerHTML = "You can drive in India!";
+			}
+			else if (age < 18) {
+				document.getElementById("output").innerHTML = "You can't drive in India";
+			}
+			else if (age == 18) {
+				document.getElementById("output").innerHTML = "You are just old enough to drive in India!";
+			}
 		}
 		function change_color(){
-			//Write javascript for FSD.W3.2.2_2 here
-			document.getElementById("change_color").style.color= document.getElementById("change_color").value;
-			
+			var color = document.getElementById("color_input").value;
+			document.getElementById("button_color").style.color = color;
 		}
 		function find_continent(){
-			//Write javascript for FSD.W3.2.2_3 here
-			switch(document.getElementById("continent_select").value){
+			var country = document.getElementById("continent_select").value;
+			var text = "The continent is ";
+			switch (country) {
 				case "India":
-				alert('The continent is Asia');
-				break;
+					alert(text + "Asia");
+					break;
 				case "United States of America":
-				alert('The continent is North  America');
-				break;
+					alert(text + "North America");
+					break;
 				case "China":
-				alert('The continent is Beijing');
-				break;
+					alert(text + "Asia");
+					break;
 				case "Nepal":
-				alert('The continent is Asia');
-				break;
+					alert(text + "Asia");
+					break;
 				case "Australia":
-				alert('The continent is Oceania');
-				break;
+					alert(text + "Australia");
+					break;
 				case "France":
-				alert('The continent is Europe');
-				break;
+					alert(text + "Europe");
+					break;
 				case "Germany":
-				alert('The continent is Europe');
-				break;
+					alert(text + "Europe");
+					break;
 				case "South Africa":
-				alert('The continent is Africa');
-				break;
+					alert(text + "Africa");
+					break;
 				case "Nigeria":
-				alert('The continent is Africa');
-				break;
+					alert(text + "Africa");
+					break;
 				case "Mexico":
-				alert('The continent is North America');
-				break;
+					alert(text + "South America");
+					break;
 				case "Argentina":
-				alert('The continent is South America');
-				break;
+					alert(text + "South America");
+					break;
 				case "Brazil":
-				alert('The continent is South America');
-				break;
+					alert(text + "South America");
+					break;
 				case "Canada":
-				alert('The continent is North America');
-				break;
+					alert(text + "North America");
+					break;
 				case "Singapore":
-				alert('The continent is Asia');
-				break;
+					alert(text + "Asia");
+					break;
 				case "Sweden":
-				alert('The continent is Europe');
-				break;
+					alert(text + "Europe");
+					break;
 			}
 		}
 	</script>
 </body>
-</html>	<!-- These elements below are for FSD.W3.2.2_3-->
+</html>
