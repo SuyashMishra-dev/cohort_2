@@ -17,3 +17,4 @@ Build a profile page for the character assigned to you
 | sp_031 | Ravi   | Chip and Dale         |[github](https://github.com/ravigornal/masai-week-1)  |
 | sp_011 | Harshit  | Scooby Doo         |[github](https://github.com/harshit860/masai-week-1)  |
 | sp_045 | Teja   | Simba   | [github](https://github.com/Tejas-AI/masai-project-1)  |
+| sp_004 | Amit | Garfield | [github](https://github.com/amit036/masai-week-1) |
