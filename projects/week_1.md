@@ -12,4 +12,4 @@ Build a profile page for the character assigned to you
 | sp_005 | Anuj        | Tom & Jerry           | [github](https://github.com/choudharyanuj/masai-week-1)      |
 | sp_035 | Sarvagaya   | Tweety                | [github](https://github.com/sarvagaya/masai-week-1)          |
 | sp_021 | Tanveer     | Winnie-the-Pooh       | [github](https://github.com/tanveer86/masai-week-1)          |
-
+| sp_031 | Ravi        | Chip and Dale         | [github](https://github.com/ravigornal/masai-week-1)         |
