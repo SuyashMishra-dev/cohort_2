@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>piyush_yadav</title>
+    </head>
+
+    <body>
+        <div>
+            <p>Enter the Amount: </p>
+            <input id="amount" type="number">
+            
+            <h2 id="output">
+            </h2>
+
+            <p>Enter From Unit</p>
+            <select id="from">
+                <option value = "Meter"> Meter </option>
+                <option value = "Kilometer"> Kilometer </option>
+                <option value = "Mile"> Mile </option>
+                <option value = "Light Year"> Light Year </option>
+                <option value = "Celsius"> Celsius </option>
+                <option value = "Kelvin"> Kelvin </option>
+                <option value = "Fahrenheit"> Fahrenheit </option>
+                <option value = "Liter"> Liter </option>
+                <option value = "Milliliter"> Milliliter </option>
+                <option value = "US Gallon"> US Gallon </option>
+                <option value = "Imperial Tea Spoon"> Imperial Tea Spoon </option>
+            </select>
+            <p>Enter To Unit</p>
+            <select id="to">
+                <option value = "Meter"> Meter </option>
+                <option value = "Kilometer"> Kilometer </option>
+                <option value = "Mile"> Mile </option>
+                <option value = "Light Year"> Light Year </option>
+                <option value = "Celsius"> Celsius </option>
+                <option value = "Kelvin"> Kelvin </option>
+                <option value = "Fahrenheit"> Fahrenheit </option>
+                <option value = "Liter"> Liter </option>
+                <option value = "Milliliter"> Milliliter </option>
+                <option value = "US Gallon"> US Gallon </option>
+                <option value = "Imperial Tea Spoon"> Imperial Tea Spoon </option>
+            </select>
+
+            <p>Select a type of unit:</p>
+
+            <select id="type">
+                <option value = "Length"> Length </option>
+                <option value = "Temperature"> Temperature </option>
+                <option value = "Volume"> Volume </option>
+            </select>
+
+            <button id="convert" onclick="convertAmount()">Convert</button>
+
+            <script>
+
+                function convertAmount(){
+                    // var amount = Number(document.getElementById("amount").value);
+                    var amount = document.getElementById("amount").value;
+                    var type = document.getElementById("type").value;
+                    var from = document.getElementById("from").value;
+                    var to = document.getElementById("to").value;
+
+
+                    // Trying using switch cases
+                    switch (type) {
+                        case "Length":
+                            switch (from) {
+                                case "Meter":
+                                    switch (to) {
+                                        case "Meter":
+                                            document.getElementById("output").innerHTML = amount + " meters";
+                                        break;
+                                        case "Kilometer": 
+                                            document.getElementById("output").innerHTML = amount/1000 + " kilometers";
+                                        break;
+                                        case "Mile": 
+                                            document.getElementById("output").innerHTML = amount*0.000621371 + " miles";
+                                        break;
+                                        case "Light Year": 
+                                            document.getElementById("output").innerHTML = amount*1.057008707E-16 + " light years";
+                                        break;
+                                        default: 
+                                            document.getElementById("output").innerHTML = "Wrong To unit selected";
+                                        break;
+                                    }
+                                break;
+                                case "Kilometer":
+                                    switch (to) {
+                                        case "Meter":
+                                            document.getElementById("output").innerHTML = amount*1000 + " meters";
+                                        break;
+                                        case "Kilometer": 
+                                            document.getElementById("output").innerHTML = amount + " kilometers";
+                                        break;
+                                        case "Mile": 
+                                            document.getElementById("output").innerHTML = amount*0.6213688756 + " miles";
+                                        break;
+                                        case "Light Year": 
+                                            document.getElementById("output").innerHTML = amount*1.057008707E-13 + " light years";
+                                        break;
+                                        default: 
+                                            document.getElementById("output").innerHTML = "Wrong To unit selected";
+                                        break;
+                                    }
+                                break;
+                                case "Mile":
+                                    switch (to) {
+                                        case "Meter":
+                                            document.getElementById("output").innerHTML = amount*1609.35 + " meters";
+                                        break;
+                                        case "Kilometer": 
+                                            document.getElementById("output").innerHTML = amount*1.60935 + " kilometers";
+                                        break;
+                                        case "Mile": 
+                                            document.getElementById("output").innerHTML = amount + " miles";
+                                        break;
+                                        case "Light Year": 
+                                            document.getElementById("output").innerHTML = amount*1.701096963E-13 + " light years";
+                                        break;
+                                        default: 
+                                            document.getElementById("output").innerHTML = "Wrong To unit selected";
+                                        break;
+                                    }
+                                break;
+                                case "Light Year":
+                                    switch (to) {
+                                        case "Meter":
+                                            document.getElementById("output").innerHTML = amount*9460660000000000 + " meters";
+                                        break;
+                                        case "Kilometer": 
+                                            document.getElementById("output").innerHTML = amount*9460660000000 + " kilometers";
+                                        break;
+                                        case "Mile": 
+                                            document.getElementById("output").innerHTML = amount*5878559666946 + " miles";
+                                        break;
+                                        case "Light Year": 
+                                            document.getElementById("output").innerHTML = amount + " light years";
+                                        break;
+                                        default: 
+                                            document.getElementById("output").innerHTML = "Wrong To unit selected";
+                                        break;
+                                    }
+                                break;
+                                default:
+                                document.getElementById("output").innerHTML = "Wrong From unit selected";
+                                break;
+                            }
+                        break;
+                        case "Temperature":
+                            switch (from) {
+                                case "Celsius":
+                                    switch (to) {
+                                        case "Celsius":
+                                            document.getElementById("output").innerHTML = amount + " Celsius";
+                                        break;
+                                        case "Kelvin": 
+                                            document.getElementById("output").innerHTML = amount+273.15 + " Kelvin";
+                                        break;
+                                        case "Fahrenheit": 
+                                            document.getElementById("output").innerHTML = amount*1.8 + 32 + " Fahrenheit";
+                                        break;
+                                        default: 
+                                            document.getElementById("output").innerHTML = "Wrong To unit selected";
+                                        break;
+                                    }
+                                break;
+                                case "Kelvin":
+                                    switch (to) {
+                                        case "Kelvin":
+                                            document.getElementById("output").innerHTML = amount + " Kelvin";
+                                        break;
+                                        case "Celsius": 
+                                            document.getElementById("output").innerHTML = amount-273.15 + " Celsius";
+                                        break;
+                                        case "Fahrenheit": 
+                                            document.getElementById("output").innerHTML = (amount-273.15)*1.8+32 + " Fahrenheit";
+                                        break;
+                                        default: 
+                                            document.getElementById("output").innerHTML = "Wrong To unit selected";
+                                        break;
+                                    }
+                                break;
+                                case "Fahrenheit":
+                                    switch (to) {
+                                        case "Fahrenheit":
+                                            document.getElementById("output").innerHTML = amount + " Fahrenheit";
+                                        break;
+                                        case "Kelvin": 
+                                            document.getElementById("output").innerHTML = (amount-32)*(5/9) + 273.15 + " Kelvin";
+                                        break;
+                                        case "Celsius": 
+                                            document.getElementById("output").innerHTML = (amount-32)*(5/9) + " Celsius";
+                                        break;
+                                        default: 
+                                            document.getElementById("output").innerHTML = "Wrong To unit selected";
+                                        break;
+                                    }
+                                break;
+                                default:
+                                document.getElementById("output").innerHTML = "Wrong From unit selected";
+                                break;
+                            }
+                        break;
+                        case "Volume":
+                            switch (from) {
+                                case "Liter":
+                                    switch (to) {
+                                        case "Liter":
+                                            document.getElementById("output").innerHTML = amount + " Liter";
+                                        break;
+                                        case "Milliliter": 
+                                            document.getElementById("output").innerHTML = amount*1000 + " milliliter";
+                                        break;
+                                        case "US Gallon": 
+                                            document.getElementById("output").innerHTML = amount*0.2641721769 + " US Gallon";
+                                        break;
+                                        case "Imperial Tea Spoon": 
+                                            document.getElementById("output").innerHTML = amount*168.93638269 + " Imperial Tea Spoon";
+                                        break;
+                                        default: 
+                                            document.getElementById("output").innerHTML = "Wrong To unit selected";
+                                        break;
+                                    }
+                                break;
+                                case "Milliliter":
+                                    switch (to) {
+                                        case "Milliliter":
+                                            document.getElementById("output").innerHTML = amount + " milliliter";
+                                        break;
+                                        case "Liter": 
+                                            document.getElementById("output").innerHTML = amount/1000 + " Liter";
+                                        break;
+                                        case "US Gallon": 
+                                            document.getElementById("output").innerHTML = amount*0.0002641722 + " US Gallon";
+                                        break;
+                                        case "Imperial Tea Spoon": 
+                                            document.getElementById("output").innerHTML = amount*0.1689363827 + " Imperial Tea Spoon";
+                                        break;
+                                        default: 
+                                            document.getElementById("output").innerHTML = "Wrong To unit selected";
+                                        break;
+                                    }
+                                break;
+                                case "US Gallon":
+                                    switch (to) {
+                                        case "US Gallon":
+                                            document.getElementById("output").innerHTML = amount + " US Gallon";
+                                        break;
+                                        case "Liter": 
+                                            document.getElementById("output").innerHTML = amount*3.78541 + " Liter";
+                                        break;
+                                        case "Milliliter": 
+                                            document.getElementById("output").innerHTML = amount*3785.41 + " milliliter";
+                                        break;
+                                        case "Imperial Tea Spoon": 
+                                            document.getElementById("output").innerHTML = amount*639.49347241 + " Imperial Tea Spoon";
+                                        break;
+                                        default: 
+                                            document.getElementById("output").innerHTML = "Wrong To unit selected";
+                                        break;
+                                    }
+                                break;
+                                case "Imperial Tea Spoon":
+                                    switch (to) {
+                                        case "Imperial Tea Spoon":
+                                            document.getElementById("output").innerHTML = amount + " Imperial Tea Spoon";
+                                        break;
+                                        case "Liter": 
+                                            document.getElementById("output").innerHTML = amount*0.005919388 + " Liter";
+                                        break;
+                                        case "Milliliter": 
+                                            document.getElementById("output").innerHTML = amount*5.9193880208 + " milliliter";
+                                        break;
+                                        case "US Gallon": 
+                                            document.getElementById("output").innerHTML = amount*0.0015637376 + " US Gallon";
+                                        break;
+                                        default: 
+                                            document.getElementById("output").innerHTML = "Wrong To unit selected";
+                                        break;
+                                    }
+                                break;
+                                default:
+                                document.getElementById("output").innerHTML = "Wrong From unit selected";
+                                break;
+                            }
+                        break;
+                        default:
+                            document.getElementById("output").innerHTML = "Wrong type selected"; 
+                        break;
+                    }
+    
+                }
+
+            </script>
+        </div>
+    </body>
+</html>
