@@ -1,0 +1,3 @@
+git log | grep commit | wc -l
+git log | grep Jan | grep 2018 | wc -l
+git log | grep Sun | grep 2019 | wc -l
