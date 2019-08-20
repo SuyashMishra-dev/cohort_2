@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+    #main{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 50px 50px 50px 50px;
+    width: 90%;
+    grid-gap: 10px;
+    margin-top: 50px; 
+}
+    #red{
+        background: red;
+        grid-area: 1 / 1 / 1 / 10;
+    }
+    #green{
+        background: greenyellow;
+        grid-area: 20 / 1 / 2 / 4;
+    }
+    #teal{
+        background: teal;
+        grid-area: 20 / 4 / 2 / 10;
+    }
+    @media(min-width: 760px){
+        #main div{
+            background: blueviolet;
+        }
+    }
+    </style>
+    <title>Layout 5</title>
+</head>
+<body>
+    <div id="main">
+        <div id="red"></div>
+        <div id="green"></div>
+        <div id="teal"></div>
+    </div>
+</body>
+</html>
