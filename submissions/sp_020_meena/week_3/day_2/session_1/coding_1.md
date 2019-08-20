@@ -21,7 +21,7 @@ true && true || false && false
 Answer
 
 ```
-true
+true||false
 ```
 2. 
 ```javascript
@@ -30,7 +30,7 @@ true == false || false == false
 Answer
 
 ```
- false
+false||true
 ```
 3. 
 
@@ -69,7 +69,7 @@ true
 Answer
 
 ```
-true
+false
 ```
 7.
 ```javascript
@@ -157,7 +157,7 @@ switch (browser) {
 Answer
 
 ```
-'We hope that this page looks ok!'
+we hope that this page looks ok!
 ```
 12. What is the value of y?
 ```javascript
@@ -167,5 +167,5 @@ var y = 12 + "12"
 Answer
 
 ```
-1212
+12 12 
 ```

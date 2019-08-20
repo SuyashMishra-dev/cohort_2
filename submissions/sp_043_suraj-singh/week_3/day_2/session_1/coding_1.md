@@ -30,7 +30,7 @@ true == false || false == false
 Answer
 
 ```
- false
+true
 ```
 3. 
 
@@ -49,7 +49,7 @@ false
 Answer
 
 ```
-true
+false
 ```
 5. 
 ```javascript
@@ -69,7 +69,7 @@ true
 Answer
 
 ```
-true
+false
 ```
 7.
 ```javascript
@@ -94,7 +94,7 @@ x && z || !x && y || z || y == x && z || !x && y
 Answer
 
 ```
-false
+true
 ```
 ## If statements and Arithmetic Operators: 
 9. What is the value of `d` ?
@@ -133,7 +133,7 @@ else{
 Answer
 
 ```
-D
+A
 ```
 11. What does the following code print in the `alert` window?  
 ```javascript
@@ -157,7 +157,7 @@ switch (browser) {
 Answer
 
 ```
-'We hope that this page looks ok!'
+We hope that this page looks oK!
 ```
 12. What is the value of y?
 ```javascript
@@ -167,5 +167,5 @@ var y = 12 + "12"
 Answer
 
 ```
-1212
+24
 ```

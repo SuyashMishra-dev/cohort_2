@@ -30,7 +30,7 @@ true == false || false == false
 Answer
 
 ```
- false
+true
 ```
 3. 
 
@@ -40,7 +40,7 @@ Answer
 Answer
 
 ```
-false
+true
 ```
 4. 
 ```javascript
@@ -69,7 +69,7 @@ true
 Answer
 
 ```
-true
+false
 ```
 7.
 ```javascript
@@ -157,7 +157,7 @@ switch (browser) {
 Answer
 
 ```
-'We hope that this page looks ok!'
+We hope that this page looks ok!
 ```
 12. What is the value of y?
 ```javascript
