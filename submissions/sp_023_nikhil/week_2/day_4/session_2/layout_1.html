@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+#main{
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 400px;
+    margin: 40px 300px; 
+}
+
+#main div{
+    background: teal;
+    width: 100px;
+    height: auto;
+}
+@media (max-width: 1000px){
+    #main div{
+        background: red !important;
+    }
+}
+    </style>
+    <title>Layout 1</title>
+</head>
+<body>
+    <div id="main">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
