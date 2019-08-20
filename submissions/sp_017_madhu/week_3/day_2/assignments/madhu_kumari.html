@@ -4,12 +4,12 @@
         <title>unit converter web application</title>
         <style type="text/css">
         body{
-            background-image:url(/home/madhu/reposit/cohort_2/submissions/sp_017_madhu/week_3/day_2/assignments/photo-1530084116302-2fa56616cdd6.webp);
+            background-image:url(/home/madhu/reposit/cohort_2/submissions/sp_017_madhu/week_3/day_2/assignments/images/image.webp);
             background-position:center;
             background-repeat: no-repeat;
             background-size: cover;
             text-align: center;
-            margin: 100px;
+            margin: 70px;
             font-size: 50px;
         }
         @media (max-width:900px){
@@ -21,7 +21,7 @@
         }
         @media (max-width:400px){
             body{
-            background-image:url(/home/madhu/reposit/cohort_2/submissions/sp_017_madhu/week_3/day_2/assignments/image1.webp);
+            background-image:url(/home/madhu/reposit/cohort_2/submissions/sp_017_madhu/week_3/day_2/assignments/images/image1.webp);
             background-position:center;
             background-repeat: no-repeat;
             background-size: cover;            
@@ -61,14 +61,18 @@
             <option value="milliliter">Milliliter</option>
             <option value="us-gallon">US Gallon</option>
         </select>
-        <button onclick="convert();">Convert</button>
+        <div>
+            <button onclick="getConvert();">Convert</button>
+            <button onclick="resetDisplay()">Reset Display</button>
+        </div>
+
         <script>
-            function convert()
+            function getConvert()
             {
                 var varNum=document.getElementById("enter").value;
                 var ip=document.getElementById("input").value;
                 var op=document.getElementById("output").value;
-                if(s1==s2)
+                if(ip==op)
                 {
                     document.getElementById("out").value=varNum;
                 }
@@ -192,6 +196,11 @@
                 {
                     document.getElementById("out").value=varNum*0.00130208;
                 }
+            }
+            function resetDisplay() {
+
+                document.getElementById("enter").value="";
+                document.getElementById("out").value="";
             }
         </script>
     </body>
