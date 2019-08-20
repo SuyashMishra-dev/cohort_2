@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Session 2</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.W3.2.2_1-->
+	<h1> Check if you can drive in India! </h1>
+	<input type="text" name = "drive" id="age">
+	<p id="para1"></p>
+	</hr>
+	<button onclick="check_drive()">Click here to check!</button>
+	<!-- These elements above are for FSD.W3.2.2_1-->
+
+	<!-- These elements below are for FSD.W3.2.2_2-->
+	<h1>Input your color in the textbox!
+	<input type="text">	<!-- These elements below are for FSD.W3.2.2_3-->
+
+	<button onclick="change_color()">Click here to change my color</button>
+	
+	<!-- These elements above are for FSD.W3.2.2_2-->
+
+	<!-- These elements below are for FSD.W3.2.2_3-->
+	<h1>Find your continent!</h1>
+	<label for="country_select">Choose your Country</label>
+	<select>
+		
+	</select>
+	<button onclick="find_continent()">Find Continent</button>
+	<!-- These elements above are for FSD.W3.2.2_2-->
+	<script type="text/javascript">
+		function check_drive(){
+			//Write javascript for FSD.W3.2.2_1 here
+			var a=document.getElementById("age").value;
+			//alert("hello");
+			if(a>18){
+				document.getElementById("para1").innerHTML= "you can drive in India"
+			}
+			else if(a<18){
+			    document.getElementById("para1").innerHTML= "you can't drive in India"
+			}
+			else{
+			    document.getElementById("para1").innerHTML= "you are just old enough to drive in India!"
+		    }
+		}
+		function change_color(){
+			//Write javascript for FSD.W3.2.2_2 here
+			
+		}
+		function find_continent(){
+			//Write javascript for FSD.W3.2.2_3 here
+		}
+	</script>
+</body>
+</html>	<!-- These elements below are for FSD.W3.2.2_3-->
