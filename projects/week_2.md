@@ -12,3 +12,4 @@ Build a web page for the topic assigned to you
 | sp_035 | Sarvagaya | Cats | [github](https://github.com/sarvagaya/masai-week-2) |
 | sp_022 | Naga Sowmya Narayanan | Cameras | [github](https://github.com/Naga12031998/masai-week-2/tree/master/masai/week_2) |
 | sp_043 | Suraj Singh | Chocolate | [github](https://github.com/Suraj10074/masai-week-2/tree/master/masai/week_2) 
+| sp_045 | Teja S  | Video Games  | [github](https://github.com/Tejas-AI/masai-project-2) |
