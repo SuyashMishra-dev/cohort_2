@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marriage</title>
+</head>
+<body>
+    <div>
+        <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+    <div>
+        <input type="text" id="dob">
+    </div>
+    <button onclick="checkMarriage()">Check</button>
+</body>
+<script>
+    function checkMarriage(){
+        var gender = document.getElementById('gender').value;
+        var dob = Number(document.getElementById('dob').value);
+        var age = 2019 - dob;
+        if(gender == 'male'){
+            age>=21 ? alert('Legal'): alert('Not Legal!');
+        }else if(gender == 'female'){
+            age>=18 ? alert('Legal'): alert('Not Legal!');
+        }
+
+    }
+</script>
+
+</html>
