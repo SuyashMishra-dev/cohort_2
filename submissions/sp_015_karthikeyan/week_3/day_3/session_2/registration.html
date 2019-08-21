@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <link rel="stylesheet" href="registration_style.css">
+    </head>
+    <body>
+        <div id="container">
+            <div>
+                <p>NAME</p>
+                <input type="text" id="nameInput">
+                <p id="nameWarning">ENTER A VALID NAME</p>
+            </div>
+            <div id="right-box">
+                <p>Name</p>
+                <p id="outputName">MASAI</p>
+                <p>EMAIL</p>
+                <p id="outputEmail">email@masaischool.com</p>
+                <p>MOBILE</p>
+                <p id="outputMobile">9876543210</p>
+            </div>
+            <div>
+                <p>EMAIL</p>
+                <input type="text" id="emailInput">
+                <p id="emailWarning">ENTER A VALID EMAIL</p>
+            </div>
+            <div>
+                <p>MOBILE</p>
+                <input type="text" id="mobileInput">
+                <p id="mobileWarning">ENTER A VALID MOBILE</p>
+            </div>
+            <div>
+                <button id="registerButton" onclick="register()">REGISTER</button>
+            </div>
+        </div>
+        <script>
+
+            function register() {
+                var actualName = document.getElementById("nameInput").value;
+                var actualEMail = document.getElementById("emailInput").value;
+                var actualMobile = document.getElementById("mobileInput").value;
+
+                var validName = validateName(actualName);
+                var validMobile = validateMobile(actualMobile);
+                var validEmail = validateEmail(actualEMail);
+
+                if ((validName != actualName) || (validEmail != actualEMail) || (validMobile != actualMobile)) {
+                    alert("Registration Failed");
+                }
+                else success(validName, validEmail, validMobile);
+            }
+
+            function validateName(actualName) {
+                if ((actualName.length < 10) && (actualName.length > 3)) {
+                    return actualName;
+                }
+                else (document.getElementById("nameWarning").style.display = "block");
+            }
+
+            function validateMobile(actualMobile) {
+                if (actualMobile.length == 10) {
+                    return actualMobile;
+                }
+                else (document.getElementById("mobileWarning").style.display = "block");
+            }
+
+            function validateEmail(actualEMail){
+			    var counter = 0;
+			    if ((actualEMail[0] == "@") || (actualEMail[0] == ".")) {
+			    	alert("Email cannot start with '@' or '.'");
+			    }
+			    for (var i = 0; i < actualEMail.length; i++) {
+			    	if (actualEMail[i] == "@") {
+			    		var atPos = i;
+			    		for (j = atPos; j < actualEMail.length; j++) {
+			    			if (actualEMail[j] == ".") {
+			    				return actualEMail;
+			    			}
+			    			else if (actualEMail[j] != ".") {
+			    				counter++;
+			    				if (counter == actualEMail.length - j + 1) {
+			    					document.getElementById("emailWarning").style.display = "block";
+			    				}
+			    			}
+			    		}	
+			    	}
+			    	else if (actualEMail[i] != "@") {
+			    		counter++;
+			    		if (counter == actualEMail.length - 1) {
+			    			document.getElementById("emailWarning").style.display = "block";
+			    		}
+			    	}
+                }
+            }
+            
+            function success(validName, validEmail, validMobile) {
+                document.getElementById("outputName").innerHTML = validName;
+                document.getElementById("outputEmail").innerHTML = validEmail;
+                document.getElementById("outputMobile").innerHTML = validMobile;
+            }
+        </script>
+    </body>
+</html>
