@@ -1,12 +1,33 @@
+body{
+	background-image: url(resources/pic.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 .main {
+	margin-top: 18%;
 	display:grid;
 	grid-gap: 10px;
 	grid-template-columns: auto auto auto;
-	grid-template-rows: auto auto auto;
-	border: 2px solid black;	
+	grid-template-rows: auto auto auto;	
 }
-.main h2 {
-	text-align: center;
+.main h2,h4 {
+	text-align: center;	
+	color: white;
+}
+.length
+{
+	border: 2px solid black;
+	background-color: rgba(0,0,0,0.5);
+}
+.temperature
+{
+	border: 2px solid black;
+	background-color: rgba(0,0,0,0.5);
+}
+.volume
+{
+	border: 2px solid black;
+	background-color: rgba(0,0,0,0.5);
 }
 @media (max-width: 500px) {
 	.main {
