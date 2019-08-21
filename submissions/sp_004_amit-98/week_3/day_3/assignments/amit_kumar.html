@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url(https://images.financialexpress.com/2019/03/tax2-2.jpg);
+        }
+
+        input {
+            width: 300px;
+            height: 50px;
+            font-size: 30px;
+            background: whitesmoke;
+        }
+
+        #displayTax {
+            width: 300px;
+            height: 60px;
+            font-size: 40px;
+            margin-left: 25%;
+        }
+
+        #incomeTax {
+            font-size: 35px;
+            margin-left: 40px;
+            color: red;
+            margin-top: 20px;
+        }
+
+        span {
+            font-size: 35px;
+            color: red;
+        }
+
+        .fontSize {
+            font-size: 30px;
+        }
+
+        button {
+            width: 180px;
+            height: 70px;
+            margin: 20px;
+            font-size: 25px;
+            border-radius: 5px;
+            background: gray;
+            border: 1px solid black;
+        }
+
+        #boxContainer {
+            width: 600px;
+            height: 500px;
+            margin-left: 35%;
+            margin-top: 200px;
+            border: 1px solid black;
+            text-align: center;
+            background: #0F9585;
+        }
+        @media (max-width:800px){
+            #boxContainer {
+            width: 400px;
+            height: 500px;
+            margin-left: 0;
+            margin-top: 100px;
+            border: 1px solid black;
+            text-align: center;
+            background: #0F9585;
+        }  
+        }
+    </style>
+</head>
+
+<body>
+    <div id="boxContainer">
+        <div id="incomeTax">Your have to pay </div>
+        <div id="displayTax"></div>
+        <span>Rupees Tax</span>
+        <div class="fontSize">Enter Annual Income:</div>
+        <input type="number" id="inputTotalIncome"><br>
+        <div class="fontSize">Enter Annual Saving:</div>
+        <input type="number" id="inputTotalSaving"><br>
+        <button onclick="calculateTax()">Calculate Tax</button>
+    </div>
+    <script>
+        function calculateTax() {
+            var totalIncome = document.getElementById("inputTotalIncome").value;
+            totalIncome = Number(totalIncome);
+            var totalSaving = document.getElementById("inputTotalSaving").value;
+            totalSaving = Number(totalSaving);
+
+            if (totalIncome < 250000) {
+                document.getElementById("displayTax").innerHTML = 0;
+            }
+            else if (totalIncome > 250000 && totalIncome <= 500000) {
+                totalSaving1 = (totalSaving * 0.5);
+                totalF = totalIncome - totalSaving1;
+                totalT = (totalF * 0.1);
+
+                document.getElementById("displayTax").innerHTML = totalT;
+
+            }
+            else if (totalIncome > 500000 && totalIncome <= 1000000) {
+                totalSaving1 = (totalSaving * 0.3);
+                totalF = totalIncome - totalSaving1;
+                totalT = (totalF * 0.2);
+
+                document.getElementById("displayTax").innerHTML = totalT;
+
+            }
+            else if (totalIncome > 1000000) {
+                totalSaving1 = (totalSaving * 0.1);
+                totalF = totalIncome - totalSaving1;
+                totalT = (totalF * 0.3);
+
+                document.getElementById("displayTax").innerHTML = totalT;
+
+            }
+            else {
+                alert('Enter Valid Income');
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
