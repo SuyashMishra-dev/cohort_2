@@ -6,8 +6,8 @@
 		<body>
 			<!-- These elements below are for FSD.W3.2.2_1-->
 			<h1> Check if you can drive in India! </h1>
-			<input type="text" name = "drive" id="userAge">
-			<p id="verifyUser">  </p>
+			<input type="text" name = "drive" id="drive_age">
+			<p id="output">  </p>
 			
 			</hr>
 			<button onclick="check_drive()">Click here to check!</button>
@@ -24,7 +24,7 @@
 			<!-- These elements below are for FSD.W3.2.2_3-->
 			<h1>Find your continent!</h1>
 			<label for="country_select">Choose your Country</label>
-			<select id="countrySelect">
+			<select id="countries">
 				<option value="India">India</option>
 				<option value="United States of America">United States of America</option>
 				<option value="China">China</option>
@@ -46,14 +46,14 @@
 
 			<script type="text/javascript">
 				function check_drive(){
-					var age = document.getElementById("userAge").value;
+					var age = document.getElementById("drive_age").value;
 
 					if( age > 18){
-						document.getElementById("verifyUser").innerHTML = "You can drive in India!"
+						document.getElementById("output").innerHTML = "You can drive in India!"
 					}else if(age < 18){
-						document.getElementById("verifyUser").innerHTML="You can't drive in India"
+						document.getElementById("output").innerHTML="You can't drive in India"
 					}else
-						document.getElementById("verifyUser").innerHTML = "You are just old enough to drive in India!"
+						document.getElementById("output").innerHTML = "You are just old enough to drive in India!"
 
 					//Write javascript for FSD.W3.2.2_1 here
 				}
@@ -65,7 +65,7 @@
 				}
 				function find_continent(){
 
-					var country = document.getElementById("countrySelect").value;
+					var country = document.getElementById("countries").value;
 					switch (country) {
 						case 'India':
 						case 'Nepal':

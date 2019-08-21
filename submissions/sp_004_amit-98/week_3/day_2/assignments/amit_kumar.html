@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Unit Converter
+    </title>
+    <style type="text/css">
+        select {
+            width: 150px;
+            height: 40px;
+            margin: 10px;
+            font-size: 17px;
+        }
+        button {
+            width: 100px;
+            height: 40px;
+            font-size: 17px;
+            border-radius: 5px;
+        }
+        input {
+            width: 200px;
+            height: 40px;
+            font-size: 20px;
+            margin: 10px;
+        }
+        span {
+            font-size: 20px;
+        }
+         #volUnit, #tempUnit,#lengthUnit {
+            height: 60px;
+            font-size: 25px;
+            width: 300px;
+            border: 1px solid black;
+            margin: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Length/Temperature/Volume Converter</h1>
+    <select id="selectConverter">
+        <option value="Length"> Length </option>
+        <option value="Temperature">Temperature</option>
+        <option value="Volume">Volume</option>
+    </select>
+    <button id="btnSelect" onclick="selectConv()">Select</button>
+     <!-- Length Converter -->
+    <div id="lengthCoverter" style="display: none">
+        <h2>Length Conversion</h2>
+        <input type="number" value="number" id="inputNumber">
+        <span>From</span>
+        <select id="selectUnit1">
+            <option value="Meter"> Meter </option>
+            <option value="Kilometer">Kilometer</option>
+            <option value="Mile">Mile </option>
+            <option value="Light Year">Light Year</option>
+        </select>
+        <span>To</span>
+        <select id="selectUnit2">
+            <option value="Meter"> Meter </option>
+            <option value="Kilometer">Kilometer</option>
+            <option value="Mile">Mile </option>
+            <option value="Light Year">Light Year</option>
+        </select>
+        <button onclick="lenghtConverter()">Convert</button><br>
+        <span>Output:</span>
+        <div id="lengthUnit"></div>
+    </div>
+    <br>
+    <!-- Temperature Converter -->
+    <div id="tempConvert" style="display: none">
+        <h2>Temperature Conversion</h2>
+
+        <input type="number" value="number" id="inputTemp">
+        <span>From</span>
+        <select id="selectTempUnit1">
+            <option value="Celsius"> Celsius </option>
+            <option value="Kelvin">Kelvin</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+        </select>
+        <span>To</span>
+        <select id="selectTempUnit2">
+            <option value="Celsius"> Celsius </option>
+            <option value="Kelvin">Kelvin</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+        </select>
+        <button onclick="tempConverter()">Convert</button><br>
+        <span>Output:</span>
+        <div id="tempUnit"></div>
+        <br>
+    </div>
+    <!-- Volume Converter -->
+    <div id="volumeConverter" style="display: none">
+        <h2>Volume Conversion</h2>
+
+        <input type="number" value="number" id="inputVol">
+        <span>From</span>
+        <select id="selectVolUnit1">
+            <option value="Liter"> Liter </option>
+            <option value="Mililiter">Mililiter</option>
+            <option value="Us Gallon">Us Gallon</option>
+            <option value="Imperial Tea Spoon">Imperial Tea Spoon</option>
+        </select>
+        <span>To</span>
+        <select id="selectVolUnit2">
+            <option value="Liter"> Liter </option>
+            <option value="Mililiter">Mililiter</option>
+            <option value="Us Gallon">Us Gallon</option>
+            <option value="Imperial Tea Spoon">Imperial Tea Spoon</option>
+        </select>
+        <button onclick="volConverter()">Convert</button><br>
+        <span>Output:</span>
+        <div id="volUnit"></div>
+    </div>
+       <!-- Script code starts here -->
+    <script>
+        // Lenght Converter function 
+        function lenghtConverter() {
+            data = document.getElementById("inputNumber").value;
+            unit1 = document.getElementById("selectUnit1").value;
+            unit2 = document.getElementById("selectUnit2").value;
+            if (unit1 == "Meter" && unit2 == "Meter") {
+                document.getElementById("lengthUnit").innerHTML = data + " Meter";
+            }
+            else if (unit1 == "Meter" && unit2 == "Kilometer") {
+                m_Km = (data / 1000);
+                document.getElementById("lengthUnit").innerHTML = m_Km + " KM";
+            }
+            else if (unit1 == "Meter" && unit2 == "Mile") {
+                m_Mile = (data / 1609.35);
+                document.getElementById("lengthUnit").innerHTML = m_Mile + " Miles";
+            }
+            else if (unit1 == "Meter" && unit2 == "Light Year") {
+                m_Ly = (data / 9460660000000000);
+                document.getElementById("lengthUnit").innerHTML = m_Ly + " Light Years";
+            }
+            else if (unit1 == "Kilometer" && unit2 == "Meter") {
+                km_M = (data * 1000);
+                document.getElementById("lengthUnit").innerHTML = km_M + " Meter";
+            }
+            else if (unit1 == "Kilometer" && unit2 == "Kilometer") {
+                document.getElementById("lengthUnit").innerHTML = data + " KM";
+            }
+            else if (unit1 == "Kilometer" && unit2 == "Mile") {
+                km_Mile = (data / 1.60935);
+                document.getElementById("lengthUnit").innerHTML = km_Mile + " Miles";
+            }
+            else if (unit1 == "Kilometer" && unit2 == "Light Year") {
+                km_Ly = (data / 9460660000000);
+                document.getElementById("lengthUnit").innerHTML = km_Ly + " Light Years";
+            }
+            else if (unit1 == "Mile" && unit2 == "Meter") {
+                mile_M = (data * 1609.35);
+                document.getElementById("lengthUnit").innerHTML = mile_M + " Meter";
+            }
+            else if (unit1 == "Mile" && unit2 == "Kilometer") {
+                mile_Km = (data * 1.60935);
+                document.getElementById("lengthUnit").innerHTML = mile_Km + " KM";
+            }
+            else if (unit1 == "Mile" && unit2 == "Mile") {
+                document.getElementById("lengthUnit").innerHTML = data + " Mile"
+            }
+            else if (unit1 == "Mile" && unit2 == "Light Year") {
+                mile_Ly = (data / 5878559666946);
+                document.getElementById("lengthUnit").innerHTML = mile_Ly + " Light Years";
+            }
+            else if (unit2 == "Meter" && unit1 == "Light Year") {
+                ly_M = (data * 9460660000000000);
+                document.getElementById("lengthUnit").innerHTML = ly_M + " Meter";
+            }
+            else if (unit2 == "Kilometer" && unit1 == "Light Year") {
+                ly_Km = (data * 9460660000000);
+                document.getElementById("lengthUnit").innerHTML = ly_Km + " KM";
+            }
+            else if (unit2 == "Mile" && unit1 == "Light Year") {
+                ly_Mile = (data * 5878559666946);
+                document.getElementById("lengthUnit").innerHTML = ly_Mile + " Miles";
+            }
+            else {
+                document.getElementById("lengthUnit").innerHTML = data + " Light Year";
+            }
+        }
+        // Temperature converter function
+        function tempConverter() {
+            tempUnit1 = document.getElementById("selectTempUnit1").value;
+            tempUnit2 = document.getElementById("selectTempUnit2").value;
+            temp = document.getElementById("inputTemp").value;
+
+            if (tempUnit1 == "Celsius" && tempUnit2 == "Celsius") {
+                document.getElementById("tempUnit").innerHTML = temp + " C";
+            }
+            else if (tempUnit1 == "Celsius" && tempUnit2 == "Kelvin") {
+                cel_Kel = (temp + 273.15);
+                document.getElementById("tempUnit").innerHTML = cel_Kel + " K";
+            }
+            else if (tempUnit1 == "Celsius" && tempUnit2 == "Fahrenheit") {
+                cel_Fah = ((temp * (9 / 5)) + 32);
+                document.getElementById("tempUnit").innerHTML = cel_Fah + " F";
+            }
+
+            else if (tempUnit1 == "Kelvin" && tempUnit2 == "Celsius") {
+                kel_Cel = (temp - 273.15);
+                document.getElementById("tempUnit").innerHTML = kel_Cel + " C";
+            }
+            else if (tempUnit1 == "Kelvin" && tempUnit2 == "Fahrenheit") {
+                kel_Fah = (((temp - 273.15) * (9 / 5)) + 32);
+                document.getElementById("fahrenheitUnit").innerHTML = kel_Fah + " F";
+            }
+            else if (tempUnit1 == "Kelvin" && tempUnit2 == "Kelvin") {
+                document.getElementById("tempUnit").innerHTML = temp + " K";
+            }
+            else if (tempUnit1 == "Fahrenheit" && tempUnit2 == "Celsius") {
+                feh_Cel = ((temp - 32) * (5 / 9));
+                document.getElementById("tempUnit").innerHTML = feh_Cel + " C";
+            }
+            else if (tempUnit1 == "Fahrenheit" && tempUnit2 == "Kelvin") {
+                feh_Kel = ((temp - 32) * (5 / 9) + 273.15);
+                document.getElementById("tempUnit").innerHTML = feh_Kel + " K";
+            }
+            else {
+                document.getElementById("tempUnit").innerHTML = temp + " F";
+            }
+        }
+        // Volume converter function
+        function volConverter() {
+            volUnit1 = document.getElementById("selectVolUnit1").value;
+            volUnit2 = document.getElementById("selectVolUnit2").value;
+            vol = document.getElementById("inputVol").value;
+
+            if (volUnit1 == "Liter" && volUnit2 == "Mililiter") {
+                l_Ml = (vol * 1000);
+                document.getElementById("volUnit").innerHTML = l_Ml + " ml";
+            }
+            else if (volUnit1 == "Liter" && volUnit2 == "Liter") {
+                document.getElementById("volUnit").innerHTML = vol + " L";
+            }
+            else if (volUnit1 == "Liter" && volUnit2 == "US Gallon") {
+                l_Us = (vol / 3.78541);
+                document.getElementById("volUnit").innerHTML = l_Us + " Us Gallon";
+            }
+            else if (volUnit1 == "Liter" && volUnit2 == "Imperial Tea Spoon") {
+                l_Its = (vol * 168.936);
+                document.getElementById("volUnit").innerHTML = l_Its + " Imperial Tea Spoon";
+            }
+            else if (volUnit1 == "Mililiter" && volUnit2 == "Liter") {
+                ml_L = (vol / 1000);
+                document.getElementById("volUnit").innerHTML = ml_L + " L";
+            }
+            else if (volUnit1 == "Mililiter" && volUnit2 == "US Gallon") {
+                ml_L = (vol / 3785.412);
+                document.getElementById("volUnit").innerHTML = ml_L + " US Gallon";
+            }
+            else if (volUnit1 == "Mililiter" && volUnit2 == "Imperial Tea Spoon") {
+                ml_L = (vol / 17.758);
+                document.getElementById("volUnit").innerHTML = ml_L + " Imperial Tea Spoon";
+            }
+            else if (volUnit1 == "Mililiter" && volUnit2 == "Mililiter") {
+                document.getElementById("volUnit").innerHTML = vol + " Ml";
+            }
+            else if (volUnit1 == "US Gallon" && volUnit2 == "Mililiter") {
+                us_Ml = (vol * 3785.412);
+                document.getElementById("volUnit").innerHTML = us_Ml + " Ml";
+            }
+            else if (volUnit1 == "US Gallon" && volUnit2 == "Liter") {
+                us_L = (vol * 3.785412);
+                document.getElementById("volUnit").innerHTML = us_L + " L";
+            }
+            else if (volUnit1 == "US Gallon" && volUnit2 == "Imperial Tea Spoon") {
+                us_Its = (vol * 639.494);
+                document.getElementById("volUnit").innerHTML = us_Its + " Imperial Tea Spoon";
+            }
+            else if (volUnit1 == "US Gallon" && volUnit2 == "US Gallon") {
+                document.getElementById("volUnit").innerHTML = vol + " US Gallon";
+            }
+            else if (volUnit1 == "Imperial Tea Spoon" && volUnit2 == "Mililiter") {
+                its_Ml = (vol * 5.919);
+                document.getElementById("volUnit").innerHTML = its_Ml + " Ml";
+            }
+            else if (volUnit1 == "Imperial Tea Spoon" && volUnit2 == "Liter") {
+                us_L = (vol / 168.936);
+                document.getElementById("volUnit").innerHTML = its_L + " L";
+            }
+            else if (volUnit1 == "Imperial Tea Spoon" && volUnit2 == "Imperial Tea Spoon") {
+                document.getElementById("volUnit").innerHTML = vol + " Imperial Tea Spoon";
+            }
+            else {
+                its_Us = (vol / 639.494);
+                document.getElementById("volUnit").innerHTML = vol + " US Gallon";
+            }
+        }
+           // Display & Hide function
+        function selectConv() {
+            select = document.getElementById("selectConverter").value;
+            if (select == "Length") {
+                document.getElementById("lengthCoverter").style.display = 'block';
+                document.getElementById("tempConvert").style.display = "none";
+                document.getElementById("volumeConverter").style.display = "none";
+            }
+            else if (select == "Temperature") {
+                document.getElementById("tempConvert").style.display = 'block';
+                document.getElementById("lengthCoverter").style.display = "none";
+                document.getElementById("volumeConverter").style.display = "none";
+            }
+            else {
+                document.getElementById("volumeConverter").style.display = 'block';
+                document.getElementById("tempConvert").style.display = "none";
+                document.getElementById("lengthCoverter").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style type="text/css">
+        #main{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: 100px 100px 100px;
+            width: 50%;
+            grid-gap: 20px;
+             
+        } 
+        #main div{
+            background: teal;
+        }           
+        #fir{
+            grid-area: 1 / 1 / 1 / 2 ; 
+        }
+        #sec{
+            grid-area: 1 / 2 / 1 / 4 ;
+        }
+        
+        #thr{
+            grid-area: 1 / 4 / 1 / 5 ;
+        }
+        
+        #fou{
+            grid-area: 2 / 1 / 2 / 3 ;
+        }
+        #fiv{
+            grid-area: 2 / 3 / 2 / 4 ;
+        }
+        #six{
+            grid-area: 2 / 4 / 2 / 5;
+        }
+        #sev{
+            grid-area: 3 / 1 / 3 / 2;
+        }
+        #eig{
+            grid-area: 3 / 2 / 3 / 3;
+        }
+        #nin{
+            grid-area: 3 / 3 / 4 / 5;
+        }
+        @media (max-width: 1000px){
+    #main div{
+        background:green ;
+    }
+}
+    </style>
+    <title>Layout 2</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="fir"></div>
+        <div id="sec"></div>
+        <div id="thr"></div>
+        <div id="fou"></div>
+        <div id="fiv"></div>
+        <div id="six"></div>
+        <div id="sev"></div>
+        <div id="eig"></div>
+        <div id="nin"></div> 
+    </div>
+
+</body>
+
+</html>
