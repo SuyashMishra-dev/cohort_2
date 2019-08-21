@@ -10,7 +10,10 @@ Build a web page for the topic assigned to you
 | sp_023 | Nikhil | Coffee | [github](https://github.com/nikhilgudur/masai-week-2) |
 |sp_005  |Anuj    | Linux | [github](https://github.com/choudharyanuj/masai-week-2)|
 | sp_035 | Sarvagaya | Cats | [github](https://github.com/sarvagaya/masai-week-2) |
+| sp_021 | Tanveer | Football | [github](https://github.com/tanveer86/masai-week-2) |
+| sp_043 | Suraj Singh | Chocolate | [github](https://github.com/Suraj10074/masai-week-2/tree/master/masai/week_2) |
 | sp_022 | Naga Sowmya Narayanan | Cameras | [github](https://github.com/Naga12031998/masai-week-2/tree/master/masai/week_2) |
+<<<<<<< HEAD
 | sp_017 | Madhu | Running | [github](https://github.com/Madhu-kum/masai-week-2.git) |
 |  |  |  |  |
 |  |  |  |  |
@@ -40,3 +43,7 @@ Build a web page for the topic assigned to you
 
 | sp_043 | Suraj Singh | Chocolate | [github](https://github.com/Suraj10074/masai-week-2/tree/master/masai/week_2) 
 | sp_045 | Teja S  | Video Games  | [github](https://github.com/Tejas-AI/masai-project-2) |
+=======
+| sp_045 | Teja S | Video Games | [github](https://github.com/Tejas-AI/masai-project-2) |
+| sp_004 | Amit | Hockey | [github](https://github.com/amit036/masai-week-2) |
+>>>>>>> f0046bcfd11db50fdb889f4b3631701748f408e9
