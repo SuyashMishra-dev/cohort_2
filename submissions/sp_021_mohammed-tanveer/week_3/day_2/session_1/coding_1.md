@@ -1,6 +1,7 @@
 # Week 3 - Day 2
 
 **SUBMISSION:**
+
 - Download this file
 - Fill the answers
 - Place the file into the location `~/repos/cohort_2/submissions/<your_folder>/week_3/day_2/session_1` 
@@ -21,7 +22,7 @@ true && true || false && false
 Answer
 
 ```
-false
+true
 ```
 2. 
 ```javascript
@@ -30,7 +31,7 @@ true == false || false == false
 Answer
 
 ```
-true
+false
 ```
 3. 
 
@@ -40,7 +41,7 @@ true
 Answer
 
 ```
-false
+true
 ```
 4. 
 ```javascript
@@ -60,7 +61,7 @@ var B = true
 Answer
 
 ```
-true
+false
 ```
 6. 
 ```javascript
@@ -72,7 +73,6 @@ Answer
 false
 ```
 7.
-
 ```javascript
 var A = true 
 var B = false
@@ -83,7 +83,7 @@ var D = true
 Answer
 
 ```
-true
+flase
 ```
 8. 
 ```javascript
@@ -134,7 +134,7 @@ else{
 Answer
 
 ```
-D
+true
 ```
 11. What does the following code print in the `alert` window?  
 ```javascript
@@ -168,5 +168,5 @@ var y = 12 + "12"
 Answer
 
 ```
-1212
+12
 ```

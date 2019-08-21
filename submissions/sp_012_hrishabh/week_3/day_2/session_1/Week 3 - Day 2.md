@@ -21,7 +21,7 @@ true && true || false && false
 Answer
 
 ```
-false
+true
 ```
 2. 
 ```javascript
@@ -40,7 +40,7 @@ true
 Answer
 
 ```
-false
+true
 ```
 4. 
 ```javascript
@@ -72,7 +72,6 @@ Answer
 false
 ```
 7.
-
 ```javascript
 var A = true 
 var B = false
@@ -95,7 +94,7 @@ x && z || !x && y || z || y == x && z || !x && y
 Answer
 
 ```
-false
+true
 ```
 ## If statements and Arithmetic Operators: 
 9. What is the value of `d` ?
