@@ -139,24 +139,24 @@
 			var i= document.getElementById("from_temperature").value;
 			var o= document.getElementById("to_temperature").value;
 			if(i=="Celsius" && o=="Kelvin") {
-				document.getElementById("temperature_output").value=l*274.15;
+				document.getElementById("temperature_output").value=l+274.15;
 				console.log("hi")
 			}
 			else if(i=="Celsius" && o=="Fahrenheit"){
-				document.getElementById("temperature_output").value=l*33.8;
+				document.getElementById("temperature_output").value=(l*9/5)+32;
 			}
 			
 			else if(i=="Kelvin" && o=="Fahrenheit"){
-				document.getElementById("temperature_output").value=l*-457.87;
+				document.getElementById("temperature_output").value=(l-273.15)*9/5+32;
 			}
 			else if(i=="Kelvin" && o=="Celsius"){
-				document.getElementById("temperature_output").value=l*-272.15;
+				document.getElementById("temperature_output").value=l-273.15;
 			}
 			else if(i=="Fahrenheit" && o=="Celsius"){
-				document.getElementById("temperature_output").value=l*-17.222222222;
+				document.getElementById("temperature_output").value=(l-32)*5/9;
 			}
 			else if(i=="Fahrenheit" && o=="Kelvin"){
-				document.getElementById("temperature_output").value=l*255.92777778;	
+				document.getElementById("temperature_output").value=(l-32)*5/9+273.15;	
 			}
 			else{
 				alert("Please Change Your Output Option")
@@ -164,6 +164,7 @@
 		}
 
 		// operations for volume converter
+		
 		function volume(){
 			var l= document.getElementById("volume_input").value;
 			var i= document.getElementById("from_volume").value;
