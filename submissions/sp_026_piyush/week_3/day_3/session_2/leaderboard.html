@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>leaderboard</title>
+    <style>
+
+        .main-div {
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+        }
+        
+        .text {
+            display: flex;
+            width: 600px;
+        }
+        .text div {
+            text-align: center;
+            margin-left: 30px;
+            flex-direction: row;
+            width: 80px;
+            padding: 20px;
+        }
+
+        .main-div div {
+            font-size: 35px;
+        }
+
+        .min-max {
+            display: flex;
+        }
+
+        .min-max > div {
+            border: 3px solid black;
+            text-align: center;
+            margin: 20px;
+            flex-direction: row;
+            height: 60px;
+            width: 80px;
+            padding: 20px;
+        }
+
+        .small-boxes {
+            display: grid;
+            grid-auto-columns: 60px 60px 60px 60px;
+            grid-auto-rows: 100px 60px 60px 60px 60px 60px; 
+            grid-gap: 40px;
+            margin-left: 35px;
+            margin-top: 0px;
+            
+        }
+
+        .small-boxes div {
+            border: 2px solid black;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .orange {
+            background: orange;
+        }
+
+        .green {
+            background: green;
+        }
+
+        .purple {
+            background: purple;
+            color: white;
+        }
+
+        .black {
+            background: black;
+        }
+
+        .grey {
+            background: grey;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .limegreen {
+            background: limegreen;
+        }
+
+        #score {
+            grid-area: 1 / 1 / 1 / 4;
+        }
+        
+        #enter {
+            grid-area: 6 / 1 / 6 / 4;
+            color: white;
+            
+        }
+
+        .numdummy {
+            visibility: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <div class="min-max">
+            <div class="red" id="min">43</div>
+            <div class="limegreen" id="max">2019</div>
+        </div>
+
+        <div class="text">
+            <div >MIN</div>
+            <div >MAX</div>
+        </div>
+        
+        <div class="small-boxes">
+            <div class="score grey" id="score">#</div>
+            <button id="num1" class="green" onclick="press1()">1</button>
+            <button id="num2" class="orange" onclick="press2()">2</button>
+            <button id="num3" class="green" onclick="press3()">3</button>
+            <button id="num4" class="orange" onclick="press4()">4</button>
+            <button id="num5" class="orange" onclick="press5()">5</button>
+            <button id="num6" class="orange" onclick="press6()">6</button>
+            <button id="num7" class="green" onclick="press7()">7</button>
+            <button id="num8" class="orange" onclick="press8()">8</button>
+            <button id="num9" class="green" onclick="press9()">9</button>
+            <button class="numdummy" class="green"></button>
+            <button id="num0" class="purple" onclick="press0()">0</button>
+            <button class="numdummy" class="green"></button>
+            <button id="enter" class="black" onclick="enter()">ENTER</button>
+        </div>
+     </div>
+
+    <script>
+        var score = 0;
+        document.getElementById("score").innerHTML = score;
+
+        function press1() {
+            document.getElementById("score").innerHTML += "1";
+        }
+
+        function press2() {
+            document.getElementById("score").innerHTML += "2";
+        }
+
+        function press3() {
+            document.getElementById("score").innerHTML += "3";
+        }
+
+        function press4() {
+            document.getElementById("score").innerHTML += "4";
+        }
+
+        function press5() {
+            document.getElementById("score").innerHTML += "5";
+        }
+
+        function press6() {
+            document.getElementById("score").innerHTML += "6";
+        }
+
+        function press7() {
+            document.getElementById("score").innerHTML += "7";
+        }
+
+        function press8() {
+            document.getElementById("score").innerHTML += "8";
+        }
+
+        function press9() {
+            document.getElementById("score").innerHTML += "9";
+        }
+
+        function press0() {
+            document.getElementById("score").innerHTML += "0";
+        }
+        
+        function enter() {
+            var value = Number(document.getElementById("score").innerHTML);
+            var min = Number(document.getElementById("min").innerHTML);
+            var max = Number(document.getElementById("max").innerHTML);
+            console.log(min + " " + " " + max + " " + value);
+
+            if (value < min) {
+
+                document.getElementById("min").innerHTML = value;
+                document.getElementById("score").innerHTML = 0;
+                value = 0;
+                console.log( "first " + min + " " + " " + max + " " + value);
+
+            } else if (value > max) {
+                
+                document.getElementById("max").innerHTML = value;
+                document.getElementById("score").innerHTML = 0;
+                console.log( "second " + min + " " + " " + max + " " + value);
+                
+            } else {
+                value = 0;
+                document.getElementById("score").innerHTML = value;
+            } 
+        }
+    </script>
+</body>
+</html>
