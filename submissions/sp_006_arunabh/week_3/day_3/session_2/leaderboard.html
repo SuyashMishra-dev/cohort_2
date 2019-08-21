@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Leaderboard</title>
+        <style type="text/css">
+            body{
+                height: 550px;
+                width: 450px;
+                margin: auto;
+                border: solid 1px black;
+            }
+            .flex_box{
+                display: flex;
+            }
+            .flex_box div{
+                height: 50px;
+                width: 100px;
+            }
+            .flex_box div:first-child{
+                float: left;
+                margin:5px 125px 0px 5px;
+                text-align: center;
+                border:solid 1px black;
+                background: red;
+            }
+            .flex_box div:last-child{
+                text-align: center;
+                margin: 5px 5px 20px 125px;
+                border:solid 1px black;
+                background: green;
+            }
+            h3{
+                text-align: center;
+            }
+
+            .grid{
+                width: 200px;
+                height: 300px;
+                margin: 20px 125px;
+                display: grid;
+                grid-template-columns: 50px 50px 50px;
+                grid-template-rows: 30px 30px 30px 30px 30px 30px;
+                grid-gap: 20px;
+            }
+            .score{
+                grid-area: 1 / 1 / span 2 / span 3;
+                background: lightgray;
+                text-align: center;
+                border: 1px solid black;
+            }
+            .purple{
+                grid-area: 6 / 2 / span 1 / span 1;
+                background: purple;
+            }
+            .black{
+                text-align: center;
+                width: 175px;
+                color: white;
+                background: black;
+                margin-left: 30%;
+            }
+            .green{
+                background: green;
+            }
+            .orange{
+                background: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex_box">
+            <div><p id="min">43</p></div>
+            <div><p id="max">2019</p></div>
+        </div>
+        <span>MIN</span>
+        <span style="float: right;">MAX</span>
+        <h3>Score</h3>
+        <div class="grid">
+            <div class="score"><p id="score_card"></p></div>
+            <button class="green" onclick="one()">1</button>
+            <button class="orange" onclick="two()">2</button>
+            <button class="green" onclick="three()">3</button>
+            <button class="orange" onclick="four()">4</button>
+            <button class="orange" onclick="five()">5</button>
+            <button class="orange" onclick="six()">6</button>
+            <button class="green" onclick="seven()">7</button>
+            <button class="orange" onclick="eight()">8</button>
+            <button class="green" onclick="nine()">9</button>
+            <button class="purple" onclick="zero()">0</button>
+        </div>
+        <button class="black" onclick="score_function()">Enter</button>
+        
+
+        <script type="text/javascript">
+        /* Main Function*/
+            function score_function(){
+                var score = Number(document.getElementById("score_card").innerHTML);
+                var min = Number(document.getElementById("min").innerHTML);
+                var max = Number(document.getElementById("max").innerHTML);
+                if(score<min){
+                    document.getElementById("min").innerHTML=score;
+                    document.getElementById("score_card").innerHTML="";
+                }
+                else if(score>max){
+                    document.getElementById("max").innerHTML=score;
+                    document.getElementById("score_card").innerHTML="";
+                }
+                else{
+                    document.getElementById("score_card").innerHTML="";
+                }
+            }
+
+            /*Keypad Functions*/
+            function one(){
+                document.getElementById("score_card").innerHTML=document.getElementById("score_card").innerHTML+1;
+            }
+            function two(){
+                document.getElementById("score_card").innerHTML=document.getElementById("score_card").innerHTML+2;
+            }
+            function three(){
+                document.getElementById("score_card").innerHTML=document.getElementById("score_card").innerHTML+3;
+            }
+            function four(){
+                document.getElementById("score_card").innerHTML=document.getElementById("score_card").innerHTML+4;
+            }
+            function five(){
+                document.getElementById("score_card").innerHTML=document.getElementById("score_card").innerHTML+5;
+            }
+            function six(){
+                document.getElementById("score_card").innerHTML=document.getElementById("score_card").innerHTML+6;
+            }
+            function seven(){
+                document.getElementById("score_card").innerHTML=document.getElementById("score_card").innerHTML+7;
+            }
+            function eight(){
+                document.getElementById("score_card").innerHTML=document.getElementById("score_card").innerHTML+8;
+            }
+            function nine(){
+                document.getElementById("score_card").innerHTML=document.getElementById("score_card").innerHTML+9;
+            }
+            function zero(){
+                document.getElementById("score_card").innerHTML=document.getElementById("score_card").innerHTML+0;
+            }
+        </script>
+    </body>
+</html>

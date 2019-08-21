@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leaderboard</title>
+    <style>
+        #container {            
+            text-align: center;
+            width: 75%;
+            margin: auto;
+        }
+        #top-box {
+            width: 50%;
+            margin: 15px auto;
+            
+        }
+
+        #top-box div {
+            width: 200px;
+            height: 100px;
+            text-align: center;                       
+            float: left;
+            line-height: 100px;
+            font-size: 25px;
+        }        
+        
+        .clear-left{
+            clear: left;
+        }
+
+        #score {           
+            width: 300px;
+            height: 80px;            
+            margin: 15px auto;
+            line-height: 80px;
+        }
+
+        #dial-box {             
+            width: 22%;
+            margin: 15px auto;                       
+            display: grid;
+            grid-template-columns: 80px 80px 80px;
+            grid-template-rows: repeat(4, 80px);
+            grid-gap: 20px;
+        }
+
+        #dial-box div {
+            border: 1px solid green;
+            line-height: 80px;
+        }
+
+        button {
+            width: 200px;
+            height: 60px;
+            margin: 20px auto;
+            background: black;
+            color: azure;
+        }
+
+        .green {
+            background: green;
+        }
+
+        .orange {
+            background: orange;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .gray {            
+            background: gray;
+        }
+
+        .violet {
+            background: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="top-box">
+            <div id="min" class="red">43</div>
+            <div></div>
+            <div id="max" class="green">2019</div>
+            <div>Min</div>
+            <div></div>
+            <div>Max</div>
+        </div>
+        <div class="clear-left"></div>
+        <h2>SCORE</h2>
+        <div class="gray" id="score">
+            #
+        </div>
+        <div id="dial-box">
+            <div class="green" onclick="dial('1')">1</div>
+            <div class="orange" onclick="dial('2')">2</div>
+            <div class="green" onclick="dial('3')">3</div>
+            <div class="orange" onclick="dial('4')">4</div>
+            <div class="orange" onclick="dial('5')">5</div>
+            <div class="orange" onclick="dial('6')">6</div>
+            <div class="green" onclick="dial('7')">7</div>
+            <div class="orange" onclick="dial('8')">8</div>
+            <div class="green" onclick="dial('9')">9</div>
+            <span></span>
+            <div class="violet" onclick="dial('0')">0</div>
+            <span></span>
+        </div>
+        <button onclick="compare()">Enter</button>
+    </div>
+</body>
+<script>
+    var score = '';
+    var min = 43;
+    var max = 2019;
+    function dial(num){
+        score = score + num;
+        document.getElementById('score').innerHTML = score;
+    }
+    function compare(){
+        score = Number(score);
+        if( score < min){
+            min = score;
+            document.getElementById('min').innerHTML = min;
+            setScoreNull();
+        }else if(score > max){
+            max = score;
+            document.getElementById('max').innerHTML = max;
+            setScoreNull();
+        }else{
+            setScoreNull();
+        }
+    }
+    function setScoreNull(){
+        score = '';
+        document.getElementById('score').innerHTML = '#';
+    }
+</script>
+</html>
