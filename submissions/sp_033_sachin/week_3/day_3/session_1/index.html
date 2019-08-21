@@ -65,7 +65,7 @@
 					}
 				}
 				if(emailAddress[i] == '.'){
-					isDotValid = true;
+					isDotValid = true && isValid;
 				}
 			}
 			if(emailAddress[0] == '@' || emailAddress[emailAddress.length-1] == '.' || emailAddress[emailAddress.length-1] == '@'){
