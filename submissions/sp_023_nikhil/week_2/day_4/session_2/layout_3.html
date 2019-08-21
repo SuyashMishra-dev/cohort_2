@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+    #main{ 
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: 50px 50px 50px 50px ; 
+        width: 50%;
+        grid-gap: 10px;
+    }
+    #main div{
+        background: teal;
+    }
+    #i1{
+        grid-area: 1 / 1 / 1 / 2;
+    }
+    #i2{
+        grid-area: 2 / 1 / 2 / 2;
+    }
+    #i3{
+        grid-area: 2 / 2 / 2 / 3;
+    }
+    #i4{
+        grid-area: 3 / 1 / 3 / 2;
+    }
+    #i5{
+        grid-area: 3 / 2 / 3 / 3;
+    }
+    #i6{
+        grid-area: 3 / 3 / 3 / 4;
+    }
+    #i7{
+        grid-area: 4 / 1 / 4 / 2;
+    }
+    #i8{
+        grid-area: 4 / 2 / 4 / 3;
+    }
+    #i9{
+        grid-area: 4 / 3 / 4 / 4;
+    }
+    #i10{
+        grid-area: 4 / 4 / 4 / 5;
+    }
+    @media(max-width: 1000px){
+        #main div{
+            background: blue;
+            height: 30px;
+            width: 30px;
+        }
+    }
+    </style>
+    <title>Layout 3</title>
+</head>
+<body>
+    <div id="main">
+        <div id="i1"></div>
+        <div id="i2"></div>
+        <div id="i3"></div>
+        <div id="i4"></div>
+        <div id="i5"></div>
+        <div id="i6"></div>
+        <div id="i7"></div>
+        <div id="i8"></div>
+        <div id="i9"></div>
+        <div id="i10"></div>
+    </div>
+</body>
+</html>
