@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Converter</title>
+</head>
+
+<body>
+
+    <input id="input" type="text" value="" placeholder="input">
+    <input id="output" type="text" value="" placeholder="output">
+
+
+    <select name="" id="from" value="">
+
+        <option value="none">--</option>
+        <option id="meter" value="meter">Meter</option>
+        <option id="kilometer" value="kilometer">Kilometer</option>
+        <option id="mile" value="mile">Mile</option>
+        <option id="lightyear" value="lightyear">Light Year</option>
+        <option id="celsius" value="celsius">Celsius</option>
+        <option id="kelvin" value="kelvin">Kelvin</option>
+        <option id="fahrenheit" value="fahrenheit">Fahrenheit</option>
+        <option id="liter" value="liter">Liter</option>
+        <option id="milliliter" value="milliliter">Milliliter</option>
+        <option id="gallon" value="gallon">US Gallon</option>
+        <option id="spoon" value="imperial tea spoon">Imperial Tea Spoon</option>
+
+    </select>
+
+    <span>to</span>
+
+    <select name="" id="to" value="">
+
+        <option id="meter" value="meter">Meter</option>
+        <option id="kilometer" value="kilometer">Kilometer</option>
+        <option id="mile" value="mile">Mile</option>
+        <option id="lightyear" value="lightyear">Light Year</option>
+        <option id="celsius" value="celsius">Celsius</option>
+        <option id="kelvin" value="kelvin">Kelvin</option>
+        <option id="fahrenheit" value="fahrenheit">Fahrenheit</option>
+        <option id="liter" value="liter">Liter</option>
+        <option id="milliliter" value="milliliter">Milliliter</option>
+        <option id="gallon" value="gallon">US Gallon</option>
+        <option id="spoon" value="spoon">Imperial Tea Spoon</option>
+
+    </select>
+
+
+
+    <button id="bt" onclick=conversion()>Convert</button>
+
+    <script type="text/javascript">
+        var input = document.getElementById("input").value;
+
+        var to = document.getElementById("to").value
+        var from = document.getElementById("from").value
+
+
+        function conversion() {
+
+            if (from === "celsius" && to === "fahrenheit") {
+                document.getElementById("output").value = input * (9 / 5) + 32;
+            }
+
+            else if (from === "celsius" && to === "kelvin") {
+                document.getElementById("output").value = input + 234.15;
+            }
+
+            else if (from === "fahrenheit" && to === "celsius") {
+                document.getElementById("output").value = (input - 32) * (5 / 9);
+            }
+
+            else if (from === "fahrenheit" && to === "kelvin") {
+                document.getElementById("output").value = (input - 32) * (5 / 9) + 273.15;
+            }
+
+            else if (from === "kelvin" && to === "celsius") {
+                document.getElementById("output").value = input - 234.15;
+            }
+
+            else if (from === "kelvin" && to === "fahrenheit") {
+                document.getElementById("output").value = (input - 273.15) * (9 / 5) + 32;
+            }
+
+
+            else if (from === "liter" && to === "milliliter") {
+                document.getElementById("output").value = input * 1000;
+            }
+
+            else if (from === "liter" && to === "spoon") {
+                document.getElementById("output").value = input * 18.936;
+            }
+
+            else if (from === "liter" && to === "gallon") {
+                document.getElementById("output").value = input / 3.785;
+            }
+
+            else if (from === "milliliter" && to === "liter") {
+                document.getElementById("output").value = input / 1000;
+            }
+
+            else if (from === "milliliter" && to === "gallon") {
+                document.getElementById("output").value = input / 3785.412;
+            }
+
+            else if (from === "milliiter" && to === "spoon") {
+                document.getElementById("output").value = input / 17.758;
+            }
+
+            else if (from === "gallon" && to === "liter") {
+                document.getElementById("output").value = input * 3.785;
+            }
+
+            else if (from === "gallon" && to === "milliliter") {
+                document.getElementById("output").value = input * 3785.412;
+            }
+
+            else if (from === "gallon" && to === "spoon") {
+                document.getElementById("output").value = input * 639.494;
+            }
+
+            else if (from === "spoon" && to === "liter") {
+                document.getElementById("output").value = input / 168.936;
+            }
+
+            else if (from === "spoon" && to === "milliliter") {
+                document.getElementById("output").value = input * 5.919;
+            }
+
+            else if (from === "spoon" && to === "gallon") {
+                document.getElementById("output").value = input / 639.494;
+            }
+
+            else if (from === "miles" && to === "lightyear") {
+                document.getElementById("output").value = input / 5878559666946;
+            }
+
+            else if (from === "miles" && to === "meter") {
+                document.getElementById("output").value = input * 1609.35;
+            }
+
+            else if (from === "miles" && to === "kilometer") {
+                document.getElementById("output").value = input * 1.60935;
+            }
+
+            else if (from === "meter" && to === "kilometer") {
+                document.getElementById("output").value = input * 0.001;
+            }
+
+            else if (from === "meter" && to === "miles") {
+                document.getElementById("output").value = input * 0.0006213689;
+            }
+
+            else if (from === "meter" && to === "lightyear") {
+                document.getElementById("output").value = input / 9460660000000000;
+            }
+
+            else if (from === "kilometer" && to === "lightyear") {
+                document.getElementById("output").value = input / 9460660000000;
+            }
+
+            else if (from === "kilometer" && to === "meter") {
+                document.getElementById("output").value = input * 1000;
+            }
+
+            else if (from === "kilometer" && to === "miles") {
+                document.getElementById("output").value = input * 0.621;
+            }
+
+            else if (from === "lightyear" && to === "meter") {
+                document.getElementById("output").value = input * 9460660000000000;
+            }
+
+            else if (from === "lightyear" && to === "kilometer") {
+                document.getElementById("output").value = input * 9460660000000;
+            }
+
+            else if (from === "lightyear" && to === "miles") {
+                document.getElementById("output").value = input * 5878559666946;
+            }
+        }
+    </script>
+</body>
+
+</html>
