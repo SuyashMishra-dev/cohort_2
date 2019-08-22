@@ -60,8 +60,31 @@
 		}
 		//Write javascript for FSD.W3.3.1_3 here
 		function validateEmail(){
-			var Email = document.getElementById("email").value;
-
+			var emailid = document.getElementById("email").value;
+			var Valid;
+			var Invalid;
+			for(var i = 0; i < emailid.length ; i++){
+				if(emailid[i] == '@'){
+					Valid = true;
+					Invalid = false;
+				}
+				else {
+					Valid = false;
+					Invalid = true;
+				}
+				console.log(Valid)
+				console.log(Invalid)
+			}
+			// if(emailid[0] == '@' || emailid[emailid.length-1] == '.' || emailid[emailid.length-1] == '@'){
+			// 	Valid = false;
+			// 	Invalid = true;
+			// }
+			if (Valid == true && Invalid == false){
+				alert ("Valid Email Address");
+			}
+			else if (Valid == false && Invalid == true){
+				alert('Invalid Email Address');
+			}
 		}
 	</script>
 </body>
