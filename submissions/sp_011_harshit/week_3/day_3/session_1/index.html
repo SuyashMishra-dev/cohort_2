@@ -52,76 +52,76 @@
 				var result=0
 				var num_count=''
 
-							for(var i =1;i <= limit ; i++ )
-								{ 
-									if(i%3==0&&i%5==0)
-										{
-											result=result+i
-											num_count=num_count+' '+i;
-										}
-										
-								}
+								for(var i =1;i <= limit ; i++ )
+									{ 
+										if(i%3==0&&i%5==0)
+											{
+												result=result+i
+												num_count=num_count+' '+i;
+											}
+											
+									}
 										document.getElementById('three').innerHTML= num_count+'='+result;
 			
 		}
 		
 
 		//FUNCTION FOR EMAIL VALIDATION
-		function validateEmail(){
-         var email=document.getElementById('emaill').value;
-      console.log(email)
-		var a=0
-	  	var b=0
-	 
-		 for(var t=0;t<email.length;t++)
-		{
-             if(email[0]=='@')
-			 {
-				alert("INVALID email") 
-                                break;
-			 }
-			
-			 else
-			 {
-              if(email[t]=='@')
-		 	 {	
-				  if(email[email.length-4]=='.')
-				  {
-					  if(email[email.length-3]=='c')
-					  {
-						  if(email[email.length-2]=='o')
-						  {
-							  if(email[email.length-1]=='m')
-							  {
-								if(email[email.length-5]!='@')
+									function validateEmail(){
+									var email=document.getElementById('emaill').value;
+								console.log(email)
+									var a=0
+									var b=0
+								
+									for(var t=0;t<email.length;t++)
 									{
-								alert("Valid Email")
+										if(email[0]=='@')
+										{
+											alert("INVALID email") 
+															break;
+										}
+										
+										else
+										{
+										if(email[t]=='@')
+										{	
+											if(email[email.length-4]=='.')
+											{
+												if(email[email.length-3]=='c')
+												{
+													if(email[email.length-2]=='o')
+													{
+														if(email[email.length-1]=='m')
+														{
+															if(email[email.length-5]!='@')
+																{
+																	alert("Valid Email")
+																}
+																else{ 
+																		alert("Invalid Email")
+																				}
+																			}
+																		else{ 
+																				alert("Invalid Email")
+																				}
+													}
+														else{ 
+																alert("Invalid Email")
+																}
+												}
+													else	{ 
+																alert("Invalid Email")
+																break;
+														}
+												}
+												else{ 
+																alert("Invalid Email")
+																break;
+																}
+											}
+									
+										}
 									}
-                            	 else{ 
-                                   alert("Invalid Email")
-                                 }
-						  }
-						 	else{ 
-                                   alert("Invalid Email")
-                                 }
-					  }
-					  	else{ 
-                                   alert("Invalid Email")
-                                 }
-				  }
-				  	else	{ 
-                                   alert("Invalid Email")
-								   break;
-				  		}
-				 }
-		 		else{ 
-                                   alert("Invalid Email")
-								   break;
-                                 }
-			}
-		
-			 }
-		}
 		}
 		
 	</script>
