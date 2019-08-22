@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Income tax Calculator
+        </title>
+        <style type="text/CSS">
+        body{
+            margin:100px;
+            text-align: center;
+
+        }
+        input {
+            padding: 10px;            
+        }
+        
+        button {
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color:black;
+            color:white;
+        }
+            
+        .final-amount {
+            font-size: 30px;
+            font-style: bold;
+        }     
+
+        @media (max-width :800px){
+            body{
+                text-align: left;
+                }
+                input {
+                padding: 8px;
+                }   
+                button {
+                padding: 8px;
+                margin-top: 15px;
+                background-color:black;
+                color:white;
+                }
+                .final-amount {
+                font-size: 25px;
+                font-style: bold;
+                }    
+            } 
+
+            @media (max-width :400px){
+            body{
+                text-align: left;
+                }
+                input {
+                padding: 5px;
+                }   
+                button {
+                padding: 5px;
+                margin-top: 10px;
+                background-color:black;
+                color:white;
+                }
+                .final-amount {
+                font-size: 20px;
+                font-style: bold;
+                }    
+            } 
+
+        </style>
+    </head>
+    <body>
+        
+        <h1>
+            Income Tax Calculator
+        </h1>
+
+        <p>
+            Enter your income
+        </p>
+        <input type="text" id="income-input">
+
+        <p>
+            Enter your savings
+        </p>
+        <input type="text" id="savings-input">
+        
+        <br>
+        <br>
+        
+        <button onclick="incomeTax()">
+            Calculate Income Tax
+        </button>
+        
+        
+        <p class="final-amount" id="income-tax">
+        </p>
+
+    </body>
+    <script type="text/javascript">
+        
+        function incomeTax(){
+            var income = document.getElementById("income-input").value;
+            var saving = Number(document.getElementById("savings-input").value);
+            var tax
+            var net
+            if(income <= 250000){
+                net = income;
+                tax = "No Income Tax!"
+            }
+            else if (250000 < income && income <= 500000){
+                net = ((income - (saving *.50))-250000);
+                if (net < 0){
+                    tax = "No Income Tax!"
+                }
+                else {
+                tax = net*0.10
+                }
+            }
+            else if (500000 < income && income <= 1000000){
+                net = ((income - (saving*.30))-500000)
+                tax = ((net *0.20) + 25000)
+            }
+            else if (income > 1000000){
+                var netsaving = saving *10;
+                if (netsaving <= 50000){
+                    net = ((income - (saving*.10))-1000000)
+                }
+                else if (netsaving > 50000){
+                    net = (income - 1050000)
+                }
+                tax = ((net*0.30) + 125000)
+            }
+            document.getElementById('income-tax').innerHTML =  tax;
+        }
+    </script>
+</html>
+
+   
