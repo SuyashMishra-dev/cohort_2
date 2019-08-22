@@ -1,0 +1,222 @@
+<html>
+    <head>
+        <style type="text/css">
+   .flexbox
+   {
+       display: flex;
+       flex-direction:row;
+       margin-left:700px
+   }
+   .flexbox div
+   {
+     padding:20px
+    
+   }
+   #red
+   {
+       background-color: red; 
+       float:left;
+       
+   }
+   #green
+   {
+       background-color:green;
+       float:left;
+       margin-left: 100px;
+   }
+  #score_box
+  {
+      float:left;
+      margin-left:30px;
+      font-size: 10px
+      
+  }
+  #score
+  {
+      background-color: gray;
+      height: 100px;
+      margin-left: -10px;
+  }
+  #enter
+  {
+      width:100px;
+      height:100px;
+      background-color: black;
+      color: white;
+      margin-left:85px
+
+  }
+  #pscore
+  {
+      margin-left:80px;
+  }
+  #zero
+  {
+      margin-left:110px;
+  }
+    </style>
+    </head>
+    <body>
+<div class="flexbox">
+       <div id="red"><p>Min</p><p id="pmin">43</p></div>   
+    
+       <div id="green"><p>Max</p><p id="pmax">2019</p></div>
+
+      
+</div>
+<div class="flexbox">
+      <div><p ID="pscore">SCORE</p></div>   
+ </div>
+ <div class="flexbox">
+       
+        <div id="score_box"><input type="text" id="score"></div>
+ </div>
+ <div class="flexbox">
+        <div> <button id="one" value="1" onclick="first()">1</button></div>
+        <div> <button id="two" value="2" onclick="second()">2</button></div>
+        <div><button id="three" value="3" onclick="third()">3</button></div>
+     
+ </div>
+ <div class="flexbox">
+        <div>   <button id="four" value="4" onclick="four()">4</button></div>
+        <div>  <button id="five" value="5" onclick="five()">5</button></div>
+        <div>     <button id="six" value="6" onclick="six()">6</button></div>
+     
+ </div>
+ <div class="flexbox">
+        <div>  <button id="seven" value="7" onclick="seven()">7</button> </div>
+        <div>  <button id="eight" value="8" onclick="eight()">8</button></div>
+        <div> <button id="nine" value="9" onclick="nine()">9</button> </div>
+ </div>
+     <div class="flexbox">
+     <button id="zero" value="0" onclick="zero()">0</button>
+
+     </div>
+     <div class="flexbox">
+            <button id="enter" onclick="enter()">ENTER</button>
+     </div>
+     <br>
+     
+     <br>
+  
+        <script>
+            var a=0             
+            var b=0
+            var all=0
+            var min=43
+            var max=2019
+       function first()
+       {
+        var a= document.getElementById("one").value
+        document.getElementById("score").value=all
+        all=all+a
+        console.log(all)
+      
+        return a
+       }
+       
+       function second()
+       {
+        var b=document.getElementById("two").value
+        document.getElementById("score").value=all
+        
+        all=all+b;
+        console.log(all)
+        return b
+        
+       }
+       function third()
+       {
+        var c=document.getElementById("three").value
+        document.getElementById("score").value=all
+        all=all+c
+
+        console.log(all)
+        return c
+       }
+       function four()
+       {
+        var d=document.getElementById("four").value
+        document.getElementById("score").value=all
+        all=all+d
+        console.log(all)
+        return d
+       }
+       function five()
+       {
+        var e=document.getElementById("five").value
+        document.getElementById("score").value=all
+       all=all+e
+        console.log(e)
+        return e
+       }
+       function six()
+       {
+        var f=document.getElementById("six").value
+        document.getElementById("score").value=all
+        all=all+f
+        console.log(all)
+        return f
+       }
+       function seven()
+       {
+        var g=document.getElementById("seven").value
+        document.getElementById("score").value=all
+        all=all+g
+        console.log(all)
+        return g
+       }
+       function eight()
+       {
+        var h=document.getElementById("eight").value
+        document.getElementById("score").value=all
+       all=all+h
+        console.log(all)
+        return h
+       }
+       function nine()
+       {
+        var i=document.getElementById("nine").value
+        document.getElementById("score").value=all
+        all=all+i
+        console.log(all)
+        return i
+       }
+       function zero()
+       {
+        var j=document.getElementById("zero").value
+        document.getElementById("score").value=all
+        all=all+j
+      
+        console.log(all)
+        return j
+       }
+
+       function enter()
+       {
+           var cmpr=Number(all)
+           if(cmpr<min)
+           {
+            min=cmpr 
+            document.getElementById('pmin').innerHTML=min
+            document.getElementById("score").value=''
+            all=0
+            
+           }
+           if(cmpr>max)
+           {
+               max=cmpr
+               document.getElementById('pmax').innerHTML=max
+               document.getElementById("score").value=''
+               all=0
+               
+           }
+           
+        console.log(max)
+       }
+
+    
+
+        </script>
+    </body>
+</html>
