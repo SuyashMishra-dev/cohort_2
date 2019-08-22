@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <style>
+        .flexbox
+        {
+            display:flex;
+            direction:row;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .flexbox div{
+            padding:20px;
+        }
+        #first
+        {
+            background-color: black;
+            color: white;
+            height:400px;
+        }
+        .email
+        {
+            margin-top: 50px;
+
+        }
+       
+
+
+        </style>
+    </head>
+    <body>
+        <div class="flexbox">
+            <div style="float:left">
+                        <div >
+                            <b>NAME</b>
+                        </div>
+                    <br>
+                        <div>
+                            <input type="text" id="name">
+                        </div>
+                        <p id="name_p"></p>
+                    <div ><b>EMAIL</b></div><br><div><input type="text" id="email_id"></div>
+                    <div ><b>MOBILE</b></div><br><div><input type="text" id="number"></div>
+                    <p id="mobile_p"></p>
+                <button onclick="check()">REGISTER</button>
+            </div>
+        
+        <div style="float:left" id="two">
+            <div id="first"><p>NAME</p>
+                <p><b style="font-size:40px">MASAI</b></p>
+                
+                <p class="email">EMAIL</p>
+                <p id="email1">email@masaischool.com</p>
+
+                <p class="email"><b>MOBILE</b></p>
+                <p><b>9876543210</b></p>
+                <p ></p>
+            
+            </div>
+            
+        
+        </div>
+    </div>
+
+    <script>
+          function check()
+          {
+              var a = document.getElementById("name").value;
+              var b = document.getElementById("number").value; 
+               var email = document.getElementById("email_id").value;
+
+              for(i=0;i<a.length-1;i++)
+              {
+                
+                if(i < 3 || i > 10) {
+                    console.log(i)
+                    document.getElementById("name_p").innerHTML="Name is more than 10 or lesser than 3"
+                }
+                else
+                {
+                    console.log(i)
+                   break; 
+                }
+              }
+        
+
+
+
+
+
+              for(var t=0;t<email.length;t++)
+		{
+             if(email[0]=='@')
+			 {
+				alert("INVALID") 
+                                break;
+			 }
+			 else
+			 {
+              if(email[t]=='@')
+		 	 {	
+				  if(email[email.length-4]=='.')
+				  {
+					  if(email[email.length-3]=='c')
+					  {
+						  if(email[email.length-2]=='o')
+						  {
+							  if(email[email.length-1]=='m')
+							  {
+								if(email[email.length-5]!='@')
+									{
+								alert("Valid Email")
+									}
+                             else{ 
+                                   alert("Invalid Email")
+                                 }
+
+					
+						  }
+						  else{ 
+                                   alert("Invalid Email")
+                                 }
+					  }
+					  else{ 
+                                   alert("Invalid Email")
+                                 }
+				  }
+				  else{ 
+                                   alert("Invalid Email")
+				  }
+		 }
+		 else{ 
+                                   alert("Invalid Email")
+                                 }
+		}
+			 }
+		}
+
+
+
+
+
+
+              for(i=0;i<b.length;i++)
+              {
+                
+                if(i>10)
+                {
+                    document.getElementById("mobile_p").innerHTML="number exceeds than 10"
+                }
+                else{
+                   
+                }
+              }
+              
+          }
+    
+    
+    
+    </script>
+    </body>
+</html>

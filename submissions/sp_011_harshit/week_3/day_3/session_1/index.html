@@ -28,88 +28,100 @@
 	<button onclick="validateEmail()">Check Email!</button>
 	<!-- These elements above are for FSD.W3.3.1_3-->
 	<script type="text/javascript">
-		//Write javascript for FSD.W3.3.1_1 here
+
+		//Exponent Function///////////////////////////////
 
 		function exponent(){
 			var a =document.getElementById("num11").value;
 			var b = document.getElementById("num22").value;
-
-				console.log(a);
-				console.log(b);
-			
 			var ans=1;
 			
                for(var i=1;i<=b;i++)
 			   {
-                    // count=count*i;
+                   
 					ans=ans*a;
 					
 	   			}
-			   	
+				   document.getElementById("expo").innerHTML = ans
 
-		console.log(ans);
 		}
-		//Write javascript for FSD.W3.3.1_2 here
+		//fUNCTION FOR CHECKING MULTIPLE OF 3*5
 		function sumOf3And5(){
-			var b=3
+				var b=3
 				var limit=document.getElementById("limit").value
-					var result=0
-					var num_count=''
-						for(var i =1;i <= limit ; i++ )
-								{ 
-									if(i%3==0&&i%5==0)
-										{
-											result=result+i
-											num_count=num_count+' '+i;
-										}
-										
-									
-										
-								}
+				var result=0
+				var num_count=''
+
+								for(var i =1;i <= limit ; i++ )
+									{ 
+										if(i%3==0&&i%5==0)
+											{
+												result=result+i
+												num_count=num_count+' '+i;
+											}
+											
+									}
 										document.getElementById('three').innerHTML= num_count+'='+result;
 			
 		}
 		
 
-		//Write javascript for FSD.W3.3.1_3 here
-		function validateEmail(){
-         var email=document.getElementById('emaill').value;
-      console.log(email)
-		var a=0
-	  	var b=0
-	 
-		 for(var t=0;t<email.length;t++)
-		{
-             if(email[0]=='@')
-			 {
-				 console.log('start')
-			 }
-			 else
-			 {
-              if(email[t]=='@')
-		 	 {	
-				  if(email[email.length-4]=='.')
-				  {
-					  if(email[email.length-3]=='c')
-					  {
-						  if(email[email.length-2]=='o')
-						  {
-							  if(email[email.length-1]=='m')
-							  {
-							if(email[email.length-5]!='@')
-							{
-								alert("Valid Email")
-							}
-					
-						  }
-					  }
-				  }
-				 
-
-		 }
-		}
-			 }
-		}
+		//FUNCTION FOR EMAIL VALIDATION
+									function validateEmail(){
+									var email=document.getElementById('emaill').value;
+								console.log(email)
+									var a=0
+									var b=0
+								
+									for(var t=0;t<email.length;t++)
+									{
+										if(email[0]=='@')
+										{
+											alert("INVALID email") 
+															break;
+										}
+										
+										else
+										{
+										if(email[t]=='@')
+										{	
+											if(email[email.length-4]=='.')
+											{
+												if(email[email.length-3]=='c')
+												{
+													if(email[email.length-2]=='o')
+													{
+														if(email[email.length-1]=='m')
+														{
+															if(email[email.length-5]!='@')
+																{
+																	alert("Valid Email")
+																}
+																else{ 
+																		alert("Invalid Email")
+																				}
+																			}
+																		else{ 
+																				alert("Invalid Email")
+																				}
+													}
+														else{ 
+																alert("Invalid Email")
+																}
+												}
+													else	{ 
+																alert("Invalid Email")
+																break;
+														}
+												}
+												else{ 
+																alert("Invalid Email")
+																break;
+																}
+											}
+									
+										}
+									}
 		}
 		
 	</script>
