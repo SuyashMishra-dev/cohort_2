@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+         button{
+             width:120px;
+             height:120px;
+             border-radius: 5px;
+         }
+         input{
+             width: 500px;
+             height:130px;
+             background: lightgrey;
+         }
+         #minBox{
+             width: 200px;
+             height:150px;
+             background:red;
+             border: 1px solid black;
+             margin:30px 0px 0px 400px;
+             float: left;
+             font-size:45px;
+             text-align: center;
+         }
+         #maxBox{
+            width: 200px;
+             height:150px;
+             background:green;
+             border: 1px solid black;
+             margin:30px 0px 0px 400px;
+             float: left;
+             font-size:45px;
+             text-align: center;
+
+         }
+         #fontMin{
+             clear: both;
+             margin:30px 0px 0px 450px;
+             float: left;
+             font-size:35px;
+         }
+         #fontMax{
+             float: left;
+             margin:30px 0px 0px 550px;
+             font-size:35px;
+         }
+         #scoreFont{
+            clear: both;
+            margin:-30px 0px 0px 750px;
+            font-size:40px;
+         }
+         #displayBox{
+             clear: both;
+            margin:0px 0px 0px 550px;
+            font-size:35px;
+         }
+         #buttonHorz1, #buttonHorz2, #buttonHorz3,#buttonHorz4,#buttonHorz5{
+            clear:both; 
+         }
+         #one,#four,#seven{
+             float: left;
+             background: green;
+             font-size:35px;
+             text-align: center;
+             margin:20px 0px 0px 550px;
+         }
+         #two,#five,#eight{
+             float: left;
+             background: orange;
+             font-size:35px;
+             text-align: center;
+             margin:20px 0px 0px 70px;
+         }
+         #three,#six,#nine{
+             float: left;
+             background: green;
+             font-size:35px;
+             text-align: center;
+             margin:20px 0px 0px 70px;
+         }
+         #zero{
+            margin:30px 0px 0px 740px;
+            background: darkmagenta;
+            font-size:35px;
+            text-align: center;
+            color: white;
+            
+         }
+         #enter{
+             width:400px;
+             background: black;
+             color: white;
+             text-align: center;
+             margin:30px 0px 0px 590px;
+             font-size:35px;
+         }
+         #two,#four,#six,#five,#eight{
+             background: orangered;
+         }
+
+        </style>
+    </head>
+    <body>
+        <input type="number" id="minBox"></input>
+        <input type="number" id="maxBox"></input>
+        <div id="fontMin">MIN</div>
+        <div id="fontMax">MAX</div>
+            <div id="scoreFont">SCORE</div>
+            <input type="number" id="displayBox">
+            <div id="buttonHorz1">
+            <button id="one" onclick="keyOne()">1</button>
+            <button id="two" onclick="keyTwo()">2</button>
+            <button id="three" onclick="keyThree()">3</button>
+            </div>
+            <div id="buttonHorz2">
+            <button id="four" onclick="keyFour()">4</button>
+            <button id="five" onclick="keyFive()">5</button>
+            <button id="six" onclick="keySix()">6</button>
+             </div>
+             <div id="buttonHorz3">
+            <button id="seven" onclick="keySeven()">7</button>
+            <button id="eight" onclick="keyEight()">8</button>
+            <button id="nine" onclick="keyNine()">9</button>
+            </div>
+            <div id="buttonHorz4">
+            <button id="zero" onclick="keyZero()">0</button>
+            </div>
+            <div id="buttonHorz5">
+            <button id="enter" onclick="keyEnter()">ENTER</button>
+        </div>
+       <script>
+        function keyOne(){
+            var data=document.getElementById("displayBox").value;
+            if(data==null){
+            document.getElementById("displayBox").value=1;
+            }
+            else{
+                data=data*10+1;
+                document.getElementById("displayBox").value=data;
+            }
+        }
+        function keyTwo(){
+            var data=document.getElementById("displayBox").value;
+            if(data==null){
+            document.getElementById("displayBox").value=2;
+            }
+            else{
+                data=data*10+2;
+                document.getElementById("displayBox").value=data;
+            }
+           
+        }
+        function keyThree(){
+            var data=document.getElementById("displayBox").value;
+            if(data==null){
+            document.getElementById("displayBox").value=3;
+            }
+            else{
+                data=data*10+3;
+                document.getElementById("displayBox").value=data;
+            }
+        }
+        function keyFour(){
+            var data=document.getElementById("displayBox").value;
+            if(data==null){
+            document.getElementById("displayBox").value=4;
+            }
+            else{
+                data=data*10+4;
+                document.getElementById("displayBox").value=data;
+            }
+        }
+        function keyFive(){
+            var data=document.getElementById("displayBox").value;
+            if(data==null){
+            document.getElementById("displayBox").value=5;
+            }
+            else{
+                data=data*10+5;
+                document.getElementById("displayBox").value=data;
+            }
+        }
+        function keySix(){
+            var data=document.getElementById("displayBox").value;
+            if(data==null){
+            document.getElementById("displayBox").value=6;
+            }
+            else{
+                data=data*10+6;
+                document.getElementById("displayBox").value=data;
+            }
+        }
+        function keySeven(){
+            var data=document.getElementById("displayBox").value;
+            if(data==null){
+            document.getElementById("displayBox").value=7;
+            }
+            else{
+                data=data*10+7;
+                document.getElementById("displayBox").value=data;
+            }
+        }
+        function keyEight(){
+            var data=document.getElementById("displayBox").value;
+            if(data==null){
+            document.getElementById("displayBox").value=8;
+            }
+            else{
+                data=data*10+8;
+                document.getElementById("displayBox").value=data;
+            }
+        }
+        function keyNine(){
+            var data=document.getElementById("displayBox").value;
+            if(data==null){
+            document.getElementById("displayBox").value=9;
+            }
+            else{
+                data=data*10+9;
+                document.getElementById("displayBox").value=data;
+            }
+        }
+        function keyZero(){
+            var data=document.getElementById("displayBox").value;
+            if(data==null){
+            document.getElementById("displayBox").value=0;
+            }
+            else{
+                data=data*10+0;
+                document.getElementById("displayBox").value=data;
+            }
+        }
+        document.getElementById("minBox").value=283;
+        document.getElementById("maxBox").value=777;
+        function keyEnter(){
+       var getData= document.getElementById("displayBox").value;
+       var getMin= document.getElementById("minBox").value;
+       var getMax= document.getElementById("maxBox").value;
+       if(getData < getMin){
+        document.getElementById("minBox").value=getData;
+       }
+      else if(getData > getMax){
+        document.getElementById("maxBox").value=getData;
+      }
+      else{
+          alert('No Changes required');
+      }
+    }    
+       </script>
+    </body>
+</html> 

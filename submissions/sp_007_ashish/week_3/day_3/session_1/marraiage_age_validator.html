@@ -1,0 +1,41 @@
+<html>
+    <head>
+
+    </head>
+        <body>
+                <H1>Check the Marriage Age</H1>
+                <select id="gender_select">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <input type="text"  id=dob_year>
+                <button onclick="checkAge()">Check</button>
+               <script type="text/javascript">
+                function checkAge(){
+                 var gender = document.getElementById("gender_select").value;   
+                 var year   =   document.getElementById("dob_year").value;
+                 var marrigeage =2019;
+                
+                 
+                 if(gender=="male"){
+                    
+                     if(marrigeage-year>=21){
+                         alert("You are eligible");
+                     }
+                     else{
+                         alert("You are not eligible");
+                     }
+                 }
+                 else{
+                    
+                     if(marrigeage-year>=18){
+                         alert("You are eligible");
+                     }
+                     else{
+                         alert("You are not eligible");
+                     }
+                 }
+                }
+                </script>
+        </body>
+</html>

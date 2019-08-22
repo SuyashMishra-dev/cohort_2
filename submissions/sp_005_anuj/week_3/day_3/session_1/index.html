@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Session 1!</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.W3.3.1_1-->
+	<h1> Create your own exponentiation function! </h1>
+	<input type="text" name = "num1" id="num1">
+	<input type="text" name = "num2" id="num2">
+	<p id="output" > </p>
+	</hr>
+	<button onclick="exponent()">Click here to find the exponent!</button>
+	<!-- These elements above are for FSD.W3.3.1_1-->
+
+	<!-- These elements below are for FSD.W3.3.1_2-->
+	<h1>Sum of multiples of 3 and 5!</h1>
+	<p id="sum"></p>
+	<input type="text" id="input">
+	<button onclick="sumOf3And5()">Click here for the output!</button>
+	
+	<!-- These elements above are for FSD.W3.3.1_2-->
+
+	<!-- These elements below are for FSD.W3.3.1_3-->
+	<h1>Check if the users email is valid!</h1>
+	<label for="Email">Email</label>
+	<input type="text" name="email_validator" id="emailid">
+	<button onclick="validateEmail()">Check Email!</button>
+	<!-- These elements above are for FSD.W3.3.1_3-->
+	<script type="text/javascript">
+		//Write javascript for FSD.W3.3.1_1 here
+		function exponent(){ 
+				var n1= document.getElementById("num1").value;
+				var n2=document.getElementById("num2").value;
+				var r=1;
+				for( var i=1; i<=n2; i++)
+				{
+					r=r*n1;
+				}
+				document.getElementById("output").innerHTML='Result = '+r;
+		}
+		//Write javascript for FSD.W3.3.1_2 here
+		function sumOf3And5(){
+			var l=document.getElementById("input").value;
+			var sum=0;
+			var i=0;
+			for(i==0; i<=l; i++)
+			{
+				if(i%3==0 && i%5==0)
+				{
+					sum=sum+i;
+				}
+			}
+			document.getElementById("sum").innerHTML=sum;
+
+		}
+
+		//Write javascript for FSD.W3.3.1_3 here
+		function validateEmail()
+		{
+
+			var e = document.getElementById('emailid').value;
+			// var i=0;
+			for ( var i= 0; i < e.length; i++) 
+			{	
+				if( (e[0] !== "@") && (e[e.length - 3] == "c") && (e[e.length - 2] == "o") && (e[e.length - 1] == "m") && (e[e.length - 4] == '.') && (e[e.length - 5] !=="@")) 
+				
+				{   
+					if((e[i] == '@'))
+					{	console.log("hi");
+						alert("Valid Email");
+						break;
+					}
+				} 
+				else
+				{
+					alert("Invalid");
+					break;
+				}
+			}
+			
+		}
+	</script>
+</body>
+</html>

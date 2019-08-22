@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>marriage_age_validator</title>
+</head>
+<body>
+    <div>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option> 
+        </select>
+        <input type="number"  id="age">
+        <button onclick="checkLegal()">Check</button>
+    </div>
+    <script>
+        function checkLegal() {
+            console.log(document.getElementById("gender").value);
+            gender = document.getElementById("gender").value;
+            age = Number(document.getElementById("age").value);
+            if (gender == "male" && age >= 21) {
+                alert("Legal age to marry");
+            } else if (gender == "female" && age >= 18) {
+                alert("Legal age to marry");
+            } else {
+                alert("Not legal age to marry");
+            }
+        }
+    </script>
+</body>
+</html>

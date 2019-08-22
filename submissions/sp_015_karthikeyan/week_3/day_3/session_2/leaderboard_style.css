@@ -1,0 +1,68 @@
+body {
+    margin: 10px 600px;
+}
+#top-grid {
+    display: grid;
+    grid-template: repeat(2, 75px) / repeat(2, 75px);
+    grid-gap: 4px 20px;
+}
+
+p {
+    text-align: center;
+    margin: 0px;
+}
+
+#top-grid p:nth-child(1) {
+    background-color: red;
+    margin-top: 30px;
+}
+
+#top-grid p:nth-child(2) {
+    background-color: green;
+    margin-top: 30px;
+}
+
+#main-grid {
+    display: grid;
+    grid-template: repeat(7, 50px) / repeat(3, 50px);
+    grid-gap: 10px;
+}
+
+#main-grid div:nth-of-type(1){
+    background-color: #b3b3b3;
+    grid-area: 1 / 1 / span 2 / span 3;
+    border: 2px solid black;
+}
+
+button:nth-of-type(odd) {
+    background-color: #668100;
+}
+
+button:nth-of-type(even) {
+    background-color: #ff6600;
+}
+
+button:nth-child(6) {
+    background-color: #ff6600;
+}
+
+button:nth-last-child(2) {
+    grid-area: 6 / 2;
+    background-color: #810065;
+    color: white;
+}
+
+button:nth-last-child(1) {
+    grid-area: 7 / 1 / span 1 / span 3; 
+    background-color: black;
+    color: white;
+}
+
+#minValue, #maxValue {
+    font-size: 25px;
+    margin: 10px 3px;
+}
+#scoreboard {
+    font-size: 25px; 
+    margin-top: 40px;
+}

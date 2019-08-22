@@ -1,0 +1,213 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="main">
+            <div class="container">
+                <select id="from">
+                    <option value="meter">Meter</option>
+                    <option value="kilometer">KiloMeter</option>
+                    <option value="mile">Mile</option>
+                    <option value="lightyear">LightYear</option>
+                    <option value="celsius">Celsius</option>
+                    <option value="kelvin">Kelvin</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="litre">Litre</option>
+                    <option value="millilitre">MilliLitre</option>
+                    <option value="gallon">Gallon</option>
+                    <option value="teaspoon">Tea Spoon</option>
+                </select>
+                <input type="msg" id="fromInput">
+            </div>
+            <div class="container">
+                <select id="to">
+                        <option value="meter">Meter</option>
+                        <option value="kilometer">KiloMeter</option>
+                        <option value="mile">Mile</option>
+                        <option value="lightyear">LightYear</option>
+                        <option value="celsius">Celsius</option>
+                        <option value="kelvin">Kelvin</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                        <option value="litre">Litre</option>
+                        <option value="millilitre">MilliLitre</option>
+                        <option value="gallon">Gallon</option>
+                        <option value="teaspoon">Tea Spoon</option>
+                </select>
+                <input type="msg" id="toOutput">
+            </div>
+            <button type="submit" id="convert" onclick="convert()">convert</button>
+        </div>
+        <script>
+            function convert() {
+                var input = document.getElementById("fromInput").value;
+                var inputType = document.getElementById("from").value;
+                var outputType = document.getElementById("to").value;
+                
+                if (inputType != outputType) {
+                    switch(inputType) {
+                        case ("meter"): {
+                            if (outputType == "kilometer") {
+                                document.getElementById("toOutput").value = input / 1000 + " kms";
+                            }
+                            else if (outputType == "mile") {
+                                document.getElementById("toOutput").value = input / 1609.344 + " miles";
+                            }
+                            else if (outputType == "lightyear") {
+                                document.getElementById("toOutput").value = input / 9.461e+15 + " lightyears"; 
+                            }
+                            else if (outputType != "meter" || "kilometer" || "mile" || "lightyear") {
+                                alert("Cannot convert please varify your entries");
+                            }
+                            break;
+                        }
+                        case ("mile"): {
+                            if (outputType == "meter") {
+                                document.getElementById("toOutput").value = input * 1609.344 + " mtrs";
+                            }
+                            else if (outputType == "kilometer") {
+                                document.getElementById("toOutput").value = input * 1.609 + " kms";
+                            }
+                            else if (outputType == "lightyear") {
+                                document.getElementById("toOutput").value = input / 5.879e+12 + " lightyears";
+                            }
+                            else if (outputType != "meter" || "kilometer" || "mile" || "lightyear") {
+                                alert("Cannot convert please varify your entries");
+                            }
+                            break;
+                        }
+                        case ("kilometer"): {
+                            if (outputType == "meter") {
+                                document.getElementById("toOutput").value = input * 1000 + " mtrs";
+                            }
+                            else if (outputType == "mile") {
+                                document.getElementById("toOutput").value = input / 1.609 + " miles";
+                            }
+                            else if (outputType == "lightyear") {
+                                document.getElementById("toOutput").value = input / 9.461e+12 + " lightyears"; 
+                            }
+                            else if (outputType != "meter" || "kilometer" || "mile" || "lightyear") {
+                                alert("Cannot convert please varify your entries");
+                            }
+                            break;
+                        }
+                        case ("lightyear"): {
+                            if (outputType == "meter") {
+                                document.getElementById("toOutput").value = input * 9.461e+15 + " mtrs";
+                            }
+                            else if (outputType == "mile") {
+                                document.getElementById("toOutput").value = input * 5.879e+12 + " miles";
+                            }
+                            else if (outputType == "kilometer") {
+                                document.getElementById("toOutput").value = input * 9.461e+12 + " kms";
+                            }
+                            else if (outputType != "meter" || "kilometer" || "mile" || "lightyear") {
+                                alert("Cannot convert please varify your entries");
+                            }
+                            break;
+                        }
+                        case ("celsius"): {
+                            if (outputType == "fahrenheit") {
+                                document.getElementById("toOutput").value = (input * (9/5)) + 32 + " °F";
+                            }
+                            else if (outputType == "kelvin") {
+                                document.getElementById("toOutput").value = input + 234.15 + " K";
+                            }
+                            else if (outputType != "celsius" || "fahrenheit" || "kelvin") {
+                                alert("Cannot convert please varify your entries");
+                            }
+                            break;
+                        }
+                        case ("fahrenheit"): {
+                            if (outputType == "celsius") {
+                                document.getElementById("toOutput").value = (input - 32) * (5/9) + " °C";
+                            }
+                            else if (outputType == "kelvin") {
+                                document.getElementById("toOutput").value = (input - 32) * (5/9) + 273.15 + " K";
+                            }
+                            else if (outputType != "celsius" || "fahrenheit" || "kelvin") {
+                                alert("Cannot convert please varify your entries");
+                            }
+                            break;
+                        }
+                        case ("kelvin"): {
+                            if (outputType == "fahrenheit") {
+                                document.getElementById("toOutput").value = (input - 273.15) * (9/5) + 32 + " °F";
+                            }
+                            else if (outputType == "celsius") {
+                                document.getElementById("toOutput").value = input - 234.15 + " °C";
+                            }
+                            else if (outputType != "celsius" || "fahrenheit" || "kelvin") {
+                                alert("Cannot convert please varify your entries");
+                            }
+                            break;
+                        }
+                        case ("liter"): {
+                            if (outputType == "milliliter") {
+                                document.getElementById("toOutput").value = input * 1000 + " ml";
+                            }
+                            else if (outputType == "gallon") {
+                                document.getElementById("toOutput").value = input / 3.785 + " US Gallons";
+                            }
+                            else if (outputType == "teaspoon") {
+                                document.getElementById("toOutput").value = input * 168.936 + " Teaspoons";
+                            }
+                            else if (outputType != "liter" || "milliliter" || "gallon") {
+                                alert("Cannot convert please varify your entries");
+                            }
+                            break;
+                        }
+                        case ("milliliter"): {
+                            if (outputType == "liter") {
+                                document.getElementById("toOutput").value = input / 1000 + " ltrs";
+                            }
+                            else if (outputType == "gallon") {
+                                document.getElementById("toOutput").value = input / 3785.412 + " US Gallons";
+                            }
+                            else if (outputType == "teaspoon") {
+                                document.getElementById("toOutput").value = input / 17.758 + " Teaspoons";
+                            }
+                            else if (outputType != "liter" || "milliliter" || "gallon") {
+                                alert("Cannot convert please varify your entries");
+                            }
+                            break;
+                        }
+                        case ("gallon"): {
+                            if (outputType == "liter") {
+                                document.getElementById("toOutput").value = input * 3.785 + " ltrs";
+                            }
+                            else if (outputType == "milliliter") {
+                                document.getElementById("toOutput").value = input * 3785.412 + " ml";
+                            }
+                            else if (outputType == "teaspoon") {
+                                document.getElementById("toOutput").value = input * 639.494 + " Teaspoons";
+                            }
+                            else if (outputType != "liter" || "milliliter" || "gallon") {
+                                alert("Cannot convert please varify your entries");
+                            }
+                            break;
+                        }
+                        case ("teaspoon"): {
+                            if (outputType == "liter") {
+                                document.getElementById("toOutput").value = input / 168.936 + " ltrs";
+                            }
+                            else if (outputType == "milliliter") {
+                                document.getElementById("toOutput").value = input * 5.919 + " ml";
+                            }
+                            else if (outputType == "gallon") {
+                                document.getElementById("toOutput").value = input / 639.494 + " US Gallons";
+                            }
+                            else if (outputType != "liter" || "milliliter" || "gallon") {
+                                alert("Cannot convert please varify your entries");
+                            }
+                            break;
+                        }
+                    }
+                } 
+                else if (inputType == outputType) {
+                    alert("Cannot convert please varify your entries");
+                }
+            } 
+        </script>
+    </body>
+</html>
