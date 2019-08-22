@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Instagram</title>
+        <style>
+            body {
+                margin: 50px 200px;
+                background-color: #fafafa;
+            }
+            #phone {
+                width: 300px;
+                margin-top: 50px;
+                padding-left: 20px;
+            }
+            .content {
+                text-align: center;
+                width: 300px;
+                float: right;
+                margin: 0px 200px 0px 0px;
+                border: 2px solid white;
+                background: white;
+            }
+            .text {
+                color: gray;
+            }
+            .login-btn {
+                background: #447cf7;
+                width: 280px;
+                height: 30px;
+                color: white;
+            }
+            input {
+                padding: 5px;
+                margin: 5px;
+            }
+            .m-top {
+                margin-top: 10px;
+            }
+            .pad {
+                padding: 10px 0px;
+            }
+            .stores {
+                width: 100px;
+            }
+            .l-f {
+                float: left;
+            }
+            .c-align {
+                text-align: center;
+            }
+            @media (max-width: 800px) {
+                #phone {
+                    display: none;
+                }
+                .content {
+                    margin: 0px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="l-f">
+                <img id="phone" src="https://github.com/masai-school/full-stack-dev-1908/blob/master/course/week_1/day_3/resources/images/phone.jpg?raw=true" alt="">
+            </div>
+            <div class="content">
+                <h1>Instagram</h1>
+                <p class="text">Signup to see your photos and videos from your friends</p>
+                <button class="login-btn">Login with Facebook</button>
+                <p>----OR----</p>
+                <input type="text" placeholder="Mobile Number or Email"><br>
+                <input type="text" placeholder="Full Name"><br>
+                <input type="text" placeholder="Username"><br>
+                <input type="text" placeholder="Password"><br>
+                <button class="login-btn">Sign up</button>
+                <p class="text">By signing up, you agree to  our <strong>Terms</strong>, <strong>Data policy</strong>, <strong>Cookies Policy</strong></p>
+            </div>
+            <div class="content m-top">
+                <p>Have an account? <a href="#">Log in</a></p>
+            </div>
+            <div class="content m-top">
+                <p>Get the app.</p>
+                <img class="stores" src="https://github.com/masai-school/full-stack-dev-1908/blob/master/course/week_1/day_3/resources/images/appstore.png?raw=true" alt="">
+                <img class="stores" src="https://github.com/masai-school/full-stack-dev-1908/blob/master/course/week_1/day_3/resources/images/playstore.png?raw=true" alt="">
+            </div>
+        </div>
+    </body>
+</html>
