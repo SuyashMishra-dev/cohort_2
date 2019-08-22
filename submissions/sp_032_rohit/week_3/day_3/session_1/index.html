@@ -47,16 +47,17 @@
 			var multiplier = 0;
 			var	output = 0;
 			var i = 1;
+			var value = "0";
   			while (multiplier <= input){
 				multiplier = i*3*5;
 				if (multiplier <= input){
+					value = value + " + " + multiplier.toString();
 					output = output + multiplier;
-					var value = multiplier.toString();
 				}
-				value = "+" + value + "=" + output;
 				i++;
 			}
-		document.getElementById('sum').innerHTML = value;
+			var Final = value + " " + "=" + " " + output
+		document.getElementById('sum').innerHTML = Final;
 		}
 		//Write javascript for FSD.W3.3.1_3 here
 		function validateEmail(){
@@ -67,6 +68,7 @@
 				if(emailid[i] == '@'){
 					Valid = true;
 					Invalid = false;
+					break;
 				}
 				else {
 					Valid = false;
