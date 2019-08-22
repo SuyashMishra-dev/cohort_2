@@ -20,36 +20,41 @@
         saving = 0;
         deductions = 0;
 
-        income = Number(document.getElementById("income").value);
-        console.log(income);
-        saving = Number(document.getElementById("saving").value);
-        console.log(Number(document.getElementById("saving").value));
-
-        if (saving < 500000) {
-            deductions = 0.1 * saving;
-        } else if (saving >= 500000) {
-            deductions = 50000;
-        }
+        // if (saving < 500000) {
+        //     deductions = 0.1 * saving;
+        // } else if (saving >= 500000) {
+        //     deductions = 50000;
+        // }
 
         function calculate() {
+
+            income = Number(document.getElementById("income").value);
+            saving = Number(document.getElementById("saving").value);
+            console.log("start of the calculate, income =",income);
+
+            if (saving < 500000) {
+            deductions = 0.1 * saving;
+            } else if (saving >= 500000) {
+                deductions = 50000;
+            }
+
             if (income < 250000) {
                 tax = 0;
-                console.log("<250000");
+                // console.log("inside < 250000");
             } else if (income > 250000 && income < 500000) {
                 tax = ((income - 250000) - (saving * 0.5)) * 0.1;
-                console.log("<500000");
+                console.log("inside < 500000");
             } else if (income >= 500000 && income < 1000000) {
                 tax = (((income - 500000) - (saving * 0.3)) * 0.2) + 250000 * 0.1;
-                console.log("<1000000");
+                // console.log("inside < 1000000");
             } else if (income >= 1000000) {
                 tax = ((income - 1000000 - deductions) * 0.3) + (500000 * 0.2) + (250000 * 0.1);
-                console.log(">1000000");
+                // console.log("inside > 1000000");
             } else {
                 document.getElementById("tax").innerHTML = "";
             }
 
             document.getElementById("tax").innerHTML = "Your tax is " + tax;
-            console.log(income);
         }
     </script>
 </body>
