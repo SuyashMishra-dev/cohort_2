@@ -38,7 +38,7 @@
     }
     changeButton.addEventListener('mouseover', switchColorButton); 
 
-    //for double click
+    //for double click using eventlistner
     var changeHeading = document.getElementById('colorHeading');
     var changeButtonHeading = document.getElementById('buttonHeading');
 
@@ -56,7 +56,7 @@
     }
     changeButtonHeading.addEventListener('dblclick', switchColorHeading);  
 
-    //for last button
+    //for last button where only 2 times color will change and can be stopped by removeeventlistner
     var buttonOnce = document.getElementById('changeColorOnce');
     var count=1;
     function switchColorOnce(){
