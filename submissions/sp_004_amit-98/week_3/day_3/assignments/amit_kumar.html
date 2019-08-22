@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <style>
         body {
@@ -49,29 +48,31 @@
 
         #boxContainer {
             width: 600px;
-            height: 500px;
+            height: 600px;
             margin-left: 35%;
             margin-top: 200px;
             border: 1px solid black;
             text-align: center;
             background: #0F9585;
+            border-radius: 5px;
         }
         @media (max-width:800px){
             #boxContainer {
             width: 400px;
-            height: 500px;
+            height: 600px;
             margin-left: 0;
             margin-top: 100px;
             border: 1px solid black;
             text-align: center;
             background: #0F9585;
+            border-radius: 5px;
         }  
         }
     </style>
 </head>
-
 <body>
     <div id="boxContainer">
+        <h1>Income TAX Calculater</h1>
         <div id="incomeTax">Your have to pay </div>
         <div id="displayTax"></div>
         <span>Rupees Tax</span>
@@ -92,36 +93,27 @@
                 document.getElementById("displayTax").innerHTML = 0;
             }
             else if (totalIncome > 250000 && totalIncome <= 500000) {
-                totalSaving1 = (totalSaving * 0.5);
-                totalF = totalIncome - totalSaving1;
-                totalT = (totalF * 0.1);
-
-                document.getElementById("displayTax").innerHTML = totalT;
+                totalSavingR = (totalSaving * 0.5);
+                totalFnl = (totalIncome - 250000 - totalSavingR);
+                tax = (totalFnl * 0.1);
+                document.getElementById("displayTax").innerHTML = tax;
 
             }
             else if (totalIncome > 500000 && totalIncome <= 1000000) {
-                totalSaving1 = (totalSaving * 0.3);
-                totalF = totalIncome - totalSaving1;
-                totalT = (totalF * 0.2);
-
-                document.getElementById("displayTax").innerHTML = totalT;
-
-            }
-            else if (totalIncome > 1000000) {
-                totalSaving1 = (totalSaving * 0.1);
-                totalF = totalIncome - totalSaving1;
-                totalT = (totalF * 0.3);
-
-                document.getElementById("displayTax").innerHTML = totalT;
+                totalSavingR = (totalSaving * 0.3);
+                totalFnl = (totalIncome -500000- totalSavingR);
+                tax = (totalFnl * 0.2) + 250000*0.1;
+                document.getElementById("displayTax").innerHTML = tax;
 
             }
-            else {
-                alert('Enter Valid Income');
-            }
+            else  {
+                totalSavingR = (totalSaving * 0.1);
+                totalFnl = (totalIncome -1000000 - totalSavingR);
+                tax = (totalFnl * 0.3)+(500000*0.2)+(250000*0.1);
+                document.getElementById("displayTax").innerHTML = tax;
 
+            }
         }
     </script>
-
 </body>
-
 </html>
