@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tax Calculator</title>
+        <style type="text/css">
+        body{
+            width: 500px;
+            height: 350px;
+            border: solid 5px black; 
+            text-align: center;
+            margin: 10% 30%;
+            background: lightblue;
+        }
+        #tax_amount{
+            color: darkblue;
+            font-size: large;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="tax">
+            <h3>INCOME TAX AMOUNT:</h3>
+            <p id="tax_amount"></p>
+        </div>
+
+        <label for="income">TOTAL ANNUAL INCOME:</label>
+        <input type="text" name="income" id="annual_income"><br><br>
+        <label for="saving">TOTAL ANNUAL SAVING</label>
+        <input type="text" name="saving" id="annual_saving"><br><br>
+
+        <button onclick="tax_calculator()">CALCULATE TAX</button>
+
+        <script type="text/javascript">
+        function tax_calculator(){
+            var income=Number(document.getElementById("annual_income").value);
+            var saving=Number(document.getElementById("annual_saving").value);
+            var rebate="";
+            var tax_amount="";
+
+            var total=income+saving;
+            console.log(total);
+
+            if(total < 500000){
+                rebate=saving*0.5;
+            }
+            else if(total >= 500001 && total < 1000000){
+                rebate=saving*0.30;
+            }
+            else if(total >= 1000000){
+                rebate=saving*0.10;
+                if(rebate > 50000){
+                    rebate=50000;
+                }
+            }
+
+            console.log(rebate);
+            total = total - rebate;
+            console.log(total);
+
+            var tax="";
+            if(total<=250000){
+                document.getElementById("tax_amount").innerHTML="BELOW 2,50,000 - NO TAX";
+            }
+            else if(250001<=total && total<500000){
+                tax_amount=total-250000;
+                tax = tax_amount*0.10;
+                document.getElementById("tax_amount").innerHTML="INCOME TAX: "+tax;
+            }
+            else if(500001<=total && total<1000000){
+                tax_amount=total-250000;
+                tax = tax_amount*0.20;
+                document.getElementById("tax_amount").innerHTML="INCOME TAX: "+tax;
+            }
+            else if(1000001<=total){
+                tax_amount=total-250000;
+                tax = tax_amount*0.30;
+                document.getElementById("tax_amount").innerHTML="INCOME TAX: "+tax;
+            }
+        }
+        </script>
+    </body>
+</html>
