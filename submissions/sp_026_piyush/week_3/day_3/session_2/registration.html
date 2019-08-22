@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>registration</title>
+    <style>
+        #mainDiv {
+            display: flex;
+        }
+
+        #mainDiv > div {
+            flex-direction: row;
+            margin-left: 20px;
+        }
+
+        .black {
+            background: black;
+        }
+
+        .fontWhite {
+            color: white;
+        }
+
+        @media(max-width: 800px) {
+            #mainDiv {
+                display: block;
+                width: 200px;
+            }
+
+            #masaiDetails {
+                margin-top: 50px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="enterDetails">
+            <div>NAME</div>
+            <div>
+                <input type="text" id="name">
+            </div>
+            <div id="nameError"></div>
+            <div>EMAIL</div>
+            <div >
+                    <input type="text" id="email">
+            </div>
+            <div id="emailError"></div>
+            <div>MOBILE</div>
+            <div >
+                    <input type="number" id="mobile">
+            </div>
+            <div id="mobileError"></div>
+            <button onclick="register()" id="register">REGISTER</button>
+        </div>
+
+        <div id="masaiDetails" class="black fontWhite">
+            <div>NAME</div>
+            <div id="newName">MASAI</div>
+            <div>EMAIL</div>
+            <div id="newEmail">email@masaischool.com</div>
+            <div>MOBILE</div>
+            <div id="newMobile">9876543210</div>
+        </div>
+    </div>
+
+    <script>
+
+        var name = document.getElementById("name").value;
+        console.log(name);
+        var email = document.getElementById("email").value;
+        console.log(email);
+        var mobile = document.getElementById("mobile").value;
+        console.log(mobile);
+
+        function register() {
+            
+        }
+
+        function checkName() {
+            var length = document.getElementById("name").value.length;
+            console.log(length);
+            if (length > 10 || length < 3) {
+                document.getElementById("nameError").innerHTML = "Enter a valid name";
+            } else {
+                document.getElementById("newName").innerHTML = document.getElementById("name").value;
+            }
+        }
+
+        function checkEmail() {
+
+        }
+
+        function checkMobile() {
+            var length = document.getElementById("mobile").value.length;
+            console.log(length);
+            if (length != 10) {
+                document.getElementById("mobileError").innerHTML = "Enter a valid mobile";
+            } else {
+                document.getElementById("newMobile").innerHTML = document.getElementById("mobile").value;
+            }
+        }
+    </script>
+</body>
+</html>
