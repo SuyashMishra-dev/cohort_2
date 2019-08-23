@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <title>Unix</title>
+        <style>
+            #box1 {
+                background: grey;
+                width: 400px;
+                height: 300px;
+                margin: auto;
+            }
+            #box2 {
+                margin: 30px 350px;
+            }
+            #box3 {
+                background: chocolate;
+                width: 1270px;
+                height: 150px;
+                margin: 100px 30px 30px 30px;
+                padding: 10px;
+            }
+            .l-clear {
+                clear: left;
+            }
+            .r-clear {
+                clear: right;
+            }
+            .r-float {
+                float: right;
+            }
+            .l-float {
+                float: left;
+            }
+            .fs3 {
+                font-size: 30px;
+            }
+            #img1 {
+                height: 150px;
+                width: 100px;
+                margin: 10px 10px 0px 150px;
+            }
+            #img2 {
+                height: 150px;
+                width: 120px;
+                margin: 0px 15px 0px 0px;
+            }
+            h1 {
+                color: red;
+            }
+            .center-align {
+                text-align: center;
+            }
+            .fs30{
+                font-size: 30px;
+            }
+            #blue-text {
+                color: blue;
+            }
+            .m10 {
+                margin: 10px;
+            }
+            .white-text {
+                color: white;
+            }
+            #seperator {
+                background: black;
+                width: 5px;
+                height: 130px;
+                margin: 10px 350px 5px 230px; 
+            }
+            @media (max-width: 600px) {
+                #box2 {
+                    margin: 0px;
+                }
+                #box3 {
+                    margin: 0px;
+                    width: 600px;
+                    height: 250px;  
+                    padding: 0px;
+                }
+                .fs30 {
+                    font-size: 20px;
+                }
+                #seperator {
+                    display: none;
+                }
+                .adjust {
+                    margin-left: 200px; 
+                } 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box1">
+            <img id="img1" src="https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/linus.jpg" alt="">
+            <p class="center-align fs30 m10" id="blue-text"><Strong>Linus Torvalds</Strong></p>
+            <p class="center-align fs30 m10">The creator of Linux and Git</p>
+        </div>
+        <div id="box2">
+            <img id="img2" class="l-float" src="https://github.com/masai-school/full-stack-dev-1908/blob/master/course/week_1/day_3/resources/images/khan.jpg?raw=true" alt="">
+            <h1>Sal Khan</h1>
+            <p>Salman Khan is the founder of Khan Academy which has a mission to provide free world class education to anyone, anywhere.</p>
+        </div>
+        <div id="box3" class="l-clear">
+            <div class="l-float">
+                <p class="l-float white-text fs30">Ken Thompson</p>
+                <p class="l-clear l-float">Designed and implemented the original Unix Operating System</p>
+            </div>
+            <div id="seperator" class="l-float"></div>
+            <div class="l-float">
+                <p class="r-float white-text fs30 adjust">Dennis Ritchie</p>
+                <p class="r-clear r-float adjust">The creator of C programming Language</p>
+            </div>
+        </div>
+    </body>
+</html>

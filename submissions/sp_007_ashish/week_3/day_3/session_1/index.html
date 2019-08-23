@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Session 1!</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.W3.3.1_1-->
+	<h1> Create your own exponentiation function! </h1>
+	<input type="text" id="number_1"name = "num1">
+	<input type="text" id="number_2"name = "num2">
+	<p  id="result_exp"> </p>
+	</hr>
+	<button onclick="exponent()">Click here to find the exponent!</button>
+	<!-- These elements above are for FSD.W3.3.1_1-->
+
+	<!-- These elements below are for FSD.W3.3.1_2-->
+	<h1>Sum of multiples of 3 and 5!</h1>
+	<p id="result_mul"></p>
+	<input type="text" id="limit">
+	<button onclick="sumOf3And5()">Click here for the output!</button>
+	
+	<!-- These elements above are for FSD.W3.3.1_2-->
+
+	<!-- These elements below are for FSD.W3.3.1_3-->
+	<h1>Check if the users email is valid!</h1>
+	<label for="Email">Email</label>
+	<input type="text" id="email_id" />
+	<button onclick="validateEmail()">Check Email!</button>
+	<!-- These elements above are for FSD.W3.3.1_3-->
+	<script type="text/javascript">
+	    // function for multiplication
+		 function multiplication(num1,num2){
+
+            return num1*num2;
+		 }
+		//Write javascript for FSD.W3.3.1_1 here
+		function exponent(){
+			var num1 = document.getElementById("number_1").value;
+			var num2 = document.getElementById("number_2").value;
+			var result =1;
+			
+			for(var i=1; i<=num2;i++){
+				result= multiplication(num1,result);
+
+			}
+			document.getElementById("result_exp").innerHTML= result;
+		}
+		//Write javascript for FSD.W3.3.1_2 here
+		function sumOf3And5(){
+			var limit = document.getElementById("limit").value;
+			var sum=0;
+			
+            for(var j=0; j<=limit;j++){
+              if(j%3==0 && j%5==0){
+				  sum=sum+j;
+			  }
+			}
+			document.getElementById("result_mul").innerHTML=sum;
+		}
+
+		//Write javascript for FSD.W3.3.1_3 here
+		function validateEmail(){
+			var email = document.getElementById("email_id").value;
+			
+			 var elength = email.length;
+			
+			 var start_pos=0;
+			 var end_pos=0;
+			 for(var k=0; k< elength ;k++){
+				 if(email[k]=='@'){
+					start_pos=k;
+				 }
+				 if(email[k]=='.'){
+					 end_pos=k;
+				 }
+			 }
+			 
+			 if(end_pos-start_pos<2){
+				 alert("Invaild Email");
+
+			 }
+			 else if(end_pos ==0 || start_pos==0){
+				 alert("invailid Email")
+			 }
+			 else if(end_pos+3!= elength-1){
+				 alert("invaild Email");
+			 }
+			 else{
+				 alert("correct Email !!");
+			 }
+		}
+	</script>
+</body>
+</html>

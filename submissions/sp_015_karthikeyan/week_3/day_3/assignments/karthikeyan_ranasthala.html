@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tax Calculator</title>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="income">
+            <input type="text" id="savings">
+            <button onclick="calculate()">Calculate</button>
+            <p id="output"></p>
+        </div>
+        <script>
+            function calculate() {
+                var income = document.getElementById("income").value;
+                var savings = document.getElementById("savings").value;
+
+                if (income < 250000) {
+                    document.getElementById("output").innerHTML = "NO NEED TO PAY TAX"
+                }
+                else if ((income > 250000) && (income <= 500000)) {
+                    var effectiveIncome = income - (0.5 * savings);
+                    var taxPayable = (0.1 * effectiveIncome);
+                    document.getElementById("output").innerHTML = "YOU SHOULD PAY " + taxPayable;
+                }
+                else if ((income > 500000) && (income <= 1000000)) {
+                    var effectiveIncome = income - (0.3 * savings);
+                    var taxPayable = (0.2 * effectiveIncome);
+                    document.getElementById("output").innerHTML = "YOU SHOULD PAY " + taxPayable;
+                }
+                else if (income > 1000000) {
+                    var effectiveSavings = income - (0.1 * savings);
+                    if (effectiveSavings > 50000) {
+                        effectiveSavings = 50000;
+                    }
+                    var effectiveIncome = income - effectiveSavings;
+                    var taxPayable = (0.3 * effectiveIncome);
+                    document.getElementById("output").innerHTML = "YOU SHOULD PAY " + taxPayable;
+                }
+            }
+        </script>
+    </body>
+</html>

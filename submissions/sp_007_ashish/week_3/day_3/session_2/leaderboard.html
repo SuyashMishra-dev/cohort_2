@@ -1,0 +1,212 @@
+<html>
+    <head>
+    <style type="text/css">
+    .area{
+        height: 800px;
+        width: 520px;
+        border:2px solid black;
+        margin-left: 600px;
+    }
+    .boxRed{
+        height:80px;
+        width: 100px;
+        border: 2px solid black;
+        background: red;
+        float: left;
+        margin: 30px;
+        text-align: center;
+        font-size: 30px;
+        }
+    .boxGreen{
+        height:80px;
+        width: 100px;
+        border: 2px solid black;
+        float: right;
+        background: green;
+        margin: 30px;
+        text-align: center;
+        font-size: 30px;
+    } 
+    .textR{
+        clear: left;
+        float: left;
+        margin-left:50px;
+        font-size: 20px;
+
+    }
+    .textG{
+       
+        float: right;
+        margin-right: 40px;
+        font-size: 20px;
+    }
+    .divi{
+        border:2px solid black;
+    }
+    .textScore{
+        clear: right;
+        float: right;
+        margin-right: 255px;
+        font-size: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
+    .score{
+        height:90px;
+        width: 250px;
+        clear: right;
+        float: left;
+        border:2px solid black;
+        margin-left: 120px;
+        text-align: center;
+        font-size: 30px;
+    }   
+    .next{
+        clear: left;
+        float: left;
+        
+    }
+    .number{
+        height:70px;
+        width: 70px;
+        border: 2px solid black;
+        float: left;
+        margin-top: 20px;
+        text-align: center;
+        margin-left: 75px;
+        padding:0.5 px;
+        font-size: 30px;
+    }
+    .enter{
+        height:50px;
+        width: 250px;
+        border: 2px solid black;
+        float: left;
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        background: black;
+        margin-left: 140px;
+        margin-top:5px;
+
+    }
+    .green{
+        background: green;
+    }
+    .orange{
+        background: orange;
+    }
+    .white{
+        background: white;
+        border: 2px solid white;
+    }
+    .purple{
+        background: purple;
+    }
+    </style>
+    </head>
+    <body class="area">
+               <div>
+                    <div><input class="boxRed" id="min_id"></div>
+                    <div><input class="boxGreen" id="max_id"></div>
+                    <div class="textR ">MIN</div>
+                    <div class="textG ">MAX</div>
+                    <div class="textScore">Score</div>
+                    <div><input class="score" type="text" id="score_id"></div>
+                    <div class="next"></div>
+                    
+                    <div class="number green" onclick="showNum1()" id="one_id">1</div>
+                    <div class="number orange" onclick="showNum2()" id="two_id">2</div>
+                    <div class="number green" onclick="showNum3()" id="three_id">3</div>
+                    <div class="next"></div>
+                    <div class="number orange" onclick="showNum4()" id="four_id">4</div>
+                    <div class="number orange" onclick="showNum5()" id="five_id">5</div>
+                    <div class="number orange" onclick="showNum6()" id="six_id">6</div> 
+                    <div class="next"></div>
+                    <div class="number orange" onclick="showNum7()" id="seven_id">7</div>
+                    <div class="number orange" onclick="showNum8()" id="eight_id">8</div>
+                    <div class="number orange" onclick="showNum9()" id="nine_id">9</div> 
+                    <div class="next"></div>
+                    <div class="number white" onclick="showNum()" id=""></div>
+                    <div class="number purple" onclick="showNum0()" id="zero_id">0</div>
+                    <div class="number white" id=""></div>
+                    <div class="next"></div>
+                    <div class="enter black" onclick="calculate()">Enter</div>
+               </div>
+              
+               <script type="text/javascript">
+               var total="";
+               
+               document.getElementById("min_id").value =43;
+               document.getElementById("max_id").value =2019;
+              
+              
+               function showNum1(){
+                   var one = 1;
+                   total= total+one;
+                   var score = document.getElementById("score_id").value=total;
+                  
+               }
+               function showNum2(){
+                   var two = 2;
+                   total=total+two;
+                   var score = document.getElementById("score_id").value=total;
+                   
+               }
+               function showNum3(){
+                   var three = 3;
+                   total=total+three;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum4(){
+                   var four = 4;
+                   total=total+four;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum5(){
+                   var five = 5;
+                   total=total+five;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum6(){
+                   var six = 6;
+                   total=total+six;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum7(){
+                   var seven = 7;
+                   total=total+seven;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum8(){
+                   var eight = 8;
+                   total=total+eight;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum9(){
+                   var nine = 9;
+                   total=total+nine;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum0(){
+                   var zero = 0;
+                   total=total+zero;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function calculate(){
+                   alert(total);
+                   if(total<document.getElementById("min_id").value){
+                    document.getElementById("min_id").value=total;
+                    total="";
+                    document.getElementById("score_id").value =total;
+                   }
+                   else if(total>document.getElementById("max_id").value){
+                      document.getElementById("max_id").value=total;
+                      total="";
+                    document.getElementById("score_id").value =total;
+                   }
+               }
+               </script>
+        
+    </body>
+</html>
