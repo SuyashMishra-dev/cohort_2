@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Marriage Age Validator
+        </title>
+        <style type="text/css">
+        body{
+            text-align: center;
+            
+        }
+        </style>
+    </head>
+    
+    <body>
+        <h1>
+            Let's Try Are your is correct for marriage
+        </h1>
+        <div>
+        <label for="gender">Choose your Gender</label>
+        <select id = "genderSelect">
+            <option value = "select"> </option>
+            <option value = "male">
+                Male
+            </option>
+            <option value = "female">
+                Female
+            </option>
+        </select>
+        </div>
+
+        <div>
+        <p>
+            Enter your Birth Year
+        </p>
+        <input type="text" id="yearOfBirth"/>
+        </div>
+        
+        <div>
+        <button onclick="validate()">
+            Validate
+        </button>
+        </div>        
+    </body>
+    
+    <script type="text/javascript">
+        
+        function validate(){
+            var gender = document.getElementById("genderSelect").value;
+            var year = Number(document.getElementById("yearOfBirth").value);
+            var age = 2019 - year;
+            var currentmale=21-age;
+            var currentfemale=18-age;
+            if(gender == "male"){
+                if (age >= 21){ 
+                    alert("You age is correct for marriage.");
+                }
+                else{ 
+                    alert("You age is not legal for marriage. You are too young. Your age is only " +age+  " years and need to wait till more " +currentmale+ " years.");
+                }
+            }
+            else if(gender == "female"){
+                if (age>=18){ 
+                    alert("You age is correct for marriage.");
+                }
+                else{ 
+                    alert("You age is not legal for marriage. You are too young. Your age is only " +age+  " years and need to wait till more " +currentfemale+ " years.");                      
+                }
+            }
+            else if(gender == "select"){
+                alert("Please select gender")
+            }
+            
+        }
+    </script>
+</html>
