@@ -1,0 +1,361 @@
+<html>
+    <head>
+        <style>
+ .div1
+    {
+  width: 500px;
+  height:500px;
+  background-color: darkgray;
+  text-align: center;
+  margin-left:600px;  
+    }
+    p{
+       font-size: 20px;
+       color:white;
+    }
+    
+        </style>
+   
+    </head>
+            <body>
+                <!--
+                    <div class="grid_main" >
+                      <div id="block1"><p>Unit Convertor</p></div>
+                   
+                -->
+                
+                <div class="div1">
+                   <p><b>UNIT CONVERTOR</b></p>
+<p>Enter the Amount of given unit</p>
+<button  id="length" onclick="length_list()">Convert</button>
+
+<p id="fromm"><b>FROM</b></p>
+<input type="text" name="amount" id="user_amount_from" ><br>
+<select id="unit_from">1
+    <option value="Meter">Meter</option>
+    <option value="Kilometer">Kilometer</option>
+    <option value="Mile">Mile</option>
+    <option value="Light_Year">Light Year</option>
+    <option value="Celsius">Celsius</option>
+    <option value="Kelvin">Kelvin</option>
+    <option value="Fahrenheit">Fahrenheit</option>
+    <option value="Liter">Liter</option>
+    <option value="Milliliter">Milliliter</option>
+    <option value="US_gallon">USGALLON</option>
+</select>
+
+<p><b>TO</b></p>
+    <input type="text" name="amount" id="user_amount_to" ><br>
+    <select id="unit_to">
+        <option value="Meter">Meter</option>
+        <option value="Kilometer">Kilometer</option>
+        <option value="Mile">Mile</option>
+        <option value="Light_Year">Light Year</option>
+        <option value="Celsius">Celsius</option>
+        <option value="Kelvin">Kelvin</option>
+        <option value="Fahrenheit">Fahrenheit</option>
+        <option value="Liter">Liter</option>
+        <option value="Milliliter">Milliliter</option>
+        <option value="us_gallon">USGALLON</option>
+    </select>    
+    </div>
+<script>
+   function length_list()
+   {
+      var from = document.getElementById("unit_from").value
+      var to = document.getElementById("unit_to").value
+
+      if(from=='Meter'&&to=='Kilometer')
+      {
+          meter_kilo()
+      }
+
+      else if(from=='Meter'&&to=='Mile')
+      {
+          meter_mile()
+      }
+
+      else if(from=='Meter'&&to=='Light_Year')
+      {
+          meter_light()
+      }
+      
+
+
+
+
+      else if(from=='Kilometer'&&to=='Meter')
+      {
+       kilo_mtr() 
+      }
+
+      else if(from=='Kilometer'&&to=='Mile')
+      {
+        kilo_mile()
+      }
+
+      else if(from=='Kilometer'&&to=='Light_Year')
+      {
+        kilo_lght()
+      }
+      else if(from=='Mile'&&to=='Meter')
+      {
+        mile_mtr()
+      }
+      else if(from=='Mile'&&to=='Kilometer')
+      {
+        mile_kilo()
+      }
+
+      else if(from=='Mile'&&to=='Light_Year')
+      {
+        mile_light()
+      }
+      else if(from=='Light_Year'&&to=='Meter')
+      {
+        light_meter()
+      }
+      else if(from=='Light_Year'&&to=='Mile')
+      {
+        light_mile()
+      }
+      else if(from=='Light_Year'&&to=='Kilometer')
+      {
+        light_kilo()
+      }
+      
+      
+
+
+
+
+     
+
+      else if(from=='Celsius'&&to=='Kelvin')
+      {
+          celsius_kelvin()
+      }
+      else if(from=='Celsius'&&to=='Fahrenheit')
+      {
+          celsius_fahrenheit()
+      }
+      else if(from=='Kelvin'&&to=='Celsius')
+      {
+          kelvin_celsius()
+      }
+      else if(from=='Kelvin'&&to=='Fahrenheit')
+      {
+          kelvin_fahrenheit()
+      }
+      else if(from=='Fahrenheit'&&to=='Celsius')
+      {
+         fahrenheit_celsius()
+      }
+      else if(from=='Fahrenheit'&&to=='Kelvin')
+      {
+          fahrenheit_kelvin()
+      }
+      else if(from=='Liter'&&to=='Milliliter')
+      {
+         liter_millimeter()
+      }
+      else if(from=='Liter'&&to=='us_gallon')
+      {
+          litter_gallon()
+      }
+      else if(from=='Milliliter'&&to=='Liter')
+      {
+         milli_liter()
+      }
+      else if(from=='Milliliter'&&to=='us_gallon')
+      {
+         milli_gallon()
+      }
+      else if(from=='us_gallon'&&to=='Liter')
+      {
+         gallon_liter()
+      }
+      else if(from=='us_gallon'&&to=='Milliliter')
+      {
+         gallon_milli()
+      }
+    
+   
+
+   function meter_kilo()
+   {
+       var get = document.getElementById("user_amount_from").value
+       var show= document.getElementById("user_amount_to").value
+   }
+   function meter_mile()
+   {
+       var get = document.getElementById("user_amount_from").value
+       var show = get/1609.344
+      document.getElementById("user_amount_to").value=show
+   }
+   function meter_light()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get/9.461e+15;
+      document.getElementById("user_amount_to").value=show
+   }
+   
+
+
+   function kilo_mtr()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get*1000
+      document.getElementById("user_amount_to").value=show
+   }
+   function kilo_mile()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get/1.609;
+      document.getElementById("user_amount_to").value=show
+   }
+   function kilo_lght()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get/9.461e+12;
+      document.getElementById("user_amount_to").value=show
+   }
+   function mile_mtr()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get*1609.344;
+      document.getElementById("user_amount_to").value=show
+   }
+   function mile_light()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get/5.879e+12;
+      document.getElementById("user_amount_to").value=show
+   }
+   function mile_kilo()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get*1.609;
+      document.getElementById("user_amount_to").value=show
+   }
+
+   function light_kilo()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get*9.461e+12;
+      document.getElementById("user_amount_to").value=show
+   }
+   
+   function light_meter()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get*9.461e+15;
+      document.getElementById("user_amount_to").value=show
+   }
+   
+   function light_mile()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get*5.879e+12;
+      document.getElementById("user_amount_to").value=show
+   }
+   
+   
+
+
+
+
+
+
+
+
+
+
+   function celsius_kelvin()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = Number(get)+273.15;
+      document.getElementById("user_amount_to").value=show
+   }
+   function celsius_fahrenheit()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = ((get*9/5)+32);
+      document.getElementById("user_amount_to").value=show
+   }
+
+
+
+function kelvin_celsius()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = (get-272.15);
+      document.getElementById("user_amount_to").value=show
+   }
+   function kelvin_fahrenheit()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = (get-273.15)*9/5+32;
+      document.getElementById("user_amount_to").value=show
+   }
+
+   function fahrenheit_celsius()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = (get-32)*5/9;
+      document.getElementById("user_amount_to").value=show
+   }
+
+   function fahrenheit_kelvin()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = (get-32)*5/9+273.15;
+      document.getElementById("user_amount_to").value=show
+   }
+
+   function liter_millimeter()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get*1000;
+      document.getElementById("user_amount_to").value=show
+   }
+
+   function litter_gallon()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get/3.785;
+      document.getElementById("user_amount_to").value=show
+   }
+
+   function milli_liter()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get/1000;
+      document.getElementById("user_amount_to").value=show
+   }
+
+   function milli_gallon()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get/3785.412;
+      document.getElementById("user_amount_to").value=show
+   }
+
+   function gallon_liter()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get*3.785;
+      document.getElementById("user_amount_to").value=show
+   }
+
+   function gallon_milli()
+   {
+    var get = document.getElementById("user_amount_from").value
+       var show = get*3785.412;
+      document.getElementById("user_amount_to").value=show
+   }
+    }
+  
+</script> 
+            </body>
+</html>
