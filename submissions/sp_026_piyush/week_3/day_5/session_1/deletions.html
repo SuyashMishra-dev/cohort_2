@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <div id="headings">
+            <h5>First H5</h5>
+            <h5>Second H5</h5>
+            <h5>Third H5</h5>
+        </div>
+        <div id="cont">
+            <div class="green">First DIV</div>
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button id="btnRemoveH1">Remove H1</button>
+        <button id="btnRemoveH3">Remove H3</button>
+        <button id="btnRemoveH5">Remove H5</button>
+        <button id="btnRemoveRed">Remove Red</button>
+        <button id="btnRemoveDIVS">Remove DIVS</button>
+        <script>
+            var elemBody = document.querySelector('body');
+            var headings = document.getElementById('headings');
+            var cont = document.getElementById('cont');
+
+            var h1 = document.querySelector('h1');
+            var btnRemoveH1 = document.getElementById('btnRemoveH1');
+            btnRemoveH1.addEventListener('click', removeH1);
+
+            function removeH1() {
+                console.log("Inside removeH1");
+                elemBody.removeChild(h1);
+            }
+
+            var btnRemoveH3 = document.getElementById('btnRemoveH3');
+            btnRemoveH3.addEventListener('click', removeH3);
+            var h3 = document.querySelectorAll('h3');
+
+            function removeH3() {
+                console.log("Inside removeH3");
+                for(i = 0; i < h3.length; i++) {
+                    elemBody.removeChild(h3[i]);  
+                }
+            }
+
+            var btnRemoveH5 = document.getElementById('btnRemoveH5');
+            btnRemoveH5.addEventListener('click', removeH5);
+            var h5 = document.querySelectorAll('h5');
+
+            function removeH5() {
+                console.log("Inside removeH5");
+                for(i = 0; i < h5.length; i++) {
+                    headings.removeChild(h5[i]);  
+                }
+            }
+
+            var btnRemoveRed = document.getElementById('btnRemoveRed');
+            btnRemoveRed.addEventListener('click', removeRed);
+            var redClass = document.querySelectorAll('.red');
+
+            function removeRed() {
+                console.log("Inside removeRed");
+                for(i = 0; i < redClass.length; i++) {
+                    cont.removeChild(redClass[i]);  
+                }
+            }
+
+            var btnRemoveDIVS = document.getElementById('btnRemoveDIVS');
+            btnRemoveDIVS.addEventListener('click', removeDIVS);
+            var div = cont.querySelectorAll('div');
+
+            function removeDIVS() {
+                console.log("Inside removeDIVS");
+                for(i = 0; i < div.length; i++) {
+                    cont.removeChild(div[i]);  
+                }
+            }
+        </script>
+    </body>
+</html>
