@@ -1,0 +1,106 @@
+<html>
+
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr />
+        <button id="changeH1">Change H1</button>
+        <button id="changeH3">Change H3</button>
+        <button id="changeH5">Change H5</button>
+        <button id="changeGreen">Change Green</button>
+        <button id="changeRed">Change Red</button>
+        <button id="changeBlue">Change Blue</button>
+
+        <script typel=text/javascript>
+
+            var changeH1 = document.getElementById("changeH1");
+            var firstH = document.querySelector("h1");
+            var changeH3 = document.getElementById('changeH3');
+            var allH3 = document.querySelectorAll('h3');
+            var changeH5 = document.getElementById('changeH5');
+            var allH5 = document.querySelectorAll('h5');
+            var changeGreen = document.getElementById('changeGreen');
+            var greenText = document.querySelectorAll('.green');
+            var changeRed = document.getElementById('changeRed');
+            var redText = document.querySelectorAll('.red');
+            var changeBlue = document.getElementById('changeBlue');
+            var blueText = document.querySelectorAll('.blue');
+
+            changeH1.addEventListener('click' , changeToRed);
+
+            changeH3.addEventListener('click', changeToGreen);
+
+            changeH5.addEventListener('click', changeToBlue);
+
+            changeGreen.addEventListener('click', textToGreen);
+
+            changeRed.addEventListener('click' , textToRed);
+
+            changeBlue.addEventListener('click', textToBlue);
+
+            function changeToRed() {
+        
+                firstH.style.color = "red";
+        
+        }
+
+            function changeToGreen() {
+                
+                for (var i = 0; i < allH3.length ; i++) {
+
+                    var h3 = allH3[i];
+                    h3.style.color = 'green';
+                
+                }
+            }
+
+            function changeToBlue() {
+                for(var i = 0; i <= allH5.length; i++) {
+                    var h5 = allH5[i];
+                    h5.style.color = 'blue';
+                }
+            }
+
+            function textToGreen() {
+                for(var i = 0; i <= greenText.length; i++) {
+
+                    var colorGreen = greenText[i];
+                    colorGreen.style.color = 'green'
+                }
+            }
+
+            function textToRed() {
+                
+                for(var i = 0; i <= redText.length; i++) {
+                    
+                    var redColor = redText[i];
+                    redColor.style.color = 'red';
+                }
+            }
+
+            function textToBlue() {
+                for(var i = 0; i <= blueText.length; i++) {
+                    var colorBlue = blueText[i];
+                    colorBlue.style.color = 'blue';
+                }
+            }
+        </script>
+    
+    </body>
+
+</html>
