@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button onclick="createHead1()">Create H1</button>
+        <button onclick="createHead3()">Create 2 H3</button>
+        <button onclick="createDivs()">Create DIVS</button>
+        <button onclick="addStudents()">Add Students</button>
+        <button onclick="addCopy()">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+            
+            function createHead1() {
+                var heading = document.getElementById('headings');
+                var head1 = document.createElement('h1');
+                head1.innerHTML = 'Learn to earn, pay when you get.';
+                heading.appendChild(head1);
+            }
+
+            function createHead3() {
+                var headings = document.getElementById('headings');
+                var head31 = document.createElement('h3')
+                head31.innerHTML = 'A Transformation in education!'
+                var head32 = document.createElement('h3');
+                head32.innerHTML = 'Learn to earn, pay when you get.';
+                cont.appendChild(head31);
+                cont.appendChild(head32);
+            }
+
+            function createDivs() {
+                var cont = document.getElementById('cont');
+
+                for(var i= 1; i<=10 ; i++) {
+                    var new_el = document.createElement('div');
+                    new_el.textContent = 'Content' + i;
+                    cont.appendChild(new_el);
+                }
+            }
+
+            function addStudents() {
+                var vikings = document.getElementById('vikings');
+                var ulist = document.createElement('ul');
+                var stuList = '';
+                for(el in students) {
+                    stuList = stuList + '<li>'+students[el]+'</li>';                    
+                }
+                console.log(stuList);
+                ulist.innerHTML = stuList;
+                vikings.appendChild(ulist);
+            }
+
+            function addCopy() {                
+                var btn = document.querySelector('button');
+                var para = document.createElement('p');
+                para.textContent = '@ masai 2019';
+                var bodyElm = document.querySelector('body');
+                bodyElm.insertBefore(para,btn);
+
+            }
+
+        </script>
+    </body>
+</html>
