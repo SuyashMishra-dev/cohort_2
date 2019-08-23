@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W3.4.2_1 !-->
+  <h1>Change the buttons text color random value</h1>
+  <button id = "change_color">Click here to change my color</button>
+
+  <!--Bonus Challenge-->
+  <h1>Bonus Challenge</h1>
+  <button id = "array_color">Click me to change my color to an array value!</button>
+
+  <!-- FSD.W3.4.2_2 !-->
+  <h1 id = "change_h1">My color should change when I double click the button!</h1>
+  <button id = "double_click">Double Click here to change the color of the h1 tag !</button>
+  
+  <!-- FSD.W3.4.2_3 !-->
+  <h1>The buttons color changes to a random value when it is clicked! But only two times!</h1>
+  <button id = "two_times">Click here to change my color!</button>
+
+  <!--Bonus Challenge 2-->
+  <h1>Bonus Challenge 2</h1>
+  <button id = "mouse_hover">Hover on me to change my size!</button>
+
+  <script>
+    //3.4.1_1
+    var text_color = document.getElementById("change_color");
+    function click_me() {
+      var txt_color = 'rgb(' + random_color(255) + ',' + random_color(255) + ',' + random_color(255) + ')'; 
+      text_color.style.color = txt_color;
+    }
+    function random_color(number){
+      return Math.ceil(Math.random()*number);
+    }
+    text_color.addEventListener('click' , click_me);
+
+    //Bonus Challenge
+    var array_button = document.getElementById("array_color");
+    function change_color() {
+      array_button.style.backgroundColor = change_array();
+    }
+    function change_array() {
+      var arr = ["red" , "green" , "blue" , "yellow" , "black" , "orange" , "seagreen" , "gray" , "purple"];
+      var r = Math.floor(Math.random()*arr.length);
+      return arr[r];
+    }
+    array_button.addEventListener('click' , change_color);
+
+    //3.4.2_2
+    var h1_color = document.getElementById("double_click");
+    function change_h1_color() {
+      var color_h1 = 'rgb(' + random_color(255) + ',' + random_color(255) + ',' + random_color(255) + ')'; 
+      document.getElementById("change_h1").style.color = color_h1;
+    }
+    h1_color.addEventListener('dblclick' , change_h1_color);
+
+    //3.4.2_3
+    var trans = document.getElementById("two_times");
+    var count = 1;
+    function two_color() {
+      var rnd_clr = 'rgb(' + random_color(255) + ',' + random_color(255) + ',' + random_color(255) + ')';
+      trans.style.backgroundColor = rnd_clr;
+      count++;
+      if(count > 2) {
+        trans.removeEventListener('click' , two_color);
+      }
+    }
+    trans.addEventListener('click' , two_color); 
+
+    //Bonus Challenge 2:
+    var m_hover = document.getElementById("mouse_hover");
+    function change_size() {
+      m_hover.style.fontSizeAdjust = random_color(5);
+    }
+    m_hover.addEventListener('mouseover' , change_size);
+  </script>
+</body>
+</html>

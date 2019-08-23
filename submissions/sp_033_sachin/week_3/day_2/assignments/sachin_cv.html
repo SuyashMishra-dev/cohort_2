@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Unit Converter</title>
+    <style>
+        .display-none{
+            display: none;
+            text-align: center;
+        }
+
+        #unit-type-container {
+            text-align: center;
+        }
+
+        @media(max-width: 600px){
+            .container{
+                width: 100%;
+                height: 60px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="unit-type-container" class="container">
+        <select onchange="typeChange()" name="unit-type" id="unit-type">
+            <option value="" selected>--Please choose an option--</option>
+            <option value="length">Length</option>
+            <option value="temperature">Temperature</option>
+            <option value="volume">Volume</option>
+        </select>
+    </div>
+    <hr>
+    <div id="temperature-type" class="display-none">
+        <div class="container">
+            <label for="from-temperature">From</label>
+            <select name="from-temperature" id="from-temperature">
+                <option value="celsius">Celsius</option>
+                <option value="kelvin">Kelvin</option>
+                <option value="fahrenheit">Fahrenheit</option>            
+            </select>
+        </div>
+        <div class="container">
+            <label for="f-t-input">Convert from</label>
+            <input type="text" id="f-t-input">
+        </div>
+        <div class="container">
+            <label for="to-temperature">To</label>
+            <select name="to-temperature" id="to-temperature">
+                <option value="celsius">Celsius</option>
+                <option value="kelvin">Kelvin</option>
+                <option value="fahrenheit">Fahrenheit</option>            
+            </select>
+        </div>
+        <span class="container"></span>
+        <br>        
+        <button onclick="convertTemperature()" class="container">Convert</button>
+    </div>
+
+    <div id="length-type" class="display-none">
+        <div class="container">
+            <label for="from-length">From</label>
+            <select name="from-length" id="from-length">
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="mile">Mile</option>
+                <option value="lightyear">Light Years</option>
+            </select>
+        </div>
+        <div class="container">
+            <label for="f-l-input">Convert from</label>
+            <input type="text" id="f-l-input">
+        </div>
+        <div class="container">
+            <label for="to-length">To</label>
+            <select name="to-length" id="to-length">
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="mile">Mile</option>
+                <option value="lightyear">Light Years</option>
+            </select>
+        </div>
+        <span class="container"></span>
+        <br>
+        <button onclick="convertLength()" class="container">Convert</button>
+    </div>
+
+    <div id="volume-type" class="display-none">
+        <div class="container">
+            <label for="from-volume">From</label>
+            <select name="from-volume" id="from-volume">
+                <option value="liter">Liter</option>
+                <option value="milliliter">Milliliter</option>
+                <option value="galon">US Gallon</option>
+                <option value="teaspoon">Imperial Tea Spoon</option>
+            </select>
+        </div>
+        <div class="container">
+            <label for="f-v-input">Convert from</label>
+            <input type="text" id="f-v-input">
+        </div>
+        <div class="container">
+            <label for="to-volume">To</label>
+            <select name="to-volume" id="to-volume">
+                <option value="liter">Liter</option>
+                <option value="milliliter">Milliliter</option>
+                <option value="gallon">US Gallon</option>
+                <option value="teaspoon">Imperial Tea Spoon</option>
+            </select>
+        </div>
+        <span class="container"></span>
+        <br>
+        <button onclick="convertVolume()" class="container">Convert</button>
+    </div>
+</body>
+<script>
+    function typeChange() {
+        var unitType = document.getElementById('unit-type').value;
+        if(unitType == 'length'){
+            document.getElementById('length-type').style.display = 'block';
+            document.getElementById('temperature-type').style.display = 'none';
+            document.getElementById('volume-type').style.display = 'none';
+        }else if(unitType == 'temperature'){
+            document.getElementById('length-type').style.display = 'none';
+            document.getElementById('temperature-type').style.display = 'block';
+            document.getElementById('volume-type').style.display = 'none';
+        }else if(unitType == 'volume'){
+            document.getElementById('length-type').style.display = 'none';
+            document.getElementById('temperature-type').style.display = 'none';
+            document.getElementById('volume-type').style.display = 'block';
+        }
+    }
+
+    function convertLength(){
+        var fromLength = document.getElementById('from-length').value;
+        var fromLengthInput = Number(document.getElementById('f-l-input').value);
+        var toLength = document.getElementById('to-length').value;
+        var outputLength = 0;
+
+        if(fromLength == 'meter'){
+            if(toLength == 'kilometer'){
+                outputLength  = fromLengthInput / 1000;
+            }else if(toLength == 'mile'){
+                outputLength = fromLengthInput / 1609.34;
+            }else if(toLength == 'lightyear'){
+                outputLength  = fromLengthInput / 9.461e+15;
+            }else {
+                outputLength = fromLengthInput;
+            }
+
+        }else if(fromLength == 'kilometer'){
+            if(toLength == 'meter'){
+                outputLength  = fromLengthInput * 1000;
+            }else if(toLength == 'mile'){
+                outputLength = fromLengthInput / 1.60934;
+            }else if(toLength == 'lightyear'){
+                outputLength  = fromLengthInput / 9.461e+12;
+            }else {
+                outputLength = fromLengthInput;
+            }
+
+        }else if(fromLength == 'mile'){
+            if(toLength == 'meter'){
+                outputLength = fromLengthInput * 1609.34;
+            }else if(toLength == 'kilometer'){
+                outputLength = fromLengthInput * 1.60934;
+            }else if(toLength == 'lightyear'){
+                outputLength = fromLengthInput / 5.879e+12 ;
+            }else {
+                outputLength = fromLengthInput;
+            }
+
+        }else if(fromLength == 'lightyear'){
+            if(toLength == 'kilometer'){
+                outputLength  = fromLengthInput * 9.461e+12;
+            }else if(toLength == 'mile'){
+                outputLength = fromLengthInput * 5.879e+12 ;
+            }else if(toLength == 'meter'){
+                outputLength  = fromLengthInput / 9.461e+15;
+            }else {
+                outputLength = fromLengthInput;
+            }
+        }
+        document.getElementsByTagName('span')[1].innerHTML = outputLength;
+    }
+
+    function convertTemperature(){
+        var fromTemperature = document.getElementById('from-temperature').value;
+        var fromTemperatureInput = Number(document.getElementById('f-t-input').value);
+        var toTemperature = document.getElementById('to-temperature').value;
+        var outputTemperature = 0;
+        if(fromTemperature == 'celsius'){
+            if(toTemperature == 'fahrenheit'){                               
+                outputTemperature = 1.8*fromTemperatureInput + 32;
+                
+            }else if(toTemperature == 'kelvin'){
+                outputTemperature = fromTemperatureInput + 273
+
+            }else {
+                outputTemperature = fromTemperatureInput;
+            }
+
+        }else if(fromTemperature == 'kelvin'){
+            if(toTemperature == 'fahrenheit'){
+                outputTemperature = 1.8*(fromTemperatureInput -273) + 32;
+
+            }else if(toTemperature == 'celsius'){
+                outputTemperature = fromTemperatureInput -273;
+
+            }else {
+                outputTemperature = fromTemperatureInput;
+            }
+
+        }else if(fromTemperature == 'fahrenheit'){
+            if(toTemperature == 'kelvin'){
+                outputTemperature = ((fromTemperatureInput - 32)*0.5555)+273;
+            }else if(toTemperature == 'celsius'){
+                outputTemperature = (fromTemperatureInput - 32)*0.5555;
+            }else {
+                outputTemperature = fromTemperatureInput;
+            }
+
+        }
+        document.getElementsByTagName('span')[0].innerHTML = outputTemperature;
+    }
+
+    function convertVolume(){
+        var fromVolume = document.getElementById('from-volume').value;
+        var fromVolumeInput = Number(document.getElementById('f-v-input').value);
+        var toVolume = document.getElementById('to-volume').value;
+        var outputVolume = 0;
+
+        if(fromVolume == 'liter'){
+            if(toVolume == 'teaspoon'){
+                outputVolume = fromVolumeInput * 168.936;
+            }else if(toVolume == 'milliliter'){
+                outputVolume = fromVolumeInput * 1000;
+            }else if(toVolume == 'gallon'){
+                outputVolume = fromVolumeInput / 3.785;
+            }else {
+                outputVolume = fromVolumeInput;
+            }
+
+        }else if(fromVolume == 'milliliter'){
+            if(toVolume == 'liter'){
+                outputVolume = fromVolumeInput / 1000;
+            }else if(toVolume == 'gallon'){
+                outputVolume = fromVolumeInput / 3785.412;
+            }else if(toVolume == 'teaspoon'){
+                outputVolume = fromVolumeInput / 17.758;
+            }else {
+                outputVolume = fromVolumeInput;
+            }
+
+        }else if(fromVolume == 'gallon'){
+            if(toVolume == 'liter'){
+                outputVolume = fromVolumeInput * 3.785;
+            }else if(toVolume == 'milliliter'){
+                outputVolume = fromVolumeInput * 3785.412;
+            }else if(toVolume == 'teaspoon'){
+                outputVolume = fromVolumeInput * 639.414;
+            }else {
+                outputVolume = fromVolumeInput;
+            }
+
+        }else if(fromVolume == 'teaspoon'){
+            if(toVolume == 'liter'){
+                outputVolume = fromVolumeInput / 168.936;
+            }else if(toVolume == 'milliliter'){
+                outputVolume = fromVolumeInput * 5.919;
+            }else if(toVolume == 'gallon'){
+                outputVolume = fromVolumeInput / 639.414;
+            }else {
+                outputVolume = fromVolumeInput;
+            }
+        }
+        document.getElementsByTagName('span')[2].innerHTML = outputVolume;
+    }
+</script>
+
+</html>

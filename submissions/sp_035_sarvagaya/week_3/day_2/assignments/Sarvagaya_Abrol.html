@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <title>Converter</title>
+    <head>
+
+    </head>
+    <body>
+        <h1>Length/Tepmerature/Volume</h1>
+        <div>Input</div>
+        <input type="text" id="enter">
+        <select id="input">
+            <option value="meter">Meters</option>
+            <option value="kilometer">Kilometers</option>
+            <option value="mile">Mile</option>
+            <option value="light_year">Light Year</option>
+            <option value="celsius">Celsius</option>
+            <option value="kelvin">Kelvin</option>
+            <option value="farhenheit">Ferhenheit</option>
+            <option value="liter">Liter</option>
+            <option value="Milliliter">Milliliter</option>
+            <option value="us-gallon">US Gallon</option>
+            <option value="tea-spoon">Imperial Tea Spoon</option>
+        </select>
+        <div>Output</div>
+        <input type="text" id="out">
+        <select id="output">
+            <option value="meter">Meters</option>
+            <option value="kilometer">Kilometers</option>
+            <option value="mile">Mile</option>
+            <option value="light_year">Light Year</option>
+            <option value="celsius">Celsius</option>
+            <option value="kelvin">Kelvin</option>
+            <option value="farhenheit">Farhenheit</option>
+            <option value="liter">Liter</option>
+            <option value="milliliter">Milliliter</option>
+            <option value="us-gallon">US Gallon</option>
+            <option value="tea-spoon">Imperial Tea Spoon</option>
+        </select>
+        <button onclick="convert();">Convert</button>
+        <script>
+            function convert()
+            {
+                var ip=document.getElementById("enter").value;
+                var s1=document.getElementById("input").value;
+                var s2=document.getElementById("output").value;
+
+                if(s1==s2)
+                {
+                    document.getElementById("out").value=ip;
+                }
+                else if(s1=="meter" && s2=="kilometer")
+                {
+                    document.getElementById("out").value = ip/0.001000;
+                }
+                else if(s1=="meter" && s2=="mile")
+                {
+                    document.getElementById("out").value=ip/1609.344;
+                }
+                else if(s1=="meter" && s2=="light_year")
+                {
+                    document.getElementById("out").value=ip/1.057*10**-13;
+                }
+                else if(s1=="kilometer" && s2=="meter")
+                {
+                    document.getElementById("out").value=ip*1000;
+                }
+                else if(s1=="kilometer" && s2=="mile")
+                {
+                    document.getElementById("out").value=ip*0.62137;
+                }
+                else if(s1=="kilometer" && s2=="light_year")
+                {
+                    document.getElementById("out").value=ip*1.057008707*10**-13;
+                }
+                else if(s1=="mile" && s2=="meter")
+                {
+                    document.getElementById("out").value=ip*1609.35;
+                }
+                else if(s1=="mile" && s2=="kilometer")
+                {
+                    document.getElementById("out").value=ip*1.60935;
+                }
+                else if(s1=="mile" && s2=="light_year")
+                {
+                    document.getElementById("out").value=ip*1.701096963*10**-13;
+                }
+                else if(s1=="light_year" && s2=="meter")
+                {
+                    document.getElementById("out").value=ip*9460660000000000;
+                }
+                else if(s1=="light_year" && s2=="kilometer")
+                {
+                    document.getElementById("out").value=ip*9460660000000;
+                }
+                else if(s1=="light_year" && s2=="mile")
+                {
+                    document.getElementById("out").value=ip*5878559666946;
+                }
+                else if(s1=="celsius" && s2=="kelvin")
+                {
+                    document.getElementById("out").value=ip*274.15;
+                }
+                else if(s1=="celsius" && s2=="farhenheit")
+                {
+                    document.getElementById("out").value=ip*33.8;
+                }
+                else if(s1=="kelvin" && s2=="celsius")
+                {
+                    document.getElementById("out").value=ip*-272.15;
+                }
+                else if(s1=="kelvin" && s2=="farhenheit")
+                {
+                    document.getElementById("out").value=ip*-457.87;
+                }
+                else if(s1=="farhenheit" && s2=="celsius")
+                {
+                    document.getElementById("out").value=ip*-17.222222222;
+                }
+                else if(s1=="farhenheit" && s2=="kelvin")
+                {
+                    document.getElementById("out").value=ip*255.92777778;
+                }
+                
+            
+                else if(s1=="liter" && s2=="milliliter")
+                {
+                    document.getElementById("out").value=ip*1000;
+                }
+                else if(s1=="liter" && s2=="us-gallon")
+                {
+                    document.getElementById("out").value=ip*0.2641721769;
+                }
+                else if(s1=="liter" && s2=="tea-spoon")
+                {
+                    document.getElementById("out").value=ip*168.936;
+                }
+                else if(s1=="milliliter" && s2=="liter")
+                {
+                    document.getElementById("out").value=ip*0.000001;
+                }
+                else if(s1=="milliliter" && s2=="us-gallon")
+                {
+                    document.getElementById("out").value=ip*2.641721768*10**-7;
+                }
+                else if(s1=="milliliter" && s2=="tea-spoon")
+                {
+                    document.getElementById("out").value=ip*0.168936;
+                }
+                else if(s1=="us-gallon" && s2=="liter")
+                {
+                    document.getElementById("out").value=ip*3.78541;
+                }
+                else if(s1=="us-gallon" && s2=="milliliter")
+                {
+                    document.getElementById("out").value=ip*3.78541;
+                }
+                else if(s1=="us-gallon" && s2=="tea-spoon")
+                {
+                    document.getElementById("out").value=ip*639.494;
+                }
+                else if(s1=="tea-spoon" && s2=="liter")
+                {
+                    document.getElementById("out").value=ip*0.00492892;
+                }
+                else if(s1=="tea-spoon" && s2=="milliliter")
+                {
+                    document.getElementById("out").value=ip*4.92892;
+                }
+                else if(s1=="tea-spoon" && s2=="us-gallon")
+                {
+                    document.getElementById("out").value=ip*0.00130208;
+                }
+            }
+            
+        </script>
+    </body>
+</html>

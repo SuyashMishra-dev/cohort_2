@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W3.4.2_1 !-->
+  <h1>Change the buttons text color random value</h1>
+  <button id="singleClickColorChange">Click here to change my color</button>
+
+  <!-- FSD.W3.4.2_2 !-->
+  <h1 id="heading1">My color should change when I double click the button!</h1>
+  <button id="button2">Double Click here to change the color of the h1 tag !</button>
+  
+  <!-- FSD.W3.4.2_3 !-->
+  <h1>The buttons color changes to a random value when it is clicked! But only two times!</h1>
+  <button id="button3">Click here to change my color!</button>
+  <br>
+  <button id="button4">Click me to change my color to an array value!</button>
+  <script>
+    // Variable names, function names, and button id's need to be changed to proper names
+    //these names are all temporary. PLEASE DONOT READ the names :)
+    
+    var changeButton1 = document.getElementById('singleClickColorChange');
+    var changeHeading1 = document.getElementById('button2');
+    var heading_1 = document.getElementById('heading1');
+    var changeButton2 = document.getElementById('button3');
+    var changeButton4 = document.getElementById('button4');
+    count = 0;
+
+    function random(number) {
+      return Math.floor(Math.random()*number);
+    }
+
+    function switchColor() {
+        var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+
+        changeButton1.style.color = randomColor;
+        
+    }
+
+    function switchColorHeading() {
+        var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+
+        heading_1.style.color = randomColor;
+    }
+
+    function switchColor2() {
+        var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+        
+        changeButton2.style.backgroundColor = randomColor;
+        count++;
+        
+        if(count == 2) {
+          changeButton2.removeEventListener('click', switchColor2);
+        }
+        
+    }
+
+    function changeSize() {
+        var randomSize = random(40) + 'px';
+        changeButton2.style.fontSize = randomSize;
+    }
+
+    function changeColorArray() {
+        var colorArray = ["red", "green", "blue", "purple", "yellow"];
+
+        changeButton4.style.backgroundColor = colorArray[count];
+        count++;
+    }
+
+    changeButton1.addEventListener('click', switchColor);
+    changeHeading1.addEventListener('dblclick', switchColorHeading);
+    changeButton2.addEventListener('click', switchColor2);
+    changeButton2.addEventListener('mouseover', changeSize);
+    changeButton4.addEventListener('click', changeColorArray);
+  </script>
+
+
+
+
+
+<!--    *****FOR MY PERSONAL REFERENCE*****
+
+<button id="singleClickColorChange">Click here to change my color</button>
+
+var changeButton = document.getElementById('singleClickColorChange');
+
+function random(number) {
+  return Math.floor(Math.random()*number);
+}
+
+changeButton.addEventListener('click', switchColor);
+
+function switchColor() {
+  var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+
+  changeButton.style.color = randomColor;
+  
+}
+
+ -->
+
+</body>
+</html>
+
+
+
+
+
+

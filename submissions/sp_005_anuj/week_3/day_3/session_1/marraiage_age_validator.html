@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Marriage Age Validator </title>
+</head>
+<body>
+	<input type="number" name="enter_age" placeholder="Enter age" id="age">
+	<select id="gender">
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+	</select>
+	<button onclick="validator()">Click Here to Check</button>
+	<script type="text/javascript">
+		function validator(){
+			var a=document.getElementById("age").value;
+			var g=document.getElementById("gender").value;
+			if (g=="male" && a>=21) {
+				alert("Congratulation You are Eligible for Marriage")
+			}
+			else if (g=="female" && a>=18) {
+				alert("Congratulation You are Eligible for Marriage")
+			}
+			else{
+				alert("Sorry Grow Up First")
+			}
+		}
+	</script>
+</body>
+</html>

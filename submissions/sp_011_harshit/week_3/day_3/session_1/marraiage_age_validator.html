@@ -1,0 +1,71 @@
+<html>
+    <head>
+    <style>
+    #main_div
+    {
+        margin-left:400px;
+    }
+    
+    </style>
+    </head>
+    <body>
+        <div id="main_div">
+        <p>MARRIGE AGE VALIDATOR</p>
+         <input type="text" id="year" ><br>
+            <select id="gender">1
+                 <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+      <button id="check" onclick="marriage()">CHECK IF YOU ARE ELIGIBILE</button>
+      </div>
+        <script>
+        function marriage()
+        {
+        var a=document.getElementById('year').value
+        var b=document.getElementById('gender').value
+
+            
+                if(b=='Male')
+                    {
+            
+                            var result=2019-a;
+                            
+              
+                            if(result>18)
+                            {
+
+                                alert('YOU ARE ELIGIBLE TO MARRIED')
+                                
+                            }
+                            else if(result<18)
+                            {
+                            alert('NOT ELIGIBLE')
+                            
+                            }
+
+
+
+                     }    
+                            if(b=='Female')
+                                {
+            
+                                    var result=2019-a;
+                                    console.log(result)
+              
+                                    if(result>21)
+                                         {
+                                              alert('YOU ARE ELIGIBLE TO MARRIED')
+                                                console.log('hiiiiii')
+                                         }
+                                    else if(result<21)
+                                        {
+                                      alert('NOT ELIGIBLE')
+                                         console.log('else')
+                                        }
+
+                                }
+        }
+
+        </script>
+    </body>
+</html>

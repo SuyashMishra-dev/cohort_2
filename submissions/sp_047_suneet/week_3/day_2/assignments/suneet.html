@@ -1,0 +1,178 @@
+<html lang="en">
+    <head>
+        <title>Unit Converter</title>
+        <style type="text/css">
+            body {
+                background-color: aliceblue;
+                text-align: center;
+                
+            }
+            .box {
+                margin: 15% 20%;
+            }
+            #Heading
+            {
+                color: cornflowerblue;
+            }
+            #unit2
+            {
+                margin-left: 22px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--Length Conversion Block-->
+        <div class="box">
+            <h2 id="Heading">Length|Temperature|Volume Convertor</h2>
+
+            <label>From:</label>
+            <input type="number" placeholder="Enter Units " id="input">
+            <select id="unit1">
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="mile">Mile</option>
+                <option value="lightyear">Lightyear</option>
+                <option value="celsius">Celsius</option>
+                <option value="kelvin">Kelvin</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="liter">Liter</option>
+                <option value="milliliter">Milliliter</option>
+                <option value="us_gallon">US Gallon</option>
+                <option value="imperial_tea_spoon">Imperial Tea Spoon</option>
+            </select>
+
+            <label>To:</label>
+            <input type="number" placeholder="Result" id="output">
+            <select id="unit2">
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="mile">Mile</option>
+                <option value="lightyear">Lightyear</option>
+                <option value="celsius">Celsius</option>
+                <option value="kelvin">Kelvin</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="liter">Liter</option>
+                <option value="milliliter">Milliliter</option>
+                <option value="us_gallon">US Gallon</option>
+                <option value="imperial_tea_spoon">Imperial Tea Spoon</option>
+            </select>
+            <br><br>
+
+            <button onclick="convert()">Compute</button>
+        </div>
+
+        <!--JavaScript Block Starts-->
+
+        <script type="text/javascript">
+            function convert(){
+                var l1 = document.getElementById("input").value;
+                var unit1 = document.getElementById("unit1").value;
+                var unit2 = document.getElementById("unit2").value;
+                if(unit1 == unit2){
+                    document.getElementById("output").value = l1;
+                }
+                else if(unit1 != unit2){
+                    if((unit1 == "meter" || unit1 == "kilometer" || unit1 == "mile" || unit1 == "lightyear") && (unit2 == "meter" || unit2 == "kilometer" || unit2 == "mile" || unit2 == "lightyear")){
+                        if(unit1 == "meter" && unit2 == "kilometer"){
+                            document.getElementById("output").value = l1/1000;
+                        }
+                        else if(unit1 == "meter" && unit2 == "mile"){
+                            document.getElementById("output").value = l1*0.000621;
+                        }
+                        else if(unit1 == "meter" && unit2 == "lightyear"){
+                            document.getElementById("output").value = l1*1.057*10**-16;
+                        }
+                        else if(unit1 == "kilometer" && unit2 == "meter"){
+                            document.getElementById("output").value = l1*1000;
+                        }
+                        else if(unit1 == "kilometer" && unit2 == "mile"){
+                            document.getElementById("output").value = l1/1.609;
+                        }
+                        else if(unit1 == "kilometer" && unit2 == "lightyear"){
+                            document.getElementById("output").value = l1*1.057*10**-13;
+                        }
+                        else if(unit1 == "mile" && unit2 == "meter"){
+                            document.getElementById("output").value = l1*1609.344;
+                        }
+                        else if(unit1 == "mile" && unit2 == "kilometer"){
+                            document.getElementById("output").value = l1*1.609;
+                        }
+                        else if(unit1 == "mile" && unit2 == "lightyear"){
+                            document.getElementById("output").value = l1*1.701*10**-13;
+                        }
+                        else if(unit1 == "lightyear" && unit2 == "meter"){
+                            document.getElementById("output").value = l1/1.057*10**-16;
+                        }
+                        else if(unit1 == "lightyear" && unit2 == "kilometer"){
+                            document.getElementById("output").value = l1/1.057*10**-13;
+                        }
+                        else if(unit1 == "lightyear" && unit2 == "mile"){
+                            document.getElementById("output").value = l1/1.701*10**-13;
+                        }
+                    }
+                    else if((unit1 == "celsius" || unit1 == "kelvin" || unit1 == "fahrenheit") && (unit2 == "celsius" || unit2 == "kelvin" || unit2 == "fahrenheit")){
+                        if(unit1 == "celsius" && unit2 == "kelvin"){
+                            document.getElementById("output").value = l1+273.15;
+                        }
+                        else if(unit1 == "celsius" && unit2 == "fahrenheit"){
+                            document.getElementById("output").value = (l1*9/5)+32;
+                        }
+                        else if(unit1 == "kelvin" && unit2 == "celsius"){
+                            document.getElementById("output").value = l1-273.15;
+                        }
+                        else if(unit1 == "kelvin" && unit2 == "fahrenheit"){
+                            document.getElementById("output").value = (l1-273.15)*9/5+32;
+                        }
+                        else if(unit1 == "fahrenheit" && unit2 == "celsius"){
+                            document.getElementById("output").value = (32*l1-32)*5/9;
+                        }
+                        else if(unit1 == "fahrenheit" && unit2 == "kelvin"){
+                            document.getElementById("output").value = (32*l1-32)*5/9+273.15;
+                        }
+                    }
+                    else if((unit1 == "liter" || unit1 == "milliliter" || unit1 == "us_gallon" || unit1 == "imperial_tea_spoon") && (unit2 == "liter" || unit2 == "milliliter" || unit2 == "us_gallon" || unit2 == "imperial_tea_spoon")){
+                        if(unit1 == "liter" && unit2 == "milliliter"){
+                            document.getElementById("output").value = l1*1000;
+                        }
+                        else if(unit1 == "liter" && unit2 == "us_gallon"){
+                            document.getElementById("output").value = l1*0.264;
+                        }
+                        else if(unit1 == "liter" && unit2 == "imperial_tea_spoon"){
+                            document.getElementById("output").value = l1*168.936;
+                        }
+                        else if(unit1 == "milliliter" && unit2 == "liter"){
+                            document.getElementById("output").value = l1/1000;
+                        }
+                        else if(unit1 == "milliliter" && unit2 == "us_gallon"){
+                            document.getElementById("output").value = l1*0.000264172;
+                        }
+                        else if(unit1 == "milliliter" && unit2 == "imperial_tea_spoon"){
+                            document.getElementById("output").value = l1*0.169;
+                        }
+                        else if(unit1 == "us_gallon" && unit2 == "liter"){
+                            document.getElementById("output").value = l1*3.785;
+                        }
+                        else if(unit1 == "us_gallon" && unit2 == "milliliter"){
+                            document.getElementById("output").value = l1*3785.412;
+                        }
+                        else if(unit1 == "us_gallon" && unit2 == "imperial_tea_spoon"){
+                            document.getElementById("output").value = l1*639.494;
+                        }
+                        else if(unit1 == "imperial_tea_spoon" && unit2 == "liter"){
+                            document.getElementById("output").value = l1*0.00592;
+                        }
+                        else if(unit1 == "imperial_tea_spoon" && unit2 == "millileter"){
+                            document.getElementById("output").value = l1*5.919;
+                        }
+                        else if(unit1 == "imperial_tea_spoon" && unit2 == "us_gallon"){
+                            document.getElementById("output").value = l1/639.494;
+                        }
+                    }
+                    else{
+                        alert("Incorrect Units are Selected...!");
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

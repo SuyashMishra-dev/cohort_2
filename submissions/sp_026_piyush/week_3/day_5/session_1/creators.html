@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button id="btnCreateH1">Create H1</button>
+        <button id="btnCreate2H3">Create 2 H3</button>
+        <button id="btnCreate10DIVS">Create DIVS</button>
+        <button id="btnAddStudents">Add Students</button>
+        <button id="btnAddCopyright">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+
+            var btnCreateH1 = document.getElementById('btnCreateH1');
+            btnCreateH1.addEventListener('click', createH1);
+
+            var headings = document.getElementById('headings');
+            var cont = document.getElementById('cont');
+            var vikings = document.getElementById('vikings');
+            var elemBody = document.querySelector('body');
+            
+            function createH1() {
+                console.log('createH1 entered');
+                var h1 = document.createElement('h1');
+                h1.textContent = 'MASAI'
+                
+                headings.appendChild(h1);
+            }
+
+            var btnCreate2H3 = document.getElementById('btnCreate2H3');
+            btnCreate2H3.addEventListener('click', create2H3);
+
+            function create2H3() {
+                console.log('create2H2 entered');
+                var h3_1 = document.createElement('h3');
+                h3_1.textContent = 'A Transformation in education!';
+
+                var h3_2 = document.createElement('h3');
+                h3_2.textContent = 'Learn to earn, pay when you get';
+
+                headings.appendChild(h3_1);
+                headings.appendChild(h3_2);
+            }
+
+            var btnCreate10DIVS = document.getElementById('btnCreate10DIVS');
+            btnCreate10DIVS.addEventListener('click', create10DIVS);
+
+            function create10DIVS() {
+                console.log('create10DIVS entered');
+                for (var i = 0; i < 10; i++) {
+                    var h3 = document.createElement('h3');
+                    h3.textContent = 'Content ' + i;
+
+                    cont.appendChild(h3);
+                }
+            }
+
+            
+            var btnAddStudents = document.getElementById('btnAddStudents');
+            btnAddStudents.addEventListener('click', addStudents);
+
+            function addStudents() {
+                console.log('addStudents entered');
+                for (var i = 0; i < students.length; i++) {
+                    var li = document.createElement('li');
+                    li.textContent = students[i];
+
+                    vikings.appendChild(li);
+                }
+
+            }
+
+            var btnAddCopyright = document.getElementById('btnAddCopyright');
+            btnAddCopyright.addEventListener('click', addCopyright);
+
+            function addCopyright() {
+                console.log('addCopyright entered');
+                var p = document.createElement('p');
+                p.textContent = '@ masai 2019';
+            
+                elemBody.insertBefore(p, btnCreateH1);
+            }
+
+
+        </script>
+    </body>
+</html>

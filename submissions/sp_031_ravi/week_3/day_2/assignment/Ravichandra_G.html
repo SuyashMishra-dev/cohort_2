@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unit Convertor</title>
+    </head>
+    <body>
+        <h1>Unit Convertor</h1>
+        <table>
+            <tr>
+                <td>Type</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>
+                    <label>From</label>
+                </td>
+                <td>
+                    <select id="from_ip">
+                        <option>Meter</option>
+                        <option>Kilometer</option>
+                        <option>Mile</option>
+                        <option>Light Year</option>
+                        <option>Celsius</option>
+                        <option>Kelvin</option>
+                        <option>Fahrenhit</option>
+                        <option>Liter</option>
+                        <option>Milliliter</option>
+                        <option>US Gallon</option>
+                        <option>Imperial Tea Spoon</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>To</label>
+                </td>
+                <td>
+                    <select id="to_ip">
+                        <option>Meter</option>
+                        <option>Kilometer</option>
+                        <option>Mile</option>
+                        <option>Light Year</option>
+                        <option>Celsius</option>
+                        <option>Kelvin</option>
+                        <option>Fahrenhit</option>
+                        <option>Liter</option>
+                        <option>Milliliter</option>
+                        <option>US Gallon</option>
+                        <option>Imperial Tea Spoon</option>
+                    </select>                   
+                </td>
+            </tr>
+            <tr>
+                <td>Value to be Converted</td>
+                <td>
+                    <input type="text" id="input" placeholder="Enter a value">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                   <button type="submit" onclick="Calculation()">Convert</button>
+                </td>
+            </tr>
+        </table>
+        <script>
+            function Calculation() 
+            {
+            var ip_from = document.getElementById("from_ip").value;
+            
+				switch(ip_from) 
+				{
+					case "Meter":
+                        switch(ip_to)
+                        var ip_to = document.getElementById("to_op").value;
+                        {
+                            case "Kilometer":
+                                var result_m_km=in_from/1000;
+                                alert(+result+ "Kilometer")
+                        }
+                        document.getElementById("result").innerHTML="";
+						
+
+					case "United States of America":
+						alert("The continent is North America");
+						break;
+					
+					case "China":
+						alert("The continent is Asia");
+						break;
+
+					case "Nepal":
+						alert("The continent is Asia");
+						break;
+
+					case "Australia":
+						alert("The continent is Australia");
+						break;
+
+					case "France":
+						alert("The continent is Europe");
+						break;
+
+					case "Germany":
+						alert("The continent is Europe");
+						break;
+
+					case "South Africa":
+						alert("The continent is Africa");
+						break;
+
+					case "Nigeria":
+						alert("The continent is Africa");
+						break;
+					
+					case "Mexico":
+						alert("The continent is North America");
+						break;
+
+					case "Argentina":
+						alert("The continent is South America");
+						break;
+
+					case "Brazil":
+						alert("The continent is South America");
+						break;
+
+					case "Canada":
+						alert("The continent is North America");
+						break;
+
+					case "Singapore":
+						alert("The continent is Asia");
+						break;
+
+					case "Sweden":
+						alert("The continent is Europe");
+						break;
+				}
+            }
+        </script>
+            
+          
+    </body>
+</html>

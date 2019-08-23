@@ -1,0 +1,43 @@
+body {
+    margin: 100px 200px;
+    font-size: 30px;
+}
+#container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+}
+
+#right-box {
+    grid-area: 1 / 2 / span 4 / span 1;
+    background-color: black;
+    color: white;
+    width: 400px;
+}
+#right-box > p {
+    margin: 30px 50px;
+    
+}
+#outputName {
+    font-size: 50px;
+}
+button {
+    background-color: black;
+    color: white;
+    width: 300px;
+    height: 40px;
+    margin-top: 30px;
+    font-size: 30px;    
+}
+input {
+    height: 40px;
+    width: 300px;
+    border: 2px solid black;
+}
+p {
+    margin-bottom: 10px;
+}
+#nameWarning, #emailWarning, #mobileWarning {
+    display: none;
+    color: red;
+}
