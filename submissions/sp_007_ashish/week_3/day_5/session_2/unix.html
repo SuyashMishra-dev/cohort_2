@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <title>Unix</title>
+        <style type="text/css">
+          .imgbox{
+            height: 300px;
+            width:400px;
+            background-color: lightblue;
+            align-content: center;
+            margin-left: 690px;
+            
+        }
+        .img1{
+            height: 150px;
+            width: 110px;
+            margin-left: 135px;
+            margin-top: 20px;
+        }
+        .t1{
+            text-align: center;
+            color: blue;
+        }
+        .t2{
+            text-align: center;
+            color: black;
+        }
+        .img2{
+            height: 110px;
+            width:  90px;
+            margin-left: 135px;
+            margin-top: 20px;
+        }
+        .box2{
+            margin-top: 50px;
+            margin-left: 370px;
+            float: left;
+            color: red;
+        }
+        #cont2{
+            margin-left: 49px;
+        }
+        .t4{
+            color:black;
+        }
+        .area{
+            height: 150px;
+            width: 990px;
+            background-color: orange;
+            clear: left;
+            margin-left: 390px;
+            margin-top: 200px;
+        }
+        .lst{
+            color: white;
+            font-size: 20px;
+            
+        }
+        .lst1{
+            color: white;
+            font-size: 20px;
+        }
+        .fl{
+            float: left;
+        }
+        .fr{
+            margin-top: 2px;
+            float: left;
+            clear: left;
+
+        }
+        .lstar{
+         
+          margin-left: 34px;
+          float: left;
+          margin-top: 30px;
+          clear: left;
+        }
+        .lstar1{
+           
+         
+        }
+        .lrstar{
+          margin-left: 490px;
+        }
+        .sec1{
+            float: left;
+        }
+        .sec2{
+            
+            margin-left: 700px;
+        }
+        .nxt{
+            
+            clear: left;
+            
+        }
+        </style>
+    </head>
+    <body>
+            <button onclick="createPage()" >Create Page</button>
+        <div id="topBar">
+           <br>
+            
+        </div>
+        <div id="middleBar">
+        </div>
+        <div id="MiddleText">
+
+        </div>
+        <div>
+            <div id="lastElement">
+
+            </div>
+        </div>
+      
+       <script>
+        function createPage(){
+              
+              var topBarElement = document.getElementById('topBar');
+              var headerFirst = document.createElement('h1');
+              var headerTitle= document.createElement('h3');
+              var imageFirst = document.createElement('img');
+              var imageSecond = document.createElement('img');
+              var parSecond= document.createElement('par');
+              topBarElement.setAttribute('class','imgbox');
+              imageFirst.setAttribute('src','https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg/220px-LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg');
+              imageFirst.setAttribute('class','img1');
+              topBarElement.append(imageFirst);
+              headerFirst.innerHTML="Linus Torvalds";
+              headerTitle.innerHTML="The Creator of Git & linux";
+              headerTitle.setAttribute('class','t2');
+              headerFirst.setAttribute('class','t1');
+              topBarElement.appendChild(headerFirst);
+              topBarElement.appendChild(headerTitle);
+              var middleBarElemet = document.getElementById("middleBar");
+              middleBarElemet.setAttribute('class','box2');
+              imageSecond.setAttribute('src','https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/khan.jpg');
+              imageSecond.setAttribute('class','box2');
+              imageSecond.setAttribute('class','img2');
+              var middleBarText=document.getElementById("MiddleText");
+              middleBarText.setAttribute('class','box2');
+              middleBarText.setAttribute('id','cont2');
+              var headerSecond =document.createElement('h1');
+              var headerSecondVal=document.createElement('h4');
+              headerSecond.innerHTML="Sal Khan";
+              headerSecondVal.setAttribute('class','t4');
+              headerSecondVal.innerHTML="salman Khan is the founder of the khan Academy which has mision<br> of providing a free world-class educationfor anyone,anywhere";
+              middleBarElemet.appendChild(imageSecond);
+              middleBarText.appendChild(headerSecond);
+              middleBarText.appendChild(headerSecondVal);
+              var lastEle = document.getElementById('lastElement');
+              lastEle.setAttribute('class','area');
+              
+             
+        }
+       </script>
+    </body>
+</html>

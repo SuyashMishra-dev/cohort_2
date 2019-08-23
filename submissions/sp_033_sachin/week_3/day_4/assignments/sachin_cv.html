@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Typewriter</title>
+    <style>    
+
+    .align-center {
+        width: 80%;
+        margin: auto;
+    }
+
+    .line{
+        height: 120px;
+    }
+    
+    .display-flex {
+        display: flex; 
+    }
+
+    .display-flex div {
+       
+        flex-direction: column;        
+        flex-basis: 100px;
+        height: 100px;
+        margin-left:10px;
+        text-align: center;
+        line-height: 100px;
+        background: black;
+        color: azure;  
+            
+    }
+
+    #first-line {
+        padding-left: 100px;
+    }
+
+    #first-line span:nth-child(2n) {
+        position: relative;
+        top: -35px;
+        left: 30px;
+    }
+
+    #space-bar {
+        width: 45%;
+        height: 100px;
+        margin: auto 360px;
+        background: black;
+    }
+
+    #input-box {
+        height: 60px;
+        margin: 20px 120px;
+        border: 3px solid black;
+        font-size: 40px;
+    }
+
+    #special-chars {
+        margin-left: 360px;
+    }
+
+    #special-chars>div div {
+        border: 2px solid black;
+        flex-basis: 200px;
+        background: white;
+        color: black;        
+        font-size: 30px;
+    }
+
+    #row-1 {
+        padding-left: 160px
+    }
+
+    #row-2 {
+        padding-left: 200px
+    }
+
+    #row-3 {
+        padding-left: 240px
+    }
+    </style>
+</head>
+<body>
+
+    <div class="align-center line" id="display-block">
+        <input onchange="inputChanged()" id="input-box" class="align-center" type="text">
+    </div>
+    <div class="align-center" id="keyboard">
+        <div id="first-line" class="line display-flex">
+            <div onclick="showOutput('1')"><span>1</span><span>!</span></div>
+            <div onclick="showOutput('2')"><span>2</span><span>@</span></div>
+            <div onclick="showOutput('3')"><span>3</span><span>#</span></div>
+            <div onclick="showOutput('4')"><span>4</span><span>$</span></div>
+            <div onclick="showOutput('5')"><span>5</span><span>%</span></div>
+            <div onclick="showOutput('6')"><span>6</span><span>^</span></div>
+            <div onclick="showOutput('7')"><span>7</span><span>&</span></div>
+            <div onclick="showOutput('8')"><span>8</span><span>*</span></div>
+            <div onclick="showOutput('9')"><span>9</span><span>(</span></div>
+            <div onclick="showOutput('0')"><span>0</span><span>)</span></div>
+            <div onclick="deleteEl()">Del</div>
+        </div>
+        <div class="line  display-flex" id="row-1">
+            <div onclick="showOutput('Q')">Q</div>
+            <div onclick="showOutput('W')">W</div>
+            <div onclick="showOutput('E')">E</div>
+            <div onclick="showOutput('R')">R</div>
+            <div onclick="showOutput('T')">T</div>
+            <div onclick="showOutput('Y')">Y</div>
+            <div onclick="showOutput('U')">U</div>
+            <div onclick="showOutput('I')">I</div>
+            <div onclick="showOutput('O')">O</div>
+            <div onclick="showOutput('P')">P</div>            
+        </div>
+        <div class=" line display-flex" id="row-2">
+            <div onclick="showOutput('A')">A</div>
+            <div onclick="showOutput('S')">S</div>
+            <div onclick="showOutput('D')">D</div>
+            <div onclick="showOutput('F')">F</div>
+            <div onclick="showOutput('G')">G</div>
+            <div onclick="showOutput('H')">H</div>
+            <div onclick="showOutput('J')">J</div>
+            <div onclick="showOutput('K')">K</div>
+            <div onclick="showOutput('L')">L</div>
+        </div>
+        <div class="line display-flex" id="row-3">
+            <div onclick="showOutput('Z')">Z</div>
+            <div onclick="showOutput('X')">X</div>
+            <div onclick="showOutput('C')">C</div>
+            <div onclick="showOutput('V')">V</div>
+            <div onclick="showOutput('B')">B</div>
+            <div onclick="showOutput('N')">N</div>
+            <div onclick="showOutput('M')">M</div>
+            <div onclick="showOutput('.COM')">.COM</div>
+        </div>
+        <div class="line">
+            <div id="space-bar" onclick="showOutput(' ')"></div>            
+        </div>        
+    </div>
+
+    <div class="align-center" id="special-chars">
+        <div class="line display-flex">
+            <div id="caps" onclick="toggleSpecial('C')">CAPS</div>
+            <div id="shift" onclick="toggleSpecial('S')">SHIFT</div>
+            <div id="passwd" onclick="toggleSpecial('P')">PASSWD</div>
+            <div id="clean" onclick="toggleSpecial('Cl')">CLEAN</div>
+            <div id="rev" onclick="toggleSpecial('R')">REV</div>
+        </div>
+    </div>
+    <script>
+        var inputBox = '';
+        var caps = false;
+        var shift = false;
+        var passwd = false;
+        var rev = false;
+        var clean = false;
+        var password = '';
+        var capsKey = document.getElementById('caps');
+        var shiftKey = document.getElementById('shift');
+        var passwdKey = document.getElementById('passwd');
+        var revKey = document.getElementById('rev');
+        var cleanKey = document.getElementById('clean');
+        var explicit = ['shit','ass','asshole','kinky','nigga','pissing','poof','wank','queaf','pthc','poof'];        
+
+        //Main Output function 
+        function showOutput(char){
+            var outputChar = document.getElementById('input-box');
+            char = caseCheck(char);
+            inputBox = inputBox + char;
+            
+            if(passwd){
+                
+                outputChar.value = passwdCheck(inputBox) + char;
+            }else{
+                if(clean){
+                   outputChar.value = cleanInput(inputBox);
+                }else{
+                    outputChar.value = inputBox;
+                }
+                
+            }
+        }    
+
+        //On input field change - Not on click
+        function inputChanged() {
+            if(passwd) {
+                return 1;
+            }
+            inputBox = document.getElementById('input-box').value;
+        }
+
+        //check for capitalisation - return with proper
+        function caseCheck(char) {
+            if(caps ^ shift) {
+                if(shift == true){
+                    toggleSpecial('S');
+                    char = getSymbols(char);
+                }
+                return char.toUpperCase();
+            }else {
+                if(shift == true){
+                    toggleSpecial('S');
+                    char = getSymbols(char);
+                }
+                return char.toLowerCase();
+            }
+        }
+
+        //replace with keys
+        function cleanInput(input) {
+            var nonExplicit = explicit.map(el =>{
+                return el.split('').map((l,i)=>{
+                    
+                    if(i==0 || i==el.length-1){
+                        return l;
+                    }
+                    return '*';
+                    
+                }).join('');
+            });
+            var regex = null;
+            //bug here - on word repetition
+            for(index in explicit){
+                regex = new RegExp(explicit[index]);
+                input = input.replace(regex, nonExplicit[index]);
+            }
+            return input;
+        }
+
+        //check this on toggle as well
+        function passwdCheck(val) {
+            password = '';
+            for(var i = 0; i < val.length-1;i++){
+                password = password + '*';
+            }
+            
+            return password;
+        }
+
+        //done on click - no checking
+        function revCheck() {
+            
+            var originalValue = document.getElementById('input-box').value;
+            var reverseValue = '';
+            for(var i = originalValue.length-1;i>=0;i--){
+                reverseValue = reverseValue + originalValue[i];
+            }
+            document.getElementById('input-box').value = reverseValue;
+           
+        }
+
+        function toggleSpecial(char) {
+            switch (char) {
+                case 'C':
+                    setCaps();
+                    break;
+                case 'P':
+                    setPasswd();
+                    break;
+                case 'Cl':
+                    setClean();
+                    break;
+                case 'R':  
+                    setRev();                  
+                    revCheck();
+                    
+                    break;
+                case 'S':
+                    setShift();
+                    break;
+                default:
+                    console.log('error');
+                    break;
+            }
+            setSpecialColor(char);    
+        }
+
+        function setCaps() {            
+            caps = !caps;
+        }
+
+        function setShift() {
+            shift = !shift;
+        }
+
+        function setRev() {
+            rev = !rev;
+        }
+
+        function setClean() {
+            clean = !clean;
+        }
+
+        function setPasswd() {
+            passwd = !passwd;
+        }
+
+        function setSpecialColor(char) {
+            switch (char) {
+                case 'C':
+                    setCapsColor();
+                    break;
+                case 'P':
+                    setPasswdColor();
+                    break;
+                case 'Cl':
+                    setCleanColor();
+                    break;
+                case 'R':
+                    setRevColor();
+                    break;
+                case 'S':
+                    setShiftColor();
+                    break;
+                default:
+                    console.log('error');
+                    break;
+            }
+        }
+
+        function setCapsColor() {            
+            caps ? (capsKey.style.color = 'green') : (capsKey.style.color = 'black');
+        }
+
+        function setShiftColor() {
+            shift ? (shiftKey.style.color = 'green') : (shiftKey.style.color = 'black');
+        }
+
+        function setRevColor() {
+            rev ? (revKey.style.color = 'green') : (revKey.style.color = 'black');
+        }
+
+        function setCleanColor() {
+            clean ? (cleanKey.style.color = 'green') : (cleanKey.style.color = 'black');
+        }
+
+        function setPasswdColor() {
+            passwd ? (passwdKey.style.color = 'green') : (passwdKey.style.color = 'black');
+        }
+
+        function deleteEl() {
+            var originalValue = document.getElementById('input-box').value;
+            var newValue = ''
+            for(var i=0;i<originalValue.length-1;i++){
+                newValue = newValue + originalValue[i];
+            }
+            inputBox = newValue;
+            document.getElementById('input-box').value = newValue;
+        }
+
+        function getSymbols(char) {
+            var symbol = '';
+            switch(char) {
+                case '1':
+                    symbol = '!';
+                    break;
+                case '2':
+                    symbol = '@';
+                    break;
+                case '3':
+                    symbol = '#';
+                    break;
+                case '4':
+                    symbol = '$';
+                    break;
+                case '5':
+                    symbol = '%';
+                    break;
+                case '6':
+                    symbol = '^';
+                    break;
+                case '7':
+                    symbol = '&';
+                    break;
+                case '8':
+                    symbol = '*';
+                    break;
+                case '9':
+                    symbol = '(';
+                    break;
+                case '0':
+                    symbol = ')';
+                break;
+                default:
+                    symbol = char;
+            }
+            return symbol;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W3.4.2_1 !-->
+  <h1 >Change the buttons text color random value</h1>
+  <button id="buttonText">Click here to change my color</button>
+
+  <!-- FSD.W3.4.2_2 !-->
+  <h1 id="textValue">My color should change when I double click the button!</h1>
+  <button id="doubleButton">Double Click here to change the color of the h1 tag !</button>
+  
+  <!-- FSD.W3.4.2_3 !-->
+  <h1>The buttons color changes to a random value when it is clicked! But only two times!</h1>
+  <button id="onlyDouble">Click here to change my color!</button>
+  <script>
+    var buttonChange=document.getElementById('buttonText');
+    var buttonDoubleChange = document.getElementById('doubleButton');
+    var textValueDoule =document.getElementById('textValue');
+    var doubleClickButton = document.getElementById('onlyDouble');
+    var click=0;
+    function random(number){
+      return Math.ceil(Math.random()*number);
+    }
+    function changeText(){
+      var randomColor = 'rgb(' + random(256) + ',' + random(256) + ',' + random(256) + ')';
+      buttonChange.style.color=randomColor;
+    }
+    function changeTextDouble(){
+      var randomColorDouble='rgb(' + random(250) + ',' + random(250) + ',' + random(250) + ')';
+      textValueDoule.style.color=randomColorDouble;
+    }
+    function ChangeButtonDouble(){
+      var randomColorButton='rgb(' + random(240) + ',' + random(240) + ',' + random(240) + ')';
+      doubleClickButton.style.color=randomColorButton;
+      click++;
+      
+      if(click>1){
+        doubleClickButton.removeEventListener('click',ChangeButtonDouble);
+      }
+      
+    }
+    function changeTextSize(){
+      randomSize= random(20);
+      doubleClickButton.style.fontSize=randomSize+'px';
+    }
+
+    buttonChange.addEventListener('click',changeText);
+    buttonDoubleChange.addEventListener('dblclick',changeTextDouble);
+    doubleClickButton.addEventListener('click',ChangeButtonDouble);
+    doubleClickButton.addEventListener('mouseover',changeTextSize);
+  </script>
+</body>
+</html>
