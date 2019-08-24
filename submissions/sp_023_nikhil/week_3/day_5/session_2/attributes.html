@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <title>Practise Attributes</title>
+    <style type="text/css">
+        .class-h1 {
+            color: red
+        }
+
+        .class-h3 {
+            color: green;
+        }
+
+        .class-h5 {
+            color: orange;
+        }
+
+        .class-div {
+            color: yellow;
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .class-p {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        #test-2 {
+            font-size: 30px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>First H1</h1>
+    <h1>Second H1</h1>
+    <h3>First H3</h3>
+    <h3>Second H3</h3>
+    <h5>First H5</h5>
+    <h5>Second H5</h5>
+    <h5>Third H5</h5>
+    <div id="box">
+        <div>First DIV</div>
+        <div>Second DIV</div>
+        <div>Third DIV</div>
+    </div>
+    <div>Fourth DIV</div>
+    <div id="cont">
+        <p>First P</p>
+        <p>Second P</p>
+        <p>Third P</p>
+    </div>
+    <div id="temp">
+        <p>Test P1</p>
+        <p>Test P2</p>
+        <p>Test P3</p>
+    </div>
+    <hr />
+    <button>Change H1</button>
+    <button id="changeH3Button">Change H3</button>
+    <button id="changeH5Button">Change H5</button>
+    <button id="divChange">Change DIV</button>
+    <button id="paraChange">Change P</button>
+    <button id="setID">Set ID</button>
+    <script>
+
+        var firstH1 = document.querySelector('h1');
+        var firstButton = document.querySelector('button');
+
+        var allH3 = document.querySelectorAll('h3');
+        var buttonForH3 = document.getElementById('changeH3Button');
+
+        var allH5 = document.querySelectorAll('h5');
+        var buttonForH5 = document.getElementById('changeH5Button');
+
+        var divs = document.querySelectorAll('div#box > div')
+        var buttonDivChange = document.getElementById('divChange');
+
+        var para = document.querySelectorAll('div#cont > p');
+        var buttonParaChange = document.getElementById('paraChange');
+
+        var secondP = document.querySelectorAll('#temp > p');
+        var buttonSetID = document.getElementById('setID');
+
+        firstButton.addEventListener('click', addClassH1);
+
+        buttonForH3.addEventListener('click', changeH3);
+
+        buttonForH5.addEventListener('click', changeH5);
+
+        buttonDivChange.addEventListener('click', changeDivs);
+
+        buttonParaChange.addEventListener('click', changParas);
+
+        buttonSetID.addEventListener('click', para2);
+
+        function addClassH1() {
+            firstH1.setAttribute('class', 'class-h1');
+        }
+
+        function changeH3() {
+            for (var i = 0; i <= allH3.length - 1; i++) {
+                allH3[i].setAttribute('class', 'class-h3');
+
+            }
+        }
+
+        function changeH5() {
+            for (var i = 0; i <= allH5.length - 1; i++) {
+                allH5[i].setAttribute('class', 'class-h5');
+            }
+        }
+
+        function changeDivs() {
+            for (var i = 0; i <= divs.length - 1; i++) {
+                divs[i].setAttribute('class', 'class-div')
+            }
+        }
+
+        function changParas() {
+            for (var i = 0; i <= para.length - 1; i++) {
+                para[i].setAttribute('class', 'class-p')
+            }
+        }
+
+        function para2() {
+            for(var i = 0; i <= secondP.length; i++) {
+                
+                secondP[1].setAttribute('id', 'test-2')
+            }
+            
+        }
+            
+
+    </script>
+</body>
+
+</html>

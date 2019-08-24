@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Unix</title>
+    <style>
+        #mainDiv {
+            padding: 50px;
+            display:flex;
+            flex-direction: column;
+            width: 1200px;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .red {
+            color:red;
+        }
+
+        #top {
+            width: 600px;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            background: grey;
+            padding: 30px;
+            margin-left: 250px;  
+        }
+
+        #mid {
+            margin: 50px;
+            width: 800px;
+        }
+
+        #bottom {
+            margin: 50px;
+            background: orangered;
+            padding: 20px;
+        }
+
+        .flexRow {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .flexColumn {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #verticalRuler {
+            background: black;
+            width: 15px;
+            margin-left: 150px; 
+        }
+
+        .textAlignRight {
+            text-align: right;
+            margin-left: 150px
+        }
+
+        .textAlignLeft {
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        .width350 {
+            width: 350px;
+        }
+
+        .textAlignCenter {
+            text-align: center;
+        }
+
+        .textWhite {
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <button id="btnCreatePage">Create Page</button>
+    <!-- <div id="mainDiv">
+        <div id="top" class="textAlignCenter">
+            <div id="top1"><img src="https://github.com/masai-school/full-stack-dev-1908/blob/master/course/week_1/day_3/resources/images/linus.jpg?raw=true" alt=""/></div>
+            <div id="top2" class="blue"><h1>Linus Torvalds</h1></div>
+            <div id="top3"><h2>The creator of Linux & Git</h2></div>
+        </div>
+
+        <div id="mid" class="flexRow">
+            <div id="mid1"><img src="https://github.com/masai-school/full-stack-dev-1908/blob/master/course/week_1/day_3/resources/images/khan.jpg?raw=true" alt=""/></div>
+            <div id="mid2" class="flexColumn textAlignLeft">
+                <div id="mid2.1" class = "red"><h1>Sal Khan</h1></div>
+                <div id="mid2.2"><h3>Salman Khan is the founder of the Khan Academy which has a mission of providing a free world-class education for anyone, anywhere.</h3></div>
+            </div>
+        </div>
+
+        <div id="bottom" class="orange flexRow">
+            <div id="bottom1" class="flexColumn textAlignLeft width350">
+                <div class="textWhite"><h2>Ken Thompson</h2></div>
+                <div><h3>Designed and Implemented the original Unix operating system</h3></div>
+            </div>
+            <div id="verticalRuler"></div>
+            <div id="bottom3" class="flexColumn textAlignRight width350">
+                <div class="textWhite"><h2>Dennis Ritchie</h2></div>
+                <div><h3>The creator of C programming language</h3></div>
+            </div>
+        </div>
+    </div> -->
+    <script>
+        var btnCreatePage = document.getElementById('btnCreatePage');
+        btnCreatePage.addEventListener('click', createPage);
+
+        function createPage() {
+            createMainDiv();
+            createTop();
+            createMid();
+            createBottom();
+        }
+
+        var elemBody = document.querySelector('body');
+        
+        function createMainDiv() {
+            var mainDiv = document.createElement('div');
+            elemBody.appendChild(mainDiv);
+            mainDiv.setAttribute('id', 'mainDiv');
+        }
+        
+        function createTop() {
+            var top = document.createElement('div');
+            mainDiv.appendChild(top);
+            top.setAttribute('id', 'top');
+            top.setAttribute('class', 'textAlignCenter');
+
+                var top1 = document.createElement('div');
+                top.appendChild(top1);
+
+                    var img1 = document.createElement('img');
+                    top1.appendChild(img1);
+                    img1.setAttribute('src', 'https://github.com/masai-school/full-stack-dev-1908/blob/master/course/week_1/day_3/resources/images/linus.jpg?raw=true');
+
+                var top2 = document.createElement('div');
+                top.appendChild(top2);
+                top2.setAttribute('class', 'blue');
+
+                    var h1 = document.createElement('h1');
+                    top2.appendChild(h1);
+                    h1.textContent = 'Linus Torvalds';
+                
+                var top3 = document.createElement('div');
+                top.appendChild(top3);
+
+                    var h2 = document.createElement('h2');
+                    top3.appendChild(h2);
+                    h2.textContent = 'The creator of Linux & Git';
+        }
+        
+        function createMid() {
+            var mid = document.createElement('div');
+            mainDiv.appendChild(mid);
+            mid.setAttribute('id', 'mid');
+            mid.setAttribute('class', 'flexRow');
+
+                var mid1 = document.createElement('div');
+                mid.appendChild(mid1);
+
+                    var img2 = document.createElement('img');
+                    mid1.appendChild(img2);
+                    img2.setAttribute('src', 'https://github.com/masai-school/full-stack-dev-1908/blob/master/course/week_1/day_3/resources/images/khan.jpg?raw=true');
+                
+                var mid2 = document.createElement('div');
+                mid.appendChild(mid2);
+                mid2.setAttribute('class', 'flexColumn');
+                mid2.setAttribute('class', 'textAlignLeft');
+
+                    var mid21 = document.createElement('div');
+                    mid2.appendChild(mid21);
+                    mid21.setAttribute('class', 'red');
+
+                        var h1 = document.createElement('h1');
+                        mid21.appendChild(h1);
+                        h1.textContent = 'Sal Khan';
+                        
+
+                    var mid22 = document.createElement('div');
+                    mid2.appendChild(mid22);
+
+                        var h3 = document.createElement('h3');
+                        mid22.appendChild(h3);
+                        h3.textContent = 'Salman Khan is the founder of the Khan Academy which has a mission of providing a free world-class education for anyone, anywhere.';
+        }   
+
+        function createBottom() {
+            var bottom = document.createElement('div');
+            mainDiv.appendChild(bottom);
+            bottom.setAttribute('id', 'bottom');
+            bottom.setAttribute('class', 'flexRow');
+
+                var bottom1 = document.createElement('div');
+                bottom.appendChild(bottom1);
+                
+                bottom1.setAttribute('class', 'textAlignLeft');
+                bottom1.setAttribute('class', 'width350');
+                bottom1.setAttribute('class', 'flexColumn');
+
+                    var bottom12 = document.createElement('div');
+                    bottom.appendChild(bottom12);
+                    bottom12.setAttribute('class', 'textWhite');
+
+                        var h2 = document.createElement('h2');
+                        bottom12.appendChild(h2);
+                        h2.textContent = 'Ken Thompson';
+
+                    var bottom13 = document.createElement('div');
+                    bottom.appendChild(bottom13);
+
+                        var h3 = document.createElement('h3');
+                        bottom13.appendChild(h3);
+                        h3.textContent = 'Designed and Implemented the original Unix operating system';
+
+
+                var verticalRuler = document.createElement('div');
+                bottom.appendChild(verticalRuler);
+                verticalRuler.setAttribute('id', 'verticalRuler');
+
+                var bottom3 = document.createElement('div');
+                bottom.appendChild(bottom3);
+                
+                bottom3.setAttribute('class', 'textAlignRight');
+                bottom3.setAttribute('class', 'width350');
+                bottom3.setAttribute('class', 'flexColumn');
+
+                    var bottom31 = document.createElement('div');
+                    bottom.appendChild(bottom31);
+                    bottom31.setAttribute('class', 'textWhite');
+
+                        var h2 = document.createElement('h2');
+                        bottom31.appendChild(h2);
+                        h2.textContent = 'Dennis Ritchie';
+
+                    var bottom32 = document.createElement('div');
+                    bottom3.appendChild(bottom32);
+
+                        var h3 = document.createElement('h3');
+                        bottom32.appendChild(h3);
+                        h3.textContent = 'The creator of C programming language';
+                    
+
+
+        }
+        
+
+        
+        
+
+    </script>
+</body>
+</html>

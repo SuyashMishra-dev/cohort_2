@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>
+        Registration Page
+    </title>
+    <style type="text.css">
+    body {
+    margin: 100px 200px;
+    font-size: 30px;
+}
+.container {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+
+#box2 {
+    grid-area: 1 / 2 / span 4 / span 1;
+    background-color: black;
+    color: white;
+    width: 400px;
+}
+
+#box2 > p {
+    margin: 30px 50px;
+    
+}
+#outputName {
+    font-size: 50px;
+}
+    </style>
+
+</head>   
+<body>
+        
+                <div class="box2">
+                    <div>
+                    <p>NAME</p>
+                    <input type="text" id="nameInput">
+                    
+                        <p>EMAIL</p>
+                        <input type="text" id="emailInput">
+                        <p id="emailWarning"></p>
+                    
+                        <p>MOBILE</p>
+                        <input type="text" id="mobileInput">
+                        <p id="mobileWarning"></p>
+                    
+                </div>
+        
+                <div >
+                    <p>Name</p>
+                    <p id="outputName">MASAI</p>
+                    <p>EMAIL</p>
+                    <p id="outputEmail">email@masaischool.com</p>
+                    <p>MOBILE</p>
+                    <p id="outputMobile">9876543210</p>
+                </div>
+                </div>  
+                <div>
+                    <button id="registerButton" onclick="register()">REGISTER</button>
+                </div>
+            
+            
+</body> 
+</html>

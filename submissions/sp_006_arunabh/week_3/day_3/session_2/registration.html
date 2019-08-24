@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Registration</title>
+        <style type="text/css">
+        .form{
+            width: 300px;
+            height: 300px;
+            float: left;
+            margin: 100px 100px 100px 300px;
+        }
+        .masai{
+            width: 300px;
+            height: 300px;
+            background: black;
+            float: left;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .red{
+            color: red;
+        }
+
+        @media(min-width: 1800px){
+            .form{
+                float: none;
+                padding-bottom: 100px;
+            }
+            .masai{
+                margin: 100px 100px 100px 300px;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div class="form">
+            <label for="name">NAME</label><br>
+            <input type="text" name="name" id="name">
+            <p class="red" id="incorrect_name"></p>
+            <br><br>
+            <label for="email">EMAIL</label><br>
+            <input type="email" name="email" id="email">
+            <p class="red" id="incorrect_email"></p>
+            <br><br>
+            <label for="mobile">MOBILE</label><br>
+            <input type="text" name="mobile" id="mobile">
+            <p class="red" id="incorrect_number"></p>
+            <br><br>
+            <button onclick="registration()">Register</button>
+        </div>
+        <div class="masai">
+            <p>Name</p>
+            <h2 id="masai_name">MASAI</h2>
+            <p>EMAIL</p>
+            <p id="masai_email">email@masaischool.com</p>
+            <p>MOBILE</p>
+            <p id="masai_number">9876543210</p>
+        </div>
+
+        <script type="text/javascript">
+        function registration(){
+            var name = document.getElementById("name").value;
+            var email= document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+
+            //Validating Name Criteria 
+            var count_name=name.length;
+            if(count_name<3 || count_name>10){
+                document.getElementById("incorrect_name").innerHTML="Characters count should be within 3 to 10.";
+            }
+            else{
+                document.getElementById("masai_name").innerHTML=document.getElementById("name").value;
+                document.getElementById("name").value="";
+            }
+
+            //Validating Email Criteria
+            var count_email=email.length;
+			var result = "";
+			for(var i=1;i<count_email;i++){
+				if(email[i]=="@"){
+					for(i=i+2;i<count_email;i++){
+						if(email[i]=="."){
+							result=true;
+						}
+					}
+				}
+			}
+			if(result==true){
+				document.getElementById("masai_email").innerHTML=document.getElementById("email").value;
+                document.getElementById("email").value="";
+			}else{
+				document.getElementById("incorrect_email").innerHTML="Check your email input....";
+			}
+
+            //Validating Mobile Criteria
+            var count_mobile=mobile.length;
+            if(count_mobile<10 || count_mobile>10){
+                document.getElementById("incorrect_number").innerHTML="You must enter 10-digit number.";
+            }
+            else{
+                document.getElementById("masai_number").innerHTML=document.getElementById("mobile").value;
+                document.getElementById("mobile").value="";
+            }
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W3.4.2_1 !-->
+  <h1>Change the buttons text color random value</h1>
+  <button id="button-1">Click here to change my color</button>
+  <button id="bonus-button">Click me to change my color to an array value!</button>
+  <!-- FSD.W3.4.2_2 !-->
+  <h1 id="head-2">My color should change when I double click the button!</h1>
+  <button id="button-2">Double Click here to change the color of the h1 tag !</button>
+  
+  <!-- FSD.W3.4.2_3 !-->
+  <h1>The buttons color changes to a random value when it is clicked! But only two times!</h1>
+  <button id="button-3">Click here to change my color!</button>
+  <script>
+    var button1 = document.getElementById('button-1');
+    var button2 = document.getElementById('button-2');
+    var button3 = document.getElementById('button-3');
+    var bonusButton = document.getElementById('bonus-button');
+    var colorIndex = 0;
+    var count = 0;
+    var colors = ["red","blue","green","black","yellow", "greenyellow" ,"purple"]
+
+    button1.addEventListener('click', changeColor);
+    button2.addEventListener('dblclick',changeh1Color);
+    button3.addEventListener('click', changeColorTwice);
+    button3.addEventListener('mouseover', changeSize);
+
+    bonusButton.addEventListener('click', arrayColor);
+
+    function generateRandom(num){
+      return Math.floor(Math.random()*num);
+    }
+    function randomColor(){
+      return 'rgb(' + generateRandom(255) + ',' + generateRandom(255) + ',' + generateRandom(255) + ')';
+    }
+    function changeColor(){
+      button1.style.color = randomColor();
+    }
+
+    function changeh1Color(){
+      console.log('change h1');
+      document.getElementById('head-2').style.color = randomColor();
+    }
+    
+    function changeColorTwice(){
+      button3.style.color = randomColor();
+      count++;
+      if(count == 2){
+        button3.removeEventListener('click', changeColorTwice);
+      }
+    }
+
+    function arrayColor(){
+      bonusButton.style.color = colors[colorIndex];
+      colorIndex++;
+      if(colorIndex == colors.length){
+        colorIndex = 0;
+      }
+    }
+
+    function changeSize(){
+      
+      button3.style.fontSize = generateRandom(50).toString() + 'px';
+    }
+  </script>
+</body>
+</html>

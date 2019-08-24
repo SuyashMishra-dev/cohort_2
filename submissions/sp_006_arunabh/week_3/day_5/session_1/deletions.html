@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <div id="headings">
+            <h5>First H5</h5>
+            <h5>Second H5</h5>
+            <h5>Third H5</h5>
+        </div>
+        <div id="cont">
+            <div class="green">First DIV</div>
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button id = "h1">Remove H1</button>
+        <button id = "h3">Remove H3</button>
+        <button id = "h5">Remove H5</button>
+        <button id = "red">Remove Red</button>
+        <button id = "divs">Remove DIVS</button>
+
+        <script>
+            var remove_h1 = document.getElementById("h1");
+            function delete_h1(){
+                var body = document.querySelector('body');
+                var first_h1 = document.querySelector('h1');
+                body.removeChild(first_h1);
+                remove_h1.removeEventListener('click' , delete_h1);
+            }
+            remove_h1.addEventListener('click' , delete_h1);
+
+            var remove_h3 = document.getElementById("h3");  
+            function delete_h3(){
+                var body = document.querySelector('body');
+                var all_h3 = document.querySelectorAll('h3');
+                for(var i=0; i<all_h3.length; i++) {
+                    body.removeChild(all_h3[i]);
+                }
+                remove_h3.removeEventListener('click' , delete_h3);
+            }
+            remove_h3.addEventListener('click' , delete_h3);
+
+            var remove_h5 = document.getElementById("h5");  
+            function delete_h5(){
+                var big_div = document.getElementById('headings');
+                var all_h5 = document.querySelectorAll('h5');
+                for(var i=0; i<all_h5.length; i++) {
+                    big_div.removeChild(all_h5[i]);
+                }
+                remove_h5.removeEventListener('click' , delete_h5);
+            }
+            remove_h5.addEventListener('click' , delete_h5);
+
+            var remove_red = document.getElementById("red");  
+            function delete_red(){
+                var big_cont = document.getElementById('cont');
+                var all_red = document.querySelectorAll('.red');
+                for(var i=0; i<all_red.length; i++) {
+                    big_cont.removeChild(all_red[i]);
+                }
+                remove_red.removeEventListener('click' , delete_red);
+            }
+            remove_red.addEventListener('click' , delete_red);
+
+            var remove_div = document.getElementById("divs");  
+            function delete_div(){
+                var big_cont = document.getElementById('cont');
+                var all_divs = document.querySelectorAll('#cont div');
+                for(var i=0; i<all_divs.length; i++) {
+                    big_cont.removeChild(all_divs[i]);
+                }
+                remove_div.removeEventListener('click' , delete_div);
+            }
+            remove_div.addEventListener('click' , delete_div);
+        </script>
+    </body>
+</html>

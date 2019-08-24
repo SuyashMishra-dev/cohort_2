@@ -1,0 +1,287 @@
+<html>
+    <head>
+        <title>
+            The Unit Convertor
+        </title>
+        <style type="text/css">
+            .table {
+                color: rgb(255, 0, 64);
+                border: 4px solid black;
+                height: 150px;
+                box-shadow: 5px 5px 5px rgb(170, 159, 159);
+                padding: 20px;
+            }
+
+            .title {
+                font-size: 60px;
+                color: rgb(124, 3, 3);;
+                text-align: center;
+                padding-bottom: 20px;
+                padding-top: 15px;
+                margin: 10px;
+                margin-top: 20px;
+                margin-bottom: 200px;
+                background-color: rgb(0, 140, 255);
+            }
+
+            .tablecontent {
+                text-align: center;
+                margin-left: 750px;
+            }
+
+            input {
+                padding: 2px;
+                border-radius: 5px;
+                border: 1px solid grey;
+            }
+
+            select {
+                margin: 10px;
+                padding: 5px;
+            }
+            button {
+                margin: 10px;
+                padding: 5px;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="title">Unit Convertor Tool</div>
+        <div class="tablecontent">
+            <table class="table">
+                
+                <tr class="options">
+                    <td>Type</td>
+                    <td>
+                        <select id="type_sel">
+                            <option>-Select-</option>
+                            <option value="length">Length</option>
+                            <option  value="temp">Temperature</option>
+                            <option  value="vol">Volume</option>
+                        </select>
+                    </td>
+                </tr>
+         
+                <tr>
+                    <td>Quantity</td>  
+                    <td><input type="text" id="amount" ></td>
+                </tr>
+
+                <tr>
+                        <td>From (Unit)</td>
+                    <td><select id="type_from">
+                            <option>-Select-</option>
+                            <option value="mtr">Meter</option>
+                            <option  value="kilo">Kilometer</option>
+                            <option  value="mile">Mile</option>
+                            <option value="lightYear">Light Year</option>
+                            <option value="cel">Celsius</option>
+                            <option value="kel"> Kelvin</option>
+                            <option value="feh">Fahrenheit</option>
+                            <option value="ltr">Liter</option>
+                            <option value="mili">Milliliter</option>
+                            <option value="USGallon">US Gallon</option>
+                            <option value="ITS">Imperial Tea Spoon</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>To (Unit)</td>
+                    <td><select id="type_to">
+                            <option>-Select-</option>
+                            <option value="mtr">Meter</option>
+                            <option  value="kilo">Kilometer</option>
+                            <option  value="mile">Mile</option>
+                            <option value="lightYear">Light Year</option>
+                            <option value="cel">Celsius</option>
+                            <option value="kel"> Kelvin</option>
+                            <option value="feh">Fahrenheit</option>
+                            <option value="ltr">Liter</option>
+                            <option value="mili">Milliliter</option>
+                            <option value="USGallon">US Gallon</option>
+                            <option value="ITS">Imperial Tea Spoon</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Output</td>
+                    <td>
+                        <input type="text" id="output" size="20">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button onclick="convert()">Convert</button></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        function convert(){
+        var amount= document.getElementById("amount").value;
+        var from =document.getElementById("type_from").value;
+        var  to = document.getElementById("type_to").value;
+        var type= document.getElementById("type_sel").value;
+        
+        if(type=="length"){
+            if(from== "mtr" && to=="kilo"){
+                var ans = amount*(1/1000);
+                document.getElementById("output").value=ans+" " +"Kilometer";
+            }
+            else if(from== "mtr" && to=="mile"){
+                var ans = amount*(1*0.00062137);
+                document.getElementById("output").value=ans+" " +"Mile";
+            }
+            else if(from== "mtr" && to=="lightYear"){
+                var ans = amount*(1.0570008340247E-16);
+                document.getElementById("output").value=ans+" " +"Light Year";
+            }
+            else if(from== "kilo" && to=="mtr"){
+                var ans = amount*(1000);
+                document.getElementById("output").value=ans+" " +"Meter";
+            }
+            else if(from== "kilo" && to=="mile"){
+                var ans = amount*(0.6214);
+                document.getElementById("output").value=ans+" " +"Mile";
+            }
+            else if(from== "kilo" && to=="lightYear"){
+                var ans = amount*(1.0570008340247E-13);
+                document.getElementById("output").value=ans+" " +"Light Year";
+            }
+            else if(from== "mile" && to=="mtr"){
+                var ans = amount*(1609.344);
+                document.getElementById("output").value=ans+" " +"Meter";
+            }
+            else if(from== "mile" && to=="kilo"){
+                var ans = amount*(1.609344);
+                document.getElementById("output").value=ans+" " +"Kilometer";
+            }
+            else if(from== "mile" && to=="lightYear"){
+                var ans = amount*(1.7010779502326E-13);
+                document.getElementById("output").value=ans+" " +"Light Year";
+            }
+            else if(from== "lightYear" && to=="mtr"){
+                var ans = amount*(9.46073047258E+15);
+                document.getElementById("output").value=ans+" " +"Meter";
+            }
+            else if(from== "lightYear" && to=="kilo"){
+                var ans = amount*(9.461E+12);
+                document.getElementById("output").value=ans+" " +"Kilometer";
+            }
+            else if(from== "lightYear" && to=="mile"){
+                var ans = amount*(5.879E+12);
+                document.getElementById("output").value=ans+" " +"Light Year";
+            }
+            else if(from==to){
+                document.getElementById("output").value=amount+from ;
+            }
+            
+            else{
+                document.getElementById("output").value = alert("Invalid types are selected!");
+                document.getElementById("output").value = "ERROR!";
+                document.getElementById("output").style.backgroundColor = "red"
+            }
+        }
+        if(type== "temp"){
+
+            if(from== "cel" && to=="kel"){
+                var ans = amount-(273.15);
+                document.getElementById("output").value=ans+""+"kelvin";
+            }
+            else if(from== "cel" && to=="feh"){
+                var ans = (amount*(9/5))+32;
+                document.getElementById("output").value=ans+" " +"Fah";
+            }
+            else if(from== "kel" && to=="cel"){
+                var ans = amount+(273.15);
+                document.getElementById("output").value=ans+" "+"Cel";
+            }
+            else if(from== "kel" && to=="feh"){
+                var ans = (amount*(9/5))-459.67;
+                document.getElementById("output").value=ans+" " +"Fah";
+            }
+            else if(from== "feh" && to=="kel"){
+                var ans = (amount+459.67)*(5/9);
+                document.getElementById("output").value=ans+" "+"Kelvin";
+            }
+            else if(from== "feh" && to=="cel"){
+                var ans = (amount-32)*(5/9);
+                document.getElementById("output").value=ans+" " +"Cel";
+            }
+            else if(from==to){
+                document.getElementById("output").value=amount+from ;
+            }
+            else {
+                document.getElementById("output").value = alert("Invalid types are selected!");
+                document.getElementById("output").value = "ERROR!";
+                document.getElementById("output").style.backgroundColor = "red"
+            }
+        }
+        if(type=="vol"){
+            if(from== "ltr" && to=="mili"){
+                var ans = amount*(1000);
+                document.getElementById("output").value=ans+" "+"Mili";
+            }
+            else if(from== "ltr" && to=="USGallon"){
+                var ans = (amount*0.26417);
+                document.getElementById("output").value=ans+" " +"USGallon";
+            }
+            else if(from== "ltr" && to=="ITS"){
+                var ans = (amount*168.9363826937);
+                document.getElementById("output").value=ans+" " +"ITS";
+            }
+            else if(from== "mili" && to=="ltr"){
+                var ans = (amount/1000);
+                document.getElementById("output").value=ans+" " +"ltr";
+            }
+            else if(from== "mili" && to=="USGallon"){
+                var ans = (amount*(1/3785.4118));
+                document.getElementById("output").value=ans+" " +"USGallon";
+            }
+            else if(from== "mili" && to=="ITS"){
+                var ans = (amount*0.168936);
+                document.getElementById("output").value=ans+" " +"ITS";
+            }
+            else if(from== "USGallon" && to=="ltr"){
+                var ans = (amount/0.26417);
+                document.getElementById("output").value=ans+" " +"Ltr";
+            }
+            else if(from== "USGallon" && to=="mili"){
+                var ans = (amount*3785.4118 );
+                document.getElementById("output").value=ans+" " +"Mili";
+            }
+            else if(from== "USGallon" && to=="ITS"){
+                var ans = (amount*639.494);
+                document.getElementById("output").value=ans+" " +"ITS";
+            }
+            else if(from== "ITS" && to=="ltr"){
+                var ans = (amount*0.0059193880208333);
+                document.getElementById("output").value=ans+" " +"Ltr";
+            }
+            else if(from== "ITS" && to=="mili"){
+                var ans = (amount*5.91939);
+                document.getElementById("output").value=ans+" " +"Mili";
+            }
+            else if(from== "ITS" && to=="USGallon"){
+                var ans = (amount*0.00156374);
+                document.getElementById("output").value=ans+" " +"USGallon";
+            }
+            else if(from==to){
+                document.getElementById("output").value=amount+from ;
+            }
+            else{
+                document.getElementById("output").value = alert("Invalid types are selected!");
+                document.getElementById("output").value = "ERROR!";
+                document.getElementById("output").style.backgroundColor = "red"
+            }
+
+        }
+        
+        }
+        
+    </script>
+</html>
