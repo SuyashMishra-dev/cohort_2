@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings"> 
+            <h1></h1>
+            <h3></h3>
+            <h3></h3>
+        </div>
+        
+        <div id="cont">
+                  </div>
+                
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+                
+        <button onclick="addContent()" id="btn">Create H1</button>
+        <button onclick="changeHead()">Create 2 H3</button>
+        <button onclick="creatContent()">Create DIVS</button>
+        <button onclick="addStudents()">Add Students</button>
+        <button onclick="addCopy()">Add Copyright</button>
+
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+        
+            function addContent() {
+                var firstDiv = document.querySelector('h1');
+                firstDiv.innerHTML = "MASAI";
+            }
+
+            function changeHead(){
+                var firstHead = document.querySelectorAll('h3');
+                for (i = 0; i < firstHead.length; i++){
+                    var head = firstHead[i];
+                    var tail= firstHead[i+1]
+                    head.innerHTML = "A Transformation in education!";
+                    tail.innerHTML = "Learn to earn, pay when you get";
+                }
+            }
+
+            var index = 1;
+            function creatContent(){
+                var para = document.createElement('p');
+                para.textContent = "content" +index;
+                var vk = document.getElementById('vikings');
+                var bodyElem = document.querySelector('body');
+                bodyElem.insertBefore(para, vk);
+                index += 1
+            }
+
+            function addStudents(){
+                var vik = document.getElementById('vikings');
+                for (i = 0; i < students.length; i++){
+                    var element = document.createElement('li')
+                    element.textContent = students[i];
+                    vik.appendChild(element);
+                }
+            }
+
+            function addCopy(){
+                var para = document.createElement('p');
+                para.textContent = "@ masai 2019";
+                var btn = document.getElementById('btn');
+                var bodyElem = document.querySelector('body');
+                bodyElem.insertBefore(para, btn);
+            }
+        </script>
+    </body>
+</html>
