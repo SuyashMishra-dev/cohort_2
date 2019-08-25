@@ -18,6 +18,7 @@ Build a web page for the topic assigned to you
 | sp_045 | Teja S | Vedio GAmes | [github](https://github.com/Tejas-AI/masai-project-2) |
 | sp_004 | Amit | Hockey | [github](https://github.com/amit036/masai-week-2) |
 | sp_011 | Harshit | Bikes | [github](https://github.com/harshit860/masai-week-2) |
+| sp_027 | Prabhat Kumar Ranjan | GuitarS | [github](https://github.com/PrabhatKrRanjan/masai-week-2) |
 
 
 
