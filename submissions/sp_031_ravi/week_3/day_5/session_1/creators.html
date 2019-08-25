@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button onclick="changeContent()" id="copyButton">Create H1</button>
+        <button onclick="changeContentH3()">Create 2 H3</button>
+        <button onclick="changeContentList()">Create DIVS</button>
+        <button onclick="addStudent()">Add Students</button>
+        <button onclick="copyRightContent()">Add Copyright</button>
+        <script>
+            
+            
+            function changeContent() {
+                var heading1 = document.createElement('h1');
+                heading1.textContent = 'MASAI';
+                var h1Elem = document.querySelector('#headings');
+                h1Elem.appendChild(heading1);
+                
+            }
+
+            function changeContentH3() {
+                var h3Heading1 = document.createElement('h3');
+                var h3Heading2 = document.createElement('h3');
+                h3Heading1.textContent = 'A Transformation in education!';
+                h3Heading2.textContent = 'Learn to earn, pay when you get.';
+                var h1Elem = document.querySelector('#headings');
+                h1Elem.appendChild(h3Heading1);
+                h1Elem.appendChild(h3Heading2);
+            }
+
+            function changeContentList() {
+                
+                for (var i=0; i < 10; i++) {
+                    var division = document.createElement('div');
+                    division.textContent = 'Content'+ ' ' + i;
+                }
+                var h1Elem = document.getElementById('cont');
+                h1Elem.appendChild(division);
+                
+            }
+            function addStudent() {
+                var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+                
+                for(var i = 0; i <= students.length; i++) {
+                    var list = document.createElement('li');
+                    list.innerHTML = '<ul></ul>';
+                    list.textContent = students[i];
+                }
+                var bodyElem = document.querySelector('#vikings');
+                bodyElem.appendChild(list);
+                
+            }
+            
+            function copyRightContent() {
+                var copyright = document.createElement('p');
+                copyright.textContent = '@ masai 2019 ';
+                
+                var copyBtn = document.getElementById('copyButton');
+                
+                var bodyElem = document.querySelector('body');
+                bodyElem.insertBefore(copyright, copyBtn);
+                //bodyElem.appendChild(para);
+                
+                
+                }
+
+        </script>
+    </body>
+</html>

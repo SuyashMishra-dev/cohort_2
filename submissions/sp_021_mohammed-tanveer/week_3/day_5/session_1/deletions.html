@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1 id="idH1">First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <div id="headings">
+            <h5>First H5</h5>
+            <h5>Second H5</h5>
+            <h5>Third H5</h5>
+        </div>
+        <div id="cont">
+            <div id="idDiv1" class="green">First DIV</div>
+            <div id="idDiv2" class="red">Second DIV</div>
+            <div id="idDiv3" class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button onclick="removeH1()">Remove H1</button>
+        <button onclick="removeH3()">Remove H3</button>
+        <button onclick="removeH5()">Remove H5</button>
+        <button onclick="removeRed()">Remove Red</button>
+        <button onclick="removeDiv()">Remove DIVS</button>
+        <script>
+            var bodyTag = document.querySelector('body')
+            var headingTag = document.querySelector('#headings')
+            var countTag = document.querySelector('#cont');
+
+            function removeH1() {
+                var firstH1 = document.querySelector('#idH1');
+                bodyTag.removeChild(firstH1);
+            }
+
+            function removeH3(){
+                var allH3 = document.querySelectorAll('h3');
+                for(var i = 0; i < allH3.length; i++){
+                    bodyTag.removeChild(allH3[i]);
+                }
+            }
+
+            function removeH5(){
+                var allH5 = document.querySelectorAll('h5');
+                for(var i = 0; i < allH5.length; i++) {
+                    headingTag.removeChild(allH5[i]);
+                }
+            }
+
+            function removeRed(){
+                var allRed = document.querySelectorAll('.red');
+                for(var i = 0; i < allRed.length; i++){
+                    countTag.removeChild(allRed[i]);
+                }
+            }
+
+            function removeDiv(){
+                var Div1 = document.querySelector('#idDiv1');
+                var Div2 = document.querySelector('#idDiv2');
+                var Div3 = document.querySelector('#idDiv3');
+                countTag.removeChild(Div1);
+                countTag.removeChild(Div2);
+                countTag.removeChild(Div3);
+            }
+        </script>
+    </body>
+</html>

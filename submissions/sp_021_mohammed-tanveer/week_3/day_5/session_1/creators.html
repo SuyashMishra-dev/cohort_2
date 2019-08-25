@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button id="idH1button" onclick="createH1()">Create H1</button>
+        <button onclick="createH3()">Create 2 H3</button>
+        <button onclick="createDivs()">Create DIVS</button>
+        <button onclick="addStudents()">Add Students</button>
+        <button onclick="addCopy()">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+            var headingElement = document.querySelector('#headings');
+            var countElement= document.querySelector('#count');
+            var addStudendsList = document.querySelector('#vikings');
+            var addRights = document.querySelector('body');
+            var idButton = document.querySelector('#idH1button');
+
+            function createH1() {
+                var addH1 = document.createElement('h1');
+                addH1.textContent = 'MASAI';
+                headingElement.appendChild(addH1);
+            }
+            function createH3() {
+                var addH3 = document.createElement('h3');
+                var addH3_2 = document.createElement('h3');
+
+                addH3.textContent = 'A Transformation in education!';
+                addH3_2.textContent = 'Learn to earn, pay when you get.';
+                headingElement.appendChild(addH3);
+                headingElement.appendChild(addH3_2);
+            }
+            function createDivs(){
+                for(var i = 1; i < 11; i++) {
+                    var addDiv = document.createElement('div');
+
+                    addDiv.textContent = "Content " +i;
+                    headingElement.appendChild(addDiv);
+                }
+            }
+            function addStudents(){
+                for(var i = 0; i < students.length; i++) {
+                    var studentList = document.createElement('li');
+
+                    studentList.textContent = students[i];
+                    addStudendsList.appendChild(studentList);
+                }
+            }
+            function addCopy(){
+                var copyRights = document.createElement('p');
+                copyRights.textContent = "@ masai 2019";
+                addRights.insertBefore(copyRights, idButton);
+            }
+        </script>
+    </body>
+</html>
