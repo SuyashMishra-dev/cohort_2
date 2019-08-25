@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+    <body>
+        <h1 id = "heading1">First H1</h1>
+        <h1>Second H1</h1>
+
+        <h3 class="heading3">First H3</h3>
+        <h3 class="heading3_1">Second H3</h3>
+
+        <h5 class="heading5">First H5</h5>
+        <h5 class="heading5_1">Second H5</h5>
+        <h5 class="heading5_2">Third H5</h5>
+
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr/>
+
+        <button onclick="changeh1()">Change H1</button>
+        <button onclick="changeh3()">Change H3</button>
+        <button onclick="changeh5()">Change H5</button>
+        <button onclick="changegreen()">Change Green</button>
+        <button onclick="changered()">Change Red</button>
+        <button onclick="changeblue()">Change Blue</button>
+
+        <script>
+            function changeh1() {
+                var heading1 = document.querySelector('#heading1');
+                heading1.style.color = "red";
+            }
+
+            function changeh3() {
+                var heading3 = document.querySelector('.heading3');
+                var heading3_1 = document.querySelector('.heading3_1');
+                heading3.style.color = "green";
+                heading3_1.style.color = "green";
+            }
+
+            function changeh5() {
+                var heading5 = document.querySelector('.heading5');
+                var heading5_1 = document.querySelector('.heading5_1');
+                var heading5_2 = document.querySelector('.heading5_2');
+                heading5.style.color = "blue";
+                heading5_1.style.color = "blue";
+                heading5_2.style.color = "blue";
+            }
+
+            function changegreen() {
+                var changegreen = document.querySelector('div');
+                changegreen.style.color = "green";
+                var changegreen1 = document.querySelector('p');
+                changegreen1.style.color = "green";
+            }
+
+            function changered() {
+                var changered = document.querySelectorAll('.red');
+                for (i = 0; i < changered.length; i++){
+                var red = changered[i];
+                red.style.color = "red" ;
+            }
+            }
+
+            function changeblue() {
+                var changeblue = document.querySelectorAll('.blue');
+                for (i = 0; i < changeblue.length; i++){
+                var blue = changeblue[i];
+                blue.style.color = "blue" ;
+            }
+            }
+        </script>
+    </body>
+</html>

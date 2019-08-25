@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr/>
+        <button onclick="changeOneHeadline()">Change H1</button>
+        <button onclick="changeThirdHeadline()">Change H3</button>
+        <button onclick="changeFivthHeadline()">Change H5</button>
+        <button onclick="greenClass()">Change Green</button>
+        <button onclick="redClass()">Change Red</button>
+        <button onclick="blueClass()">Change Blue</button>
+        <script>
+            function changeOneHeadline() 
+            {
+                var headline = document.querySelectorAll('h1');
+                 for(i=0;i<headline.length;i++)
+                    {
+                        var headline1=headline [i];
+                        headline1.style.color='red';
+                        headline1.innerHTML ="the colour of first";
+                    }
+            
+            }
+
+            function changeThirdHeadline() 
+            {
+                var headline2 = document.querySelectorAll('h3');
+                 for(i=0;i<headline2.length;i++)
+                    {
+                        var headlineInput=headline2 [i];
+                        headlineInput.style.color='green';
+                        headlineInput.innerHTML ="the colour of first";
+                    }
+            
+            }
+
+            function changeFivthHeadline() 
+            {
+                var headline3 = document.querySelectorAll('h5');
+                 for(i=0;i<headline3.length;i++)
+                    {
+                        var headlineInput3=headline3 [i];
+                        headlineInput3.style.color='blue';
+                        headlineInput3.innerHTML ="the colour of first";
+                    }
+            
+            }
+
+            function greenClass()
+                    {
+                        var divs = document.querySelectorAll('div');
+                        var para = document.querySelectorAll('p');
+                        var greenD = divs[0];
+                        var greenP = para[0];
+                        greenD.style.color='green';
+                        greenD.innerHTML ="all the elements with the class green";
+                        greenP.style.color='green';
+                        greenP.innerHTML ="all the elements with the class green";                    
+                   }
+
+                   function blueClass()
+                    {
+                        var divs = document.querySelectorAll('div');
+                        var para = document.querySelectorAll('p');
+                        var blueD = divs[1];
+                        var blueP = para[1];
+                        blueD.style.color='blue';
+                        blueD.innerHTML ="all the elements with the class blue";
+                        blueP.style.color='blue';
+                        blueP.innerHTML ="all the elements with the class blue";                    
+                   }  
+
+                   function redClass()
+                    {
+                        var divs = document.querySelectorAll('div');
+                        var para = document.querySelectorAll('p');
+                        var redD = divs[2];
+                        var redP = para[2];
+                        redD.style.color='red';
+                        redD.innerHTML ="all the elements with the class red";
+                        redP.style.color='red';
+                        redP.innerHTML ="all the elements with the class red";                    
+                   }            
+        </script>
+    </body>
+</html>

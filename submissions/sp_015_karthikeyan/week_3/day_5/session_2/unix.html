@@ -1,0 +1,197 @@
+<html>
+    <head>
+        <title>Unix</title>
+        <style>
+            #box1 {
+                background: grey;
+                width: 400px;
+                height: 300px;
+                margin: auto;
+            }
+            #box2 {
+                margin: 30px 350px;
+            }
+            #box3 {
+                background: chocolate;
+                width: 1270px;
+                height: 150px;
+                margin: 100px 30px 30px 30px;
+                padding: 10px;
+            }
+            .l-clear {
+                clear: left;
+            }
+            .r-clear {
+                clear: right;
+            }
+            .r-float {
+                float: right;
+            }
+            .l-float {
+                float: left;
+            }
+            .fs3 {
+                font-size: 30px;
+            }
+            #img1 {
+                height: 150px;
+                width: 100px;
+                margin: 10px 10px 0px 150px;
+            }
+            #img2 {
+                height: 150px;
+                width: 120px;
+                margin: 0px 15px 0px 0px;
+            }
+            h1 {
+                color: red;
+            }
+            .center-align {
+                text-align: center;
+            }
+            .fs30{
+                font-size: 30px;
+            }
+            #blue-text {
+                color: blue;
+            }
+            .m10 {
+                margin: 10px;
+            }
+            .white-text {
+                color: white;
+            }
+            #seperator {
+                background: black;
+                width: 5px;
+                height: 130px;
+                margin: 10px 350px 5px 230px; 
+            }
+            @media (max-width: 600px) {
+                #box2 {
+                    margin: 0px;
+                }
+                #box3 {
+                    margin: 0px;
+                    width: 600px;
+                    height: 250px;  
+                    padding: 0px;
+                }
+                .fs30 {
+                    font-size: 20px;
+                }
+                #seperator {
+                    display: none;
+                }
+                .adjust {
+                    margin-left: 200px; 
+                } 
+            }
+        </style>
+    </head>
+    <body>
+       <button id="btn">Create Page</button>
+       <script>
+           var btn = document.getElementById("btn");
+           btn.addEventListener("click", generate);
+           
+           var bodySelect = document.querySelector("body");
+
+           function generate() {
+               box1();
+               box2();
+               box3();
+           }
+
+           function box1() {
+               var mainDiv = document.createElement("div");
+               bodySelect.appendChild(mainDiv);
+
+               var div = document.querySelector("div");
+               div.setAttribute("id", "box1");
+
+               var img = document.createElement("img");
+               img.setAttribute("id", "img1");
+               img.setAttribute("src", "https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/linus.jpg");
+               div.appendChild(img);
+
+               var p = document.createElement("p");
+               p.innerHTML = "<Strong>Linus Torvalds</Strong>";
+               p.setAttribute("class", "center-align fs30 m10");
+               p.setAttribute("id", "blue-text");
+               div.appendChild(p);
+
+               var p = document.createElement("p");
+               p.textContent = "The creator of Linux and Git";
+               p.setAttribute("class", "center-align fs30 m10");
+               div.appendChild(p);
+           }
+
+           function box2() {
+               var mainDiv = document.createElement("div");
+               bodySelect.appendChild(mainDiv);
+
+               var div = document.querySelectorAll("div");
+               div[1].setAttribute("id", "box2");
+
+               var img = document.createElement("img");
+               img.setAttribute("id", "img2");
+               img.setAttribute("class", "l-float")
+               img.setAttribute("src", "https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/khan.jpg");
+               div[1].appendChild(img);
+
+               var h1 = document.createElement("h1");
+               h1.textContent = "Sal Khan"
+               div[1].appendChild(h1);
+
+               var p = document.createElement("p");
+               p.textContent = "Salman Khan is the founder of Khan Academy which has a mission to provide free world class education to anyone, anywhere.";
+               div[1].appendChild(p);
+           }
+
+           function box3() {
+               var mainDiv = document.createElement("div");
+               bodySelect.appendChild(mainDiv); 
+
+               var div = document.querySelectorAll("div");
+               div[2].setAttribute("id", "box3");
+               div[2].setAttribute("class", "l-clear");
+
+               var firstDiv = document.createElement("div");
+               firstDiv.setAttribute("class", "l-float");
+               div[2].appendChild(firstDiv);
+
+               var p = document.createElement("p");
+               p.setAttribute("class", "l-float white-text fs30");
+               p.textContent = "Ken Thompson";
+               firstDiv.appendChild(p);
+
+               var p = document.createElement("p");
+               p.setAttribute("class", "l-float l-clear");
+               p.textContent = "Designed and implemented the original Unix Operating System";
+               firstDiv.appendChild(p);
+
+               var secondDiv = document.createElement("div");
+               secondDiv.setAttribute("class", "l-float");
+               secondDiv.setAttribute("id", "seperator");
+               div[2].appendChild(secondDiv);
+
+               var thirdDiv = document.createElement("div");
+               thirdDiv.setAttribute("class", "l-float");
+               div[2].appendChild(thirdDiv);
+ 
+               var p = document.createElement("p");
+               p.setAttribute("class", "r-float white-text fs30 adjust");
+               p.textContent = "Dennis Ritchie";
+               thirdDiv.appendChild(p);
+
+               var p = document.createElement("p");
+               p.setAttribute("class", "r-clear r-float adjust");
+               p.textContent = "The creator of C programming Language";
+               thirdDiv.appendChild(p);
+                
+
+           }
+       </script>
+    </body>
+</html>

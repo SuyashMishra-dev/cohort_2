@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1 id="hi11">First H1</h1>
+        <h1 id="hi22">Second H1</h1>
+        <h3 id="h3i">First H3</h3>
+        <h3 id="h3j">Second H3</h3>
+        <div id="headings">
+            <h5 id="h5i">First H5</h5>
+            <h5 id="h5j">Second H5</h5>
+            <h5 id="h5k">Third H5</h5>
+        </div>
+        <div id="cont">
+            <div class="green">First DIV</div>
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button onclick = "removeh1()">Remove H1</button>
+        <button onclick = "removeh2()">Remove H3</button>
+        <button onclick = "removeh5()">Remove H5</button>
+        <button onclick = "remove_red()">Remove Red</button>
+        <button onclick = "remove_cont_all()">Remove DIVS</button>
+        <script>
+
+
+            function removeh1()
+            {
+            body_element = document.querySelector('body');
+            var hi1 = document.getElementById("hi11");
+            var hi2 = document.getElementById("hi22");
+            body_element.removeChild(hi1);
+            body_element.removeChild(hi2);
+            }
+
+            function removeh2()
+            {
+                body_element = document.querySelector('body');
+                var hi3 = document.getElementById("h3i")
+                var hj3 = document.getElementById("h3j")
+                body_element.removeChild(hi3);
+                body_element.removeChild(hj3);
+            }
+
+            function removeh5()
+            {    
+                body_element = document.querySelector('body');
+                var mainn = document.getElementById("headings")
+                body_element.removeChild(mainn);
+            }
+
+            function remove_red()
+            {
+                cont_object = document.getElementById("cont");
+                obj = document.querySelectorAll('.red');
+                    for(var a = 0; a <= obj.length ; a++)
+                           {
+                                      cont_object.removeChild(obj[a]);
+                            }
+            }
+
+            function remove_cont_all()
+            {
+                cont_object = document.querySelector('body')
+                obj = document.getElementById("cont");
+                cont_object.removeChild(obj);
+            }
+            
+        </script>
+    </body>
+</html>

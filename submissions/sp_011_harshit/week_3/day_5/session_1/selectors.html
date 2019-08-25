@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr/>
+        <button onclick="changeh1()">Change H1</button>
+        <button onclick="changeh3()">Change H3</button>
+        <button onclick="changeh5()">Change H5</button>
+        <button onclick="clsgreen()">Change Green</button>
+        <button onclick="clsred()">Change Red</button>
+        <button onclick="clsblue()">Change Blue</button>
+        <script>    
+
+            function clsred()
+            {
+                var div_red = document.querySelectorAll('.red');
+                        for(var a = 0;a<div_red.length;a++)
+                            {
+                                var div = div_red[a];
+                                div.style.color = 'red';
+                            }
+            }
+
+            function clsgreen()
+            {
+                var div_green = document.querySelectorAll('.green');
+                for(var a=0 ; a<div_green.length ; a++)
+                {
+                    var div = div_green[a];
+                    div.style.color = 'green';
+                }
+            }
+
+            function clsblue()
+            {
+                var div_blue = document.querySelectorAll('.blue');
+                for(var a=0 ; a<div_blue.length ; a++)
+                {
+                    var div = div_blue[a];
+                    div.style.color='blue';
+                }
+            }
+
+            function changeh3()
+            {
+                var hii3 = document.querySelector('h3');
+                hii3.style.color = 'green';
+                
+            }
+            function changeh5()
+            {
+                var hii5 = document.querySelector('h5');
+                hii5.style.color = 'blue';
+                
+            }
+            function changeh1()
+            {
+                var hii1=document.querySelector('h1');
+                hii1.style.color='red';
+            }
+          
+        </script>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr/>
+        <button id="color_h1">Change H1</button>
+        <button id="color_h3">Change H3</button>
+        <button id="color_h5">Change H5</button>
+        <button id="all_green">Change Green</button>
+        <button id="all_blue">Change Blue</button>
+        <button id="all_red">Change Red</button>
+
+        <script type="text/javascript">
+
+        //Solutions of W3.5.2_1
+        var first_h1 = document.getElementById("color_h1");
+        function change_h1() {
+            var heading1 = document.querySelector('h1');
+            heading1.style.color = "red";
+        }
+        first_h1.addEventListener('click' , change_h1);
+
+        var heading_h3 = document.getElementById("color_h3");
+        function change_h3() {
+            var heading3 = document.querySelectorAll('h3');
+            for (var i = 0; i < heading3.length; i++) {
+               heading3[i].style.color = "green";
+            
+            }
+        }
+        heading_h3.addEventListener('click' , change_h3);
+
+        var heading_h5 = document.getElementById("color_h5");
+        function change_h5() {
+            var heading5 = document.querySelectorAll('h5');
+            for (var i = 0; i < heading5.length; i++) {
+               heading5[i].style.color = "blue";
+            
+            }
+        }
+        heading_h5.addEventListener('click' , change_h5);
+
+        var green = document.getElementById("all_green");
+        function change_green() {
+            var gre = document.querySelectorAll('.green');
+            for (var i = 0; i < gre.length; i++) {
+               gre[i].style.color = "green";
+            
+            }
+        }
+        green.addEventListener('click' , change_green);
+
+        var blue = document.getElementById("all_blue");
+        function change_blue(){
+            var blu = document.querySelectorAll('.blue');
+            for(var i=0; i<blu.length; i++){
+                blu[i].style.color = "blue";
+            }
+        }
+        blue.addEventListener('click' , change_blue);
+
+        var red = document.getElementById("all_red");
+        function change_red() {
+            var reddish = document.querySelectorAll('.red');
+            for(var i=0; i<reddish.length; i++){
+                reddish[i].style.color = 'red';
+            }
+        }
+        red.addEventListener('click' , change_red);
+        </script>
+    </body>
+</html>
