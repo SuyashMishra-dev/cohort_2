@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr/>
+        <button onclick="changeHead1()">Change H1</button>
+        <button onclick="changeHead3()">Change H3</button>
+        <button onclick="changeHead5()">Change H5</button>
+        <button onclick="changeGreen()">Change Green</button>
+        <button onclick="changeRed()">Change Red</button>
+        <button onclick="changeBlue()">Change Blue</button>
+        <script>
+          function changeHead1() {
+              var firstHead = document.querySelector('h1');
+              firstHead.style.color="red";
+          }
+          function changeHead3() {
+              var thirdHead = document.querySelectorAll('h3');
+              for (let index = 0; index < thirdHead.length; index++) {
+                thirdHead[index].style.color="green";
+                }
+          }
+          function changeHead5() {
+              var fivehead = document.querySelectorAll('h5');
+              for( var i =0;i<fivehead.length;i++){
+                  fivehead[i].style.color="blue";
+              }
+          }
+          function changeGreen(){
+              var greenClass = document.querySelectorAll('.green');
+              for(var i=0;i<greenClass.length;i++){
+                  greenClass[i].style.color="green";
+              }
+          }
+          function changeBlue(){
+              var blueClass = document.querySelectorAll('.blue');
+              for( var i=0; i<blueClass.length;i++){
+                  blueClass[i].style.color="blue";
+              }
+          } 
+          function changeRed(){
+              var redClass = document.querySelectorAll('.red');
+              for ( var i=0;i<redClass.length;i++){
+                  redClass[i].style.color="red";
+              }
+          }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Session 1!</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.W3.3.1_1-->
+	<h1> Create your own exponentiation function! </h1>
+	<input id="input_num1" type="text" name = "num1">
+	<input id="input_num2" type="text" name = "num2">
+	<p id="exp_show"> </p>
+	</hr>
+	<button onclick="exponent()">Click here to find the exponent!</button>
+	<!-- These elements above are for FSD.W3.3.1_1-->
+
+	<!-- These elements below are for FSD.W3.3.1_2-->
+	<h1>Sum of multiples of 3 and 5!</h1>
+	<p id="multiple_input_show"></p>
+	<input id="multiple_input" type="text">
+	<button onclick="sumOf3And5()">Click here for the output!</button>
+	
+	<!-- These elements above are for FSD.W3.3.1_2-->
+
+	<!-- These elements below are for FSD.W3.3.1_3-->
+	<h1>Check if the users email is valid!</h1>
+	<label for="Email">Email</label>
+	<input id="email_validate" type="text" />
+	<button onclick="validateEmail()">Check Email!</button>
+	<!-- These elements above are for FSD.W3.3.1_3-->
+	<script type="text/javascript">
+		//Write javascript for FSD.W3.3.1_1 here
+		
+		function exponent(num1, num2){
+			var num1=document.getElementById("input_num1").value;
+		    var num2=document.getElementById("input_num2").value;
+		    var exp=1;
+			for(var i=0;i<num2;i++)
+			{
+				exp *= num1
+			}
+			
+			document.getElementById("exp_show").innerHTML=exp;
+			
+		}
+		//Write javascript for FSD.W3.3.1_2 here
+		function sumOf3And5(){
+            var sum=0;
+            n=document.getElementById("multiple_input").value;
+            for(var i=1;i<=n;i++)
+            {
+                if(i%3==0 && i%5==0)
+                sum=sum+i;              
+            }
+            document.getElementById("multiple_input_show").innerHTML=sum;
+		}
+
+		//Write javascript for FSD.W3.3.1_3 here
+		function validateEmail(){
+            s=document.getElementById("email_validate").value;
+            var a=s.length;
+            var count=0;
+            for(var i=0;s[i]="@";i++)
+                {
+                     count++;
+                     break;
+                }
+                if(count==1)
+                {
+                    if((s[0]!="@" && s[a-1]=="m" && s[a-2]=="o" && s[a-3]=="c" && s[a-4]==".") || (s[a-3]=="C" && s[a-1]=="M" && s[a-2]=="O"))
+                    {
+                        alert("Valid Email!");
+                    }
+                    else
+                    {
+                        alert("Invalid Email!");
+                    }
+                }
+                
+        }
+	</script>
+</body>
+</html>
