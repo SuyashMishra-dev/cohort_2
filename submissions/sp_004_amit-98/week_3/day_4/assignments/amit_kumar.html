@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <style>
     #displayBox {
@@ -38,10 +39,12 @@
       font-size: 30px;
       margin: 10px;
     }
+
     #spaceBar {
       width: 700px;
     }
-    .funKey{
+
+    .funKey {
       width: 140px;
       height: 70px;
       ;
@@ -55,7 +58,8 @@
     #buttonBot {
       margin: 20px 0px 0px 550px;
     }
-    .special{
+
+    .special {
       font-size: 25px;
       margin: -70px 0px 0px 50px;
     }
@@ -98,7 +102,8 @@
       #spaceBar {
         width: 400px;
       }
-      .special{
+
+      .special {
         font-size: 10px;
         margin: -25px 0px 0px 15px;
       }
@@ -106,7 +111,8 @@
       #buttonBot {
         margin: 20px 0px 0px 170px;
       }
-      .funKey{
+
+      .funKey {
         width: 70px;
         height: 40px;
         font-size: 13px;
@@ -186,8 +192,8 @@
     var shift = false;
     var caps = false;
     var clean = false;
-    var count=0;
-    var shiftVar=document.getElementById("shift");
+    var count = 0;
+    var shiftVar = document.getElementById("shift");
     //Display Function
     function display(value) {
       if (caps) {
@@ -323,25 +329,24 @@
       }
       document.getElementById("displayBox").value += value;
     }
- //Delete function
-       function delFunction() {
+
+    //Delete function
+    function delFunction() {
       var data = document.getElementById("displayBox").value;
-      var str="";
-      dataLen=data.length;
-      if(dataLen==1||dataLen==0)
-      {
+      var str = "";
+      dataLen = data.length;
+      if (dataLen == 1 || dataLen == 0) {
         document.getElementById("displayBox").value = "";
       }
-      else
-      {
-      for(var i=0;i< dataLen-1;i++)
-      {
-       str=str+data[i];
+      else {
+        for (var i = 0; i < dataLen - 1; i++) {
+          str = str + data[i];
+        }
+        document.getElementById("displayBox").value = str;
       }
-      document.getElementById("displayBox").value = str;
     }
-  }
-//.com function
+
+    //.com function
     function comFunction() {
       var data = document.getElementById("displayBox").value;
       dataLen = data.length;
@@ -353,7 +358,8 @@
         document.getElementById("displayBox").value = data;
       }
     }
-//Space function
+
+    //Space function
     function spaceFunction() {
       var data = document.getElementById("displayBox").value;
       if (data == null) {
@@ -364,7 +370,8 @@
         document.getElementById("displayBox").value = data;
       }
     }
-//Password function
+
+    //Password function
     function passFunction() {
       if (pass == true) {
         pass = false;
@@ -373,7 +380,8 @@
         pass = true;
       }
     }
-  //Reverse function
+
+    //Reverse function
     function revFunction() {
       var rev = "";
       var dataStr = document.getElementById("displayBox").value
@@ -389,39 +397,7 @@
         document.getElementById("rev").style.color = "black";
       }
     }
-  //Shift function
-    function shiftFunction() {
-      if (shift == true) {
-        shift = false;
-        document.getElementById("shift").style.color = "black";
-      }
-      else if (shift == false) {
-        shift = true;
-        count++;
-        if(count==1)
-        {
-         document.getElementById("shift").style.color = "green";
-        }
-        else{
-          shiftVar.addEventListener('click',shiftFunction);
-          document.getElementById("shift").style.color = "black";
-        }
-       
-      }
-    }
-//CapsLock function
-    function capsFunction() {
-      if (caps == true) {
-        caps = false;
-        document.getElementById("caps").style.color = "black";
-
-      }
-      else if (caps == false) {
-        caps = true;
-        document.getElementById("caps").style.color = "green";
-      }
-    }
-   //Clean function
+    //Clean function
     function cleanFunction() {
       var cleanValue = document.getElementById("displayBox").value;
       if (clean) {
@@ -436,46 +412,82 @@
             clean = cleanValue
             document.getElementById("displayBox").value = "b*****d";
           }
-          if (cleanValue == "fuck") {
+          else if (cleanValue == "fuck") {
             clean = cleanValue
             document.getElementById("displayBox").value = "f**k";
           }
-          if (cleanValue == "porn") {
+          else if (cleanValue == "porn") {
             clean = cleanValue
             document.getElementById("displayBox").value = "p**n";
           }
-          if (cleanValue == "ass") {
+          else if (cleanValue == "ass") {
             clean = cleanValue
             document.getElementById("displayBox").value = "a**";
           }
-          if (cleanValue == "sexy") {
+          else if (cleanValue == "sexy") {
             clean = cleanValue
             document.getElementById("displayBox").value = "s**y";
           }
-          if (cleanValue == "shit") {
+          else if (cleanValue == "shit") {
             clean = cleanValue
             document.getElementById("displayBox").value = "s**t";
           }
-          if (cleanValue == "rapist") {
+          else if (cleanValue == "rapist") {
             clean = cleanValue
             document.getElementById("displayBox").value = "r****t";
           }
-          if (cleanValue == "bitch") {
+          else if (cleanValue == "bitch") {
             clean = cleanValue
             document.getElementById("displayBox").value = "b***h";
           }
-          if (cleanValue == "dick") {
+          else if (cleanValue == "dick") {
             clean = clean_value
             document.getElementById("displayBox").value = "d**k";
           }
-          if (cleanValue == "pussy") {
+          else if (cleanValue == "asshole") {
             clean = cleanValue
-            document.getElementById("displayBox").value = "p***y";
+            document.getElementById("displayBox").value = "a*****e";
           }
         }
         document.getElementById("clean").style.color = "green";
       }
     }
+
+    //Shift function
+    function shiftFunction() {
+      if (shift == true) {
+        shift = false;
+        document.getElementById("shift").style.color = "black";
+      }
+      else if (shift == false) {
+        shift = true;
+        count++;
+        console.log(count);
+        if (count == 1) {
+          document.getElementById("shift").style.color = "green";
+          count--;
+        }
+        else {
+          shiftVar.addEventListener('click', shiftFunction);
+          document.getElementById("shift").style.color = "black";
+        }
+      }
+    }
+    //CapsLock function
+    function capsFunction() {
+      if (caps == true) {
+        caps = false;
+        document.getElementById("caps").style.color = "black";
+
+      }
+      else if (caps == false) {
+        caps = true;
+        document.getElementById("caps").style.color = "green";
+      }
+    }
+
+
   </script>
 </body>
+
 </html>
