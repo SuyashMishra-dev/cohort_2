@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <link rel="stylesheet" href="registration_style.css">
+    </head>
+    <body>
+        <div id="main">
+            <div>
+                <p>NAME</p>
+                <input type="text" id="name_input">
+                <p id="name_error">ENTER A VALID NAME</p>
+            </div>
+            <div id="right_box">
+                <p>Name</p>
+                <p id="output_name">ANUJ</p>
+                <p>EMAIL</p>
+                <p id="output_email">abc@xyz.com</p>
+                <p>MOBILE</p>
+                <p id="output_mobile">98******10</p>
+            </div>
+            <div>
+                <p>EMAIL</p>
+                <input type="text" id="emailInput">
+                <p id="email_error">ENTER A VALID EMAIL</p>
+            </div>
+            <div>
+                <p>MOBILE</p>
+                <input type="text" id="mobileInput">
+                <p id="mobile_error">ENTER A VALID MOBILE</p>
+            </div>
+            <div>
+                <button id="registration" onclick="registration()">Register</button>
+            </div>
+        </div>
+        <script>
+
+            
+
+            function name_validation(Name) {
+                if ((Name.length < 10) && (Name.length > 3)) {
+                    return Name;
+                }
+                else (document.getElementById("name_error").style.display = "inline");
+            }
+
+            function mobile_validation(Mobile) {
+                if (Mobile.length == 10) {
+                    return Mobile;
+                }
+                else (document.getElementById("mobile_error").style.display = "inline");
+            }
+
+            function email_validation(EMail){
+			    var count = 0;
+			    if ((EMail[0] == "@") || (EMail[0] == ".")) {
+			    }
+			    for (var i = 0; i < EMail.length; i++) {
+			    	if (EMail[i] == "@") {
+			    		var atPos = i;
+			    		for (j = atPos; j < EMail.length; j++) {
+			    			if (EMail[j] == ".") {
+			    				return EMail;
+			    			}
+			    			else if (EMail[j] != ".") {
+			    				count++;
+			    				if (count == EMail.length - j + 1) {
+			    					document.getElementById("email_error").style.display = "inline";
+			    				}
+			    			}
+			    		}	
+			    	}
+			    	else if (EMail[i] != "@") {
+			    		count++;
+			    		if (count == EMail.length - 1) {
+			    			document.getElementById("email_error").style.display = "inline";
+			    		}
+			    	}
+                }
+            }
+
+            function registration() {
+                var Name = document.getElementById("name_input").value;
+                var EMail = document.getElementById("emailInput").value;
+                var Mobile = document.getElementById("mobileInput").value;
+
+                var checked_name = name_validation(Name);
+                var checked_mobile = mobile_validation(Mobile);
+                var checked_email = email_validation(EMail);
+
+                if ((checked_name != Name) || (checked_email != EMail) || (checked_mobile != Mobile)) {
+                    alert("Registration Failed Please Check Your Details");
+                }
+                else success(checked_name, checked_email, checked_mobile);
+            }
+            
+            function success(checked_name, checked_email, checked_mobile) {
+                document.getElementById("output_name").innerHTML = checked_name;
+                document.getElementById("output_email").innerHTML = checked_email;
+                document.getElementById("output_mobile").innerHTML = checked_mobile;
+            }
+        </script>
+    </body>
+</html>
