@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Income tax Calculator
+        </title>
+        <style type="text/CSS">
+            input {
+                border-radius: 5px;
+                padding: 5px;
+                background-color:red;
+                color: rgb(26, 141, 141);
+            }
+            button {
+                border-radius: 10px;
+                padding: 10px;
+                margin-top: 20px;
+                background-color: rgb(233, 0, 233);
+                color: rgb(87, 3, 87)
+            }
+            body {
+                text-align: center;
+            }
+            .final-amount {
+                font-family: 'Franklin Gothic Medium';
+                font-size: 20px;
+                color: rgb(1, 1, 122);
+            }      
+        </style>
+    </head>
+    <body>
+        
+        <h1>
+            Income Tax Calculator
+        </h1>
+        <p>
+            Enter your income
+        </p>
+
+        <input type="text" id="income"/>
+
+        <p>
+            Enter your savings
+        </p>
+        
+        <input type="text" id="savings"/>
+        <br>
+        <button onclick="incomeTax()">
+            Calculate Income Tax
+        </button>
+        
+        <p class="final-amount" id="income-tax">
+        </p>
+
+    </body>
+    <script type="text/javascript">
+        
+        function incomeTax(){
+            var Income = document.getElementById("income").value;
+            var Savings = Number(document.getElementById("savings").value);
+            var IncomeTax
+            var NetIncome
+            if(Income <= 250000){
+                NetIncome = Income;
+                IncomeTax = "No Income Tax!"
+            }
+            else if (250000 < Income && Income <= 500000){
+                NetIncome = ((Income - (Savings*.50))-250000);
+                if (NetIncome < 0){
+                    IncomeTax = "No Income Tax!"
+                }
+                else {
+                IncomeTax = NetIncome*0.10
+                }
+            }
+            else if (500000 < Income && Income <= 1000000){
+                NetIncome = ((Income - (Savings*.30))-500000)
+                IncomeTax = ((NetIncome*0.20) + 25000)
+            }
+            else if (Income > 1000000){
+                var NetSavings = Savings*10;
+                if (NetSavings <= 50000){
+                    NetIncome = ((Income - (Savings*.10))-1000000)
+                }
+                else if (NetSavings > 50000){
+                    NetIncome = (Income - 1050000)
+                }
+                IncomeTax = ((NetIncome*0.30) + 125000)
+            }
+            document.getElementById('income-tax').innerHTML =  IncomeTax;
+        }
+    </script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <!-- FSD.W3.4.2_1 !-->
+  <h1>Change the buttons text color random value</h1>
+  <button id="colorChange">Click here to change my color</button>
+
+  <!-- FSD.W3.4.2_2 !-->
+  <h1 id="randomChange">My color should change when I double click the button!</h1>
+  <button id="dblbtn">Double Click here to change the color of the h1 tag !</button>
+
+  <!-- FSD.W3.4.2_3 !-->
+  <h1>The buttons color changes to a random value when it is clicked! But only two times!</h1>
+  <button id="btnLimit">Click here to change my color!</button>
+  <script>
+    var colorChange = document.getElementById("colorChange");
+    var dblbtn = document.getElementById("dblbtn");
+    var randomChange = document.getElementById("randomChange");
+    var btnLimit = document.getElementById("btnLimit");
+    
+    var count = 1
+
+    function random(number) {
+      return Math.floor(Math.random() * number);
+    }
+
+    function fontRandom(number) {
+      return Math.floor(Math.random()*number);
+    }
+
+    colorChange.addEventListener('click', changeColor);
+
+    dblbtn.addEventListener('dblclick', dblColorChange);
+
+    btnLimit.addEventListener('click', limited);
+
+    btnLimit.addEventListener('mouseover', hover);
+
+    function changeColor() {
+      colorChange.style.backgroundColor = "purple";
+    }
+
+    function dblColorChange() {
+      var randomColor = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")" ;
+      
+      randomChange.style.color = randomColor;
+    }
+
+    function limited(){
+
+      var randomColor = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")" ;
+
+      btnLimit.style.backgroundColor = randomColor;
+      count++;
+    if(count > 2) {
+      
+      btnLimit.removeEventListener('click', limited);
+
+    }
+  }
+
+  function hover() {
+    
+    var textRandom = "font-size:" + fontRandom(1000) "px";
+
+    btnLimit.style.fontSize = textRandom;
+
+  }
+
+  </script>
+</body>
+
+</html>
