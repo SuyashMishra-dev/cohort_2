@@ -1,87 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Typewriter</title>
-    <style>    
+    <style>
+        .align-center {
+            width: 80%;
+            margin: auto;
+        }
 
-    .align-center {
-        width: 80%;
-        margin: auto;
-    }
+        .line {
+            height: 120px;
+        }
 
-    .line{
-        height: 120px;
-    }
-    
-    .display-flex {
-        display: flex; 
-    }
+        .display-flex {
+            display: flex;
+        }
 
-    .display-flex div {
-       
-        flex-direction: column;        
-        flex-basis: 100px;
-        height: 100px;
-        margin-left:10px;
-        text-align: center;
-        line-height: 100px;
-        background: black;
-        color: azure;  
-            
-    }
+        .display-flex div {
 
-    #first-line {
-        padding-left: 100px;
-    }
+            flex-direction: column;
+            flex-basis: 100px;
+            height: 100px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 100px;
+            background: black;
+            color: azure;
 
-    #first-line span:nth-child(2n) {
-        position: relative;
-        top: -35px;
-        left: 30px;
-    }
+        }
 
-    #space-bar {
-        width: 45%;
-        height: 100px;
-        margin: auto 360px;
-        background: black;
-    }
+        #first-line {
+            padding-left: 100px;
+        }
 
-    #input-box {
-        height: 60px;
-        margin: 20px 120px;
-        border: 3px solid black;
-        font-size: 40px;
-    }
+        #first-line span:nth-child(2n) {
+            position: relative;
+            top: -35px;
+            left: 30px;
+        }
 
-    #special-chars {
-        margin-left: 360px;
-    }
+        #space-bar {
+            width: 45%;
+            height: 100px;
+            margin: auto 360px;
+            background: black;
+        }
 
-    #special-chars>div div {
-        border: 2px solid black;
-        flex-basis: 200px;
-        background: white;
-        color: black;        
-        font-size: 30px;
-    }
+        #input-box {
+            height: 60px;
+            margin: 20px 120px;
+            border: 3px solid black;
+            font-size: 40px;
+        }
 
-    #row-1 {
-        padding-left: 160px
-    }
+        #special-chars {
+            margin-left: 360px;
+        }
 
-    #row-2 {
-        padding-left: 200px
-    }
+        #special-chars>div div {
+            border: 2px solid black;
+            flex-basis: 200px;
+            background: white;
+            color: black;
+            font-size: 30px;
+        }
 
-    #row-3 {
-        padding-left: 240px
-    }
+        #row-1 {
+            padding-left: 160px
+        }
+
+        #row-2 {
+            padding-left: 200px
+        }
+
+        #row-3 {
+            padding-left: 240px
+        }
     </style>
 </head>
+
 <body>
 
     <div class="align-center line" id="display-block">
@@ -111,7 +112,7 @@
             <div onclick="showOutput('U')">U</div>
             <div onclick="showOutput('I')">I</div>
             <div onclick="showOutput('O')">O</div>
-            <div onclick="showOutput('P')">P</div>            
+            <div onclick="showOutput('P')">P</div>
         </div>
         <div class=" line display-flex" id="row-2">
             <div onclick="showOutput('A')">A</div>
@@ -135,8 +136,8 @@
             <div onclick="showOutput('.COM')">.COM</div>
         </div>
         <div class="line">
-            <div id="space-bar" onclick="showOutput(' ')"></div>            
-        </div>        
+            <div id="space-bar" onclick="showOutput(' ')"></div>
+        </div>
     </div>
 
     <div class="align-center" id="special-chars">
@@ -161,30 +162,30 @@
         var passwdKey = document.getElementById('passwd');
         var revKey = document.getElementById('rev');
         var cleanKey = document.getElementById('clean');
-        var explicit = ['shit','ass','asshole','kinky','nigga','pissing','poof','wank','queaf','pthc','poof'];        
+        var explicit = ['shit', 'ass', 'asshole', 'kinky', 'nigga', 'pissing', 'poof', 'wank', 'queaf', 'pthc', 'poof'];
 
         //Main Output function 
-        function showOutput(char){
+        function showOutput(char) {
             var outputChar = document.getElementById('input-box');
             char = caseCheck(char);
             inputBox = inputBox + char;
-            
-            if(passwd){
-                
+
+            if (passwd) {
+
                 outputChar.value = passwdCheck(inputBox) + char;
-            }else{
-                if(clean){
-                   outputChar.value = cleanInput(inputBox);
-                }else{
+            } else {
+                if (clean) {
+                    outputChar.value = cleanInput(inputBox);
+                } else {
                     outputChar.value = inputBox;
                 }
-                
+
             }
-        }    
+        }
 
         //On input field change - Not on click
         function inputChanged() {
-            if(passwd) {
+            if (passwd) {
                 return 1;
             }
             inputBox = document.getElementById('input-box').value;
@@ -192,36 +193,36 @@
 
         //check for capitalisation - return with proper
         function caseCheck(char) {
-            if(caps ^ shift) {
-                if(shift == true){
+            if (caps ^ shift) {
+                if (shift == true) {
                     toggleSpecial('S');
                     char = getSymbols(char);
                 }
-                return char.toUpperCase();
-            }else {
-                if(shift == true){
+                return getUpperCase(char);
+            } else {
+                if (shift == true) {
                     toggleSpecial('S');
                     char = getSymbols(char);
                 }
-                return char.toLowerCase();
+                return getLowerCase(char);
             }
         }
 
         //replace with keys
         function cleanInput(input) {
-            var nonExplicit = explicit.map(el =>{
-                return el.split('').map((l,i)=>{
-                    
-                    if(i==0 || i==el.length-1){
+            var nonExplicit = explicit.map(el => {
+                return el.split('').map((l, i) => {
+
+                    if (i == 0 || i == el.length - 1) {
                         return l;
                     }
                     return '*';
-                    
+
                 }).join('');
             });
             var regex = null;
             //bug here - on word repetition
-            for(index in explicit){
+            for (index in explicit) {
                 regex = new RegExp(explicit[index]);
                 input = input.replace(regex, nonExplicit[index]);
             }
@@ -231,23 +232,23 @@
         //check this on toggle as well
         function passwdCheck(val) {
             password = '';
-            for(var i = 0; i < val.length-1;i++){
+            for (var i = 0; i < val.length - 1; i++) {
                 password = password + '*';
             }
-            
+
             return password;
         }
 
         //done on click - no checking
         function revCheck() {
-            
+
             var originalValue = document.getElementById('input-box').value;
             var reverseValue = '';
-            for(var i = originalValue.length-1;i>=0;i--){
+            for (var i = originalValue.length - 1; i >= 0; i--) {
                 reverseValue = reverseValue + originalValue[i];
             }
             document.getElementById('input-box').value = reverseValue;
-           
+
         }
 
         function toggleSpecial(char) {
@@ -261,10 +262,9 @@
                 case 'Cl':
                     setClean();
                     break;
-                case 'R':  
-                    setRev();                  
+                case 'R':
+                    setRev();
                     revCheck();
-                    
                     break;
                 case 'S':
                     setShift();
@@ -273,10 +273,10 @@
                     console.log('error');
                     break;
             }
-            setSpecialColor(char);    
+            setSpecialColor(char);
         }
 
-        function setCaps() {            
+        function setCaps() {
             caps = !caps;
         }
 
@@ -319,7 +319,7 @@
             }
         }
 
-        function setCapsColor() {            
+        function setCapsColor() {
             caps ? (capsKey.style.color = 'green') : (capsKey.style.color = 'black');
         }
 
@@ -342,7 +342,7 @@
         function deleteEl() {
             var originalValue = document.getElementById('input-box').value;
             var newValue = ''
-            for(var i=0;i<originalValue.length-1;i++){
+            for (var i = 0; i < originalValue.length - 1; i++) {
                 newValue = newValue + originalValue[i];
             }
             inputBox = newValue;
@@ -351,7 +351,7 @@
 
         function getSymbols(char) {
             var symbol = '';
-            switch(char) {
+            switch (char) {
                 case '1':
                     symbol = '!';
                     break;
@@ -381,12 +381,191 @@
                     break;
                 case '0':
                     symbol = ')';
-                break;
+                    break;
                 default:
                     symbol = char;
             }
             return symbol;
         }
+
+        function getUpperCase(char) {
+            switch (char) {
+                case 'q':
+                    char = 'Q';
+                    break;
+                case 'w':
+                    char = 'W';
+                    break;
+                case 'e':
+                    char = 'E';
+                    break;
+                case 'r':
+                    char = 'R';
+                    break;
+                case 't':
+                    char = 'T';
+                    break;
+                case 'y':
+                    char = 'Y';
+                    break;
+                case 'u':
+                    char = 'U';
+                    break;
+                case 'i':
+                    char = 'I';
+                    break;
+                case 'o':
+                    char = 'O';
+                    break;
+                case 'p':
+                    char = 'P';
+                    break;
+                case 'a':
+                    char = 'A';
+                    break;
+                case 's':
+                    char = 'S';
+                    break;
+                case 'd':
+                    char = 'D';
+                    break;
+                case 'f':
+                    char = 'F';
+                    break;
+                case 'g':
+                    char = 'G';
+                    break;
+                case 'h':
+                    char = 'H';
+                    break;
+                case 'j':
+                    char = 'J';
+                    break;
+                case 'k':
+                    char = 'K';
+                    break;
+                case 'l':
+                    char = 'L';
+                    break;
+                case 'z':
+                    char = 'Z';
+                    break;
+                case 'x':
+                    char = 'X';
+                    break;
+                case 'c':
+                    char = 'C';
+                    break;
+                case 'v':
+                    char = 'V';
+                    break;
+                case 'b':
+                    char = 'B';
+                    break;
+                case 'n':
+                    char = 'N';
+                    break;
+                case 'm':
+                    char = 'M';
+                    break;
+                case '.com':
+                    char = '.COM';
+                default:
+                    char = char;
+                    break;
+            }
+            return char;
+        }
+
+        function getLowerCase(char) {
+            switch (char) {
+                case 'Q':
+                    char = 'q';
+                    break;
+                case 'W':
+                    char = 'w';
+                    break;
+                case 'E':
+                    char = 'e';
+                    break;
+                case 'R':
+                    char = 'r';
+                    break;
+                case 'T':
+                    char = 't';
+                    break;
+                case 'Y':
+                    char = 'y';
+                    break;
+                case 'U':
+                    char = 'u';
+                    break;
+                case 'I':
+                    char = 'i';
+                    break;
+                case 'O':
+                    char = 'o';
+                    break;
+                case 'P':
+                    char = 'p';
+                    break;
+                case 'A':
+                    char = 'a';
+                    break;
+                case 'S':
+                    char = 's';
+                    break;
+                case 'D':
+                    char = 'd';
+                    break;
+                case 'F':
+                    char = 'f';
+                    break;
+                case 'G':
+                    char = 'g';
+                    break;
+                case 'H':
+                    char = 'h';
+                    break;
+                case 'J':
+                    char = 'j';
+                    break;
+                case 'K':
+                    char = 'k';
+                    break;
+                case 'L':
+                    char = 'l';
+                    break;
+                case 'Z':
+                    char = 'z';
+                    break;
+                case 'X':
+                    char = 'x';
+                    break;
+                case 'C':
+                    char = 'c';
+                    break;
+                case 'V':
+                    char = 'v';
+                    break;
+                case 'B':
+                    char = 'b';
+                    break;
+                case 'N':
+                    char = 'n';
+                    break;
+                case 'M':
+                    char = 'm';
+                    break;
+                case '.COM':
+                    char = '.com';
+                default:
+                    char = char;
+                    break;
+            }
+            return char;
+        }
     </script>
 </body>
+
 </html>
