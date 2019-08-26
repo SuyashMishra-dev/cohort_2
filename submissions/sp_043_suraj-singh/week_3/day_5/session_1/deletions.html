@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1 id="headingOne">First H1</h1>
+        <h1>Second H1</h1>
+        <h3 id="headThree">First H3</h3>
+        <h3 id="headThreeSecond">Second H3</h3>
+        <div id="headings">
+            <h5 id="fivthOne">First H5</h5>
+            <h5 id="fivthSecond">Second H5</h5>
+            <h5 id="fivthThird">Third H5</h5>
+        </div>
+        <div id="cont">
+            <div class="green">First DIV</div>
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button onclick="headRemoveOne()">Remove H1</button>
+        <button onclick="headRemoveThree()">Remove H3</button>
+        <button onclick="headRemoveFive()">Remove H5</button>
+        <button onclick="colorRemove()">Remove Red</button>
+        <button onclick="headDiv()">Remove DIVS</button>
+        <script>
+        function headRemoveOne()
+                    {   var bodyElem = document.querySelector('body');
+                        var firstheading = document.getElementById('headingOne');
+                        bodyElem.removeChild(firstheading);                   
+                   }   
+
+        function headRemoveThree()
+                    {   var bodyElem = document.querySelector('body');
+                        var thirdHeading = document.getElementById("headThree");
+                        var thirdHeadingOne = document.getElementById("headThreeSecond");
+                        bodyElem.removeChild(thirdHeading);     
+                        bodyElem.removeChild(thirdHeadingOne);                 
+                   } 
+
+        function headRemoveFive()
+                    {   var bodyElem = document.querySelector("div");
+                        var fiveHeading = document.getElementById("fivthOne");
+                        var fiveHeadingOne = document.getElementById("fivthSecond");
+                        var fiveHeadingTwo = document.getElementById("fivthThird");
+                        bodyElem.removeChild(fiveHeading);   
+                        bodyElem.removeChild(fiveHeadingOne);   
+                        bodyElem.removeChild(fiveHeadingTwo);     
+                   } 
+
+        function colorRemove()
+                    {
+                        var bodyElem = document.getElementById('cont');
+                        var removeRed = document.querySelectorAll('.red');
+                        for (i=0;i<removeRed.length;i++)
+                        {
+                        bodyElem.removeChild(removeRed[i]);
+                        }       
+
+                    }
+        function headDiv()
+                    {   var bodyElem = document.getElementById('cont');
+                        var greenAll = document.querySelector('.green');
+                        var redAll = document.querySelector('.red');
+                        var blueAll = document.querySelector('.blue');
+                        bodyElem.removeChild(greenAll);   
+                        bodyElem.removeChild(redAll);   
+                        bodyElem.removeChild(blueAll);     
+                    }        
+        </script>
+    </body>
+</html>

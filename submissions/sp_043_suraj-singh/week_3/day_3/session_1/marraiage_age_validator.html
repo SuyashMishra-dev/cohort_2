@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Marriage Age Validator
+        </title>
+    </head>
+    <body>
+        
+        <h1>
+            Validate your Age for Marriage!
+        </h1>
+        
+        <label for="gender">
+            Choose your Gender
+        </label>
+        
+        <select id = "gender-select">
+            <option value = "select">
+                -Select-
+            </option>
+            <option value = "male">
+                Male
+            </option>
+            <option value = "female">
+                Female
+            </option>
+        </select>
+
+        <p>
+            Enter your year of birth
+        </p>
+        
+        <input type="text" id="YoB"/>
+        
+        <button onclick="validate()">
+            Validate
+        </button>
+    </body>
+    <script type="text/javascript">
+        
+        function validate(){
+            var gender = document.getElementById("gender-select").value;
+            var year = Number(document.getElementById("YoB").value);
+            var age = 2019 - year;
+            if(gender == "male"){
+                if (age >= 21){ 
+                    alert("Legal for marriage");
+                }
+                else{ 
+                    alert("Not legal for marriage!");
+                }
+            }
+            else if(gender == "female"){
+                if (age>=18){ 
+                    alert("Legal for marriage!");
+                }
+                else{ 
+                    alert("Not legal for marriage!");
+                }
+            }
+            else if(gender == "select"){
+                alert("Please select gender")
+            }
+        }
+    </script>
+</html>

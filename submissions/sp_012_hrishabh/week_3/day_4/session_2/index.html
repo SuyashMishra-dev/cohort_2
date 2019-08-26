@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W3.4.2_1 !-->
+  <h1>Change the buttons text color random value</h1>
+  <button id="button_color_change">Click here to change my color</button>
+
+  <!-- FSD.W3.4.2_2 !-->
+  <h1 id="heading_1">My color should change when I double click the button!</h1>
+  <button id="double_click_color">Double Click here to change the color of the h1 tag !</button>
+ 
+  
+  <!-- FSD.W3.4.2_3 !-->
+  <h1 id="heading_2">The buttons color changes to a random value when it is clicked! But only two times!</h1>
+  <button id="change_double_once">Click here to change my color!</button>
+  <script>
+      var color_change = document.getElementById("button_color_change");
+
+function random(num)
+{
+  return Math.floor(Math.random()*num);
+}
+
+function switch_color()
+{
+  var random_color = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+  
+  color_change.style.color = random_color;
+}
+color_change.addEventListener("click", switch_color);
+  
+  var double_click_color = document.getElementById("double_click_color");
+  function switch_double_change()
+{
+  var double_random_color = "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+  var heading_change = document.getElementById("heading_1");  
+  heading_change.style.color = double_random_color;
+}
+double_click_color.addEventListener("dblclick", switch_double_change);
+
+var double_once = document.getElementById('change_double_once'); 
+var count = 0;
+function switch_double_once(){
+  
+  var random_double_once_color = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+  double_once.style.backgroundColor = random_double_once_color;
+  count++;
+  if(count > 1){
+    double_once.removeEventListener('click', switch_double_once);
+  }
+    
+}
+double_once.addEventListener("click" , switch_double_once);
+  
+    
+
+  
+  </script>
+</body>
+</html>

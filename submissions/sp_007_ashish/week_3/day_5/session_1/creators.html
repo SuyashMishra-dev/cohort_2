@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button onclick="changeHead1()" id="btnOne">Create H1</button>
+        <button onclick="createHead3()">Create 2 H3</button>
+        <button onclick="creatDivs()">Create DIVS</button>
+        <button onclick="addStudent()">Add Students</button>
+        <button onclick="addCopyright()">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+            function changeHead1(){
+                var head1 =document.createElement('h1');
+                head1.textContent='MASAI';
+                var idHeading=  document.getElementById('headings');
+                idHeading.appendChild(head1);
+               
+            }
+
+            function createHead3(){
+                var head31 = document.createElement('h3');
+                var head32 = document.createElement('h3');
+                head31.textContent="A Transformation in education!";
+                head32.textContent="Learn to earn, pay when you get.";
+                var idheading=document.getElementById('headings');
+                idheading.appendChild(head31);
+                idheading.appendChild(head32);
+            }
+            function creatDivs(){
+               var divAdd =document.getElementById('cont');
+                for(var i=1;i<=10;i++){
+                    var div = document.createElement('div');
+                    div.textContent ="Content"+i;
+                    divAdd.appendChild(div);
+                }
+            }
+            function addStudent(){
+                var studentCount =document.getElementById('vikings');
+                for(var i=0;i<students.length;i++){
+                    var listElement = document.createElement('li');
+                    listElement.innerHTML=students[i];
+                    studentCount.appendChild(listElement);
+                }
+            }
+            function addCopyright(){
+                var par = document.createElement('p');
+                par.textContent="@ masai 2019";
+                var btn = document.getElementById('btnOne');
+                var bodyEle = document.querySelector('body');
+                bodyEle.insertBefore(par,btn);
+            }
+        </script>
+    </body>
+</html>
