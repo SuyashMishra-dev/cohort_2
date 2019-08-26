@@ -1,0 +1,39 @@
+<html>
+        <head>
+                <title>grid_4</title>
+                <style>
+                    #cont {
+          display: grid;
+          grid-gap: 10px;
+          grid-template-columns:auto;
+          grid-template-rows: auto auto ;
+          background: whitesmoke;
+          padding: 30px;
+          margin: 30px;
+          margin-left: 20px;
+          
+        }
+        
+        #cont div {
+          background: red;
+          font-size: 10px;
+          text-align: center;
+        }
+       
+        #item1 {
+          grid-area:1 /1 /span 1/ span 2;
+        }
+        
+        
+                </style>
+                <body>
+                        <div id="cont">
+                                <div id="item1">1</div>
+                                <div id="item4">4</div>
+                                <div id="item2">2</div>
+                            </div>
+
+                           
+                </body>
+            </head>
+</html>

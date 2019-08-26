@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>UNITCALCULATOR</title>
+    </head>
+    <body>
+        <h1>UNITCALCULATOR</h1>
+        <div>
+            <div>             
+                <input type="number" id="forminput">
+                <select id="type1">
+                        <option value="Meter">Meter</option>
+                        <option value="Kilometer">Kilometer</option>
+                        <option value="Mile">Mile</option>
+                        <option value="Light year">Light year</option>
+                        <option value="Celsius">Celsius</option>
+                        <option value="Kelvin">Kelvin</option>
+                        <option value="Fahrenheit">Fahrenheit</option>
+                        <option value="Liter">Liter</option>
+                        <option value="Milliliter">Milliliter</option>
+                        <option value="US Gallon">US Gallon</option>
+                        <option value="Imperial Tea Spoon">Imperial Tea Spoon</option>
+                </select>
+                
+                <input type="number" id="output">
+                <select id="type2">
+                        <option value="Meter">Meter</option>
+                        <option value="Kilometer">Kilometer</option>
+                        <option value="Mile">Mile</option>
+                        <option value="Light year">Light year</option>
+                        <option value="Celsius">Celsius</option>
+                        <option value="Kelvin">Kelvin</option>
+                        <option value="Fahrenheit">Fahrenheit</option>
+                        <option value="Liter">Liter</option>
+                        <option value="Milliliter">Milliliter</option>
+                        <option value="US Gallon">US Gallon</option>
+                        <option value="Imperial Tea Spoon">Imperial Tea Spoon</option>
+                </select>
+            </div>
+            <button id="convert" onclick="convert()">Convert</button>
+        </div>
+
+        <script type="text/javascript">
+            function convert() {
+
+            var input = document.getElementById("forminput").value;
+            var type1 = document.getElementById("type1").value;
+            var type2 = document.getElementById("type2").value;
+
+            if (type1 == type2 ) {
+                document.getElementById("output").value = input;
+            }
+            else if (type1 != type2 ) {
+                if ((type1 == "Meter" || type1 == "Kilometer" || type1 == "Mile" || type1 == "Light year") && ( type2 == "Meter" || type2 == "Kilometer" || type2 == "Mile" || type2 == "Light year" )){
+                    if (type1 == "Meter" && type2 == "Kilometer"){
+                        document.getElementById("output").value = input*1000;
+                        
+                    }
+                    else if (type1== "Meter" && type2 == "Mile"){
+                        document.getElementById("output").value = input*0.000621371;
+                    }
+                    else if ( type1 == "Meter" && type2 == "Light year"){
+                        document.getElementById("output").value = input*1.057*10**-16;
+                    }
+                    else if ( type1 == "Kilometer" && type2 == "Meter"){
+                        document.getElementById("output").value = input*1000;
+                    }
+                    else if ( type1 == "Kilometer" && type2 == "Mile") {
+                        document.getElementById("output").value = input*0.621371;
+                    }
+                    else if ( type1 == "Kilometer" && type2 == "Light year") {
+                        document.getElementById("output").value = input*1.057e-13;
+                    }
+                    else if ( type1 == "Mile" && type2 == "Meter") {
+                        document.getElementById("output").value = input*1609.34;
+                    }
+                    else if ( type1 == "Mile" && type2 == "Kilometer") {
+                        document.getElementById("output").value = input*1.60934;
+                    }
+                    else if ( type1 == "Mile" && type2 == "Light year") {
+                        document.getElementById("output").value = input*1.70108e-13;
+                    }
+                    else if ( type1 == "Light year" && type2 == "Meter") {
+                        document.getElementById("output").value = input*9.461e+15;
+                    }
+                    else if ( type1 == "Light year" && type2 == "Kilometer") {
+                        document.getElementById("output").value = input*9.461e+12;
+                    }
+                    else if ( type1 == "Light year" && type2 == "Mile") {
+                        document.getElementById("output").value = input*5.879e+12;
+                    }
+                }
+                else if ( (type1 == "Celsius" || type1 == "Kelvin" || type1 == "Fahrenheit") && (type2 == "Celsius" || type2 == "Kelvin" || type2 == "Fahrenheit") ){
+                    if ( type1 == "Celsius" && type2 == "Kelvin"){
+                        document.getElementById("output").value = input+273.15;
+                    }
+                    else if ( type1 == "Celsius" && type2 == "Fahrenheit"){
+                        document.getElementById("output").value = (input*9/5)+32;
+                    }
+                    else if ( type1 == "Kelvin" && type2 == "Celsius"){
+                        document.getElementById("output").value = input-273.15;
+                    }
+                    else if ( type1 == "Kelvin" && type2 == "Fahrenheit"){
+                        document.getElementById("output").value = (input-273.15)*9/5 + 32;
+                    }
+                    else if ( type1 == "Fahrenheit" && type2 == "Celsius"){
+                        document.getElementById("output").value = (input-32)*5/9; 
+                    }
+                    else if ( type1 == "Fahrenheit" && type2 == "Kelvin"){
+                        document.getElementById("output").value = ((input-32)*5/9)+273.15; 
+                    }
+                }       
+                else if ((type1 == "Liter" || type1 == "Milliliter" || type1 == "US Gallon" || type1 =="Imperial Tea Spoon") && (type2 == "Liter" || type2 == "Milliliter" || type2 == "US Gallon" || type2 =="Imperial Tea Spoon")){
+                    if (type1 == "Liter" && type2 == "Milliliter"){
+                        document.getElementById("output").value = input * 1000;
+                    }
+                    else if (type1 == "Liter" && type2 == "US Gallon"){
+                        document.getElementById("output").value = input * 0.264172;
+                    }
+                    else if (type1 == "Liter" && type2 == "Imperial Tea Spoon"){
+                        document.getElementById("output").value = input * 168.936;
+                    }
+                    else if (type1 == "Milliliter" && type2 == "Liter"){
+                        document.getElementById("output").value = input /1000;
+                    }
+                    else if (type1 == "Milliliter" && type2 == "US Gallon"){
+                        document.getElementById("output").value = input * 0.000264172;
+                    }
+                    else if (type1 == "Milliliter" && type2 == "Imperial Tea Spoon"){
+                        document.getElementById("output").value = input * 0.168936;
+                    }
+                    else if (type1 == "US Gallon" && type2 == "Liter"){
+                        document.getElementById("output").value = input *3.785;
+                    }
+                    else if (type1 == "US Gallon" && type2 == "Milliliter"){
+                        document.getElementById("output").value = input*3785.412;
+                    }
+                    else if (type1 == "US Gallon" && type2 == "Imperial Tea Spoon"){
+                        document.getElementById("output").value = input * 639.494;
+                    }
+                    else if (type1 == "Imperial Tea Spoon" && type2 == "Liter"){
+                        document.getElementById("output").value = input *0.00591939;
+                    }
+                    else if (type1 == "Imperial Tea Spoon" && type2 == "Milliliter"){
+                        document.getElementById("output").value = input*5.91939;
+                    }
+                    else if (type1 == "Imperial Tea Spoon" && type2 == "US Gallon"){
+                        document.getElementById("output").value = input * 639.494;
+                    }
+                    else {
+                    alert("Selected unit calculation are not made")
+                    }
+                }
+                else {
+                    alert("Selected unit calculation are not made")
+                }
+            } 
+            }
+        </script>
+
+   </body>
+</html>
