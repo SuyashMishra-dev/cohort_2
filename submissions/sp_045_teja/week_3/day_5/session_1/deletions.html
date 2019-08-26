@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1 id="h1">First H1</h1>
+        <h1>Second H1</h1>
+        <h3 id="h3">First H3</h3>
+        <h3 id="h4">Second H3</h3>
+        <div id="headings">
+            <h5 id="h5">First H5</h5>
+            <h5 id="h6">Second H5</h5>
+            <h5 id="h7">Third H5</h5>
+        </div>
+        <div id="cont">
+            <div class="green">First DIV</div>
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button onclick="deleteh1()">Remove H1</button>
+        <button onclick="deleteh2()">Remove H3</button>
+        <button onclick="deleteh3()">Remove H5</button>
+        <button onclick="deletered()">Remove Red</button>
+        <button onclick="deletediv()">Remove DIVS</button>
+        <script>
+            function deleteh1() {
+                var bodyElem = document.querySelector('body');
+                var firsth1 = document.getElementById('h1');
+                bodyElem.removeChild(firsth1); 
+            }
+
+            function deleteh2() {
+                var bodyElem = document.querySelector('body');
+                var firsth3 = document.getElementById('h3');
+                var secondh3 = document.getElementById('h4');
+                bodyElem.removeChild(firsth3);
+                bodyElem.removeChild(secondh3);
+            }
+
+            function deleteh3() {
+                var headings = document.getElementById('headings');
+                var firsth5 = document.getElementById('h5');
+                var secondh5 = document.getElementById('h6');
+                var thirdh5 = document.getElementById('h7');
+                headings.removeChild(firsth5);
+                headings.removeChild(secondh5);
+                headings.removeChild(thirdh5);
+            }
+
+            function deletered() {
+                var cont = document.getElementById('cont');
+                var reds = document.querySelector('.red');
+                cont.removeChild(reds);
+            }
+
+            function deletediv() {
+                var cont = document.getElementById('cont');
+                var div = document.querySelectorAll('#cont div'); 
+                console.log(div)   
+                for (var i = 0; i < div.length; i++) {
+                    cont.removeChild(div[i]);    
+                }
+            }
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
