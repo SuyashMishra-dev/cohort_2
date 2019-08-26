@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button id="masai">Create H1</button>
+        <button id="masai_moto">Create 2 H3</button>
+        <button id="divs">Create DIVS</button>
+        <button id="studs">Add Students</button>
+        <button id="copyryt">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+
+            var heading_h1 = document.getElementById("masai");
+            function create_masai() {
+                var masai_school = document.createElement('h1');
+                masai_school.textContent = "MASAI"; 
+
+                var div1 = document.querySelector('div');
+                div1.appendChild(masai_school);
+                heading_h1.removeEventListener('click' , create_masai);
+            }
+            heading_h1.addEventListener('click' , create_masai);
+
+            var moto = document.getElementById("masai_moto");
+            function change_content() {
+                var first_h3 = document.createElement('h3');
+                first_h3.textContent = "A Transformation in education!";
+                var secound_h3 = document.createElement('h3');
+                secound_h3.textContent = "Learn to earn, pay when you get";
+
+                var div1 = document.querySelector('div');
+                div1.appendChild(first_h3);
+                div1.appendChild(secound_h3);
+                moto.removeEventListener('click' , change_content);
+                
+            }
+            moto.addEventListener('click' , change_content);
+
+            var add_divs = document.getElementById("divs");
+            function change_div() {
+                var div2 = document.querySelector('#cont');
+                for(var i=0; i<10; i++) {
+                    var new_div = document.createElement('div');
+                    new_div.textContent = "Content"+ " " + (i+1);
+                    div2.appendChild(new_div);
+                    add_divs.removeEventListener('click' , change_div);
+                }   
+            }
+            add_divs.addEventListener('click' , change_div);
+
+            var all_students = document.getElementById("studs");
+            function add_students() {
+                var len = students.length;
+                var stu_list = document.querySelector('#vikings');
+                for(var i=0; i<len; i++) {
+                    var new_student = document.createElement('li');
+                    new_student.textContent = students[i];
+                    stu_list.appendChild(new_student);
+                    all_students.removeEventListener('click' , add_students);
+                }
+            }
+            all_students.addEventListener('click' , add_students);
+
+            var copy = document.getElementById("copyryt");
+            function add_copyryt() {
+                var rights = document.createElement('p');
+                rights.textContent = "@ masai 2019";
+                var body = document.querySelector('body');
+                var ref = document.querySelector('button');
+                body.insertBefore(rights , ref);
+                copy.removeEventListener('click' , add_copyryt);
+
+            }
+            copy.addEventListener('click' , add_copyryt);
+        </script>
+    </body>
+</html>

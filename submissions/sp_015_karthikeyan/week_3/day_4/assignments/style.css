@@ -1,0 +1,55 @@
+#inputArea {
+    height: 75px;
+    width: 1000px;
+    border: 2px solid black;
+    margin: 0px 175px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-row > button {
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    margin: 0px 10px;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+#row-1 {
+    margin: 20px 250px;
+}
+#row-2 {
+    margin: 20px 300px;
+}
+#row-3 {
+    margin: 20px 350px;
+}
+#row-4 {
+    margin: 20px 400px;
+}
+.final-row {
+    margin: 10px 300px;
+}
+.final-row > button {
+    width: 100px;
+    background: white; 
+    color: black;
+}
+
+#spacebar {
+    width: 500px;
+}
+
+.symbols {
+    margin: 0px 0px 0px 25px;
+}
+.numbers {
+    margin: 5px 25px 0px 0px;
+}

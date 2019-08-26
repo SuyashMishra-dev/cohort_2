@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1 id="head1">First H1</h1>
+        <h1 id="head2">Second H1</h1>
+        <h3 id="head3" >First H3</h3>
+        <h3 id="head4">Second H3</h3>
+        <div id="headings">
+            <h5 class="h3head1">First H5</h5>
+            <h5 class="h3head1">Second H5</h5>
+            <h5 class="h3head1">Third H5</h5>
+        </div>
+        <div id="cont">
+            <div class="green">First DIV</div>(
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button onclick="removeH1()">Remove H1</button>
+        <button onclick="removeH3()">Remove H3"</button>
+        <button onclick="removeH5()">Remove H5</button>
+        <button onclick="removeRed()">Remove Red</button>
+        <button onclick="removeDiv()">Remove DIVS</button>
+        <script>
+
+            function removeH1() {
+                var bodyElem = document.querySelector('body');
+                var heading = document.getElementById('head1');
+                var heading1 = document.getElementById('head2')
+                bodyElem.removeChild(heading);  
+                bodyElem.removeChild(heading1);                    
+            }
+
+            function removeH3() {
+                var bodyElem = document.querySelector('body');
+                var heading3 = document.getElementById('head3');
+                var heading4 = document.getElementById('head4')
+                bodyElem.removeChild(heading3);  
+                bodyElem.removeChild(heading4);                    
+            }
+
+            function removeH5() {
+                var h3Heading = document.getElementById('headings')
+                var buttons = document.querySelectorAll('.h3Head1')
+                for(i=0; i <= buttons.length; i++) {
+                    h3Heading.removeChild(buttons[i]);
+                }
+            }
+
+            function removeRed() {
+                var redRemove = document.getElementById('cont')
+                var redContent = document.querySelectorAll('.red')
+                for(i=0; i <= redContent.length; i++) {
+                    redRemove.removeChild(redContent[i]);
+                }
+            }
+
+            function removeDiv() {
+                var divRemove = document.getElementById('cont')
+                var divs = document.querySelectorAll('div')
+                
+                for(i=0; i <= divs.length; i++) {
+                    divRemove.removeChild(divs[i]);
+                    
+                }
+            }
+        </script>
+    </body>
+</html>
