@@ -20,3 +20,4 @@
 | sp_011 | Harshit               | Scooby Doo            | [github](https://github.com/harshit860/masai-week-1)         |
 | sp_027 | Prabhat Kumar Ranjan  | Samurai Jack          | [github](https://github.com/PrabhatKrRanjan/masai-week-1)    |
 | sp_026 | Piyush Yadav	         | Popeye                | [github](https://github.com/piyush-git/masai-week-1)         |      
+| sp_006 | Arunabh Singh         | Yoda                  | [github](https://github.com/arunabhthakur94/masai-week-1.git) |
