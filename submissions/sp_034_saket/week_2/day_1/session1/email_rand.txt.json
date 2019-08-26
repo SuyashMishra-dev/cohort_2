@@ -1,0 +1,19 @@
+{
+    "child": {
+        "directory": "\/home\/saket",
+        "height": 686,
+        "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+        "readOnly": false,
+        "synchronizedInput": true,
+        "type": "Terminal",
+        "uuid": "33c43446-5944-4d29-b3c2-c634048e58f5",
+        "width": 1366
+    },
+    "height": 686,
+    "name": "Default",
+    "synchronizedInput": false,
+    "type": "Session",
+    "uuid": "5e1a44db-5c7f-45ce-9f93-46acdfd24f51",
+    "version": "1.0",
+    "width": 1366
+}

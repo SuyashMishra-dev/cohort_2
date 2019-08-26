@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Type Writer</title>
+
+        <style type="text/css">
+        body{
+            background-color: lightyellow;
+        }
+        .screen {
+            display: flex;
+        }
+        .screen p{
+            height: 50px;
+            flex-basis: 865px;
+            margin-left: 200px;
+            font-size: 25px;
+            text-align: center;
+            border: solid 5px black; 
+            border-radius: 10px;
+        }
+        .row1{
+            margin-left: 200px;
+        }
+        .row2{
+            margin-left: 240px;
+        }
+        .row3{
+            margin-left: 280px;
+        }
+        .row4{
+            margin-left: 320px;
+        }
+        .row5{
+            margin-left: 385px;
+        }
+        .row5 button{
+            width: 500px;
+        }
+        button{
+            margin: 10px 5px;
+            width: 65px;
+            height: 65px;
+            background: black;
+            color: white;
+            border-radius: 10px;
+            border: solid 2px black;
+        }
+        .special_row {
+            margin-left: 320px;
+        }
+        .special_row button {
+            margin: 10px;
+            width: 105px;
+            height: 65px;
+            background: white;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="screen">
+            <p id = "display"></p>
+        </div>
+
+        <div class="row1">
+            <button onclick = "one()">!<br>1</button>
+            <button onclick = "two()">@<br>2</button>
+            <button onclick = "three()">#<br>3</button>
+            <button onclick = "four()">$<br>4</button>
+            <button onclick = "five()">%<br>5</button>
+            <button onclick = "six()">^<br>6</button>
+            <button onclick = "seven()">&<br>7</button>
+            <button onclick = "eight()">*<br>8</button>
+            <button onclick = "nine()">(<br>9</button>
+            <button onclick = "zero()">)<br>0</button>
+            <button onclick = "del()"><br>DEL</button>
+        </div>
+
+        <div class="row2">
+            <button onclick = "q()">Q</button>
+            <button onclick = "w()">W</button>
+            <button onclick = "e()">E</button>
+            <button onclick = "r()">R</button>
+            <button onclick = "t()">T</button>
+            <button onclick = "y()">Y</button>
+            <button onclick = "u()">U</button>
+            <button onclick = "i()">I</button>
+            <button onclick = "o()">O</button>
+            <button onclick = "p()">P</button>
+        </div>
+        <div class="row3">
+            <button onclick = "a()">A</button>
+            <button onclick = "s()">S</button>
+            <button onclick = "d()">D</button>
+            <button onclick = "f()">F</button>
+            <button onclick = "g()">G</button>
+            <button onclick = "h()">H</button>
+            <button onclick = "j()">J</button>
+            <button onclick = "k()">K</button>
+            <button onclick = "l()">L</button>
+        </div>
+        <div class="row4">
+            <button onclick = "z()">Z</button>
+            <button onclick = "x()">X</button>
+            <button onclick = "c()">C</button>
+            <button onclick = "v()">V</button>
+            <button onclick = "b()">B</button>
+            <button onclick = "n()">N</button>
+            <button onclick = "m()">M</button>
+            <button onclick = "com()">.com</button>
+        </div>
+        <div class="row5">
+            <button onclick = "space()" id = "space"></button>
+        </div>
+        <div class="special_row">
+            <button id = "caps">CAPS</button>
+            <button id = "shift">SHIFT</button>
+            <button id = "password">PASSWD</button>
+            <button id = "clean">CLEAN</button>
+            <button id = "rev">REV</button>
+        </div>
+
+        <script type="text/javascript">
+
+        //Numbers functions
+        var display = document.getElementById("display");
+
+        function one() {
+            if(change_shift.style.color == "green") {
+                display.innerHTML = display.innerHTML + "!";
+            }
+            else {
+                display.innerHTML = display.innerHTML + "1";
+            }
+        }
+        function two() {
+            if(change_shift.style.color == "green") {
+                display.innerHTML = display.innerHTML + "@";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "2";
+            }
+        }
+        function three() {
+            if(change_shift.style.color == "green") {
+                display.innerHTML = display.innerHTML + "#";
+            }
+            else {
+            display.innerHTML = display.innerHTML + "3";
+            }
+        }
+        function four() {
+            if(change_shift.style.color == "green") {
+                display.innerHTML = display.innerHTML + "$";
+            }
+            else {
+                display.innerHTML = display.innerHTML + "4";
+            }
+        }
+        function five() {
+            if(change_shift.style.color == "green") {
+                display.innerHTML = display.innerHTML + "%";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "5";
+            }
+        }
+        function six() {
+            if(change_shift.style.color == "green") {
+                display.innerHTML = display.innerHTML + "^";
+            }
+            else {
+                display.innerHTML = display.innerHTML + "6";
+            }
+        }
+        function seven() {
+            if(change_shift.style.color == "green") {
+                display.innerHTML = display.innerHTML + "&";
+            }
+            else {
+                display.innerHTML = display.innerHTML + "7";
+            }
+        }
+        function eight() {
+            if(change_shift.style.color == "green") {
+                display.innerHTML = display.innerHTML + "*";
+            }
+            else {
+                display.innerHTML = display.innerHTML + "8";
+            }
+        }
+        function nine() {
+            if(change_shift.style.color == "green") {
+                display.innerHTML = display.innerHTML + "(";
+            }
+            else {
+                display.innerHTML = display.innerHTML + "9";
+            }
+        }
+        function zero() {
+            if(change_shift.style.color == "green") {
+                display.innerHTML = display.innerHTML + ")";
+            }
+            else {
+                display.innerHTML = display.innerHTML + "0";
+            }
+        }
+        function del() {
+            var string = display.innerHTML;
+            var arr = [];
+            var str = "";
+            for(var i=0; i<string.length; i++){
+                arr.push(string[i]);
+            }
+            arr.pop();
+            for(var i=0; i<arr.length; i++){
+                str = str + arr[i];
+            }
+            display.innerHTML = str;
+        }
+
+        //Alphabets lowercase
+
+        function a() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "A";
+            }
+            else {
+            display.innerHTML = display.innerHTML + "a";
+            }
+        }
+        function b() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "B";
+            }
+            else {
+                display.innerHTML = display.innerHTML + "b";
+            }
+        }
+        function c() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "C";
+            }
+            else {
+                display.innerHTML = display.innerHTML + "c";
+            }
+        }
+        function d() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "D";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "d";
+            }
+        }
+        function e() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "E";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "e";
+            }
+        }
+        function f() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "F";
+            }
+            else {
+                display.innerHTML = display.innerHTML + "f";
+            }
+        }
+        function g() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "G";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "g";
+            }
+            obscene_words();
+        }
+        function h() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "H";
+            }
+            else {
+                display.innerHTML = display.innerHTML + "h";
+            }
+        }
+        function i() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "I";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "i";
+            }
+        }
+        function j() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "J";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "j";
+            }
+        }
+        function k() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "K";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "k";
+            }
+        }
+        function l() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "L";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "l";
+            }
+        }
+        function m() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "M";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "m";
+            }
+        }
+        function n() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "N";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "n";
+            }
+        }
+        function o() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "O";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "o";
+            }
+        }
+        function p() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "P";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "p";
+            }
+        }
+        function q() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "Q";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "q";
+            }
+        }
+        function r() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "R";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "r";
+            }
+        }
+        function s() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "S";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "s";
+            }
+        }
+        function t() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "T";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "t";
+            }
+        }
+        function u() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "U";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "u";
+            }
+        }
+        function v() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "V";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "v";
+            }
+        }
+        function w() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "W";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "w";
+            }
+        }
+        function x() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "X";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "x";
+            }
+        }
+        function y() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "Y";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "y";
+            }
+        }
+        function z() {
+            if(change_caps.style.color == "green") {
+                display.innerHTML = display.innerHTML + "Z";
+            }
+            else{
+                display.innerHTML = display.innerHTML + "z";
+            }
+        }
+        function com() {
+            display.innerHTML = display.innerHTML + ".com";
+        }
+        function space() {
+            display.innerHTML = display.innerHTML + " ";
+        }
+
+        //Special Buttons
+
+        var change_caps = document.getElementById("caps");
+        var arr = ['green' , 'black'];
+        function caps_color(){
+            if(change_caps.style.color == ""){
+                change_caps.style.color = "green";
+            }
+            else {
+                change_caps.style.color = "";
+            }
+        }
+        change_caps.addEventListener('click' , caps_color);
+
+        var change_shift = document.getElementById("shift");
+        function shift_color(){
+            if(change_shift.style.color == ""){
+                change_shift.style.color = "green";
+            }
+            else {
+                change_shift.style.color = "";
+            }
+        }
+        change_shift.addEventListener('click' , shift_color);
+
+        var change_pwd = document.getElementById("password");
+        var arr = ['green' , 'black'];
+        function pwd_color(){
+            if(change_pwd.style.color == ""){
+                change_pwd.style.color = "green";
+                password_mode();
+            }
+            else {
+                change_pwd.style.color = "";
+            }
+        }
+        change_pwd.addEventListener('click' , pwd_color);
+
+        var change_clean = document.getElementById("clean");
+        var arr = ['green' , 'black'];
+        function clean_color(){
+            if(change_clean.style.color == ""){
+                change_clean.style.color = "green";
+            }
+            else {
+                change_clean.style.color = "";
+            }
+        }
+        change_clean.addEventListener('click' , clean_color);
+
+        var change_rev = document.getElementById("rev");
+        var arr = ['green' , 'black'];
+        function rev_color(){
+            if(change_rev.style.color == ""){
+                change_rev.style.color = "green";
+                reverse_mode();
+            }
+            else {
+                change_rev.style.color = "";
+            }
+        }
+        change_rev.addEventListener('click' , rev_color);
+
+        function obscene_words() {
+            if(change_clean.style.color == "green") {
+                if(display.innerHTML == "ball kicking" || display.innerHTML == "ball licking" || display.innerHTML == "ball sucking") {
+                    display.innerHTML = "b**********g";
+                }
+                else if(display.innerHTML == "pegging" || display.innerHTML == "pissing" || display.innerHTML == "piss pig" || display.innerHTML == "pisspig") {
+                    display.innerHTML = "p**********g";
+                }
+                else if(display.innerHTML == "raping" || display.innerHTML == "rimming") {
+                    display.innerHTML = "r*****g";
+                }
+                else if(display.innerHTML == "lovemaking") {
+                    display.innerHTML = "l********g";
+                }
+            }
+        }
+
+        function password_mode(){
+            var input = [display.innerHTML];
+            var pwd_hide = "";
+            for(var i=0; i<input.length; i++) {
+                pwd_hide = pwd_hide + "*";
+            }
+            display.innerHTML = display.innerHTML+pwd_hide;
+        }
+
+        function reverse_mode() {
+           var input = display.innerHTML;
+           var reverse_string = "";
+           if(change_rev.style.color == "green"){
+                for(var i=input.length-1; i>=0; i--){
+                    reverse_string = reverse_string + input[i];
+                }
+                display.innerHTML=reverse_string;
+            }
+        }
+        </script>
+    </body>
+</html>
