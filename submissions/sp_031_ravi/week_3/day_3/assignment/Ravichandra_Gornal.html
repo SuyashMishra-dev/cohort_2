@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tax Calculator</title>
+    <style>
+        body {
+            background-color: #ecbf41;
+        }
+        #frame {
+            align-content: center;
+            margin: 100px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Income-tax Calculator</h1>
+    <div id="frame">
+        <div>Total annual income</div>
+        <input type="text" id="income">
+        <div>Total annual savings</div>
+        <input type="text" id="saving"><br>
+        <button id="calculate" onclick="calculate()">Calculate</button>
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        var income, saving, tax, deductions = 0;
+
+        function calculate() {
+
+            income = Number(document.getElementById("income").value);
+            saving = Number(document.getElementById("saving").value);
+            console.log("start of the calculate, income =",income);
+
+            if (saving < 500000) {
+            deductions = 0.1 * saving;
+            } else if (saving >= 500000) {
+                deductions = 50000;
+            }
+
+            if (income < 250000) {  //income is less then 250000
+                tax = 0;
+                
+                //for income between 2.5L and 5L
+            } else if (income > 250000 && income < 500000) { 
+                tax = ((income - 250000) - (saving * 0.5)) * 0.1;
+                
+            } else if (income >= 500000 && income < 1000000) { //
+                tax = (((income - 500000) - (saving * 0.3)) * 0.2) + 250000 * 0.1;
+                // for income between 5L and 10L
+            } else if (income >= 1000000) {
+                tax = ((income - 1000000 - deductions) * 0.3) + (500000 * 0.2) + (250000 * 0.1);
+                // for income more then 10L
+            } else {
+                document.getElementById("result").innerHTML = "";
+            }
+            document.getElementById("result").innerHTML = "Your tax is " + tax;
+        }
+    </script>
+</body>
+</html>
