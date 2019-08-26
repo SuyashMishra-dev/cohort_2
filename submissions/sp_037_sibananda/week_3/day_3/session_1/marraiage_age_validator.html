@@ -1,0 +1,40 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input id="age" type="text">
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <button onclick="Marriage()">Gender</button>
+        <script>
+        function Marriage() {
+            var age1=document.getElementById("age").value;
+
+            var gender1=document.getElementById("gender").value;
+            if (gender1=="male" ) {
+                if (age1>=21) {
+                    alert("Legal age for a boy ");
+                }
+                else{
+                    alert("Illegal for boy");
+                }
+            
+            }
+            if (gender1=="Female") {
+                if (age1>=18) {
+                    alert("Legal age for a girl ");
+                }
+                else{
+                    alert("Illegal for girl");
+                }
+                
+            }
+            
+            
+        }
+        </script>
+    </body>
+</html>

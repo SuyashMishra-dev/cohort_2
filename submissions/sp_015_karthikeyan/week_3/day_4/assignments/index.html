@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TypeWriter</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <div id="inputArea"></div>
+            <div class="flex-row" id="row-1">
+                <button onclick="keyPress(1)">
+                    <p class="symbols">!</p>
+                    <p class="numbers">1</p>
+                </button>
+                <button onclick="keyPress('2')">
+                    <p class="symbols">@</p>
+                    <p class="numbers">2</p>
+                </button>
+                <button onclick="keyPress('3')">
+                    <p class="symbols">#</p>
+                    <p class="numbers" onclick="keyPress('3')">3</p>
+                </button>
+                <button onclick="keyPress('4')">
+                    <p class="symbols">$</p>
+                    <p class="numbers">4</p>
+                </button>
+                <button onclick="keyPress('5')">
+                    <p class="symbols">%</p>
+                    <p class="numbers">5</p>
+                </button>
+                <button onclick="keyPress('6')">
+                    <p class="symbols">^</p>
+                    <p class="numbers">6</p>
+                </button>
+                <button onclick="keyPress('7')">
+                    <p class="symbols">&</p>
+                    <p class="numbers">7</p>
+                </button>
+                <button onclick="keyPress('8')">
+                    <p class="symbols">*</p>
+                    <p class="numbers">8</p>
+                </button>
+                <button onclick="keyPress('9')">
+                    <p class="symbols">(</p>
+                    <p class="numbers">9</p>
+                </button>
+                <button onclick="keyPress('0')">
+                    <p class="symbols">)</p>
+                    <p class="numbers">0</p>
+                </button>
+                <button onclick="delKey()">
+                    <p>DEL</p>
+                </button>
+            </div>
+            <div class="flex-row" id="row-2">
+                <button onclick="keyPress('q')">
+                    <p>Q</p>
+                </button>
+                <button onclick="keyPress('w')">
+                    <p>W</p>
+                </button>
+                <button onclick="keyPress('e')">
+                    <p>E</p>
+                </button>
+                <button onclick="keyPress('r')">
+                    <p>R</p>
+                </button>
+                <button onclick="keyPress('t')">
+                    <p>T</p>
+                </button>
+                <button onclick="keyPress('y')">
+                    <p>Y</p>
+                </button>
+                <button onclick="keyPress('u')">
+                    <p>U</p>
+                </button>
+                <button onclick="keyPress('i')">
+                    <p>I</p>
+                </button>
+                <button onclick="keyPress('o')">
+                    <p>O</p>
+                </button>
+                <button onclick="keyPress('p')">
+                    <p>P</p>
+                </button>
+            </div>
+            <div class="flex-row" id="row-3">
+                <button onclick="keyPress('a')">
+                    <p>A</p>
+                </button>
+                <button onclick="keyPress('s')">
+                    <p>S</p>
+                </button>
+                <button onclick="keyPress('d')">
+                    <p>D</p>
+                </button>
+                <button onclick="keyPress('f')">
+                    <p>F</p>
+                </button>
+                <button onclick="keyPress('g')">
+                    <p>G</p>
+                </button>
+                <button onclick="keyPress('h')">
+                    <p>H</p>
+                </button>
+                <button onclick="keyPress('j')">
+                    <p>J</p>
+                </button>
+                <button onclick="keyPress('k')">
+                    <p>K</p>
+                </button>
+                <button onclick="keyPress('l')">
+                    <p>L</p>
+                </button>
+            </div>
+            <div class="flex-row" id="row-4">
+                <button onclick="keyPress('z')">
+                    <p>Z</p>
+                </button>
+                <button onclick="keyPress('x')">
+                    <p>X</p>
+                </button>
+                <button onclick="keyPress('c')">
+                    <p>C</p>
+                </button>
+                <button onclick="keyPress('v')">
+                    <p>V</p>
+                </button>
+                <button onclick="keyPress('b')">
+                    <p>B</p>
+                </button>
+                <button onclick="keyPress('n')">
+                    <p>N</p>
+                </button>
+                <button onclick="keyPress('m')">
+                    <p>M</p>
+                </button>
+                <button onclick="keyPress('.com')">.com</button>
+            </div>
+            <div class="flex-row">
+                <button id="spacebar" onclick="keyPress(' ')"></button>
+            </div>
+            <div class="flex-row final-row">
+                <button id="caps-key" onclick="capsToggle()">
+                    <p>CAPS</p>
+                </button>
+                <button id="shift-key" onclick="shiftToggle()">
+                    <p>SHIFT</p>
+                </button>
+                <button id="passwd-key" onclick="passwdToggle()">
+                    <p>PASSWD</p>
+                </button>
+                <button>
+                    <p id="clean-key" onclick="cleanToggle()">CLEAN</p>
+                </button>
+                <button id="reverse-key" onclick="reverse()">
+                    <p>REV</p>
+                </button>
+            </div>
+        </div>
+        <script>
+            var capsCount = 0;
+            var shiftCount = 0;
+            var reverseCount = 0;
+            var passwdCount = 0;
+            var cleanCount = 0;
+            var lowerCase = ["a", "b", "c", "d", "e", "f",
+                             "g", "h", "i", "j", "k", "l", 
+                             "m", "n", "o", "p", "q", "r", 
+                             "s", "t", "u", "v", "w", "x", 
+                             "y", "z"]
+            var upperCase = ["A", "B", "C", "D", "E", "F",
+                             "G", "H", "I", "J", "K", "L",
+                             "M", "N", "O", "P", "Q", "R", 
+                             "S", "T", "U", "V", "W", "X", 
+                             "Y", "Z"];
+            var specialChars = ["!", "@", "#", "$", "%",
+                                "^", "&", "*", "(", ")"];
+            
+            var badWords = ["asshole", "bitch", "cunt", "dick", "erotic",
+                            "fuck", "gay", "hentai", "incest", "kinky"]
+
+            function keyPress(key) {
+                if(capsCount == 1) {
+                    capsOps(key);
+                }
+                else if(shiftCount == 1) {
+                    shiftOps(key);
+                }
+                else if(passwdCount == 1) {
+                    passwdOps(key);
+                }
+                else write(key);
+            }
+
+            function delKey() {
+                var previousText = document.getElementById("inputArea").innerHTML;
+                var presentText = "";
+
+                for(i = 0; i < previousText.length - 1; i++) {
+                    presentText = presentText + previousText[i];
+                }
+                document.getElementById("inputArea").innerHTML = presentText;
+            }
+
+            function capsOps(key) {
+                for(i = 0; i < lowerCase.length; i++) {
+                        if (key == lowerCase[i]) {
+                            key = upperCase[i];
+                        }
+                    }
+                    write(key);
+            }
+
+            function shiftOps(key) {
+                for(i = 0; i < 10; i++) {
+                    var pos = i;
+                    if(key == pos) {
+                        key = specialChars[pos-1];
+                    }
+                    else if(key == 0) {
+                        key = ")";
+                        console.log(key);
+                    }
+                }
+                if(key == specialChars[pos-1]) {
+                    write(key);
+                }
+                else capsOps(key);
+                shiftToggle();
+            }
+
+            function passwdToggle() {
+                passwdCount++;
+                if(passwdCount == 1) {
+                    document.getElementById("passwd-key").style.color = "green";
+                }
+                else if(passwdCount >= 2) {
+                    passwdCount = 0;
+                    document.getElementById("passwd-key").style.color = "black";
+                }
+            }
+
+            function passwdOps(key) {
+                var previousText = document.getElementById("inputArea").innerHTML;
+                var presentText = "";
+
+                for(i = 0; i < previousText.length; i++) {
+                    presentText = presentText + "*";
+                }
+                document.getElementById("inputArea").innerHTML = presentText + key;
+            }
+
+            function write(key) {
+                var previousText = document.getElementById("inputArea").innerHTML;
+                var presentText = previousText + key;
+
+                document.getElementById("inputArea").innerHTML = presentText;
+            }
+
+            function capsToggle() {
+                capsCount++;
+                if(capsCount == 1) {
+                    document.getElementById("caps-key").style.color = "green";
+                }
+                else if(capsCount >= 2) {
+                    capsCount = 0;
+                    document.getElementById("caps-key").style.color = "black";
+                }
+            }
+
+            function shiftToggle() {
+                shiftCount++;
+                if(shiftCount == 1) {
+                    document.getElementById("shift-key").style.color = "green";
+                }
+                else if(shiftCount >= 2) {
+                    shiftCount = 0;
+                    document.getElementById("shift-key").style.color = "black";
+                }
+            }
+
+            function reverse() {
+                var previousText = document.getElementById("inputArea").innerHTML;
+                var presentText = "";
+
+                reverseCount++;
+                for(i = previousText.length - 1; i >= 0; i--) {
+                    presentText = presentText + previousText[i];
+                }
+                document.getElementById("inputArea").innerHTML = presentText;
+
+                if(reverseCount == 1) {
+                    document.getElementById("reverse-key").style.color = "green";
+                }
+                else if(reverseCount >= 2) {
+                    reverseCount = 0;
+                    document.getElementById("reverse-key").style.color = "black";
+                }
+            }
+
+            function cleanToggle() {
+                cleanCount++;
+                if(cleanCount == 1) {
+                    document.getElementById("clean-key").style.color = "green";
+                    cleanOps();
+                }
+                else if(cleanCount >= 2) {
+                    cleanCount = 0;
+                    document.getElementById("clean-key").style.color = "black";
+                }
+            }
+
+            function cleanOps() {
+                var previousText = document.getElementById("inputArea").innerHTML;
+                for(i = 0; i < previousText.length; i++) {
+                    if(previousText == badWords[i]) {
+                        console.log("1");
+                        var presentText = previousText[0];
+                        for(i = 1; i < previousText.length - 1; i++) {
+                            presentText = presentText + "*";
+                        }
+                        presentText = presentText + previousText[previousText.length - 1];
+                        document.getElementById("inputArea").innerHTML = presentText;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
