@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title> Gridsres </title>
+  <style> #cont {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto ;
+    grid-template-rows: 100px 500px; 
+    background: white;
+    padding: 20px;
+  }
+  .yellow {
+    background: yellow !important;
+    }
+  .green {
+    background: green !important;
+    
+  }
+  #cont div {
+    background:red;
+    font-size: 30px;
+    text-align: left;
+  }
+  
+  #item1 {
+    grid-area: 1 / 1 / span 1 / span 2;
+  }
+  
+  @media (max-width:600px) {
+   #cont {
+    
+    grid-gap: 40px;
+     grid-template-columns: 500px ;
+     grid-template-rows: 100px 200px 200px; 
+    background: white;
+    padding: 20px;
+  }
+  
+  #item1 {
+    grid-area: 1 / 1 / span 1 / span 1;
+    
+  }
+  
+  #item2 {
+    grid-area: 2 / 1 / span 1 /span 1;
+  }
+   
+    
+  }</style>
+  </head>
+  <body>
+    <div id="cont">
+      <div id="item1" class="yellow">Navigation</div>
+      <div id="item2">Left Box</div>
+      <div id="item3" class="green" > Right Box</div>
+      
+      
+    </div>
+  </body>
+  
+</html>
+
+      
