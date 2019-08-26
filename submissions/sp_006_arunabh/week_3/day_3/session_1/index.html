@@ -57,16 +57,22 @@
 
 		//Write javascript for FSD.W3.3.1_3 here
 		function validateEmail(){
-			var em=document.getElementById("email").value;
+			var em = document.getElementById("email").value;
+			var result = "";
 
-			for(var i=0;i<em.length;i++){
+			for(var i=1;i<em.length;i++){
 				if(em[i]=="@"){
-					for(;i<em.length;i++){
+					for(i=i+2;i<em.length;i++){
 						if(em[i]=="."){
-							alert("Valid Email");
+							result=true;
 						}
 					}
 				}
+			}
+			if(result==true){
+				alert("Valid Email")
+			}else{
+				alert("Invalid Email");
 			}
 		}
 	</script>
