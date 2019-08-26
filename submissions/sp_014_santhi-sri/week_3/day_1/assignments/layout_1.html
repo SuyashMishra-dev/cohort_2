@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>layout_1</title>
+  
+  <style type="text/css">
+   #layout_1 {
+     display: grid;
+     grid-gap: 20px;
+     grid-template-columns:50% 50%;
+     grid-template-rows:80px 500px ; 
+     padding: 20px;
+     border-radius: 20px;
+     }
+           
+             #yellow {
+                grid-area: 1/ 1 / 1 /span 2 ;
+                background-color: yellow ;
+                font-size: 40px;
+                           }
+            #red{
+                grid-area: 2 /1/2 / 1 ;
+                background-color:red;
+                font-size: 30px;
+                color: grey;
+            }
+            #green{
+                grid-area :2/2/ 2/ 2;
+                background-color:green;
+                font-size: 30px;
+                color: grey;
+            }
+            @media (max-width: 1000px) {
+                #layout_1{
+                  grid-template-columns: 50% 50% ;
+                  grid-template-rows: 80px 150px 150px;
+                  }
+                  #yellow {               
+                font-size: 30px;
+                           }
+
+                #red{
+                    grid-area: 2/1/2/span 2;
+                    font-size: 20px;
+                                       
+                }
+                #green{
+                    grid-area: 3/1/3/span 2;
+                    font-size: 20px;
+                }
+                
+            }
+            </style>
+    </head>
+  <body>
+    <div id="layout_1">
+      <div id="yellow" >Navigation</div>
+      <div id="red">Left box</div>
+      <div id="green">Right box</div>
+    </div>
+  </body>
+  </html>
+    
