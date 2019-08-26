@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button onclick="h1Change()" id="btn">Create H1</button>
+        <button onclick="h3Change()">Create 2 H3</button>
+        <button onclick="divChange()">Create DIVS</button>
+        <button onclick="studentChange()">Add Students</button>
+        <button onclick="copyChange()">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+            
+            function h1Change() {
+                var h1 = document.createElement('h1')
+                h1.textContent = 'MASAI';
+                var Elems = document.querySelector('div');
+                Elems.appendChild(h1);
+            }
+
+            function h3Change() {
+                var h3 = document.createElement('h3')
+                var h4 = document.createElement('h4')
+                h3.textContent = 'A Transformation in education!' ;
+                h4.textContent = 'Learn to earn, pay when you get.';
+                var Elems1 = document.querySelector('div');
+                Elems1.appendChild(h3);
+                Elems1.appendChild(h4);
+            }
+
+            function divChange() {
+                var cont = document.getElementById("cont");
+                for (var i = 0; i < 10 ; i++) {
+                    var divs = document.createElement('div');
+                    divs.textContent = 'Content ' + (i+1); 
+                    cont.appendChild(divs);         
+                }    
+            }
+
+            function studentChange() {
+                var vikings = document.getElementById("vikings");
+                for (var  i = 0; i < students.length; i++) {
+                    var listsitem = document.createElement('li');
+                    listsitem.textContent = students[i];
+                    vikings.appendChild(listsitem);      
+                }
+            }
+
+            function copyChange() {
+                var para  = document.createElement('p');
+                para.textContent = '@ masai 2019';
+                var btn = document.getElementById('btn');
+                var headings = document.querySelector("body");
+                headings.insertBefore(para, btn);
+            }
+        </script>
+    </body>
+</html>
