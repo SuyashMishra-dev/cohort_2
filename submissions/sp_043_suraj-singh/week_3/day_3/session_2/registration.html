@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+    <style>
+        .container {
+            display: block;
+            float: left;
+            width: 50%;                                 
+        }
+
+        .content-container {            
+            width: 45%;
+            margin: 100px auto;
+            height: 500px;
+            padding: 20px;
+        }
+
+        #left-container p {
+            color: red;
+        }
+
+        #right-container >div,button {
+            background: black;
+            color: azure;
+        }
+
+        input,button {
+            height: 50px;
+            width: 98%;
+            border-radius: 0px;
+            margin-top: 15px; 
+        }
+
+        #name-output{
+            font-size: 40px;    
+        }
+
+        @media(max-width: 800px){
+            .container{
+                display: block;
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="left-container">
+        <div class="content-container">
+            <h2>NAME</h2>
+            <input id="name" type="text">
+            <p id="name-error"></p>
+            <h2>EMAIL</h2>
+            <input id="email" type="text">
+            <p id="email-error"></p>
+            <h2>MOBILE</h2>
+            <input id="phone" type="text">
+            <p id="phone-error"></p>
+            <button onclick="register()">Register</button>
+        </div>
+    </div>
+
+    <div class="container" id="right-container">
+        <div class="content-container">
+            <br>
+            <br>
+            <div id="name-output-block">
+                <h3>NAME</h3>
+                <h1 id="name-output"></h1>
+            </div>
+            <br>
+            <br>
+            <div id="email-output-block">
+                <h3>EMAIL</h3>
+                <h3 id="email-output"></h3>
+            </div>
+            <br>
+            <br>
+            <div id="phone-output-block">
+                <h3>MOBILE</h3>
+                <h1 id="phone-output"></h1>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var nameError = '';
+    var emailError = '';
+    var phoneError = '';
+    var emailInput = '';
+    var nameInput = '';
+    var phoneInput = '';
+
+    function validate(){ 
+        isValid = validateEmail(emailInput);;
+        isValid = validateName(nameInput) && isValid ;
+        isValid = validatePhone(phoneInput) && isValid;
+        
+        if(isValid){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    function register(){
+        emailInput = document.getElementById('email').value;
+        nameInput = document.getElementById('name').value;
+        phoneInput = document.getElementById('phone').value;
+
+        if(validate()){
+            setOutput();
+            setGlobalNull();
+            setErrorOutput();
+        }else{            
+            setErrorOutput();
+        }
+    }
+
+    function validateEmail(email){
+        
+        var isValid = false;
+        var isDotValid = false;
+        for (var i = 0; i < email.length; i++) {
+            if (email[i] == '@') {
+                isValid = true;
+                if (email[i + 1] == '.') {
+                    isValid = false;
+                }
+            }
+            if (email[i] == '.') {
+                isDotValid = true && isValid;
+            }
+        }
+        if (email[0] == '@' || email[email.length - 1] == '.' || email[email.length - 1] == '@') {
+            isValid = false;
+        }
+        if(isValid && isDotValid){
+            return true;
+        }else{
+            emailError = 'Enter a valid Email';
+            return false;
+        }
+        
+    }
+    
+    function validateName(name){
+        
+        if(name.length < 3 || name.length >10){            
+            nameError = 'Enter valid Name';
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    function validatePhone(phone){        
+        var isNumber = (Number(phone) == phone);
+        var isLengthOk = (phone.length == 10);
+        var isNumberOk = isNumber && isLengthOk;
+       
+        if(!isNumberOk){
+            phoneError = 'Enter valid Mobile';
+            return false;
+        }else{
+            return true;
+        }
+    }
+    function setGlobalNull() {
+        nameError = '';
+        emailError = '';
+        phoneError = '';
+        emailInput = '';
+        nameInput = '';
+        phoneInput = '';
+    }
+    function setErrorOutput(){
+        document.getElementById('email-error').innerHTML = emailError;
+        document.getElementById('name-error').innerHTML = nameError;
+        document.getElementById('phone-error').innerHTML = phoneError;
+    }
+    function setOutput(){
+        document.getElementById('email-output').innerHTML = emailInput;
+        document.getElementById('name-output').innerHTML = nameInput;
+        document.getElementById('phone-output').innerHTML = phoneInput;
+    }
+</script>
+</html>

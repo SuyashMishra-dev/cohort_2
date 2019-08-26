@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Practise Selectors</title>
+</head>
+
+<body>
+    <h1>First H1</h1>
+    <h1>Second H1</h1>
+    <h3>First H3</h3>
+    <h3>Second H3</h3>
+    <h5>First H5</h5>
+    <h5>Second H5</h5>
+    <h5>Third H5</h5>
+    <div class="green">First DIV</div>
+    <div class="red">Second DIV</div>
+    <div class="blue">Third DIV</div>
+    <p class="green">First P</p>
+    <p class="red">Second P</p>
+    <p class="blue">Third P</p>
+    <hr />
+    <button onclick="h1Oncolor()">Change H1</button>
+    <button onclick="htOncolor()">Change H3</button>
+    <button onclick="hfOncolor()">Change H5</button>
+    <button onclick="hgOncolor()">Change Green</button>
+    <button onclick="hrOncolor()">Change Red</button>
+    <button onclick="hbOncolor()">Change Blue</button>
+    <script>
+        function h1Oncolor() {
+            var ele = document.querySelector('h1');
+            ele.style.color = 'red';
+        }
+
+        function htOncolor() {
+            var eleAll = document.querySelectorAll('h3');
+            for (var i = 0; i < eleAll.length; i++) {
+                var eleEach = eleAll[i];
+                eleEach.style.color = 'green';
+            }
+        }
+
+        function hfOncolor() {
+            var eleAllf = document.querySelectorAll('h5');
+            for (var i = 0; i < eleAllf.length; i++) {
+                var eleEach5 = eleAllf[i];
+                eleEach5.style.color = 'blue';
+            }
+
+        }
+
+        function hgOncolor() {
+            var eleAllg = document.querySelectorAll('.green');
+            for (var i = 0; i < eleAllg.length; i++) {
+                var eleEachg = eleAllg[i];
+                eleEachg.style.color = 'green';
+            }
+        }
+
+        function hbOncolor() {
+            var eleAllb = document.querySelectorAll('.blue');
+            for (var i = 0; i < eleAllb.length; i++) {
+                var eleEachb = eleAllb[i];
+                eleEachb.style.color = 'blue';
+            }
+        }
+
+        function hrOncolor() {
+            var eleAllr = document.querySelectorAll('.red');
+            for (var i = 0; i < eleAllr.length; i++) {
+                var eleEachr = eleAllr[i];
+                eleEachr.style.color = 'red';
+            }
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

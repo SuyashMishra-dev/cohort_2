@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr/>
+        <button onclick="heading_one_red()">Change H1</button>
+        <button onclick="heading_three_green()">Change H3</button>
+        <button onclick="heading_five_blue()">Change H5</button>
+        <button onclick="green_color_change()">Change Green</button>
+        <button onclick="red_color_change()">Change Red</button>
+        <button onclick="blue_color_change()">Change Blue</button>
+        <script>
+            function heading_one_red() {
+                var reds = document.querySelector("h1");
+                reds.style.color="red";
+            }
+            function heading_three_green() {
+                var greens = document.querySelectorAll("h3")
+                    for (var i = 0; i <= greens.length; i++){
+                        var green = greens[i];
+                        green.style.color="green";
+                    }
+                
+            }
+            function heading_five_blue() {
+                var blues = document.querySelectorAll("h5")
+                    for (var i = 0; i <= blues.length; i++){
+                        var blue = blues[i];
+                        blue.style.color="blue";
+                    }
+            }
+            function green_color_change() {
+                var greens = document.querySelectorAll(".green");
+                for (var i = 0; i <= greens.length; i++  ){
+                    var green = greens[i]; 
+                    green.style.color = "green";
+                }
+                
+            }
+            function blue_color_change() {
+                var blues = document.querySelectorAll(".blue");
+                for (var i = 0; i <= blues.length; i++  ){
+                    var blue = blues[i]; 
+                    blue.style.color = "blue";
+                }
+                
+            }
+            function red_color_change() {
+                var reds = document.querySelectorAll(".red");
+                for (var i = 0; i <= reds.length; i++  ){
+                    var red = reds[i]; 
+                    red.style.color = "red";
+                }
+                
+            }
+            
+        </script>
+    </body>
+</html>

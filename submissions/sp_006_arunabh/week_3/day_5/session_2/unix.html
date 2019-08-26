@@ -1,0 +1,213 @@
+<html>
+    <head>
+        <title>Unix</title>
+        <style type="text/CSS">
+            .linus {
+                width: 500px;
+                height: 270px;
+                background: lightgrey;
+                margin: 10px 415px;
+                float: left;
+            }
+            .sal {
+                width: 750px;
+                height: 150px;
+                margin: 10px 290px;
+                float: left;
+            }
+            .footer {
+                width: 1300px;
+                height: 100px;
+                background: orangered;
+                margin: 15px;
+                float: left;
+            }
+            .linus img {
+                margin: 10px 200px;
+                margin-bottom: 0px;
+                clear: left;
+            }
+            .linus h2 {
+                margin: 0px 150px;
+                color: blue;
+            }
+            .linus h3 {
+                margin: 20px 120px;
+                font-weight: 400;
+            }
+            .sal img {
+                float: left
+            }
+            .sal h2 {
+                color: red;
+                margin-left: 120px
+            }
+            .sal p {
+                margin-left: 120px
+            }
+            .ken {
+                width: 620px;
+                float: left;
+            }
+            .line {
+                width: 10px;
+                height: 80px;
+                background: black;
+                margin-top: 10px;
+                float: left;
+            }
+            .ken h3 {
+                color: white;
+                margin-left: 40px
+            }
+            .ken p {
+                margin-left: 40px;
+            }
+            .dennis {
+                width: 620px;
+                float: left;
+            }
+            .dennis h3 {
+                color: white;
+                margin-left:460px;
+            }
+            .dennis p {
+                margin-left: 275px
+            }
+            .clear {
+                clear: left;
+            }
+        </style>
+    </head>
+    <body>
+       <button id = "unix_page">Create Page</button>
+
+       <script type="text/javascript">
+        var body = document.querySelector('body');
+        var unix = document.getElementById("unix_page");
+
+        //Main Function
+        function create_page() {
+
+           var linus_unix = linus_torvalds();
+
+            var sallu_khan = salman_khan();
+
+            var footer = bottom();
+           
+            unix.removeEventListener('click' , create_page);
+        }
+        unix.addEventListener('click' , create_page);
+
+        //Linus
+        function linus_torvalds() {
+
+            //Linus Torvalds Area 
+            var linus = document.createElement('div');
+            linus.setAttribute('class' , 'linus');
+            body.insertBefore(linus, unix);
+
+            var torvalds = document.querySelector('linus');
+
+            var image = document.createElement('img');
+            image.setAttribute('src' , 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg/220px-LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg');
+            image.setAttribute('alt' , 'Linus Torvalds');
+            image.setAttribute('height', '150');
+            image.setAttribute('width' , '100');
+            linus.appendChild(image);
+
+            var linus_heading = document.createElement('h2');
+            linus_heading.textContent = "Linus Torvalds";
+            linus.appendChild(linus_heading);
+
+            var linus_heading2 = document.createElement('h3');
+            linus_heading2.textContent = "The creator of Linux & Git";
+            linus.appendChild(linus_heading2);
+
+
+            //Linus ends here...
+
+            var clear1 = document.createElement('div');
+            clear1.setAttribute('class' , 'clear');
+            body.insertBefore(clear1, unix);
+        }
+        
+        //Sal Khan
+        function salman_khan(){
+             //Salman Khan Area
+            var salman = document.createElement('div');
+            salman.setAttribute('class' , 'sal');
+            body.insertBefore(salman, unix);
+
+            var sallu =document.querySelector('.sal');
+
+            var imgs = document.createElement('img');
+            imgs.setAttribute('src' , 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Salman_Khan_TED_2011.jpg/220px-Salman_Khan_TED_2011.jpg');
+            imgs.setAttribute('alt' , 'Sal Khan');
+            imgs.setAttribute('height' , '150');
+            imgs.setAttribute('width' , '100');
+            sallu.appendChild(imgs);
+
+            var sal_heading = document.createElement('h2');
+            sal_heading.textContent = "Sal Khan";
+            sallu.appendChild(sal_heading);
+
+            var sal_content = document.createElement('p');
+            sal_content.textContent="Salman Khan is the founder of thr Khan Academy which has a mission of providing a free world-class education for anyone, anywhere."
+            sallu.appendChild(sal_content);
+
+            var clear2 = document.createElement('div');
+            clear2.setAttribute('class' , 'clear');
+            body.insertBefore(clear2, unix);
+
+            //Salman Khan Area Ends
+        }
+
+        //Ken & Dennis
+        function bottom(){
+             //Footer Lining
+             var footer = document.createElement('div');
+            footer.setAttribute('class' , 'footer');
+            body.insertBefore(footer, unix);
+
+            var foot = document.querySelector('.footer');
+
+            var ken = document.createElement('div');
+            ken.setAttribute('class' , 'ken');
+            foot.appendChild(ken);
+
+            var black_line = document.createElement('div');
+            black_line.setAttribute('class' , 'line');
+            foot.appendChild(black_line);
+
+            var dennis = document.createElement('div');
+            dennis.setAttribute('class' , 'dennis');
+            foot.appendChild(dennis);
+
+
+            //Ken Thompson
+            var ken = document.querySelector('.ken');
+
+            var ken_heading = document.createElement('h3');
+            ken_heading.textContent = "Ken Thompson";
+            ken.appendChild(ken_heading);
+
+            var ken_content = document.createElement('p');
+            ken_content.textContent = "Designed and implemented the original Unix operating system.";
+            ken.appendChild(ken_content);
+
+            //Dennis Ritchie Area
+            var den = document.querySelector('.dennis');
+
+            var dennis_heading = document.createElement('h3');
+            dennis_heading.textContent = "Dennis Ritchie";
+            den.appendChild(dennis_heading);
+
+            var dennis_content = document.createElement('p');
+            dennis_content.textContent = "The creator of C Programming Language.";
+            den.appendChild(dennis_content);
+
+        }
+       </script>
+    </body>
+</html>

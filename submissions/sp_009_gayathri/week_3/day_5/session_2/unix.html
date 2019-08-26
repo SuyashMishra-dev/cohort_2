@@ -1,0 +1,246 @@
+<html>
+
+<head>
+  <title>Unix</title>
+  <style>
+    #box {
+      width: 800px;
+      height: 900px;
+      text-align: center;
+      background: white
+    }
+
+    .box1 {
+      width: 400px;
+      margin: auto;
+      margin-top: 50px;
+      padding: 20px;
+      height: 350x;
+      text-align: centre;
+    }
+
+    #first {
+
+      color: blue;
+      background: pink;
+
+    }
+
+    .class2 {
+      font-size: 35px;
+      font-style: bold;
+    }
+
+    .txt {
+      font-size: 25px;
+      color: black;
+
+    }
+
+    .align {
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .alignr {
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .txt2 {
+      font-size: 15px;
+      color: black;
+    }
+
+    .box2 {
+      width: 900px;
+      height: 200px;
+      background: white;
+      padding: 10px;
+      margin: 10px;
+      text-align: left;
+
+    }
+
+    .box3 {
+      width: 200px;
+      height: 150px;
+      float: left;
+    }
+
+    .box4 {
+      padding: 20px;
+      width: 600px;
+      height: 150px;
+      float: left;
+
+    }
+
+    .class3 {
+      margin: 30px;
+    }
+
+    .pos {
+      float: left;
+    }
+
+    #second {
+      color: red;
+
+    }
+
+    #box5 {
+      background: orange;
+      width: 1000px;
+      height: 150px;
+
+    }
+
+    .box6 {
+      width: 400px;
+      height: 150px;
+      padding: 20px;
+    }
+
+    .box7 {
+      width: 5px;
+      padding: 10px;
+      height: 75px;
+      margin: 20px;
+      background: black;
+    }
+
+    .flt {
+      float: left;
+    }
+
+    .fltr {
+      float: right;
+    }
+
+    #third {
+      color: white;
+    }
+
+    #fourth {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="unixPage()">Create Page</button>
+</body>
+<script>
+  function unixPage() {
+
+   /// Linux Torvalds section
+
+   var divUnix = document.createElement('div');
+   var bodyElem = document.querySelector('body');
+   bodyElem.appendChild(divUnix);
+   divUnix.setAttribute('id', 'box')
+   var divUnix1 = document.createElement('div');
+   var parnt = document.getElementById('box');
+   parnt.appendChild(divUnix1);
+   divUnix1.setAttribute('id', 'first');
+   divUnix1.setAttribute('class', 'box1 class2');
+   var parntImg = document.getElementById('first');
+   var para = document.createElement('p');
+   parntImg.appendChild(para);
+
+   var imagLinus = document.createElement('img');
+   var paraImg = document.querySelector('p');
+   paraImg.appendChild(imagLinus);
+   imagLinus.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg/220px-LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg')
+   imagLinus.setAttribute('height', '150px');
+   imagLinus.setAttribute('alt', 'Linus Travolds');
+
+   var paraImgname = document.createElement('p');
+   paraImg.appendChild(paraImgname);
+   paraImgname.textContent = 'Linus Torvalds';
+
+   var paraImgtext = document.createElement('p');
+   paraImg.appendChild(paraImgtext);
+   paraImgtext.setAttribute('class', 'txt');
+   paraImgtext.textContent = 'The creator of Linux & Git';
+
+    // Sal Khan
+
+   var divSal = document.createElement('div');
+   parnt.appendChild(divSal);
+   divSal.setAttribute('class', 'box2 class2 txt');
+   var divSal1 = document.createElement('div');
+   divSal.appendChild(divSal1);
+   divSal1.setAttribute('class', 'box3');
+   var imagSalkhn = document.createElement('img');
+   var paraImgkhn = document.querySelector('.box3');
+   paraImgkhn.appendChild(imagSalkhn);
+   imagSalkhn.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Salman_Khan_TED_2011.jpg/220px-Salman_Khan_TED_2011.jpg');
+   imagSalkhn.setAttribute('alt', 'Sal_Khan')
+   imagSalkhn.setAttribute('width', '150px')
+   imagSalkhn.setAttribute('height', '200px')
+
+    // Sal khan : Intro
+   var parntSal = document.querySelector('.box2');
+   var divSalcont = document.createElement('div');
+   divSalcont.setAttribute('id', 'second');
+   divSalcont.setAttribute('class', 'class2  box4');
+   parntSal.appendChild(divSalcont);
+   divSalcont.textContent = 'Sal Khan';
+
+   var paraSalintro = document.createElement('p');
+   var parntSalCont = document.getElementById('second');
+   parntSalCont.appendChild(paraSalintro);
+   paraSalintro.setAttribute('class', 'txt2');
+   paraSalintro.textContent = 'Salman Khan is the founder of Khan Academy which has a mission of providing a free world-class education for anyone,anywhere';
+
+    //Dennis Ritchie and Ken thompson
+   var divKenritch = document.createElement('div');
+   parnt.appendChild(divKenritch);
+   divKenritch.setAttribute('id', 'box5');
+
+    //Dennis Ritchie
+
+   var divRitchie = document.createElement('div');
+   var parntRichiken = document.getElementById('box5');
+   console.log(parntRichiken);
+   parntRichiken.appendChild(divRitchie);
+   divRitchie.setAttribute('id', 'third');
+   divRitchie.setAttribute('class', 'box6 fltr txt alignr');
+   divRitchie.textContent = 'Dennis Ritchie';
+
+   var paraRitchie = document.createElement('p');
+   var parntRitchie = document.getElementById('third');
+   parntRitchie.appendChild(paraRitchie);
+   paraRitchie.setAttribute('class', 'txt2');
+   paraRitchie.textContent = 'The creator of C Programming Language';
+
+    //Ken Thompson
+   var divKen = document.createElement('div');
+   parntRichiken.appendChild(divKen);
+   divKen.setAttribute('id', 'fourth');
+   divKen.setAttribute('class', 'box6 flt txt align');
+   divKen.textContent = 'Ken Thompson';
+
+   var paraKen = document.createElement('p');
+   var parntKen = document.getElementById('fourth');
+   parntKen.appendChild(paraKen);
+   paraKen.setAttribute('class', 'txt2');
+   paraKen.textContent = 'Designed and Implemented the original Unix operating system';
+
+   //Black divider box
+
+   var blkDivbox = document.createElement('div');
+   parntRichiken.appendChild(blkDivbox);
+   blkDivbox.setAttribute('class', 'flt box7');
+
+
+
+
+  }
+
+
+</script>
+
+</html>

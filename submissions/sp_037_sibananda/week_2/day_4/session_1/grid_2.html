@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+            #box{display: grid;
+                grid-gap:10px;
+               grid-template-columns: 224px 653px;
+               grid-template-rows: 100px 100px ;
+                          
+               }
+
+               #box1{grid-area:1 /1 /span 1/span 2;
+                     background-color: yellow;
+                     height: 64px;
+                     width: 932px;
+                     margin:10px;
+               }
+
+               #box2 {grid-area:2 /1 / span 2/span 1;
+                    background-color: green;
+                    height:555px;
+                    width: 225px;
+                    margin:10px
+               }
+               #box3 {grid-area:2 /2 /span 2;
+               background-color: orange;
+               height: 555px;
+               width:700px;
+               margin:10px;
+            
+               
+               margin:10px }
+        </style>
+
+    </head>
+    <body>
+        <div id="box">
+            <div id="box1"></div>
+            <div id="box2"></div>
+            <div id="box3"></div>
+        </div>
+
+    </body>
+</html>

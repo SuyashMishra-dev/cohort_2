@@ -64,6 +64,7 @@
             var email= document.getElementById("email").value;
             var mobile = document.getElementById("mobile").value;
 
+            //Validating Name Criteria 
             var count_name=name.length;
             if(count_name<3 || count_name>10){
                 document.getElementById("incorrect_name").innerHTML="Characters count should be within 3 to 10.";
@@ -73,18 +74,26 @@
                 document.getElementById("name").value="";
             }
 
+            //Validating Email Criteria
             var count_email=email.length;
-            for(var i=0;i<count_email;i++){
-                if(email[i]=="@"){
-                    for(;i<count_email;i++){
-                        if(email[i]=="."){
-                            document.getElementById("masai_email").innerHTML=document.getElementById("email").value;
-                            document.getElementById("email").value="";
-                        }
-                    }
-                }
-            }
+			var result = "";
+			for(var i=1;i<count_email;i++){
+				if(email[i]=="@"){
+					for(i=i+2;i<count_email;i++){
+						if(email[i]=="."){
+							result=true;
+						}
+					}
+				}
+			}
+			if(result==true){
+				document.getElementById("masai_email").innerHTML=document.getElementById("email").value;
+                document.getElementById("email").value="";
+			}else{
+				document.getElementById("incorrect_email").innerHTML="Check your email input....";
+			}
 
+            //Validating Mobile Criteria
             var count_mobile=mobile.length;
             if(count_mobile<10 || count_mobile>10){
                 document.getElementById("incorrect_number").innerHTML="You must enter 10-digit number.";
