@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W3.4.2_1 !-->
+  <h1>Change the buttons text color random value</h1>
+  <button id="changeColor">Click here to change my color</button>
+
+  <!-- FSD.W3.4.2_2 !-->
+  <h1>My color should change when I double click the button!</h1>
+  <button id="headColor">Double Click here to change the color of the h1 tag !</button>
+  
+  <!-- FSD.W3.4.2_3 !--> 
+  <h1>The buttons color changes to a random value when it is clicked! But only two times!</h1>
+  <button id="doubleChange">Click here to change my color!</button>
+  <script>
+    //starting text changing//
+  var buttonColor = document.getElementById("changeColor");
+  function random(number){
+    return Math.floor(Math.random()*number);
+  }
+    function switchColor(){
+      var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) +')';
+         buttonColor.style.color = randomColor
+    }
+         buttonColor.addEventListener('click', switchColor);
+            //start heading change//
+        var headColorChange = document.getElementById("headColor");
+    function  switchColorHead(){
+      var randomColor ='rgb(' + random(255) + ',' + random(255) + ','+ random(255) +')';
+      headColorChange.style.color = randomColor
+    }
+    headColorChange.addEventListener('dblclick' , switchColorHead);
+    console.log(headColorChange)
+    //start heading change only two times//
+    var buttonTwice = document.getElementById("doubleChange");
+    function buttonTwiceChange(){
+      var randomColor ='rgb(' + random(255) + ',' + random(255) + ','+ random(255) +')';
+      buttonTwice.style.color = randomColor
+    }
+      buttonTwice.addEventListener('dbclick' , buttonTwiceChange);
+      buttonTwice.removeEventListener('dbclick' , buttonTwiceChange);
+  </script>
+</body>
+</html>
