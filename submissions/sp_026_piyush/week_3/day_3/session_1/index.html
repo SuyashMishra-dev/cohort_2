@@ -66,8 +66,81 @@
 		//Write javascript for FSD.W3.3.1_3 here
 		function validateEmail(){
 			var email = document.getElementById("email").value;
+			var vaildFormat = false;
+			var i = 0;
+			var j = 0; 
+			validDot = false; 
+			validAt = false; 
 
+			for (i = 0; i < email.length; i++) {
+				if (email[0] != '.' && email[email.length-1] != '.') {
+					if (email[i] == '.') {
+						if (email[i+1] != '' && email[i+1] != ' ' && email[i+1] != '@' && email[i-1] != '@' && email[i-1] != ' ') {
+							validDot = true;
+						}
+					}
+				} 
+				
+				if (email[0] != '@' && email[email.length-1] != '@' && email[email.length-2] != '@' && email[i+1] != '.' && email[i-1] != '.' && email[i-1] != '' && email[i-1] != ' ' && email[i+1] != ' ') {
+					if (email[i] == '@' && email[i-1] != ' ') {
+						for (j = i; j < email.length; j++) {
+							if (email[j+1] == '.') {
+								validAt = true;
+							}
+						}				
+					}
+				}
+			}
+			// console.log(validDot);
+			// console.log(validAt);
+
+			if(validDot != true || validAt != true) {
+				alert('Invalid Email!');
+			} else {
+				alert('Valid Email!');
+			}	
 		}
 	</script>
 </body>
 </html>
+
+<!-- 
+
+
+The code snippets below don't work as intended but I need them for future references.
+
+
+
+email[email.length-1]
+email[0] == '@' 
+
+else {
+	validDot = true; 
+	validAt = true; 
+	validSpaceBetweenAtDot = true;
+	validAfterDot = true;
+}
+
+console.log(validDot);
+console.log(validAt);
+console.log(validSpaceBetweenAtDot);
+console.log(validAfterDot);
+			
+
+
+// } else if (email[0] != '@' || email[email.length-1] != '@' || email[email.length-2] != '@')  {
+				// 	if (email[i] == '@') {
+				// 		validAt = true;
+				// 		console.log('validAt');
+				// 	}
+				// } else if (email[i] == '@' && email[i+1] != '.' ) {
+				// 		validSpaceBetweenAtDot = true;
+				// 		console.log('validSpaceBetweenAtDot');
+				// } else if (email[i] == '.' && email[i+1] != '' || email[i+1] != ' ') {
+				// 		validAfterDot = true;
+				// 		console.log('validAfterDot'); 
+				// } else if () {
+			
+			
+			
+-->
