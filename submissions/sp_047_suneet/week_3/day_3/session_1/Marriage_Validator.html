@@ -1,0 +1,43 @@
+<html lang="en">
+    <head>
+        
+        <title>Marraiage Validator</title>
+
+    </head>
+    <body>
+        <!--Validator Starts-->
+        <h2>Check Your Age </h2>
+        <label>Enter your age:</label>
+        <input type = "number" name = "present_age" id = "age">
+        <label>Select Gender:</label>
+        <select id = "gender">
+            <option value = "male">Male</option>
+            <option value = "female">Female</option>
+        </select>
+        <button onclick = "marraiage_validator()">Check</button>
+        <!--Validator Ends-->
+
+        <script type = "text/javascript">
+            function marraiage_validator(){
+                var age = document.getElementById("age").value;
+                var gen = document.getElementById("gender").value;
+                if(gen == "male"){
+                    if(age>=21){
+                        alert("Eligible")
+                    }
+                    else{
+                        alert("Not Eligible");
+                    }
+                }
+                else if(gen == "female"){
+                    if(age>=18){
+                        alert("Eligible")
+                    }
+                    else{
+                        alert("Not Eligible");
+                    }
+                }
+            }
+        </script>
+    </body> 
+</html
