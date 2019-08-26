@@ -7,4 +7,5 @@ Build a web page for the topic assigned to you
 | sp_015 | Karthikeyan | Chess | [github](https://github.com/karthikeyanranasthala/masai-week-3) |
 | sp_021 | Tanveer | Tic Tac Toe | [github](https://github.com/tanveer86/masai-week-3) |
 | sp_033 | Sachin | Chess    | [github](https://github.com/sachinkapalidigi/masai-week-3) |
+| sp_043 | Suraj Singh | Tic Tac Toe | [github](https://github.com/Suraj10074/masai-week-3) |
 
