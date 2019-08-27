@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button onclick="favMovie()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="runtime()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="newCast()">Add cast member </button>
+
+
+  <script>
+    var movie= {
+      Name : "Masaan",
+      Director : "Neeraj Ghaywan",
+      Year: 2015,
+      Rating: 8.1,
+      Cast : ["Richa Chadha","Vicky Kaushal", "Sanjay Mishra", "Pankaj Tripathi", "Shweta Tripathi"]
+    }
+    var bodyE = document.querySelector('body');
+    function favMovie(){
+      var mov = document.createElement('p');    
+      mov.textContent = "My favorite movie is " + movie.Name + " which is directed by "+ movie.Director + ". It was released in the year " + movie.Year + ". The cast of the movie is " + movie.Cast[0] + ", " + movie.Cast[1] + ", " + movie.Cast[2] + ", " + movie.Cast[3] + " and " + movie.Cast[4] + "." ;
+      console.log(mov);
+      bodyE.appendChild(mov);
+    }
+    movie.Runtime = 109;
+    function runtime(){
+      var runtime = document.createElement('p');    
+      runtime.textContent = "The runtime is " + movie.Runtime +" minutes."; 
+      bodyE.appendChild(runtime);
+    }
+    movie.Cast[5] = "Vineet Kumar";
+    function newCast(){
+      var Cast = document.createElement('p');    
+      Cast.textContent = "This movie also features " + movie.Cast[5] + "."; 
+      bodyE.appendChild(Cast);
+      console.log(movie.Cast)
+    }
+  </script>
+</body>
+</html>

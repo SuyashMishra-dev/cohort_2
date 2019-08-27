@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>Unix</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <button onclick="main()">Create Page</button>
+</body>
+<script>
+    function main() {
+        unix();
+        sal_khan();
+        end();
+    }
+    function unix() {
+        var unix_div = document.createElement('div');
+        unix_div.setAttribute('id','main_div');
+        var unix_image = document.createElement('img');
+        unix_image.setAttribute('src',' https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/linus.jpg');
+        unix_div.appendChild(unix_image);
+        var unix_h1 = document.createElement('h1');
+        unix_h1.textContent = 'Linus Torvalds';
+        unix_div.appendChild(unix_h1);
+        var unix_h2 = document.createElement('h2');
+        unix_h2.textContent = 'The creator of Linux and Git';
+        unix_div.appendChild(unix_h2);
+        var content = document.querySelector('body');
+        content.appendChild(unix_div);
+    }
+    function sal_khan() {
+        var sal_khan_div = document.createElement('div');
+        sal_khan_div.setAttribute('id','middle_section');
+        var inner_div1 = document.createElement('div');
+        var sal_khan_image = document.createElement('img');
+        sal_khan_image.setAttribute('src','https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/khan.jpg');
+        inner_div1.appendChild(sal_khan_image);
+        sal_khan_div.appendChild(inner_div1);
+        var inner_div2 = document.createElement('div');
+        var sal_khanH1 = document.createElement('h1'); 
+        sal_khanH1.textContent = 'Sal Khan';
+        var sal_khanPara = document.createElement('p');
+        sal_khanPara.textContent = 'Salman khan is the founder of Khan academy which has a mission of providing a free world-classeducation for everyone, anywhere';
+        inner_div2.appendChild(sal_khanH1);
+        inner_div2.appendChild(sal_khanPara);
+        sal_khan_div.appendChild(inner_div2);
+        var bodyEl = document.querySelector('body');
+        bodyEl.appendChild(sal_khan_div);
+    }
+    
+    function end(){
+
+        var clearDiv = document.createElement('div');
+        clearDiv.style.clear = 'left';
+        var body_element = document.querySelector('body');
+        body_element.appendChild(clearDiv);
+        var end_div = document.createElement('div');
+        end_div.setAttribute('id','end_section');
+        var end_element_1 = document.createElement('div');
+        end_element_1.setAttribute('class' , 'end_element_1');
+        end_element_1_h1 = document.createElement('h1');
+        end_element_1_h1.textContent = 'Ken Thompson';
+        end_element_1_para = document.createElement('p');
+        end_element_1_para.innerHTML = '<p>Designed and Implemented the <br> original Unix operating system</p>';        
+        end_element_1.appendChild(end_element_1_h1);
+        end_element_1.appendChild(end_element_1_para);
+        end_div.appendChild(end_element_1);
+        var end_element_2 = document.createElement('div');
+        end_element_2.setAttribute('class' , 'end_element_2');
+        var end_element_3 = document.createElement('div');
+        end_element_3.setAttribute('class' , 'end_element_3');
+        end_element_3_h3 = document.createElement('h1');
+        end_element_3_h3.textContent = 'Denis Ritchie';
+        end_element_3_para = document.createElement('p');
+        end_element_3_para.textContent = 'The creator of C programming language';        
+        end_element_3.appendChild(end_element_3_h3);
+        end_element_3.appendChild(end_element_3_para);
+        end_div.appendChild(end_element_2);
+        end_div.appendChild(end_element_3);
+        var body_element = document.querySelector('body');
+        body_element.appendChild(end_div);
+    }
+</script>
+
+</html>
