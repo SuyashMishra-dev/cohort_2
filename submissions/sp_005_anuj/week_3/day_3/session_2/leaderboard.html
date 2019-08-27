@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LeaderBoard</title>
+        <link rel="stylesheet" href="leaderboard_style.css">
+    </head>
+    <body>
+        <div id="top-grid">
+            <p id="min"></p>
+            <p id="max"></p>
+            <p>MIN</p>
+            <p>MAX</p>
+        </div>
+        <div id="main">
+            <div>
+                <p id="scoreboard"></p>
+            </div>
+            <button onclick="press(1)">1</button>
+            <button onclick="press(2)">2</button>
+            <button onclick="press(3)">3</button>
+            <button onclick="press(4)">4</button>
+            <button onclick="press(5)">5</button>
+            <button onclick="press(6)">6</button>
+            <button onclick="press(7)">7</button>
+            <button onclick="press(8)">8</button>
+            <button onclick="press(9)">9</button>
+            <button onclick="press(0)">0</button>
+            <button onclick="main()">ENTER</button>
+        </div>
+
+        <script>
+            var result;
+
+            function press(number) {
+                var last_number = "";
+                last_number = document.getElementById("scoreboard").innerHTML;
+                result = Number(last_number + number);
+                document.getElementById("scoreboard").innerHTML = result;  
+            }
+			function main() {
+			var min_score = 100
+			min_score = Number(document.getElementById("min").innerHTML);
+			var max_score = 100
+			max_score = Number(document.getElementById("max").innerHTML);
+			if (max_score <= result ) {
+			document.getElementById("max").innerHTML = result;	
+			}
+			else{
+				document.getElementById("min").innerHTML = result;
+			}
+
+			document.getElementById("scoreboard").innerHTML = "";
+			}
+        </script>
+    </body>
+</html>
