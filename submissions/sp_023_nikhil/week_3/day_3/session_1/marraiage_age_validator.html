@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <title>Marriage Age Validator</title>
 
 </head>
+
 <body>
     <label for="">Gender</label>
     <select name="" id="gender">
@@ -18,22 +20,23 @@
     <button onclick="validate()">Check</button>
 
     <script type="text/javascript">
-    
-    var gender 
-    var year 
 
-    function validate() {
-        gender = document.getElementById('gender').value;
-        year = 2019 - Number(document.getElementById('year').value);
-        
-        if((year < 21) && (gender == 'male') || (year < 18) && (gender == 'female')) {
-            alert('Not eligible to marry yet')
+        var gender
+        var year
+
+        function validate() {
+            gender = document.getElementById('gender').value;
+            year = 2019 - Number(document.getElementById('year').value);
+
+            if ((year < 21) && (gender == 'male') || (year < 18) && (gender == 'female')) {
+                alert('Not eligible to marry yet')
+            }
+            else if ((year >= 21) && (gender == 'male') || (year >= 18) && (gender == 'female')) {
+                alert('Eligible to marry')
+            }
         }
-        else if ((year >= 21) && (gender == 'male') || (year >= 18) && (gender == 'female')) {
-            alert('Eligible to marry')
-        }
-    }
 
     </script>
 </body>
+
 </html>
