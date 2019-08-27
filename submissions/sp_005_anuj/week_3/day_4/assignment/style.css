@@ -1,0 +1,146 @@
+#display {
+        margin-top: 50px;
+        margin-left: 260px;
+        border: 5px solid black;
+        border-radius: 15px;
+        height: 50px;   
+        width: 880px;
+        font-size: 25px;
+        text-align: center;
+        padding-top: 5px;
+    }
+#btn_1{
+    margin-top : 20px;
+    margin-left: 260px; 
+    border-radius: 15px;
+}
+#deletion {
+    height: 60px;
+    width: 60px;
+    border: 2px solid black;
+    border-radius: 15px;   
+}    
+.color{
+    background-color: black;
+}
+.special_char{
+    font-family: sans-serif;
+    font-size: 25px;
+    text-align: right;
+    color: white;  
+    margin-top: -25px; 
+}
+.font
+{
+    font-family: sans-serif;
+    font-size: 25px;
+    text-align: left;
+    color: white;
+    margin-top: -5px;  
+}
+.font_number
+{
+    border: 2px solid black;
+    height: 60px;
+    width: 60px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 15px;
+}
+.font_char
+{
+    margin-left: 15px;
+    margin-top: 20px;
+    height: 60px;
+    width: 60px;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 25px;
+    text-align:center;
+    color: white;
+}
+.row1
+{
+    margin-left: 290px;
+    border-radius: 15px;
+}
+.row2
+{
+    margin-left: 330px;
+    border-radius: 15px;
+}
+.row3
+{
+    margin-left: 370px;
+    border-radius: 15px;
+}
+#space_bar
+{
+    margin-top: 20px;
+    margin-left: 400px;
+    height: 60px;
+    width: 550px;
+    border-radius: 15px;
+}
+#caps {
+    margin-left: 300px;
+    margin-top: 20px;
+    height: 50px;
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 25px;
+    text-align:center;
+    color: white;
+}
+
+#shift {
+    margin-left: 0px;
+    margin-top: 20px;
+    height: 50px;
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 25px;
+    text-align:center;
+    color: white;
+}
+
+#clean {
+    margin-left: 0px;
+    margin-top: 20px;
+    height: 50px;
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 25px;
+    text-align:center;
+    color: white;
+}
+#pass {
+    margin-left: 00px;
+    margin-top: 20px;
+    height: 50px;
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 25px;
+    text-align:center;
+    color: white;
+}
+#reverse {
+    margin-left: 0px;
+    margin-top: 20px;
+    height: 50px;
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 25px;
+    text-align:center;
+    color: white;
+}
+.special_key {
+
+    padding: 1px; 
+    color: black;
+}
