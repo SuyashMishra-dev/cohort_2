@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Registration
+        </title>
+        <style>
+            .flex_box {
+                display:flex;
+            }
+
+            .flex_box p{
+                color: red;
+                font-size: 20px;
+
+            }
+
+            body{
+                padding: 100px;
+                margin: 100px;
+                font-size: 30px;
+            }
+
+            .box_2 {
+                margin-left: 25px;
+                background: black;
+                color: white;
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "flex_box">
+        <div>
+            <label>NAME</label><br>
+            <input id = "name" type = "text"/><br>
+            <p id = "name_box"></p>
+            <label>EMAIL</label><br>
+            <input id = "email" type = "text"/><br>
+            <p id = "email_box"></p>
+            <label> MOBILE</label><br>
+            <input id = "mobile" type = "text"/><br>
+            <p id = "mobile_box"></p>
+            <button onclick="register()">REGISTER</button>
+        </div>
+        <div class="box_2">
+            <label>NAME</label><br>
+            <h6 id = "result_name"></h6><br>
+            <label>EMAIL</label><br>
+            <h6 id = "result_email" type = "text"></h6><br>
+            <label> MOBILE</label><br>
+            <h6 id = "result_mobile" type = "text"></h6><br>
+        </div>
+        </div>
+        <script>
+            function register() {
+
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var mobile   = document.getElementById("mobile").value;
+
+                validate_name(name);
+                validate_email(email);
+                validate_mobile(mobile);
+            }
+
+            function validate_name(name) {
+                if(name.length < 3 || name.length > 10) {
+                    document.getElementById("name_box").innerHTML = "Enter a vaild name";
+                }
+                else {
+                    document.getElementById("result_name").innerHTML = name;
+                    document.getElementById("name_box").innerHTML = '';
+                }
+            }
+
+            function validate_email(email) { 
+			    var at_rate_index = 0;
+			    var last_dot_index = 0;
+			    var at_rate_counter = 0;
+			    var last_dot_index = false ;
+                message = "Enter a valid email";
+    
+			    for(var i = email.length; i>=0 ; i--) {
+				    if((email[i] == '.') && (last_dot_index == 0)) {
+					    last_dot_index = i;
+				    }
+				    else if(email[i] == '@') {
+					    at_rate_index = i;
+					    at_rate_counter = at_rate_counter + 1;
+				    }
+				    if(at_rate_counter > 1) {
+                        document.getElementById("email_box").innerHTML = "message";
+					    break;
+				    }
+			    }
+			    if((last_dot_index > at_rate_index) && ((last_dot_index - at_rate_index) > 1) && (at_rate_index > 0) && (last_dot_index < email.length - 1) && at_rate_counter == 1) {
+				    message = ' ';
+                    document.getElementById("result_email").innerHTML = email;
+
+			    }
+			    document.getElementById("email_box").innerHTML = message;
+            }   
+
+            function validate_mobile(mobile) {
+                if(mobile.length < 10 || mobile.length > 10) {
+                    document.getElementById("mobile_box").innerHTML = "Enter a valid name";
+                }
+                else {
+                    document.getElementById("result_mobile").innerHTML = mobile;
+                    document.getElementById("mobile_box").innerHTML = '';
+                }
+            }
+        </script>
+    </body>
+</html>
