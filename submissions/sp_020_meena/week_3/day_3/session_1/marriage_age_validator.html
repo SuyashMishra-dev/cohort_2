@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Marriage age validator</title>
+    </head>
+    <body>
+        <h1>Check Your age for Marriage </h1>
+        <h2>Name</h2>
+        <input type="text" name="name" id="name">
+        <select id="gender">
+            <option value="Transgender">Transgender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <h3>Date of birth</h3>
+        <input type="Date" dateofbirth="Date" id="birth">
+        <button onclick="checkAge()">Check your age</button>
+        <script type="text/javascript">
+        function checkAge(){
+            var a=document.getElementById("birth").value
+            var g=document.getElementById("gender").value
+            var year=2019
+            var legal=0
+            var femaleage=0
+            var maleage=0
+            legal=year-a
+            console.log(legal)
+            femalemar=legal
+            if(g=male){
+                if(legal>=21){
+                    alert("Congratulations You are eligible for marriage")
+                }
+                else{
+                    alert("sorry You are not eligible for marriage") 
+                } 
+            }
+            if(g=female){
+                if(legal>=18){
+                    alert("Congratulations You are eligible for marriage")
+                }
+                else{
+                    alert("sorry You are eligible for marriage") 
+                } 
+            }
+            }
+        </script>
+    </body>
+</html>

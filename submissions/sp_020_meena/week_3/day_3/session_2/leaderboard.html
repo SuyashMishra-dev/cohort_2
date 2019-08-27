@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+ <html>
+     <head>
+         <title>Leader Board</title>
+         <style type="text/css">
+         .flex-box{
+             display: flex;
+             margin-left:30px;
+             padding:10px;
+         }
+         .flex-box div{
+             flex-basis:120px;
+             height:80px;
+             background-color: green;
+             margin:50px;
+             border:2px solid black;
+             font-size:40px;
+             text-align: center; 
+         }
+         .score-box{
+             height:100px;
+             width:200px;
+             margin-left:150px;
+             border:2px solid black;
+             background-color:gray; 
+             font-size:40px;
+             text-align: center; 
+         }
+         .boxes{
+            margin-left:100px;
+            background-color: orange;
+            height:50px;
+            width:50px;
+            text-align: center;
+            float:left;
+            margin-top: 10px;
+            border-radius:10px;
+            padding:0.5px;
+        }
+        .box-clear{
+            clear:left;
+        }
+         .box-zero{
+             margin-left:250px;
+         }
+         .enter-box{
+             height:50px;
+             width:150px;
+             margin-left:200px;
+             margin-top:20px;
+             border:2px solid black;
+             background-color:black; 
+             font-size:40px;
+             text-align: center;
+             color:whitesmoke; 
+         }
+        
+    
+         </style>
+     </head>
+     <body>
+         <div class="flex-box">
+             <div style="background-color: orangered">43</div>
+             <div>2019</div>
+         </div>
+         <div><p style="font-size:30px;margin-left:100px;margin-top:-50px">MIN</p><p style="font-size:30px;margin-left:300px;margin-top:-50px">MAX</p></div>
+         <div><p style="font-size:30px;margin-left:200px;margin-bottom:10px">Score</p></div>
+         <div><input class = "score-box" id= "score" type="text"></div>
+         <div class = "boxes" onclick = "showOne()" id= "one-1">1</div>
+         <div class = "boxes" onclick = "showTwo()" id = "two-2">2</div>
+         <div class = "boxes" onclick = "showThree()" id = "three-3">3</div>
+         <div class = "box-clear"></div>
+         <div class ="boxes" onclick ="showFour()" id = "four-4">4</div>
+         <div class = "boxes" onclick = "showFive()" id= "five-5">5</div>
+         <div class = "boxes" onclick = "showSix()" id = "six-6">6</div>
+         <div class = "box-clear"></div>
+         <div class = "boxes" onclick = "showSeven()" id = "seven-7">7</div>
+         <div class = "boxes" onclick = "showEight()" id = "eight-8">8</div>
+         <div class = "boxes" onclick = "showNine()" id = "nine-9">9</div>
+         <div class = "box-clear"></div>
+         <div class = "boxes  box-zero" onclick ="showZero()" id = "zero-0">0</div>
+         <div class = "box-clear"></div>
+         <div class = "enter-box" onclick="enterNum()" id = "enter">Enter</div>
+        <script type = "text/javascript">
+            var total="";
+               var scr = document.getElementById("score");
+               
+
+            function  showOne(){
+                var one = 1;
+                total = total+1;
+                scr.value = total;
+               // alert(total)
+  
+            }
+            function  showTwo(){
+                var two = 2;
+                total = total+2;
+                scr.value = total;
+            }
+            function showThree(){
+                var three = 3;
+                total = total+3;
+                scr.value = total;
+            
+            }
+            function showFour(){
+                var four = 4;
+                total = total+4;
+                scr.value = total;
+                
+            }
+            function showFive(){
+                var five = 5;
+                total = total+5;
+                scr.value = total;
+                
+            }
+            function showSix(){
+                var six = 6;
+                total = total+6;
+                scr.value = total;
+                
+            }
+            function showSeven(){
+                var seven = 7;
+                total = total+7;
+                scr.value = total;
+                
+            }
+            function showEight(){
+                var eight = 8;
+                total = total+8;
+                scr.value = total;
+                
+            }
+            function showNine(){
+                var nine = 9;
+                total = total+9;
+                scr.value = total;
+                
+            }
+            function showZero(){
+                var zero = 0;
+                total = total+0;
+                scr.value = total;
+                
+            }
+            function enterNum(){
+                if(scr < 43) {
+                    alert("tou didn't get minimum marks");
+                }
+                else{
+                    alert("you got more than maximum marks");
+                } 
+            }
+        </script>
+
+     </body>
+ </html>
+
+    

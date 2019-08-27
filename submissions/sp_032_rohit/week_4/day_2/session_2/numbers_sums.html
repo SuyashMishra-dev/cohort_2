@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Number Sums
+    </title>
+    <body>
+        <h1>Click the button to get the sums of the input numbers</h1>
+        <input id="numInput" type="text"/>
+        <button onclick="evenSum()">Even Positions Sum</button>
+        <button onclick="oddSum()">Odd Positions Sum</button>
+        <button onclick="even()">Even Sum</button>
+        <button onclick="odd()">Odd Sum</button>
+        <button onclick="singleSum()">Single digit Sum</button>
+        <button onclick="doubleSum()">Double digit Sum</button>
+    </body>
+    <script>
+        var numbers=[];
+        var sum = 0;
+        function evenSum(){
+        numbers = document.getElementById("numInput").value;
+            for (var i = 0; i < numbers.length;i++){
+                if (i % 2 == 1){
+                    sum = sum + Number(numbers[i+1]);
+                }
+            }
+            console.log(document.getElementById("numInput").value)
+            console.log(sum)
+        }
+    
+    </script>
+</html>
