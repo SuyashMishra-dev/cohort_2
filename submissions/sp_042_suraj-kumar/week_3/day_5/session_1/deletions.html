@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <div id="headings">
+            <h5>First H5</h5>
+            <h5>Second H5</h5>
+            <h5>Third H5</h5>
+        </div>
+        <div id="cont">
+            <div class="green">First DIV</div>
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button onclick="removeH1()">Remove H1</button>
+        <button onclick="removeH3()">Remove H3</button>
+        <button onclick="removeH5()">Remove H5</button>
+        <button onclick="removeRed()" >Remove Red</button>
+        <button onclick="removeDivs()">Remove DIVS</button>
+        <script type="text/javascript">
+
+        function removeH1() {
+            var heading = document.querySelector('body');
+            var firstheading=document.querySelector('h1');
+            heading.removeChild(firstheading); 
+    
+        }
+        function removeH3() {
+            var heading3=document.querySelector('body');
+            var h3=document.querySelector('h3');
+            heading3.removeChild(h3);
+            var heading32=document.querySelector('body');
+            var h3=document.querySelector('h3');
+            heading32.removeChild(h3);
+
+
+        }
+     
+
+        function removeH5() {
+                    for(var i=0; i<=3;i++)
+                    {
+                    var heading5=document.querySelector('div');
+                    var h5= document.querySelector('h5');
+                    heading5.removeChild(h5);
+                    }
+                }
+
+                function removeRed() {
+                    var contDiv = document.getElementById("cont");
+                    var paras = document.querySelectorAll('.red');
+                    for(i=0; i < paras.length; i++){
+                        contDiv.removeChild(paras[i]);
+                    }
+      
+                }
+
+                function removeDivs()
+                {
+                
+                var parent=document.getElementById('cont');
+                var child=document.querySelector('.red');
+                var child2=document.querySelector('.green');
+                var child3=document.querySelector('.blue');
+                parent.removeChild(child);
+                parent.removeChild(child2);
+                parent.removeChild(child3);
+            }
+        </script>
+    </body>
+</html>
