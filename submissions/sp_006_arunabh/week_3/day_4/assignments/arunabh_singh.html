@@ -276,16 +276,11 @@
         function g() {
             if(change_caps.style.color == "green") {
                 display.innerHTML = display.innerHTML + "G";
-                if(change_clean.style.color == "green") {
-                    obscene_words();
-                }
             }
             else{
                 display.innerHTML = display.innerHTML + "g";
-                if(change_clean.style.color == "green") {
-                    obscene_words();
-                }
             }
+            obscene_words();
         }
         function h() {
             if(change_caps.style.color == "green") {
@@ -476,6 +471,7 @@
         function pwd_color(){
             if(change_pwd.style.color == ""){
                 change_pwd.style.color = "green";
+                password_mode();
             }
             else {
                 change_pwd.style.color = "";
@@ -500,6 +496,7 @@
         function rev_color(){
             if(change_rev.style.color == ""){
                 change_rev.style.color = "green";
+                reverse_mode();
             }
             else {
                 change_rev.style.color = "";
@@ -508,17 +505,39 @@
         change_rev.addEventListener('click' , rev_color);
 
         function obscene_words() {
-            if(display.innerHTML == "ball kicking" || display.innerHTML == "ball licking" || display.innerHTML == "ball sucking") {
-                display.innerHTML = "b**********g";
+            if(change_clean.style.color == "green") {
+                if(display.innerHTML == "ball kicking" || display.innerHTML == "ball licking" || display.innerHTML == "ball sucking") {
+                    display.innerHTML = "b**********g";
+                }
+                else if(display.innerHTML == "pegging" || display.innerHTML == "pissing" || display.innerHTML == "piss pig" || display.innerHTML == "pisspig") {
+                    display.innerHTML = "p**********g";
+                }
+                else if(display.innerHTML == "raping" || display.innerHTML == "rimming") {
+                    display.innerHTML = "r*****g";
+                }
+                else if(display.innerHTML == "lovemaking") {
+                    display.innerHTML = "l********g";
+                }
             }
-            else if(display.innerHTML == "pegging" || display.innerHTML == "pissing" || display.innerHTML == "piss pig" || display.innerHTML == "pisspig") {
-                display.innerHTML = "p**********g";
+        }
+
+        function password_mode(){
+            var input = [display.innerHTML];
+            var pwd_hide = "";
+            for(var i=0; i<input.length; i++) {
+                pwd_hide = pwd_hide + "*";
             }
-            else if(display.innerHTML == "raping" || display.innerHTML == "rimming") {
-                display.innerHTML = "r*****g";
-            }
-            else if(display.innerHTML == "lovemaking") {
-                display.innerHTML = "l********g";
+            display.innerHTML = display.innerHTML+pwd_hide;
+        }
+
+        function reverse_mode() {
+           var input = display.innerHTML;
+           var reverse_string = "";
+           if(change_rev.style.color == "green"){
+                for(var i=input.length-1; i>=0; i--){
+                    reverse_string = reverse_string + input[i];
+                }
+                display.innerHTML=reverse_string;
             }
         }
         </script>
