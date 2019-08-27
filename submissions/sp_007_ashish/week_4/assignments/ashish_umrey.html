@@ -1,0 +1,366 @@
+<html>
+    <head>
+    <style type="text/css">
+    .body{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .area{
+        height: 900px;
+        width: 520px;
+        border:2px dotted black;
+        margin-left: 600px;
+        float: left;
+        margin-top: 20px;
+    }
+    .nextBox{
+        height: 900px;
+        width: 520px;
+       
+        margin-left: 1200px;
+        margin-top: 20px;
+       
+    }
+    .boxRed{
+        height:80px;
+        width: 100px;
+        border: 2px solid black;
+        background: red;
+        float: left;
+        margin: 30px;
+        text-align: center;
+        font-size: 30px;
+        }
+    .boxScore{
+        border: 2px solid black;
+        margin-top: 20px;
+        margin-left: 160px;
+        height: 80px;
+        width: 180px;
+        background: gray;
+        font-size: 30px;
+        text-align: center;
+    }    
+    .boxGreen{
+        height:80px;
+        width: 100px;
+        border: 2px solid black;
+        float: right;
+        background: green;
+        margin: 30px;
+        text-align: center;
+        font-size: 30px;
+    } 
+    .textR{
+        clear: left;
+        float: left;
+        margin-left:50px;
+        font-size: 20px;
+
+    }
+    .textG{
+       
+        float: right;
+        margin-right: 40px;
+        font-size: 20px;
+    }
+    .divi{
+        border:2px solid black;
+    }
+    .textScore{
+        clear: right;
+        float: right;
+        margin-right: 255px;
+        font-size: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
+    .score{
+        height:90px;
+        width: 250px;
+        clear: right;
+        float: left;
+        border:2px solid black;
+        margin-left: 120px;
+        text-align: center;
+        font-size: 30px;
+        background: gray;
+    }   
+    .next{
+        clear: left;
+        float: left;
+        
+    }
+    .number{
+        height:70px;
+        width: 70px;
+        border: 2px solid black;
+        float: left;
+        margin-top: 20px;
+        text-align: center;
+        margin-left: 75px;
+        padding:0.5 px;
+        font-size: 30px;
+    }
+    .enter{
+        height:50px;
+        width: 250px;
+        border: 2px solid black;
+        float: left;
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        background: black;
+        margin-left: 140px;
+        margin-top:5px;
+
+    }
+    .removeALL{
+        height: 50px;
+        width: 250px;
+        border: 2px solid black;
+        color: white;
+        background: black;
+        float: right;
+        text-align: center;
+        margin-right: 250px;
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    .green{
+        background: green;
+    }
+    .orange{
+        background: orange;
+    }
+    .white{
+        background: white;
+        border: 2px solid white;
+    }
+    .purple{
+        background: purple;
+    }
+    .total{
+        text-align: center;
+        margin: 10px;
+        font-size: 30px;
+    }
+    </style>
+    </head>
+    <body >
+               <div class="area"> 
+                   <div class="total" >TOTAL</div>
+                    <div><input class="boxScore" id="totalScore"></div>
+                    <div><input class="boxRed" id="min_id"></div>
+                    <div><input class="boxGreen" id="max_id"></div>
+                    <div class="textR ">MIN</div>
+                    <div class="textG ">MAX</div>
+                    <div class="textScore">Score</div>
+                    <div><input class="score" type="text" id="score_id"></div>
+                    <div class="next"></div>
+                    
+                    <div class="number green" onclick="showNum1()" id="one_id">1</div>
+                    <div class="number orange" onclick="showNum2()" id="two_id">2</div>
+                    <div class="number green" onclick="showNum3()" id="three_id">3</div>
+                    <div class="next"></div>
+                    <div class="number orange" onclick="showNum4()" id="four_id">4</div>
+                    <div class="number orange" onclick="showNum5()" id="five_id">5</div>
+                    <div class="number orange" onclick="showNum6()" id="six_id">6</div> 
+                    <div class="next"></div>
+                    <div class="number orange" onclick="showNum7()" id="seven_id">7</div>
+                    <div class="number orange" onclick="showNum8()" id="eight_id">8</div>
+                    <div class="number orange" onclick="showNum9()" id="nine_id">9</div> 
+                    <div class="next"></div>
+                    <div class="number white" onclick="showNum()" id=""></div>
+                    <div class="number purple" onclick="showNum0()" id="zero_id">0</div>
+                    <div class="number white" id=""></div>
+                    <div class="next"></div>
+                    <div class="enter black" onclick="calculate()">Enter</div>
+               </div>
+               <div>
+                    <div id="nextBox">
+                            <div class="total" id="scoreId">Game Score</div>
+                            <div>
+                                    <div class="removeAll" onclick="clickRemoveAll()">REMOVE ALL</div>
+                                    <div class="removeAll" onclick="clickOdd()">REMOVE ODD</div>
+                                    <div class="removeAll" onclick="clickEven()">REMOVE EVEN</div>
+                                    <div class="removeAll" onclick="clickremoveLast()">REMOVE LAST</div>
+                            </div>
+                            
+                            
+                    </div>
+               </div>
+               
+              
+               <script type="text/javascript">
+               var total="";
+               document.getElementById("min_id").value =50;
+               document.getElementById("max_id").value =100;
+               var globalMin=document.getElementById("min_id");
+               var globalMax=document.getElementById("max_id");
+               var myInput = document.getElementById('score_id');
+               var finalScore = document.getElementById("totalScore");
+               var scoreList=[];
+               var gameNo=0;
+               function showNum1(){
+                   var one = 1;
+                   total= total+one;
+                   var score = document.getElementById("score_id").value=total;
+                  
+               }
+               function showNum2(){
+                   var two = 2;
+                   total=total+two;
+                   var score = document.getElementById("score_id").value=total;
+                   
+               }
+               function showNum3(){
+                   var three = 3;
+                   total=total+three;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum4(){
+                   var four = 4;
+                   total=total+four;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum5(){
+                   var five = 5;
+                   total=total+five;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum6(){
+                   var six = 6;
+                   total=total+six;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum7(){
+                   var seven = 7;
+                   total=total+seven;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum8(){
+                   var eight = 8;
+                   total=total+eight;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum9(){
+                   var nine = 9;
+                   total=total+nine;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function showNum0(){
+                   var zero = 0;
+                   total=total+zero;
+                   var score = document.getElementById("score_id").value=total;
+               }
+               function calculate(){
+                   console.log(globalMin.value);
+                   console.log(globalMax.value);
+                   console.log(myInput.value);
+                   if(myInput.value<globalMin.value*1){
+                       console.log("myvlaue is less");
+                    globalMin.value=myInput.value;
+                    total="";
+                    document.getElementById("score_id").value =total;
+                   }
+                   else if(myInput.value> globalMax.value*1){
+                       console.log("my value is More");
+                      globalMax.value=myInput.value;
+                      total="";
+                    document.getElementById("score_id").value =total;
+                    
+                   }
+                   else{
+                    total="";
+                    document.getElementById("score_id").value =total;
+                     
+                   }
+                   finalScore.value = globalMin.value*1+globalMax.value*1;
+                   scoreList[gameNo]=finalScore.value;
+                   var headingOne = document.createElement('div');
+                   var nexthead  = document.getElementById('scoreId');
+                   headingOne.innerHTML= "Game-"+(gameNo+1)+"-"+scoreList[gameNo];
+                   gameNo++;
+                   nexthead.appendChild(headingOne);
+                   console.log(scoreList);
+               }
+               function clickRemoveAll(){
+                var nexthead  = document.getElementById('scoreId');
+                var divs = nexthead.querySelectorAll('div');
+                 for(var i=0;i<divs.length;i++){
+                     nexthead.removeChild(divs[i]);
+                     scoreList[i+1]=0;
+                 }
+                 console.log(scoreList);
+               }
+               function clickOdd(){
+                var nexthead  = document.getElementById('scoreId');
+                var divs = nexthead.querySelectorAll('div');
+                for(var i=0;i<divs.length;i++){
+                     nexthead.removeChild(divs[i]);
+                     
+                 }
+                console.log(divs.length);
+                 var gameno=1;
+                   for(var i=0;i<scoreList.length;i++){
+                    if(i%2==1){
+                       
+                       var headingOne = document.createElement('div');
+                       headingOne.innerHTML="Game-"+gameno+"-"+scoreList[i];
+                       nexthead.appendChild(headingOne);
+                       gameno++;
+                       }
+                }
+               
+
+               }
+
+               function clickEven(){
+                var gameno=1;
+                var nexthead  = document.getElementById('scoreId');
+                var divs = nexthead.querySelectorAll('div');
+                for(var i=0;i<divs.length;i++){
+                     nexthead.removeChild(divs[i]);
+                     
+                 }
+                console.log(divs.length);
+                   for(var i=0;i<scoreList.length;i++){
+                    if(i%2==0){
+                       
+                       var headingOne = document.createElement('div');
+                       headingOne.innerHTML="Game-"+gameno+"-"+scoreList[i];
+                       nexthead.appendChild(headingOne);
+                       gameno++;
+
+                       
+                    }
+                }
+
+               }
+               function clickremoveLast(){
+                   var gameno=1;
+                   var nexthead  = document.getElementById('scoreId');
+                var divs = nexthead.querySelectorAll('div');
+                for(var i=0;i<divs.length;i++){
+                     nexthead.removeChild(divs[i]);
+                     
+                 }
+                console.log(divs.length);
+                   for(var i=0;i<scoreList.length-1;i++){
+                    
+                       
+                       var headingOne = document.createElement('div');
+                       headingOne.innerHTML="Game-"+gameno+"-"+scoreList[i];
+                       nexthead.appendChild(headingOne);
+                       gameno++;
+
+                       
+                 
+
+               }
+               }
+                  
+               </script>
+        
+    </body>
+</html>

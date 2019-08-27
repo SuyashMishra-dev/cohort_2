@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Tax Calculator
+        </title>
+        <style>
+            .tax_box {
+                border: 5px solid black;
+            }
+
+            .savings_box {
+                border: 5px solid black;
+                margin-top: 50px;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div class="tax_box">
+            <h1>Calculate your tax</h1>
+            <input id = "income" name = "total annual income"/>
+            <h1 id = "show_tax"></h1>
+            <button onclick="calculate_tax()">Calculate_Tax</button><br>
+        </div>
+
+        <div class="savings_box">
+                <h1>Calculate your savings</h1>
+            <input id = "savings" name = "total annual savings"/>
+            <h1 id = "show_savings"></h1>
+            <button onclick="calculate_savings()">Calculate_Savings</button>
+        </div>
+    </body>
+    <script>
+        function calculate_tax() {
+            var income = document.getElementById("income").value;
+            if(income < 250000) {
+                alert('No tax');
+            }
+            else if(income >= 250000  && income <= 500000) {
+                var tax = (income * 10/100);
+                document.getElementById("show_tax").innerHTML = "You have to pay:"+ " " + tax + " " + "As tax";
+                
+            }
+            else if(income >= 500000 && income <= 1000000) {
+                var tax = (income * 20/100);
+                document.getElementById("show_tax").innerHTML = "You have to pay:"+ " " + tax  + " " + "As tax";
+            }
+            else if(income > 1000000) {
+                var tax = (income * 30/100);
+                document.getElementById("show_tax").innerHTML = "You have to pay:"+ " " + tax  + " " + "As tax";
+            }
+        }
+
+        function calculate_savings() {
+            var income1 = document.getElementById("savings").value;
+            if(income1 < 500000) {
+                var savings = (income1 * 50/100);
+                document.getElementById("show_savings").innerHTML = savings + " " + "is deducted as savings";
+            }
+            else if(income1 < 1000000) {
+                var savings = (income1 * 30/100);
+                document.getElementById("show_savings").innerHTML = savings + " " + "is deducted as savings";
+            }
+            else if(income1 > 1000000) {
+                var savings = (income1 * 10/100);
+                document.getElementById("show_savings").innerHTML = savings + " " + "is deducted as savings";
+            }
+        }
+        
+    </script>
+</html>
