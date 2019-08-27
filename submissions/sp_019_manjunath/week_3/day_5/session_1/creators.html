@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button onclick="createHOne()" id="createId">Create H1</button>
+        <button onclick="createHThree()">Create 2 H3</button>
+        <button onclick="createDiv()">Create DIVS</button>
+        <button onclick="addStudents()">Add Students</button>
+        <button onclick="addCopyright()">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+            function createHOne() {
+                var createHOne = document.createElement('h1');
+                createHOne.textContent = 'MASAI';
+
+                var appendVariable = document.querySelector('div');
+                appendVariable.appendChild(createHOne);            
+            }
+
+            function createHThree() {
+                var createHThree = document.createElement('h3');
+                createHThree.textContent = 'A Transformation in education!';
+                var createHThree2 = document.createElement('h3');
+                createHThree2.textContent = 'Learn to earn, pay when you get';
+                
+
+                var selectAppendVariable = document.querySelector('div');
+                selectAppendVariable.appendChild(createHThree);
+                var selectAppendVariable2 = document.querySelector('div');
+                selectAppendVariable2.appendChild(createHThree2);                
+            }
+            function createDiv() {
+                var index = 1;
+                for(var i = 0; i<10; i++){
+                    var createDivVariable = document.createElement('div');                
+                    createDivVariable.textContent = 'Content' + index
+                    
+                    var selectAppendVariable = document.querySelectorAll('div');
+                    selectAppendVariable[1].appendChild(createDivVariable);
+                    index+= 1
+                }
+                
+            }
+            function addStudents(){
+
+                var createStudentVariable = document.createElement('li');
+                createStudentVariable.innerHTML = '<li>Ajay</li><li>Akshay</li><li>Anusha</li><li>Chandrashekhar</li><li>Haren</li><li>Hasan</li><li>Mahesh</li><li>Mousumi</li><li>Pavan</li><li>Rahul</li><li>Sumanta</li><li>Venkatesh</li><li>Vetrival</li><li>Vijayendra</li>';
+
+                var appendVariable = document.querySelector('li');
+                appendVariable.appendChild(createStudentVariable);                                                 
+            }
+
+            function addCopyright() {
+                var createVariable = document.createElement('p');
+                createVariable.textContent = ' masai 2019';
+
+                var aboveElementVariable = document.getElementById('createId');
+                
+                var insertVariable = document.querySelector('body');
+                insertVariable.insertBefore(createVariable,aboveElementVariable);
+            }
+
+        </script>
+    </body>
+</html>
