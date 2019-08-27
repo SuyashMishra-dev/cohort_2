@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- FSD.W4.2.1_1 !-->
+    <h1>Click the button to see information about my favourite movie</h1>
+    <button onclick="movie_information()">Movie Information!</button>
+    <div id = "div1"></div>
+
+    <!-- FSD.W4.2.1_2 !-->
+    <button onclick="runtime()" id="addkey">Add Runtime to the movie object! </button>
+  
+    <!-- FSD.W4.2.1_3 !-->
+    <button onclick="cast()">Add cast member </button>
+  
+    <script>
+
+      var movie = {
+        Name : "Avengers Endgame" ,
+        Director : "Anthony Russo, Joe Russo",
+        Year : 2019 ,
+        Rating : 8.6 ,
+        Cast : ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo ", "Chris Hemsworth" , "Scarlett Johansson"]
+      }
+    
+      function movie_information() {
+        var favourite = "My favourite movie is: " + movie.Name + "."
+                + "Director:" + movie.Director + "." + " Year:" + " " + movie.Year + "." 
+                + "Rating:" + " "+ movie.Rating + "."
+                + " Cast: " + movie.Cast;
+      
+        var output_para = document.createElement('p');
+        output_para.textContent = favourite ; 
+
+        var container = document.querySelector('#div1');
+        container.appendChild(output_para);
+      }
+
+      function runtime() {
+        movie.runtime = 3 + " " + "Hr" +  " " + 1 + " " + "Min";
+        var favourite = "My favourite movie is: " + movie.Name + "."
+                + "Director:" + movie.Director + "." + " Year:" + " " + movie.Year + "." 
+                + "Rating:" + " "+ movie.Rating + "."
+                + " Cast: " + movie.Cast + "." + "Runtime" + " " + movie.runtime;
+
+        var output_para = document.createElement('p');
+        output_para.textContent = favourite;
+
+        var container = document.querySelector("#div1");
+        container.appendChild(output_para); 
+      }
+      var addButton = document.querySelector('#addKey');
+      addButton.addEventListener('click', favourite);
+
+      function cast() {
+        movie.extracast = ["Benedict Cumberbatch", "Chadwick Boseman" , "Brie Larson"];
+        var favourite = "My favourite movie is: " + movie.Name + "."
+               + "Director:" + movie.Director + "." + " Year:" + " " + movie.Year + "." 
+               + "Rating:" + " "+ movie.Rating + "."
+               + " Cast: " + movie.Cast + "." + "Runtime" + " " + movie.runtime + "." + "Added Cast:" + movie.extracast + ".";
+
+      var output_para = document.createElement('p');
+      output_para.textContent = favourite;
+
+      var container = document.querySelector("#div1");
+      container.appendChild(output_para); 
+      }
+      var addButton = document.querySelector('#addKey');
+      addButton.addEventListener('click', favourite);
+      
+    </script>
+  </body>
+</html>
