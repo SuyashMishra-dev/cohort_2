@@ -1,70 +1,74 @@
 <html>
-    <head>
-        <title>Practise Creators</title>
-    </head>
-    <body>
-        <div id="headings">
-        </div>
-        <div id="cont">
-        </div>
-        <ul id="vikings">
-            <li>Priyanshu</li>
-        </ul>
-        <button onclick="createConth1()">Create H1</button>
-        <button onclick="createContth3()">Create 2 H3</button>
-        <button onclick="createTendivs()">Create DIVS</button>
-        <button onclick="studAdd()">Add Students</button>
-        <button onclick="copyRight()" id="btn" >Add Copyright</button>
-        <script>
-            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
-            function createConth1() {
-               var head1 = document.createElement('h1');
-               head1.textContent = "Masai";
-               var idElem = document.querySelector('#headings');
-               idElem.appendChild(head1); 
+
+<head>
+    <title>Practise Creators</title>
+</head>
+
+<body>
+    <div id="headings">
+    </div>
+    <div id="cont">
+    </div>
+    <ul id="vikings">
+        <li>Priyanshu</li>
+    </ul>
+    <button id='btn1' onclick="createConth1()">Create H1</button>
+    <button onclick="createContth3()">Create 2 H3</button>
+    <button onclick="createTendivs()">Create DIVS</button>
+    <button onclick="studAdd()">Add Students</button>
+    <button onclick="copyRight()">Add Copyright</button>
+    <script>
+        var students = ['Ajay', 'Akshay', 'Anusha', 'Chandrashekhara', 'Haren', 'Hasaan', 'Mahesh', 'Mousumi', 'Pavan', 'Rahul', 'Sumanta', 'Venkatesh', 'Vetrival', 'Vijayendra'];
+        function createConth1() {
+            var head1 = document.createElement('h1');
+            head1.textContent = "Masai";
+            var idElem = document.querySelector('#headings');
+            idElem.appendChild(head1);
+        }
+
+        function createContth3() {
+
+            var head3 = document.createElement('h3');
+            head3.textContent = "A Transformation in education!";
+            var idElem = document.querySelector('#headings');
+            idElem.appendChild(head3);
+
+            var head31 = document.createElement('h3');
+            head31.textContent = "Learn to earn, pay when you get.";
+            idElem.appendChild(head31);
+        }
+
+        function createTendivs() {
+            var divi = document.querySelector('#cont');
+            for (var i = 1; i < 11; i++) {
+                var divEach = document.createElement('div');
+                divEach.textContent = "Content" + i + "";
+                divi.appendChild(divEach);
             }
+        }
 
-            function createContth3(){
-                
-                var head3 = document.createElement('h3');
-                head3.textContent = "A Transformation in education!";
-                var idElem = document.querySelector('#headings') ;
-                idElem.appendChild(head3);
-
-                var head31 = document.createElement('h3');
-                head31.textContent = "Learn to earn, pay when you get.";
-                idElem.appendChild(head31);
+        function studAdd() {
+            var ulist = document.querySelector('#vikings');
+            for (var i = 0; i < students.length; i++) {
+                //  console.log("student name" +students[i] )
+                var li = document.createElement('li');
+                li.innerHTML = students[i];
+                console.log(li.innerHTML);
+                ulist.appendChild(li);
             }
+        }
 
-            function createTendivs() {
-                var divi = document.querySelector('#cont');
-                for (var i = 1; i < 11; i++) {
-                var divEach =  document.createElement('div');
-                divEach.textContent = "Content" + i +"";
-                divi.appendChild(divEach);}
-            }
+        function copyRight() {
+            var parg = document.createElement('p');
+            parg.textContent = "@ masai 2019";
+            var btn = document.getElementById('btn1');
+            console.log(btn);
+            var bodyEle = document.querySelector('body');
+            bodyEle.insertBefore(parg, btn);
 
-            function studAdd() {
-                var ulist = document.querySelector('#vikings');
-                //var li = document.createElement('li');
-                for (var i = 0 ; i < students.length; i++){
-                  //  console.log("student name" +students[i] )
-                    var li = document.createElement('li');
-                    li.innerHTML = students[i];
-                    console.log(li.innerHTML);
-                    ulist.appendChild(li);
-                } 
-            }
+        }
 
-            function copyRight() {
-                var parg = document.createElement('p');
-                parg.textContent = "@ masai 2019";
-                var btn = document.getElementById('btn');
-                var bodyEle = document.querySelector('body');
-                bodyEle.insertBefore(parg,btn);
+    </script>
+</body>
 
-            }
-
-        </script>
-    </body>
 </html>
