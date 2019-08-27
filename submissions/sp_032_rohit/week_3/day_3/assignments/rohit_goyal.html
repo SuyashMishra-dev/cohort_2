@@ -62,12 +62,12 @@
             var NetIncome
             if(Income <= 250000){
                 NetIncome = Income;
-                IncomeTax = "No Income Tax!"
+                IncomeTax = 0;
             }
             else if (250000 < Income && Income <= 500000){
                 NetIncome = ((Income - (Savings*.50))-250000);
                 if (NetIncome < 0){
-                    IncomeTax = "No Income Tax!"
+                    IncomeTax = 0;
                 }
                 else {
                 IncomeTax = NetIncome*0.10
@@ -87,7 +87,7 @@
                 }
                 IncomeTax = ((NetIncome*0.30) + 125000)
             }
-            document.getElementById('income-tax').innerHTML =  IncomeTax;
+            document.getElementById('income-tax').innerHTML =  "Your Income Tax is Rs. " + IncomeTax+"/-";
         }
     </script>
 </html>
