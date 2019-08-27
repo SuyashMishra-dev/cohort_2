@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button onclick="createH1()" id="h1">Create H1</button>
+        <button onclick="createH3()">Create 2 H3</button>
+        <button>Create DIVS</button>
+        <button onclick="addStudents()">Add Students</button>
+        <button onclick="addCopyright()" id="copyright">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+            
+            function createH1()
+            {
+                var div=document.getElementById('headings');
+                var heading=document.createElement('h1');
+                heading.textContent="MASAI";
+                div.appendChild(heading);
+            }
+            function createH3()
+            {
+                var div=document.getElementById("headings");
+                var heading=document.createElement('h3');
+                var heading1=document.createElement('h3');
+                heading.textContent="A Transformation in Education.";
+                heading1.textContent="Learn to earn, pay when you get";
+                div.appendChild(heading);
+                div.appendChild(heading1);
+            }
+            function addStudents()
+            {
+                var div=document.createElement('div');
+                var ul=document.getElementById("vikings");
+                div.innerHTML="<ul><li>Ajay</li><li>Akshay</li><li>Anusha</li><li>Chandarashekhara</li><li>Haren</li><li>Hassan</li><li>Mahesh</li><li>Mousami</li><li>Pavan</li><li>Rahul</li><li>Sumanta</li><li>Venkatesh</li><li>Vetrival</li><li>Vijayendra</li></ul>"
+                ul.appendChild(div);
+            }
+            function addCopyright()
+            {
+                var para=document.createElement('p');
+                var bodyElement=document.querySelector('body');
+                var btn=document.getElementById("h1")
+                para.textContent="@masai 2019";
+                bodyElement.insertBefore(para , btn);
+            }
+        </script>
+    </body>
+</html>
