@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <style>
+        .flexbox
+        {
+            display:flex;
+            direction:row;
+        }
+        .flexbox div{
+            padding:20px;
+            float: left;
+        }
+        #black-box
+        {
+            background-color: black;
+            color: white;
+            height:400px;
+            width: 200px;
+        }
+        .email
+        {
+            margin-top: 50px;
+
+        }
+       
+
+
+        </style>
+    </head>
+    <body>
+        <div class="flexbox">
+            <div>
+                <p>NAME</p>
+                <br>
+                <input type="text" id="name">
+                <p id="nameWarning"></p>
+                <p>EMAIL</p>
+                <br>
+                <input type="text" id="email">
+                <p id="emailWarning"></p>
+                <p>MOBILE</p>
+                <br>
+                <input type="text" id="mobile">
+                <p id="mobile_p"></p>
+                <p id="mobileWarning"></p>
+                <button onclick="register()">REGISTER</button>
+            </div>
+        
+        <div>
+            <div id="black-box">
+                <p>NAME</p>
+                <h1 id="nameInput">MASAI</h1>
+                
+                <p class="email">EMAIL</p>
+                <p id="emailInput">email@masaischool.com</p>
+
+                <p class="email"><b>MOBILE</b></p>
+                <p id="mobileInput">9876543210</p>            
+            </div>        
+        </div>
+    </div>
+
+    <script>
+          function register(){
+            var a = document.getElementById("name").value;
+            var b = document.getElementById("mobile").value; 
+            var emailid = document.getElementById("email").value;
+            var i = a.length;
+            var j = b.length;
+            if(i < 3){
+                document.getElementById("nameWarning").innerHTML="Name is lesser than 3 words"
+            }
+            else if(i > 10){
+                document.getElementById("nameWarning").innerHTML="Name is more than 10 words"
+            }
+            else {
+                document.getElementById("nameInput").innerHTML= a;
+            }
+			var Valid;
+			var Invalid;
+			for(var i = 0; i < emailid.length ; i++){
+				if(emailid[0]== "@" || emailid[emailid.length-1]== "@"){
+					Valid = false;
+					Invalid = true;				
+				}
+				else if(emailid[0]== "." || emailid[emailid.length-1]== "."){
+					Valid = false;
+					Invalid = true;				
+				}
+				else if(emailid == ""){
+					Valid = false;
+					Invalid = true;				
+				}
+				else{
+					if(emailid[i] == '@'){
+						Valid = true;
+						Invalid = false;
+						break;
+					}
+					else if(emailid[i]== "."){
+						Valid = true;
+						Invalid = false;
+						break;
+					}
+					else if(emailid[i]== "@" && emailid[i+1]=="."){
+						Valid = false;
+						Invalid = true;
+						break;
+					}
+					else {
+						Valid = false;
+						Invalid = true;
+					}
+				}
+            }
+            if (Valid == false && Invalid == true){
+                document.getElementById("emailWarning").innerHTML="Enter a valid email ID"
+            }
+            else {
+                document.getElementById("emailInput").innerHTML= emailid;
+            }
+
+            if(j !=10){
+                document.getElementById("mobileWarning").innerHTML="Enter a valid mobile number"
+            }
+            else {
+                document.getElementById("mobileInput").innerHTML= b;
+            }
+
+        }
+    
+    
+    
+    </script>
+    </body>
+</html>

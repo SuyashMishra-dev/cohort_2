@@ -8,4 +8,6 @@ Build a web page for the topic assigned to you
 | sp_021 | Tanveer | Tic Tac Toe | [github](https://github.com/tanveer86/masai-week-3) |
 | sp_033 | Sachin | Chess    | [github](https://github.com/sachinkapalidigi/masai-week-3) |
 | sp_043 | Suraj Singh | Tic Tac Toe | [github](https://github.com/Suraj10074/masai-week-3) |
+| sp_004 | Amit | Snakes and Ladders | [github](https://github.com/amit036/masai-week-3) |
+
 
