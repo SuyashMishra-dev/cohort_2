@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+    <title>Typewriter</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="display"></div>
+
+    <button id="btn_1" class="color font font_number" onclick="display('1')" value="1">1
+        <p class="special_char">!</p>
+    </button>
+    
+    <button  class="color font font_number" onclick="display('2')" value="2">2
+        <p class="special_char">@</p>
+    </button>
+
+    <button class="color font font_number" onclick="display('3')" value="3">3
+            <p class="special_char">#</p>
+    </button>
+
+    <button class="color font font_number" onclick="display('4')" value="4">4
+            <p class="special_char">$</p>
+    </button>
+
+    <button class="color font font_number" onclick="display('5')" value="5">5
+            <p class="special_char">%</p>
+    </button>
+
+    <button class="color font font_number" onclick="display('6')" value="6">6
+            <p class="special_char">^</p>
+    </button>
+
+    <button  class="color font font_number" onclick="display('7')" value="7">7
+            <p class="special_char">&</p>
+    </button>
+
+    <button class="color font font_number" onclick="display('8')" value="8">8
+            <p class="special_char">*</p>
+    </button>
+
+    <button  class="color font font_number" onclick="display('9')" value="9">9
+            <p class="special_char">(</p>
+    </button>
+
+    <button  class="color font font_number" onclick="display('0')" value="0">0
+            <p class="special_char">)</p>
+    </button>
+
+    <button id="deletion" class="color font" onclick="del()" value="del">DEL</button>
+
+    <button  class="color font_char row1" onclick="display('q')" value="1">Q  
+    </button>
+
+    <button  class="color font_char " onclick="display('w')" value="w">W   
+    </button>
+
+    <button  class="color font_char" onclick="display('e')" value="e">E    
+    </button>
+
+    <button  class="color font_char " onclick="display('r')" value="r">R  
+    </button>
+
+    <button  class="color font_char " onclick="display('t')" value="t">T  
+    </button>
+
+    <button  class="color font_char " onclick="display('y')" value="y">Y  
+    </button>
+
+    <button  class="color font_char " onclick="display('u')" value="u">U  
+    </button>
+
+    <button  class="color font_char " onclick="display('i')" value="i">I  
+    </button>
+
+    <button  class="color font_char " onclick="display('o')" value="o">O  
+    </button>
+
+    <button  class="color font_char " onclick="display('p')" value="p">P  
+    </button>
+
+    <button  class="color font_char row2 " onclick="display('a')" value="1">A
+    </button>
+
+    <button  class="color font_char " onclick="display('s')" value="s">S  
+    </button>
+
+    <button  class="color font_char " onclick="display('d')" value="d">D
+    </button>
+
+    <button  class="color font_char " onclick="display('f')" value="f">F
+    </button>
+    
+    <button  class="color font_char " onclick="display('g')" value="g">G  
+    </button>
+
+    <button  class="color font_char " onclick="display('h')" value="h">H  
+    </button>
+
+    <button  class="color font_char " onclick="display('j')" value="j">J  
+    </button>
+
+    <button  class="color font_char " onclick="display('k')" value="k">K  
+    </button>
+
+    <button  class="color font_char " onclick="display('l')" value="l">L  
+    </button>
+
+    <button  class="color font_char row3 " onclick="display('z')" value="l">Z  
+    </button>
+
+    <button  class="color font_char " onclick="display('x')" value="x">X  
+    </button>
+
+    <button  class="color font_char " onclick="display('c')" value="c">C  
+    </button>
+
+    <button  class="color font_char " onclick="display('v')" value="v">V
+    </button>
+
+    <button  class="color font_char " onclick="display('b')" value="b">B  
+    </button>
+
+    <button  class="color font_char " onclick="display('n')" value="n">N  
+    </button>
+
+    <button  class="color font_char " onclick="display('m')" value="m">M  
+    </button>
+
+    <button  class="color font_char " style="padding: 1px;font-size: 20px;" onclick="display('.com')" value=".com">.com  
+    </button>
+
+    <button id="space_bar" class="color " onclick="display(' ')" value=""> 
+    </button>
+    <div class="functionality"> 
+    
+    <button id="caps" style="padding: 1px; color: black;" onclick="Capslock()" value="caps">CAPS
+    </button>
+
+    <button id="shift" style="padding: 1px; color: black;" value="shift" onclick="Shift()">SHIFT
+    </button>
+
+    <button id="pass" style="padding: 1px; color: black;" onclick="password()" value="password">PASSWORD
+    </button>
+
+     <button id="reverse" style="padding: 1px; color: black;" onclick="reverse()" value="reverse">REVERSE
+    </button>
+
+    <button id="clean" style="padding: 1px; color: black;" value="clean" onclick="Clean()">CLEAN
+    </button>
+    </div>
+
+    <script>
+        var flag=false;
+        var shift=false;
+        var caps=false;
+        var clean=false;
+        function display(value)
+        {    
+            if(caps)
+            {
+               switch(value)
+               {
+                    case "a":
+                        value="A"
+                        break;
+                    case "b":
+                        value= "B"
+                        break;
+                    case "c":
+                        value="C"
+                        break;
+                    case "d":
+                        value="D"
+                        break;
+                    case "e":
+                        value="E"
+                        break;
+                    case "f":
+                        value="F"
+                        break;
+                    case "g":
+                        value="G"
+                        break;
+                    case "h":
+                        value= "H"
+                        break;
+                    case "i":
+                        value="I"
+                        break;
+                    case "j":
+                        value="J"
+                        break;
+                    case "k":
+                        value="K"
+                        break;
+                    case "l":
+                        value="L"
+                        break;
+                    case "m":
+                        value="M"
+                        break;
+                    case "n":
+                        value= "N"
+                        break;
+                    case "o":
+                        value="O"
+                        break;
+                    case "p":
+                        value="P"
+                        break;
+                    case "q":
+                        value="Q"
+                        break;
+                    case "r":
+                        value="R"
+                        break;
+                    case "s":
+                        value="S"
+                        break;
+                    case "t":
+                        value= "T"
+                        break;
+                    case "u":
+                        value="U"
+                        break;
+                    case "v":
+                        value="V"
+                        break;
+                    case "w":
+                        value="W"
+                        break;
+                    case "x":
+                        value="X"
+                        break;
+                    case "y":
+                        value="Y"
+                        break;
+                    case "z":
+                        value="Z"
+                        break;
+               }
+            }
+            if(shift)
+            {
+                switch(value)
+                {
+                    case "1":
+                        value="!";
+                        break;
+                    case "2":
+                        value="@";
+                        break;
+                    case "3":
+                        value="#";
+                        break;
+                    case "4":
+                        value="$";
+                        break;
+                    case "5":
+                        value="%";
+                        break;
+                    case "6":
+                        value="^";
+                        break;
+                    case "7":
+                        value="&";
+                        break;
+                    case "8":
+                        value="*";
+                        break;
+                    case "9":
+                        value="(";
+                        break;
+                    case "0":
+                        value=")";
+                        break;
+                }
+            }
+            if(flag==true)
+            {
+                var password="";
+                var password_new=document.getElementById("display").innerHTML;   
+                for(var i=0;i<password_new.length;i++)
+                {
+                    password=password+"*";
+                }
+                password_new="";
+                document.getElementById("pass").style.color = "green";
+                document.getElementById("display").innerHTML=password_new+password;
+            }
+            if (flag==false) 
+            {
+               password=password+password_new
+               document.getElementById("pass").style.color = "black";
+            }
+            document.getElementById("display").innerHTML +=value;
+        }
+        
+        function del(){
+            var delete_char=document.getElementById("display").innerHTML
+            var new_delete_char=delete_char.subdelete_charing(0, delete_char.length - 1);
+            document.getElementById("display").innerHTML = Nstr;
+        }
+        function password()
+        {
+            if (flag==true) 
+            {
+                flag=false;
+            }
+            else if (flag==false) 
+            {
+                flag=true;
+            }
+        }
+           
+        function reverse()
+        {        
+            var rev="";
+            var string =document.getElementById("display").innerHTML
+        
+            for(var i=string.length-1;i>=0;i--)
+            {
+                rev+=string[i];
+            }
+            document.getElementById("display").innerHTML=rev
+            if(document.getElementById("reverse").style.color=="white" || document.getElementById("reverse").style.color=="black")
+            {
+              document.getElementById("reverse").style.color="green";  
+            }
+            else
+            {
+                document.getElementById("reverse").style.color="black";
+            }
+        }
+        
+        function Shift()
+        {
+            if(shift==true)
+            {
+                shift=false;
+                document.getElementById("shift").style.color="black";
+            }
+            else if(shift==false) 
+            {
+                shift=true;
+                document.getElementById("shift").style.color="green";
+            }
+        }
+        function Capslock()
+        {
+            if (caps==true) 
+            {
+                caps=false;
+                document.getElementById("caps").style.color="black";
+            }
+            else if (caps==false)
+            {
+                caps=true;
+                document.getElementById("caps").style.color="green";
+            }
+        }
+        
+        function Clean()
+        {
+            var clean_value=document.getElementById("display").innerHTML
+            if(clean)
+            {
+                clean=false;
+                document.getElementById("clean").style.color="black";
+            }
+            else
+            {
+                clean=""
+                clean=true;
+                if (clean) 
+                {
+                    if (clean_value=="asshole")
+                    {
+                        clean=clean_value
+                        document.getElementById("display").innerHTML="a*****e";
+                    }
+                    if (clean_value=="ass")
+                    {
+                        clean=clean_value
+                        document.getElementById("display").innerHTML="a**";
+                    }
+                    if (clean_value=="porn")
+                    {
+                        clean=clean_value
+                        document.getElementById("display").innerHTML="p**n";
+                    }
+                    if (clean_value=="butt")
+                    {
+                        clean=clean_value
+                        document.getElementById("display").innerHTML="b**t";
+                    }
+                    if (clean_value=="sexy")
+                    {
+                        clean=clean_value
+                        document.getElementById("display").innerHTML="s**y";
+                    }
+                    if (clean_value=="sex")
+                    {
+                        clean=clean_value
+                        document.getElementById("display").innerHTML="s*x";
+                    }
+                    if (clean_value=="hentai")
+                    {
+                        clean=clean_value
+                        document.getElementById("display").innerHTML="h**t*i";
+                    }
+                    if (clean_value=="kinky")
+                    {
+                        clean=clean_value
+                        document.getElementById("display").innerHTML="k***y";
+                    }
+                    if (clean_value=="fuck")
+                    {
+                        clean=clean_value
+                        document.getElementById("display").innerHTML="f**k";
+                    }
+                    if (clean_value=="nude")
+                    {
+                        clean=clean_value
+                        document.getElementById("display").innerHTML="n**e";
+                    }
+                }
+                document.getElementById("clean").style.color="green";
+            }
+        }
+    </script>
+</body>
+</html>
