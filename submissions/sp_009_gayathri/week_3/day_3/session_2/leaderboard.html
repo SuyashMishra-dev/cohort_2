@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>leaderboard</title>
+    <style>
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+        }
+        
+        .flxbox {
+            display: flex;
+            width: 500px;
+        }
+        .flxbox div {
+            text-align: center;
+            margin-left: 30px;
+            flex-direction: row;
+            width: 80px;
+            padding: 20px;
+        }
+
+        .container div {
+            font-size: 35px;
+        }
+
+        .scoremaxmin {
+            display: flex;
+        }
+
+        .scoremaxmin > div {
+            border: 1px solid black;
+            text-align: center;
+            margin: 20px;
+            flex-direction: row;
+            height: 60px;
+            width: 80px;
+            padding: 20px;
+        }
+
+        .numbox {
+            display: grid;
+            grid-auto-columns: 60px 60px 60px 60px;
+            grid-auto-rows: 100px 60px 60px 60px 60px 60px; 
+            grid-gap: 40px;
+            margin-left: 35px;
+            margin-top: 0px;
+            
+        }
+
+        .numbox div {
+            border: 2px solid black;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .bgor {
+            background: orange;
+        }
+
+        .bggr {
+            background: green;
+        }
+
+        .bgple {
+            background: purple;
+            color: white;
+        }
+
+        .bgblk {
+            background: black;
+        }
+
+        .bggrey {
+            background: grey;
+        }
+
+        .bgred {
+            background: red;
+        }
+
+        .bgteal {
+            background: teal;
+        }
+
+        #score {
+            grid-area: 1 / 1 / 1 / 4;
+        }
+        
+        #enter {
+            grid-area: 6 / 1 / 6 / 4;
+            color: white;
+            
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="scoremaxmin">
+            <div class="bgred" id="min">43</div>
+            <div class="teal" id="max">2019</div>
+        </div>
+
+        <div class="flxbox">
+            <div >MIN</div>
+            <div >MAX</div>
+        </div>
+        
+        <div class="numbox">
+            <div class="score grey" id="score">#</div>
+            <button id="num1" class="green" onclick="num1()">1</button>
+            <button id="num2" class="orange" onclick="num2()">2</button>
+            <button id="num3" class="green" onclick="num3()">3</button>
+            <button id="num4" class="orange" onclick="num4()">4</button>
+            <button id="num5" class="orange" onclick="num5()">5</button>
+            <button id="num6" class="orange" onclick="num6()">6</button>
+            <button id="num7" class="green" onclick="num7()">7</button>
+            <button id="num8" class="orange" onclick="num8()">8</button>
+            <button id="num9" class="green" onclick="num9()">9</button>
+            <button class="numdummy" class="green"></button>
+            <button id="num0" class="purple" onclick="num0()">0</button>
+            <button class="numdummy" class="green"></button>
+            <button id="enter" class="black" onclick="enter()">ENTER</button>
+        </div>
+     </div>
+
+    <script>
+        var score = 0;
+        document.getElementById("score").innerHTML = score;
+
+        function num1() {
+            document.getElementById("score").innerHTML += "1";
+        }
+
+        function num2() {
+            document.getElementById("score").innerHTML += "2";
+        }
+
+        function num3() {
+            document.getElementById("score").innerHTML += "3";
+        }
+
+        function num4() {
+            document.getElementById("score").innerHTML += "4";
+        }
+
+        function num5() {
+            document.getElementById("score").innerHTML += "5";
+        }
+
+        function num6() {
+            document.getElementById("score").innerHTML += "6";
+        }
+
+        function num7() {
+            document.getElementById("score").innerHTML += "7";
+        }
+
+        function num8() {
+            document.getElementById("score").innerHTML += "8";
+        }
+
+        function num9() {
+            document.getElementById("score").innerHTML += "9";
+        }
+
+        function num0() {
+            document.getElementById("score").innerHTML += "0";
+        }
+        
+        function enter() {
+            var value = Number(document.getElementById("score").innerHTML);
+            var min = Number(document.getElementById("min").innerHTML);
+            var max = Number(document.getElementById("max").innerHTML);
+           
+            if (value < min) {
+
+                document.getElementById("min").innerHTML = value;
+                document.getElementById("score").innerHTML = 0;
+                value = 0;
+                
+
+            } else if (value > max) {
+                
+                document.getElementById("max").innerHTML = value;
+                document.getElementById("score").innerHTML = 0;
+               
+                
+            } else {
+                value = 0;
+                document.getElementById("score").innerHTML = value;
+            } 
+        }
+    </script>
+</body>
+</html>

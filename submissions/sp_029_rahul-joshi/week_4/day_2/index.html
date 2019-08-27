@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button onclick="show()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="runtime()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="castmember()">Add cast member </button>
+  
+
+  <script>
+
+
+      var movie = {
+            
+            Name: "Sholay ",
+
+            Director: "Ramesh Sippy",
+
+            Year: 1975,
+
+            Rating:8.2 ,
+
+            
+
+            
+
+
+      }
+
+      
+      movie.cast = ["Amitabh Bachchan", "Hema Malini", "Dharmendra", "Amjad khan", "Sanjeev Kumar"],
+      movie.runtime = 3.24;
+
+        function show(){
+
+              var para = document.createElement('p');
+
+              para.textContent = "Movie Name: " + movie.Name  + " ," + " Director: " + movie.Director + " , " + " Year: " + movie.Year + " , " + " Rating " + movie.Rating;
+              var bodyElem = document.querySelector('body');
+              bodyElem.appendChild(para);
+              para.style.color = "red";
+
+              
+              
+}
+
+            
+         
+
+
+         function runtime(){
+                 
+               var para = document.createElement('p');
+
+               para.textContent = "Movie Name: " + movie.Name  + " ," + " Director: " + movie.Director + " , " + " Year: " + movie.Year + " , " + " Rating " + movie.Rating + "," + " runtime: " + movie.runtime;
+               
+               var bodyElem = document.querySelector('body');
+               bodyElem.appendChild(para);
+               para.style.color = "green";
+              
+
+         }
+
+         function castmember(){
+               
+          var para = document.createElement('p');
+
+             para.textContent = "Movie Name: " + movie.Name + " ," + " Director: " + movie.Director + " , " + " Year: " + movie.Year + " , " + " Rating " + movie.Rating + "," + " castmember: " + movie.cast;
+
+             var bodyElem = document.querySelector('body');
+             bodyElem.appendChild(para);
+             para.style.color = "blue";
+                
+
+         }
+
+
+
+
+
+
+
+    
+
+
+
+
+  
+  </script>
+</body>
+</html>

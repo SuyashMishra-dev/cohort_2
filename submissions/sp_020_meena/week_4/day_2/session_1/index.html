@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button onclick = "movieInform()" id = "movieBtn">Movie Information!</button>
+  <div id="movieContainer"></div>
+  <!-- FSD.W4.2.1_2 !-->
+  <h2>Lets add some more properties to movies</h2>
+  <button onclick = "addRunTime()" id = "addKey">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <h3>Lets add one more actor to movie </h3>
+  <button onclick = "movieMember()" id = "addMember">Add cast member </button>
+  
+
+  <script type = "text/javascript">
+    var movie = {
+      name: "Nannaku Prematho",
+      director: "Sukumar",
+      year: 2017,
+      rating: 5,
+      cast: ["junior ntr", "rakul", "jagapathi", "rajendra prasad", "rajiv kanakala"]
+    }
+    function movieInform() {
+      var movieOutput = "Movie name is" + movie.name + "." + "Director is" + movie.director 
+      + "." + "Released year is" + movie.year + "." + "Rating is" + movie.rating + "." +"Actors are" +  movie.cast
+    
+     var outputPara = document.createElement('p') 
+     outputPara.textContent = movieOutput
+     
+     var container = document.querySelector("#movieContainer")
+     container.appendChild(outputPara)
+
+    }
+     var btn = document.querySelector("#movieBtn")
+     btn.addEventListener('click', movieInform)
+
+    function addRunTime() {
+      movie.runtime = 150
+      var movieOutput = "Movie name is" + movie.name + "." + "Director is" + movie.director + "." + "Released year is" + movie.year + "." + "Rating is" + movie.rating + "." + "Actors are" +  movie.cast + "." + "and" + "Running time is" + movie.runtime
+     
+     var outputPara = document.createElement('p') 
+     outputPara.textContent = movieOutput
+     
+     var container = document.querySelector("#movieContainer")
+     container.appendChild(outputPara)
+
+    }
+     var add = document.querySelector("#addKey")
+     add.addEventListener('click' , addRunTime)
+
+     function movieMember() {
+      movie.actor = "Sandeep"
+      var movieOutput = "Movie name is" + movie.name + "." + "Director is" + movie.director + "." + "Released year is" + movie.year + "." + "Rating is" + movie.rating + "." + "Actors are" +  movie.cast + "." + "and" + "Running time is" + movie.runtime + "." + "movie one more actor" + movie.actor
+     
+     var outputPara = document.createElement('p') 
+     outputPara.textContent = movieOutput
+     
+     var container = document.querySelector("#movieContainer")
+     container.appendChild(outputPara)
+
+    }
+     var add1 = document.querySelector("#addMember")
+     add1.addEventListener('click' , movieMember)
+
+  </script>
+</body>
+</html>
