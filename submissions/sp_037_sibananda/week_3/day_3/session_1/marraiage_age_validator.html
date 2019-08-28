@@ -1,37 +1,40 @@
 <html>
-<head>
+    <head>
 
-</head>
-<body>
-    <input type="text"  id="age">
-    <select id="gender">
-        <option value="male">male</option>
-        <option value="Female">female</option>
-        <button onclick="Gender()">Gender</button>
+    </head>
+    <body>
+        <input id="age" type="text">
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <button onclick="Marriage()">Gender</button>
+        <script>
+        function Marriage() {
+            var age1=document.getElementById("age").value;
 
-    </select>
-    <button onclick="Gender()"id="man1">Gender</button>
-     <script>
-         function Gender(){
-             var age=document.getElementById("new");
-             if(age => 18 && gender=="male"){
-                 alert("legal");
-                 
-             }
-             else if (age=>18 && gender=="Female") {
-                 alert ("Legal age to marry");
-                 
-             } 
-             else {
-                alert("illegal")
-             }    
-         }
+            var gender1=document.getElementById("gender").value;
+            if (gender1=="male" ) {
+                if (age1>=21) {
+                    alert("Legal age for a boy ");
+                }
+                else{
+                    alert("Illegal for boy");
+                }
             
-     
-     
-     </script>
-
-    
-</body>
-
+            }
+            if (gender1=="Female") {
+                if (age1>=18) {
+                    alert("Legal age for a girl ");
+                }
+                else{
+                    alert("Illegal for girl");
+                }
+                
+            }
+            
+            
+        }
+        </script>
+    </body>
 </html>

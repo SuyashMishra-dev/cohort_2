@@ -17,7 +17,11 @@ Build a web page for the topic assigned to you
 | sp_043 | Suraj Singh | Choclate | [github](https://github.com/Suraj10074/masai-week-2/tree/master/masai/week_2) |
 | sp_045 | Teja S | Vedio GAmes | [github](https://github.com/Tejas-AI/masai-project-2) |
 | sp_004 | Amit | Hockey | [github](https://github.com/amit036/masai-week-2) |
-|  |  |  |  |
+| sp_011 | Harshit | Bikes | [github](https://github.com/harshit860/masai-week-2) |
+| sp_027 | Prabhat Kumar Ranjan | Guitar | [github](https://github.com/PrabhatKrRanjan/masai-week-2) |
+| sp_026 | Piyush Yadav         | Tennis | [github](https://github.com/piyush-git/masai-week-2)      |
+| sp_034 | Saket Paras        | Drums | [github](https://github.com/SaketParas/masai-week-2)      |
+
 
 
 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button onclick="movieInformation()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="addRuntime()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="addChar()">Add cast member </button>
+  
+
+  <script>
+    var movie = {
+      Name : "Baahubali: The Beginning ",
+      Director : "S.S Rajamouli",
+      Year : 2015,
+      Rating : 8.1,
+      Cast : ["Prabhas", "Rana Daggubati", "Ramya krishnan", "Anuskha Shetty" , "Nassar"]
+    }
+    
+    function movieInformation() {
+      var mov = document.createElement('h1');
+      mov.textContent = movie.Name + ' is Directed by ' + movie.Director + 'released ' + movie.Year + ' has a IMDB Rating ' + movie.Rating + ' of have cast ' + movie.Cast;
+      console.log(mov)
+      
+      var bodyElem = document.querySelector('body');
+      bodyElem.appendChild(mov);
+    }
+
+    function addRuntime() {
+      movie.Runtime = " 2hours 39 minutes";
+      var movi = document.createElement('h1');
+      movi.innerHTML = 'of runtime' + movie.Runtime;
+      var bodyElem = document.querySelector('body');
+      bodyElem.appendChild(movi)
+    }
+
+    function addChar() {
+      movie.Cast[5] = "Tammanna";
+      var movia = document.createElement('h1');
+      movia.textContent = movie.Cast[5];
+      var bodyElem = document.querySelector('body');
+      bodyElem.appendChild(movia);
+      
+    }
+
+
+    
+  
+  
+  </script>
+</body>
+</html>

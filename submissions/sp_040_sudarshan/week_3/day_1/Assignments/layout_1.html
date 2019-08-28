@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>layout_1</title>
+        <style>
+        .cont {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 4fr;
+            height: 500px;
+        }
+        
+        #box1 {
+            background: yellow;
+            grid-area: 1/ 1/ 1/ 3;
+            margin: 5px;
+        }
+
+        #box2 {
+            background: red;
+            grid-area: 2/ 1/ 2/ 2;
+            margin: 5px;
+        }
+
+        #box3 {
+            background: green;
+            grid-area: 2/ 2/ 2/ 3;
+            margin: 5px;
+        }
+
+        @media (max-width: 800px) {
+            .cont {
+                display: flex;
+                flex-direction: column;
+                height: 500px;
+                width: 100%;
+            }
+
+            #box1 {
+                height: 10%;
+            }
+
+            #box2 {
+                flex: auto;
+            }
+
+            #box3 {
+                flex: auto;
+            }
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div class="cont">
+            <div id="box1">Navigation</div>
+            <div id="box2">Left</div>
+            <div id="box3">Right</div>
+            
+        </div>
+    </body>
+</html>

@@ -5,11 +5,22 @@
     <style>
         #mainDiv {
             display: flex;
+            width: 500px;
         }
 
-        #mainDiv > div {
+        #mainDiv  div {
             flex-direction: row;
+            flex-basis: 250px;
             margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        #masaiDetails > div {
+            text-align: left;
+            margin-left: 20px;
+            margin: 5px;
+            padding-left: 15px;
+            padding-top: 5px;
         }
 
         .black {
@@ -20,6 +31,26 @@
             color: white;
         }
 
+        .error {
+            color: red;
+        }
+
+        #newName {
+            font-size:45px; 
+        }
+
+        .masaiDetailsSameFont {
+            font-size: 20px;
+        }
+
+        #register {
+            text-align: center;
+            margin-top: 20px;
+            width: 180px;
+            height: 20px;
+            padding-top: 5px;
+        }
+
         @media(max-width: 800px) {
             #mainDiv {
                 display: block;
@@ -27,7 +58,11 @@
             }
 
             #masaiDetails {
-                margin-top: 50px;
+                margin-top: 50px;   
+            }
+
+            .border {
+                border: 2px solid black;
             }
         }
         
@@ -36,30 +71,30 @@
 <body>
     <div id="mainDiv">
         <div id="enterDetails">
-            <div>NAME</div>
+            <div >NAME</div>
             <div>
                 <input type="text" id="name">
             </div>
-            <div id="nameError"></div>
+            <div id="nameError" class="error"></div>
             <div>EMAIL</div>
             <div >
                     <input type="text" id="email">
             </div>
-            <div id="emailError"></div>
+            <div id="emailError" class="error"></div>
             <div>MOBILE</div>
             <div >
                     <input type="number" id="mobile">
             </div>
-            <div id="mobileError"></div>
-            <button onclick="register()" id="register">REGISTER</button>
+            <div id="mobileError" class="error"></div>
+            <div onclick="register()" id="register" class="black fontWhite">REGISTER</div>
         </div>
 
         <div id="masaiDetails" class="black fontWhite">
-            <div>NAME</div>
+            <div class="masaiDetailsSameFont">NAME</div>
             <div id="newName">MASAI</div>
-            <div>EMAIL</div>
+            <div class="masaiDetailsSameFont">EMAIL</div>
             <div id="newEmail">email@masaischool.com</div>
-            <div>MOBILE</div>
+            <div class="masaiDetailsSameFont">MOBILE</div>
             <div id="newMobile">9876543210</div>
         </div>
     </div>
@@ -73,9 +108,9 @@
         var mobile = document.getElementById("mobile").value;
         console.log(mobile);
 
-        function register() {
-            
-        }
+        var validName = false;
+        var validMobile = false;
+        var validEmail = false;
 
         function checkName() {
             var length = document.getElementById("name").value.length;
@@ -84,11 +119,8 @@
                 document.getElementById("nameError").innerHTML = "Enter a valid name";
             } else {
                 document.getElementById("newName").innerHTML = document.getElementById("name").value;
+                validName = true;
             }
-        }
-
-        function checkEmail() {
-
         }
 
         function checkMobile() {
@@ -98,7 +130,62 @@
                 document.getElementById("mobileError").innerHTML = "Enter a valid mobile";
             } else {
                 document.getElementById("newMobile").innerHTML = document.getElementById("mobile").value;
+                validMobile = true;
             }
+        }
+
+        function checkEmail(){
+			var email = document.getElementById("email").value;
+			var vaildFormat = false;
+			var i = 0;
+			var j = 0; 
+			validDot = false; 
+			validAt = false; 
+
+			for (i = 0; i < email.length; i++) {
+				if (email[0] != '.' && email[email.length-1] != '.') {
+					if (email[i] == '.') {
+						if (email[i+1] != '' && email[i+1] != ' ' && email[i+1] != '@' && email[i-1] != '@' && email[i-1] != ' ') {
+							validDot = true;
+						}
+					}
+				} 
+				
+				if (email[0] != '@' && email[email.length-1] != '@' && email[email.length-2] != '@' && email[i+1] != '.' && email[i-1] != '.' && email[i-1] != '' && email[i-1] != ' ' && email[i+1] != ' ') {
+					if (email[i] == '@' && email[i-1] != ' ') {
+						for (j = i; j < email.length; j++) {
+							if (email[j+1] == '.') {
+								validAt = true;
+							}
+						}				
+					}
+				}
+			}
+
+			if(validDot != true || validAt != true) {
+				// alert('Invalid Email!');
+                document.getElementById("emailError").innerHTML = "Enter a valid email";
+			} else {
+				// alert('Valid Email!');
+                document.getElementById("newEmail").innerHTML = document.getElementById("email").value;
+                validEmail = true;
+			}	
+		}
+
+        function register() {
+            checkEmail();
+            checkMobile();
+            checkName();
+
+            if (validEmail == true && validMobile == true && validName) {
+                document.getElementById("name").value = '';
+                document.getElementById("mobile").value = '';
+                document.getElementById("email").value = '';
+
+                document.getElementById("nameError").innerHTML = '';
+                document.getElementById("mobileError").innerHTML = '';
+                document.getElementById("emailError").innerHTML = '';
+            }  
         }
     </script>
 </body>

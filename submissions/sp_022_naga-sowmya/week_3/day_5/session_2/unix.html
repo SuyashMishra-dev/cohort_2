@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Unix</title>
+        <style>
+            #top_box_div{
+                text-align: center;
+                background: grey;
+                height:450px;
+                width:455px;
+                padding:10px;
+                margin-top:10px;
+                margin-left:455px;
+                margin-right:455px;
+            }
+
+            #image {
+                width:150px; 
+                height:200px;
+            }
+
+            #color_of_linus_torvalds {
+                color: blue;
+            }
+
+            #color_of_creator {
+                color: black;
+            }
+
+            #mid_box { 
+                float: left;
+            }
+
+            #sal_khan {
+                color: red;
+                float: right;
+            }
+
+            #last_box {
+                background: orange;
+                height: 200px;
+                padding: 25px;
+                clear: left;
+            }
+
+            #dennis {
+                float: right;
+            }
+
+            #design {
+                clear: left;
+                float: left;
+            }
+
+            #creator { 
+                clear: right;
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+       <button onclick="showpage()">Create Page</button>
+    </body>
+    <script>
+
+        function showpage(){
+            container1();
+            container2();
+            container3();
+        }
+
+        function container1() {
+            var topbox = document.createElement('div');
+            topbox.setAttribute('id', 'top_box_div');
+            var img = document.createElement('img');
+            img.setAttribute('src', 'https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/linus.jpg');
+            topbox.appendChild(img);
+            var linus = document.createElement('h1');
+            linus.setAttribute('id' , 'color_of_linus_torvalds')
+            linus.textContent = "linus Torvalds";
+            topbox.appendChild(linus);
+            var creator = document.createElement('h1');
+            creator.setAttribute('id', 'color_of_creator');
+            creator.textContent = "The creator of unix & git ";
+            topbox.appendChild(creator);
+            var body = document.querySelector('body');
+            body.appendChild(topbox);
+        }
+
+        function container2() {
+            var mid_box = document.createElement('div');
+            mid_box.setAttribute('id', 'mid_box');
+            var img = document.createElement('img');
+            img.setAttribute('src','https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/khan.jpg');
+            mid_box.appendChild(img);
+            var sal_khan = document.createElement('h1');
+            sal_khan.setAttribute('id', 'sal_khan');
+            sal_khan.textContent = "Sal Khan";
+            mid_box.appendChild(sal_khan);
+            var salman_khan = document.createElement('p');
+            salman_khan.textContent = "Salman khan is the founder of the khan academy which has mission of providing a free world-class education for anyone,anywhere";
+            mid_box.appendChild(salman_khan);
+            var body = document.querySelector('body');
+            body.appendChild(mid_box);
+        }
+
+        function container3() {
+            var last_box = document.createElement('div');
+            last_box.setAttribute('id', 'last_box');
+            var ken = document.createElement('h1');
+            ken.setAttribute('id','ken')
+            ken.textContent = "Ken Thompson";
+            last_box.appendChild(ken);
+            var design = document.createElement('p');
+            design.setAttribute('id', 'design');
+            design.textContent = "Designed and implemented the original unix operating system";
+            last_box.appendChild(design);
+            var dennis = document.createElement('h1');
+            dennis.setAttribute('id', 'dennis');
+            dennis.textContent = "Dennis Ritchie";
+            last_box.appendChild(dennis);
+            var creator = document.createElement('p');
+            creator.setAttribute('id', 'creator');
+            creator.textContent = "The creator of C programming language";
+            last_box.appendChild(creator);
+            var body = document.querySelector('body');
+            body.appendChild(last_box);
+        }
+    </script>
+</html>

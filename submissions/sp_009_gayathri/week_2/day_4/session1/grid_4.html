@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Grid3
+    </title>
+
+    <style> #box {
+        display:grid;
+       background: white;
+       grid-gap:50px;
+       grid-template-rows:150px 150px 150px;
+       grid-template-columns:auto auto auto auto;
+       padding:20px;
+       
+     }
+     
+     
+     #box div {
+       background:teal;
+       align-items:center;
+     }
+     
+     #i5{
+       grid-area : 2 / 1 / span 1 / span 2
+       
+     }
+     
+     #i2{
+       grid-area : 1 / 2 / span 1 / span 2
+       
+     }
+     
+     #k3 {
+       grid-area: 3 / 3 / span 1 / span 2;
+       
+     }
+     
+     
+     
+     
+     #l2 {
+       grid-area: 4 / 2/ 4 / span 3;
+       
+     }
+     </style>
+  </head>
+  <body>
+    <div id="box">
+      <div id="i1"></div>
+      <div id="i2"> </div>
+            <div id="i4"> </div>
+      <div id="i5"> </div>
+      <div id="j2"> </div>
+      <div id="j3"> </div>
+      <div id="k1"> </div>
+      <div id="k2"> </div>
+      <div id="k3"> </div>
+      
+      
+  
+      
+    </div>
+  </body>
+  </html>

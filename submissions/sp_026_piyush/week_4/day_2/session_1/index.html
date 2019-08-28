@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button id='btnMovieInfo' onclick="movieInfo()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="addRuntime()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="addCast()">Add cast member </button>
+  
+
+  <script>
+    
+    var movie = {
+      Name: 'Jumper',
+      Director: 'Doug Liman',
+      Year: 2008,
+      Rating: 6.1,
+      Cast: ['Hayden Christensen', ' Samuel L. Jackson', ' Rachel Bilson ', ' Kristen Stewart ', ' Jamie Bell']
+    }
+
+    var elemBody = document.querySelector('body');
+
+    function movieInfo() {
+      var divNew = document.createElement('div');
+      divNew.innerHTML = 'Movie: ' + movie.Name + ', Movie Director: ' + movie.Director + ', Year of Release ' + movie.Year + ', Rating: ' + movie.Rating + ', Cast of the movie: ' + movie.Cast;
+      elemBody.appendChild(divNew);
+    }
+
+    function addRuntime() {
+      var divNew = document.createElement('div');
+      movie.Runtime = 1.28;
+      divNew.innerHTML = 'Movie: ' + movie.Name + ', Movie Director: ' + movie.Director + ', Year of Release: ' + movie.Year + ', Rating: ' + movie.Rating + ', Runtime ' + movie.Runtime + ', Cast of the movie: ' + movie.Cast;
+      elemBody.appendChild(divNew);
+    }
+
+    function addCast() {
+      var divNew = document.createElement('div');
+      movie.Cast.push(' Piyush Y. Jackson');
+      divNew.innerHTML = 'Movie: ' + movie.Name + ', Movie Director: ' + movie.Director + ', Year of Release ' + movie.Year + ', Rating: ' + movie.Rating + ', Runtime ' + movie.Runtime + ', Cast of the movie: ' + movie.Cast;
+      elemBody.appendChild(divNew);
+    }
+  </script>
+</body>
+</html>

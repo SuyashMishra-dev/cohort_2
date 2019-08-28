@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>marraiage_age_validator</title>
+    </head>
+    <body>
+        <label>Enter Age</label>
+        <input type="number" id="age">
+        <label>Select Gender</label>
+        <select id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <button onclick="marraiage()">Check Status</button>
+
+        <script>
+            function marraiage(){
+                var age = document.getElementById("age").value;
+                var gender = document.getElementById("gender").value;
+
+                if (gender == "Male"){
+                    if (age>=21){
+                        alert("You are above 21 You can marry !");
+                    }
+                    else{
+                        alert("You are not young Enough !")
+                    }
+                }
+                else if(gender ="Female"){
+                    if (age >=18){
+                        alert("You can marry !");
+                        }
+                    else{
+                        alert("You are not young Enough !")
+                    }   
+                }
+            }
+        </script>
+    </body>
+
+</html>

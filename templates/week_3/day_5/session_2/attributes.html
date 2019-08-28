@@ -58,6 +58,55 @@
         <button>Change P</button>
         <button>Set ID</button>
         <script>
-        </script>
+                function changeFirst() {
+                    var firstDiv = document.querySelector('h1');
+                    firstDiv.setAttribute('class', 'class-h1');
+                }
+        
+                function changeThree() {
+                    var bodyElem = document.querySelector('body');
+                    var firstDiv = document.querySelectorAll('h3');
+                    for (i = 0; i < firstDiv.length; i++) {
+                        first = firstDiv[i];
+                        first.setAttribute('class', 'class-h3');
+                    }
+                }
+        
+                function changeFive() {
+                    var bodyElem = document.querySelector('body');
+                    var firstDiv = document.querySelectorAll('h5');
+                    for (i = 0; i < firstDiv.length; i++) {
+                        first = firstDiv[i];
+                        first.setAttribute('class', 'class-h5');
+                    }
+                }
+        
+                function changeDiv() {
+                    var bodyElem = document.querySelector('box');
+                    var firstDiv = document.querySelectorAll('#box div');
+                    for (i = 0; i < firstDiv.length; i++) {
+                        first = firstDiv[i];
+                        first.setAttribute('class', 'class-div');
+                    }
+                }
+        
+                function changePara() {
+                    var bodyElem = document.querySelector('cont');
+                    var firstDiv = document.querySelectorAll('#cont p');
+                    for (i = 0; i < firstDiv.length; i++) {
+                        first = firstDiv[i];
+                        first.setAttribute('class', 'class-p');
+                    }
+                }
+        
+                function setId() {
+                    var bodyElem = document.querySelector('temp');
+                    var firstDiv = document.querySelectorAll('#temp p');
+                    for (i = 0; i < firstDiv.length; i++) {
+                        first = firstDiv[1];
+                        first.setAttribute('id', 'test-2');
+                    }
+                }
+            </script>
     </body>
 </html>
