@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      p {
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+<body>
+  <!-- FSD.W4.3.1_1 !-->
+  <h1>Click the button to add a new customer!</h1>
+  <label for="firstName">First Name</label>
+  <input type="text" name="">
+  <label for="lastName">Last Name</label>
+  <input type="text" name="">
+  <label for="dateOfBirth">Date Of Birth</label>
+  <input type="text" name="">
+  <label for="balance">Balance</label>
+  <input type="text" name="">
+  <label for="accountNumber">Account Number</label>
+  <input type="text" name="">
+  <label for="sharedAccountHolders">Shared Account Holders</label>
+  <input type="text" name="">
+  <button>Add customer</button>
+  <!-- FSD.W4.3.1_3 !-->
+  <h1> Click here to print all customers! <h1>
+  <button>Print Customers</button>  
+  <div id="displayContainer"> </div>
+  
+  <script>
+    var buttons = document.querySelectorAll("button");
+
+    buttons[0].addEventListener("click", addCust);
+    buttons[1].addEventListener("click", printCust);
+
+    var customerArr = [];
+
+    function Customers(firstName, lastName, dateOfBirth, balance, accountNumber, sharedAccountHolders) {
+      this.firstName = firstName,
+      this.lastName = lastName,
+      this.dateOfBirth = dateOfBirth,
+      this.balance = balance,
+      this.accountNumber = accountNumber,
+      this.sharedAccountHolders = sharedAccountHolders,
+      this.displayDetails = function() {
+        var output = "";
+        for(key in this) {
+          if(key != 'displayDetails') {
+            output = output + key + " : " + this[key] + "\n";
+          }
+        }
+        return output;
+      }
+    }
+
+    function addCust() {
+      var inputs = document.querySelectorAll("input");
+
+      var newPerson = new Customers();
+      var i = 0;
+
+      for(key in newPerson) {
+        console.log(i);
+        if(key == 'sharedAccountHolders') {
+          newPerson[key] = inputs[i].value.split(",");
+        }
+        else if(key == 'displayDetails') {
+          break;
+        }
+        else {
+          newPerson[key] = inputs[i].value;
+        }
+        inputs[i].value = "";       
+        i++;
+      }
+
+      customerArr.push(newPerson);      
+    }
+
+    function printCust() {
+      var parent = document.getElementById("displayContainer");
+
+      for (i = 0; i < customerArr.length; i++) {
+        var p = document.createElement("p");
+        p.innerHTML = customerArr[i].displayDetails();
+        parent.appendChild(p);
+      }
+    }
+  </script>
+</body>
+</html>
