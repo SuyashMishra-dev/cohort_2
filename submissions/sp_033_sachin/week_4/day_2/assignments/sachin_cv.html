@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game</title>
+    <style>
+        .container {
+            width: 49%;
+            height: 900px;
+            float: left;
+            text-align: center;
+
+        }
+
+        .box-1 {
+            width: 30%;
+            height: 60px;
+            margin: auto;
+            background: grey;
+            line-height: 60px;
+        }
+
+        .row-1 {
+            justify-content: center;
+            margin-top: 10px;
+            height: auto;
+        }
+
+
+        .small-box {
+            width: 20%;
+            float: left;
+            height: 60px;
+            margin-left: 180px;
+            line-height: 60px;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .green {
+            background: green;
+        }
+
+        .black {
+            background: black;
+            color: azure;
+        }
+
+        .orange {
+            background: orange;
+        }
+
+        .violet {
+            background: violet;
+        }
+
+        #dial {
+            display: grid;
+            grid-template-columns: repeat(3, 60px);
+            grid-template-rows: repeat(4, 60px);
+            grid-gap: 10px;
+            width: 23%;
+            margin: 10px auto;
+        }
+
+        #dial div {
+            border: 1px solid grey;
+            line-height: 60px;
+        }
+
+        #score-display {
+            min-height: 50%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container-left" class="container">
+        <div class="row-1">
+            <h2>Total</h2>
+            <div id="show-total" class="box-1">-</div>
+        </div>
+        <div class="row-1">
+            <div id="min-box" class="small-box red">43</div>
+            <div id="max-box" class="small-box green">126</div>
+            <div style="clear: left;"></div>
+            <div class="small-box"><strong>Min</strong></div>
+            <div class="small-box"><strong>Max</strong></div>
+        </div>
+        <div style="clear: left;"></div>
+        <div class="row-1">
+            <h2>Score</h2>
+            <div id="show-score" class="box-1">-</div>
+        </div>
+        <div id="dial">
+            <div class="green" onclick="dial(1)">1</div>
+            <div class="orange" onclick="dial(2)">2</div>
+            <div class="green" onclick="dial(3)">3</div>
+            <div class="orange" onclick="dial(4)">4</div>
+            <div class="orange" onclick="dial(5)">5</div>
+            <div class="orange" onclick="dial(6)">6</div>
+            <div class="green" onclick="dial(7)">7</div>
+            <div class="orange" onclick="dial(8)">8</div>
+            <div class="green" onclick="dial(9)">9</div>
+            <span></span>
+            <div class="violet" onclick="dial(0)">0</div>
+            <span></span>
+        </div>
+        <div class="row-1">
+            <input id="name-input" placeholder="Name" class="box-1">
+        </div>
+        <div class="row-1">
+            <button onclick="enterScore()" id="enter-button" class="box-1 black">ENTER</button>
+        </div>
+        
+    </div>
+
+    <div id="container-right" class="container">
+        <div class="row-1">
+            <h1>Game Scores</h1>
+        </div>
+        <div id="score-display">
+
+        </div>
+        
+        <div class="row-1">
+            <button id="remove-last" onclick="removeLast()" class="box-1 black">Remove Last</button>
+        </div>
+    </div>
+
+    <script>
+       
+        var data = {
+            name : [],
+            score : '',
+            min : 43,
+            max : 126,
+            scoresEntered : [],
+        }        
+        function dial(number) {
+            data.score = data.score + number;
+            displayScore(data.score);
+        }
+
+        function enterScore() {
+            var nameInput = document.getElementById('name-input').value;            
+            var scoreValue = Number(data.score);
+            data.scoresEntered.push(scoreValue);
+            data.name.push(nameInput);
+            setMin(scoreValue);
+            setMax(scoreValue);
+            displayScores();
+            totalScore();
+            setScoreNull();
+            displayScore();
+        }
+
+        function displayScore(value) {
+            document.getElementById('show-score').textContent = value;
+        }
+
+        function setScoreNull() {
+            data.score = '';
+        }
+
+        function setMin(value) {
+            if (value <= data.min) {
+                data.min = value;
+                document.getElementById('min-box').textContent = value;
+            }
+        }
+
+        function setMax(value) {
+            if (value >= data.max) {
+                data.max = value;
+                document.getElementById('max-box').textContent = value;
+            }
+        }
+
+        function displayScores() {
+            var scoreDisplayBox = document.getElementById('score-display');
+            scoreDisplayBox.innerHTML = '';
+            for (var i = 0; i < data.scoresEntered.length; i++) {
+                var div = document.createElement('div');
+                div.textContent = data.name[i] + '  -  ' + data.scoresEntered[i];
+                scoreDisplayBox.appendChild(div);
+            }
+        }
+
+        function totalScore() {
+            var sum = 0;
+            for (var i = 0; i < data.scoresEntered.length; i++) {
+                sum = sum + data.scoresEntered[i];
+            }
+            document.getElementById('show-total').textContent = sum;
+        }
+
+        function resetToDefault() {
+            data.score = '';
+            data.min = 43;
+            data.max = 126;
+            data.scoresEntered = [];
+            data.name = [];
+            setMin(43);
+            setMax(126);
+            displayScores();
+            totalScore();
+        }
+
+        function removeLast() {            
+            data.scoresEntered.pop();
+            data.name.pop();
+            setMin(43);
+            setMax(126);            
+            displayScores();
+            totalScore();
+            for (var j = 0; j < data.scoresEntered.length; j++) {
+                setMin(data.scoresEntered[j]);
+                setMax(data.scoresEntered[j]);
+            }            
+        }
+    </script>
+</body>
+
+</html>

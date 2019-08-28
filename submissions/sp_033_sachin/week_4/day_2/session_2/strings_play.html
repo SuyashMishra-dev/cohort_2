@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String Play</title>
+</head>
+<body>
+    <input id="string-input" type="text">
+    <button onclick="removeSpace()">Remove spaces</button>
+    <button onclick="camelCase()">Camel Case</button>
+    <button onclick="snakeCase()">Snake Case</button>
+    <button onclick="hypenCase()">Hyphen Case</button>
+    <button onclick="mirrorImg()">Mirror Image</button>   
+    <div id="display-output"></div>
+    <script>
+        
+        function removeSpace() {
+            var stringOutput = removeSpaceFunc();
+
+            document.getElementById('display-output').innerHTML = stringOutput;
+        }
+
+        function mirrorImg() {
+            var stringInput = removeSpaceFunc();
+            var stringOutput = '';
+            for(var i=0; i<stringInput.length; i++) {
+                if (stringInput[i]!= ' ') {
+                    stringOutput = stringOutput+getMirror(stringInput[i]);
+                    continue;
+                }
+                stringOutput = stringOutput+stringInput[i];
+            }
+            document.getElementById('display-output').innerHTML = stringOutput;
+        }
+
+        function camelCase() {
+            var stringInput = removeSpaceFunc();
+            var stringOutput = '';
+            var wasSpace = false;
+            for(var i=0;i<stringInput.length;i++) {
+                if (stringInput[i]==' ') {
+                    wasSpace = true;
+                    continue;
+                }
+                if (wasSpace) {
+                    stringOutput = stringOutput+getUpperCase(stringInput[i]);
+                    wasSpace = false;
+                    continue;
+                }
+                stringOutput = stringOutput+stringInput[i];
+            }            
+            document.getElementById('display-output').innerHTML = stringOutput;
+        }
+
+        function snakeCase() {
+            var stringInput = removeSpaceFunc();            
+            var stringOutput = '';
+            for(var i=0;i<stringInput.length;i++) {
+                if (stringInput[i]==' ') {
+                    stringOutput=stringOutput+'_'
+                    continue;
+                }
+                stringOutput = stringOutput+stringInput[i];
+            }            
+            document.getElementById('display-output').innerHTML = stringOutput;
+        }
+
+        function hypenCase() {
+            var stringInput = removeSpaceFunc();
+            var stringOutput = '';
+            for(var i=0;i<stringInput.length;i++) {
+                if (stringInput[i]==' ') {
+                    stringOutput=stringOutput+'-'
+                    continue;
+                }
+                stringOutput = stringOutput+stringInput[i];
+            }
+            document.getElementById('display-output').innerHTML = stringOutput;
+        }
+
+        function myPush(arrayName,element){
+            arrayName[arrayName.length] = element;
+        }
+
+        function removeChar(stringName,index) {
+            var newString = '';
+            for (var i=0; i<stringName.length;i++) {
+                if(i==index){
+                    continue;
+                } else {
+                    newString = newString+stringName[i];
+                }
+                
+            }
+            return newString;
+        }
+
+        function removeSpaceFunc() {
+            var stringInput = document.getElementById('string-input').value;
+            var isSpace = false;
+            var stringOutput = '';
+            while (stringInput[0] == ' ') {
+                stringInput = removeChar(stringInput,0);
+            }
+            while (stringInput[stringInput.length-1] == ' ') {
+                stringInput = removeChar(stringInput,stringInput.length-1);
+            }            
+            
+            for (var i = 0; i<stringInput.length; i++) {
+                if ((isSpace==true) && (stringInput[i]==' ')) {
+                    continue;
+                }
+                if (stringInput[i]==' ') {
+                    isSpace = true;
+                }
+                if (stringInput[i]!=' ') {
+                    isSpace = false;
+                }
+                stringOutput = stringOutput+stringInput[i];                
+            }
+            return stringOutput;
+        }
+
+        function getUpperCase(char) {
+            switch (char) {
+                case 'q':
+                    char = 'Q';
+                    break;
+                case 'w':
+                    char = 'W';
+                    break;
+                case 'e':
+                    char = 'E';
+                    break;
+                case 'r':
+                    char = 'R';
+                    break;
+                case 't':
+                    char = 'T';
+                    break;
+                case 'y':
+                    char = 'Y';
+                    break;
+                case 'u':
+                    char = 'U';
+                    break;
+                case 'i':
+                    char = 'I';
+                    break;
+                case 'o':
+                    char = 'O';
+                    break;
+                case 'p':
+                    char = 'P';
+                    break;
+                case 'a':
+                    char = 'A';
+                    break;
+                case 's':
+                    char = 'S';
+                    break;
+                case 'd':
+                    char = 'D';
+                    break;
+                case 'f':
+                    char = 'F';
+                    break;
+                case 'g':
+                    char = 'G';
+                    break;
+                case 'h':
+                    char = 'H';
+                    break;
+                case 'j':
+                    char = 'J';
+                    break;
+                case 'k':
+                    char = 'K';
+                    break;
+                case 'l':
+                    char = 'L';
+                    break;
+                case 'z':
+                    char = 'Z';
+                    break;
+                case 'x':
+                    char = 'X';
+                    break;
+                case 'c':
+                    char = 'C';
+                    break;
+                case 'v':
+                    char = 'V';
+                    break;
+                case 'b':
+                    char = 'B';
+                    break;
+                case 'n':
+                    char = 'N';
+                    break;
+                case 'm':
+                    char = 'M';
+                    break;
+                case '.com':
+                    char = '.COM';
+                default:
+                    char = char;
+                    break;
+            }
+            return char;
+        }
+
+        function getMirror(char) {
+            var reverseAlpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+            var charPos = getPosition(char,reverseAlpha);
+            return reverseAlpha[25-charPos];
+        }
+
+        function getPosition(value, arryName) {
+            for (var i = 0; i < arryName.length; i++) {
+                if (arryName[i] === value) {
+                    return i;
+                }
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

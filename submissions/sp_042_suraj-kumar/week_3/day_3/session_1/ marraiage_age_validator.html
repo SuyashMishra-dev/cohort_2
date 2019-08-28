@@ -1,0 +1,34 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <input type="number" id="age">
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <button onclick="validate()">click here to check</button>
+
+        <script type="text/javascript">
+        function validate() {
+        var a=document.getElementById("age").value;
+        var g=document.getElementById("gender").value;
+        if(g=="male" && a >21)
+        {
+            alert("you are eligible for marriage")
+        }
+        else if (g=="female" && a>=18)
+        {
+            alert("you are eligible for marriage")
+        }
+        else { 
+            alert("you are not eligible")
+
+        }
+    
+        }
+        </script>
+    </body>
+</html>
