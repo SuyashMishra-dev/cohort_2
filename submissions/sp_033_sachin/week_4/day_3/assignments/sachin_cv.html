@@ -65,7 +65,7 @@
         <input type="text" id="date">
         <label for="fuelFilled">Fuel Filled(in lts)</label>
         <input type="text" id="fuelFilled">
-        <button onclick="addFuel()">Add Fuel</button>
+        <!-- <button onclick="addFuel()">Add Fuel</button> -->
     </div>
     <br>
     <br>
@@ -73,9 +73,10 @@
         <label for="tripName">Trip Name</label>
         <input type="text" id="tripName">
         <label for="distanceTravelled">Distance of Trip</label>
-        <input type="text" id="distanceTravelled">
-        <button onclick="addTrip()">Add Trip details</button>
+        <input type="text" id="distanceTravelled">        
     </div>
+    <div class="allign-center"><button onclick="runVehicle()">Add details</button></div>
+    <div class="allign-center" id="errorDiv"></div>
     <hr>
     <div>
         <div class="allign-center" id="distanceDisplayContainer">
@@ -103,6 +104,22 @@
     <script>
         var fuelDetailsArr = [];
         var tripDetailsArr = [];
+        var final = [];
+        function runVehicle(){
+            document.getElementById('errorDiv').innerHTML = "Cannot travel the distance with so much fuel";
+            var fuelDetail = addFuel();
+            var tripDetail = addTrip();
+            var completeInfo = {...fuelDetail,...tripDetail};
+            if (calculateRange(calculateTotalDistance(),calculateTotalFuel()) <= 0) {
+                fuelDetailsArr.pop();
+                tripDetailsArr.pop();
+                document.getElementById('errorDiv').innerHTML = "Cannot travel the distance with so much fuel";
+                return false;
+            }
+            final.push(completeInfo);
+            fuelLog();
+            tripLog();
+        }
 
         function displayDistance() {
             var distanceBlock = document.getElementById('distanceDisplay');
@@ -186,7 +203,8 @@
             var fuelFilled = document.getElementById('fuelFilled').value;
             var fuelDetail = new FuelDetails(date,fuelFilled);
             fuelDetailsArr.push(fuelDetail);
-            fuelLog();
+            // fuelLog();
+            return fuelDetail;
         }
 
         function addTrip() {
@@ -194,7 +212,8 @@
             var distanceTravelled = document.getElementById('distanceTravelled').value;
             var tripDetail = new TripDetails(tripName,distanceTravelled);
             tripDetailsArr.push(tripDetail);
-            tripLog();
+            // tripLog();
+            return tripDetail;
         }
 
         function calculateTotalDistance(){
