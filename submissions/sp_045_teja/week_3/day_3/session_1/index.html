@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Session 1!</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.W3.3.1_1-->
+	<h1> Create your own exponentiation function! </h1>
+	<input type="text" name = "num1" id="">
+	<input type="text" name = "num2" id="">
+	<p id="Outputed"> </p>
+	</hr>
+	<button onclick="exponent()">Click here to find the exponent!</button>
+	<!-- These elements above are for FSD.W3.3.1_1-->
+
+	<!-- These elements below are for FSD.W3.3.1_2-->
+	<h1>Sum of multiples of 3 and 5!</h1>
+	<p id="Output"></p>
+	<input type="text" id="multiply">
+	<button onclick="sumOf3And5()">Click here for the output!</button>
+
+	
+	<!-- These elements above are for FSD.W3.3.1_2-->
+
+	<!-- These elements below are for FSD.W3.3.1_3-->
+	<h1>Check if the users email is valid!</h1>
+	<label for="Email">Email</label>
+	<input type="text" id="inputcheck">
+	<p id="outputer"></p>
+	<button onclick="validateEmail()">Check Email!</button>
+	<!-- These elements above are for FSD.W3.3.1_3-->
+	<script type="text/javascript">
+		//Write javascript for FSD.W3.3.1_1 here
+		function exponent(){
+		 var input1= document.getElementById('').value;
+		 var input2= document.getElementById('').value;
+	     var output= 1;
+		 
+		 for (var i=0 ; i< input2 ; i++){
+                 output = output * input1
+				}
+		 }
+		 document.getElementById('Outputed').innerHTML=output;	
+		
+		//Write javascript for FSD.W3.3.1_2 here
+		function sumOf3And5(){
+			var input= document.getElementById('multiply').value;
+			var sum =0;
+			for (var i=0; i<= 30; i++){
+				if(i%3 == 0 && i%5 == 0){
+				sum= sum + i;
+				output =sum ;
+			}                              
+			}
+             document.getElementById('Output').innerHTML=output;
+		}
+
+		//Write javascript for FSD.W3.3.1_3 here
+		function validateEmail(){
+			var input= document.getElementById('inputcheck').value;
+			var atRateIndex = 0;
+			var lastDotIndex = 0;
+			var atRateCounter = 0;
+			var message = 'Invalid Email';
+			for (var i = input.length; i >= 0; i--) {
+				if ((input[i] == '.') && (lastDotIndex == 0)) {
+					lastDotIndex == i;			
+				}
+				if (input[i] == '@') {
+					atRateIndex = i;
+					atRateCounter += 1;
+				}
+				if (atRateCounter > 1) {
+					break;
+				}
+			}
+				if((lastDotIndex > atRateIndex) && (lastDotIndex - atRateIndex)> 1 && (atRateIndex > 0) && (lastDotIndex) < input.length-1 && atRateCounter == 1) {
+					message = 'valid';
+				}
+			
+				alert(message);
+		}
+
+
+
+			
+       
+
+		
+	</script>
+</body>
+</html>
