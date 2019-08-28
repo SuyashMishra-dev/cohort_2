@@ -1,0 +1,197 @@
+<html>
+    <head>
+        <title>Unix</title>
+       
+     
+<style>
+    .class1{
+        background-color: darkgrey;width:800px;height:400px;margin-left: 500px;margin-top: 50px;
+    }
+    #linux
+    {
+        margin-left:150px;font-weight: 2px
+    }
+    #img1{
+        margin-left: 320px;margin-top:30px;height:200px;
+    }
+    #img2
+    {
+
+        float:left;height:150px;padding: 5px;
+    }
+    #linus
+    {
+        color: blue;margin-left:260px
+    }
+    .sal
+    {
+        background-color: white;width:1000px;height: 200px;margin-left: 400px;margin-top:50px
+    }
+    #sal1
+    {
+        color: crimson;font-size: 30px
+    }
+    #float
+    {
+        float: left;
+    }
+    #org
+    {
+        background-color: orangered;width: 1300px;height: 150px;margin-left: 200px
+    }
+    #whitetxt
+    {
+        color: white;font-weight:2px;font-size: 20px
+    }
+    .last
+    {
+        background:black;width: 7px;height: 100px;float:left;margin-left:350px;margin-bottom:2px;margin-top: 15px;padding:2px
+    }
+    #padding
+    {
+        padding: 30px
+    }
+    .last2{
+        float: right;text-align: right
+    }
+    .textsmall
+    {
+        font-size:15px;
+        
+    }
+    #lastt
+    {
+        font-size:15px;
+        float: right;text-align: right;
+        margin-top:-30px;
+
+    }
+    #textsmall2
+    {
+        font-size:15px;
+    }
+    #marg
+    {
+        margin-top: -40px;
+        color: white;font-weight:2px;font-size: 20px
+    }
+    @media (max-width:500px)
+    {
+        .class1
+        {
+            background-color: red;
+            width:370px;
+            height:200px;
+            margin-left: -5px;
+            margin-top: 0px;
+        }
+        #img1 
+        {
+            margin-left: 150px;margin-top:0px;height:100px;
+        }
+         #linus ,#linux
+         {
+             font-size: 20px;
+             margin-left:50px;
+         }
+         .sal{
+
+        background-color: white;width:400px;height: 100px;margin-left: 5px;margin-top:40px
+         }
+         #org{
+            background-color: orangered;width: 400px;height: 150px;margin-left: 10px;margin-top:250px
+         }
+         #whitetxt
+    {
+        color:black;font-weight:2px;font-size: 15px;
+    }
+    .last2{
+        float: left;text-align: left;
+    }
+    }
+
+    </style>
+    </head>
+<body>
+    
+   <button id="create">Create Page</button>
+    <script>
+   var btnn=document.getElementById('create')
+   btnn.addEventListener('click',create)
+
+   function create()
+   {
+       var body = document.querySelector('body')
+       var newdiv = document.createElement('div')
+       newdiv.setAttribute('class','class1')
+       body.appendChild(newdiv) 
+
+       var img1=document.createElement('img')
+       img1.setAttribute('src','https://github.com/masai-school/full-stack-dev-1908/raw/master/course/week_1/day_3/resources/images/linus.jpg')
+       img1.setAttribute('id','img1')
+       newdiv.appendChild(img1);
+
+       var heading1=document.createElement('h1')
+       heading1.textContent="Linus Torvalds"
+       heading1.setAttribute('id','linus')
+       newdiv.appendChild(heading1)
+       
+       var heading2=document.createElement('h1')
+       heading2.textContent="The creator of Linux & Git"
+       heading2.setAttribute('id','linux')
+       newdiv.appendChild(heading2)
+       
+
+//div2
+       var newdiv2 = document.createElement('div')
+       newdiv2.setAttribute('class','sal')
+       body.appendChild(newdiv2)
+
+       var img2=document.createElement('img')
+       img2.setAttribute('src','https://github.com/masai-school/full-stack-dev-1908/raw/master/course/week_1/day_3/resources/images/khan.jpg')
+       newdiv2.appendChild(img2)
+       img2.setAttribute('id','img2')
+
+       var heading3=document.createElement('h1')
+       heading3.textContent="Sal Khan"
+       heading3.setAttribute('id','sal1')
+       newdiv2.appendChild(heading3)
+
+       var heading4=document.createElement('h1')
+       heading4.textContent="Salman Khan is the founder of the Khan Academy which has a mission of providing a free world-class education for anyone"
+       heading4.setAttribute('class','textsmall')
+       newdiv2.appendChild(heading4);
+
+       var newdiv3 = document.createElement('div')
+       newdiv3.setAttribute('id','org')
+       body.appendChild(newdiv3)
+
+       var heading5 = document.createElement('h1')
+       heading5.textContent="Ken Thompson"
+       heading5.setAttribute('id','whitetxt')
+       newdiv3.appendChild(heading5)
+
+       var heading6 = document.createElement('h1')
+       heading6.textContent="Dennis Ritchie"
+       heading6.setAttribute('class','last2')
+       heading6.setAttribute('id','marg')
+       newdiv3.appendChild(heading6)
+
+        var heading7 =document.createElement('h1')
+        heading7.textContent="Designed and Implemented the original Unix operating system"
+        heading7.setAttribute('class','textsmall')
+        newdiv3.appendChild(heading7)
+        
+        var heading8 =document.createElement('h1')
+        heading8.textContent="The creator of C Programming Language"
+        heading8.setAttribute('id','lastt')
+       
+       
+        newdiv3.appendChild(heading8)
+
+
+   }
+    
+    </script>
+</body>
+</html>

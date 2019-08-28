@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>layout_2</title>
+        <style>
+           .flex-box {
+            display: flex;
+            }
+           .flex-box div {
+            height:100px;width:100px; margin:30px; background:royalblue; border: 1px solid black;
+            } 
+            #box1 {
+            flex-direction: row;
+            }
+            #box300 {
+            height:100px;width:300px;background:royalblue;
+            }
+            .class { 
+            margin-top: 200px; margin-left: 500px;
+            }
+
+            @media (max-width: 1200px) {
+                .flex-box {
+                    display: flex ; 
+                    flex-direction: row;
+                }
+                .flex-box div {
+                    height: 90px; width: 90px; margin: 30px;
+                }  
+                #box300 {
+                    height:90px;width:250px;background:royalblue;
+                 }
+               .class { 
+                    margin-top: 160px; margin-left: 300px;
+                }  
+            }
+            @media (max-width: 800px) {
+                .flex-box {
+                    display: flex ; 
+                    flex-direction: row;
+                }
+                .flex-box div {
+                    height: 80px; width: 80px; margin: 30px;
+                }  
+                #box300 {
+                    height:80px;width:200px;background:royalblue;
+                 }
+               .class { 
+                    margin-top: 100px; margin-left: 150px;
+                }  
+            }
+
+           
+
+
+        </style>
+    </head>
+
+    <body class="class">
+            <div class="flex-box" id="box1">
+            <div></div>
+            <div id="box300" ></div>
+            <div></div>  
+            </div>
+            <div class="flex-box" id="box1">
+            <div id="box300"></div>
+            <div></div>
+            <div></div>  
+            </div>
+            <div class="flex-box" id="box1">
+            <div></div>
+            <div></div>
+            <div id="box300"></div>  
+            </div>
+    </body>
+</html>

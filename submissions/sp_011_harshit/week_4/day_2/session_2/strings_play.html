@@ -1,0 +1,162 @@
+<html>
+    <body>
+        <input type="text" id="inputt">
+        <button onclick="remove()">Remove Space</button>
+        <button onclick="camel()">Camel</button>
+        <button onclick="snake()">Snake</button>
+        <button onclick="hpn()">hpn</button>
+        <button onclick="mirror()">mirror</button>
+        <h1 id='hel'></h1>
+        <h1 id='hell'></h1>
+        <h1 id="snake"></h1>
+        <h1 id="hpn"></h1>
+        <h1 id="mirror"></h1>
+        <script>
+ var inpt;
+ var upper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+ var lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+   function remove()
+   {
+    inpt=document.getElementById("inputt").value;
+    console.log(inpt)
+    document.getElementById('hel').innerHTML=inpt
+   }
+
+//Camel case
+
+   function camel()
+   {
+       word='';
+       inpt = document.getElementById('inputt').value;
+    for(var a = 0 ; a < inpt.length ; a++)
+    {
+      for(var b = 0 ; b < upper.length ; b++)
+      {
+        if( inpt[a] == ' ' && inpt[a+1] == upper[b] )
+        {
+            word = word + upper[b] ;
+        }
+            if( inpt[a] == ' ' && inpt[a+1] == upper[b] && inpt[a+1] == lower[b] )   
+            { 
+                word = word + upper[b];
+            }
+            if( inpt[a] == upper[b] && inpt[a-1] != ' ' )
+            {
+                word=word+lower[b];
+            }
+            if( inpt[a] == lower[b] && inpt[a-1] != ' ')
+            {
+                word = word+lower[b];
+            }
+            if(inpt[a] == ' ' && inpt[a+1] == lower[b])
+            {
+                word=word+upper[b];  
+            }
+      }
+     
+    }
+    document.getElementById('hell').innerHTML=word
+    console.log(word)
+   }
+
+    //    Snake case
+
+   function snake()
+   {
+
+    word='';
+       inpt = document.getElementById('inputt').value;
+    for(var a = 0 ; a < inpt.length ; a++)
+    {
+      for(var b = 0 ; b < upper.length ; b++)
+      {
+        if( inpt[a] == ' ' && inpt[a+1] == upper[b] )
+        {
+            word = word + '_'+lower[b] ;
+        }
+            if( inpt[a] == ' ' && inpt[a+1] == upper[b] && inpt[a+1] == lower[b] )   
+            { 
+                word = word + '_'+lower[b];
+            }
+            if( inpt[a] == upper[b] && inpt[a-1] != ' ' )
+            {
+                word=word+lower[b];
+            }
+            if( inpt[a] == lower[b] && inpt[a-1] != ' ')
+            {
+                word = word+lower[b];
+            }
+            if(inpt[a] == ' ' && inpt[a+1] == lower[b])
+            {
+                word=word+'_'+lower[b];  
+            }
+      }
+     
+    }
+    document.getElementById('snake').innerHTML=word
+    console.log(word)
+   }
+
+// hypen case
+   function hpn()
+   {
+    word='';
+       inpt = document.getElementById('inputt').value;
+    for(var a = 0 ; a < inpt.length ; a++)
+    {
+      for(var b = 0 ; b < upper.length ; b++)
+      {
+        if( inpt[a] == ' ' && inpt[a+1] == upper[b] )
+        {
+            word = word + '-'+lower[b] ;
+        }
+            if( inpt[a] == ' ' && inpt[a+1] == upper[b] && inpt[a+1] == lower[b] )   
+            { 
+                word = word + '-'+lower[b];
+            }
+            if( inpt[a] == upper[b] && inpt[a-1] != ' ' )
+            {
+                word=word+lower[b];
+            }
+            if( inpt[a] == lower[b] && inpt[a-1] != ' ')
+            {
+                word = word+lower[b];
+            }
+            if(inpt[a] == ' ' && inpt[a+1] == lower[b])
+            {
+                word=word+'-'+lower[b];  
+            }
+      }
+     
+    }
+    document.getElementById('hpn').innerHTML=word
+    console.log(word)
+   }
+//mirror
+   function mirror()
+   {
+    word='';
+       inpt = document.getElementById('inputt').value;
+       for(var a=0 ; a<inpt.length ; a++)
+       {
+        for(var b = 0; b<upper.length ; b++)
+        {
+            
+                if(inpt[a] == upper[b])
+                {
+                  console.log(upper[upper.length-b-1])
+                  word=word+upper[upper.length-b-1];
+                }
+                if(inpt[a] == lower[b])
+                {
+                  console.log(lower[lower.length-b-1])
+                  word=word+lower[lower.length-b-1]
+                }
+        }
+       }
+       document.getElementById('mirror').innerHTML=word
+   }
+
+        </script>
+    </body>
+</html>         

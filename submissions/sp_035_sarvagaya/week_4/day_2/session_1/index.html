@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button onclick="information()" id="info">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="addingRunTime()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="addCastMember()">Add cast member </button>
+  
+
+  <script>
+    var movie={
+        Name: "Avengers Endgame",
+        Director: "Russo Brothers",
+        Year: 2019,
+        Rating: 8.6,
+        cast: ["Robert Downey Jr." , "Chris Evans" , "Don Cheatel" , "Scarlett Johanson" , "Mark Ruffalo"]
+    }
+
+    var bodyElement=document.querySelector('body');
+    var btn=document.getElementById('info');
+    function information()
+    {
+      var movieInfo="My favourite movie is " +movie.Name +"." + "It was directed by " + movie.Director + "." + "It was released in " + movie.Year + "." + "Its IMDB rating is " + movie.Rating + "."+"My favourite top 5 cast members are " + movie.cast;
+      var heading=document.createElement('h');
+      console.log(movieInfo);
+      heading.append(movieInfo);
+      bodyElement.insertBefore(heading , btn);
+    }
+
+    function addingRunTime()
+    {
+      movie.runTime = 3.2;
+      var updatedInfo="My favourite movie is " +movie.Name +"." + "It was directed by " + movie.Director + "." + "It was released in " + movie.Year + "." + "Its IMDB rating is " + movie.Rating + "."+"My favourite top 5 cast members are " + movie.cast+"."+"It has a runtime of "+movie.runTime;
+      console.log(updatedInfo);
+      var heading=document.createElement('h');
+      heading.append(updatedInfo);
+      bodyElement.insertBefore(heading , btn);
+    }
+
+    function addCastMember()
+    {
+      movie.cast= "Tom Hidelston";
+      var updatedCast="My favourite movie is " +movie.Name +"." + "It was directed by " + movie.Director + "." + "It was released in " + movie.Year + "." + "Its IMDB rating is " + movie.Rating + "."+"Updated Cast member " + movie.cast+".";
+      console.log(updatedCast);
+      var heading=document.createElement('h');
+      heading.append(updatedCast);
+      bodyElement.insertBefore(heading , btn);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Coding Session 1!</title>
+</head>
+
+<body>
+    <!-- These elements below are for FSD.W3.3.1_1-->
+    <h1> Create your own exponentiation function! </h1>
+    <input type="text" name="num1">
+    <input type="text" name="num2">
+    <p id="valueExp"> </p>
+    </hr>
+    <button onclick="exponent()">Click here to find the exponent!</button>
+    <!-- These elements above are for FSD.W3.3.1_1-->
+
+    <!-- These elements below are for FSD.W3.3.1_2-->
+    <h1>Sum of multiples of 3 and 5!</h1>
+
+    <p> </p>
+    <input type="text" id="limit" name="limit">
+    <button onclick="sumOf3And5()">Click here for the output!</button>
+    <h2 id="sumOutput"> </h2>
+    <!-- These elements above are for FSD.W3.3.1_2-->
+
+    <!-- These elements below are for FSD.W3.3.1_3-->
+    <h1>Check if the users email is valid!</h1>
+    <label for="Email" id="email" name="email">Email</label>
+    <input type="text" id="emailId" name="email" />
+    <button onclick="validateEmail()">Check Email!</button>
+    <!-- These elements above are for FSD.W3.3.1_3-->
+    <script type="text/javascript">
+        // Function Exponent 
+        function exponent() {
+            var num1 = 0;
+            var num2 = 0;
+            num1 = Number(document.getElementById('number1').value);
+            num2 = Number(document.getElementById('power').value);
+            if (num2 > 1) {
+                for (var i = 0; i < num2; i++) {
+                    num1 = num1 * num1;
+                }
+            }
+            else {
+                num1 = num1;
+            }
+            document.getElementById('valueExp').innerHTML = "The value is" + num1;
+        }
+
+
+        //Sum of 3 and 5 multiples.
+
+        function sumOf3And5() {
+            alert("hello");
+            var input_limit = Number(document.getElementById('limit').value);
+            alert(input_limit);
+            var out_val = " ";
+            var print_sum = 0;
+            var i = 0;
+            var output_value = 0;
+            var a = 1;
+            while (i < input_limit) {
+
+                alert("in for a while");
+                i = 3 * 5 * a + i;
+
+                if (i <= input_limit) {
+                    //alert ("i value" + i);
+                    print_sum = print_sum + i;
+                    alert(print_sum + "sum");
+                    out_val = out_val + "+" + i;
+                }
+            }
+            alert(print_sum);
+            //alert("out for a while");
+            document.getElementById('sumOutput').innerHTML = out_val + "=" + print_sum;
+        }
+
+        var end_dom;
+        var len_email = 0;
+
+        // Email Validation
+        function validateEmail() {
+
+            var end = " ";
+            alert("masai");
+            end_dom = document.getElementById('emailId').value;
+            alert(end_dom.length);
+            //var len_email=0;
+            len_email = end_dom.length;
+            // alert(typeof(len_email));
+            alert(end_dom);
+            if (len_email < 6) {
+                alert("not a valid email id");
+                console.log("not a valid email id");
+            }
+            else {
+                alert("validating");
+                console.log("email validation");
+                check_Email(end_dom);
+
+            }
+
+        }
+
+        function check_Email(end_dom) {
+            alert("in email validation function");
+            console.log("email validation in block");
+        }
+
+
+
+        var endchar = len_email - 5;
+        alert(endchar);
+        alert(typeof (endchar));
+        var i = endchar;
+        for (var i = endchar; i < len_email; i++) {
+            end = end + end_dom[i];
+        }
+        alert(end);
+        if (end === ".com") {
+            console.log(end);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

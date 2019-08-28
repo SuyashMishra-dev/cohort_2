@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    p{
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button id="movieButton">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button id="runtimeButton">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button id="castButton">Add cast member </button>
+  
+
+  <script>
+
+    var movie = {
+      name : 'Interstellar',
+      director : 'Christopher Nolan',
+      year : '2014',
+      rating : '8.6',
+      cast : ['Matthew McConaughey', 'Mackenzie Foy', 'John Lithgow', 'Anne Hathaway', 'Wes Bentley']
+    }
+
+    var movieClick = document.getElementById('movieButton');
+    var runtimeClick = document.getElementById('runtimeButton');
+    var castClick = document.getElementById('castButton');
+    var h1Tag = document.querySelector('h1');
+
+    function createMovie(){
+
+      var movieName = document.createElement('p');
+      var movieDirector = document.createElement('p');
+      var movieYear = document.createElement('p');
+      var movieRating = document.createElement('p');
+      var movieCast = document.createElement('p');
+      
+      movieName.textContent = movie.name;
+      movieDirector.textContent = movie.director;
+      movieYear.textContent = movie.year;
+      movieRating.textContent = movie.rating;
+      movieCast.textContent = movie.cast;
+      
+      h1Tag.appendChild(movieName);
+      h1Tag.appendChild(movieDirector);
+      h1Tag.appendChild(movieYear);
+      h1Tag.appendChild(movieRating);
+      h1Tag.appendChild(movieCast);
+      
+    }
+
+    function addRunTime(){
+      movie.runTime = 169;
+
+      var movieRun = document.createElement('p');
+
+      movieRun.textContent = movie.runTime;
+
+      createMovie()
+      h1Tag.appendChild(movieRun);
+    }
+
+    function addCaste(){
+      movie.cast.push("Andrew Borba");
+
+      addRunTime();
+    }
+
+    movieClick.addEventListener('click', createMovie);
+    runtimeClick.addEventListener('click', addRunTime);
+    castClick.addEventListener('click', addCaste);
+
+    
+    
+  
+  </script>
+</body>
+</html>
