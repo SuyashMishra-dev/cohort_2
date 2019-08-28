@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <title>Unix</title>
+        <style>
+            .linus{
+                background-color: lightgrey;
+                margin-left: 400px;
+                height: 250px;
+                width :300px;
+            }
+            .linus img{
+                height : 150px;
+                width : 160px;
+                margin-left: 70px;
+                margin-top : 10px;
+            }
+            .linus h3 {
+                text-align: center;
+                color : blue;
+                font-size: 20px;
+            }
+            .linus p {
+                text-align: center;
+            }
+            .khan img {
+                height : 150px;
+                width : 120px;
+                margin-left : 100px;
+                float: left;
+            }
+            .khan h3 {
+                color: red;
+            }
+            .box{
+                background-color: chocolate;
+                height : 100px;
+                width : 800px;
+                margin-top: 100px;
+                margin-left :80px;
+            }
+            .denis {
+                color : white;
+                font-size: 20px;
+                margin-left: 10px;
+                float:right;
+
+            }
+            .ken {
+                color :white;
+                font-size: 20px;
+                margin-left: 10px;
+                float:left;
+             
+                
+            }
+            .denis p {
+                float :right;
+                color: black;
+                font-size: 15px;
+                margin-top: -20px;
+            }
+            .ken p {
+                float :left;
+                color: black;
+                font-size: 15px;
+                margin-top: -20px;
+
+            }
+            </style>
+    </head>
+    <body>
+        <button onclick = "create_page()">Create Page</button>
+        <script>
+        function create_page(){
+            var div1 = document.createElement('div');
+            var bodyElem = document.querySelector('body');
+            bodyElem.appendChild(div1);
+
+            div1.setAttribute('class','linus')
+            var LinusImg = document.createElement('img');
+            var LinusImgQuery = document.querySelector('div');
+            LinusImg.setAttribute('src' , 'https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/linus.jpg')
+            LinusImgQuery.appendChild(LinusImg);  
+
+            var head1 = document.createElement('h3')
+            head1.textContent = 'Linus Torvalds'
+            var para1 = document.createElement('p')
+            para1.textContent = 'The Creator of Linux & Github';
+            var div1Elem = document.querySelector('div')
+            div1Elem.appendChild(head1)
+            div1Elem.appendChild(para1)
+
+    /* // -----------------End of Linus Block ---------------------// */
+    /* //-------------start of Sal Khan Block ----------------// */
+            var div2 = document.createElement('div')
+            bodyElem.appendChild(div2)
+
+            div2.setAttribute('class','khan')
+            var KhanImg = document.createElement('img')
+            var KhanImgQuery = document.querySelector('.khan')
+            KhanImg.setAttribute('src','https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/khan.jpg')
+            KhanImgQuery.appendChild(KhanImg)
+
+            var head2 = document.createElement('h3')
+            head2.textContent = 'Sal Khan';
+            var para2 = document.createElement('p')
+            para2.innerHTML = 'Salman khan is the founder of khan academy which has a mission of providing <br> a free world class education for everyone,anywhere.' 
+            var div2Elem = document.querySelector('.khan')
+            div2Elem.appendChild(head2)
+            div2Elem.appendChild(para2)
+/* //----------------End Of Sal khan  Block ------------// */
+/* //----------------Start of Denis Ritche -----------------// */
+            var div3 = document.createElement('div')
+            bodyElem.appendChild(div3)
+            div3.setAttribute('class','box')
+            var div4 = document.createElement('div')
+            var div3Elem = document.querySelector('.box')
+            div3Elem.appendChild(div4)
+            div4.setAttribute('class','ken')
+            var div5 = document.createElement('div')
+            var div4Elem = document.querySelector('.box')
+            div4Elem.appendChild(div5)
+            div5.setAttribute('class','denis')
+
+            var head3 = document.createElement('h3')
+            head3.textContent = 'Ken Thompson'
+            var para3 = document.createElement('p')
+            para3.innerHTML = 'Designed and implemented original<br> unix opertaing system';
+            var div4Elem = document.querySelector('.ken')
+            div4Elem.appendChild(head3)
+            div4Elem.appendChild(para3)
+
+            var head4 = document.createElement('h4')
+            head4.textContent = 'Denis Ritche'     
+            var para4 = document.createElement('p')
+            para4.textContent = 'The Creator of C programming language';
+            var div5Elem = document.querySelector('.denis')
+            div5Elem.appendChild(head4)
+            div5Elem.appendChild(para4)
+}
+</script>
+</body>
+</html>
