@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button onclick="movieDetails()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="runTime()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="addCast()">Add cast member </button>
+  
+
+  <script>
+    var appended = false;
+    var movie = {
+      name : "The Dark Knight",
+      director : "Christopher Nolan",
+      year : 2008,
+      rating : 9,
+      cast : ['Heath Ledger','Christian Bale','Michael Caine','Gary Oldman','Aaron Eckhart']
+    }
+
+    function movieDetails() {
+      if (appended) {
+        return null;
+      }
+      var div = document.createElement('div');
+      div.setAttribute('id','movie-details');
+      div.append('Name : '+ movie.name);
+      div.append('Director : '+ movie.director);
+      div.append('Year Of Release : '+ movie.year);
+      div.append('Rating : '+ movie.rating+'/10');
+      div.append('Cast')
+      var ul = document.createElement('ul');
+      ul.setAttribute('id','cast');
+      for(el in movie.cast){
+        var li = document.createElement('li');
+        li.append(movie.cast[el]);
+        ul.appendChild(li);
+      } 
+      div.appendChild(ul);
+
+      var bodyEl = document.querySelector('body');
+      bodyEl.appendChild(div);
+      appended = true;
+    }
+
+    function runTime() {
+      movieDetails();
+      var movieDetailsBox = document.getElementById('movie-details');
+      movie.runtime = 2.5;
+      movieDetailsBox.append('Run Time :'+movie.runtime+'hrs');
+    }
+
+    function addCast() {
+      movieDetails();
+      var ul = document.getElementById('cast');
+      movie.cast.push('Cillian Murphy');
+      var li = document.createElement('li');
+      li.append('Cillian Murphy');
+
+      ul.appendChild(li);
+    }
+  </script>
+</body>
+</html>

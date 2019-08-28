@@ -61,11 +61,31 @@
 		//Write javascript for FSD.W3.3.1_3 here
 		function validateEmail() {
 			var email = document.getElementById("email").value
-			
+			var atRateIndex = 0;
+			var lastDotIndex = 0;
+			var atRateCounter = 0;
+			var message = 'invalid email'
+			for(var i = email.length; i >= 0; i--) {
+				if((email[i] == '.') && (lastDotIndex == 0)) {
+					lastDotIndex = i;
+				}
+				if (email[i] == '@') {
+					atRateIndex = i;
+					atRateCounter += 1;
+				}
+				if (atRateCounter > 1) {
+					break;
+				}
+			}
+			if ((lastDotIndex > atRateCounter) && ((lastDotIndex - atRateIndex) > 1) && 
+			(atRateIndex > 0) && (lastDotIndex < email.length - 1) && atRateCounter == 1) {
+				message = 'valid';	
+			}
+			alert(message);
 		}
 
 
-	</script>
+	</script>		
 </body>
 
 </html>

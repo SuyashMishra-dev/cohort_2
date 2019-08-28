@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <div id="movieList"></div>
+  <button onclick="movieInfo()" id="btnMovie">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="movieRunTime()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="addCast()">Add cast member </button>
+  
+
+  <script>
+  var idiots=["Aamir Khan","R. Madhavan","Sharman Joshi","Kareena Kapoor","Boman Irani"];
+  var movie = {
+    Name : "3 Idiots",
+    Director :"Rajkumar Hirani",
+    Year : 2009,
+    Rating : 8.4,
+    Cast : idiots
+  }
+  function movieInfo(){
+    var movies=document.getElementById("movieList");
+    moviesList=document.createElement('div');
+    moviesList.textContent='Name : '+movie.Name;
+    movies.appendChild(moviesList);
+    moviesList=document.createElement('div');
+    moviesList.textContent='Director :'+movie.Director;
+    movies.appendChild(moviesList);
+    moviesList=document.createElement('div');
+    moviesList.textContent='Year :'+movie.Year;
+    movies.appendChild(moviesList);
+    moviesList=document.createElement('div');
+    moviesList.textContent='Rating : '+movie.Rating;
+    movies.appendChild(moviesList);
+    moviesList=document.createElement('div');
+    moviesList.textContent='Casts : '+movie.Cast;
+    movies.appendChild(moviesList);
+  }
+  function movieRunTime()
+  {
+    var movies=document.getElementById("movieList");
+    movie.Runtime=170;
+    movieInfo();
+    moviesList=document.createElement('div');
+    moviesList.textContent= 'Runtime :'+ movie.Runtime;
+    movies.appendChild(moviesList);
+
+  }
+  function addCast()
+  {
+    var len=idiots.length;
+    idiots[len]="Javed Jaffrey";
+    movieRunTime();
+
+  }
+  </script>
+</body>
+</html>

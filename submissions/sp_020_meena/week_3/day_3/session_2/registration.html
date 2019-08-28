@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+    </head>
+    <body>
+        <style type="text/css">
+
+        </style>
+        <h1>NAME</h1>
+        <input type = "text" name = "name" id = "name">
+        
+        <h1>EMAIL</h1>
+        <input type = "text" name = "email" id = "email">
+
+        <h1>MOBILE</h1>
+        <input type = "text" name = "mobile" id = "mobile">
+
+        <button onclick = "registerForm()" id = "getRegister">REGISTER</button>
+        <script type = "text/javascript">
+        function registerForm(){
+            var nam = document.getElementById("name").value;
+            var num = document.getElementById("mobile").value;
+            var email = document.getElementById("email").value;
+            if((nam.length) < 3 ) {
+                alert("Name should be atleast 3 characters and not more than 10 characters"); 
+            }
+            if((num.length) < 9) {
+                alert("Number should have 10 characters");
+            }
+            if((email[0] == "@") || (email.length-1) == "@"){
+                alert("Email is not valid");
+            }
+        }
+        </script>
+    </body>
+</html>

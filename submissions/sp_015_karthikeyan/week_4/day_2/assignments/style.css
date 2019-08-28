@@ -1,0 +1,124 @@
+body {
+    margin: 10px;
+}
+
+#main-grid {
+    display: grid;
+    grid-template: repeat(3, auto) / repeat(2, auto); 
+    justify-content: center;   
+    grid-gap: 10px 50px;
+}
+
+#total-score {
+    font-size: 80px;
+}
+
+#top-grid {
+    display: grid;
+    grid-template: 20px 100px 100px 20px / repeat(2, 100px);
+    grid-gap: 4px 20px;
+    align-content: center;
+}
+
+#top-grid p:nth-child(7) {
+    grid-area: span 1 / span 2;
+}
+
+#total-score {
+    grid-area: span 1 / span 2;
+    background-color: #b3b3b3;
+}
+
+p {
+    text-align: center;
+    margin: 0px;
+}
+
+#buttons p {
+    width: 300px;
+    height: 20px;
+    margin: 10px 0px;   
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+input {
+    grid-area: 7 / 1 / span 1 / span 3;
+}
+
+input::placeholder{
+    color:black
+}
+
+#game-scores {
+    text-align: center;
+}
+
+#top-grid p:nth-child(3) {
+    background-color: red;
+    margin-top: 30px;
+}
+
+#top-grid p:nth-child(4) {
+    background-color: green;
+    margin-top: 30px;
+}
+
+#game-scores {
+    grid: span 2 / span 1;
+    padding: 100px;
+}
+
+#board-grid {
+    display: grid;
+    grid-template: repeat(8, 50px) / repeat(3, 50px);
+    grid-gap: 10px;
+    margin-left: 25px;
+    grid-area: span 2 / span 1;
+}
+
+#board-grid div:nth-of-type(1){
+    background-color: #b3b3b3;
+    grid-area: 1 / 1 / span 2 / span 3;
+    border: 2px solid black;
+}
+
+button:nth-of-type(odd) {
+    background-color: #668100;
+}
+
+button:nth-of-type(even) {
+    background-color: #ff6600;
+}
+
+button:nth-child(6) {
+    background-color: #ff6600;
+}
+
+#nameInput {
+    grid-area: 7 / 1 / span 1 / span 3;
+    text-align: center;
+    
+}
+
+button:nth-last-child(3) {
+    grid-area: 6 / 2;
+    background-color: #810065;
+    color: white;
+}
+
+button:nth-last-child(1) {
+    grid-area: 8 / 1 / span 1 / span 3; 
+    background-color: black;
+    color: white;
+}
+
+#minValue, #maxValue {
+    font-size: 35px;
+    margin: 10px 3px;
+}
+#scoreboard {
+    font-size: 25px; 
+    margin-top: 40px;
+}
