@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Strings Play</title>
+    </head>
+    <body>
+        <div>
+            <Input>
+            <button>Remove Space</button>
+            <button>Camel Case</button>
+            <button>Snake Case</button>
+            <button>Hypen Case</button>
+            <button>Mirror Image</button>
+        </div>
+
+        <script>
+            var input = document.querySelector("Input");
+            var buttons = document.querySelectorAll("button");
+            var count = 0;
+            var textArr = [];
+            buttons[0].setAttribute("onclick", "processText('removeSpace')"); 
+            buttons[1].setAttribute("onclick", "processText('camelCase')");   
+            buttons[2].setAttribute("onclick", "processText('snakeCase')");   
+            buttons[3].setAttribute("onclick", "processText('hypenCase')");   
+            buttons[4].setAttribute("onclick", "processText('mirrorImage')");   
+
+            var lowerCase = ["a", "b", "c", "d", "e", "f",
+                             "g", "h", "i", "j", "k", "l", 
+                             "m", "n", "o", "p", "q", "r", 
+                             "s", "t", "u", "v", "w", "x", 
+                             "y", "z"]
+            var upperCase = ["A", "B", "C", "D", "E", "F",
+                             "G", "H", "I", "J", "K", "L",
+                             "M", "N", "O", "P", "Q", "R", 
+                             "S", "T", "U", "V", "W", "X", 
+                             "Y", "Z"];
+                
+            function pushTo(value) {
+                textArr[count] = value;
+                count++;
+            }
+
+            function arrClean() {
+                for(i = 0; i < textArr.length; i++) {
+                    textArr[i] = "";
+                }
+            }
+
+            function processText(changeType) {
+                var textInput = input.value;
+                var text = '';
+
+                for(i = 0; i < textInput.length; i++) {
+                    if(textInput[i] != " ") {
+                        text = text + textInput[i];
+                    }
+                    else if(textInput[i] == " ") {
+                        pushTo(text);
+                        text = '';
+                    }
+                }
+                pushTo(text);
+
+                if(changeType == "removeSpace") {
+                    removeSpace(textArr);
+                }
+                else if(changeType == "camelCase") {
+                    camelCase(textArr);
+                }
+                else if(changeType == "snakeCase") {
+                    snakeCase(textArr);
+                }
+                else if(changeType == "hypenCase") {
+                    hypenCase(textArr);
+                }
+                else if(changeType == "mirrorImage") {
+                    mirrorImage(textArr);
+                } 
+            } 
+
+
+            function removeSpace(textArr) {
+                var output = "";
+                for(i = 0; i < textArr.length; i++) {
+                    output = output + textArr[i];
+                }
+                arrClean();
+                alert(output);   
+            }
+
+            function camelCase(textArr) {
+                var output = " "; 
+                if(output == " ") {
+                    output = convertToLower(textArr[0]);
+                }
+
+                for(k = 1; k < textArr.length; k++) {
+                    output = output + capitalize(textArr[k]);
+                }
+                arrClean();
+                alert(output);
+            }
+
+            function capitalize(word) {
+                var newWord = "";
+                for(i = 0; i < lowerCase.length; i++) {
+                    if(word[0] == lowerCase[i]) {
+                        newWord = upperCase[i];
+                    }
+                }
+                for(i = 1; i < word.length; i++) {
+                    newWord = newWord + word[i];
+                }
+                return newWord;
+            }
+
+            function convertToLower(word) {
+                 var newWord = "";
+                 for(i = 0; i < word.length; i++) {
+                     for(k = 0; k < upperCase.length; k++) {
+                         if(word[i] == upperCase[k]) {
+                             newWord = newWord + lowerCase[k];
+                         }
+                         else if(word[i] == lowerCase[k]) {
+                             newWord = newWord + word[i];
+                         }
+                     }
+                 }
+                 return newWord;
+            }
+
+            function snakeCase(textArr) {
+                var output = "";
+            
+                for(j = 0; j < textArr.length; j++) {
+                    if(output == "") {
+                        output = convertToLower(textArr[j]);
+                    }
+                    else if(output != "") {
+                        output = output + "_" + convertToLower(textArr[j]);
+                    }
+                }
+                arrClean();
+                alert(output);
+            }
+
+            function hypenCase(textArr) {
+                var output = "";
+            
+                for(j = 0; j < textArr.length; j++) {
+                    if(output == "") {
+                        output = convertToLower(textArr[j]);
+                    }
+                    else if(output != "") {
+                        output = output + "-" + convertToLower(textArr[j]);
+                    }
+                }
+                arrClean();
+                alert(output);
+            }
+
+            function mirrorImage(textArr) {
+                var output = "";
+                var newWord = "";
+
+                for(i = 0; i < textArr.length; i++) {
+                    for(j = 0; j < textArr[i].length; j++) {
+                        var word = textArr[i];
+                        for(k = 0; k < upperCase.length; k++) {
+                            if(newWord == "") {
+                                if(word[j] == upperCase[k]) {
+                                    newWord = upperCase[upperCase.length - k - 1];
+                                }
+                                else if(word[j] == lowerCase[k]) {
+                                    newWord = lowerCase[lowerCase.length - k - 1];
+                                }
+                            }
+
+                            else if(newWord != "") {
+
+                                if(word[j] == upperCase[k]) {
+                                   newWord = newWord + upperCase[upperCase.length - k - 1]; 
+                                }
+                                else if(word[j] == lowerCase[k]) {
+                                    newWord = newWord + lowerCase[lowerCase.length - k - 1];
+                                }
+                            }
+                        }
+                    }
+                }
+                arrClean();
+                alert(newWord);
+            }   
+        </script>
+    </body>
+</html>

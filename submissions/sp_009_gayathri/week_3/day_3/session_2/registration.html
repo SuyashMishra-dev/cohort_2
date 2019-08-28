@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Registration</title>
+        <style type="text/css">
+        .regform{
+            width: 300px;
+            height: 450px;
+            float: left;
+            margin: 100px 300px 100px 300px;
+        }
+        .blackbox{
+            width: 300px;
+            height: 450px;
+            background: black;
+            float: right;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .bgcolor{
+            color: red;
+        }
+
+        @media(max-width: 400px){
+            .reg-form{
+                float: right;
+                background: beige;
+               }
+            .blackform{
+                margin: 100px 100px 100px 300px;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div class="regform">
+            <label for="name">NAME</label><br>
+            <input type="text" name="name" id="name">
+            <p class="bgcolor" id="invalidname"></p>
+            <br>
+            <br>
+            <label for="email">EMAIL</label><br>
+            <input type="text" name="email" id="email">
+            <p class="bgcolor" id="invalidemail"></p>
+            <br>
+            <br>
+            <label for="mobnum">MOBILE</label><br>
+            <input type="text" name="mobile" id="mobnum">
+            <p class="bgcolor" id="invalidmobnum"></p>
+            <br>
+            <br>
+            <button onclick="registers()">Register</button>
+        </div>
+        <div class="blackbox">
+            <p>Name</p>
+            <h1 id="bname">MASAI</h2>
+            <p>EMAIL</p>
+            <p id="bemail">email@masaischool.com</p>
+            <p>MOBILE</p>
+            <p id="bmobnum">9876543210</p>
+        </div>
+
+        <script type="text/javascript">
+        function registers(){
+            // Name input validation
+            var regName = document.getElementById("name").value;
+            console.log (regName);
+            var regEmail= document.getElementById("email").value;
+            console.log (regEmail);
+            var regMobile = document.getElementById("mobnum").value;
+            console.log (regMobile);
+           
+            var countName = 0;
+            
+            countName=regName.length;
+            if(countName<3 || countName>10){
+                document.getElementById("invalidname").innerHTML="Length of Name input should be between 3-10 characters only";
+            }
+            else{
+                document.getElementById("bname").innerHTML=document.getElementById("name").value;
+                document.getElementById("name").value="";
+            }
+
+            // Email input validation
+            var countEmail = 0;
+            countEmail=regEmail.length;
+            console.log (countEmail);
+            console.log (regEmail);
+            var atPos=countEmail-4;
+            var domPos=countEmail-2;
+            //var result=false;
+            var result;
+            if (countEmail > 6){
+			for(var i=0;i<atPos;i++){
+				if(email[i]=="@"){
+							result=true;
+                            console.log (result);
+                            console.log("valid addres");
+						}
+					
+                    }
+                     result=true;
+				  }
+
+            
+            
+            else {
+                result=false;
+                console.log (countEmail);
+                console.log(result);
+                console.log("invalid addres");
+            }
+
+			if(result==true){
+				
+                document.getElementById('bemail').innerHTML=regEmail;
+                document.getElementById("email").value="";
+			}
+            else if (result==false){
+				document.getElementById("invalidemail").innerHTML="Invalid Email Entered";
+			}
+
+            // Mobile Number validation
+            var countMobile=regMobile.length;
+            if(countMobile<10 || countMobile>10){
+                document.getElementById("invalidmobnum").innerHTML="Invalid Mobile Number Entered";
+            console.log (countMobile);
+            console.log ()
+            }
+            else{
+                document.getElementById("bmobnum").innerHTML=document.getElementById("mobnum").value;
+                document.getElementById("mobnum").value="";
+
+            }
+        }
+        </script>
+    </body>
+</html>

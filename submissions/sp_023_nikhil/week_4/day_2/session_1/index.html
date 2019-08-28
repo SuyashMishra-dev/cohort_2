@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <body>
   <!-- FSD.W4.2.1_1 !-->
   <h1>Click the button to see information about my favourite movie</h1>
   <button id="movieButton">Movie Information!</button>
   <!-- FSD.W4.2.1_2 !-->
   <button id="runtimeButton">Add Runtime to the movie object! </button>
-  
+
   <!-- FSD.W4.2.1_3 !-->
   <button id="addCastButton">Add cast member </button>
-  
+
 
   <script type="text/javascript">
 
     var movie = {
-      name : 'The Shawshank Redemption' ,
-      director : 'Frank Darabont' ,
-      year: 1994 ,
-      rating: 9.3 ,
+      name: 'The Shawshank Redemption',
+      director: 'Frank Darabont',
+      year: 1994,
+      rating: 9.3,
       cast: ['Tim Robbins', ' Morgan Freeman', ' Bob Gunton', ' William Sadler', ' Clancy Brown']
     }
 
@@ -53,7 +54,7 @@
     function runTime() {
       movie.runTime = 142;
 
-      var  movieRunTime = document.createElement('p');
+      var movieRunTime = document.createElement('p');
       movieRunTime.textContent = movie.runTime
 
       mainBody.appendChild(movieRunTime)
@@ -62,11 +63,12 @@
     function addCast() {
       movie.cast.push('Gil Bellows');
       var newCast = document.createElement('p');
-      newCast.textContent = movie.cast; 
+      newCast.textContent = movie.cast;
       mainBody.appendChild(newCast)
 
     }
 
   </script>
 </body>
+
 </html>

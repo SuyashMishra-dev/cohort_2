@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+
+  <button id = "movie_info">Movie Information!</button>
+  <div id = "movie_list"></div>
+  
+  <!-- FSD.W4.2.1_2 !-->
+  <button id = "add_time">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button id = "add_cast">Add cast member </button>
+  
+
+  <script>
+       var movieInfo = {
+      name: "Kanaa",
+      director :"Arunraja",
+      year :2018,
+      rating : 7.8,
+      cast : ["Aiswarya","satyaraj","Darshan","Rama"]
+      }
+      function movie_details(){
+        var outputText1 = "My favourite movie is  " + movieInfo.name + ". ";
+        var outputText2 = "It is directed by  " + movieInfo.director+" released in "+ movieInfo.year
+                      + " and got " + movieInfo.rating +" rating out of 10" +"."
+                      + " Here the list of main lead"+ movieInfo.cast[0]+","+movieInfo.cast[1]+".";
+        var outputhead = document.createElement('h3')
+       outputhead.textContent = outputText1
+        var container = document.querySelector('#movie_list')
+        container.appendChild (outputhead)
+        var outputPara = document.createElement('p')
+        outputPara.textContent = outputText2
+        var container = document.querySelector('#movie_list')
+        container.appendChild(outputPara) 
+      }
+      var movieButton = document.querySelector('#movie_info')
+      movieButton.addEventListener('click', movie_details)
+
+      function runtime(){
+        movieInfo.runtime = 2;
+        var outputText = "The running time of movie is "+ movieInfo.runtime +" hrs.";
+        var outputPara = document.createElement('p')
+        outputPara.textContent = outputText
+        var container = document.querySelector('#movie_list')
+        container.appendChild(outputPara)
+      }
+      var addButton = document.querySelector('#add_time')
+      addButton.addEventListener('click', runtime)
+
+      function addCast() {
+        movieInfo.cast = "karthikeyan";
+        var outputText = "There is guest appearance of "+ movieInfo.cast;
+        var outputPara = document.createElement('p')
+        outputPara.textContent = outputText;  
+        var container = document.querySelector('#movie_list')
+        container.appendChild(outputPara)
+      }
+      var addButton = document.querySelector('#add_cast')
+      addButton.addEventListener('click', addCast)
+  
+  </script>
+</body>
+</html>
