@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Coding Session 1!</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.W3.3.1_1-->
+	<h1> Create your own exponentiation function! </h1>
+	<input id = "number1" type="text" name = "num1">
+	<input id = "number2"type="text" name = "num2">
+	<p id = "display-numbers"> </p>
+	</hr>
+	<button onclick="exponent()">Click here to find the exponent!</button>
+	<!-- These elements above are for FSD.W3.3.1_1-->
+
+	<!-- These elements below are for FSD.W3.3.1_2-->
+	<h1>Sum of multiples of 3 and 5!</h1>
+	<p id = "display-multiples"></p>
+	<input id = "range" type="text">
+	<button onclick="sumOf3And5()">Click here for the output!</button>
+	
+	<!-- These elements above are for FSD.W3.3.1_2-->
+
+	<!-- These elements below are for FSD.W3.3.1_3-->
+	<h1>Check if the users email is valid!</h1>
+	<label for="Email">Email</label>
+	<input type="text" id="email"/>
+	<button onclick="validateEmail()">Check Email!</button>
+	<!-- These elements above are for FSD.W3.3.1_3-->
+	<script type="text/javascript">
+		//Write javascript for FSD.W3.3.1_1 here
+		function exponent(){
+			var number1 = document.getElementById("number1").value;
+			var number2 = document.getElementById("number2").value;
+			var exponent = 1;
+			for( var i = 1; i <= number2; i++) {
+				exponent = exponent * number1;
+			}
+
+			document.getElementById("display-numbers").innerHTML = exponent;
+			
+		}
+		//Write javascript for FSD.W3.3.1_2 here
+
+		function sumOf3And5(){
+			var n = document.getElementById("range").value;
+			var sum = 0;
+
+			for (var i =15 ; i<= n ; i++){
+				if(i % 3 == 0 && i % 5 == 0){
+					sum = sum + i;
+				}
+			}
+			document.getElementById("display-multiples").innerHTML = sum;			
+		}
+
+		//Write javascript for FSD.W3.3.1_3 here
+		function validateEmail(){
+			email = document.getElementById("email").value;
+			var at_rate_index = 0;
+			var last_dot_index = 0;
+			var at_rate_counter = 0;
+			var message = "Invalid email";
+			for(var i = email.length; i>=0 ; i--) {
+				if((email[i] == '.') && (last_dot_index == 0)) {
+					last_dot_index = i;
+				}
+				if(email[i] == '@') {
+					at_rate_index = i;
+					at_rate_counter = at_rate_counter + 1;
+				}
+				if(at_rate_counter > 1) {
+					break;
+				}
+			}
+			if((last_dot_index > at_rate_index) && ((last_dot_index - at_rate_index) > 1) && (at_rate_index > 0) && (last_dot_index < email.length - 1) && at_rate_counter == 1) {
+				message = "valid";
+			}
+			alert(message);
+		}
+	</script>
+</body>
+</html>

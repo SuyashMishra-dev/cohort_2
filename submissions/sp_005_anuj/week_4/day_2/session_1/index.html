@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button  onclick="movie_details()" >Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button id="runtime_add">Add Runtime to the movie object! </button>
+  <!-- FSD.W4.2.1_3 !-->
+  <button id="cast">Add cast member </button>
+  
+
+  <script>
+  var movie = {
+            Name:"M S Dhoni",
+            Director:"Neeraj Sharma",
+            Year:2016,
+            Rating:7.7,
+            Cast:["Sushant Singh Rajput", "Disha Patani", "Kiara Advani", "Bhumika Chawla","Anupam Kher"]
+      }
+
+  function movie_details() {
+  var movie_selector = document.querySelector('body')
+  var details = document.createElement('h1')
+  details.textContent = [movie.Name,movie.Director,movie.Year,movie.Rating,movie.Cast];
+  movie_selector.appendChild(details);
+  }
+
+  var buttn = document.getElementById('runtime_add');
+  buttn.addEventListener('click',runtime_show);
+
+  function runtime_show() {
+  movie.runtime = "3hr 40min";
+  var runtime = document.querySelector('body');
+  var run = document.createElement('h1')
+  run.textContent = movie.runtime;
+  runtime.appendChild(run);
+  }
+
+  var movie_runtime_select = document.getElementById('cast')
+  movie_runtime_select.addEventListener('click',add_cast)
+
+  function add_cast() {
+  movie.Cast.push("Rajesh Sharma")
+  var more_cast = document.querySelector('body')
+  var add = document.createElement('h1');
+  add.textContent = [movie.Name,movie.Director,movie.Year,movie.Rating,movie.Cast];
+  more_cast.appendChild(add)
+  }
+  </script>
+</body>
+</html>

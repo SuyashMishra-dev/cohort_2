@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        flex_2
+     </title>
+     <style type="text/css">
+     .flex-box{
+         display: flex;
+         margin-left :200px;
+           width:600px;
+                     }
+    .flex-box div {
+        height:100px;
+        width :100px;
+        margin: 20px;
+        border-radius: 2px;
+        background-color: seagreen
+            }
+            #id1 {
+                flex-direction: row;
+                            
+            }
+            #id1 div:nth-of-type(2){
+                flex-grow:0.5;
+            }
+            #id2 div:nth-of-type(1){
+                flex-grow: 0.5;
+            }
+            #id3 div:nth-of-type(3){
+                flex-grow: 0.5;
+            }
+            
+            
+    </style>
+    </head>
+    <body>
+        <div class= "flex-box" id="id1">
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+        <div class= "flex-box" id="id2">
+                <div></div>
+                <div></div>
+                <div></div>
+    
+         </div>
+        <div class= "flex-box" id="id3">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+        
+        </div>
+                    
+                
+    </body>
+    </html>

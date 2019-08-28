@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Sums</title>
+</head>
+<body>
+    <input id="numbers-input" type="text">
+    <button onclick="evenPosSum()">Even Positions Sum</button>
+    <button onclick="oddPosSum()">Odd Positions Sum</button>
+    <button onclick="oddSum()">Even Sum</button>
+    <button onclick="evenSum()">Odd Sum</button>
+    <button onclick="singleDigitSum()">Single Digit Sum</button>
+    <button onclick="doubleDigitSum()">Double Digit Sum</button>
+    <div id="display-output"></div>
+    <script>
+        var number = '';
+        var numbersArray = [];
+
+        function evenPosSum() {
+            var inputValue = document.getElementById('numbers-input').value;
+            createNumbers(inputValue);
+            var sum = 0;
+            for(var i = 1; i<numbersArray.length; i=i+2){
+                sum = sum + numbersArray[i];
+            }
+            document.getElementById('display-output').innerHTML = sum;
+            setNumbersArrayNull();
+        }
+
+
+        function oddPosSum() {
+            var inputValue = document.getElementById('numbers-input').value;
+            createNumbers(inputValue);
+            var sum = 0;
+            for(var i = 0; i<numbersArray.length; i=i+2){
+                sum = sum + numbersArray[i];
+            }
+            document.getElementById('display-output').innerHTML = sum;
+            setNumbersArrayNull();
+        }
+
+        function oddSum() {
+            var inputValue = document.getElementById('numbers-input').value;
+            createNumbers(inputValue);
+            var sum = 0;
+            for (var i=0; i<numbersArray.length; i++) {
+                if (numbersArray[i]%2 != 0) {
+                    sum = sum + numbersArray[i];
+                }
+            }
+            document.getElementById('display-output').innerHTML = sum;
+            setNumbersArrayNull();
+        }
+
+        function evenSum() {
+            var inputValue = document.getElementById('numbers-input').value;
+            createNumbers(inputValue);
+            var sum = 0;
+            for (var i=0; i<numbersArray.length; i++) {
+                if (numbersArray[i]%2 == 0) {
+                    sum = sum + numbersArray[i];
+                }
+            }
+            document.getElementById('display-output').innerHTML = sum;
+            setNumbersArrayNull();
+        }
+
+        function singleDigitSum() {
+            var inputValue = document.getElementById('numbers-input').value;
+            createNumbers(inputValue);
+            var sum = 0;
+            for (var i=0; i<numbersArray.length; i++) {
+                if (numbersArray[i] < 10) {
+                    sum = sum + numbersArray[i];
+                }
+            }
+            document.getElementById('display-output').innerHTML = sum;
+            setNumbersArrayNull();
+        }
+
+        function doubleDigitSum() {
+            var inputValue = document.getElementById('numbers-input').value;
+            createNumbers(inputValue);
+            var sum = 0;
+            for (var i=0; i<numbersArray.length; i++) {
+                if (numbersArray[i] >= 10) {
+                    sum = sum + numbersArray[i];
+                }
+            }
+            document.getElementById('display-output').innerHTML = sum;
+            setNumbersArrayNull();
+        }
+
+        function createNumbers(stringName) {
+            for(var i = 0; i<stringName.length;i++) {
+                if (stringName[i]==',') {   
+                    var newNumber = number-0;                 
+                    myPush(numbersArray,newNumber);
+                    setNumberNull();
+                    continue;
+                }                
+                number = number+stringName[i];
+                if (i==stringName.length-1) {
+                    var newNumber = number-0;                 
+                    myPush(numbersArray,newNumber);
+                    setNumberNull();
+                }               
+            }
+            setNumberNull();
+        }
+
+        function setNumberNull() {
+            number = '';
+        }
+
+        function myPush(arrayName,element){
+            arrayName[arrayName.length] = element;
+        }
+
+        function setNumbersArrayNull(){
+            numbersArray = [];
+        }
+    </script>
+</body>
+</html>
