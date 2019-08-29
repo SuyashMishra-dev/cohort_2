@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button id="movieInfoBtn" >Movie Information! </button>
+  <div id="movieContainer" ></div>
+  <!-- FSD.W4.2.1_2 !-->
+  <button id="addTime">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick id="addCast">Add cast member </button>
+  
+
+  <script>
+          var movie = {
+        name:"Black" ,
+        director : "Sanjay Leela Bansali",
+        year : 2005,
+        rating:4,
+        cast: [ "Amithab Bachan" , "Rani Mukeherjee" , "Ayesha Kapoor" , "shernaz patel" , "Nandana Sen"]
+
+      }
+        function movieInfo(){
+          var outputText = "My Favourite movie  is " + movie.name + ". "
+               + "Director is " + movie.director +"." +"This movie was released in the year "+ movie.year+ ". "
+               + "It has " + movie.rating +" "+"ratings" +  ""
+               + " and " + "some of the cast members are" +" " + movie.cast[0] +" " + movie.cast[1] +" " +movie.cast[2] +" " + movie.cast[3] + " " 
+               +movie.cast[4] + "." ;
+
+               var outputPara = document.createElement('p')
+                  outputPara.textContent = outputText
+                
+              var container = document.querySelector('#movieContainer')
+                    container.appendChild(outputPara)
+
+        }
+              var movieButton = document.querySelector('#movieInfoBtn')
+            movieButton.addEventListener('click', movieInfo)
+  
+
+          function addProperty(){
+                movie.runTime = 122            
+               var outputText = "My Favourite movie  is " + movie.name + ". "
+               + "Director is " + movie.director +"." +"This movie was released in the year "+ movie.year+ ". "
+               + "It has " + movie.rating +" "+"ratings" +  ""
+               + " and " + "some of the cast members are" +" " + movie.cast[0] +" " + movie.cast[1] +" " +movie.cast[2] +" " + movie.cast[3] + " " 
+               +movie.cast[4] + "." + "Movie running time is " + movie.runTime + " " + "minutes" + "." 
+
+               var outputPara = document.createElement('p')
+                  outputPara.textContent = outputText
+                
+              var container = document.querySelector('#movieContainer')
+                    container.appendChild(outputPara)      
+          }
+                 var addButton = document.querySelector('#addTime')
+                 addButton.addEventListener('click', addProperty)
+
+
+            function addProperty1(){            
+                movie.cast = "Monty Sharma"
+               var outputText = "My Favourite movie  is " + movie.name + ". "
+               + "Director is " + movie.director +"." +"This movie was released in the year "+ movie.year+ ". "
+               + "It has " + movie.rating +" "+"ratings" +  ""
+               + " and " + "some of the cast members are" +" " + movie.cast[0] +" " + movie.cast[1] +" " +movie.cast[2] +" " + movie.cast[3] + " " 
+               +movie.cast[4] + "." + "Movie running time is " + movie.runTime + " " + "minutes" + "." + "Music is composed by " + " " + movie.cast+"."
+
+               var outputPara = document.createElement('p')
+                  outputPara.textContent = outputText
+                
+              var container = document.querySelector('#movieContainer')
+                    container.appendChild(outputPara)      
+          }
+                 var addButton = document.querySelector('#addCast')
+                 addButton.addEventListener('click', addProperty1)
+
+               
+
+
+
+
+  </script>
+</body>
+</html>

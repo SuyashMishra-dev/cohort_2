@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+
+  <div id="movieContainer"></div>
+  <div id="runtimeContainer"></div>
+  <div id="castContainer"></div>
+
+  <button id="movieInfoBtn">Movie Information!</button>
+ 
+  <!-- FSD.W4.2.1_2 !-->
+  
+  <button id="runTimeBtn">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button id="castMemberBtn">Add cast member </button>
+  
+
+  <script>
+var movie={
+   name:"Kabir Singh",
+  director:  "Sandeep Vanga",
+  year:2019,
+  rating:5,
+  cast:["Shahid Kapoor"," Kiara Advani","Soham Majumdar","Arjan Bajwa ","Suresh Oberoi"],
+  run:172
+  }
+
+var movieButton = document.getElementById('movieInfoBtn');
+var runtimeButton = document.getElementById('runTimeBtn');
+var castButton = document.getElementById('castMemberBtn');
+
+function movieCreate(){
+  var outputName = "My favrioite movie is "  + movie.name + "." 
+  var outputDirector="The director of movie is " + movie.director + ". "
+  var outputYear="This movie was relased in the year " + movie.year+ "." 
+  var outputRating="Rating of this movie is " +movie.rating + ". " 
+ 
+    var outputMovieName = document.createElement('h5')
+    var outputMovieDirector = document.createElement('h5')
+    var outputMovieYear = document.createElement('h5')
+    var outputMovieRating = document.createElement('h5')
+
+    outputMovieName.textContent = outputName;
+    outputMovieDirector.textContent = outputDirector;
+    outputMovieYear.textContent = outputYear;
+    outputMovieRating.textContent = outputRating;
+   
+  var container = document.querySelector('#movieContainer')
+  container.appendChild(outputMovieName)
+  container.appendChild(outputMovieDirector)
+  container.appendChild(outputMovieYear)
+  container.appendChild(outputMovieRating)
+}
+movieButton.addEventListener('click', movieCreate);
+
+function movieRun(){
+  var outputRun = "Running time of movie is "  + movie.run + " minutes . " 
+  var outputMovieRun = document.createElement('h5')
+  outputMovieRun.textContent = outputRun;
+  var containerRun = document.querySelector('#runtimeContainer')
+  containerRun.appendChild(outputMovieRun)
+  movieCreate()
+}
+
+runtimeButton .addEventListener('click', movieRun);
+
+function castMember(){
+  
+  var outputCast="Star cast for this movie are " +movie.cast[0]+ ", " +movie.cast[1]+ ", " +movie.cast[2]+ ", " +movie.cast[3]+ "and" +movie.cast[4]+ ". " ;
+  var outputMovieCast = document.createElement('h5')
+  outputMovieCast.textContent = outputCast;
+  var containerCast = document.querySelector('#castContainer')
+  containerCast.appendChild(outputMovieCast);
+  movieRun()
+
+}
+
+castButton. addEventListener('click', castMember)
+  
+  </script>
+</body>
+</html>

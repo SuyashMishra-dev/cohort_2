@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="text" id="inputType"><span>Result:</span><span id="result"></span><br><br>
+        <button onclick="evenSum()">Even Position Sum</button>
+        <button onclick="oddSum()">Odd Position Sum</button>
+        <button onclick="evenNumberSum()">Even Sum</button>
+        <button onclick="oddNumberSum()">Odd Sum</button>
+        <button onclick="singleDigit()">Single Digit Sum</button>
+        <button onclick="doubleDigit()">Double Digit Sum</button>
+        <script>
+        function numbers(){
+            var data=document.getElementById("inputType").value;
+            var newData=[];
+            var str="";
+            var k=0;
+            data=data+",";
+            console.log(data);
+            for(var i=0;i<data.length;i++)
+            {
+              if(data[i]==',')
+              {
+                  newData[k++]=str;
+                  str="";
+              }
+              else{
+                str=str+data[i];
+              }
+            }
+            console.log(newData);
+        return newData;
+        }
+
+
+        function evenSum(){
+            var sum=0;
+            var data=numbers();
+            for(var i=0;i<(data.length);i++)
+            {
+                if(i%2==1){
+                  sum=Number(sum)+Number(data[i]);
+                }
+            }
+            document.getElementById("result").innerHTML=sum;
+        }
+        function oddSum(){
+            var sum=0;
+            var data=numbers();
+            for(var i=0;i<(data.length);i++)
+            {
+                if(i%2==0){
+                  sum=Number(sum)+Number(data[i]);
+                }
+            }
+            document.getElementById("result").innerHTML=sum;
+        }
+        function singleDigit(){
+            var sum=0;
+            var data=numbers();
+            for(var i=0;i<(data.length);i++)
+            {
+                if(data[i].length==1)
+                {
+                  sum=Number(sum)+Number(data[i]);
+                }
+            }
+            document.getElementById("result").innerHTML=sum;
+        }
+        function evenNumberSum(){
+            var sum=0;
+            var data=numbers();
+            for(var i=0;i<(data.length);i++)
+            {    
+                 if(Number(data[i])%2==0)
+                 {
+                  sum=Number(sum)+Number(data[i]);
+                 }
+            }
+            document.getElementById("result").innerHTML=sum;
+        }
+        function oddNumberSum(){
+            var sum=0;
+            var data=numbers();
+            for(var i=0;i<(data.length);i++)
+            {    
+                 if(Number(data[i])%2==1)
+                 {
+                  sum=Number(sum)+Number(data[i]);
+                 }
+            }
+            document.getElementById("result").innerHTML=sum;
+        }
+        function doubleDigit(){
+            var sum=0;
+            var data=numbers();
+            for(var i=0;i<(data.length);i++)
+            {
+                if(data[i].length==2)
+                {
+                  sum=Number(sum)+Number(data[i]);
+                }
+            }
+            document.getElementById("result").innerHTML=sum;
+        }
+        </script>
+    </body>
+</html>

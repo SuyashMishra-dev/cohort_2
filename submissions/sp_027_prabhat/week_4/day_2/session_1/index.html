@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <p id="e1"></p>
+  <button onclick="movieInfo()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="runTime()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="addCast()">Add cast member </button>
+  
+
+  <script>
+    var movie = {
+        Name: "Fight Club",
+        Director: " David Fincher",
+        Year: "1999",
+        Rating: "8.8",
+        Cast: ["Brad Pitt", "Edward Norton", "Meat Loaf"," Zach Grenier","David Andrews "]
+      }
+
+    function movieInfo(){
+      var outputText = movie.Name + " " + movie.Director + " " + movie.Year +" "+ movie.Rating +" "+ movie.Cast; 
+      var outputPara = document.createElement('p')
+      outputPara.textContent = outputText
+      var container = document.querySelector('#e1')
+      container.appendChild(outputPara)
+    }
+
+    function runTime() {
+      movie.runTime =2.19;
+      var outputText = movie.Name + " " + movie.Director + " " + movie.Year +" "+ movie.Rating +" "+ movie.Cast[0] +" "+ movie.Cast[1] +" "+ movie.Cast[2] +" "+ movie.Cast[3]+" "+ movie.Cast[4]+" "+movie.runTime;
+      var outputPara = document.createElement('p')
+      outputPara.textContent = outputText
+      var container = document.querySelector('#e1')
+      container.appendChild(outputPara)
+    }  
+
+    function addCast() {
+      movie.Cast.push(" Charlie Dell ") ;
+      var outputText = movie.Name + " " + movie.Director + " " + movie.Year +" "+ movie.Rating +" "+ movie.Cast;
+      var outputPara = document.createElement('p')
+      outputPara.textContent = outputText
+      var container = document.querySelector('#e1')
+      container.appendChild(outputPara)
+    }  
+  </script>
+</body>
+</html>

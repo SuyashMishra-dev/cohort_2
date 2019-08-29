@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button onclick="movieInfo()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="addRuntime()">Add Runtime to the movie object! </button>
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="addCast()">Add cast member </button>
+  
+
+  <script>
+
+      var movie = {
+        name : "Inception",
+        director : "Christopher Nolan",
+        year : 2012,
+        rating : 8.8,
+        cast : ["Lenordo DiCaprio"," Ellen Page"," Joseph Gordon"," Cillian Murphy"," Marion Cotillard"]
+      }
+
+
+
+        function movieInfo() {
+          
+          var outputText = "my favourite movie is "+movie.name+" directed by "+movie.director+"<br> in the year "
+                            +movie.year+", which has a rating of "+movie.rating+", with the following cast <br>"+movie.cast
+
+          var createPara = document.createElement('p');   //creating p element
+          createPara.innerHTML = outputText   
+
+          var appendPara = document.querySelector('body');
+          appendPara.appendChild(createPara);
+ 
+    }
+
+    function addRuntime() {
+
+        removePara()
+
+        movie.runTime = 120
+
+        var outputText = "my favourite movie is "+movie.name+" directed by "+movie.director+"<br> in the year "
+                            +movie.year+", which has a rating of "+movie.rating+", with the following cast <br>"+movie.cast+
+                            "<br> which has run time of "+movie.runTime+" minutes"
+
+        var createPara = document.createElement('p');   //creating p element
+        createPara.innerHTML = outputText
+
+        var appendPara = document.querySelector('body');
+        appendPara.appendChild(createPara);
+
+    }
+
+    function addCast() {
+
+        removePara()
+
+        movie.runTime = 120
+
+        movie.cast[5] = "Tom Hardy"
+
+        var outputText = "my favourite movie is "+movie.name+" directed by "+movie.director+"<br> in the year "
+                            +movie.year+", which has a rating of "+movie.rating+", with the following cast <br>"+movie.cast+
+                            "<br> which has run time of "+movie.runTime+" minutes"
+
+                            
+          var createPara = document.createElement('p');   //creating p element
+          createPara.innerHTML = outputText   
+
+          var appendPara = document.querySelector('body');
+          appendPara.appendChild(createPara);
+
+    }
+
+    function removePara() {
+        
+        var selectParent = document.querySelector('body');
+        var selectElement = document.querySelector('p');
+        selectParent.removeChild(selectElement);
+
+    }
+
+  
+  </script>
+</body>
+</html>

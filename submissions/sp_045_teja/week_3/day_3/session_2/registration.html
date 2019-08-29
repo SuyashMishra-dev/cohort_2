@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>REGISTER</title>
+        <style>
+            #grid {
+                display: grid;
+                grid-template: repeat(7, auto) / repeat(2, auto);
+            }
+
+            #output {
+                grid-area: 1 / 2 / span 7 / span 1;
+                background-color: black;
+                color: white;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div id="grid">
+            <div>NAME</div>
+            <div id="output">
+                <p>NAME</p>
+                <P id="outputName">MASAI</P>
+                <P>EMAIL</P>
+                <P id="outputEmail">masaischool@gmail.com</P>
+                <p>PHONE-NUMBER</p>
+                <P id="outputphone">9686888050</P>
+            </div>
+            <input id="name" required minlength="3" maxlength="10">
+            <p>EMAIL</p>
+            <input id="email">
+            <p>PHONE-NUMBER</p>
+            <input id="phone" required maxlength="10">
+            <button onclick="registerButton()">REGISTER</button>
+        </div>
+
+        <script>
+            
+            function registerButton() {
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var phone = document.getElementById("phone").value; 
+
+                if(validateEmail(email) == true) {
+                    document.getElementById("outputName").innerHTML = name;
+                    document.getElementById("outputphone").innerHTML = phone;
+                    document.getElementById("outputEmail").innerHTML = email;
+                } 
+                else {
+                    alert("resgistration failed");
+                }  
+            }
+
+            function validateEmail(input){
+            var validCounter = false
+			var atRateIndex = 0;
+			var lastDotIndex = 0;
+			var atRateCounter = 0;
+			for (var i = input.length; i >= 0; i--) {
+				if ((input[i] == '.') && (lastDotIndex == 0)) {
+					lastDotIndex == i;			
+				}
+				if (input[i] == '@') {
+					atRateIndex = i;
+					atRateCounter += 1;
+				}
+				if (atRateCounter > 1) {
+					break;
+				}
+			}
+				if((lastDotIndex > atRateIndex) && (lastDotIndex - atRateIndex)> 1 && (atRateIndex > 0) && (lastDotIndex) < input.length-1 && atRateCounter == 1) {
+                    validCounter = true;
+				}
+			return validCounter;
+
+		}
+        
+        
+        </script>
+    </body>
+</html>

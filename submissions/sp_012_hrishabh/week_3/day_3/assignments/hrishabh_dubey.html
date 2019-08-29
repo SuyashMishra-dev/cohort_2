@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Tax & Saving Amount Calculator
+    </title>
+    <head>
+        <style type="text/css">
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+
+        #enterBtn {
+            margin-left: 550px;
+            margin-top: 150px;
+            padding: 10px;
+            width: 300px;
+            height: 100px;
+            background: #008080;
+            color: #0e2f44;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+
+        @media (max-width: 600px) {
+            #enterBtn {
+                 box-sizing: border-box;
+                 width: 150px;
+                 height: 100px;
+            }
+
+
+        }
+
+        #enterBtn2 {
+            margin-left: 550px;
+            margin-top: 150px;
+            padding: 10px;
+            width: 300px;
+            height: 100px;
+            background: #008080;
+            color: #0e2f44;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+
+        #enterBtn:hover {
+            transition: 0.5 ease-in-out;
+            width: 400px;
+            height: 150px;
+            
+        }
+
+        body {
+            background-image: url('https://images.unsplash.com/photo-1554224155-1696413565d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
+        }
+
+        #runningData {
+            color: #a3040a;
+            font: 20px;
+            font-family: cursive;
+        }
+
+        .maindiv {
+            /*background: #a3040a;*/
+            width: 600px;
+            height: 700px;
+        }
+
+        #input {
+            margin-left: 50px;
+            background:  #82e0aa;
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+
+        #input2 {
+            margin-left: 80px;
+            background:  #82e0aa;
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+
+
+        .lable {
+            margin-left: 50px;
+            margin-top: 30px;
+            color: #424949;
+        }
+
+        /*.submitInput{
+            margin-top: 50px;
+            width: 100px;
+            height:50px;
+            margin-left: -50px;
+        }*/
+
+        
+
+        </style>
+    </head>
+    <body>
+        <button id="enterBtn">Press Me To Enter On Tax & Amount Calculator</button>
+        <marquee id="runningData" direction="up"><b>Please Return Your Income Tax Reture Before 31 March.<br> Be responsible Indian.<br> JAI HIND</b></marquee>
+    </body>
+    <script>
+        var createCalculator = document.getElementById('enterBtn');
+        createCalculator.addEventListener('click' , taxCalculatorCreate);
+
+        
+
+
+        function taxCalculatorCreate () {
+
+            
+            var mainDiv = document.createElement('div');
+            var mainDivParent = document.querySelector('body');
+            mainDivParent.appendChild(mainDiv);
+            mainDiv.setAttribute('class' , 'maindiv');
+
+            var lableAnnualSallary = document.createElement('lable');
+            var lableAnnualSallaryParent = document.querySelector('.maindiv');
+            lableAnnualSallary.innerHTML = "<b>Enter Annual Sallary<b>";
+            lableAnnualSallaryParent.appendChild(lableAnnualSallary);
+            lableAnnualSallary.setAttribute('class' , 'lable');
+
+            var lableSavingAmount = document.createElement('lable');
+            var lableSavingAmountParent = document.querySelector('.maindiv');
+            lableSavingAmount.innerHTML = "<b>Enter Saving Amount<b>";
+            lableSavingAmountParent.appendChild(lableSavingAmount);
+            lableSavingAmount.setAttribute('class' , 'lable');
+            /*lableSavingAmount.setAttribute('class' , 'lable2');*/
+
+            var annualSalary = document.createElement('input');
+            var annualSalaryParent = document.querySelector('.maindiv');
+            annualSalaryParent.appendChild(annualSalary);
+            annualSalary.setAttribute('id' , 'input');
+
+
+            var savingAmount = document.createElement('input');
+            var savingAmountParent = document.querySelector('.maindiv');
+            savingAmountParent.appendChild(savingAmount);
+            savingAmount.setAttribute('id' , 'input2');
+
+            var submitInput = document.createElement('button');
+            var submitInputParent = document.querySelector('.maindiv');
+            submitInput.innerHTML = 'press me to submit';
+            submitInputParent.appendChild(submitInput);
+            submitInput.setAttribute('id' , 'enterBtn2');
+
+            var submitInputBtn = document.getElementById('enterBtn2')
+            submitInputBtn.addEventListener('click' , takeInput);
+
+            
+
+            
+
+            var removeBtn = document.querySelector('body');
+            var removeBtnChild = document.querySelector('#enterBtn');
+            removeBtn.removeChild(removeBtnChild);
+
+            var removeMarquee = document.querySelector('body');
+            var removeMarqueeChild = document.querySelector('#runningData');
+            removeMarquee.removeChild(removeMarqueeChild);
+
+
+
+        }
+
+
+        function takeInput () {
+            var annualSalaryInputTake = document.getElementById('input').value;
+            var savingAmountInputTake = document.getElementById('input2').value;
+            /*console.log(annualSalaryInputTake);
+            console.log(savingAmountInputTake);*/
+            if(annualSalaryInputTake > savingAmountInputTake) {
+                if(annualSalaryInputTake <= 250000){
+                alert("No Tax");
+            }
+             if(annualSalaryInputTake > 250000 && annualSalaryInputTake < 500000) {
+
+                var deductedAnnualSalary = annualSalaryInputTake * 0.1;
+                var deductedSaving = savingAmountInputTake * 0.5;
+                var firstSlabTax = document.createElement('h2');
+                var firstSlabTaxParent = document.querySelector('.maindiv');
+                firstSlabTax.innerHTML = "Tax You Should Pay : " + deductedAnnualSalary + " " + "Your Saving : " + deductedSaving;
+                firstSlabTaxParent.appendChild(firstSlabTax);               
+
+            }
+             if(annualSalaryInputTake > 500000 && annualSalaryInputTake < 1000000){
+                var deductedAnnualSalary = annualSalaryInputTake * 0.2;
+                var deductedSaving = savingAmountInputTake * 0.3;
+                var secondSlabTax = document.createElement('h2');
+                var secondSlabTaxParent = document.querySelector('.maindiv');
+                secondSlabTax.innerHTML = "Tax You Should Pay : " + deductedAnnualSalary + " " + "Your Saving : " + deductedSaving;
+                secondSlabTaxParent.appendChild(secondSlabTax);  
+            }
+
+            if(annualSalaryInputTake > 1000000){
+                var deductedAnnualSalary = annualSalaryInputTake * 0.3;
+                var deductedSaving = savingAmountInputTake * 0.1;
+                var thirdSlabTax = document.createElement('h2');
+                var thirdSlabTaxParent = document.querySelector('.maindiv');
+                if(deductedSaving > 50000){
+                    thirdSlabTax.innerHTML = "Tax You Should Pay : " + deductedAnnualSalary + " " + "Your Saving : 50000";
+                }
+                else {
+                    thirdSlabTax.innerHTML = "Tax You Should Pay : " + deductedAnnualSalary + " " + "Your Saving : " + deductedSaving;
+                }
+                
+                thirdSlabTaxParent.appendChild(thirdSlabTax);  
+            }
+        }
+            else {
+                alert('Saving Amount Cannot be exceed than Annual Salary');
+            }
+            
+            
+        }
+    </script>
+</html>
