@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Week 4 Day 4Coding 1 </title>
+  <style>
+    table > td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button onclick="printJSON()"> Click here to print the JSON object </button>
+  <div id = "container1"> </div>
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input id="inputData1" type = "text"/>
+  <input id="inputData2" type = "text"/>
+  <!-- <button onclick="exponent(inputX, inputY, display)"> Calculate </button> -->
+  <button id="btnCalculate"> Calculate </button>
+  <p id="outputData">Output:</p>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Multiplication Table Generator</h1>
+  <table></table>
+  <input id="tables" type = "text"/>
+  <button onclick="generateTables()"> Generate Tables </button>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <table id="table2"></table>
+  <input id="capsAndSmallInput" type = "text"/>
+  <button onclick="generateCapsAndSmall()"> Generate CAPS and small </button>
+  <script>
+  //DO NOT EDIT ANY CODE BELOW THIS LINE 
+  var items = [
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    },
+    {
+      name: "Rice",
+      price: 50,
+      id: 2323
+    },
+    {
+      name: "Banana",
+      price: 90,
+      id: 2323
+    },
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    }
+  ]
+
+  var mutiply = []
+  // Do NOT EDIT ANY CODE ABOVE THIS LINE 
+  //Place all your code below this line!
+
+  //FSD.W4.4.1_1
+  console.log(JSON.stringify(items));
+  
+  var displayDiv = document.getElementById('container1');
+
+  function printJSON () {
+    var jsonObject = JSON.stringify(items);
+    for ( var i = 0; i < items.length; i++) {
+        var displayP = document.createElement('p');
+        displayP.textContent = items[i].name + ' : ' + items[i].price;
+        // displayP.textContent = items[i].price;
+        displayDiv.appendChild(displayP);
+      }
+  }
+
+  // FSD.W4.4.1_2
+
+  function exponent(x, y, callBack) {
+    var result = x ** y;
+    return callBack(result)
+  }
+
+  var display = function(input) {
+    var outputDisplay = 'The exponent is value: ' + input;
+    return outputDisplay;
+  }
+  
+  var btnCalculate = document.getElementById('btnCalculate');
+
+  btnCalculate.addEventListener('click', function() {
+    var inputX = Number(document.getElementById('inputData1').value);
+    var inputY = Number(document.getElementById('inputData2').value);
+    document.getElementById('outputData').innerHTML = exponent(inputX, inputY, display);
+
+  });
+
+  // FSD.W4.4.1_3
+  /*
+  1. When the button Generate Tables is clicked you should reset the        global variable multiply to an empty array []
+  2. Fill the array with numbers from 1 to the limit provided
+  3. Using arr.forEach() fill the table so that it looks like the one       provided below (Limit: 3)
+  */
+  function generateTables() {
+    multiply = [];
+    var limit = Number(document.getElementById('tables').value);
+    for (i = 1; i <= limit; i++) {
+      multiply.push(i);
+    }
+    // console.log(multiply);
+
+    var arr = [1, 2, 3, 4, 5];
+    var table = document.querySelector('table');
+    
+    for (i = 0; i < arr.length; i++) {
+      var th = document.createElement('th');
+      table.appendChild(th);
+      th.textContent = '*' + arr[i];
+    }
+
+    multiply.forEach(function(element){
+      var tr = document.createElement('tr');
+      table.appendChild(tr);
+
+      for (i = 0; i < arr.length; i++) {
+        var a = element * arr[i];
+        console.log('The value of a at this point is: ' + a);
+        var td = document.createElement('td');
+        tr.appendChild(td);
+        td.textContent = a;
+      }
+    });
+  }
+
+
+  // FSD.W4.4.1_4
+
+  // 1. When the button Generate CAPS and small is click convert the given input of words (comma separated) into an array (HINT: Use split function)
+  // 2. Using arr.map() create two more arrays one containing the UPPERCASE of the words and the other lowercase of the words (HINT: Use inbuilt functions)
+  // 3. Fill the table so that it looks like the one provided below from the three arrays generated above
+  // Sample Input: Masai,School
+
+  function generateCapsAndSmall() {
+    var capsArr = [];
+    var inputString = document.getElementById('capsAndSmallInput').value;
+    capsArr = inputString.split(',');
+    // console.log(capsArr);
+
+    var upperArr = [];
+    var lowerArr = [];
+
+    var table2 = document.getElementById('table2');
+    var tArr = ['Normal', 'UPPER', 'Lower'];
+
+    for (i = 0; i < tArr.length; i++) {
+      var th = document.createElement('th');
+      table2.appendChild(th);
+      th.textContent = tArr[i];
+    }
+
+    capsArr.map(function (element){
+      upperArr.push(element.toUpperCase());
+      lowerArr.push(element.toLowerCase());
+    });
+    console.log(upperArr,lowerArr)
+
+    for (i = 0; i < capsArr.length; i++) {
+      var tr = document.createElement('tr');
+      table2.appendChild(tr);
+      
+      var td1 = document.createElement('td');
+        tr.appendChild(td1);
+
+        var td2 = document.createElement('td');
+        tr.appendChild(td2);
+
+        var td3 = document.createElement('td');
+        tr.appendChild(td3);
+
+        td1.textContent = capsArr[i];
+        td2.textContent = upperArr[i];
+        td3.textContent = lowerArr[i];
+
+      // for (i = 0; i < capsArr.length; i++) {
+      //   var td1 = document.createElement('td');
+      //   tr.appendChild(td1);
+      //   // var td2 = document.createElement('td');
+      //   // tr.appendChild(td2);
+      //   // var td3 = document.createElement('td');
+      //   // tr.appendChild(td3);
+    
+      //   // td1.textContent = upperArr[i];
+      //   // td1.textContent = lowerArr[i];
+      }
+    }
+  
+
+  </script>
+</body>
+</html>
+
+
+
+   <!-- var timesTwo = arr.map(function (element){
+  //   return element *2
+  //  }); -->
+
+
+<!-- 
+
+var btn = document.querySelector('#arrayTest');
+
+btn.addEventListener('click', function (){
+  var arr = [1, 2, 3, 4, 5];
+  //The code below prints each element of the array
+  arr.forEach(function(element){
+    console.log(element)
+  });
+  
+  //The code below returns a new array called timesTwo
+  // timesTwo is the original array arr multiplied by 2
+  var timesTwo = arr.map(function (element){
+    return element *2
+   });
+
+   console.log(timesTwo)
+    
+  // The reduce function has an accumulator who's value starts at arr[0] and then we add each element of the array to the accumulator
+  var sum = arr.reduce(function(accumulator, element){
+    return accumulator + element
+  }); 
+  console.log(sum)
+});
+
+  
+ -->
