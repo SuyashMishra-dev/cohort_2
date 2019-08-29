@@ -1,0 +1,206 @@
+<html>
+    <head>
+        <title>Unix</title>
+        <style type="text/css">
+            .case { 
+            margin-bottom: 30px;
+        }
+        .c1-b1 {
+            background-color: salmon;
+            height: 390px;
+            width: 500px;
+            text-align: center;
+            margin: auto;
+        }
+        .c1-b1 img{
+            height: 250px;
+            width: 200px;
+        }
+        .c1-b1 h1{
+            color: violet;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .c1-b1 p{
+            color: black;
+            font-size: 25px;
+            font-weight: normal;
+        }
+        .c2-b2 { 
+            background-color:white;
+            height: 300px;
+            margin-left: 250px;
+    
+        }
+        .c2-b2 img{
+            height: 200px;
+            width: 150px;
+            float: left;
+            
+        }
+        .c2-b2 h1{
+            color: red;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .c2-b2 p{
+            color: black;
+            font-size: 25px;
+            font-weight: normal;
+            float: left;
+         }
+         .c3-b3 {
+             background-color: darkorange;
+             height: 150px;
+
+         }
+        .c3-b3 h1{
+             color: white;
+             font-size: 30px;
+         }
+        .c3-b3 p{
+             color: black;
+             font-size: 25px;
+         }
+ 
+         .c4-b4 h1{
+            color: white;
+             font-size: 30px; 
+             text-align: end;
+             margin-top: -150px;
+
+         }
+         .c4-b4 p{
+            color: black;
+             font-size: 25px;
+             text-align: end;
+
+         }
+         .c5-b5 {
+             background: black;
+             width: 5px;
+             height: 100px;
+             margin-top: -80px;
+             margin-left: 900px;
+         }
+        </style>
+    </head>
+    <body>
+
+       <button onclick="showContent()">Create Page</button>
+
+
+
+       <script type="text/javascript">
+         function showContent() {
+           var div1 = document.createElement("div")
+           var bodyElem = document.querySelector('body');
+           div1.setAttribute('class', 'case');
+           bodyElem.appendChild(div1);
+
+           var div2 = document.createElement("div")
+           var divElem = document.querySelector('.case');
+           div2.setAttribute('class', 'c1-b1');
+           divElem.appendChild(div2);
+
+           
+           var img1 = document.createElement("img");
+           img1.setAttribute('src', 'https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/linus.jpg');
+           var divElem = document.querySelector('.c1-b1');
+           divElem.appendChild(img1);
+
+           var h1s = document.createElement("h1");
+           h1s.textContent = ('Linus Trovalds');
+           var divElem = document.querySelector('.c1-b1');
+           divElem.appendChild(h1s);
+
+           var h2s = document.createElement("h2");
+           h2s.textContent = ('The Creator of Linus and Git');
+           var divElem = document.querySelector('.c1-b1');
+           divElem.appendChild(h2s);
+
+           var div3 = document.createElement("div");
+           var bodyElem = document.createElement("body");
+           div3.setAttribute('class', 'case');
+           bodyElem.appendChild(div3);
+
+           var div4 = document.createElement("div")
+           var divElem1 = document.querySelector('.case');
+           div4.setAttribute('class', 'c2-b2');
+           divElem1.appendChild(div4);
+
+
+           var img2 = document.createElement("img")
+           img2.setAttribute('src', 'https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/khan.jpg');
+           var divElem1 = document.querySelector('.c2-b2');
+           divElem1.appendChild(img2);
+
+           var h3s = document.createElement("h1")
+           h3s.textContent = ("Sal Khan");
+           var divElem1 = document.querySelector('.c2-b2');
+           divElem1.appendChild(h3s);
+
+           var p1s = document.createElement("p")
+           p1s.textContent = ("Salman khan is the founder of Khan Academy which has a mission of providing free world-class education for anyone,anywhere");
+           var divElem1 = document.querySelector('.c2-b2');
+           divElem1.appendChild(p1s);
+
+           var div5 = document.createElement("div");
+           var bodyElem = document.createElement("body");
+           div5.setAttribute('class', 'case');
+           bodyElem.appendChild(div5);
+
+           var div6 = document.createElement("div");
+           var divElem2 = document.querySelector('.case');
+           div6.setAttribute('class', 'c3-b3');
+           divElem2.appendChild(div6);
+
+           var h4s = document.createElement("h1")
+           h4s.textContent = ("Ken Thompson");
+           var divElem2 = document.querySelector('.c3-b3');
+           divElem2.appendChild(h4s);
+
+           var p2s = document.createElement("p")
+           p2s.textContent = ("Designed and Implemented the original Unix operating system");
+           var divElem2 = document.querySelector('.c3-b3');
+           divElem2.appendChild(p2s);
+
+           var div7 = document.createElement("div");
+           var divElem3 = document.querySelector('.case');
+           div7.setAttribute('class', 'c4-b4');
+           divElem3.appendChild(div7);
+
+           var h5s = document.createElement("h1")
+           h5s.textContent = ("Dennis Ritchie");
+           var divElem3 = document.querySelector('.c4-b4');
+           divElem3.appendChild(h5s);
+
+           var p3s = document.createElement("p")
+           p3s.textContent = ("The creator of C programmimg Language");
+           var divElem3 = document.querySelector('.c4-b4');
+           divElem3.appendChild(p3s);
+
+           var div8 = document.createElement("div");
+           var divElem4 = document.querySelector('.case');
+           div8.setAttribute('class', 'c5-b5');
+           divElem4.appendChild(div8);
+
+        
+
+
+
+
+
+
+
+        
+
+
+
+       }
+
+
+
+       </script>
+    </body>
+</html>
