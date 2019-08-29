@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style type="text/css">
+    label {
+
+      display: block;
+    }
+
+    .displayContainer {
+      display: block;
+      float: right;
+      font-size: 10px;
+      padding-right: 30%;
+    }
+
+    p {
+      padding-top: 1%;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="outputContainer"> </div>
+  <button id="printObject"> Display Details </button>
+  <!-- FSD.W4.3.1_1 !-->
+  <h1>Click the button to add a new customer!</h1>
+
+  <div class="inputContainer">
+    <label for="name">First Name</label>
+    <input type="text" name="firstname" class="customerInput" />
+
+    <label for="name">Last Name</label>
+    <input type="text" name="lastname" class="customerInput" />
+
+    <label for="age">Date of Birth</label>
+    <input type="text" name="dob" class="customerInput" />
+
+    <label for="height">Balance</label>
+    <input type="text" name="balance" class="customerInput" />
+
+    <label for="gender">Account Number</label>
+    <input type="text" name="accountNumber" class="customerInput" />
+
+    <label for="name">Shared Account Holder (Comma separated!)</label>
+    <input type="text" name="sharedAccountHolders" class="customerInput" /><br />
+
+    <button id="makeDetails">Add customer</button>
+
+
+
+    <div class="displayContainer"></div>
+
+    <div id="detailsContainer"> </div>
+    <button id="printBtn">Print Customers</button>
+
+    <script>
+      function Customer(firstName, lastName, dateOfBirth, balance, accountNumber, sharedAccountHolders) {
+        this.FirstName = firstName
+        this.LastName = lastName
+        this.DateOfBirth = dateOfBirth
+        this.Balance = balance
+        this.AccountNumber = accountNumber
+        this.sharedAccountHolders = sharedAccountHolders
+        this.getDetails = function () {
+          var output = ''
+          for (key in this) {
+            output += key + ":" + this[key] + "\n"
+            if (key == 'sharedAccountHolders') break;
+          }
+          return output // Output is a string!
+        }
+      }
+
+
+      var firstCustomer = new Customer("madhu", "kumari", 90 - 12 - 1234, 456789445, 321654897, ["sister", "mother", "father"]);
+
+      function printObjPara() {
+        var container = document.querySelector('#outputContainer')
+        var outputString = firstCustomer.getDetails()
+        var outputPara = document.createElement('p')
+        outputPara.innerText = outputString
+        container.innerHTML = ''
+        container.appendChild(outputPara)
+      }
+
+      var btnObj = document.querySelector('#printObject');
+      btnObj.addEventListener('click', printObjPara)
+
+      var addCustomerDetail = document.querySelector("#makeDetails");
+
+      var customerArr = []
+      function addDetails() {
+        var inputs = document.querySelectorAll('.customerInput')
+        var newCustomer = new Customer()
+        var i = 0
+        for (key in newCustomer) {
+          if (newCustomer[key] == undefined) {
+            if (key != 'sharedAccountHolders') {
+              newCustomer[key] = inputs[i].value
+            }
+            else {
+              newCustomer[key] = inputs[i].value.split(',')
+            }
+            inputs[i].value = ''
+            i++
+          }
+        } console.log(customerArr);
+        customerArr.push(newCustomer)
+      }
+
+      addCustomerDetail.addEventListener('click', addDetails);
+      var displayBtn = document.querySelector('#printBtn')
+
+      function displayAll() {
+        var displayContainer = document.querySelector('#detailsContainer');
+        displayContainer.innerHTML = '';
+        for (var i = 0; i < customerArr.length; i++) {
+          var displayPara = document.createElement('p')
+          displayPara.textContent = customerArr[i].getDetails()
+          displayContainer.appendChild(displayPara)
+        } console.log(customerArr);
+      }
+
+      displayBtn.addEventListener('click', displayAll) 
+    </script>
+</body>
+
+</html>
