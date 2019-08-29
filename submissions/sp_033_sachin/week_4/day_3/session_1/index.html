@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      p {
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+<body>
+  <!-- FSD.W4.3.1_1 !-->
+  <div>
+      <label for="firstName">First Name</label>
+      <input id="firstName" type="text">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" type="text">      
+  </div>
+  <br>
+  <div>
+    <label for="dob">Date Of Birth</label>
+    <input id="dob" type="text">
+  </div>
+  <br>
+  <label for="balance">Balance</label>
+  <input id="balance" type="text">
+  <label for="accountNumber">Account Number</label>
+  <input id="accountNumber" type="text">
+  <label for="sharedAccountHolders">Shared Account Holders</label>
+  <input id="sharedAccountHolders" type="text">
+  <h1>Click the button to add a new customer!</h1>
+  <button onclick="createCustomer()">Add customer</button>
+  <!-- FSD.W4.3.1_3 !-->
+  <h1> Click here to print all customers! </h1>
+  <button onclick="printCustomers()">Print Customers</button>  
+  <div id="displayContainer"> </div>
+  
+
+  <script>
+    var customerArr = [];
+    function Customers(firstName,lastName,dob,balance,accountNumber,sah) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.dob = dob;
+      this.balance = Number(balance);
+      this.accountNumber = Number(accountNumber);
+      this.sharedAccountHolders = sah;
+      this.displayDetails = function() {
+          var outputString = '';
+          for(key in this){
+            if(key == 'displayDetails'){
+              continue;
+            }
+            outputString = outputString + keyInString[key] +": "+this[key]+'\n';
+          }
+          return outputString;
+      }
+    }
+
+    var keyInString =  {
+      firstName : 'First Name',
+      lastName : 'Last Name',
+      dob : 'Date of Birth',
+      balance : 'Balance',
+      accountNumber : 'Account Number',
+      sharedAccountHolders : 'Shared Account Numbers' 
+    }
+
+    function createCustomer(){
+      var inputsValue = document.querySelectorAll('input');      
+      var sharedAccountHolders = mySplit(inputsValue[5].value,',');
+      var customer = new Customers(inputsValue[0].value ,inputsValue[1].value ,inputsValue[2].value ,inputsValue[3].value ,inputsValue[4].value ,sharedAccountHolders);
+      myPush(customerArr,customer);
+      // console.log(customer.displayDetails());
+    }
+
+    function printCustomers(){
+      var container = document.getElementById('displayContainer');
+      for(var i=0; i<customerArr.length;i++){
+         var ptag = document.createElement('p');
+         ptag.innerHTML = customerArr[i].displayDetails();
+         container.appendChild(ptag);
+      }
+    }
+
+    function mySplit(arr,el){
+      var word = '';
+      var newArr = [];
+      for(var i=0;i<arr.length;i++) {
+        if(arr[i]==el){
+          myPush(newArr,word);
+          word = '';
+          continue;
+        }
+        word = word + arr[i];
+      }
+      myPush(newArr,word);      
+      return newArr;
+    }    
+
+    function myPush(arrayName,element){
+      arrayName[arrayName.length] = element;
+    }
+
+    function revCamel(arr){
+      arr[0]=arr[0].toUpperCase();
+      for(var i= 1;i<arr; i++){
+        if(arr[i]){
+
+        }
+      }
+    }
+  </script>
+</body>
+</html>

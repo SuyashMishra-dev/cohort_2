@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url(https://10infos.com/wp-content/uploads/2019/04/Best-mileage-bikes-in-India.jpg);
+            height: 40%; 
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 1px solid red;
+           
+        }
+        input {
+            width: 500px;
+            height: 50px;
+            margin: 10px 0px 0px 300px;
+            font-size: 30px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        .fontDetails {
+            font-size: 35px;
+            margin: 5px 0px 0px 300px;
+        }
+
+        button {
+            width: 500px;
+            height: 60px;
+            margin: 10px 0px 0px 300px;
+            border: 2px solid white;
+            font-size: 35px;
+            background: brown;
+            border-radius: 10px;
+            color: white;
+        }
+
+        h1 {
+            margin: 20px 0px 20px 300px;
+            font-size: 35px;
+        }
+        h2{
+            margin: 10px 0px 20px 300px;
+            font-size: 25px;
+            color: red;
+        }
+
+        #logsBtn {
+            width: 230px;
+            background: brown;
+        }
+
+        #mileageBtn {
+            margin-left: 30px;
+            width: 230px;
+        }
+
+        #displayMilage {
+            width: 300px;
+            height: 100px;
+            margin-left: 200px;
+            font-size: 35px;
+            text-align: center;
+        }
+
+        #mileageDetails {
+            margin: 130px 0px 0px 235px;
+            font-size: 35px;
+        }
+
+        .displayContainer {
+            font-size: 35px;
+            margin: 20px 0px 0px 270px;
+        }
+
+        .displayContainer p {
+            white-space: pre-line;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="float:left">
+        <h1> Fill Trip Details</h1>
+        <h2>Car Mileage:20 miles/L</h2>
+        <div class="fontDetails">Date</div>
+        <input type="text" id="inputDate" class="detailsTrip">
+        <div class="fontDetails">Fuel Filled</div>
+        <input type="text" id="inputFuel" class="detailsTrip">
+        <div class="fontDetails">Trip Name</div>
+        <input type="text" id="inputTripName" class="detailsTrip">
+        <div class="fontDetails">Distance</div>
+        <input type="text" id="inputDistance" class="detailsTrip"><br><br>
+        <button id="submitBtn">Enter</button><br><br>
+        <button id="logsBtn">Logs </button>
+        <button onclick="getMileage()" id="mileageBtn">Mileage </button>
+    </div>
+    <div style="float:left">
+        <div id="mileageDetails">Mileage Details</div>
+        <input type="text" id="displayMilage">
+        <div class="displayContainer"><b>Trip Logs</b></div>
+    </div>
+    <script>
+        function AddTrips(date, fuel, tripName, distance) {
+            this.date = date;
+            this.fuel = fuel;
+            this.tripName = tripName;
+            this.distance = distance;
+            this.getDetails = function () {
+                var output = '';
+
+
+                for (key in this) {
+                    if (key == 'getDetails') {
+                        break;
+                    }
+                    output += key + " : " + this[key] + "\n";
+                }
+                return output;
+            }
+        }
+        var tripsArr = [];
+
+        function createTrips() {
+            var inputs = document.querySelectorAll('.detailsTrip');
+            var newTrips = new AddTrips();
+            var i = 0;
+
+            for (key in newTrips) {
+                if (newTrips[key] == undefined) {
+                    newTrips[key] = inputs[i].value;
+                    inputs[i].value = '';
+                    i++;
+                }
+            }
+            tripsArr.push(newTrips);
+        }
+
+        function displayAllTrips() {
+            var displayContainer = document.querySelector('.displayContainer');
+            for (var i = 0; i < tripsArr.length; i++) {
+                var displayPara = document.createElement('p');
+                displayPara.textContent = tripsArr[i].getDetails();
+                displayContainer.appendChild(displayPara);
+            }
+        }
+        var submitBtn = document.querySelector('#submitBtn');
+        submitBtn.addEventListener('click', createTrips);
+
+        var displayBtn = document.querySelector('#logsBtn');
+        displayBtn.addEventListener('click', displayAllTrips);
+
+
+        function calculateTotalDistance() {
+            var totalDistance = 0;
+            for (var i = 0; i < tripsArr.length; i++) {
+                totalDistance += Number(tripsArr[i].distance);
+            }
+            return totalDistance;
+        }
+        function calculateTotalFuel() {
+            var totalFuel = 0;
+            for (var i = 0; i < tripsArr.length; i++) {
+                totalFuel += Number(tripsArr[i].fuel);
+            }
+            return totalFuel;
+        }
+        function getMileage() {
+            var mileage = 0;
+            var totald = Number(calculateTotalDistance());
+            var totalf = Number(calculateTotalFuel());
+            mileage = Number(((20 * totalf) - totald));
+            document.getElementById("displayMilage").value = mileage + ' Miles';
+        }    
+    </script>
+</body>
+
+</html>

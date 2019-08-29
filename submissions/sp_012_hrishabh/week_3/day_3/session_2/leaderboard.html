@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        * {
+            margin:10px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: left;            
+        }
+        
+
+
+        #min {
+            background: green;
+            height: 100px;
+            width: 100px;
+            
+        }
+
+        #max {
+            background: red;
+            height: 100px;
+            width: 100px;
+            margin-left: 20px
+            
+        }
+
+        #input_score {
+            
+            height: 100px;
+            width: 250px;
+            background: grey;
+            border: 2px solid black;         
+        }
+
+        .zero_btn {
+            margin-left: 80px;
+        }
+
+        #enter {
+            width: 100px;
+            margin-left: 50px;
+            background: black;
+            color: white;
+        }
+        
+
+        
+        
+    </style>
+    <body>
+        <div class="wrapper">
+           <div id="min">43</div>
+           <div id="max">2019</div>
+           </div>
+        
+        <div id="input_score"></div>
+        <div>
+        <button id="one" class="btn_align" onclick="score(1)">1</button>
+        <button id="two" class="btn_align" onclick="score(2)">2</button>
+        <button id="three" class="btn_align" onclick="score(3)">3</button>
+        </div>
+        <div>
+        <button id="four" class="btn_align" onclick="score(4)">4</button>
+        <button id="five" class="btn_align" onclick="score(5)">5</button>
+        <button id="six" class="btn_align" onclick="score(6)">6</button>
+        </div>
+        <div>
+        <button id="seven" class="btn_align" onclick="score(7)">7</button>
+        <button id="eight" class="btn_align" onclick="score(8)">8</button>
+        <button id="nine" class="btn_align" onclick="score(9)">9</button>
+        </div>
+        <div class="zero_btn">
+                <button id="zero" class="btn_align" onclick="score(0)">0</button>
+        </div>
+        <div>
+            <button id="enter" onclick="enter()">Enter</button>
+        </div>
+        
+        
+    </body>
+    <script>
+        var global_number = 0;
+         function score (input) {
+            global_number = global_number*10 + input;
+            document.getElementById("input_score").innerHTML = global_number;
+         }
+        function enter () {
+            var min = document.getElementById("min").innerHTML;
+            var max = document.getElementById("max").innerHTML;
+
+            if(global_number > max){
+                document.getElementById("min").innerHTML = max;
+                document.getElementById("max").innerHTML = global_number;
+            }
+            else if(global_number < min){
+                document.getElementById("min").innerHTML = global_number;
+            }
+            document.getElementById("input_score").value = "";
+            global_number = 0;
+        }
+
+       
+    
+            
+       
+
+    </script>
+    
+</html>
