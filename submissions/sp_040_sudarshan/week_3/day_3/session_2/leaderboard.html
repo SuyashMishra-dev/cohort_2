@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>learderboard</title>
+        <link rel="stylesheet" type="text/css" href="leaderboard.css">
+       
+    </head>
+    <body>
+<div class="flexbox">
+       <div id="red"><p id="min">0</p><p>Min</p></div>   
+    
+       <div id="green"><p id="max">0</p><p>Max</p></div>
+
+      
+</div>
+<div class="flexbox">
+      <div id="pscore">SCORE </div>   
+ </div>
+ <div class="flexbox">
+       
+        <div id="score_box"><input type="text" id="score"></div>
+ </div>
+ <div class="flexbox">
+        <div> <button id="no_in_gray" class="1" value="1" onclick="check(this.value)">1</button></div>
+        <div> <button id="no_in_orange" value="2" onclick="check(this.value)">2</button></div>
+        <div><button id="no_in_gray" value="3" onclick="check(this.value)">3</button></div>
+     
+ </div>
+ <div class="flexbox">
+        <div>   <button id="no_in_orange" value="4" onclick="check(this.value)">4</button></div>
+        <div>  <button id="no_in_orange" value="5" onclick="check(this.value)">5</button></div>
+        <div>     <button id="no_in_orange" value="6" onclick="check(this.value)">6</button></div>
+     
+ </div>
+ <div class="flexbox">
+        <div>  <button id="no_in_gray" value="7" onclick="check(this.value)">7</button> </div>
+        <div>  <button id="no_in_orange" value="8" onclick="check(this.value)">8</button></div>
+        <div> <button id="no_in_gray" value="9" onclick="check(this.value)">9</button> </div>
+ </div>
+     <div class="flexbox">
+     <button id="no_in_purple" value="0" onclick="check(this.value)">0</button>
+
+     </div>
+     <div class="flexbox">
+            <button id="enter" onclick="enter()">ENTER</button>
+     </div>
+     <script>
+              function check(value){
+                     data = parseInt(document.getElementById('score').value += value);
+                    
+              }
+              function enter(){
+                     var min = parseInt(document.getElementById('min').innerHTML);
+                     var max = parseInt(document.getElementById('max').innerHTML);
+                     
+                     if(data < min){
+                            document.getElementById('min').innerHTML = data;
+                     }else if(data > max){
+                            document.getElementById('max').innerHTML = data;
+                     }else if (min == 0 && data < max){
+                            document.getElementById('min').innerHTML = data;
+                     }
+
+                     document.getElementById('score').value = '';
+
+                     }
+              
+       </script>
+     </body>
+
+     </html>

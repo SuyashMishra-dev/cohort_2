@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button onclick="showMovie()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="showRuntimefunction ()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="showCastfunction ()">Add cast member </button>
+  
+
+  <script>
+      /*addEventListener("showMovies" showMovies);*/
+      
+      var movie = {
+          name : "The Shawshank Redemption",
+          director: "Frank Darabont",
+          year : 1994,
+          rating : 9.4,
+          cast : ["Tim Robbins", "Morgan Freeman", "Bob Gunton" , "Claire Slemmer" , "Claire Slemmer"],
+      }
+      var a = movie.length;
+      console.log(movie);
+
+     function showMovie () {
+         /*var outputMovie = "Movie" + ": " + movie.name+ " " + "Director" + ": " +movie.director + " "  + "Year" + " :" +  movie.year + " " + "Rating" + ": " + movie.rating+  "  "
+          + "cast" + ": "  + movie.cast[0] + ", " + movie.cast[1] + ", "  + movie.cast[2] + ", "  + movie.cast[3] + ", "  + movie.cast[4];*/
+         var movieDetails = document.createElement("h1");
+         movieDetails.innerHTML =  "Movie" + ": " + movie.name+ " " + "Director" + ": " +movie.director + " "  + "Year" + " :" +  movie.year + " " + "Rating" + ": " + movie.rating+  "  "
+          + "cast" + ": "  + movie.cast[0] + ", " + movie.cast[1] + ", "  + movie.cast[2] + ", "  + movie.cast[3] + ", "  + movie.cast[4];
+         var showMovieDetails = document.querySelectorAll("body");
+         for(var i = 0; i < showMovieDetails.length; i++){
+             var appendMovieDetails = showMovieDetails[i];
+             appendMovieDetails.appendChild(movieDetails);
+
+         }
+         
+     }
+
+     movie.runtime = 2;
+
+     function showRuntimefunction () {
+         
+         var showRuntime = document.createElement("h3");
+         showRuntime.innerHTML = "Runtime" + ": " + movie.runtime;
+         var showRuntimeParent = document.querySelector("body");
+         showRuntimeParent.appendChild(showRuntime);
+
+     }
+
+     movie.addCast = ["Clancy Brown" , "Gil Bellows" , "James Whitmore" , "Mark Rolston" , "Mack Miles"];
+
+function showCastfunction () {
+    
+    var showAddCast = document.createElement("h3");
+    showAddCast.innerHTML = "New Cast" + ": " + movie.addCast;
+    var showAddCastParent = document.querySelector("body");
+    showAddCastParent.appendChild(showAddCast);
+
+}
+  
+  </script>
+</body>
+</html>

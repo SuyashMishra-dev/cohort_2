@@ -1,0 +1,23 @@
+body {
+	background-image: url(resources/bg.png);
+	background-size: cover;
+}
+h1 {
+	color: red;
+	text-align: center;
+}
+
+h2 {
+	color: aqua;
+	text-align: center;
+}
+input {
+	text-align: center;
+	margin-left: 40%;
+}
+button {
+	margin-left: 45%;
+}
+.main {
+	margin-top: 10%;
+}

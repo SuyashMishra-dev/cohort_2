@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+   
+   <head>
+       <style type="text/css">
+           body
+           {
+               background-image: url(img1.jpg);
+           }
+       </style>
+   </head>
+   
+    <body>
+          <h1 id="heading1_Color">Change the button text color random value</h1>
+          <button id="btnColor">Click to change the color</button>
+
+          <h1 id="heading2_Color">Double Click To Change The Color</h1>
+          <button id="btnHeading">Double Click To Change The Color</button>
+        
+          <h1>The button color changes to a random value when it's clicked ( Two Times )</h1>
+          <button id="changeColorOnce">Click To Change The Color</button>
+
+
+        <script type="text/javascript">
+        
+            var changeHeading1 = document.getElementById('heading1_Color');
+            var changeButtonColor = document.getElementById('btnColor');
+        
+            function random(number)
+            {
+                return Math.floor(Math.random()*number);
+            }
+            
+            function switchHeadingColor()
+            {
+                var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')'; 
+                changeHeading1.style.backgroundColor = randomColor;
+            }
+            
+            changeHeading1.addEventListener('click', switchHeadingColor);  
+            
+            function switchButtonColor()
+            {
+                var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+                changeButtonColor.style.backgroundColor = randomColor
+            }
+            
+            changeButtonColor.addEventListener('mouseover', switchButtonColor); 
+            
+            var changeHeading2 = document.getElementById('heading2_Color');
+            var changeButtonColor2 = document.getElementById('btnHeading');
+            
+            function switchColorHeading()
+            {
+                var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+                changeHeading2.style.backgroundColor = randomColor;
+            }
+            
+            changeHeading2.addEventListener('dblclick', switchHeadingColor);  
+            
+            function switchColorButtonheading()
+            {    
+                var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')'; 
+                changeButtonColor2.style.backgroundColor = randomColor
+            }
+            
+            changeButtonColor2.addEventListener('dblclick', switchColorHeading);  
+            
+            var btnOnce = document.getElementById('changeColorOnce');
+            var counter=1;
+            
+            function switchColorOnce()
+            {
+            
+                var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')'; 
+                btnOnce.style.backgroundColor = randomColor;
+                counter++;
+                
+                if(counter > 2)
+                {  
+                    btnOnce.removeEventListener('click', switchColorOnce)
+                }
+            }
+            
+            btnOnce.addEventListener('click', switchColorOnce);
+          
+        </script>
+    </body>
+</html>
