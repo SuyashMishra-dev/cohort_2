@@ -1,0 +1,82 @@
+.flexbox
+   {
+       display: flex;
+       flex-direction:row;
+       margin-left:500px
+   }
+   .flexbox div
+   {
+     padding:20px
+    
+   }
+   #red
+   {
+       background-color: red; 
+       float:left;
+       width: 50px;
+       height: 25px;
+       border: 2px solid black;
+       margin-top: 30px;
+   }
+   #green
+   {
+       background-color:green;
+       width: 50px;
+       height: 25px;
+       border: 2px solid black;
+       float:left;
+       margin-left: 70px;
+       margin-top: 30px;
+   }
+  #score_box
+  {
+      float:left;
+      margin-left:35px;
+      font-size: 10px; 
+      padding: 0px;
+      
+  }
+  #score
+  {
+      background-color: lightgray;
+      height: 70px;
+      width: 180px;
+      margin-left: -10px;
+      border: 2px solid black;
+  }
+  #enter
+  {
+      width:190px;
+      height:70px;
+      background-color: black;
+      color: white;
+      margin-left:30px;
+      margin-top: 10px;
+  }
+  #pscore
+  {
+      margin-left:70px;
+      margin-top: 30px;
+  }
+
+  #no_in_gray {
+      background: darkolivegreen;
+      font-size: 30px;
+      color: black;
+      border: 2px solid black;
+  }
+
+  #no_in_orange {
+      background: orangered;
+      font-size: 30px;
+      color: black;
+      border: 2px solid black;
+  }
+
+  #no_in_purple {
+      background: purple;
+      font-size: 30px;
+      color: black;
+      border: 2px solid black;
+      margin-left:98px;
+  }
