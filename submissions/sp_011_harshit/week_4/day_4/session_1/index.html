@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Week 4 Day 4Coding 1 </title>
+  <style>
+    #tdata {
+      background-color: darkgray;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button onclick="first_to_json()"> Click here to print the JSON object </button>
+  <div id="container1"> </div>
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input type="text" id="x" />
+  <input type="text" id="y" />
+  <button id="clc"> Calculate </button>
+  <p id="otpt">Output:</p>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Multiplication Table Generator</h1>
+  <table id="tbl"></table>
+  <input type="text" id="ipd" />
+  <button id="generate"> Generate Tables </button>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <table></table>
+  <input type="text" />
+  <button onclick="generate()"> Generate CAPS and small </button>
+  <script>
+    // Do NOT EDIT ANY CODE ABOVE THIS LINE
+    //Place all your code below this line!
+    var mutiply = []
+    var items = [
+      {
+        name: "Water",
+        price: 20,
+        id: 0929
+      },
+      {
+        name: "Rice",
+        price: 50,
+        id: 2323
+      },
+      {
+        name: "Banana",
+        price: 90,
+        id: 2323
+      },
+      {
+        name: "Water",
+        price: 20,
+        id: 0929
+      }
+    ]
+
+    function first_to_json() {
+      var div1 = document.getElementById("container1")
+
+      var data = JSON.stringify(items)
+      for (key in items)
+       {
+        var objj = document.createElement('p')
+        var objj2 = document.createElement('p')
+        objj.innerHTML = items[key]["name"]
+        objj2.innerHTML = items[key]["price"]
+        div1.appendChild(objj)
+        div1.appendChild(objj2)
+        console.log(div1)
+      }
+    }
+
+
+    function expo(x, y, callback) 
+    {
+      var expoo = x ** y;
+      return callback(expoo)
+    }
+
+
+    function print(expo2) 
+    {
+      return "The exponent is:" + expo2
+    }
+
+
+    var btn2 = document.getElementById('clc')
+    btn2.addEventListener('click', function ()
+     {
+
+      var x1 = document.getElementById('x').value;
+      var y1 = document.getElementById('y').value;
+
+      var disply = expo(x1, y1, print)
+
+      var output = document.getElementById('otpt')
+      output.innerHTML = "output" + disply
+    })
+    //////////////////////////
+    var btn_generate = document.getElementById("generate")
+    btn_generate.addEventListener('click', table)
+
+    function table()
+     {
+      multiply = []
+      var inpt = document.getElementById("ipd").value
+      for (var a = 1; a <= inpt; a++) 
+      {
+        multiply.push(a)
+      }
+      var table1 = document.getElementById('tbl')
+      for (var i = 1; i <= inpt; i++)
+       {
+        var th1 = document.createElement('th')
+        th1.innerHTML = i + '*'
+        table1.appendChild(th1)
+      }
+
+      for (var a = 1; a <= 3; a++)
+       {
+        var tr = document.createElement('tr')
+        table1.appendChild(tr)
+        table1.setAttribute('id', 'tdata')
+        multiply.forEach(function (element) 
+        {
+          tdd = document.createElement('td')
+          tdd.innerHTML = element * a
+          tr.appendChild(tdd)
+          console.log(element * a)
+        })
+      }
+
+
+    }
+
+// fucntion generate()
+// {
+
+// }
+
+
+
+
+    //DO NOT EDIT ANY CODE BELOW THIS LINE 
+
+
+
+
+  </script>
+</body>
+
+</html>

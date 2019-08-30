@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Session 1!</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.W3.3.1_1-->
+	<h1> Create your own exponentiation function! </h1>
+	<input type="text" name = "num1" id = "nu1">
+	<input type="text" name = "num2" id = "nu2">
+	<p id = "expo"> </p>
+	</hr>
+	<button onclick="exponent()">Click here to find the exponent!</button>
+	<!-- These elements above are for FSD.W3.3.1_1-->
+
+	<!-- These elements below are for FSD.W3.3.1_2-->
+	<h1>Sum of multiples of 3 and 5!</h1>
+	<p id = "mulout"></p>
+	<input type="text" id = "mulin">
+	<button onclick="sumOf3And5()">Click here for the output!</button>
+	
+	<!-- These elements above are for FSD.W3.3.1_2-->
+
+	<!-- These elements below are for FSD.W3.3.1_3-->
+	<h1>Check if the users email is valid!</h1>
+	<label for="Email">Email</label>
+	<input type="text" id=atsymb>
+	<button onclick="validateEmail()">Check Email!</button>
+	
+	<!-- These elements above are for FSD.W3.3.1_3-->
+	<script type="text/javascript">
+		//Write javascript for FSD.W3.3.1_1 here
+		function exponent() {
+		var a = document.getElementById("nu1").value;
+		var b = document.getElementById("nu2").value;
+		var exp = a;
+		for (var i = 1; i <= b - 1; i++) {
+			exp = exp * a;
+			//console.log(i);
+			var output = exp;
+			//console.log(exp);
+		}
+		//console.log(exp);
+		document.getElementById("expo").innerHTML = output;	
+			
+		}
+		//Write javascript for FSD.W3.3.1_2 here
+		function sumOf3And5() { 
+			console.log("text")
+			var a = document.getElementById("mulin").value;
+			var sum = 0;
+			for (var i = 0; i <= a; i++) {
+				console.log()
+				if(i % 3 == 0 && i % 5 == 0) {
+					sum = sum + i;
+					var output = sum;
+					console.log(output);
+				}
+			}
+			document.getElementById("mulout").innerHTML = output;
+		}
+		//Write javascript for FSD.W3.3.1_3 here
+		function validateEmail(){
+		}
+	</script>
+</body>
+</html>
