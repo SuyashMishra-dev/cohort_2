@@ -1,0 +1,36 @@
+ 
+ body {
+ 	background-color: lightblue;
+}
+.header h1 {
+	color: black;
+	font-size: 40px;
+	text-align: center;
+	padding-top: 20px;
+	font-family: 'Lobster', cursive
+}
+label {
+	color: white;
+}
+.input_field {
+	height: 300px;
+	width: 200px;
+}
+.input_field h2 {
+	color: white;
+	text-align: center;
+}
+button {
+	margin-left: 50px;	
+}
+.selector {
+	width:700px; 
+	margin-left: 50px;
+	margin-top: -220px;
+}
+.selector label {
+	margin-left: 380px;	
+}
+.selector input {
+	margin-left: 300px;
+}

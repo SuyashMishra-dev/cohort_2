@@ -3,8 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<title>MILEAGE CALCULATOR</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	
+	<h1>Your Personal Mileage Calculator</h1>
+	<div class="main">
+		<h2>Enter Current Fuel Status</h2>
+		<input type="text" name="fuel" class="common" id="fuel" placeholder="Enter Current Fuel Status">
+		<br><br><br>
+
+		<h2>ENter the Mileage of Your Vehicle</h2>
+		<input type="text" name="mileage"  id="mileage" placeholder="Enter Mileage of your Vehicle"><br><br>
+
+		<h2>Enter The Distance You Wanna GO</h2>
+		<input type="text" name="distance" id="distance" placeholder="Enter Approximate Distance">
+		<br><br><br>
+		<button onclick="check_result()">Check</button>
+		<p id="final"></p>
+	</div>
+
+	<script type="text/javascript"> 
+		function Calculate (fuel, mileage, distance) {
+			this.fuel = fuel;
+			this.mileage = mileage;
+			this.distance = distance;
+		}
+		
+		function check_result () {
+			var input1 = document.getElementById('fuel').value;
+			var input2 = document.getElementById('mileage').value;
+			var input3 = document.getElementById('distance').value;
+			var possible_distance;
+			var go_distance;
+
+			possible_distance = input1*input2;
+			go_distance = input3 - possible_distance;
+
+			console.log(go_distance)
+		}
+	</script>
 </body>
 </html>

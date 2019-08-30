@@ -12,22 +12,15 @@
         <button onclick="sumOdd()">Odd Sum</button>
         <button onclick="sumSingleDigit()">Single Digit Sum</button>
         <button onclick="sumDoubleDigit()">Double Digit Sum</button>
-        <button onclick="getValues()">Get Values</button>
-        <button onclick="getValuesNew()">Get Values New</button>
+        <!-- <button onclick="getValues()">Get Values</button> -->
     </div>
 
     <script>
-        // var inputArray = [1,2,3,4,5,10,12,14];
+
         var inputArray = [];
         var usableArray = [];
-
-        // document.getElementById('inputBox').value = inputArray;
-
-        // inputArray = document.getElementById('inputBox').value;
-        // console.log(inputArray);
-        
         var sum = 0;
-        // document.getElementById('inputBox').value = inputArray;
+
 
         function sumEvenPositions () {
             getValues();
@@ -100,38 +93,30 @@
         }
 
         function getValues() {
-            inputArray = document.getElementById('inputBox').value;
-            var newArray = [];
-
-            for (i = 0; i < inputArray.length; i++) {
-                pushElement(newArray, inputArray[i]);
-            }
-
-            // console.log(newArray);
-
-            for (i = 0; i < newArray.length; i++) {
-                if (newArray[i] != ',') {
-                    pushElement(usableArray, Number(newArray[i]));
+            // Custom Split Function
+            var inputString = document.getElementById('inputBox').value;
+            var a = '';
+            var b = [];
+            for (i = 0; i < inputString.length; i++) {
+                if(inputString[i] != ',') {
+                    a = a + inputString[i];
+                } else if (inputString[i] == ',') {
+                    b.push(Number(a));
+                    a = '';
                 }
             }
-            return usableArray;    
-            // console.log(usableArray);
+            b.push(Number(a));
+            usableArray = b;
+            console.log(usableArray); 
+            return usableArray; 
         }
 
         function pushElement(array, element) {
+            // Custom push function
             array[array.length] = element;
             return array;
         } // works exactly as it should
-
-        function getValuesNew() {
-            inputArray = document.getElementById('inputBox').value;
-            for (i = 0; i < inputArray.length; i++) {
-                pushElement(usableArray, Number(inputArray[i]));
-                console.log(usableArray[i]);
-            }
-            return usableArray;    
-        }
-        
+                
     </script>
 </body>
 </html>
@@ -150,21 +135,3 @@ function pushElement(array, element) {
 
  -->
 
-
- <!-- How I got the elements from the input box that had values in a csv format
-
-var usableArray = [];
-    var inputArray = '1,2,3,10,11';
-    var newArray = [];
-
-    for (i = 0; i < inputArray.length; i++) {
-        pushElement(usableArray, inputArray[i]);
-    }
-
-    for (i = 0; i < usableArray.length; i++) {
-        if (usableArray[i] != ',') {
-            pushElement(newArray, usableArray[i]);
-        }
-    }
-
-  -->
