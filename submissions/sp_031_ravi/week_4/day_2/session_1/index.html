@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <p id="print"></p>
+  <button onclick="movieInfo()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="addObj()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="addCast()">Add cast member </button>
+  
+
+  <script>
+
+    var movie = {
+      Name :"Bhahubali",
+      Director :"S.S Rajmouli",
+      year :2016,
+      Rating :9,
+      Casting : ["Prabhas","Rana daggubati","Sudeep","Tamanna","Anushka"]
+      
+    }
+
+    function movieInfo() {
+      console.log(movie)
+      var h3Heading1 = document.createElement('h3'); 
+      h3Heading1.textContent = movie.Name + " "+"Film Directed by" + " " + movie.Director + " " + "Year" +" " + movie.year ;      
+      var h1Elem = document.querySelector('body');
+      h1Elem.appendChild(h3Heading1);
+               
+    }
+
+    function addObj() {
+      movie.runTime = 03
+      var h3 = document.createElement('h3'); 
+      h3.textContent = "Running Time : " + " " + movie.runTime;  
+      var h1Elem = document.querySelector('body');
+      h1Elem.appendChild(h3);
+    }
+    
+    function addCast() {
+      movie.Casting = "Ramya"
+      var h3 = document.createElement('h3'); 
+      h3.textContent = "Movie Casting : " + " " + movie.Casting;  
+      var h1Elem = document.querySelector('body');
+      h1Elem.appendChild(h3);
+    }
+
+  </script>
+</body>
+</html>
