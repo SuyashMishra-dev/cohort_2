@@ -196,29 +196,30 @@ lee.addEventListener("click", function() {
     }
 });
 
-/*
 lan.addEventListener("click", function() {
     var filterInput = document.querySelector("#right-grid input").value;
 
-    if(pgt.checked) {
+    if(lan.checked) {
         if(isMultipleFiltered == false) {
             isFiltered = true;
             clearTable();
+
             for(i = 0; i < countries.length; i++) {
-                if(Number(countries[i].population) > Number(filterInput)) {
-                    countries[i].fillTable();
+                for(j = 0; j < countries[i].languages[0].length; j++) {
+                    if(filterInput == countries[i].languages[0][j]) {
+                        countries[i].fillTable();
+                    }
                 }
             }
         }
         else if(isMultipleFiltered == true) {
             for(i = 0; i < countries.length; i++) {
-                if(Number(countries[i].population) > Number(filterInput)) {
-                    countries[i].fillTable();
+                for(j = 0; j < countries[i].languages[0].length; j++) {
+                    if(filterInput == countries[i].languages[0][j]) {
+                        countries[i].fillTable();
+                    }
                 }
             }
         }
-        
-        
     }
-});
-*/
+})
