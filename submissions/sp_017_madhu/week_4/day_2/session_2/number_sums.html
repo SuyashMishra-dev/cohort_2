@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>
+        Coding Session 2
+    </title>
+    <style type="text/css">
+        button {
+
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="showResult"></div>
+    <input id="getInput" type="text"><br />
+    
+    <button id="evenPosition">Even Position Sum</button>
+    <button>Odd Position Sum</button>
+    <button>Even Sum</button>
+    <button>Odd Sum</button>
+    <button>Single Digit Sum</button>
+    <button>Double Digit Sum</button>
+
+    <script>
+        var giveResult=document.getElementById('evenPosition')
+        var number=document.getElementById('getInput')
+        function evenPostionSum()
+        {
+            // // var number=[];
+            // sum=0;
+            // for(var i=0; i<= number.length; i++){
+            //     if(i % 2==0){
+            //         sum=sum+number[i];
+            //     }
+            //     console.log(sum);
+            // }return sum;
+            console.log(number);
+        }
+        giveResult.addEventListener('click', evenPostionSum);
+        </script>
+</body>
+
+</html>

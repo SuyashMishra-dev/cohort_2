@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Week 4 Day 4Coding 1 </title>
+</head>
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button id="printJson"> Click here to print the JSON object </button>
+  <div id = "container1"> </div>
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input type = "text" id="numberOne"/>
+  <input type = "text" id="limit"/>
+  <button id="expCal"> Calculate </button>
+  <p id="expPara">Output:</p>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Multiplication Table Generator</h1>
+  <table id="tableVal"></table>
+  <input type = "text" id="numLimit"/>
+  <button  id="tableId"> Generate Tables </button>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <table id="tableWordId"></table>
+  <input type = "text" id="stringInput"/>
+  <button id="genLetters">Generate CAPS and small </button>
+  <script>
+  //DO NOT EDIT ANY CODE BELOW THIS LINE 
+  var items = [
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    },
+    {
+      name: "Rice",
+      price: 50,
+      id: 2323
+    },
+    {
+      name: "Banana",
+      price: 90,
+      id: 2323
+    },
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    }
+  ]
+
+  var mutiply = []
+  var caps=[];
+  var small=[];
+  // Do NOT EDIT ANY CODE ABOVE THIS LINE 
+  //Place all your code below this line!
+  function displayJson(jsonStr){
+    var name = jsonStr.name;
+    var price = jsonStr.price;
+    console.log(name+"-----"+price);
+    var displayVal = document.querySelector('#container1');
+    var displayPara =document.createElement('p');
+    displayPara.innerHTML=''+"Name :"+name+"----"+"Price :"+price;
+    displayVal.appendChild(displayPara);
+
+  }
+  function printJsonValue(){
+    
+    var output = JSON.stringify(items);
+    var objects = JSON.parse(output);
+    for(var i=0; i<objects.length;i++){
+      displayJson(objects[i]);
+    }
+   
+
+  }
+  function exponent(x,y,callBack){
+    var exp = x**y;
+    callBack(exp);
+  }
+  var display = function(input){
+    var displayexp = document.querySelector('#expPara');
+    displayexp.innerHTML="The exponent is :"+input;
+    
+  }
+  function generateTable(){
+    mutiply=[];
+    var table =document.querySelector('#tableVal');
+    table.setAttribute('border',1);
+    var limitTable = document.getElementById('numLimit').value;
+    var tr = document.createElement('tr');
+    var headOne =document.createElement('th');
+    headOne.innerHTML="*1";
+    var headTwo = document.createElement('th');
+    headTwo.innerHTML="*2";
+    var headThree = document.createElement('th');
+    headThree.innerHTML="*3";
+    var headFour =document.createElement('th');
+    headFour.innerHTML="*4";
+    var headFive = document.createElement('th');
+    headFive.innerHTML="*5";
+    tr.appendChild(headOne);
+    tr.appendChild(headTwo);
+    tr.appendChild(headThree);
+    tr.appendChild(headFour);
+    tr.appendChild(headFive);
+    table.appendChild(tr);
+    console.log(limitTable);
+    for(var i=1;i<=5;i++){
+     
+       var a =1;
+        while(a<=limitTable){
+          mutiply.push(a*i*1);
+          a++;
+        }
+    }
+    for(var j=0;j<limitTable;j++){
+      console.log("j"+j);
+      var b=j;
+      var tableRow= document.createElement('tr');
+      while(b< 5*limitTable){
+        var tableData = document.createElement('td');
+        tableData.innerHTML=mutiply[b];
+        tableRow.appendChild(tableData);
+        tableRow.style.color='blue';
+        b=b+limitTable*1;
+      }
+      table.appendChild(tableRow);
+    }
+  }
+  function generateCapsNSmall(){
+    caps=[];
+    small=[];
+    var stringsAlphas = document.getElementById('stringInput').value;
+    console.log(stringsAlphas);
+    var words = stringsAlphas.split(',');
+   caps =words.map(function(element){
+    return element.toUpperCase();
+  })
+  small= words.map(function(element){
+    return element.toLowerCase();
+  })
+   
+    var tableWords= document.getElementById('tableWordId');
+    tableWords.setAttribute('border',2);
+    tableId.style.color='blue';
+    var tr = document.createElement('tr');
+    var headOne =document.createElement('th');
+    headOne.innerHTML="Normal";
+    var headTwo = document.createElement('th');
+    headTwo.innerHTML="UPPER";
+    var headThree = document.createElement('th');
+    headThree.innerHTML="lower"
+    tr.appendChild(headOne);
+    tr.appendChild(headTwo);
+    tr.appendChild(headThree);
+    tableWords.appendChild(tr);
+    words.forEach(function(element){
+      var tableRow= document.createElement('tr');
+      var tableDataNormal = document.createElement('td');
+        tableDataNormal.innerHTML=element;
+        tableRow.appendChild(tableDataNormal);
+      caps.forEach(function(elementSec){
+        if(element.toUpperCase()==elementSec){
+          var tableData = document.createElement('td');
+          tableData.innerHTML=elementSec;
+          tableRow.appendChild(tableData);
+        }
+       })
+       small.forEach(function(elesmall){
+         if(element.toLowerCase()==elesmall){
+          var tableDataSmall = document.createElement('td');
+          tableDataSmall.innerHTML=elesmall;
+          tableRow.appendChild(tableDataSmall);
+         }
+       })
+      tableWords.appendChild(tableRow);
+
+});
+
+
+
+  }
+  
+  var printJsonBtn = document.querySelector('#printJson');
+  printJsonBtn.addEventListener('click',printJsonValue);
+  var printExpbtn = document.querySelector('#expCal');
+  printExpbtn.addEventListener('click',function(){
+    var num = document.getElementById('numberOne').value;
+    var limit = document.getElementById('limit').value;
+    exponent(num,limit,display);
+  });
+  var tableId = document.querySelector('#tableId');
+  tableId.addEventListener('click',generateTable);
+  var genLettrBtn = document.querySelector('#genLetters');
+  genLettrBtn.addEventListener('click',generateCapsNSmall);
+ 
+  </script>
+</body>
+</html>
