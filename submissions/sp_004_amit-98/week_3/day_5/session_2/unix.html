@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <style type="text/css">
+     #upper_box
+		{
+			height: 450px; 
+			width: 400px; 
+			background-color:lightgray; 
+			margin-left: 30%;
+        }
+        #upper_box img
+        {
+            margin-left: 90px; 
+			height: 300px;
+        }
+        #upper_box h1
+        {
+            color: blue; 
+			margin-left: 70px;  
+        }
+        #upper_box h2
+        {
+			color: black; 
+			margin-left: 20px;
+        }
+        #middle_box
+		{
+			height: 300px;
+			margin-left:10%;
+        }
+        #middle_box img
+        {
+            margin-left: 50px;
+			margin-top: 50px; 
+			height: 200px;
+        }
+        #middle_box h1{
+            color: red; 
+			margin-top: -200px; 
+			margin-left: 250px;
+			font-size: 35px;
+        }
+        #middle_box p
+        {
+            margin-left: 250px;
+			font-size: 20px;    
+        }
+        #lower_box{
+            background-color: orangered; 
+			height: 200px;
+			width: 1400px;
+			margin-left:3%;  
+        }
+        #lower_left{
+            width: 600px;
+            margin-left:30px;
+            float: left;
+        }
+        #lower_left h1{
+            color: white; 
+			padding-top: 50px; 
+			margin-left: 20px;
+        }
+        #lower_left p{
+            margin-left: 20px;
+			font-size: 20px;
+        }
+        #divider{
+            background-color: black; 
+			width: 10px; 
+			height: 150px; 
+			margin-top: 20px; 
+            float: left;
+        }
+        #lower_right{
+            float: left;
+            width: 600px;
+        }
+        #lower_right h1{
+            color: white; 
+			margin-top: 80px;
+			float: left;
+			margin-left: 200px;
+		}
+          #lower_right p{
+            float: left; 
+			font-size: 20px; 
+			margin-top: 10px;
+			margin-left: 200px;
+          }
+    </style>
+    <body>
+        <button onclick="createPage()" id="btn">Create Page</button>
+        <script>
+        function createPage()
+        {
+            linuxPage();
+            salPage();
+            unixandcPage();
+        }
+        function linuxPage(){
+            var linuxbgDiv=document.createElement('div');
+            linuxbgDiv.setAttribute('id', 'upper_box');
+            var linuxImg=document.createElement('img');
+            linuxImg.setAttribute('src','https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/linus.jpg ');
+            linuxbgDiv.appendChild(linuxImg);
+            var linuxH1=document.createElement('h1');
+            linuxH1.textContent='Linus Torvalds';
+            linuxbgDiv.appendChild(linuxH1);
+            var linuxH2=document.createElement('h2');
+            linuxH2.textContent='The Creator of Linux & Git';
+            linuxbgDiv.appendChild(linuxH2);
+            var bodyEle = document.querySelector('body');
+            bodyEle.appendChild(linuxbgDiv);
+        }
+        function salPage()
+        {
+            var salbgDiv=document.createElement('div');
+            salbgDiv.setAttribute('id','middle_box');
+            var salImg=document.createElement('img');
+            salImg.setAttribute('src','https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/khan.jpg');
+            salbgDiv.appendChild(salImg);
+            var salName=document.createElement('h1');
+            salName.textContent="Salman Khan";
+            salbgDiv.appendChild(salName);
+            var salDesc=document.createElement('p')
+            salDesc.textContent='Salman khan is the founder of the Khan Academy which has a mission of providing a free world-class education for anyone, anywhere';
+            salbgDiv.appendChild(salDesc);
+            var bodyEle=document.querySelector('body');
+            bodyEle.appendChild(salbgDiv);
+        }
+        function unixandcPage(){
+             var unixandcDiv=document.createElement('div');
+             unixandcDiv.setAttribute('id', 'lower_box');
+             var lowerLeft=document.createElement('div');
+             lowerLeft.setAttribute('id', 'lower_left')
+             var unixH1=document.createElement('h1');
+             unixH1.textContent='Ken Thompson';
+             var unixp=document.createElement('p');
+             unixp.innerHTML='Designed and Implemented the <br> original Unix Operating System';
+             lowerLeft.appendChild(unixH1);
+             lowerLeft.appendChild(unixp);
+             unixandcDiv.appendChild(lowerLeft);
+             var divider=document.createElement('div');
+             divider.setAttribute('id','divider');
+             unixandcDiv.appendChild(divider);
+             var lowerRight=document.createElement('div');
+             lowerRight.setAttribute('id','lower_right');
+             var cH1=document.createElement('h1');
+             cH1.textContent='Dennis Ritche';
+             var cp=document.createElement('p');
+             cp.textContent='The Creator of C Programming';
+             lowerRight.appendChild(cH1);
+             lowerRight.appendChild(cp);
+             unixandcDiv.appendChild(lowerRight);
+             var bodyEle=document.querySelector('body');
+             bodyEle.appendChild(unixandcDiv);
+        }
+        </script>
+    </body>
+</html>

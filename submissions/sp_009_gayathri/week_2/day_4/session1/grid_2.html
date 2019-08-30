@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Grid2 </title>
+    <style> 
+    #box {
+        display: grid;
+        background: white;
+        grid-gap: 20px;
+        grid-template-columns: 150px 650px;
+        grid-template-rows: 100px 600px;
+        padding:20px;
+      }
+      
+      #box div {
+        background:orange;
+        
+      }
+      
+      #a1{
+        background: red !important;
+        grid-area: 1 / 1 /span 1 / span 2;
+        
+      }
+      
+      #b1 {
+        background: green !important;
+        
+      }
+      
+      #b2 {
+        background: teal !important;
+      }</style>
+  </head>
+  
+  <body>
+     <div id="box">
+       <div id="a1">  </div>
+       
+       <div id="b1">  </div>
+       <div id="b2">  </div>
+                  
+      </div>
+  </body>
+</html>
+  
+  

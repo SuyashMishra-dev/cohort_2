@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Marraiage age validator</title>
+        <style>
+        #div1 {
+            background-color: aqua;
+            text-align: center;
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+        <h1>Marraiage Age Validator</h1>
+        <h3><label for="gender">Select your Gender</label>
+        <select id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select></h3>
+        <h3>Year of Birth
+        <input type="number" id="age"></h3>
+        <hr></hr>
+        <p id="result"></p>
+        <button onclick="check()" id="checkAge">Calculate Now</button>
+    </div>
+        <script>
+        function check() {
+            var gender = document.getElementById("gender").value;
+            var age = 2019 - parseInt(document.getElementById("age").value);
+            if ((gender == 'Male' && age >= 21) || (gender == 'Female' && age >= 18)) {
+                document.getElementById("result").innerHTML = '<h2>You are allowed to get married</h2>';
+            }
+            else {
+                document.getElementById("result").innerHTML = '<h2>Wait a bit to get married</h2>';
+            }
+        }
+        
+        
+        
+        </script>
+
+    </body>
+</html>

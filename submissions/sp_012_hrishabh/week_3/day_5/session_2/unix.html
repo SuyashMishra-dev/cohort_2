@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Unix
+    </title>
+    <head>
+        <style>
+        
+        
+    .header{
+        background: darkgrey;
+        margin-left: 450px;
+        margin-right: 500px;
+        height: 210px;
+        
+    }
+    .linux{
+        height: 100px;
+        margin-left: 150px; 
+        margin-top: 30px;
+    }
+    .p1l{
+        color: darkmagenta;
+        margin-left:125px; 
+    }
+    .p2l{
+        color:black;
+        margin-left: 80px;
+    }
+    .div2{
+        margin-top:150px;
+    }
+    .sal{
+        height: 200px;
+        float:inline-start
+    }
+    .div3{
+        height: 100px;
+        width: 500px;
+        margin-left: 100px;
+        margin-top: 50px;
+        float:left
+    }
+    .salkhan{
+        color: red;
+        display: inline;
+    }
+    #footermain{
+        background: orangered;
+        height:150px;
+        margin-top:500px;
+        margin-left: 50px;
+        margin-right:50px;
+    }
+    .footerkem{
+        height:150px;
+        width: 400px;
+    }
+    .ken{
+        font-size: 25px; 
+        color:white; 
+        /*margin-left:30px;*/
+    }
+    .kenh{
+        text-align: center; 
+        color:black; 
+       /* margin-left: 60px;*/
+        margin-top: 50px;
+    }
+    .div4{
+        height:150px;
+        width: 400px;
+        float:right;
+        margin-top: -150px;
+    }
+    .seprate{
+        background:black;
+        height:100px;
+        width: 5px;
+        margin-top: -130px;
+        margin-left:630px;
+    }
+    .d{
+        color:white;
+        margin-top: -50px;
+        font-size:25px;
+        /*margin-right: -150px;*/
+    }
+    .t{
+        /*margin-left: 330px;*/
+    }
+
+    .p {
+        color: black;
+    }
+
+    .p2 {
+        color: black;
+    }
+        </style>
+    </head>
+    <body>
+        <button id="createUnix">Create Unix</button>
+        <script>
+            
+        var documentCreate = document.getElementById('createUnix');
+        documentCreate.addEventListener('click' , createToClick);
+        function createToClick () {
+            var headerDiv = document.createElement('div');
+            var headerDivQuery = document.querySelector('body');
+            headerDivQuery.appendChild(headerDiv);
+            headerDiv.setAttribute('class' , 'header');
+            
+            var img = document.createElement('img');
+            var imgQuery = document.querySelector('div');
+            imgQuery.appendChild(img);
+            img.setAttribute('src' , 'https://upload.wikimedia.org/wikipedia/commons/0/01/LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg');
+            img.setAttribute('class' , 'linux');
+
+            var p1 = document.createElement('p');
+            var p1Query = document.querySelector('div');
+            p1.innerHTML = "<b> Linux Torvalds <b>"
+            p1Query.appendChild(p1);
+            p1.setAttribute('class' , 'p1l');
+
+
+            var p2 = document.createElement('p');
+            var p2Query = document.querySelector('div');
+            p2Query.appendChild(p2);
+            p2.innerHTML = "The creator of Linux & Git"
+            p2.setAttribute('class' , 'p2l');
+
+            var salKhanDiv = document.createElement('div');
+            var salKhanDivQuery = document.querySelector('body');
+            salKhanDivQuery.appendChild(salKhanDiv);
+            salKhanDiv.setAttribute('class' , 'div2');
+
+            var salKhanImg = document.createElement('img');
+            var salKhanImgQuery = document.querySelector('.div2');
+            salKhanImg.setAttribute('src' , 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Salman_Khan_TED_2011.jpg');
+            salKhanImgQuery.appendChild(salKhanImg);
+            salKhanImg.setAttribute('class' , 'sal');
+
+            var div3 = document.createElement('div');
+            var div3Query = document.querySelector('.div2');
+            div3Query.appendChild(div3);
+            div3.setAttribute('class' , 'div3');
+
+            var div3P1 = document.createElement('p');
+            var div3P1Query = document.querySelector('.div3');
+            div3P1.innerHTML = '<b>Sal Khan</b>';
+            div3P1Query.appendChild(div3P1);
+            div3P1.setAttribute('class' , 'salkhan');
+
+            var div3P2 = document.createElement('p');
+            var div3P2Query = document.querySelector('.div3');
+            div3P1.innerHTML = 'Salman Khan is the founder of the Khan Academy which has a mission of providing a free world-class education for anyone,anywhere'
+            div3P2Query.appendChild(div3P2);
+    
+            var div4 = document.createElement('div');
+            var div4Query = document.querySelector('body');
+            div4Query.appendChild(div4);
+            div4.setAttribute('id' , 'footermain');
+
+
+            var div5 = document.createElement('div');
+            var div5Query = document.querySelector('#footermain');            
+            div5Query.appendChild(div5);
+            div5.setAttribute('class' , 'footerkem');
+
+            var div5P1 = document.createElement('p');
+            var div5P1Query = document.querySelector('.footerkem');            
+            div5P1Query.appendChild(div5P1);
+            div5P1.setAttribute('class' , 'p');
+
+
+            var div5P1S1 = document.createElement('span');
+            var div5P1S1Query = document.querySelector('.p');
+            div5P1S1.innerHTML = 'Ken Thompson<br>';
+            div5P1S1Query.appendChild(div5P1S1);
+            div5P1S1.setAttribute('class' , 'ken');
+
+            var div5P1S2 = document.createElement('span');
+            var div5P1S2Query = document.querySelector('.p');
+            div5P1S2.innerHTML = 'Designed and Implemented the Original Unix operating system';
+            div5P1S2Query.appendChild(div5P1S2);
+            div5P1S2.setAttribute('class' , 'kenh');
+
+            var div6 = document.createElement('div');
+            var div6Query = document.querySelector('#footermain');            
+            div6Query.appendChild(div6);
+            div6.setAttribute('class' , 'div4');
+
+            var div6P1 = document.createElement('p');
+            var div6P1Query = document.querySelector('.div4');            
+            div6P1Query.appendChild(div6P1);
+            div6P1.setAttribute('class' , 'p2');
+
+
+            var div6P1S1 = document.createElement('span');
+            var div6P1S1Query = document.querySelector('.p2');
+            div6P1S1.innerHTML = 'Dennis Ritchie<br>';
+            div6P1S1Query.appendChild(div6P1S1);
+            div6P1S1.setAttribute('class' , 'd');
+
+            var div6P1S2 = document.createElement('span');
+            var div6P1S2Query = document.querySelector('.p2');
+            div6P1S2.innerHTML = 'The creator of C Programming Language';
+            div6P1S2Query.appendChild(div6P1S2);
+            div6P1S2.setAttribute('class' , 't');
+
+            var div7 = document.createElement('div');
+            var div7Query = document.querySelector('#footermain');            
+            div7Query.appendChild(div7);
+            div7.setAttribute('class' , 'seprate');
+
+            var div7P1 = document.createElement('p');
+            var div7P1Query = document.querySelector('.seperate');            
+            div7P1Query.appendChild(div67P1);
+        }
+
+
+        
+        </script>
+    </body>
+</html>

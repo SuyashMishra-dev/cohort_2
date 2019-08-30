@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1 id="headOne">Click the button to see information about my favourite movie</h1>
+  <button onclick="showMovieDetail()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="addRunTime()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="addCast()">Add cast member </button>
+  
+
+  <script>
+      var movie ={
+        Name:"The Intern",
+        Director:"Nancy Meyers",
+        Year :2015,
+        Rating:7.1,
+        Cast:["Robert De Niro","Anne Hathaway","Rene Russo","	Anders Holm","Andrew Rannells"]
+      }
+      var head =document.querySelector('h1');
+  function showMovieDetail(){
+     
+      var movieHeading = document.createElement('div');
+      var movieDirector= document.createElement('div');
+      var movieYear = document.createElement('div');
+      var movieRatingg = document.createElement('div');
+      var movieCast=document.createElement('div');
+      movieHeading.innerHTML="Movie name is :"+movie.Name;
+      movieDirector.innerHTML="Movie director is :"+movie.Director;
+      movieYear.innerHTML="Movie launched in :"+movie.Year;
+      movieRatingg.innerHTML="Movie rating is :"+movie.Rating;
+      movieCast.innerHTML="Movie Casts are :"+movie.Cast[0]+","+movie.Cast[1]+","+movie.Cast[2]+","+movie.Cast[3]+","+movie.Cast[4];
+      movieCast.setAttribute('id','cast');
+      head.appendChild(movieHeading);
+      head.appendChild(movieDirector);
+      head.appendChild(movieYear);
+      head.appendChild(movieRatingg);
+      head.appendChild(movieCast);
+
+}
+
+function addRunTime(){
+      movie.runTime= 2;
+      var movieRuntime=document.createElement('div');
+      movieRuntime.innerHTML="Movie run time is :"+movie.runTime+" Hour";
+      head.appendChild(movieRuntime);
+}
+function addCast(){
+  movie.Cast[5]="Zack Pearlman";
+  var movieNewActor =document.createElement('div');
+  var alldivd = document.getElementById('cast');
+  alldivd.innerHTML= "Movie Casts are :"+movie.Cast[0]+","+movie.Cast[1]+","+movie.Cast[2]+","+movie.Cast[3]+","+movie.Cast[4]+","+movie.Cast[5];
+  alldivd[4]=movieNewActor;
+  head.appendChild(movieNewActor);
+  
+
+}
+  </script>
+</body>
+</html>
