@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1 id = "del">First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <div id="headings">
+            <h5>First H5</h5>
+            <h5>Second H5</h5>
+            <h5>Third H5</h5>
+        </div>
+        <div id="cont">
+            <div class="green">First DIV</div>
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button onclick = "remH1()">Remove H1</button>
+        <button onclick = "remH3()">Remove H3</button>
+        <button onclick = "remH5()">Remove H5</button>
+        <button onclick = "remRed()">Remove Red</button>
+        <button onclick = "remDiv()">Remove DIVS</button>
+        <script>
+            function remH1() {
+                var rem = document.querySelector('body');
+                var rem1 = document.getElementById('del');
+                    rem.removeChild(rem1)
+                    }
+            function remH3() {
+                var change2 = document.querySelector('body');
+                var change3 = document.querySelectorAll('h3');
+                for (var i = 0; i < change3.length; i++) {
+                    change2.removeChild(change3[i]);
+                }
+            }        
+            function remH5() {
+                var change = document.getElementById('headings');
+                var change5 = document.querySelectorAll('h5');
+                for (var i = 0; i < change5.length; i++) {
+                    change.removeChild(change5[i]);
+                    
+                }
+            } 
+            function remRed() {
+                var red1 = document.getElementById('cont');
+                var redCls = red1.querySelectorAll('.red');
+                for (var i = 0; i < redCls.length; i++) {
+                    red1.removeChild(redCls[i]);
+                }
+            }      
+            function remDiv() {
+                var conDel = document.getElementById('cont');
+                var divRem = conDel.querySelectorAll('div');
+                for (var i = 0; i < divRem.length; i++) { 
+                    conDel.removeChild(divRem[i]);
+                }
+            }
+        </script>
+    </body>
+</html>
