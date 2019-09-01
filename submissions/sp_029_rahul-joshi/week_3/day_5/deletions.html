@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1 id="rmv">First H1</h1>
+        <h1>Second H1</h1>
+        <h3 id="h3_1">First H3</h3>
+        <h3 id="h3_2"></h3>Second H3</h3>
+        <div id="headings">
+            <h5>First H5</h5>
+            <h5>Second H5</h5>
+            <h5>Third H5</h5>
+        </div>
+        <div id="cont">
+            <div class="green">First DIV</div>
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button onclick="rmvh1()">Remove H1</button>
+        <button onclick="rmvh3()">Remove H3</button>
+        <button onclick="rmvh5()">Remove H5</button>
+        <button onclick="red()">Remove Red</button>
+        <button onclick="rmvdiv()">Remove DIVS</button>
+        <script>
+            
+                function rmvh1(){
+                var bodyElem = document.querySelector('body');
+                var removeh1 = document.getElementById('rmv')
+                bodyElem.removeChild(removeh1);
+
+     }
+
+               function rmvh3(){
+                   var bodyElem = document.querySelector('body');
+                   var ele1 = document.querySelector('h3');
+                   bodyElem.removeChild(ele1);
+                   
+                   var ele2 = document.querySelector('h3');
+                   bodyElem.removeChild(ele2);
+                   
+               }
+
+               function rmvh5(){
+                var bodyElem = document.querySelector('body');
+                var ele1 = document.querySelector('div');
+                bodyElem.removeChild(ele1);
+               }
+
+               function red(){
+              
+                     var Contdiv = document.getElementById('cont');
+                     var divs = document.querySelectorAll('.red');
+
+                     for(var i=0; i< divs.length; i++){
+                             
+                            Contdiv.removeChild(divs[i]);
+                     }
+
+               }
+
+               function rmvdiv(){
+
+        
+                 var contdiv = document.getElementById('cont');
+                 var divs = document.querySelectorAll('div');
+
+                 for( var i = 0; i < divs.length; i++) {
+                       
+                       contdiv.removeChild(divs[i]);
+                 }
+
+
+
+               }
+                   
+               
+
+
+
+
+        </script>
+    </body>
+</html>

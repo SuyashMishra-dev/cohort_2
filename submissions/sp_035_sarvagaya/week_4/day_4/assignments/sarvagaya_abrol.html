@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>
+            Countries database
+        </title>
+        <style type="text/css">
+            .heading
+            {
+                font-size:28px;
+                text-align: center;
+            }
+            .partition
+            {
+                height:1px;
+                width:1330px;
+                background-color: black;
+            }
+            .addDiv
+            {
+                font-size:20px;
+                margin-bottom:20px;
+            }
+            .add
+            {
+                margin-left:30px;
+                margin-top:100px;
+            }
+            .second
+            {
+                float:right;
+                margin-top:-300px;
+                margin-right:300px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="heading">Countries DataBase</div>
+        <div class="partition"></div>
+        <div class="add">
+        <div class="addDiv">ADD A NEW COUNTRY</div>
+        <label for="name">NAME</label>
+        <input type="text" name="name" placeholder="eg:India"/>
+        <br>
+        <label for="population">POPULATION</label>
+        <input type="text" name="population" placeholder="eg:10000000"/>
+        <br>
+        <label for="gdp">GDP</label>
+        <input type="text" name="gdp" placeholder="eg:123251"/>
+        <br>
+        <label for="Life Expectancy">LIFE Expectancy</label>
+        <input type="text" name="lifeExpectancy" placeholder="eg:90"/>
+        <br>
+        <label for="languages">LANGUAGES</label>
+        <input type="text" name="languages" placeholder="eg:Hindi,Dogri"/>
+        <br>
+        <button onclick="enterDetails()">Submit</button>
+        </div>
+        <div class="second">
+            <label for="inputField">INPUT FIELD</label>
+            <input type="text" name="inputField" placeholder="eg:2000"/>
+            <br>
+            <br>
+            <label for="popGreaterThan">POPULATION GREATER THAN</label>
+            <input type="checkbox" name="popGreaterThan">
+            <br><br>
+            <label for="popLessThan">POPULATION LESS THAN</label>
+            <input type="checkbox" name="popLessThan">
+            <br><br>
+            <label for="lifeExpec">LIFE EXPECTANCY EQUAL TO</label>
+            <input type="checkbox" name="lifeExpec">
+            <br><br>
+            <label for="gdpGreater">GDP GREATER THAN</label>
+            <input type="checkbox" name="gdpGreater">
+            <br><br>
+            <label for="gdpLess">GDP LESSER THAN</label>
+            <input type="checkbox" name="gdpLess">
+            <br><br>
+            <label for="language">LANGUAGE</label>
+            <input type="checkbox" name="language">
+        </div>
+    </body>
+</html>
