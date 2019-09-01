@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    #displayBox {
+        margin:30px;
+        margin-left: 450px;
+        width: 400px;
+        height: 40px;
+    }    
+
+    #Row1 {
+        margin-left: 420px;
+        margin-top: 10px;
+    }
+
+    #Row2 {
+        margin-left: 450px;
+        margin-top: 10px;
+    }
+    #Row3 {
+        margin-left: 475px;
+        margin-top: 10px;
+    }
+    #Row4 {
+        margin-left: 483px;
+        margin-top: 10px;
+    }
+    #Row5 {
+        margin-left: 540px;
+        margin-top: 10px;
+    }
+    #spaceBar {
+        
+        width: 250px;
+        height: 40px;
+    }
+
+    #buttons {
+        margin-left: 480px;
+        margin-top: 10px;
+    }
+    </style>
+   
+
+    
+</head>
+<body>
+    <div id="displayDiv">
+        <input type="text" id="displayBox">
+      </div>
+      <div id="Row1">
+        <button onclick="display('1')" value="1" id="one">1<div class="special">!</div></button>
+        <button onclick="display('2')" value="2" id="two">2<div class="special">@</div></button>
+        <button onclick="display('3')" value="3" id="three">3<div class="special">#</div></button>
+        <button onclick="display('4')" value="4" id="four">4<div class="special">$</div></button>
+        <button onclick="display('5')" value="5" id="five">5<div class="special">%</div></button>
+        <button onclick="display('6')" value="6" id="six">6<div class="special">^</div></button>
+        <button onclick="display('7')" value="7" id="seven">7<div class="special">&</div></button>
+        <button onclick="display('8')" value="8" id="eight">8<div class="special">*</div></button>
+        <button onclick="display('9')" value="9" id="nine">9<div class="special">(</div></button>
+        <button onclick="display('0')" value="0" id="zero">0<div class="special">)</div></button>
+        <button onclick="delFunction()" id="del">DEL<div class="special"></div><--</button>
+      </div>
+      <div id="Row2">
+        <button onclick="display('q')" value="q" id="q">Q</button>
+        <button onclick="display('w')" value="w" id="w">W</button>
+        <button onclick="display('e')" value="e" id="e">E</button>
+        <button onclick="display('r')" value="r" id="r">R</button>
+        <button onclick="display('t')" value="t" id="t">T</button>
+        <button onclick="display('y')" value="y" id="y">Y</button>
+        <button onclick="display('u')" value="u" id="u">U</button>
+        <button onclick="display('i')" value="i" id="i">I</button>
+        <button onclick="display('o')" value="o" id="o">O</button>
+        <button onclick="display('p')" value="p" id="p">P</button>
+    
+      </div>
+      <div id="Row3">
+        <button onclick="display('a')" value="a" id="a">A</button>
+        <button onclick="display('s')" value="s" id="s">S</button>
+        <button onclick="display('d')" value="d" id="d">D</button>
+        <button onclick="display('f')" value="f" id="f">F</button>
+        <button onclick="display('g')" value="g" id="g">G</button>
+        <button onclick="display('h')" value="h" id="h">H</button>
+        <button onclick="display('j')" value="j" id="j">J</button>
+        <button onclick="display('k')" value="k" id="k">K</button>
+        <button onclick="display('l')" value="l" id="l">L</button>
+    
+      </div>
+      <div id="Row4">
+        <button onclick="display('z')" value="z" id="z">Z</button>
+        <button onclick="display('x')" value="x" id="x">X</button>
+        <button onclick="display('c')" value="c" id="c">C</button>
+        <button onclick="display('v')" value="v" id="v">V</button>
+        <button onclick="display('b')" value="b" id="b">B</button>
+        <button onclick="display('n')" value="n" id="n">N</button>
+        <button onclick="display('m')" value="m" id="m">M</button>
+        <button onclick="comFunction()" id="com">.com</button>
+    
+      </div>
+      <div id="Row5">
+        <button onclick="spaceFunction()" value=" " id="spaceBar"></button>
+      </div>
+      <div id="buttons" class="bottom">
+        <button onclick="capsFunction()" value="caps" class="funKey" id="caps">CAPS</button>
+        <button onclick="shiftFunction()" value="shift" class="funKey" id="shift">SHIFT</button>
+        <button onclick="passFunction()" value="pass" class="funKey" id="pass">PASSWD</button>
+        <button onclick="cleanFunction()" value="clean" class="funKey" id="clean">CLEAN</button>
+        <button onclick="revFunction()" value="rev" class="funKey" id="rev">REV</button>
+    
+      </div>
+      <script>
+        var pass = false;
+        var shift = false;
+        var caps = false;
+        var clean = false;
+        var count = 0;
+        var shiftVar = document.getElementById("shift");
+        //Display Function
+        function display(value) {
+          if (caps) {
+            switch (value) {
+              case "a":
+                value = "A"
+                break;
+              case "b":
+                value = "B"
+                break;
+              case "c":
+                value = "C"
+                break;
+              case "d":
+                value = "D"
+                break;
+              case "e":
+                value = "E"
+                break;
+              case "f":
+                value = "F"
+                break;
+              case "g":
+                value = "G"
+                break;
+              case "h":
+                value = "H"
+                break;
+              case "i":
+                value = "I"
+                break;
+              case "j":
+                value = "J"
+                break;
+              case "k":
+                value = "K"
+                break;
+              case "l":
+                value = "L"
+                break;
+              case "m":
+                value = "M"
+                break;
+              case "n":
+                value = "N"
+                break;
+              case "o":
+                value = "O"
+                break;
+              case "p":
+                value = "P"
+                break;
+              case "q":
+                value = "Q"
+                break;
+              case "r":
+                value = "R"
+                break;
+              case "s":
+                value = "S"
+                break;
+              case "t":
+                value = "T"
+                break;
+              case "u":
+                value = "U"
+                break;
+              case "v":
+                value = "V"
+                break;
+              case "w":
+                value = "W"
+                break;
+              case "x":
+                value = "X"
+                break;
+              case "y":
+                value = "Y"
+                break;
+              case "z":
+                value = "Z"
+                break;
+            }
+          }
+          if (shift) {
+            switch (value) {
+              case "1":
+                value = "!";
+                break;
+              case "2":
+                value = "@";
+                break;
+              case "3":
+                value = "#";
+                break;
+              case "4":
+                value = "$";
+                break;
+              case "5":
+                value = "%";
+                break;
+              case "6":
+                value = "^";
+                break;
+              case "7":
+                value = "&";
+                break;
+              case "8":
+                value = "*";
+                break;
+              case "9":
+                value = "(";
+                break;
+              case "0":
+                value = ")";
+                break;
+            }
+          }
+    
+          if (pass == true) {
+            var password = "";
+            var dataStr = document.getElementById("displayBox").value;
+            for (var i = 0; i < dataStr.length; i++) {
+              password = password + "*";
+            }
+            dataStr = "";
+            document.getElementById("pass").style.color = "green";
+            document.getElementById("displayBox").value = dataStr + password;
+          }
+          if (pass == false) {
+            password = password + dataStr
+            document.getElementById("pass").style.color = "black";
+          }
+          document.getElementById("displayBox").value += value;
+        }
+    
+        //Delete function
+        function delFunction() {
+          var data = document.getElementById("displayBox").value;
+          var str = "";
+          dataLen = data.length;
+          if (dataLen == 1 || dataLen == 0) {
+            document.getElementById("displayBox").value = "";
+          }
+          else {
+            for (var i = 0; i < dataLen - 1; i++) {
+              str = str + data[i];
+            }
+            document.getElementById("displayBox").value = str;
+          }
+        }
+    
+        //.com function
+        function comFunction() {
+          var data = document.getElementById("displayBox").value;
+          dataLen = data.length;
+          if (dataLen == 0) {
+            document.getElementById("displayBox").value = '';
+          }
+          else {
+            data = data + '.com';
+            document.getElementById("displayBox").value = data;
+          }
+        }
+    
+        //Space function
+        function spaceFunction() {
+          var data = document.getElementById("displayBox").value;
+          if (data == null) {
+            document.getElementById("displayBox").value = " ";
+          }
+          else {
+            data = data + " ";
+            document.getElementById("displayBox").value = data;
+          }
+        }
+    
+        //Password function
+        function passFunction() {
+          if (pass == true) {
+            pass = false;
+          }
+          else if (pass == false) {
+            pass = true;
+          }
+        }
+    
+        //Reverse function
+        function revFunction() {
+          var rev = "";
+          var dataStr = document.getElementById("displayBox").value
+    
+          for (var i = dataStr.length - 1; i >= 0; i--) {
+            rev += dataStr[i];
+          }
+          document.getElementById("displayBox").value = rev;
+          if (document.getElementById("rev").style.color == "black") {
+            document.getElementById("rev").style.color = "green";
+          }
+          else {
+            document.getElementById("rev").style.color = "black";
+          }
+        }
+        //Clean function
+        function cleanFunction() {
+          var cleanValue = document.getElementById("displayBox").value;
+          if (clean) {
+            clean = false;
+            document.getElementById("clean").style.color = "black";
+          }
+          else {
+            clean = ""
+            clean = true;
+            if (clean) {
+              if (cleanValue == "bastard") {
+                clean = cleanValue
+                document.getElementById("displayBox").value = "b*****d";
+              }
+              else if (cleanValue == "fuck") {
+                clean = cleanValue
+                document.getElementById("displayBox").value = "f**k";
+              }
+              else if (cleanValue == "porn") {
+                clean = cleanValue
+                document.getElementById("displayBox").value = "p**n";
+              }
+              else if (cleanValue == "ass") {
+                clean = cleanValue
+                document.getElementById("displayBox").value = "a**";
+              }
+              else if (cleanValue == "sexy") {
+                clean = cleanValue
+                document.getElementById("displayBox").value = "s**y";
+              }
+              else if (cleanValue == "shit") {
+                clean = cleanValue
+                document.getElementById("displayBox").value = "s**t";
+              }
+              else if (cleanValue == "rapist") {
+                clean = cleanValue
+                document.getElementById("displayBox").value = "r****t";
+              }
+              else if (cleanValue == "bitch") {
+                clean = cleanValue
+                document.getElementById("displayBox").value = "b***h";
+              }
+              else if (cleanValue == "dick") {
+                clean = clean_value
+                document.getElementById("displayBox").value = "d**k";
+              }
+              else if (cleanValue == "asshole") {
+                clean = cleanValue
+                document.getElementById("displayBox").value = "a*****e";
+              }
+            }
+            document.getElementById("clean").style.color = "green";
+          }
+        }
+    
+        //Shift function
+        function shiftFunction() {
+          if (shift == true) {
+            shift = false;
+            document.getElementById("shift").style.color = "black";
+          }
+          else if (shift == false) {
+            shift = true;
+            count++;
+            console.log(count);
+            if (count == 1) {
+              document.getElementById("shift").style.color = "green";
+              count--;
+            }
+            else {
+              shiftVar.addEventListener('click', shiftFunction);
+              document.getElementById("shift").style.color = "black";
+            }
+          }
+        }
+        //CapsLock function
+        function capsFunction() {
+          if (caps == true) {
+            caps = false;
+            document.getElementById("caps").style.color = "black";
+    
+          }
+          else if (caps == false) {
+            caps = true;
+            document.getElementById("caps").style.color = "green";
+          }
+        }
+    
+    
+      </script>
+</body>
+</html>

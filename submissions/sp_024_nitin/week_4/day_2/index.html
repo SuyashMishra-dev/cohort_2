@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button id = "myMovie">Movie Information!</button>
+  <div id = "movie"></div>
+  <!-- FSD.W4.2.1_2 !-->
+  <button id = "myTime">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button id = "addCast">Add cast member </button>
+  
+
+  <script>
+   var movie = {
+      Name : "October Sky",
+      Director : "Joe Johnston",
+      Year : "19/02/1999",
+      Rating : "7.8/10",
+      Cast : ["Jake Gyllenhaal", "Laura Dern", "Chris Cooper", "Chris Owen", "Chad Lindberg"]
+    }
+  function myMovie1() {
+   
+  var movieDetails = "My Favorite movie is " + movie.Name + ". " + "It was directed by " + movie.Director + ". " + "It was directed in the year " + movie.Year
+                        + ". " +"It was given the rating of " + movie.Rating + ". " + movie.Cast[0] + " and " + movie.Cast[1] + " were some of the famous actors in the movie. ";
+  var movieDiv = document.createElement('div');
+  movieDiv.textContent = movieDetails;
+
+  var place = document.querySelector('#movie');
+  place.appendChild(movieDiv);
+    }
+  var movieButton = document.querySelector('#myMovie');
+  movieButton.addEventListener('click', myMovie1);
+  
+  function myTime1() {
+  movie.runTime = "108";
+  
+  var newText = " The movie has a duration of " + movie.runTime + " min.";
+                       
+  var movieDiv1 = document.createElement('div');
+  movieDiv1.textContent = newText;
+
+  var place1 = document.querySelector('#movie');
+  place1.appendChild(movieDiv1);
+  }
+  var movieButton1 = document.querySelector('#myTime');
+  movieButton1.addEventListener('click', myTime1);    
+
+ function addCast1() {
+   movie.Cast[5] = ["Chris Cooper"];
+
+    var newName =movie.Cast[5] + " was another stellar cast of the movie."; 
+                        
+    var movieDiv2 = document.createElement('div');
+    movieDiv2.textContent = newName;
+
+    var place2 = document.querySelector('#movie');
+    place2.appendChild(movieDiv2);
+ }
+    var movieButton2 = document.querySelector('#addCast');
+    movieButton2.addEventListener('click', addCast1);
+  </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Week 4 Day 4Coding 1 </title>
+</head>
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button onclick="container1()"> Click here to print the JSON object </button>
+  <div id = "container1"> </div>
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input type = "text" id = "input1" />
+  <input type = "text" id = "input2" />
+  <button onclick="exponent1()" id="generate"> Calculate </button>
+  <p>Output: <span id="final"> </span> </p>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Multiplication Table Generator</h1>
+  <table></table>
+  <input type = "text"/>
+  <button onclick="table_multiplication()"> Generate Tables </button>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <table></table>
+  <input type = "text"/>
+  <button> Generate CAPS and small </button>
+  <script>
+  //DO NOT EDIT ANY CODE BELOW THIS LINE 
+  var items = [
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    },
+    {
+      name: "Rice",
+      price: 50,
+      id: 2323
+    },
+    {
+      name: "Banana",
+      price: 90,
+      id: 2323
+    },
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    }
+  ]
+
+var mutiply = []
+
+ // For FSD.W4.4.1_1
+
+function container1() {
+	var output = JSON.stringify(items)
+	var displayDiv = document.getElementById('items');
+	items.forEach(function(items){
+	console.log(items["name"], items["price"])    	
+	var displayDiv = document.getElementById('container1');
+	var displayP = document.createElement('p');
+	var displayP2 = document.createElement('p');
+    displayP.textContent = (items["name"]);
+    displayP2.textContent = (items["price"]);
+    displayDiv.appendChild(displayP);
+    displayDiv.appendChild(displayP2);
+	});
+}
+
+
+// For FSD.W4.4.1_2
+
+function exponent(x,y, callBack){
+
+	var result = x**y;
+	callBack(result);
+}
+
+function exponent1() {
+	x = document.getElementById('input1').value;
+	y = document.getElementById('input2').value;	
+	x = Number(x);
+		y = Number(y);
+		exponent(x,y,display);
+}
+
+
+var display = function(input) {
+	document.getElementById("final").innerHTML = "The exponent is:"+ input;
+}
+
+// For FSD.W4.4.1_3
+
+  // Do NOT EDIT ANY CODE ABOVE THIS LINE 
+  //Place all your code below this line!
+  
+  </script>
+</body>
+</html>
