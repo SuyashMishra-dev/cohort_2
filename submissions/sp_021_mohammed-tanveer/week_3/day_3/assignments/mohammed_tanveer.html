@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tax calculator</title>
+    <style>
+    body{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Tax Calculator</h1>
+    </div>
+    <div>
+        <p>Please enter your annual income</p>
+        <input id="amountInput" type="text">
+        <button onclick="amountSubmit()">Submit</button>
+        <p id="displayTax"></p>
+    </div>
+
+    <script>
+        function amountSubmit() {
+            var amountInput = document.getElementById('amountInput').value;
+            var noTax = 250000;
+            var tenTax = 500000;
+            var twentyTax = 1000000;
+            var threeTax = 1000000;
+            var displayTax = document.getElementById('displayTax');
+
+            if(amountInput < 250000) {
+                displayTax.innerHTML = "You don't have to pay any tax!";
+
+            } else if (amountInput > noTax && amountInput <= tenTax) {
+
+                // took Amit's help to calculate this
+                amountInput = (amountInput*(10/100));
+                displayTax.innerHTML = "You have to pay " + amountInput;
+
+            } else if(amountInput > tenTax && amountInput <= twentyTax){
+
+                 // took Amit's help to calculate this
+                amountInput = (amountInput*(20/100));
+                displayTax.innerHTML = "You have to pay " + amountInput;
+            } else if(amountInput > threeTax){
+
+                // took Amit's help to calculate this
+                amountInput = (amountInput*(30/100));
+                displayTax.innerHTML = "You have to pay " + amountInput;
+                }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }    
+        th,tr,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        button {
+            width: 190px;
+            background: whitesmoke;
+            text-align: center;
+        }
+        #androidTable,#ubuntuTable,#windowsTable,#macosTable {
+            float: left;
+            margin-top: 200px;
+            margin-left: 50px;
+        }
+        .dropdownHead {
+            background-color: #1767D6;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            text-align: center;
+            margin: 50px 0px 0px 700px;
+            border: none;
+            width: 160px;
+        }
+        .dropDown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdownContent {
+            display: none;
+            position: absolute;
+            margin: 0px 0px 0px 700px;
+            background-color: lightcyan;
+            width: 160px;
+        }
+        .dropdownContent button {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdownContent button:hover {
+            background-color: white;
+        }
+        .dropDown:hover .dropdownContent {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropDown">
+        <div class="dropdownHead">Operating System</div>
+        <div class="dropdownContent">
+            <button onclick="androidOs()" id="android">Android</button>
+            <button onclick="windowsOs()" id="windows">Windows</button>
+            <button onclick="ubuntuOs()" id="ubuntu">Ubuntu</button>
+            <button onclick="macOs()" id="macos">MacOS</button>
+        </div>
+    </div>
+    <div id="container1"></div>
+    <table id="androidTable">
+        </div>
+        <table id="windowsTable">
+            </div>
+            <table id="ubuntuTable">
+                </div>
+                <table id="macosTable">
+                    </div>
+                    <script src="os.js"></script>
+</body>
+
+</html>
