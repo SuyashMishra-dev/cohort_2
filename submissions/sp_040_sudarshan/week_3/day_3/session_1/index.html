@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Session 1!</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.W3.3.1_1-->
+	<h1> Create your own exponentiation function! </h1>
+	<input type="text" name = "num1" id="no1">
+	<input type="text" name = "num2" id="no2">
+	<p id="result"> </p>
+	</hr>
+	<button onclick="exponent()">Click here to find the exponent!</button>
+	<!-- These elements above are for FSD.W3.3.1_1-->
+
+	<!-- These elements below are for FSD.W3.3.1_2-->
+	<h1>Sum of multiples of 3 and 5!</h1>
+	<p id="sum"></p>
+	<input type="text" id="limit">
+	<button onclick="sumOf3And5()">Click here for the output!</button>
+	
+	<!-- These elements above are for FSD.W3.3.1_2-->
+
+	<!-- These elements below are for FSD.W3.3.1_3-->
+	<h1>Check if the users email is valid!</h1>
+	<label for="Email">Email</label>
+	<input type="text" id="emailname" />
+	<button onclick="validateEmail()">Check Email!</button>
+	<!-- These elements above are for FSD.W3.3.1_3-->
+	<script type="text/javascript">
+		//Write javascript for FSD.W3.3.1_1 here
+		function multiply(a,b){
+			console.log(a*b);
+		}
+
+		function exponent(){
+			var num1 = document.getElementById('no1').value;
+			var num2 = document.getElementById('no2').value;
+			multiply(num1,num2);
+
+			var result = 1;
+			for(i=1;i<=num2;i++){
+			result=result*num1;
+			}
+
+			document.getElementById('result').innerHTML = result;
+			
+		}
+		//Write javascript for FSD.W3.3.1_2 here
+		function sumOf3And5(){
+			var limit = document.getElementById('limit').value;
+			var sum = 0;
+			for (i = 15; i<= limit; i++) {
+				if (i % 3 == 0 && i % 5 ==0) {
+					sum +=i;
+				}
+			}
+			document.getElementById('sum').innerHTML = sum;
+		}
+
+		//Write javascript for FSD.W3.3.1_3 here
+		function validateEmail(){
+			var email = document.getElementById('emailname').value;
+			var IndexOf = email.indexOf("@");
+			var checkdot = email.substr(IndexOf,email.length);		
+
+			if(email.includes('>') || email.includes('<') || email.includes('$') || email.includes('#')|| email.includes('%') ||email.includes('^') || email.includes('&') || email.includes('*') || !email.includes('@') || email[0] == '0' || email[0] == '1' || email[0] == '2' || email[0] =='3' || email[0] =='4' || email[0] =='5' || email[0] =='6' || email[0] =='7' || email[0] =='8' || email[0] =='9'){
+				alert('INVALID');
+			}else if(!checkdot.includes('.')){
+				alert('INVALID');
+			}else{
+				alert('VALID');
+			}
+
+			document.getElementById('emailname').value == '';
+
+	
+		}
+	</script>
+</body>
+</html>
