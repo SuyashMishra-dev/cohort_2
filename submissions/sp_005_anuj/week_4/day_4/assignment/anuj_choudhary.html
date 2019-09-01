@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Countries Database</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="header">
+		<h1>Coutries Database</h1>
+	</div>
+	<div class="input_field">
+		<h2>Add a New Country </h2>
+		<label>Name</label>
+		<input type="text" name="name" placeholder="Country Name" class="common" id="name"><br><br>
+		<label>Population</label>
+		<input type="text" name="Population" placeholder="Enter Population" class="common" id="population"><br><br>
+		<label>GDP</label>
+		<input type="text" name="GDP" placeholder="Enter GDP" class="common" id="gdp"><br><br>
+		<label>Life Expectancy</label>
+		<input type="text" name="life" placeholder="Enter Life Expectancy" class="common" id="life"><br><br>
+		<label>Languages</label>
+		<input type="text" name="Languages" placeholder="Enter Language(s)" class="common" id="languages"><br><br>
+		<button onclick="country_data()">Submit</button>
+		<h1> Click here to print all customers! <h1>
+ 		<button onclick="show_details()">Print Customers</button>  
+ 	 	<div id="displayContainer"> </div>
+
+	</div>
+	<div class = "selector">
+		
+	<label>Filter Input</label><br> 
+	<input type="text" name="filter input" placeholder="Enter Data">
+
+	<input type="checkbox" name="pgreater"> Populatin Greater Than <br>
+	<input type="checkbox" name="plessthan"> Population Lesser Than <br>
+	<input type="checkbox" name="life_expectancy"> Life Expectany Equal to <br>
+	<input type="checkbox" name="gdpgrater"> GDP Greater Than<br>
+	<input type="checkbox" name="gdplesser"> GDP Lesser Than<br>
+	<input type="checkbox" name="Language"> Language	
+	</div>
+	<script type="text/javascript">
+		function Country (name, population, gdp, life, languages) {
+			this.name = name;
+			this.population = population;
+			this.gdp = gdp;
+			this.life = life;
+			this.languages = languages;
+
+			this.displayDetails = function () {
+        	var output = '';
+        	for (key in this) {
+          		output = output + document.getElementById(key).name + ': ' + this[key] + '\n';
+          		if(key == 'languages') {
+            	break;
+        		}
+        	return output;
+      		}
+    	}
+    }
+
+    var data = [];
+
+    function country_data() {
+      var inputs = document.querySelectorAll('.common');
+      var newCountry = new Country();
+      var i = 0;
+      
+      for (key in newCountry) {
+
+        if(newCountry[key] == undefined) {
+
+          if(key != 'languages') {
+
+            newCountry[key] = inputs[i].value;
+          } 
+
+          else {
+            newCountry[key] = inputs[i].value.split(',');
+          }
+
+          inputs[i].value = '';
+          i++;
+        }
+      }
+
+      data.push(newCountry);
+      
+    }
+     function show_details() {
+
+      var displayDiv = document.getElementById('displayContainer');
+      displayDiv.innerHTML = '';
+      for ( var i = 0; i < data.length; i++) {
+
+        var displayP = document.createElement('p');
+        displayP.textContent = data[i].displayDetails();
+        displayDiv.appendChild(displayP);
+      }
+    }
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+#heading {
+    display: flex;
+    justify-content: space-around;
+}
+
+#main {
+    display: grid;
+    grid-template: auto / 40% 60%;
+    grid-gap: 50px;
+}
+
+#left-grid {
+    display: grid;
+    grid-template: 50px repeat(7, 35px) / 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+#left-grid h3 {
+    grid-area: 1 / 1 / span 1 / span 2;
+    text-align: center;
+}
+
+#left-grid:nth-child(odd) {
+    justify-items: right;
+}
+
+#left-grid button {
+    grid-area: 7 / 1 / span 1 / span 2;
+   
+}
+
+#right-grid {
+    display: grid;
+    grid-template: 35px repeat(3, auto) / 1fr 1fr;
+    grid-gap: 5px 10px;
+    align-items: center;
+    align-content: center;
+}
+
+table {
+    grid-area: span 1 / span 2;
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+}
+
+td, tr {
+    border: 1px solid black;
+}

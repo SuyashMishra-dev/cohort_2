@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <style>
+          .class1{
+              background-color: aquamarine;
+              
+              height: 150px;
+          }
+
+          img{
+            width: 150px;
+            height: 150px;
+            margin-left: 550px;
+          }
+
+          h1, h2, h3{
+              text-align: center;
+          }
+
+          .sal{
+             margin-top: 10px;
+              width: 300px;
+              height: 250px;
+          }
+          p{
+               text-align: center;
+          }
+
+          .bottom{
+              
+              width: 100%;
+              height: 200px;
+              background-color: orange;
+          }
+
+          .bottom_left{
+
+            
+             width: 450px;
+             height: 150px;
+             margin-top: 25px;
+             float: left;
+             margin-top: 50px;
+          }
+
+          .bottom_right{
+              
+              width: 450px;
+              height: 150px;
+              margin-top: 25px;
+              float: right;
+              margin-top: 50px;
+          }
+
+
+
+
+    
+    </style>
+</head>
+<body>
+    
+       
+      <button id="create_page" onclick="create_page()">Create Page</button>
+    
+
+<script>
+            function create_page(){
+
+
+            
+            var divs = document.createElement('div');
+            divs.setAttribute('class', 'class1');
+            var image = document.createElement('img');
+            image.setAttribute("src", "https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/linus.jpg");
+           
+            var head1 = document.createElement('h1');
+            head1.textContent = "Linus Torvalds";
+            
+            var head3 = document.createElement('h3');
+            head3.textContent = "The creator of linux and git";
+           
+            var div2 = document.createElement('div');
+            div2.setAttribute('class', 'class2');
+            var imagekhan = document.createElement('img');
+            imagekhan.setAttribute("src", "https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/khan.jpg");
+
+            var head2 = document.createElement('h2'); 
+            head2.textContent = "Sal Khan";
+            head2.style.color =  "red";
+           
+            var para = document.createElement('p');
+            para.textContent = "Salman is the founder of the Khan Academy";
+
+            var bottom = document.createElement('div');
+            bottom.setAttribute('class', 'bottom');
+
+            var bottom_div_left = document.createElement('div');
+            bottom_div_left.setAttribute('class', 'bottom_left');
+            var paraleft1 = document.createElement('p');
+            paraleft1.textContent = 'Ken Thomson';
+            var paraleft2 = document.createElement('p');
+            paraleft2.textContent = 'Designed and Implemented the original Unix Operating System';
+
+
+            var bottom_div_right = document.createElement('div');
+            bottom_div_right.setAttribute('class', 'bottom_right');
+
+            var pararight1 = document.createElement('p');
+            pararight1.textContent = "Dennis Ritchie";
+
+            var pararight2 = document.createElement('p');
+            pararight2.textContent = "The creator of C programming language";
+
+
+
+
+                
+            var bodyelem = document.querySelector('body');
+            bodyelem.appendChild(divs);
+            bodyelem.appendChild(head1);
+            bodyelem.appendChild(head3);
+            bodyelem.appendChild(head2);
+            bodyelem.appendChild(div2);
+            bodyelem.appendChild(para);
+            bodyelem.appendChild(bottom);
+                
+
+
+           
+
+            var divelem = document.querySelector('.class1');
+            divelem.appendChild(image);
+
+            var divelem2 = document.querySelector('.class2');
+            divelem2.appendChild(imagekhan);
+
+            var divelem3 = document.querySelector('.bottom');
+            divelem3.appendChild(bottom_div_left);
+
+            var divelem4 = document.querySelector('.bottom');
+            divelem4.appendChild(bottom_div_right);
+
+            var divelem5 = document.querySelector('.bottom_left');
+            divelem5.appendChild(paraleft1);
+
+            var divelem6 = document.querySelector('.bottom_left');
+            divelem6.appendChild(paraleft2);
+
+            var divelem7 = document.querySelector('.bottom_right');
+            divelem7.appendChild(pararight1);
+
+            var divelem8 = document.querySelector('.bottom_right');
+            divelem8.appendChild(pararight2);
+
+
+             
+
+}
+             
+
+
+
+
+</script>
+
+</body>
+</html>

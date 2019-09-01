@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Countries Database</title>
+    <style>
+        #leftContainer {
+            width: 25%;
+            height: 800px;
+            border: 1px solid grey;
+            float: left;            
+        }
+        #rightContainer {
+            width: 74.7%;
+            height: 800px;
+            border: 1px solid grey;
+            float: left;
+        }
+        
+        input,button{
+            /* width: 65%; */
+            height: 30px;
+            border: 2px solid black;                                    
+        }
+
+        td,th {
+            border: 1px solid grey;
+            width :400px;            
+        }
+    </style>
+</head>
+<body>
+    <div style="border: 1px solid grey;">
+        <h1 style="text-align: center">Countries Database</h1>
+    </div>
+    <div id="leftContainer">
+        <h3>Add a new Country</h3>
+        <br>
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+        <br>
+        <br>
+        <label for="population">Population</label>
+        <input type="text" id="population" required>
+        <br>
+        <br>
+        <label for="gdp">GDP</label>
+        <input type="text" id="gdp" required>
+        <br>
+        <br>
+        <label for="lifeExpectancy">Life Expectancy</label>
+        <input type="text" id="lifeExpectancy" required>
+        <br>
+        <br>
+        <label for="languages">Languages</label>
+        <input type="text" id="languages" required>
+        <br>
+        <br>
+        <button onclick="addCountry()">Submit</button>
+    </div>
+    <div id="rightContainer">
+        <div id="filters">
+            Filter Input <input type="text" id="filterValue" placeholder="2000">            
+            <br>
+            <input onclick="filterData()" type="checkbox" id="popuGrTh" checked="false"> Population Greater Than
+            <br>
+            <input onclick="filterData()" type="checkbox" id="popuLsTh"> Population Lesses Than
+            <br>
+            <input onclick="filterData()" type="checkbox" id="lifeEqTo"> lifeExpectancy equal to
+            <br>
+            <input onclick="filterData()" type="checkbox" id="gdpGrTh">GDP Greter Than 
+            <br>
+            <input onclick="filterData()" type="checkbox" id="gdpLsTh">GDP Lesser Than
+            <br>
+            <input onclick="filterData()" type="checkbox" id="lang">Language
+            
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Population</th>
+                    <th>GDP</th>
+                    <th>lifeExpectancy</th>
+                    <th>Languages</th>
+                </tr>
+            </table>
+            <table id="dataTable">
+                
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const data = [];
+               
+
+        function filterData() {
+            let filteredArray = data;
+            const filterValue = document.getElementById('filterValue').value;
+            if (document.getElementById('lang').checked) {
+                filteredArray = filteredArray.map(item =>{
+                    if (item.languages.filter(lang=>lang==filterValue).length>0) {
+                        return item;
+                    }
+                })
+                displayData(filteredArray);
+                return true;
+            }
+            if(document.getElementById('popuGrTh').checked){
+                filteredArray = filteredArray.filter(item => {
+                    return item.population>filterValue;
+                });                
+            }
+
+            if (document.getElementById('popuLsTh').checked) {
+                filteredArray = filteredArray.filter(item =>{
+                    return item.population<filterValue;
+                })
+            }
+
+            if (document.getElementById('gdpLsTh').checked) {
+                filteredArray = filteredArray.filter(item =>{
+                    return item.gdp<filterValue;
+                })
+            }
+
+            if (document.getElementById('gdpGrTh').checked) {
+                filteredArray = filteredArray.filter(item =>{
+                    return item.gdp>filterValue;
+                })
+            }
+
+            if (document.getElementById('lifeEqTo').checked) {
+                filteredArray = filteredArray.filter(item =>{
+                    return item.lifeExpectancy==filterValue;
+                })
+            }            
+
+            displayData(filteredArray);
+
+        }
+
+        function addCountry(){
+            let name = document.getElementById('name').value;
+            let population = document.getElementById('population').value;
+            let gdp = document.getElementById('gdp').value;
+            let lifeExpectancy = document.getElementById('lifeExpectancy').value;
+            let languages = document.getElementById('languages').value;
+            languages = languages.split(',');
+            const countryData = new CountryData(name,population,gdp,lifeExpectancy,languages);
+            data.push(countryData);
+            displayData(data);
+        }
+
+        function CountryData(name,population,gdp,lifeExpectancy,languages){
+            this.name = name;
+            this.population = Number(population);
+            this.gdp = Number(gdp);
+            this.lifeExpectancy = Number(lifeExpectancy);
+            this.languages = languages;
+        }
+
+        function displayData(dataArray){
+            let dataTable = document.getElementById('dataTable');
+            dataTable.innerHTML = '';
+            dataArray.forEach(element => {
+                let tr = document.createElement('tr');
+                for (const key in element) {
+                    let td = document.createElement('td');
+                    td.innerHTML = element[key];
+                    tr.appendChild(td);
+                }
+                dataTable.appendChild(tr);
+            });
+        }
+
+        function toggle(obj,el){
+            obj[el] = !obj[el]
+        }
+        
+    </script>
+</body>
+</html>
