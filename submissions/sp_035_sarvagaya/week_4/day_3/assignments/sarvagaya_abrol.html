@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"> 
+        <title>
+            Milage Calculator
+        </title>
+        <style type="text/css">
+        
+            .head
+            {
+                font-size: 30px;
+                font-family: 'Roboto Slab', serif;
+                text-align: center;
+                background-color: rgb(53, 71, 87);
+                color:yellow;
+            }
+            .mainDiv
+            {
+                background-color: rgba(81, 75, 110, 0.534);
+                height:500px;
+            }
+            .secondDiv
+            {
+                float: left;
+                margin-left:50px;
+                padding-top:200px;
+            }
+            .thirdDiv
+            {
+                float: right;
+                margin-right:200px;
+                height:500px;
+                width:300px;
+                background-color: rgba(57, 99, 86, 0.808);
+                margin-top:0px;
+                text-align: center;
+            }
+            #btn
+            {
+                cursor: pointer;
+                border-radius: 10px;
+                display: inline-block;
+                box-shadow: 1px 1px 2px rgba(39, 82, 19, 0.4);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-left:100px;
+                text-align: center;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="head">MILAGE CALCULATOR</div>
+        <div class="mainDiv">
+            <div class="secondDiv">
+                <label for="Total Fuel">ENTER TOTAL FUEL</label>
+                <input type="text" name="totalFuel" placeholder="eg:30l" id="fuel" />
+                <br>
+                <br><br>
+                <br>
+                <label for="tripDetails">ENTER TRIP DETAILS</label>
+                <input type="text" name="tripDetails" placeholder="eg:100km" id="distance" />
+                <br><br>
+                <button onclick="submit()" id="btn">Submit</button>
+            </div>
+
+            <div class="thirdDiv">
+                <br>
+                <label for="totalFuel">TOTAL FUEL</label>
+                <br><br>
+                <label for="toatlDistance">TOTAL DISTANCE</label>
+                <br><br>
+                <label for="logFuelDistance">FUEL AND DISTANCE LOG</label>
+                <br><br>
+                <label for="indicator">INDICATOR</label>
+
+            </div>
+
+        </div>
+        <script>
+            function Car(fuel, distance)
+            {
+                this.fuel=document.getElementById('fuel');
+                this.distance=document.getElementById('distance');
+            }
+
+        </script>
+    </body>
+</html>
