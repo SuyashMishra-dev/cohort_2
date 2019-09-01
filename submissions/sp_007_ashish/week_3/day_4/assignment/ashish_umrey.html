@@ -1,0 +1,985 @@
+<html>
+    <head>
+     <style type="text/css">
+     .body{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     }
+     .boxInput{
+        height:80px;
+        width: 980px;
+        border: 3px solid black;
+        margin: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
+    .showArea{
+        height: 900px;
+        width: 1020px;
+        margin: 30px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .rowOne{
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(11,1fr);
+        grid-auto-rows: 1fr;
+        height:65px;
+        margin: 10px;
+    }
+    .rowOne div{
+        background: black;
+        color: white;
+    }
+    .rowTwo{
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(10,1fr);
+        grid-auto-rows: 1fr;
+        height:65px;
+        margin-left: 35px;
+        margin-top: 30px;
+        margin-right: 25px;
+    }
+    .rowTwo div{
+        background: black;
+        color: white;
+        text-align: center;
+        font-size: 35px;
+    }
+    .rowThree{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(9,1fr);
+        grid-auto-rows: 1fr;
+        height:65px;
+        margin-left: 65px;
+        margin-top: 30px;
+        margin-right: 55px;
+    }
+    .rowThree div{
+        background: black;
+        color: white;
+        text-align: center;
+        font-size: 35px;
+    }
+    .rowFour{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(9,1fr);
+        grid-auto-rows: 1fr;
+        height:65px;
+        margin-left: 135px;
+        margin-top: 30px;
+        margin-right: 10px;
+    }
+    .rowFour div{
+        background: black;
+        color: white;
+        text-align: center;
+        font-size: 35px;
+    }
+    .rowFive{
+
+        display: grid;
+        grid-template-columns: repeat(8,1fr);
+        grid-template-rows: 1fr;
+        height: 65px;
+        margin:20px;
+        margin-top: 30px;
+        margin-left: 85px;
+    }
+    .rowFive div{
+        background: black;
+        grid-area: 1 / 2 / 1 / 7;
+        
+    }
+    .rowSix{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(5,1fr);
+        grid-auto-rows: 1fr;
+        height:65px;
+        margin-left: 85px;
+        margin-top: 30px;
+        margin-right: 55px;
+       
+     }
+     .rowSix div{
+        background: white;
+        border: 2px solid black;
+        color: black;
+        text-align: center;
+        font-size: 35px;
+        margin-top: 10px;
+       
+     }
+     .rowSeven{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(5,1fr);
+        grid-auto-rows: 1fr;
+        height:65px;
+        margin-left: 85px;
+        margin-top: 30px;
+        margin-right: 55px;
+     }
+     .rowSeven div{
+        background: white;
+        border: 2px solid black;
+        color: green;
+        text-align: center;
+        font-size: 25px;
+        margin-top: 15px;
+
+     }
+     .numberRow{
+         text-align:right;
+         margin-right: 5px;
+         margin-top: 5px;
+         font-size: 20px;
+         font-style: bold;
+     }
+     .numval{
+         margin-top: 20px;
+         margin-left: 5px;
+
+     }
+     .delbtn{
+        background: white;
+        border: 2px solid black;
+        color: black;
+        text-align: center;
+        font-size: 25px;
+        
+     }
+     </style>
+    </head>
+    <body>
+        <div class="showArea">
+            <div>
+                <input class ="boxInput" type="text" id="resultId">
+            </div>
+            <div class="rowOne">
+             <div>
+                 <div id="numberOne" onclick="clickOne()">
+                     <div class="numberRow">!</div>
+                     <div class="numVal">1</div>
+                 </div>
+             </div>
+             <div>
+                    <div onclick="clickTwo()">
+                        <div class="numberRow">@</div>
+                        <div class="numVal">2</div>
+                    </div>
+
+             </div>
+             <div>
+                    <div onclick="clickThree()">
+                        <div class="numberRow">#</div>
+                        <div class="numVal">3</div>
+                    </div>
+
+             </div>
+             <div>
+                    <div onclick="clickFour()">
+                        <div class="numberRow">$</div>
+                        <div class="numVal">4</div>
+                    </div>
+
+             </div>
+             <div>
+                    <div onclick="clickFive()">
+                        <div class="numberRow">%</div>
+                        <div class="numVal">5</div>
+                    </div>
+
+             </div>
+             <div>
+                    <div onclick="clickSix()">
+                        <div class="numberRow">^</div>
+                        <div class="numVal">6</div>
+                    </div>
+
+             </div>
+             <div>
+                    <div onclick="clickSeven()">
+                        <div class="numberRow">&</div>
+                        <div class="numVal">7</div>
+                    </div>
+
+             </div>
+             <div>
+                    <div onclick="clickEight()">
+                        <div class="numberRow">*</div>
+                        <div class="numVal">8</div>
+                    </div>
+
+             </div>
+             <div>
+                    <div onclick="clickNine()">
+                        <div class="numberRow">(</div>
+                        <div class="numVal">9</div>
+                    </div>
+
+             </div>
+             <div>
+                    <div onclick="clickZero()">
+                        <div class="numberRow">)</div>
+                        <div class="numVal">0</div>
+                    </div>
+
+             </div>
+             <div class="delbtn" onclick="deleteText()">DEL</div>
+            </div>
+            <div class=rowTwo>
+
+                    <div onclick="clickQ()">Q</div>
+                    <div onclick="clickW()">W</div>
+                    <div onclick="clickE()">E</div>
+                    <div onclick="clickR()">R</div>
+                    <div onclick="clickT()">T</div>
+                    <div onclick="clickY()">Y</div>
+                    <div onclick="clickU()">U</div>
+                    <div onclick="clickI()">I</div>
+                    <div onclick="clickO()">O</div>
+                    <div onclick="clickP()">P</div>
+            </div>
+            <div class="rowThree">
+                    <div onclick="clickA()">A</div>
+                    <div onclick="clickS()">S</div>
+                    <div onclick="clickD()">D</div>
+                    <div onclick="clickF()">F</div>
+                    <div onclick="clickG()">G</div>
+                    <div onclick="clickH()">H</div>
+                    <div onclick="clickJ()">J</div>
+                    <div onclick="clickK()">K</div>
+                    <div onclick="clickL()">L</div>
+                    
+            </div>
+            <div class="rowFour">
+                    <div onclick="clickZ()">Z</div>
+                    <div onclick="clickX()">X</div>
+                    <div onclick="clickC()">C</div>
+                    <div onclick="clickV()">V</div>
+                    <div onclick="clickB()">B</div>
+                    <div onclick="clickN()">N</div>
+                    <div onclick="clickM()">M</div>
+                    <div onclick="clickCom()">.com</div>
+                    
+            </div>
+            <div class="rowFive" onclick="clickSpace()">
+                <div></div>
+            </div>
+            <div class="rowSix" id="capsElement">
+                    <div onclick="clickCaps()" id="caps">CAPS</div>
+                    <div onclick="clickShift()" id="shift">SHIFT</div>
+                    <div onclick="clickPassword()" id="pass">PASSWD</div>
+                    <div onclick="clickClean()">CLEAN</div>
+                    <div onclick="clickRev()" id="rev">REV</div>
+             </div>
+             
+        </div>
+        <script>
+         var textValue=[];
+         var textGlobal="";
+         var capval=0;
+         var shiftval=0;
+         var password=0;
+         var rev=0;
+         var result= document.getElementById("resultId");
+         var cap = document.getElementById("caps");
+         function  clickQ(){
+             if(capval==0){
+                var letter = "q";
+                textGlobal=textGlobal+letter;
+                result.value= textGlobal;
+                textValue.push("q");
+             }
+             else{
+                var letter = "Q";
+                textGlobal=textGlobal+letter;
+                result.value= textGlobal;
+                textValue.push("q");
+             }
+            
+         }
+         function clickW(){
+             if(capval==0){
+                var letter="w";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+            }
+            else{
+                var letter = "W";
+                textGlobal=textGlobal+letter;
+                result.value= textGlobal;
+                textValue.push("q");
+
+
+            }
+             
+
+         }
+         function clickE(){
+             if(capval==0){
+             var letter="e";
+             textGlobal=textGlobal+letter;
+             result.value=textGlobal;
+             textValue.push(letter);
+
+             }
+             else{
+             var letter="E";
+             textGlobal=textGlobal+letter;
+             result.value=textGlobal;
+             textValue.push(letter);
+
+             }
+ 
+         }
+         function clickR(){
+             if(capval==0){
+                var letter="r";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="R";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+
+         }
+         function clickT(){
+             console.log(textGlobal);
+             if(capval==0){
+                var letter="t";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+                console.log(textGlobal);
+
+             }
+             else{
+                var letter="T";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+                console.log(textGlobal);
+
+             }
+             
+         }
+         function clickY(){
+             if(capval==0){
+                var letter="y";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="Y";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+
+         }
+         function clickU(){
+             if(capval==0){
+                var letter="u";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="U";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+                }
+             
+
+         }
+         function clickI(){
+             if(capval==0){
+                var letter="i";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="I";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+
+         }
+         function clickO(){
+             if(capval==0){
+             var letter="o";
+             textGlobal=textGlobal+letter;
+             result.value=textGlobal;
+             textValue.push(letter);
+            }
+             else{
+             var letter="O";
+             textGlobal=textGlobal+letter;
+             result.value=textGlobal;
+             textValue.push(letter);
+            }
+        }
+         function clickP(){
+             if(capval==0){
+                var letter="p";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+             }
+             else{
+                var letter="P";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+             }
+
+         }
+         function clickA(){
+             if(capval==0){
+                var letter="a";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="A";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+             
+
+         }
+         function clickS(){
+            if(capval==0){
+                var letter="s";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="S";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+
+         }
+         function clickD(){
+            if(capval==0){
+                var letter="d";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="D";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+         }
+         function clickF(){
+            if(capval==0){
+                var letter="f";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="F";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+
+         }
+         function clickG(){
+            if(capval==0){
+                var letter="g";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="G";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+
+         }
+         function clickH(){
+            if(capval==0){
+                var letter="h";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="H";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+         }
+         function clickJ(){
+            if(capval==0){
+                var letter="j";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="J";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+
+         }
+         function clickK(){
+            if(capval==0){
+                var letter="k";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="K";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+
+         }
+         function clickL(){
+            if(capval==0){
+                var letter="l";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="L";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+
+         }
+         function clickZ(){
+            if(capval==0){
+                var letter="z";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="Z";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+
+         }
+         function clickX(){
+            if(capval==0){
+                var letter="x";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="X";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+
+         }
+         function clickC(){
+            if(capval==0){
+                var letter="c";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="C";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+
+         }
+         function clickV(){
+            if(capval==0){
+                var letter="v";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="V";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+         }
+         function clickB(){
+            if(capval==0){
+                var letter="b";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="B";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+         }
+         function clickN(){
+            if(capval==0){
+                var letter="n";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="N";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+
+         }
+         function clickM(){
+            if(capval==0){
+                var letter="m";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="M";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+
+
+             }
+
+         }
+         
+         function clickCom(){
+             var letter=".com";
+             textGlobal=textGlobal+letter;
+             result.value=textGlobal;
+             textValue.push(letter);
+             console.log(textValue);
+
+         }
+         function deleteText(){
+             console.log(textValue);
+             console.log(textGlobal);
+              textValue.pop();
+              console.log(textValue);
+              var remaing="";
+              for(var i=0; i<textValue.length;i++){
+                 remaing=remaing+textValue[i];
+                 console.log(remaing);
+              }
+              console.log(textGlobal);
+              textGlobal=remaing;
+              result.value=remaing;
+         }
+         function clickSpace(){
+            var letter=" ";
+             textGlobal=textGlobal+letter;
+             result.value=textGlobal;
+             textValue.push(letter);
+             console.log(textValue);
+         }
+         function clickCaps(){
+             var newColor= document.getElementById('caps');
+             if(capval==1){
+                newColor.style.color="black";
+                capval=0;
+             }
+             else{
+                capval=1;
+                newColor.style.color="green";
+             }
+         }
+         function clickShift(){
+             var newColor= document.getElementById('shift');
+             if(shiftval==1){
+                newColor.style.color="black";
+                capval=0;
+             }
+             else{
+                shiftval=1;
+                newColor.style.color="green";
+             }
+
+         }
+         function clickOne(){
+             if(shiftval==0){
+                var letter="1";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="!";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+         }
+         function clickTwo(){
+             if(shiftval==0){
+                var letter="2";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="@";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+         }
+         function clickThree(){
+             if(shiftval==0){
+                var letter="3";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="#";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+         }
+         function clickFour(){
+             if(shiftval==0){
+                var letter="4";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="$";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+         }
+
+         function clickFive(){
+             if(shiftval==0){
+                var letter="5";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="%";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+         }
+
+         function clickSix(){
+             if(shiftval==0){
+                var letter="6";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="^";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+         }
+         function clickSeven(){
+             if(shiftval==0){
+                var letter="7";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="&";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+         }
+         function clickEight(){
+             if(shiftval==0){
+                var letter="8";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="*";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+         }
+         function clickNine(){
+             if(shiftval==0){
+                var letter="9";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter="(";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+         }
+         function clickZero(){
+             if(shiftval==0){
+                var letter="0";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             else{
+                var letter=")";
+                textGlobal=textGlobal+letter;
+                result.value=textGlobal;
+                textValue.push(letter);
+             }
+             
+         }
+         function clickPassword(){
+             var passval = document.getElementById('pass');
+             if(password==1){
+                passval.style.color="black";
+                var acutal="";
+                for(var i=0; i<textValue.length;i++){
+                    acutal=acutal+textValue[i];
+                }
+                result.value=acutal;
+                password=0;
+             }
+             else{
+                passval.style.color="green";
+                var remaing="";
+                for(var i=0; i<textValue.length-1;i++){
+                    remaing=remaing+"*";
+                }
+              remaing=remaing+textValue[textValue.length-1];
+              result.value=remaing;
+                password=1;
+             }
+         }
+         function clickRev(){
+             var revId = document.getElementById("rev");
+             revtext=""
+             if(rev==1){
+                revId.style.color="black";
+                 for (let index = 0; index < textValue.length; index++) {
+                     revtext= revtext+textValue[index];
+                     
+                 }
+                 result.value=revtext;
+                 rev=0;
+
+                 
+             }
+             else{
+                 rev=1;
+                revId.style.color="green";
+                for (let i = textValue.length-1; i >= 0; i--) {
+                   revtext= revtext+textValue[i];
+                   
+               }
+               result.value=revtext;
+               
+             }
+         }
+         function clickClean(){
+             var val = result.value;
+             console.log(val);
+         }
+
+
+        </script>
+    </body>
+</html>
