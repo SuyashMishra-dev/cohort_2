@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registeration</title>
+    <style>
+    .registerForm{
+        display: flex;
+        margin-left: 400px;
+        margin-top: 100px;
+        
+    }
+    .display {
+        background: black;
+        color: white;
+        margin-left: 100px;
+        width: 300px;
+    }
+    button{
+        background: black;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <div class="registerForm">
+        <div class="form">
+            <label for="">Name</label><br>
+            <input id="inputName" type="text"><br>
+            <p id="nameError"></p><br>
+            <label for="">Email</label><br>
+            <input id="inputEmail" type="text"><br>
+            <p id="emailError"></p><br>
+            <label for="">Mobile</label><br>
+            <input id="inputMobile" type="text"><br>
+            <p id="errorNumber"></p><br>
+            <button onclick="register()" >REGISTER</button>
+        </div>
+        <div class="display">
+            <div>
+                <p>Name</p>
+                <h2 id="displayName"></h2>
+                <p>Email</p>
+                <p id="displayEmail"></p>
+                <p>Mobile</p>
+                <p id="displayNumber"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function register(){
+            var inputName = document.getElementById('inputName').value;
+            var inputEmail = document.getElementById('inputEmail').value;
+            var inputMobile = document.getElementById('inputMobile').value;
+
+            var atRate = inputEmail.search('@');
+            var com = inputEmail.search('.com');
+            
+           
+            if (inputName.length >= 3 && inputName.length <= 10) {
+                document.getElementById('displayName').innerHTML = inputName;
+            } else {
+                document.getElementById('nameError').innerHTML = 'No more than 3 & less than 10 characters ';
+            }
+
+            if(atRate > 1){
+                atRate = atRate + 2;
+               if(com > atRate){
+                   document.getElementById('displayEmail').innerHTML = inputEmail;
+               }else{
+                   document.getElementById('emailError').innerHTML = "Please enter .com after website name";
+               }
+            }else{
+                document.getElementById('emailError').innerHTML = "There is no @ in your email!";
+            }
+
+            if(inputMobile != Number(inputMobile)){
+                document.getElementById('errorNumber').innerHTML = "Please enter only Numbers";
+            } else if (inputMobile.length == 10) {
+                document.getElementById('displayNumber').innerHTML = inputMobile;
+            }else{
+                document.getElementById('errorNumber').innerHTML = "Please enter 10 digit Number"
+            }
+        }
+    </script>
+</body>
+</html>
