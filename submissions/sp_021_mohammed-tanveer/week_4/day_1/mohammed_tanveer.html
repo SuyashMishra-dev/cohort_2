@@ -1,0 +1,172 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week 4 - Day 1</title>
+    <style>
+    body{
+        text-align: center;
+        
+    }
+    .maindiv{
+        display: flex;
+    }
+    button {
+        width: 50px;
+        height: 50px;
+    }
+    div {
+        padding: 5px;
+    }
+    .mainbutton {
+     width: 150px;   
+     margin-bottom: 15px;
+     background: black;
+     color: white;
+     font-size: 16px;
+    }
+    .greendiv{
+        background: green;
+    }
+    .orangediv{
+        background: orange;
+    }
+    .purplediv{
+        background: purple;
+    }
+    .score{
+        width: 150px;
+        height: 60px;
+        background: grey;
+        border: 1px solid black;
+        margin-left: 40px;
+    }
+    .min{
+        background: red;
+        width: 70px;
+        height: 50px;
+    }
+    .max {
+        background: green;
+        width: 70px;
+        height: 50px;
+    }
+    .minmax{
+        display: flex;
+        margin-left: 30px;
+    }
+    .total{
+        width: 160px;
+        height: 50px;
+        background: grey;
+        border: 1px solid black;
+        margin-left: 35px;
+    }
+    </style>
+</head>
+<body>
+    <div class="maindiv">
+        <div>
+            <p>TOTAL</p>
+            <div id="totalScore" class="total"></div>
+            <div class="minmax">
+                <div>
+                    <div id="minScore" class="min"></div>
+                    <p>Min</p>
+                </div>
+                <div>
+                    <div id="maxScore" class="max"></div>
+                    <p>Max</p>
+                </div>
+            </div>
+            <p>SCORE</p>
+            <div id="score" class="score"></div>
+            <div class="row1">
+                <button onclick="clickOne(1)" class="greendiv">1</button>
+                <button onclick="clickTow(2)" class="orangediv">2</button>
+                <button onclick="clickThree(3)" class="greendiv">3</button>
+            </div>
+            <div>
+                <button onclick="clickFour(4)" class="orangediv">4</button>
+                <button onclick="clickFive(5)" class="orangediv">5</button>
+                <button onclick="clickSix(6)" class="orangediv">6</button>
+            </div>
+            <div>
+                <button onclick="clickSeven(7)" class="greendiv">7</button>
+                <button onclick="clickEight(8)" class="orangediv">8</button>
+                <button onclick="clickNine(9)" class="greendiv">9</button>
+            </div>
+            <div>
+                <button onclick="clickZero(0)" class="purplediv">0</button>
+            </div>
+            <button onclick="clickEnter()" class="mainbutton">ENTER</button>
+        </div>
+        <div>
+            <h1>GAME SCORES</h1>
+            <p>Game 1</p>
+            <p>Game 1</p>
+            <p>Game 1</p>
+            <p>Game 1</p>
+            <p>Game 1</p>
+            <p>Game 1</p>
+            <button class="mainbutton">REMOVE ALL</button><br>
+            <button class="mainbutton">REMOVE ODD</button><br>
+            <button class="mainbutton">REMOVE EVEN</button><br>
+            <button class="mainbutton">REMOVE LAST</button>
+        </div>
+    </div>
+
+    <script>
+        var scoreInput = document.getElementById('score');
+
+        function clickOne(one){
+            scoreInput.textContent = scoreInput.textContent + one;
+        }
+        function clickTow(tow){
+            scoreInput.textContent = scoreInput.textContent + tow;
+        }
+        function clickThree(three){
+            scoreInput.textContent = scoreInput.textContent + three;
+        }
+        function clickFour(four){
+            scoreInput.textContent = scoreInput.textContent + four;
+        }
+        function clickFive(five){
+            scoreInput.textContent = scoreInput.textContent + five;
+        }
+        function clickSix(six){
+            scoreInput.textContent = scoreInput.textContent + six;
+        }
+        function clickSeven(seven){
+            scoreInput.textContent = scoreInput.textContent + seven;
+        }
+        function clickEight(eight){
+            scoreInput.textContent = scoreInput.textContent + eight;
+        }
+        function clickNine(nine){
+            scoreInput.textContent = scoreInput.textContent + nine;
+        }
+        function clickZero(zero){
+            scoreInput.textContent = scoreInput.textContent + zero;
+        }
+        function clickEnter(){
+            var minScore = document.getElementById('minScore');
+            var maxScore = document.getElementById('maxScore');
+            scoreInput.textContent = Number(scoreInput.textContent);
+            minScore.textContent = Number(minScore.textContent);
+            maxScore.textContent = Number(maxScore.textContent);
+
+            if(scoreInput.textContent.length >= 1){
+                if(scoreInput.textContent > maxScore.textContent){
+                    maxScore.textContent = scoreInput.textContent;
+                } else if(scoreInput.textContent < minScore.textContent){
+                    minScore.textContent = scoreInput.textContent;
+                }
+            }else {
+                alert('Please enter numbers first!')
+            }
+        }
+    </script>
+</body>
+</html>
