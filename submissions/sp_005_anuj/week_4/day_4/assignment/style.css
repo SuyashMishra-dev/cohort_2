@@ -12,10 +12,6 @@
 label {
 	color: white;
 }
-.input_field {
-	height: 300px;
-	width: 200px;
-}
 .input_field h2 {
 	color: white;
 	text-align: center;
@@ -27,6 +23,7 @@ button {
 	width:700px; 
 	margin-left: 50px;
 	margin-top: -220px;
+	float: right;
 }
 .selector label {
 	margin-left: 380px;	

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Week 4 Day 4Coding 1 </title>
+  <style>
+  #container1 p{
+    white-space: pre-line;
+  }
+  #mulTable,#wordsTable,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  </style>
+</head>
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button id="printJson"> Click here to print the JSON object </button>
+  <div id = "container1"> </div>
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input type = "text" id="num1"/>
+  <input type = "text" id="num2"/>
+  <button id="exponentBtn"> Calculate </button>
+  <p>Output:<span id="outputExponent"></span></p>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Multiplication Table Generator</h1>
+  <table id="mulTable"></table>
+  <input type = "text" id="limitMultiply"/>
+  <button onclick="multiplicationGen()"> Generate Tables </button>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <table id="wordsTable"></table>
+  <input type = "text" id="inputWords"/>
+  <button onclick="diffCaseGen()"> Generate CAPS and small </button>
+  <script>
+  //DO NOT EDIT ANY CODE BELOW THIS LINE 
+  var items = [
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    },
+    {
+      name: "Rice",
+      price: 50,
+      id: 2323
+    },
+    {
+      name: "Banana",
+      price: 90,
+      id: 2323
+    },
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    }
+  ]
+
+
+  var multiply = [];
+
+  var displayContainer = document.querySelector('#container1');
+//Json Object display
+  function objListner(){
+      var output= JSON.stringify(items);
+      for (var i=0; i<items.length;i++)
+      {
+        var displayPara = document.createElement('p');
+        displayPara.textContent = items[i].name+" : "+items[i].price;
+        displayContainer.appendChild(displayPara);
+      }
+  }
+  var printJsonBtn=document.querySelector('#printJson');
+  printJsonBtn.addEventListener('click',objListner);
+
+//Exponent function
+  function exponent(x, y, callBack){
+    var exponent = x ** y;
+    callBack(exponent);
+}
+  var btn = document.querySelector('#exponentBtn');
+  btn.addEventListener('click', function(){ 
+ var num1=document.getElementById("num1").value;
+ var num2=document.getElementById("num2").value;
+ num1=Number(num1);
+ num2=Number(num2);
+  exponent(num1, num2, display) 
+});
+   var display = function(todisplay){ 
+   console.log(todisplay);
+   document.getElementById("outputExponent").innerHTML='The exponent is : '+todisplay;
+}
+//Multipication Table
+  function multiplicationGen(){
+  var inputLimit=document.getElementById("limitMultiply").value;
+  inputLimit=Number(inputLimit);
+  if(inputLimit<3){
+    alert('Enter limit >=3');
+  }
+  else{
+   for(var i=1;i<=inputLimit;i++)
+   {
+     multiply.push(i);
+   }
+
+  var arMul=[1,2,3,4,5];
+     var table = document.querySelector('table');  
+    for (i = 0; i < arMul.length; i++) {
+      var thead = document.createElement('th');
+      table.appendChild(thead);
+      thead.textContent = ' *' + arMul[i];
+    }
+    multiply.forEach(function(element){
+      var tr = document.createElement('tr');
+      table.appendChild(tr);
+
+      for (i = 0; i < arMul.length; i++) {
+        var data = element * arMul[i];
+        var td = document.createElement('td');
+        tr.appendChild(td);
+        td.textContent = data;
+      }
+    });
+  }
+  }
+//Different Case Generater
+  function diffCaseGen() {
+    var inputWords = document.getElementById('inputWords').value;
+    var inputWordsAr = inputWords.split(',');
+    var upperAr = inputWordsAr.map(function(words){
+      return words.toUpperCase();
+    });
+    var lowerAr = inputWordsAr.map(function(words){
+      return words.toLowerCase();
+    });
+    var wordsTable = document.getElementById('wordsTable');
+    // var thead = document.createElement('tr');
+    // var head = ['Normal','UPPER','Lower'];
+    // for(var i = 0;i<head.length;i++){
+    //   var td = document.createElement('td');
+    //   td.innerHTML ='<b>'+head[i]+'</b>';
+    //   thead.appendChild(td);
+    // }
+    // wordsTable.appendChild(th);
+    for(i=0;i<inputWordsAr.length;i++){
+      var tr = document.createElement('tr');
+      var tdata1 = document.createElement('td');
+      tdata1.textContent = inputWordsAr[i];
+      tr.appendChild(tdata1);
+      var tdata2 = document.createElement('td');
+      tdata2.textContent = upperAr[i];
+      tr.appendChild(tdata2);
+      var tdata3 = document.createElement('td');
+      tdata3.textContent = lowerAr[i];
+      tr.appendChild(tdata3);
+      wordsTable.appendChild(tr);
+    }
+  }
+  </script>
+</body>
+</html>

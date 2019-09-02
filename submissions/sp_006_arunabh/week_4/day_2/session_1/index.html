@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button id = "movie_info">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button id = "add_duration">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button id = "add_cast">Add cast member </button>
+  
+
+  <script type="text/javascript">
+  var movie = document.getElementById("movie_info");
+  var body = document.querySelector('body');
+  var movie_button = document.querySelector('#movie_info');
+  var my_movie = {
+      name : "Avengers Endgame",
+      director : "Anthony Russo",
+      year : 2019,
+      rating : 9.2,
+      cast : ["Robert Downey Jr." , "Chris Evans" , "Mark Ruffalo" , "Chris Hemsworth" , "Scarlett Johansson"]
+    }
+
+  function fav_movie(){
+    var show_name = document.createElement('p');
+    show_name.textContent = "Name: " + my_movie.name;
+    var show_director = document.createElement('p');
+    show_director.textContent = "Director: " + my_movie.director;
+    var show_year = document.createElement('p');
+    show_year.textContent = "Yaer: " + my_movie.year;
+    var show_rating = document.createElement('p');
+    show_rating.textContent = "Rating: " + my_movie.rating;
+    var show_cast = document.createElement('p');
+    show_cast.textContent = "Cast: " + my_movie.cast;
+
+    
+    body.insertBefore(show_name , movie_button);
+    body.insertBefore(show_director , movie_button);
+    body.insertBefore(show_year , movie_button);
+    body.insertBefore(show_rating , movie_button);
+    body.insertBefore(show_cast , movie_button);
+  }
+  movie.addEventListener('click' , fav_movie);
+  
+  var duration = document.getElementById("add_duration");
+  function movie_duration() {
+    my_movie.duration = 192;
+
+    var show_duration = document.createElement('p');
+    show_duration.textContent = "Duration: " + my_movie.duration;
+
+    fav_movie();
+
+    body.insertBefore(show_duration , movie_button);
+  }
+  duration.addEventListener('click' , movie_duration);
+
+  var new_cast = document.getElementById("add_cast");
+  function add_new_cast() {
+    my_movie.cast.push("Jeremy Renner");
+
+    movie_duration();
+  }
+  new_cast.addEventListener('click' , add_new_cast);
+  </script>
+</body>
+</html>
