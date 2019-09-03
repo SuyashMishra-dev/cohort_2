@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 bg-light text-center py-3 border border-dark ">
+                <h1 class="display-4">See the weather for any city!</h1><br> </div>
+        </div>
+        <div class="row ">
+            <div class="col-xl-2"></div>
+
+            <div class="col-xl-2"></div>
+            <input type="text" id="loc" placeholder="Enter any city name to find weather ">
+            <button class="btn btn-primary align-middle" id="run">GET WEATHER</button>
+        </div>
+        <div class="col-xl-2"></div>
+
+
+        <div class="row border border-dark py-5 ">
+
+            <!-- <div class="col-xl-12 bg-light text-center py-5 border border-dark " id="print">
+See the weather for any city!<br>  -->
+            <div class="col-xl-4" id="temp"></div>
+            <div class="col-xl-4">
+                <p id="cityname" class="mt-0"></p><br><br>
+                <p id="weath"></p>
+            </div>
+            <div class="col-xl-4" id="wind"><b>WIND</b></div>
+
+
+        </div>
+    </div>
+
+    <script>
+
+        var btn = document.getElementById('run');
+        btn.addEventListener('click', callApi)
+        function callApi() {
+
+            var xhr = new XMLHttpRequest();
+            var inpt = document.getElementById("loc").value
+            xhr.open('GET', 'https://api.weatherbit.io/v2.0/current?city=' + inpt + '&key=fdccf0645ff74aff84e01ad3a07790db');
+            xhr.send()
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    // var body=document.getElementById('')
+                    var body2 = document.getElementById('cityname')
+                    var body4 = document.getElementById('weath')
+                    var body3 = document.getElementById('wind')
+                    var body5 = document.getElementById('temp')
+                    var elem2 = document.createElement('p')
+                    var elem3 = document.createElement('h1')
+                    var elem4 = document.createElement('p')
+                    var elem5 = document.createElement('h2')
+                    var elem6 = document.createElement('p')
+                    var elem7 = document.createElement('p')
+                    var obj = JSON.parse(xhr.response);
+
+
+                    elem2.textContent = obj.data[0].weather.description;
+                    elem3.textContent = obj.data[0].city_name;
+                    elem4.textContent = obj.data[0].wind_spd+'Mph';
+                    elem5.textContent = obj.data[0].temp+'C';
+                    elem7.textContent = 'Deg'+obj.data[0].wind_dir;
+                    elem6.textContent = "Pressure:"+obj.data[0].pres;
+                    
+                    body5.appendChild(elem5)
+                    body5.appendChild(elem6)
+                    // body.appendChild(elem6)
+                    // body.appendChild(elem2)  
+                    body4.appendChild(elem2)
+                    body2.appendChild(elem3)
+                    body3.appendChild(elem4)
+                    body3.appendChild(elem7)
+                    // body.appendChild(elem5)
+                }
+                else {
+                    console.log("Error Code is:" + xhr.status)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

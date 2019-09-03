@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mileage Calculator</title>
+        <style>
+        p {
+            white-space: pre-line;
+        }
+
+        h1 {
+            text-decoration: underline;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>MILEAGE CALCULATOR</h1>
+        <h2>Fuel Filled</h2>
+        <input type="date" id="fueldate">
+        <input type="number" id="fuelfilled">
+        <button id="button">sumbit</button>
+        <h2>Trip Details</h2>
+        <input type="text" id="tripdetails" placeholder="Trip Name">
+        <input type="number" id="tripnumber" placeholder="Trip Distance">
+        <button id="button1">sumbit</button>
+
+        <script type="text/javascript">
+
+
+        var fuelArr = [];
+        var tripArr = [];
+        var fuelinput = 0 ;
+        var tripinput = 0 ;
+        function Mileage(fueldate, fuelfilled) {
+            this.fueldate = fueldate;
+            this.fuelfilled = fuelfilled;
+
+            this.getDetails = function(){
+             var output = '';
+             for(key in this){
+                 if(key != 'getDetails'){
+             output += key + ":" + this[key] + "\n"
+             }
+            }
+            var displayContainer = document.querySelector('body');
+            var displayPara = document.createElement('p');
+            displayPara.textContent = output;
+            displayContainer.appendChild(displayPara) 
+             }
+        }
+        
+        function Trip(tripname, tripnumber) {
+            this.tripname = tripname;
+            this.tripnumber = tripnumber;
+
+            this.getDetails = function(){
+            var output = '';
+            for(key in this) {
+            if(key != 'getDetails'){
+             output += key + ":" + this[key] + "\n"
+             }
+            }
+            
+            var displayContainer = document.querySelector('body');
+            var displayPara = document.createElement('p');
+            displayPara.textContent = output;
+            displayContainer.appendChild(displayPara) 
+            
+            }
+    }
+
+        function createFuel() {
+            var inputs = document.querySelectorAll('input');
+            var newFuel = new Mileage(inputs[0].value, inputs[1].value);
+
+            console.log(newFuel)
+            newFuel.getDetails();
+
+            fuelArr.push(newFuel);
+            fuelinput += Number(inputs[1].value);
+            remainingDistance();
+        }
+
+        function createTrip() {
+            var inputs = document.querySelectorAll('input');
+            var newTrip = new Trip(inputs[2].value, inputs[3].value);
+
+            console.log(newTrip)
+            newTrip.getDetails();
+
+            tripArr.push(newTrip);
+            tripinput += Number(inputs[3].value);
+            clear(inputs)
+            remainingDistance();
+        }
+
+        function clear(inputs) {
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].value = '';
+                
+            }
+        }
+
+        function remainingDistance() {
+            alert("DISTANCE YOU CAN TARVEL :" + (fuelinput*20 - tripinput));
+        }
+
+
+        var calBtn = document.querySelector('#button')
+        calBtn.addEventListener('click', createFuel)
+
+
+        var calBtn = document.querySelector('#button1')
+        calBtn.addEventListener('click', createTrip)
+
+        
+
+
+
+
+
+        
+        
+        </script>
+    </body>
+</html>

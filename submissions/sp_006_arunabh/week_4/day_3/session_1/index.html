@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customers</title>
+    <style type="text/css">
+    .d_para {
+      white-space: pre-line;
+    }
+    </style>
+  </head>
+<body>
+  <!-- FSD.W4.3.1_1 !-->
+  <h1>Click the button to add a new customer!</h1>
+  <label>First Name</label>
+  <input type="text" name="firstname" id="fs" placeholder="Enter Your First Name"><br>
+  <label>Last Name</label>
+  <input type="text" name="lastname" id="ls" placeholder="Enter Your Last Name"><br>
+  <label>Date Of Birth</label>
+  <input type="text" name="dob" id="dob" placeholder="Enter Your DOB"><br>
+  <label>Balance</label>
+  <input type="text" name="balance" id="bal" placeholder="Enter Your Balance"><br>
+  <label>Account Number</label>
+  <input type="text" name="accnum" id="accnum" placeholder="Enter Your Account Number"><br>
+  <label>Shared Account Holders</label>
+  <input type="text" name="accholders" id="acchols" placeholder="Account Holders"><br>
+  <button id="add_customer">Add customer</button>
+  <!-- FSD.W4.3.1_3 !-->
+  <h1> Click here to print all customers! <h1>
+  <button id="print">Print Customers</button>  
+  <div id="displayContainer"> </div>
+  
+
+  <script type="text/javascript">
+  var customer_arr = [];
+  var body = document.querySelector('body');
+
+  function Customers(first_name, last_name, date_of_birth, balance, account_number, account_holders) {
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.date_of_birth = date_of_birth;
+    this.balance = balance;
+    this.account_number = account_number;
+    this.account_holders = account_holders;
+    this.displayDetails = function() {
+      var str = "";
+      for(key in this) {
+        str = str + key + ":" + this[key] + "\n";
+        if(key == 'account_holders' ) {
+          break;
+      }
+      }
+      return str;
+    }
+  }
+
+  var new_cust = document.getElementById('add_customer');
+  function create_cust(){
+    var str = [];
+
+    var first_name = document.getElementById('fs').value;
+    var last_name = document.getElementById('ls').value;
+    var date_of_birth = document.getElementById('dob').value;
+    var balance = document.getElementById('bal').value;
+    var account_number = document.getElementById('accnum').value;
+    var account_holders = document.getElementById('acchols').value;
+
+    str = account_holders.split(',');
+
+    var new_customer = new Customers(first_name, last_name, date_of_birth, balance, account_number, str);
+    
+    customer_arr.push(new_customer);
+    for(var i = 0; i<customer_arr.length; i++) {
+      var string = customer_arr[i].displayDetails();
+      console.log(string);
+    }
+   
+    document.getElementById('fs').value = "";
+    document.getElementById('ls').value = "";
+    document.getElementById('dob').value = "";
+    document.getElementById('bal').value = "";
+    document.getElementById('accnum').value = "";
+    document.getElementById('acchols').value = "";
+  }
+  new_cust.addEventListener('click' , create_cust);
+
+  var display = document.getElementById("print");
+  function show_cust() {
+    for(var i = 0; i<customer_arr.length; i++) {
+      var display_para = document.createElement('p');
+      display_para.setAttribute('class' , 'd_para');
+      var string = customer_arr[i].displayDetails();
+      display_para.textContent = string + "\n";
+      
+      var parent = document.getElementById("displayContainer");
+      parent.appendChild(display_para);
+    }
+
+  }
+  display.addEventListener('click' , show_cust);
+  </script>
+</body>
+</html>
