@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Marriage Age Check
+        </title>
+        <style type="text/css">
+        body{
+            text-align: center;
+            
+        }
+        </style>
+    </head>
+    
+    <body>
+        <h1>
+            Check your age to see if you can marry in India
+        </h1>
+        <div>
+        <label for="gender">Choose your Gender</label>
+        <select id = "genderSelect">
+            <option value = "select"> </option>
+            <option value = "male">
+                Male
+            </option>
+            <option value = "female">
+                Female
+            </option>
+        </select>
+        </div>
+
+        <div>
+        <p>
+            Enter your Birth Year
+        </p>
+        <input type="text" id="yearOfBirth"/>
+        </div>
+        
+        <div>
+        <button onclick="validate()">
+            Validate
+        </button>
+        </div>        
+    </body>
+    
+    <script type="text/javascript">
+        
+        function validate(){
+            var gender = document.getElementById("genderSelect").value;
+            var year = document.getElementById("yearOfBirth").value;
+            var age = 2019 - year;
+            var currentmale=21-age;
+            var currentfemale=18-age;
+            if(gender == "male"){
+                if (age >= 21){ 
+                    alert("Wow, you can marry!");
+                }
+                else{ 
+                    alert("Sorry, you are to young!");
+                }
+            }
+            else if(gender == "female"){
+                if (age>=18){ 
+                    alert("Yes, you can marry!");
+                }
+                else{ 
+                    alert("Sorry, you can't marry now");                      
+                }
+            }
+            else if(gender == "select"){
+                alert("Please select your gender")
+            }
+            
+        }
+    </script>
+</html>

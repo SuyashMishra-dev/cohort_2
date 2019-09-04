@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+    /* body{
+        border:1px solid black;
+        background: lightseagreen;
+    } */
+    h1{
+        font-size:50px;
+        text-align: center;
+    }
+    input{
+        height:30px;
+        font-size: 20px;
+    }
+    #countryName{
+        margin-left: 100px;
+    }
+    #countryPopulation{
+        margin-left: 70px;
+    }
+    #countryGdp{
+        margin-left: 108px;
+    }
+    #countryLife{
+        margin-left: 35px;
+    }
+    #countryLanguage{
+        margin-left: 72px;
+    }
+    #submitbtn{
+     margin-left:200px;
+     width: 80px;
+     height:30px;
+    }
+    h2{
+        text-align: center;
+        margin-left:150px;
+    }
+    #filterLsr{
+        margin-left:100px;
+    }
+    #filterGdpLsr{
+        margin-left:137px;
+    }
+    #filterLang{
+        margin-left:153px;
+    }
+    .checkBox{
+        width:20px;
+        height:20px;
+    }
+    table,th{
+        border:1px solid black;
+        border-collapse: collapse;
+        width: 500px;
+    }
+    </style>
+    </head>
+    <body>
+        <h1 id="heading">Countries DataBase</h1>
+        <div style="float: left">
+         <h2>Add a New <br>Country</h2>
+         <label>Name</label>
+         <input type="text" id="countryName" class="inputCountry"><br><br>
+         <label>Population</label>
+         <input type="text" id="countryPopulation" class="inputCountry"><br><br>
+         <label>GDP</label>
+         <input type="text" id="countryGdp" class="inputCountry"><br><br>
+         <label>Life Expectancy</label>
+         <input type="text" id="countryLife" class="inputCountry"><br><br>
+         <label>Languages</label>
+         <input type="text" id="countryLanguage" class="inputCountry"><br><br>
+         <button onclick="submitBtn()" id="submitbtn">Submit</button>
+        </div>
+        <div style="float: left; margin: 20px 0px 0px 250px;">
+        <label>Filter<br>Input</label>
+        <input type="text" id="inputFilter"><br><br>
+        <input type="checkbox" id="filterGtr" class="checkBox">
+        <label>Population Greater Than</label>
+        <input type="checkbox" id="filterLsr" class="checkBox">
+        <label>Population Lesser Than</label><br><br>
+        <input type="checkbox" id="filterGdpGtr" class="checkBox">
+        <label>GDP Greater Than</label>
+        <input type="checkbox" id="filterGdpLsr" class="checkBox">
+        <label>GDP Lesser Than</label><br><br>
+        <input type="checkbox" id="filterLife" class="checkBox">
+        <label>Life Expectancy</label>
+        <input type="checkbox" id="filterLang" class="checkBox">
+        <label>Languages</label>
+        <div style="clear: both; margin-top: 20px">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Population</th>
+                    <th>GDP</th>
+                    <th>Life-Expectancy</th>
+                    <th>Languages</th>
+                </tr>
+            </table>
+            <table id="countryData">
+                
+            </table>
+        </div>
+    </div>
+        </div>
+        
+        <script>
+        function AddCountry(name,population,gdp,lifeExpectancy,languages)
+        {
+         this.name=name;
+         this.population=population;
+         this.gdp=gdp;
+         this.lifeExpectancy=lifeExpectancy;
+         this.languages=languages;
+         this.getDetails=function(){
+         var output='';
+         for(key in this){
+         output+=key +": "+this[key]+ "\n" ;
+          if(key=='languages')
+          break;
+          } 
+    return output;
+       }
+     }
+     var countryArr=[];
+     function createCountry(){
+        var inputs=document.querySelectorAll('.inputCountry');
+        var newCountry=new AddCountry();
+        var i=0;
+        for(key in newCountry)
+        {
+        if(newCustomer[key]==undefined){
+        if(key !='languages'){
+            newCountry[key]=inputs[i].value;
+        }
+        else{
+            newCountry[key]=inputs[i].value.split(',');
+        }
+        inputs[i].value='';
+        i++;
+        }
+  }
+  countryArr.push(newCountry);
+}
+function createTable(){
+
+}
+        </script>
+    </body>
+</html>

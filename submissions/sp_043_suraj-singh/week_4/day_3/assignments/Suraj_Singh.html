@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mileage Calculator</title>
+        <style type="text/css">
+        body {
+            background: seagreen;
+            text-align: center;
+        }
+        </style>
+    </head>
+    <body>
+        <label>Fuel Filled</label>
+        <input type="text" id="fuel_filled" placeholder="Enter filled fuel quantity"><br>
+
+        <label>Trip Distance</label>
+        <input type="text" id="trip_travelled" placeholder="Enter the trip detail"><br>
+        
+        <button onclick="details()">Complete Details</button><br>
+        <button onclick="fuel_trip()">Trip Details</button><br>
+        <button onclick="dead_line()">Indicator</button><br>
+
+        <div id="display"></div>
+
+        <script type="text/javascript">
+        var fuel = 0;
+        var distance = 0;
+        var all_trips = [];
+        var total_fuel = 0;
+        var total_distance = 0;
+        var disp = document.getElementById("display");
+        function Trip(fuel, distance) {
+            this.fuel = fuel;
+            this.distance = distance;
+        }
+        function details() {
+            fuel = document.getElementById("fuel_filled").value;
+            distance = document.getElementById("trip_travelled").value;
+            var my_trip = new Trip(fuel, distance);
+            all_trips.push(my_trip);
+            console.log(all_trips);
+            for(var i=0; i<all_trips.length; i++) {
+                total_fuel = total_fuel + Number(all_trips[i].fuel);
+                total_distance = total_distance + Number(all_trips[i].distance);
+            }
+            var display_fuel = document.createElement('p');
+            display_fuel.textContent = "Total Fuel Filled : " + total_fuel;
+            disp.appendChild(display_fuel);
+            var display_distance = document.createElement('p');
+            display_distance.textContent = "Total Distance Travelled : " +  total_distance;
+            disp.appendChild(display_distance);
+        }
+        function fuel_trip() {
+            for(var i = 0; i<all_trips.length; i++) {
+                var display_fuel = document.createElement('p');
+                display_fuel.textContent = "Fuel Filled in Trip "+ Number(i+1) + " : " + all_trips[i].fuel + "Ltrs";
+                disp.appendChild(display_fuel);
+                var display_distance = document.createElement('p');
+                display_distance.textContent = "Total Distance Travelled in Trip " + Number(i+1) + " : " +  all_trips[i].distance + "Kms";
+                disp.appendChild(display_distance);
+            }
+        }
+        function dead_line() {
+            var fuel_mileage = total_fuel * 20;
+            console.log(fuel_mileage);
+        }
+        </script>
+    </body>
+</html>
