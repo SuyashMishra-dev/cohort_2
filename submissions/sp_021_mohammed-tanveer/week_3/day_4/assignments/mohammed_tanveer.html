@@ -1,0 +1,757 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week 3 Day 4 Assignments</title>
+    <style>
+        .display {
+            border: 4px solid black;
+            width: 60%;
+            height: 50px;
+            text-align: center;
+            margin: auto;
+        }
+        .tabs{
+            display: flex;
+            margin-left: 200px;
+        }
+        .tabs button{
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            background: black;
+            color: white;
+            font-size: 20px;
+        }
+        .spacebar {
+            background: black;
+            width: 40%;
+            height: 60px;
+            margin-left: 350px;
+        }
+        .functionButtons {
+            margin: 40px;
+            text-align: center;
+        }
+        .functionButtons button {
+            width: 80px;
+            height: 40px;
+            background: white;
+            border: 2px solid black;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        small {
+            font-size: 12px;
+            margin-left: 10px;
+            margin-bottom: 10px !important;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="displayText" class="display"></div><p></p>
+        <div class="tabs">
+           <button id="id1">1 <small>!</small></button> 
+           <button id="id2">2 <small>@</small></button>
+            <button id="id3">3 <small>#</small></button>
+            <button id="id4">4 <small>$</small></button>
+            <button id="id5">5 <small>%</small></button>
+            <button id="id6">6 <small>^</small></button>
+            <button id="id7">7 <small>&</small></button>
+            <button id="id8">8 <small>*</small></button>
+            <button id="id9">9 <small>(</small></button>
+            <button id="id0">0 <small>)</small></button>
+            <button id="iddel">DEL</button>
+        </div>
+        <div class="tabs">
+            <button id="idq">Q</button>
+            <button id="idw">W</button>
+            <button id="ide">E</button>
+            <button id="idr">R</button>
+            <button id="idt">T</button>
+            <button id="idy">Y</button>
+            <button id="idu">U</button>
+            <button id="idi">I</button>
+            <button id="ido">O</button>
+            <button id="idp">P</button>
+        </div>
+        <div class="tabs">
+            <button id="ida">A</button>
+            <button id="ids">S</button>
+            <button id="idd">D</button>
+            <button id="idf">F</button>
+            <button id="idg">G</button>
+            <button id="idh">H</button>
+            <button id="idj">J</button>
+            <button id="idk">K</button>
+            <button id="idl">L</button>
+        </div>
+        <div class="tabs">
+            <button id="idz">Z</button>
+            <button id="idx">X</button>
+            <button id="idc">C</button>
+            <button id="idv">V</button>
+            <button id="idb">B</button>
+            <button id="idn">N</button>
+            <button id="idm">M</button>
+            <button id="idcom">.com</button>
+        </div>
+        <button id="spaceEnter" class="spacebar"></button>
+    </div>
+
+    <div class="functionButtons">
+        <button id="caps">CAPS</button>
+        <button id="shift">SHIFT</button>
+        <button id="password">PASSWD</button>
+        <button id="clean">CLEAN</button>
+        <button>REV</button>
+    </div>
+    
+    <script>
+        var displayInput = " ";
+        var add1 = document.getElementById('id1');
+        var add2 = document.getElementById('id2');
+        var add3 = document.getElementById('id3');
+        var add4 = document.getElementById('id4');
+        var add5 = document.getElementById('id5');
+        var add6 = document.getElementById('id6');
+        var add7 = document.getElementById('id7');
+        var add8 = document.getElementById('id8');
+        var add9 = document.getElementById('id9');
+        var add0 = document.getElementById('id0');
+        var addq = document.getElementById('idq');
+        var addw = document.getElementById('idw');
+        var adde = document.getElementById('ide');
+        var addr = document.getElementById('idr');
+        var addt = document.getElementById('idt');
+        var addy = document.getElementById('idy');
+        var addu = document.getElementById('idu');
+        var addi = document.getElementById('idi');
+        var addo = document.getElementById('ido');
+        var addp = document.getElementById('idp');
+        var adda = document.getElementById('ida');
+        var adds = document.getElementById('ids');
+        var addd = document.getElementById('idd');
+        var addf = document.getElementById('idf');
+        var addg = document.getElementById('idg');
+        var addh = document.getElementById('idh');
+        var addj = document.getElementById('idj');
+        var addk = document.getElementById('idk');
+        var addl = document.getElementById('idl');
+        var addz = document.getElementById('idz');
+        var addx = document.getElementById('idx');
+        var addc = document.getElementById('idc');
+        var addv = document.getElementById('idv');
+        var addb = document.getElementById('idb');
+        var addn = document.getElementById('idn');
+        var addm = document.getElementById('idm');
+        var addcom = document.getElementById('idcom');
+        var addspace = document.getElementById('spaceEnter');
+        var adddel = document.getElementById('iddel');
+        var capsbutton = document.getElementById('caps');
+        var shiftbutton = document.getElementById('shift');
+        var passwordbutton = document.getElementById('password');
+        var cleanbutton = document.getElementById('clean');
+
+        var caps = false;
+        var shiftclick = false;
+        var pass = false;
+        var cleanwords = false;
+        var badWords = ['asshole', 'bastard', 'bangbros', 'bitch', 'bitches', 'bullshit', 'shit', 'camgirl', 'faggot', 'femdom'];
+
+        function cleanFun(){
+
+            var newInput = document.getElementById('displayText').innerHTML;
+
+
+
+            console.log(displayInput);
+            
+            if (badWords[0] == displayInput) {
+                
+                document.getElementById('displayText').innerHTML = "a*****e";
+                
+            }else if (badWords[1] == displayInput) {
+                document.getElementById('displayText').innerHTML = "b*****d";
+            }else if (badWords[2] == displayInput) {
+                document.getElementById('displayText').innerHTML = "b*****s";
+            }else if (badWords[3] == displayInput) {
+                document.getElementById('displayText').innerHTML = "b***h";
+            }else if (badWords[4] == displayInput) {
+                document.getElementById('displayText').innerHTML = "b****s";
+            }else if (badWords[5] == displayInput) {
+                document.getElementById('displayText').innerHTML = "b*****t";
+            }else if (badWords[6] == displayInput) {
+                document.getElementById('displayText').innerHTML = "s**t";
+            }else if (badWords[7] == displayInput) {
+                document.getElementById('displayText').innerHTML = "c******l";
+            }else if (badWords[8] == displayInput) {
+                document.getElementById('displayText').innerHTML = "f*****t";
+            }else if (badWords[9] == displayInput) {
+                document.getElementById('displayText').innerHTML = "f*****m";
+            }
+        }
+
+        function cleanOn(){
+            
+            if (cleanwords == false) {
+                cleanbutton.style.color = "green";
+                cleanwords = true;                
+            }else if (cleanwords == true) {
+                cleanbutton.style.color = "black";
+                cleanwords = false;
+            }
+        }
+
+        function capsOn(){
+            if (caps == false) {
+                capsbutton.style.color = "green";
+                caps = true;                
+            }else if (caps == true) {
+                capsbutton.style.color = "black";
+                caps = false;  
+            }
+        }
+
+        function shiftOn(){
+            if (shiftclick == false) {
+                shiftbutton.style.color = "green";
+                shiftclick = true;
+            }else if (shiftclick == true) {
+                shiftbutton.style.color = "black";
+                shiftclick = false;                
+            }
+            
+        }
+
+        function passwordOn(){
+            if (pass == false) {
+                passwordbutton.style.color = "green";
+                pass = true;                
+            }else if (pass == true) {
+                passwordbutton.style.color = "black";
+                pass = false;
+            }
+        }
+
+        function addingNum1(){
+
+            if (shiftclick == true) {
+                displayInput = displayInput + "!"  
+            }else {
+                displayInput = displayInput + "1"
+            }
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingNum2(){
+
+            if (shiftclick == true) {
+                displayInput = displayInput + "@"  
+            }else {
+                displayInput = displayInput + "2"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingNum3(){
+
+            if (shiftclick == true) {
+                displayInput = displayInput + "#"  
+            }else {
+                displayInput = displayInput + "3"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingNum4(){
+
+            if (shiftclick == true) {
+                displayInput = displayInput + "$"  
+            }else {
+                displayInput = displayInput + "4"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingNum5(){
+
+            if (shiftclick == true) {
+                displayInput = displayInput + "%"  
+            }else {
+                displayInput = displayInput + "5"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingNum6(){
+
+            if (shiftclick == true) {
+                displayInput = displayInput + "^"  
+            }else {
+                displayInput = displayInput + "6"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingNum7(){
+
+            if (shiftclick == true) {
+                displayInput = displayInput + "&"  
+            }else {
+                displayInput = displayInput + "7"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingNum8(){
+
+            if (shiftclick == true) {
+                displayInput = displayInput + "*"  
+            }else {
+                displayInput = displayInput + "8"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingNum9(){
+
+            if (shiftclick == true) {
+                displayInput = displayInput + "("  
+            }else {
+                displayInput = displayInput + "9"
+            }
+            
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingNum0(){
+
+            if (shiftclick == true) {
+                displayInput = displayInput + ")"  
+            }else {
+                displayInput = displayInput + "0"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingNumq(){
+
+            if (caps == true) {
+                displayInput = displayInput + "Q"  
+            }else {
+                displayInput = displayInput + "q"
+            }
+            
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumw(){
+
+            if (caps == true) {
+                displayInput = displayInput + "W"  
+            }else {
+                displayInput = displayInput + "w"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNume(){
+
+            if (caps == true) {
+                displayInput = displayInput + "E"  
+            }else {
+                displayInput = displayInput + "e"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumr(){
+
+            if (caps == true) {
+                displayInput = displayInput + "R"  
+            }else {
+                displayInput = displayInput + "r"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumt(){
+
+            if (caps == true) {
+                displayInput = displayInput + "T"  
+            }else {
+                displayInput = displayInput + "t"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumy(){
+
+            if (caps == true) {
+                displayInput = displayInput + "Y"  
+            }else {
+                displayInput = displayInput + "y"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumu(){
+
+            if (caps == true) {
+                displayInput = displayInput + "U"  
+            }else {
+                displayInput = displayInput + "u"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumi(){
+
+            if (caps == true) {
+                displayInput = displayInput + "I"  
+            }else {
+                displayInput = displayInput + "i"
+            }
+            
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumo(){
+
+            if (caps == true) {
+                displayInput = displayInput + "O"  
+            }else {
+                displayInput = displayInput + "o"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNump(){
+
+            if (caps == true) {
+                displayInput = displayInput + "P"  
+            }else {
+                displayInput = displayInput + "p"
+            }
+            
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingNuma(){
+
+            if (caps == true) {
+                displayInput = displayInput + "A"  
+            }else {
+                displayInput = displayInput + "a"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNums(){
+
+            if (caps == true) {
+                displayInput = displayInput + "S"  
+            }else {
+                displayInput = displayInput + "s"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumd(){
+
+            if (caps == true) {
+                displayInput = displayInput + "D"  
+            }else {
+                displayInput = displayInput + "d"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumf(){
+
+            if (caps == true) {
+                displayInput = displayInput + "F"  
+            }else {
+                displayInput = displayInput + "f"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumg(){
+
+            if (caps == true) {
+                displayInput = displayInput + "G"  
+            }else {
+                displayInput = displayInput + "g"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumh(){
+
+            if (caps == true) {
+                displayInput = displayInput + "H"  
+            }else {
+                displayInput = displayInput + "h"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumj(){
+
+            if (caps == true) {
+                displayInput = displayInput + "J"  
+            }else {
+                displayInput = displayInput + "j"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumk(){
+
+            if (caps == true) {
+                displayInput = displayInput + "K"  
+            }else {
+                displayInput = displayInput + "k"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNuml(){
+
+            if (caps == true) {
+                displayInput = displayInput + "L"  
+            }else {
+                displayInput = displayInput + "l"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumz(){
+
+            if (caps == true) {
+                displayInput = displayInput + "Z"  
+            }else {
+                displayInput = displayInput + "z"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumx(){
+
+            if (caps == true) {
+                displayInput = displayInput + "X"  
+            }else {
+                displayInput = displayInput + "x"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumc(){
+
+            if (caps == true) {
+                displayInput = displayInput + "C"  
+            }else {
+                displayInput = displayInput + "c"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumv(){
+
+            if (caps == true) {
+                displayInput = displayInput + "V"  
+            }else {
+                displayInput = displayInput + "v"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumb(){
+
+            if (caps == true) {
+                displayInput = displayInput + "B"  
+            }else {
+                displayInput = displayInput + "b"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumn(){
+
+            if (caps == true) {
+                displayInput = displayInput + "N"  
+            }else {
+                displayInput = displayInput + "n"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumm(){
+
+            if (caps == true) {
+                displayInput = displayInput + "M"  
+            }else {
+                displayInput = displayInput + "m"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+        }
+
+        function addingNumcom(){
+
+            if (caps == true) {
+                displayInput = displayInput + ".COM"  
+            }else {
+                displayInput = displayInput + ".com"
+            }
+
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingSpace(){
+            displayInput = displayInput + " "
+            document.getElementById('displayText').innerHTML = displayInput;
+        }
+
+        function addingDel(){
+            displayInput = displayInput.slice(0, -1);
+            document.getElementById('displayText').innerHTML = displayInput;
+
+            cleanFun();
+
+        }
+
+
+        add1.addEventListener('click', addingNum1);
+        add2.addEventListener('click', addingNum2);
+        add3.addEventListener('click', addingNum3);
+        add4.addEventListener('click', addingNum4);
+        add5.addEventListener('click', addingNum5);
+        add6.addEventListener('click', addingNum6);
+        add7.addEventListener('click', addingNum7);
+        add8.addEventListener('click', addingNum8);
+        add9.addEventListener('click', addingNum9);
+        add0.addEventListener('click', addingNum0);
+        addq.addEventListener('click', addingNumq);
+        addw.addEventListener('click', addingNumw);
+        adde.addEventListener('click', addingNume);
+        addr.addEventListener('click', addingNumr);
+        addt.addEventListener('click', addingNumt);
+        addy.addEventListener('click', addingNumy);
+        addu.addEventListener('click', addingNumu);
+        addi.addEventListener('click', addingNumi);
+        addo.addEventListener('click', addingNumo);
+        addp.addEventListener('click', addingNump);
+        adda.addEventListener('click', addingNuma);
+        adds.addEventListener('click', addingNums);
+        addd.addEventListener('click', addingNumd);
+        addf.addEventListener('click', addingNumf);
+        addg.addEventListener('click', addingNumg);
+        addh.addEventListener('click', addingNumh);
+        addj.addEventListener('click', addingNumj);
+        addk.addEventListener('click', addingNumk);
+        addl.addEventListener('click', addingNuml);
+        addz.addEventListener('click', addingNumz);
+        addx.addEventListener('click', addingNumx);
+        addc.addEventListener('click', addingNumc);
+        addv.addEventListener('click', addingNumv);
+        addb.addEventListener('click', addingNumb);
+        addn.addEventListener('click', addingNumn);
+        addm.addEventListener('click', addingNumm);
+        addcom.addEventListener('click', addingNumcom);
+        addspace.addEventListener('click', addingSpace);
+        adddel.addEventListener('click', addingDel);
+        capsbutton.addEventListener('click', capsOn);
+        shiftbutton.addEventListener('click', shiftOn);
+        passwordbutton.addEventListener('click', passwordOn);
+        cleanbutton.addEventListener('click', cleanOn);
+
+
+
+    </script>
+</body>
+</html>

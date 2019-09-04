@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Weather</title>
+</head>
+
+<body>
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>See the Weather for any City !</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <input type="text" id="locationInput" placeholder="delhi">
+                <!-- <input type="date" id="dateInput"> -->
+                <button onclick="getWeather()" type="submit">Submit</button>
+            </div>
+        </div>        
+    </div>
+    <div class="mt-4 container text-center border">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <!-- <h2>Location</h2> -->
+                <h2 id="location"></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Temperature</h2>
+                <div id="temperature">
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>Rain</h2>
+                <div id="rain">
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2>Wind</h2>
+                <div id="wind">
+
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+    <script>
+
+        function getWeather() {
+            var location = document.getElementById('locationInput').value.toLowerCase();
+            // var date = document.getElementById('dateInput').value;
+            // console.log(location,date);
+
+            var xhr = new XMLHttpRequest();
+            
+            
+            xhr.open("GET", " https://api.weatherbit.io/v2.0/current?city="+location+'&key=de2d1384d3434abd83ed05d12e6f4a99');
+            // xhr.setRequestHeader('key','de2d1384d3434abd83ed05d12e6f4a99')
+            xhr.send();
+            
+            xhr.onload = function() {                
+                if (xhr.status == 200) {                    
+                    // console.log(xhr.response);
+                    displayWeather(JSON.parse(xhr.response));
+                } else {
+                    console.log(xhr.status);
+                }
+            } 
+        }
+
+        var displayWeather = function(data){
+            console.log(data.data);
+            var locDisplay = document.getElementById('location');
+            locDisplay.innerHTML = data.data[0].city_name;
+            var tempDisplay = document.getElementById('temperature');
+            tempDisplay.innerHTML = '<p>Temperature: '+data.data[0].temp+'</p>';
+            var rainDisplay = document.getElementById('rain');
+            rainDisplay.innerHTML = '<p>Rain: '+data.data[0].precip+'</p>';
+            var windDisplay = document.getElementById('wind');
+            windDisplay.innerHTML = '<p>Wind: '+data.data[0].wind_cdir_full.toUpperCase()+'</p>';
+            
+        }
+    </script>
+</body>
+
+</html>
