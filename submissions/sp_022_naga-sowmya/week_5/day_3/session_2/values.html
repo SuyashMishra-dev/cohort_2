@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Values</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<h1 id="dName"></h1>
+	<h2 id="dGender"></h2>
+	<h3 id="dEmail"></h3>
+	<h4 id="dMobile"></h4>
+	<button id="names">NAME</button>
+	<button id="genders">GENDER</button>
+	<button id="emails">EMAIL</button>
+	<button id="mobiles">MOBILE</button>
+	<script>
+		$( "#names" ).click(function() {
+  			var name = $("#name").val();
+  			$("#dName").text(name);
+  		});
+		$( "#genders" ).click(function () {
+			var gender = $("#gender").val()
+			$("#dGender").text(gender) ;
+		});
+		$( "#emails" ).click(function() {
+  			var email = $("#email").val();
+  			$("#dEmail").text(email);
+  		});
+		$( "#mobiles" ).click(function() {
+  			var mobile = Number($("#mobile").val());
+  			$("#dMobile").text(mobile);
+  		});    
+	
+	</script>
+	
+</body>
+</html>
