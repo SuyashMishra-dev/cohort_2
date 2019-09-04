@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <form>
+        <div class="col-xl-8 bg-light border border-secondary">
+            <div class="float-right col-xl-3 mr-5">
+                <div class=" mt-5">
+                    <div>Your cart</div>
+                    <div class="card-header card">
+                        <div class="border">Product Name<span class="float-right">$12</span><br><small>Breif
+                                description</small></div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card-header card">
+                        <div class="border">Second product<span class="float-right">$8</span><br><small>Breif
+                                description</small></div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card-header card border">
+                        <div class="border">Third item<span class="float-right">$5</span><br><small>Breif
+                                description</small></div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card-header card text-success bg-light">
+                        <div class="border">Promo code<span class="float-right">$5</span><br><small>EXAMPLECODE</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="card-header card">
+                        <div class="border">Total(USD)<span class="float-right">$12</span><br></div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="ml-5 mt-5 col-xl-8  ">
+                <h2>Billing Address</h2>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">First name</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Last name</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                    </div>
+                </div>
+                <div class="row ml-0">
+                    <div>Username</div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="row ml-0">
+                    <div class="col-xl-9">Email(Optional)</div>
+                    <br>
+                    <input class="col-xl-12" type="text" placeholder="you@example.com">
+
+                </div>
+                <div class="row ml-0">
+                    <div class="col-xl-9">Address</div>
+                    <br>
+                    <input class="col-xl-12" type="text" placeholder="1234 Main St">
+
+                </div>
+                <div class="row ml-0">
+                    <div class="col-xl-9">Address 2 (Optional)</div>
+                    <br>
+                    <input class="col-xl-12" type="text" placeholder="Apartment or suite">
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-xl-4 ml-0">
+                        <label for="inputState">Country</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group col-xl-4 ml-0">
+                        <label for="inputState">State</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group col-xl-4  ml-0">
+                        <label for="inputState">Zip</label>
+                        <input type="text" id="inputState" class="form-control">
+
+                    </div>
+                </div>
+                <hr>
+                <div class="row ml-0">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Shipping address is the same as my billing address
+                        </label>
+                    </div>
+                </div>
+                <div class="row ml-0">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Save this information for next time
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <p>Payment</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                        value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Credit card
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                        value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Debit card
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                        value="option3" disabled>
+                    <label class="form-check-label" for="exampleRadios3">
+                        PayPal
+                    </label>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Name on card</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Credit card number</label>
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

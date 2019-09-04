@@ -1,0 +1,87 @@
+body
+{
+        background-image: url(img1.jpg);
+        background-repeat: no-repeat;
+        height: 100%;
+        background-size: cover;
+}
+table > td
+        {
+          border: 1px solid black;
+        }
+#h1
+{
+    position:relative;
+    left:550px;
+}
+#btnprintJSON
+{
+    position:relative;
+    left:630px;
+}
+#h2
+{
+    position:relative;
+    left:540px;
+    
+}
+#txtFirstNumber
+{
+    position:relative;
+    left:500px;
+}
+#txtSecondNumber
+{
+    position:relative;
+    left:560px;
+}
+#btnCalculate
+{
+    position:relative;
+    left:320px;
+    top:50px;
+}
+#para-output
+{
+    position:relative;
+    left:690px;
+    top:50px;
+}
+#h3
+{
+    position:relative;
+    left:500px;
+    top:60px;
+    
+}
+#txtMultiplication
+{
+   position:relative;
+    top:70px;
+    left: 530px;
+}
+#btnGenerateTables
+{
+    position:relative;
+    top:70px;;
+    left: 590px;
+}
+#h4
+{
+    position: relative;
+    left:600px;
+    top:60px;
+}
+#txtUpperLowerCase
+{
+    position: relative;
+    left:500px;
+    top:60px;
+}
+#btnGenerateUpper
+{
+    position: relative;
+    left:520px;
+    top:60px;
+    
+}

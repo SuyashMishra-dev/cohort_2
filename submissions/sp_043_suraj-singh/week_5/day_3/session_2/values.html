@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Values</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	
+	<p id="displayName"></p>
+	<p id="displayGender"></p>
+	<p id="displayEmail"></p>
+	<p id="displayMobile"></p>
+
+	<button id="nameBtn">NAME</button>
+	<button id="genderBtn">GENDER</button>
+	<button id="emailBtn">EMAIL</button>
+	<button id="mobileBtn">MOBILE</button>
+	
+	<script>
+		$( "#nameBTN" ).click(function() {
+			var name = $("#name").val();
+			$("#displayName").text(name);
+		});
+
+		$( "#genderBtn" ).click(function() {
+			var gender = $("#gender").val();
+			$("#displayGender").text(gender);
+		});
+
+		$( "#emailBtn" ).click(function() {
+			var email = $("#email").val();
+			$("#displayEmail").text(email);
+		});
+
+		$( "#mobileBtn" ).click(function() {
+			var mobile = $("#mobile").val();
+			$("#displayMobile").text(mobile);
+		});
+	</script>
+</body>
+</html>

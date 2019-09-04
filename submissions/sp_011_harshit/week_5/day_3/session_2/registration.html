@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Registration</title>
+</head>
+
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<h1 id="dName">NAME</h1>
+	<h2 id="dGender">GENDER</h2>
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	<hr>
+	<button id="btn1">NAME</button>
+	<button id="btn2">GENDER</button>
+	<button id="btn3">EMAIL</button>
+	<button id="btn4">MOBILE</button>
+	<button id="btn5">RESET FORM</button>
+	<button id="btn6">RESET DISPLAY</button>
+	<!-- Clicking the buttons shows the respective values in the designated locations
+	The reset will change back to the original values when the page is loaded -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script>
+		$("#btn1").click(function () {
+			var namee = $("#name").val();
+			$("#dName").text(namee)
+
+
+		})
+
+		$("#btn2").click(function () {
+			var gndr = $("#gender").val();
+			$("#dGender").text(gndr)
+		});
+		$("#btn3").click(function () {
+			var email = $("#email").val();
+			$('#dEmail').text(email)
+
+		});
+		$("#btn4").click(function () {
+			var email = $("#mobile").val();
+			$('#dMobile').text(email)
+
+		});
+
+		$("#btn5").click(function () {
+			$("#name").val('');
+			$('#gender').val('');
+			$('#email').val('');
+			$('#mobile').val('');
+		})
+		$("#btn6").click(function () {
+			$("#dName").text('NAME');
+			$('#dGender').text('GENDER');
+			$('#dEmail').text('EMAIL');
+			$('#dMobile').text('MOBILE');
+		})
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LeaderBoard</title>
+        <style type="text/css">
+        body {
+    margin: 10px;
+}
+
+#main-grid {
+    display: grid;
+    grid-template: repeat(3, auto) / repeat(2, auto); 
+    justify-content: center;   
+    grid-gap: 10px 50px;
+}
+
+#total-score {
+    font-size: 80px;
+}
+
+#top-grid {
+    display: grid;
+    grid-template: 20px 100px 100px 20px / repeat(2, 100px);
+    grid-gap: 4px 20px;
+    align-content: center;
+}
+
+#top-grid p:nth-child(1) {
+    grid-area: span 1 / span 2;
+}
+
+#total-score {
+    grid-area: span 1 / span 2;
+    background-color: #b3b3b3;
+}
+
+p {
+    text-align: center;
+    margin: 0px;
+}
+
+#buttons p {
+    width: 300px;
+    height: 20px;
+    margin: 10px 0px;   
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#game-scores {
+    text-align: center;
+}
+
+#top-grid p:nth-child(3) {
+    background-color: red;
+    margin-top: 30px;
+}
+
+#top-grid p:nth-child(4) {
+    background-color: green;
+    margin-top: 30px;
+}
+
+#game-scores {
+    grid: span 2 / span 1;
+    padding: 100px;
+}
+
+#board-grid {
+    display: grid;
+    grid-template: repeat(7, 50px) / repeat(3, 50px);
+    grid-gap: 10px;
+    margin-left: 25px;
+    grid-area: span 2 / span 1;
+}
+
+#board-grid div:nth-of-type(1){
+    background-color: #b3b3b3;
+    grid-area: 1 / 1 / span 2 / span 3;
+    border: 2px solid black;
+}
+
+button:nth-of-type(odd) {
+    background-color:green;
+}
+
+button:nth-of-type(even) {
+    background-color:orange;
+}
+
+button:nth-child(6) {
+    background-color: orange;
+}
+
+button:nth-last-child(2) {
+    grid-area: 6 / 2;
+    background-color: purple;
+    color: white;
+}
+
+button:nth-last-child(1) {
+    grid-area: 7 / 1 / span 1 / span 3; 
+    background-color: black;
+    color: white;
+}
+
+#minValue, #maxValue {
+    font-size: 35px;
+    margin: 10px 3px;
+}
+#scoreboard {
+    font-size: 25px; 
+    margin-top: 40px;
+}
+ </style>
+    </head>
+    <body>
+        <div id="main-grid">
+            <div id="top-grid">
+                <p>Total</p>
+                <p id="total-score"></p>
+                <p id="minValue">45</p>
+                <p id="maxValue">2019</p>
+                <p>MIN</p>
+                <p>MAX</p>
+            </div>
+            <div id="game-scores">
+                <h2>Game Scores</h2>
+            </div>
+            <div id="board-grid">
+                <div>
+                    <p id="scoreboard"></p>
+                </div>
+                <button onclick="input(1)">1</button>
+                <button onclick="input(2)">2</button>
+                <button onclick="input(3)">3</button>
+                <button onclick="input(4)">4</button>
+                <button onclick="input(5)">5</button>
+                <button onclick="input(6)">6</button>
+                <button onclick="input(7)">7</button>
+                <button onclick="input(8)">8</button>
+                <button onclick="input(9)">9</button>
+                <button onclick="input(0)">0</button>
+                <button onclick="match()">ENTER</button>
+            </div>
+            <div id="buttons">
+                <p onclick="remove('All')">REMOVE All</p>
+                <p onclick="remove('Odd')">REMOVE ODD</p>
+                <p onclick="remove('Even')">REMOVE EVEN</p>
+                <p onclick="remove('Last')">REMOVE LAST</p>
+            </div>
+        </div>
+        <script type="text/javascript">
+        var finalNumber = 0;
+var gameScore = 0;
+var count = 1;
+
+function input(number) {
+    var previousNumber = "";
+    previousNumber = document.getElementById("scoreboard").innerHTML;
+    finalNumber = Number(previousNumber + number);
+    document.getElementById("scoreboard").innerHTML = finalNumber;  
+}
+
+function gameScores() {
+    var currentScore = document.getElementById("scoreboard").innerHTML;
+    var gameScoresDiv = document.getElementById("game-scores");
+    var totalScoreDiv = document.getElementById("total-score");
+    gameScore = Number(gameScore) + Number(currentScore);
+    var divContent = "Game " + count + " - " + gameScore;
+    var div = document.createElement("div");
+    div.innerHTML = divContent;
+    gameScoresDiv.appendChild(div);
+    count++;
+    totalScoreDiv.innerHTML = gameScore;
+}
+
+function match() {
+    var minNumber = Number(document.getElementById("minValue").innerHTML);
+    var maxNumber = Number(document.getElementById("maxValue").innerHTML);
+    if (finalNumber < minNumber) {
+        document.getElementById("minValue").innerHTML = finalNumber;
+    }
+    else if (finalNumber > maxNumber) {
+        document.getElementById("maxValue").innerHTML = finalNumber;
+    }
+    gameScores();
+    document.getElementById("scoreboard").innerHTML = "";
+    
+}
+
+function remove(type) {
+    if(type == "All") {
+        var divsArr = document.querySelectorAll("#game-scores div");
+        var gameScoresDiv = document.getElementById("game-scores");
+        for(i = 0; i < divsArr.length; i++) {
+            gameScoresDiv.removeChild(divsArr[i]);
+        }
+    }
+
+    else if(type == "Odd") {
+        var divsArr = document.querySelectorAll("#game-scores div");
+        var gameScoresDiv = document.getElementById("game-scores");
+        for(i = 1; i <= divsArr.length; i++) {
+            if((i == 1) || (i%2) == 1) {
+                gameScoresDiv.removeChild(divsArr[i-1]);
+            }
+        }
+    }
+    else if(type == "Even") {
+        var divsArr = document.querySelectorAll("#game-scores div");
+        var gameScoresDiv = document.getElementById("game-scores");
+        for(i = 1; i <= divsArr.length; i++) {
+            if((i%2) == 0) {
+                gameScoresDiv.removeChild(divsArr[i-1]);
+            }
+        }
+    }
+    else if(type == "Last") {
+        var divsArr = document.querySelectorAll("#game-scores div");
+        var gameScoresDiv = document.getElementById("game-scores");
+        gameScoresDiv.removeChild(divsArr[divsArr.length - 1]);
+    }
+}
+        </script>
+    </body>
+</html>
