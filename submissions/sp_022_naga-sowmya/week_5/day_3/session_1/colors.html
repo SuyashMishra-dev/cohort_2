@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Colours</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<h1 id="head1_red">MASAI H1</h1>
+	<h2 id="head2_green">MASAI H2</h2>
+	<h3 id="head3_red">MASAI H3</h3>
+    <h4 id="head4_green">MASAI H4</h4>
+    <h4 id="head5_green">MASAI H4</h4>
+	<div id="con1_red">School C1</div>
+	<div id="con2_green">School C2</div>
+	<div id="con3_red">School C3</div>
+	<p id="para1_red">Coding P1</p>
+	<p id="para2_green">Coding P2</p>
+	<p id="para3_red">Coding P3</p>
+	<hr>
+	<button id="change_h1">Change H1</button>
+	<button id="change_h2">Change H2</button>
+    <button id="change_h3">Change H3</button>
+    <button id="change_h4">Change H4</button>
+	<button id="change_divs">Change DIVS</button>
+    <button id="change_para">Change Paragraph</button>
+    <button id="change_red">Change Red</button>
+    <button id="change_green">Change Green</button>
+</body>
+<script>
+	$("#change_h1").click(function () {
+		$("h1").css("font-size", "70px");
+	});
+	$("#change_h2").click(function () {
+		$("h2").css("font-size" ,"32px");
+		$("h2").css("padding" ,"10px");
+	});
+	$("#change_h3").click(function () {
+		$("h3").css("color" ,"white");
+		$("h3").css("background" ,"black");
+	});
+	$("#change_h4").click(function () {
+		$("h4").css("border" ,"2px solid black");
+		$("h4").css("margin-top" ,"10px");
+		$("h4").css("margin-bottom" ,"10px");
+	});
+	$("#change_divs").click(function () {
+		$("div").css("padding-left" ,"8px");
+		$("div").css("padding-right" ,"8px");
+		$("div").css("padding-top" ,"6px");
+		$("div").css("padding-bottom" ,"6px");
+	});
+	$("#change_para").click(function () {
+		$("p").css("color" ,"purple");
+		$("p").css("font-weight", "bold");
+	});
+	$("#change_red").click(function () {
+		$("#head1_red").css("color" ,"red");
+		$("#head3_red").css("color" ,"red");
+		$("#con1_red").css("color" ,"red");
+		$("#con3_red").css("color" ,"red");
+		$("#para1_red").css("color" ,"red");
+		$("#para3_red").css("color" ,"red");
+	});
+	$("#change_green").click(function () {
+		$("#head2_green").css({"color":"white","background":"green"});
+		$("#head4_green").css({"color":"white","background":"green"});
+		$("#head5_green").css({"color":"white","background":"green"});
+		$("#con2_green").css({"color":"white","background":"green"});
+		$("#para2_green").css({"color":"white","background":"green"});
+	});
+
+
+</script>
+</html>
