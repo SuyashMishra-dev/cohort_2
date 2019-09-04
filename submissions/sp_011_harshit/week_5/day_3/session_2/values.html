@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Values</title>
+</head>
+
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<button id="btn1">NAME</button>
+	<button id="btn2">GENDER</button>
+	<button id="btn3">EMAIL</button>
+	<button id="btn4	">MOBILE</button>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script>
+		$('#btn1').click(function () {
+			var pp = document.createElement('p')
+			var namee = $('#name').val();
+			pp.textContent = namee
+			$('body').append(pp);
+		})
+		$('#btn2').click(function () {
+			var pp = document.createElement('p')
+			var namee = $('#gender').val();
+			pp.textContent = namee
+			$('body').append(pp);
+		})
+		$('#btn3').click(function () {
+			var pp = document.createElement('p')
+			var namee = $('#email').val();
+			pp.textContent = namee
+			$('body').append(pp);
+		})
+		$('#btn4').click(function () {
+			var pp = document.createElement('p')
+			var namee = $('#mobile').val();
+			pp.textContent = namee
+			$('body').append(pp);
+		})
+	</script>
+</body>
+
+</html>
