@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body
+            {
+           
+               background-image: url(img1.jpg);
+            }
+            #btnMovieInformation
+            {
+                position: relative;
+                left:20px;
+            }
+            #btnRuntime
+            {
+                position:relative;
+                left: 300px;
+                margin-left: 250px;
+            }
+            #btnCast
+            {
+                position:relative;
+                left:900px;
+            }
+            #h
+            {
+                position:relative;
+                left:250px;
+            }
+        </style>
+    </head>
+    <body>
+          <h1 id="h">Click the button to see information about my favourite movie</h1>
+
+          <button onclick="movieInformation()" id='btnMovieInformation'>Movie Info!</button>
+
+          <button onclick="addRuntime()" id="btnRuntime">Add Runtime</button>
+
+          <button onclick="addCast()" id="btnCast">Add cast</button>
+
+
+          <script type="text/javascript">
+
+            var movie = {
+              Name: 'Lone Survivor',
+              Director: 'Marcus Luttrell , Patrick Robinson',
+              Year: 2013,
+              Rating: 8.1,
+              Cast: ['Mark Wahlberg ', 'Taylor Kitsch ', 'Emile Hirsch ', 'Ben Foster ', 'Eric Bana']
+            }
+
+            var Container = document.querySelector('body');
+            
+            function movieInformation() 
+            {
+                  var newDiv = document.createElement('div');
+                  newDiv.innerHTML = 'Movie: ' + movie.Name + ', Movie Director: ' + movie.Director + ', Year of Release ' + movie.Year + ', Rating: ' + movie.Rating + ', Cast of the movie: ' + movie.Cast;
+                  Container.appendChild(newDiv);
+            }
+            
+            function addCast() 
+            {
+                  var newDiv = document.createElement('div');
+                  movie.Cast.push(' Akiva Goldsman');
+                  newDiv.innerHTML = 'Movie: ' + movie.Name + ', Movie Director: ' + movie.Director + ', Year of Release ' + movie.Year + ', Rating: ' + movie.Rating + ', Runtime ' + movie.Runtime + ', Cast of the movie: ' + movie.Cast;
+                  Container.appendChild(newDiv);
+            }
+
+            function addRuntime() 
+            {
+                  var newDiv = document.createElement('div');
+                  movie.Runtime = 1.21;
+                  newDiv.innerHTML = 'Movie: ' + movie.Name + ', Movie Director: ' + movie.Director + ', Year of Release: ' + movie.Year + ', Rating: ' + movie.Rating + ', Runtime ' + movie.Runtime + ', Cast of the movie: ' + movie.Cast;
+                  Container.appendChild(newDiv);
+            } 
+          </script>
+    </body>
+</html>
