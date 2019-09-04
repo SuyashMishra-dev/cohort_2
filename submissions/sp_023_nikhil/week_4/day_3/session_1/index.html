@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+  #para {
+    white-space: pre-line
+  }
+  </style>
+</head>
+<body>
+  <!-- FSD.W4.3.1_1 !-->
+  <h1>Click the button to add a new customer!</h1>
+
+  <label>First Name</label>
+  <input id='fName' type="text"> <br>
+
+  <label>Last Name</label>
+  <input id='lName' type="text"> <br>
+
+  <label>Date Of Birth</label>
+  <input id='DoB' type="text"> <br>
+
+  <label>Balance</label>
+  <input id='balance' type="text"> <br>
+
+  <label>Account Number</label>
+  <input id='accountNumber' type="text"> <br>
+
+  <label>Shared Account Holders</label>
+  <input id='sharedHolders' type="text"> <br>
+
+  <button id="add-customer">Add customer</button>
+  <!-- FSD.W4.3.1_3 !-->
+  <h1> Click here to print all customers! <h1>
+      <button id="displayCustomers">Print Customers</button>
+      <div id="displayContainer"> </div>
+
+
+
+      <script>
+
+        var fname
+        var lname
+        var dob
+        var bal
+        var account
+        var shared = []
+        var customerArr = []
+
+        function Customers(firstName, lastName, dateOfBirth, balance, accountNumber, sharedAccountHolders) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.dateOfBirth = dateOfBirth;
+          this.balance = Number(balance);
+          this.accountNumber = accountNumber;
+          this.sharedAccountHolders = [sharedAccountHolders];
+          this.displayDetails = function() {
+            var output = ''
+            for(key in this) {
+              output +=key + ':' + this[key] + "\n"
+              if(key == 'sharedAccountHolders') 
+              break;
+            }
+            return output;
+          }
+
+        }
+        
+        var addCustomer = document.getElementById('add-customer')
+        addCustomer.addEventListener('click', createInput)
+        var displayCustomers = document.getElementById('displayCustomers')
+        
+        function createInput() {
+          fname = document.getElementById('fName').value
+          lname = document.getElementById('lName').value;
+          dob = document.getElementById('DoB').value
+          bal = document.getElementById('balance').value
+          account = document.getElementById('accountNumber').value
+          shared = document.getElementById('sharedHolders').value.split(',')
+
+          var newCustomer = new Customers(fname, lname, dob, bal, account, shared)
+
+          customerArr.push(newCustomer)
+        }
+
+        var displayBtn = document.getElementById('displayCustomers')
+        //var displayContainer = document.getElementById('displayContainer')
+
+        displayBtn.addEventListener('click', customerDisplay)
+
+        function customerDisplay() {
+          displayContainer = document.getElementById('displayContainer')
+          displayContainer.innerHTML = ''
+          for(var i = 0; i < customerArr.length; i++) {
+            var para = document.createElement('p')
+            para.setAttribute('id', 'para')
+            para.textContent = customerArr[i].displayDetails()
+            displayContainer.appendChild(para)
+          }
+        }
+
+      </script>
+</body>
+
+</html>
