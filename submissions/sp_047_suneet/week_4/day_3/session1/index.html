@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title></title>
+       <link rel="stylesheet" type="text/css" href="cssindex.css">
+    </head>
+    <body>
+             
+      <label id="lblFirstName">First Name</label>
+      <input class="customerInput" id="firstName" name="First Name" placeholder="Enter First Name"><br>
+      <label id="lblLastName">Last Name</label>
+      <input class="customerInput" id="lastName" name="Last Name" placeholder="Enter Last Name"><br>
+      <label id="lblDateOfBirth">Date of Birth</label>
+      <input class="customerInput" id="dateOfBirth" name="Date of Birth" placeholder="Enter D.O.B ( comma Sepreated )"><br>
+      <label id="lblBalance">Balance</label>
+      <input type="number" class="customerInput" id="balance" name="Balance" placeholder="Balance"><br>
+      <label id="AccountNumber">Account Number</label>
+      <input type="number" class="customerInput"id="accountNumber" name="Account Number" placeholder="ACcount Number"><br>
+      <label id="SharedAccountHolders">Shared Account Holders</label>
+      <input class="customerInput" id="sharedAccountHolders" name="Share Account Holders" placeholder="Enter Shared Account Holders Names">
+
+      <h1 id="h1Data">Click the button to add a new customer!</h1>
+      <button onclick="addCustomer()" id="btnAddcustomer">Add customer</button>
+     
+      <h1 id="h2Data"> Click here to print all customers! <h1>
+      <button onclick="getDetails()" id="btnPrintCustomers">Print Customers</button>  
+     
+     <div id="displayContainer"> </div>
+
+
+      <script type="text/javascript">
+          
+        function Customer (firstName, lastName, dateOfBirth, balance, accountNumber, sharedAccountHolders)
+        {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.dateOfBirth = dateOfBirth;
+          this.balance = balance;
+          this.accountNumber = accountNumber;
+          this.sharedAccountHolders = sharedAccountHolders;
+          this.displayDetails = function () 
+          {
+            var output = '';
+            for (key in this) 
+            {
+              output = output + document.getElementById(key).name + ': ' + this[key] + '\n';
+              if(key == 'sharedAccountHolders')
+                break;
+            }
+            return output;
+          }
+        }
+          
+        var customerArr = [];
+          
+        function addCustomer() 
+        {
+          var inputs = document.querySelectorAll('.customerInput');
+          var newCustomer = new Customer();
+          var i = 0;
+
+          for (key in newCustomer) 
+          {
+            if(newCustomer[key] == undefined) 
+            {
+              if(key != 'sharedAccountHolders') 
+                  newCustomer[key] = inputs[i].value;
+              else 
+                  newCustomer[key] = inputs[i].value.split(',');
+              
+              inputs[i].value = '';
+              i++;
+            }
+          }
+          customerArr.push(newCustomer);
+          console.log(customerArr);
+        }
+        function getDetails() 
+        {
+          var displayDiv = document.getElementById('displayContainer');
+          displayDiv.innerHTML = '';
+        
+          for ( var i = 0; i < customerArr.length; i++) 
+          {
+              var displayP = document.createElement('p');
+              displayP.textContent = customerArr[i].displayDetails();
+              displayDiv.appendChild(displayP);
+          }
+        }
+      </script>
+    </body>
+</html>
