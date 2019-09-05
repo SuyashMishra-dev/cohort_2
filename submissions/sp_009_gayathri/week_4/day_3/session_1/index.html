@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.3.1_1 !-->
+   <p> <label for = "name">First Name  </label> 
+      <input type="text" name="fname" class = "custDetails">  
+    </p>
+    <br> 
+
+   <p> <label for = "lname">Last Name </label>  
+       <input type="text" name="lname" class = "custDetails">    </p>
+   <br> 
+
+   <p> <label for = "Dob">DOB  </label> 
+    <input type="text" name="dob" class = "custDetails">   </p>
+   <br> 
+
+   <p><label for = "bal">Balance </label>
+      <input type="text" name="bal" class = "custDetails">   
+    </p>
+   <br> 
+
+   <p> <label for = "actno">Account Number   </label> 
+       <input type="text" name="actNo" class = "custDetails">   </p>
+   <br> 
+
+   <p> <label for = "sharedAcc">Shared Account Holders </label>
+      <input type="text" name="sharedAcc" class = "custDetails">  </p>
+   <br> 
+
+  <h1>Click the button to add a new customer!</h1>
+  <button name="addcust" id="addCustbtn" onclick="createCustomer()" >Add customer</button>
+
+  <h1>Click the button to display customer!</h1>
+  <button name="" id="dispbtn" onclick="printCustobj()"> disp customer </button>
+  <!-- FSD.W4.3.1_3 !-->
+  <h1> Click here to print all customers! </h1>
+  <button name="printCustbtn" onclick="printCustomer()">Print Customers</button>  
+  <div id="displayContainer"> </div>
+  
+
+  <script>   
+   var customerArr= []; 
+   var custAdd=[];
+
+   //Customer Construct 
+   
+
+   function Customer (firstName, lastName, dateOfBirth,
+    balance, accountNumber, sharedAccountHolders ){
+      this.firstName = firstName
+      this.lastName = lastName 
+      this.dateOfBirth = dateOfBirth
+      this.balance = balance
+      this.accountNumber = accountNumber
+      this.sharedAccountHolders = [sharedAccountHolders]
+      this.outputDetails= function(){
+        var output = ''
+        for (key in this){
+          output += key + ":" + custAdd[key]+ "\n"
+          if (key == 'sharedAccountHolders')
+               break;
+        }
+        return output
+      }
+
+
+
+    };
+
+    var masai = {
+      firstName = "Masai",
+      lastName = "ltd",
+      dateOfBirth =  "2019",
+      balance = 3000,
+      accountNumber = 3456712,
+      sharedAccountHolders =["Prateek","Nrupul","Yogesh","Sid","Mehul"],
+      outputDetails:function(){
+        var output = ''
+        for (key in this){
+          output += key + ":" + custAdd[key]+ "\n"
+          if (key == 'sharedAccountHolders')
+               break;
+        }
+        return output
+      }
+
+      };
+    
+    function printCustobj(){
+      var parnt = document.querySelector('#displayContainer')
+      var outputString = masai.getDetails()
+
+      var dispPara = document.createElement('p')
+      dispPara.innerText = outputString
+      parnt.innerHTML = ''
+      parnt.appendChild(dispPara)
+    }
+
+
+
+    
+    function createCustomer(){
+  var inputs = document.querySelectorAll('.custDetails') // This will return an array of all the input objects with the class = "personInput"
+  var newCust = new Customer()// This creates an empty Person() object
+  var i = 0 //This is a counter for each of the input boxes
+  for(key in newCust){
+    if(newCust[key] == undefined){ //This checks if the key has an undefined value
+      if(key != 'sharedAccountHolders')  {
+        newCust[key] = inputs[i].value // This adds value to the empty Person object
+      }
+      else {
+        newCust[key] = inputs[i].value.split(',')
+      }
+
+      inputs[i].value = '' // Reset all the input values to empty string
+      i++
+    }
+  }
+  customerArr.push(newCust)
+  console.log(newCust)
+  console.log(customerArr.length)
+   // Add the new person to the array
+}
+
+
+// Print Customers
+
+function printCustomer(){
+  var displayContainer = document.getElementById('displayContainer') 
+  displayContainer.innerHTML = ''
+  for(var i = 0; i < customerArr.length;i++){ // Here we loop through all the objects in the personArr
+    var displayPara = document.createElement('p') // We create a new p tag
+    displayPara.textContent = customerArr[i].outputDetails() // We call the getDeatils function for each object get a string and set the p tags innertext to the returned string
+    displayContainer.appendChild(displayPara) //Append the new p tag to the displayContainer
+  }
+}
+
+
+         
+       
+
+
+          // Add Customer Details 
+      //     var frstName;
+      //     var lstName;
+      //     var dOfBirth;
+      //     var balnc;
+      //     var accNo;
+      //     var shrdAccHolders
+          
+      //     var BodyEle = document.querySelector('body')
+      //    // BodyEle.appendChild(divDisp)
+      //     var divDisp = document.getElementById('displayContainer')
+
+          
+
+            //   function addCustdetails() {
+      //    frstName = document.getElementById("fname").value;
+      //   console.log (frstName);
+      //   lstName = document.getElementById("lname").value;
+      //   console.log (lstName);
+      //    dOfBirth = document.getElementById("dob").value;
+      //    balnc = Number(document.getElementById("bal").value);
+      //    accNo = Number (document.getElementById("actNo").value);
+      //    shrdAccHolders = document.getElementById("sharedAcc").value;
+      //    custAdd = new Customer (frstName,lstName,dOfBirth,balnc,accNo,shrdAccHolders);
+      //    console.log (custAdd+"before pushing into global Array");
+      //    var custDispDetails = dispCust();
+      //    console.log ("customer"+custDispDetails )
+      //    customerArr.push(custAdd);
+      //   var len = customerArr.length
+      //   console.log (len + " Number of Customers")
+      //   console.log ("printing Cust Arr"+customerArr )
+      //   console.log (customerArr.length)
+           
+      // }
+         
+      //    // Display Details
+
+      //    function dispCust() {
+           
+      //      for (var i = 0 ; i < customerArr.length;i++){
+      //       //var outputDetails = customerArr[i].outputDetails();
+      //      //var outputDetails = custAdd.outputDetails() 
+      //      var Detls = customerArr[i].outputDetails();
+      //      console.log (Detls);
+      //      var paraCust = document.createElement('p');
+      //      divDisp.appendChild(paraCust);
+      //      paraCust.textContent = "" + Detls;
+
+      //     // paraCust.textContent = Customer.outputDetails();
+
+      //      }
+         
+
+      //      //console.log (outputDetails)
+      //    }
+     
+  </script>
+</body>
+</html>
