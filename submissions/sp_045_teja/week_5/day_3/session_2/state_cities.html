@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>State City Selectors</title>
+</head>
+<body>
+    <select id="state"></select>
+    <button id="nexter">Next</button>
+    <select id="city"></select>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var state_cities = [{"state": "Karnataka", "cities": ["Bangalore", "Mysore"]}, {"state": "Tamil Nadu", "cities": ["Chennai", "Tanjore"]}] 
+
+            
+
+                var states = document.createElement("option");
+                 states.textContent = state_cities[0].state;
+                 states.setAttribute('value', state_cities[0].state);
+                 $("#state").append(states);
+
+                 var states = document.createElement("option");
+                 states.textContent = state_cities[1].state;
+                 states.setAttribute('value', state_cities[1].state);
+                 $("#state").append(states); 
+
+                
+                $("#nexter").click(function() {
+                var state = $("#state").val();
+                $("#city").empty();
+                if (state == "Karnataka") {
+
+                 var city = document.createElement("option");
+                 city.textContent = state_cities[0].cities[0];
+                 city.setAttribute('value', state_cities[0].cities[0]);
+                 $("#city").append(city); 
+
+                 var city = document.createElement("option");
+                 city.textContent = state_cities[0].cities[1];
+                 city.setAttribute('value', state_cities[0].cities[1]);
+                 $("#city").append(city);
+            
+                }
+                
+                else if (state == "Tamil Nadu") {
+
+                 var city = document.createElement("option");
+                 city.textContent = state_cities[1].cities[0];
+                 city.setAttribute('value', state_cities[1].cities[0]);
+                 $("#city").append(city); 
+
+                 var city = document.createElement("option");
+                 city.textContent = state_cities[1].cities[1];
+                 city.setAttribute('value', state_cities[1].cities[1]);
+                 $("#city").append(city);
+
+                }
+                
+                });
+             
+             
+
+            
+    
+    
+    
+    </script>
+</body>
+</html>
