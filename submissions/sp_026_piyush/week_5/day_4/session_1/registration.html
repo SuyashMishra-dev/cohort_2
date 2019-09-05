@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid mt-3 row">
+        <div class="container-fluid col-2" id="firstBox">
+            <h3 id="name">NAME</h3>
+            <input id="dName">
+            <h4 id="nameError" class="text-danger"></h4>
+            <br>
+            <h3 id="email">EMAIL</h3>
+            <input id="dEmail">
+            <h4 id="emailError" class="text-danger"></h4>
+            <br>
+            <h3 id="mobile">MOBILE</h3>
+            <input id="dMobile">
+            <h4 id="mobileError" class="text-danger"></h4>
+            <br>
+            <button class="bg-dark col-lg-9 p-2 text-white" id="btnRegister">REGISTER</button>
+        </div>
+    
+        <div class="container-fluid bg-dark text-white col-lg-2" id="secondBox">
+            <h3 class="mt-5 b2Elems">NAME</h3>
+            <h1 class="b2Elems" id="newName">MASAI</h1>
+            <h3 class="mt-4 b2Elems">EMAIL</h3>
+            <h4 class="b2Elems" id="newEmail">email@masaischool.com</h4>
+            <h3 class="mt-4 b2Elems">MOBILE</h3>
+            <h3 class="b2Elems" id="newMobile">9876543210</h3>
+        </div>
+        <div class="col-8"></div>
+    </div>
+
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#secondBox").hide();
+            $("h3").hide();
+            $("input").hide();
+            $("button").hide();
+            $("#name").show();
+            $("#dName").show();
+        });
+        
+        $('#dName').keyup(function() {
+           var name = $(this).val();
+           if (name.length > 10 || name.length < 3) {
+                $("#nameError").text("Enter a valid name");
+                $("#dEmail").hide();
+                $("#email").hide();
+            } else {
+                $("#nameError").hide()
+                $("#dEmail").show();
+                $("#email").show();
+                $("#newName").text(name);
+            }
+        });
+
+        $('#dEmail').keyup(function() {
+            var email = $(this).val();
+            var vaildFormat = false;
+            var i = 0;
+            var j = 0; 
+            validDot = false; 
+            validAt = false; 
+
+            for (i = 0; i < email.length; i++) {
+                if (email[0] != '.' && email[email.length-1] != '.') {
+                    if (email[i] == '.') {
+                        if (email[i+1] != '' && email[i+1] != ' ' && email[i+1] != '@' && email[i-1] != '@' && email[i-1] != ' ') {
+                            validDot = true;
+                        }
+                    }
+                } 
+                
+                if (email[0] != '@' && email[email.length-1] != '@' && email[email.length-2] != '@' && email[i+1] != '.' && email[i-1] != '.' && email[i-1] != '' && email[i-1] != ' ' && email[i+1] != ' ') {
+                    if (email[i] == '@' && email[i-1] != ' ') {
+                        for (j = i; j < email.length; j++) {
+                            if (email[j+1] == '.') {
+                                validAt = true;
+                            }
+                        }				
+                    }
+                }
+            }
+
+            if(validDot != true || validAt != true) {
+                $("#emailError").text("Enter a valid email");
+                $("#dMobile").hide();
+                $("#mobile").hide();
+            } else {
+                $("#emailError").hide();
+                $("#dMobile").show();
+                $("#mobile").show();
+                $("#newEmail").text(email);
+            }
+        });
+
+        $('#dMobile').keyup(function() {
+            var mobile = $(this).val();
+            if (mobile.length != 10) {
+                $("#mobileError").text('Enter a valid mobile');
+                $("#btnRegister").hide();
+            } else {
+                $("#mobileError").hide();
+                $("#btnRegister").show();  
+                $("#newMobile").text(mobile);              
+            }
+        });
+
+        $("#btnRegister").click(function () {
+            $("#firstBox").hide();
+            $("#secondBox").show();             
+            $(".b2Elems").show(); 
+        });
+
+    </script> -->
+</body>
+</html>
