@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button id="btnHeadOne">Create H1</button>
+        <button id="btnHeadTwo">Create 2 H3</button>
+        <button id="divBtn"> Create DIVS</button>
+        <button id="stuBtn">Add Students</button>
+        <button id="cptBtn">Add Copyright</button>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+           $(document).ready(function(){
+               $('#btnHeadOne').click(function(){
+                   console.log("head");
+                   var headOne = document.createElement("h1");
+                   headOne.textContent ="MASAI";
+                   $('#headings').append(headOne);
+               })
+               $('#btnHeadTwo').click(function(){
+                   var heading = document.createElement("h3");
+                   heading.textContent="A Transformation in education! Learn to earn, pay when you get";
+                   $('#headings').append(heading);
+               })
+               $('#divBtn').click(function(){
+                   
+                   for(var i=0;i<10;i++){
+                    var divs = document.createElement("div");
+                    divs.textContent="Content "+(i+1);
+                    $('#cont').append(divs);
+                   }
+                })
+                $('#stuBtn').click(function(){
+                   for(var i=0;i<students.length;i++){
+                       var listele = document.createElement("li");
+                       listele.textContent=students[i];
+                       $('#vikings').append(listele);
+                   }
+                })
+                $('#cptBtn').click(function(){
+                   
+                       var para = document.createElement("p");
+                       para.textContent="@ masai 2019";
+                       $('#headings').before(para);
+                   
+                })
+           })
+        </script>
+    </body>
+</html>
