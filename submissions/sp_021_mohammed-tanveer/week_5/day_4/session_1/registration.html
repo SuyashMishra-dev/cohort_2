@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Registration</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div id="inputTag" class="col-3">
+                <div id="idName" class="form-group">
+                    <label for="">Name</label>
+                    <input id="nameInput" class="form-control" type="text"><br>
+                    <p id="nameError" class="text-danger"></p>
+                </div>
+                <div id="idEmail" class="form-group">
+                    <label for="">Email</label>
+                    <input id="emailInput" class="form-control" type="text"><br>
+                    <p id="emailError" class="text-danger"></p>
+                </div>
+                <div id="idMobile" class="form-group">
+                    <label for="">Mobile</label>
+                    <input id="mobileInput" class="form-control" type="text"><br>
+                    <p id="mobileError" class="text-danger"></p>
+                </div>
+                <button id="registerButton" class="btn btn-primary">REGISTER</button>
+            </div>
+            <div id="displayTag" class="col-3 bg-dark pt-5 pl-4 text-white">
+                <p id="nameTag">NAME</p>
+                <p id="emailTag">EMAIL</p>
+                <p id="mobileTag">MOBIE</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        $("#idEmail").hide();
+        $("#idMobile").hide();
+        $("#registerButton").hide();
+        $("#displayTag").hide();
+
+        $('#nameInput').keyup(function() {
+
+            var nameLength = $(this).val().length;
+
+            if (nameLength < 3) {
+                $("#nameError").text('Please enter atelest 3 chracters');
+                $("#idEmail").hide();
+                $("#idMobile").hide();
+                $("#registerButton").hide();
+            } else if (nameLength >= 3 && nameLength < 11) {
+                $("#nameError").text('');
+                $("#idEmail").show();
+            } else {
+                $("#nameError").text('Sorry, no more than 10 characters');
+                $("#idEmail").hide();
+                $("#idMobile").hide();
+                $("#registerButton").hide();
+            }   
+        });
+
+        $('#emailInput').keyup(function(){
+            var atRate = $(this).val().search('@');
+            var com = $(this).val().search('.com');
+
+            if(atRate < 1){
+                $("#emailError").text('Please enter a vaild email id');
+                $("#idMobile").hide();
+                $("#registerButton").hide();
+            } else if(com > atRate + 2) {
+                $("#emailError").text('');
+                $("#idMobile").show();
+            }else{
+                $("#emailError").text('Please enter a vaild email id');
+                $("#idMobile").hide();
+                $("#registerButton").hide();
+            }
+        })
+
+        $("#mobileInput").keyup(function(){
+            var mobNumber = $(this).val();
+            
+            if (mobNumber != Number(mobNumber)) {
+                $("#mobileError").text('Please enter only Numbers');
+                $("#registerButton").hide();
+            } else if(mobNumber.length == 10){
+                $("#mobileError").text('');
+                $("#registerButton").show();
+            }else{
+                $("#mobileError").text('Please enter 10 digit Number');
+                $("#registerButton").hide();
+            }
+        })
+
+        $("#registerButton").click(function(){
+            var nameValue = $("#nameInput").val();
+            var emailValue = $("#emailInput").val();
+            var mobileValue = $("#mobileInput").val();
+
+            if (nameValue != '' && emailValue != '' && mobileValue != '') {
+                $("#inputTag").hide();
+                $("#displayTag").show();
+
+                $("#nameTag").append("<h1 class='mb-3'>" + nameValue + "</h1>");
+                $("#emailTag").append("<p class='mb-3'>" + emailValue + "</p>");
+                $("#mobileTag").append("<p class='mb-5'>" + mobileValue + "</p>");
+
+            } else {
+                alert('All fields are required!');
+            }
+        })
+    </script>
+</body>
+</html>

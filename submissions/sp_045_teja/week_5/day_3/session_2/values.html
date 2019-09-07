@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Values</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<button id="namer">NAME</button>
+	<button id="gend">GENDER</button>
+	<button id="emailer">EMAIL</button>
+	<button id="mobiler">MOBILE</button>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+	
+	$("#namer").click(function() {
+		var name = $("#name").val();
+		var h1 = document.createElement("h1");
+		h1.textContent = name;
+		$('body').after(h1);
+	});
+
+	$("#gend").click(function() {
+		var gender = $("#gender").val();
+		var h2 = document.createElement("h2");
+		h2.textContent = gender;
+		$('body').after(h2);
+	});
+
+	$("#emailer").click(function() {
+		var email = $("#email").val();
+		var h2 = document.createElement("h2");
+		h2.textContent = email;
+		$('body').after(h2);
+	});
+
+	$("#mobiler").click(function() {
+		var mobile = $("#mobile").val();
+		var h2 = document.createElement("h2");
+		h2.textContent = mobile;
+		$('body').after(h2);
+	});
+
+
+	</script>
+	
+</body>
+</html>
