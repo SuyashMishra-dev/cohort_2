@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>
+        Registration
+    </title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <body>
+        <div class="d-flex p-2 bd-highlight">
+            <div id="box_1">
+                <label>NAME</label><br>
+                <input id = "name" type = "text"/><br>
+                <p id = "name_box" class="text-danger"></p>
+
+                <label id="unique_email">EMAIL</label><br>
+                <input id = "email" type = "text"/><br>
+                <p id = "email_box" class="text-danger"></p>
+
+                <label id="unique_mobile"> MOBILE</label><br>
+                <input id = "mobile" type = "number"/><br>
+                <p id = "mobile_box" class="text-danger"></p>
+
+                <button onclick="register()" class="bg-dark text-white" id="register">REGISTER</button>
+            </div>
+            <div class="bg-dark text-white" id="box_2">
+                <label>NAME</label><br>
+                <h6 id = "result_name"></h6><br>
+                <label>EMAIL</label><br>
+                <h6 id = "result_email" type = "text"></h6><br>
+                <label> MOBILE</label><br>
+                <h6 id = "result_mobile" type = "text"></h6><br>
+            </div>
+        </div>
+    </body>
+    <script>
+        
+        $('#unique_email').hide();
+        $('#email').hide();
+        $('#mobile').hide();
+        $("#unique_mobile").hide();
+        $("#register").hide();
+        $("#box_2").hide();
+
+
+        $('#name').keyup(function() {
+            $("#result_name").text($(this).val());
+            var name_box = $('#name').val();
+            if(name_box.length < 3 || name_box.length > 10) {
+                $("#name_box").text('Enter a valid name');
+                $('#unique_email').hide(1000);
+                $('#email').hide(1500);
+            }
+            else {
+                $("#name_box").text(' ');
+                $('#unique_email').show(900);
+                $('#email').show(1000);
+            }
+        });
+
+        $('#email').keyup(function() {
+            $("#result_email").text($(this).val());
+            var at_rate_index = 0;
+			var last_dot_index = 0;
+			var at_rate_counter = 0;
+			var last_dot_index = false ;
+            var email_box = $('#email').val();
+            message = "Enter a valid email";
+    
+			for(var i = email_box.length; i>=0 ; i--) {
+				if((email_box[i] == '.') && (last_dot_index == 0)) {
+					last_dot_index = i;
+				}
+			    else if(email_box[i] == '@') {
+				    at_rate_index = i;
+				    at_rate_counter = at_rate_counter + 1;
+			    }
+			    if(at_rate_counter > 1) {
+                    $("#email_box").text(message);
+                    break;
+				}
+			}
+			if((last_dot_index > at_rate_index) && ((last_dot_index - at_rate_index) > 1) && (at_rate_index > 0) && (last_dot_index < email.length - 1) && at_rate_counter == 1) {
+				$("#email_box").text(' ');
+                $("#result_box").text('email_box');
+            }
+                $("#email_box").text(' ');
+                //$("#email_box").hide();
+                $('#unique_mobile').show(900);
+                $('#mobile').show(1000);
+                
+        });
+
+        $('#mobile').keyup(function() {
+            $("#result_mobile").text($(this).val());
+            var mobile_box = $('#mobile').val();
+            if(mobile_box.length < 10 || mobile_box.length > 10) {
+                $("#mobile_box").text('Enter a valid mobile number');
+                $("#register").hide(900);
+            }
+            else {
+                $("#mobile_box").text(' ');
+                $("#register").show(900);
+            }
+        });
+
+        $("#register").click(function () {
+            $("#box_2").show(500);
+            $("#box_1").hide(500);
+        });
+
+    </script>
+</html>

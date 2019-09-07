@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Colours</title>
+</head>
+<body>
+	<h1 class="head1 red">MASAI Heading1</h1>
+	<h2 class="head2 green">MASAI Heading2</h2>
+	<h3 class="head3 red">MASAI Heading3</h3>
+    <h4 class="head4 green">MASAI Heading4</h4>
+    <h4 class="head5 green">MASAI Heading4</h4>
+	<div class="con1 red">School Class1</div>
+	<div class="con2 green">School Class2</div>
+	<div class="con3 red">School Class3</div>
+	<p class="para1 red">Coding Paragraph1</p>
+	<p class="para2 green">Coding Paragraph2</p>
+	<p class="para3 red">Coding Paragraph3</p>
+	<hr>
+	<button id="btn1">Change Heading1</button>
+	<button id="btn2">Change Heading2</button>
+    <button id="btn3">Change Heading3</button>
+    <button id="btn4">Change Heading4</button>
+	<button id="divv">Change Divs</button>
+    <button id="pp">Change Paragraph</button>
+    <button id="red">Change Red</button>
+	<button id="green">Change Green</button>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		$("#btn1").click(function()
+        {
+			 $("h1").css("font-size","70px")
+		});
+		$("#btn2").click(function()
+        {
+			 $("h2").css({"font-size":"32px","padding":"10px"})
+		});
+		$("#btn3").click(function()
+        {
+			 $("h3").css({"background-color":"black","color":"white"})
+		});
+		$("#btn4").click(function()
+        {
+			 $("h4").css({"border":"2px solid black","margin":"10px"})
+		});
+		$("#divv").click(function()
+        {
+			 $("div").css({"padding":"6px 8px"})
+		});
+		
+		$("#pp").click(function()
+        {
+			 $("p").css({"font-style":"bold","color":"purple"})
+		});
+		$("#red").click(function()
+        {
+			 $(".red").css({"color":"red"})
+		});
+		$("#green").click(function()
+        {
+			 $(".green").css({"color":"white","background-color":"green"})
+		});
+		</script>
+</body>
+</html>

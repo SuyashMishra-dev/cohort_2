@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 ">
+                <h1>Name</h1>
+                <input class="form-control" type="text" id="name">
+                <br>
+                <h1 id="entermail">Email</h1>
+                <input class="form-control" type="text" id="email" placeholder="Enter email">
+                <br>
+                <h1 id="enternum">Number</h1>
+                <input class="form-control" type="number" id="mobile" placeholder="Enter Number">
+                <button class="btn btn-dark" id="btn">Check</button>
+                <div class="text-danger" id="live"> </div>
+            </div>
+
+
+            <div class="col-3 offset-1 bg-dark text-light" id="block">
+                <h3>NAME</h3>
+                <h1 id="dname">jhi</h1>
+                <h3>EMAIL</h3>
+                <h1 id="demail">hih</h1>
+                <h3>MOBILE</h3>
+                <h1 id="dnum">hih</h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $("#block").hide(-100);
+        $("#btn").hide(-100);
+        $("#entermail").hide(-100);
+        $('#email').hide(-100);
+        $("#enternum").hide(-100)
+        $("#mobile").hide(-100);
+        $("#name").keyup(function () {
+            var input = $(this).val();
+
+            if (input.length > 10 || input.length < 3) {
+                $("#live").text("length not proper")
+                $('#email').hide(500);
+                $("#entermail").hide(500)
+
+            }
+            else {
+                $("#dname").text(input)
+                $("#live").text("valid name")
+                $('#email').show(500);
+                $("#entermail").show(500)
+            }
+        })
+
+
+        $("#mobile").keyup(function () {
+            var input = $(this).val();
+
+            console.log(typeof (input))
+            console.log(input)
+
+            if (input.length == 10) {
+                console.log('hiii')
+
+                $("#live").text("Everyting correct click on button")
+                $("#dnum").text(input)
+                $('#btn').show(200);
+
+            }
+
+            else {
+                $("#live").text('Invalid Number')
+                $('#btn').hide(200);
+
+            }
+        })
+        $('#email').keyup(function () {
+
+            var input = $(this).val();
+            var isvalid = false;
+            var atpos = '';
+            var lastdot = 0;
+
+            $("#live").text(input)
+            for (var a = 0; a < input.length; a++) {
+                if (input[a] == '@') {
+                    if (input[input.length - 4] == '.') {
+                        if (input[input.length - 3] == 'c') {
+                            if (input[input.length - 2] == 'o') {
+                                if (input[input.length - 1] == 'm') {
+
+                                    isvalid = true;
+                                    $("#enternum").show(300)
+                                    $("#mobile").show(300);
+                                }
+                            }
+
+                        }
+                    }
+                }
+                if (input[a] == '@' && input[a + 1] == '.') {
+                    $("#enternum").hide(-100)
+                    $("#mobile").hide(-100);
+                }
+            }
+
+            if (isvalid == true) {
+                $("#live").text("Valid Email")
+                $("#demail").text(input)
+            }
+            else {
+                $("#live").text("Invalid Email")
+            }
+
+        })
+
+        $('#btn').click(function () {
+            $("#block").show(100);
+        });
+
+    </script>
+    </script>
+
+</body>
+
+</html>
