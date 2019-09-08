@@ -3,9 +3,12 @@ window.onload = function() {
     xhr.open("GET", "http://hp-api.herokuapp.com/api/characters");
     xhr.send();
     xhr.onload = function() {
-        resp = xhr.response;
-        respObj = JSON.parse(resp);
-        createCharCard(respObj);
+        if(xhr.status == 200) {
+            resp = xhr.response;
+            respObj = JSON.parse(resp);
+            createCharCard(respObj);
+        } else alert("Error: Cannot Access The API");
+        
     }
 }
 
