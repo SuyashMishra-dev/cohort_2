@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>REGISTRATION</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+                <h1 class="text-center text-primary">REGISTRATION PAGE</h1>
+            <div class="row">
+                <div class="col-lg-6" id="box">
+                    <h1 id="name">Name</h1>
+                    <input type="text" class="form-control" id="inname">
+                    <p id="live" class="text-danger"></p>
+                </div>
+                <div class="col-lg-6 bg-dark text-light" id="namer">
+                    <h1>NAME</h1>
+                    <h1 id="dname"></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6" id="box1">
+                    <h1 id="email">EMAIL</h1>
+                    <input type="text" class="form-control" id="inemail">
+                    <p id="live1" class="text-danger"></p>
+                </div>
+                <div class="col-lg-6 bg-dark text-light" id="emailer">
+                    <h1>EMAIL</h1>
+                    <h1 id="demail"></h1>
+                </div>
+            </div>
+            <div class="row">    
+                <div class="col-lg-6" id="box2">
+                    <h1 id="mobile">MOBILE</h1>
+                    <input type="number" class="form-control" id="inmobile">
+                    <p id="live2" class="text-danger"></p>
+                </div>
+                <div class="col-lg-6 bg-dark text-light" id="mobiler">
+                    <h1>MOBILE</h1>
+                    <h1 id="dmobile"></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                 <button type="button" class="btn btn-secondary btn-lg btn-block mt-3" id="button">REGISTER</button>
+                 </div>
+            </div>   
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $("#email").hide();
+            $("#inemail").hide();
+            $("#mobile").hide();
+            $("#inmobile").hide();
+            $("#button").hide();
+            $("#namer").hide();
+            $("#emailer").hide();
+            $("#mobiler").hide();
+
+            $('#inname').keyup(function() {
+                var name = ($(this).val());
+                if(name.length < 3 || name.length > 10) {
+                    $("#live").show();
+                    $("#live").text("Invalid Name")
+                    $("#email").hide(700);
+                    $("#inemail").hide(700);
+                }
+                else {
+                    $("#live").hide();
+                    $("#email").show(800);
+                    $("#inemail").show(800);
+                }
+            });
+
+            $('#inemail').keyup(function() {
+
+                var isValid = false;
+                var email = ($(this).val());
+                for (var i = 0; i < email.length; i++) {
+                    if(email[i] == '@') {
+                        $("#live1").show();
+                        for (var j = i+ 1; j < email.length; j++) {
+                            if(email[j] == '.') {
+                             $("#live1").show();
+                                isValid = true;
+                            } 
+                        }
+                }
+                else {
+                    $("#live1").show();
+                }
+            }
+            if(isValid){
+                $("#live1").text("Valid Email")
+                $("#live1").removeClass('text-danger')
+                $("#live1").addClass('text-success')
+                $("#live1").hide(2000);
+                $("#mobile").show(800);
+                $("#inmobile").show(800);
+            }
+            else if (!isValid) {
+                $("#live1").text("Invalid Email")
+                $("#live1").addClass('text-danger')
+                $("#live1").removeClass('text-success')
+                $("#mobile").hide(800);
+                $("#inmobile").hide(800);
+            }
+            });
+
+            $('#inmobile').keyup(function() {
+                var mobile = ($(this).val());
+                if(mobile.length == 10) {
+                    $("#live2").text("Valid Number")
+                    $("#live2").removeClass('text-danger')
+                    $("#live2").addClass('text-success') 
+                    $("#live2").hide(2000);
+                    $("#button").show(800);
+                }
+                else {
+                    $("#live2").text("Invalid Number") 
+                    $("#live2").addClass('text-danger')
+                    $("#live2").removeClass('text-success')
+                    $("#live2").show();
+                    $("#button").hide(800);
+
+                }
+            });
+
+            $("#button").click(function() {
+            var namer = $("#inname").val();
+            $("#dname").text(namer);
+            $("#namer").show(800);
+            var emailr = $("#inemail").val();
+            $("#demail").text(emailr);
+            $("#emailer").show(800);
+            var mobil = $("#inmobile").val();
+            $("#dmobile").text(mobil);
+            $("#mobiler").show(800);
+
+            $("#box").hide(700);
+            $("#box1").hide(700);
+            $("#box2").hide(700);
+            $("#button").hide(700);
+            });
+
+
+        
+        
+        
+        </script>
+    </body>
+</html>
