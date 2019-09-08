@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>leaderboard</title>
+    </head>
+    <style>
+        .main_container{
+           background-color: black;
+        }
+        .container{
+        background-color: white;
+        height : 700px;
+        width: 500px;
+        margin-left: 400px;
+        }
+        #min_score,#max_score {
+            height: 60px;
+            width: 80px;
+            border : 2px solid black;
+            margin : 40px ;     
+            text-align: center;
+        }
+        #min_score{
+            background-color: red;
+            float: left;
+        }
+        #max_score {          
+            background-color:green;
+            float: right;         
+        }                          
+       #display{
+            height: 80px;
+            width : 150px;
+            background-color: grey;
+            border: 2px solid black;
+            margin-left: 180px;
+            font-size: 20px;
+            text-align:initial;
+        }
+        .num_board{
+            display :grid;
+            grid-template-columns: 30px 30px 30px;
+            grid-template-rows: 30px 30px 30px 30px;
+            margin-top: 40px;
+            grid-gap:60px;  
+            margin-left: 130px;         
+        }
+        .num_board div {
+            border : none;    
+            color:black;
+            padding: 5px;
+            text-align: center;
+            font-size: 25px;
+            height: 50px;
+            width: 50px;
+            border : 2px solid black;
+        }
+       
+        #btn_green{
+            background-color: #4CAF50;
+  
+         }
+        #btn_red{
+            background-color : red;            
+        }
+        #btn_purple {
+            background-color:purple;
+            margin-left: 90px;
+            
+        }
+        #enter {
+            width : 100px;
+            background-color: black;
+            margin-left: 200px;
+            color :white;
+            font-size: 20px;
+            margin-top: 50px;
+            padding:10px;
+        }
+    </style>
+    <body class = "main_container">
+        <div class = "container">
+            <div class = "min_max">
+                <div id ="min_score">43</div>
+                    <div id = "max_score">2019</div>
+                    <h3>MIN</h3>
+                    <h3>MAX</h3>
+                </div>
+                <div><h3>Score</h3>
+                    <div id = "display" type = "text"></div>
+                </div>
+                <div class = "num_board">
+                    <div onclick ="btn_value(1)"id ="btn_green">1</div>
+                    <div onclick= "btn_value(2)"id ="btn_red">2</div>
+                    <div onclick="btn_value(3)" id ="btn_green">3</div>
+                    <div onclick="btn_value(4)" id ="btn_red">4</div>
+                    <div onclick="btn_value(5)"id ="btn_red">5</div>
+                    <div onclick="btn_value(6)"id ="btn_red">6</div>
+                    <div onclick="btn_value(7)"id ="btn_green">7</div>
+                    <div onclick="btn_value(8)"id ="btn_red">8</div>
+                    <div onclick="btn_value(9)"id ="btn_green">9</div>
+                    <div onclick="btn_value(0)"id = "btn_purple">0</div>
+                </div>
+                <button onclick = "show_score()" id = "enter">ENTER</button>
+            <div>
+        </div>
+    </div>
+    <script>
+    result ='';
+    var min = 43;
+    var max = 2019;
+    function btn_value(digit){
+        result = result+digit;
+            document.getElementById('display').innerHTML= result;
+            }
+        function show_score(){
+            var final_score = Number(result);
+            if (final_score > max){
+                max = final_score
+                document.getElementById('max_score').innerHTML = max;
+            }
+            else if (final_score < min){
+                min = final_score;
+                document.getElementById('min_score').innerHTML = min;
+            }
+            document.getElementById('display').innerHTML = '';
+            result = '';
+        }
+    </script>
+</body>
+</html>

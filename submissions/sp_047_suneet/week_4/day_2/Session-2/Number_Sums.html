@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Number_Sums</title>
+     <style type="text/css">
+           body
+           {
+               background-image: url(img1.jpg);
+           }
+          #Container
+         {
+             width: 600px;
+             height: 500px;
+             margin-top: 100px;
+             margin-left: 350px;
+             
+         }
+         #txtInput
+         {
+             position:relative;
+             left: 150px;
+             top:120px;
+             border-radius:5px;
+             width: 210px;
+         }
+         #txtResult
+         {
+             position:relative;
+             left:200px;
+             top:120px;
+             border-radius:5px;
+             width: 210px;
+
+         }
+         #btnEven
+         {
+             position:relative;
+             right: 250px;
+             top:220px;
+             width: 100px;
+             
+         }
+         #btnOdd
+         {
+             position:relative;
+             left: 480px;
+             top:200px;
+             width: 100px;
+         }
+         #btnEvenSum
+         {
+              position:relative;
+             left: 380px;
+             top:250px;
+             width: 100px;
+         }
+         #btnOddSum
+         {
+             position:relative;
+             right:23px;
+             top:250px;
+             width: 100px;
+         }
+         #btnSingleDigit
+         {
+             position:relative;
+             left:170px;
+             top:300px;
+             width: 100px;
+         }
+         #btnDoubleDigit
+         {
+             position:relative;
+             right:233px;
+             top:300px;
+             width: 100px;
+         }
+         
+       </style>
+</head>
+<body>
+    <div id="Container">
+       
+           <input type="text" id="txtInput" placeholder="Enter Digits (Comma Seprated)"/>
+        <input type="text" id="txtResult" placeholder="Result" readonly />
+       
+        <button onclick="evenPositionSum()" id="btnEven" >Even Position</button>
+        <button onclick="oddPositionSum()" id="btnOdd">Odd Position</button>
+        <button onclick="evenSum()" id="btnEvenSum">Even Sum</button>
+        <button onclick="oddSum()" id="btnOddSum">Odd Sum</button>
+        <button onclick="singleDigitSum()" id="btnSingleDigit" >Single Digit</button>
+        <button onclick="doubleDigitSum()" id="btnDoubleDigit" >Double Digit</button>   
+        <!--button onclick="doubleDigitSum()" id="btnDoubleDigit" >Reset</button--> 
+      
+    </div>
+    
+    <script type="text/javascript">
+                    
+        var arr = [];
+        var arr2 = [];
+        var Counter = 0;
+        
+        function createValues()
+        {
+            var getInput = document.getElementById("txtInput").value;
+            var temp ="";
+            var temp2 = [];
+            
+            for (i=0;i < getInput.length;i++)
+                {
+                    if(getInput[i]!=',')
+                        {
+                            temp=temp + getInput[i];
+                        }
+                    else if (getInput[i]==',')
+                        {
+                            temp2.push(Number(temp));
+                            temp="";
+                        }
+                }
+            temp2.push(Number(temp));
+            arr2=temp2;
+            return arr2;
+        }
+        function evenPositionSum ()
+        {
+            createValues();
+            for(var i=1 ;i<arr2.length;i++)
+                {
+                    if(arr2[i]%2==0)
+                        {
+                            Counter = Counter + arr2[i];
+                        }
+                }
+            document.getElementById("txtResult").value= Counter;
+            Counter=0;
+                
+        }
+        function oddPositionSum ()
+        {
+            createValues();
+            for(var i=1 ;i<arr2.length;i++)
+                {
+                    if(arr2[i]%2!=0)
+                        {
+                            Counter = Counter + arr2[i];
+                        }
+                }
+            document.getElementById("txtResult").value= Counter;
+            Counter=0;
+        }
+        function evenSum ()
+        {
+            evenPositionSum();
+        }
+        function oddSum ()
+        {
+            oddPositionSum();
+        }
+        function singleDigitSum()
+        {
+            createValues();
+            for (var i = 0; i < arr2.length; i++)
+            {
+                if (arr2[i] % 10 == arr2[i]) 
+                {
+                    Counter = Counter + arr2[i];  
+                }
+            }
+            document.getElementById('txtResult').value = Counter;
+            Counter = 0; 
+        }
+        function doubleDigitSum()
+        {
+            createValues();
+            for (i = 0; i < arr2.length; i++)
+            {
+                if (arr2[i] % 10 != arr2[i] && arr2[i] % 100 == arr2[i]) 
+                {
+                    Counter = Counter + arr2[i];
+                }
+            }
+            document.getElementById('txtResult').value = Counter;
+            Counter = 0;
+        }
+    </script>
+</body>
+</html>
