@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Values</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<h2 id="displayH2"></h2>
+	<h3 id="displayH3"></h3>
+	<h4 id="displayH4"></h4>
+	<h4 id="displayH44"></h4>
+
+	<button id="getName">NAME</button>
+	<button id="getGender">GENDER</button>
+	<button id="getEmail">EMAIL</button>
+	<button id="getMobile">MOBILE</button>
+	<button id="setter">Default</button>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$( "#getName" ).click(function() {
+  			$("#displayH2").append($("#name").val());
+			});
+		
+		$( "#getGender" ).click(function() {
+  			$("#displayH3").append($("#gender").val());
+			});
+
+		$( "#getEmail" ).click(function() {
+  			$("#displayH4").append($("#email").val());
+			});
+			
+		$( "#getMobile" ).click(function() {
+  			$("#displayH44").prepend($("#mobile").val());
+			});
+
+		$( "#setter" ).click(function() {
+			$("#name").val(" ");
+			$("#gender").val(" ");
+			$("#email").val(" ");
+			$("#mobile").val(" ");
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<h1 id="dName">NAME</h1>
+	<h2 id="dGender">GENDER</h2>
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	<hr>
+	<button id="nameInput">NAME</button>
+	<button id="genderInput">GENDER</button>
+	<button id="emailInput">EMAIL</button>
+	<button id="mobileInput">MOBILE</button>
+	<button id="resetFormInput">RESET FORM</button>
+    <button id="resetDisplayInput">RESET DISPLAY</button>
+    <!-- Clicking the buttons shows the respective values in the designated locations
+    The reset will change back to the original values when the page is loaded -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+            $("#nameInput").click(function(){
+                var name = $("#name").val();
+              $("#dName").text(name); // your code goes here
+            });
+
+            $("#genderInput").click(function(){
+               var gender = $("#gender").val();
+               $("#dGender").text(gender);// your code goes here
+            });
+
+            $("#emailInput").click(function(){
+                var email= $("#email").val();
+               $("#dEmail").text(email);// your code goes here
+            });
+
+            $("#mobileInput").click(function(){
+                var mobile = $("#mobile").val();
+               $("#dMobile").text(mobile);// your code goes here
+            });
+
+            
+            $("#resetFormInput").click(function(){
+                $("#name").val(" ");
+                $("#email").val(" ");// your code goes here
+                $("#gender").val(" ");
+                $("#mobile").val(" ");// your code goes here
+            });
+
+            $("#resetDisplayInput").click(function(){
+                $("h1").text("NAME");
+                $("h2").text("GENDER");// your code goes here
+                $("h3").text("EMAIL");
+                $("h4").text("MOBILE");
+            });
+
+     </script>
+</body>
+</html>
