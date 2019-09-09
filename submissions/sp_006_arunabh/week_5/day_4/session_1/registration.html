@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Registration Page</title>
+
+        <!--Bootstrap Link-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-fluid mt-5">
+            <div class="row order-1 ml-5 mt-5" id="row1">
+                <div class="col-5">
+                    <label class="font-weight-bold">NAME</label><br>
+                    <input type="text" name="name" id="name" class="border border-dark">
+                    <div id="liveName" class="text-danger"></div>
+                </div>
+            </div>
+            <div class="row ml-5 mt-5" id="row2">
+                <div class="col-5">
+                    <label class="font-weight-bold">EMAIL</label><br>
+                    <input type="text" name="email" id="email" class="border border-dark">
+                    <div id="liveEmail" class="text-danger"></div>
+                </div>
+            </div>
+            <div class="row ml-5 mt-5" id="row3">
+                <div class="col-5">
+                    <label class="font-weight-bold">MOBILE</label><br>
+                    <input type="text" name="mobile" id="mobile" class="border border-dark">
+                    <div id="liveMobile" class="text-danger"></div>
+                </div>
+                </div>
+            <div class="row ml-5 mt-5" id="row4">
+                <div class="col-5">
+                    <input type="submit" value="REGISTER" id="register" class="col-5 bg-dark text-center text-white p-2">
+                </div>
+            </div>
+            <div class="row ml-5 mt-5" id="row5">
+                <div class="col-4 bg-dark border border-dark text-white" style="height:300px" id="display"></div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+               $("#row2").hide();
+               $("#row3").hide();
+               $("#row4").hide();
+               $("#row5").hide();
+            });
+
+            $("#name").keyup(function(){
+                var error = "Characters should me between 3 to 10";
+                $("#liveName").text(error);
+                var nm = $("#name").val();
+                if(nm.length < 10 && nm.length > 3) {
+                    $("#liveName").hide();
+
+                    $("#row2").show();
+                }
+                else{
+                    $("#liveName").show();
+
+                    $("#row2").hide();
+                }
+            });
+
+            $("#email").keyup(function(){
+                var error = "Enter a valid email";
+                var email = $("#email").val();
+                var count_email = email.length;
+                var result = "";
+                $("#liveEmail").text(error);
+                for(var i = 1 ; i < count_email ; i++){
+                    if(email[i] == "@"){
+                        for(i = i + 2 ; i < count_email ; i++){
+                            if(email[i] == "."){
+                                result = true;
+                            }
+                        }
+                    }
+                }
+                if(result == true){
+                    $("#liveEmail").hide();
+
+                    $("#row3").show();
+                }else{
+                    $("#liveEmail").show();
+
+                    $("#row3").hide();
+                }
+            });
+
+            $("#mobile").keyup(function(){
+                var error = "Enter a valid mobile";
+                $("#liveMobile").text(error);
+                var mb = $("#mobile").val();
+                if(mb.length == 10) {
+                    $("#liveMobile").hide();
+
+                    $("#row4").show();
+                }
+                else{
+                    $("#liveMobile").show();
+
+                    $("#row4").hide();
+                }
+            });
+
+            $("#register").click(function(){
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var mobile = $("#mobile").val();
+
+                $("#display").append("<p>NAME</hp>");
+                $("#display").append("<h1>"+name+"</h1>");
+
+                $("#display").append("<p>EMAIL</p>");
+                $("#display").append("<p>"+email+"</p>");
+
+                $("#display").append("<p>MOBILE</p>");
+                $("#display").append("<p>"+mobile+"</p>");
+
+                $("#row5").show(3000);
+                $("#row1").hide();
+                $("#row2").hide();
+                $("#row3").hide();
+                $("#row4").hide();
+               
+            });
+        </script>
+    </body>
+</html>

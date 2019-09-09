@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Week 4 Day 4Coding 1 </title>
+</head>
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button id="btnJson"> Click here to print the JSON object </button>
+  <div id = "container1"> </div>
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input type = "text"/>
+  <input type = "text"/>
+  <button id="callback"> Calculate </button>
+  <p>Output:</p>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Multiplication Table Generator</h1>
+  <table></table>
+  <input type = "text" id="multi" value=" "/>
+  <button id="multable"> Generate Tables </button>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <table>
+
+  </table>
+  <input type = "text" id="case" value=" " />
+  <button id = "change"> Generate CAPS and small </button>
+</body>
+
+  <script>
+  //DO NOT EDIT ANY CODE BELOW THIS LINE 
+  var items = [
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    },
+    {
+      name: "Rice",
+      price: 50,
+      id: 2323
+    },
+    {
+      name: "Banana",
+      price: 90,
+      id: 2323
+    },
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    }
+  ]
+
+
+  // Do NOT EDIT ANY CODE ABOVE THIS LINE 
+  //Place all your code below this line!
+ 
+
+  //Global variable
+  var mutiply = []
+  //FSD.W4.4.1_1
+  function print(){
+    items.forEach(function(items){
+    var printPrnt = document.getElementById("container1");
+    var printPara = document.createElement('p');
+    var printParavalue=document.createElement('p');
+    printPrnt.appendChild(printPara)
+    printPrnt.appendChild(printParavalue);
+    printPara.textContent = (items["name"]);
+    printParavalue.textContent = (items["price"]);
+    });
+
+
+  }
+
+  function jobjListnr(){
+    var outJson = JSON.stringify(items)
+    print()
+  }  
+  
+  var jsonBtn = document.querySelector("#btnJson")
+
+  jsonBtn.addEventListener('click',jobjListnr)
+
+  //FSD.W4.4.1_2
+  var exp = 1;
+  function exponent(x,y,callBack){
+    
+    for (var i =0 ; i< y ; i++){
+      exp = exp*x
+    }
+    callBack(exp)
+  }
+
+  var disp = function(toOutput){
+    var paradisp = document.querySelector('p')
+    paradisp.textContent = "The exponent is "+ toOutput
+    console.log("The exponent is "+ toOutput)
+  }
+
+  var btnCall = document.querySelector('#callback');
+  btnCall.addEventListener('click', function(){
+   exponent(4, 5, disp)
+   });
+
+
+  //FSD.W4.4.1_3
+  //var input = document.getElementById('multi').value;
+  
+  var btnMul = document.getElementById('multable');
+  console.log (btnMul)
+  btnMul.addEventListener('click',function(){
+   mutiply=[];
+   var input = document.getElementById('multi').value;
+  console.log(input +"val is")
+    //console.log (display)
+    mul (input,display)
+  });
+   var count =0
+  function mul (input,callback){
+    console.log (" block",input)
+    for (var i = 1 ; i <= input ; i++ ){
+      console.log (i + " val of external loop")
+       for (var j = 1 ; j <= input; j++){
+         console.log (i,j,"val of internal loop")
+          var prod= i*j;
+          console.log("the product is ",prod)
+          mutiply[count]= prod;
+          console.log ("count is" +count )
+          count=count+1; 
+       }
+    }
+    console.log (mutiply)
+   callback (mutiply)
+
+  }
+  
+     var display = function display (){
+     }
+     
+   //  FSD.W4.4.1_4
+
+   var btnChange =  document.getElementById ("change");
+   
+  
+  </script>
+</body>
+</html>
