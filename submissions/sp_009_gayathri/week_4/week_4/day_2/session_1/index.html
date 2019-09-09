@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h3>Click the button to see information about my favourite movie</h3>
+  <button id="btnMovie" onclick="movieInfo()"> Movie Information! </button>
+  <!-- <p id="movieInfo"> -->
+
+  <!-- </p> -->
+  <!-- FSD.W4.2.1_2 !-->
+  <button id="btnRuntime">Add Runtime to the movie object! </button>
+
+  <!-- D.W4.2.1_3 !-->
+  <button id="btnCast">Add cast member </button>
+
+</body>
+
+
+<script>
+  var movie = {
+    name: "The Pursuit of Happyness",
+    director: "Gabriele Muccino",
+    year: 2006,
+    rating: 8.0,
+    cast: ["Will Smith", "Jaden Smith", "Brian Howe", "Thandie Newton", "James Karen"]
+  }
+
+  var movieDetails = document.createElement('h3');
+  var bodyEle = document.querySelector('body');
+
+  function movieInfo() {
+
+    console.log(bodyEle);
+    //document.getElementById("movieInfo")
+    bodyEle.appendChild(movieDetails);
+    movieDetails.textContent = "Movie:" + movie.name + " " +
+      ". It was directed by " + " " + " the Director:" + movie.director + " " +
+      " and has an overall  Imdb rating of" + " " + movie.rating +
+      ".It was released in the year " + " " + movie.year + " " + ". The Movie cast included"
+      + movie.cast
+
+  }
+
+
+
+
+  var btnTime = document.getElementById("btnRuntime");
+  console.log(btnTime)
+  var movieRuntime = document.createElement('h4');
+  bodyEle.appendChild(movieRuntime);
+  function time() {
+    console.log(" Event")
+    movie.runTime = 120;
+    movie.duration = "long movie";
+    console.log(movie.runTime)
+    movieRuntime.textContent = " The run time of the movie is  " + "  " + "" + movie.runTime + "mins" + " " + " " + " " + ". It was directed by " + " " + " the Director:" + movie.director + " " +
+      " and has an overall  Imdb rating of" + " " + movie.rating +
+      ".It was released in the year " + " " + movie.year + " " + ". The Movie cast included"
+      + movie.cast
+
+
+  }
+  btnTime.addEventListener('click', time)
+
+  var btnCastadd = document.getElementById(btnCast);
+  var castAddon = document.createElement ('h4');
+  bodyEle.appendChild (castAddon);
+
+  
+  function addActor () {
+    console.log (" Cast Add")
+    movie.cast.push ("Julia Roberts");
+    castAddon.textContent =  " The run time of the movie is  " + "  " + "" + movie.runTime + "mins" + " " + " " + " " + ". It was directed by " + " " + " the Director:" + movie.director + " " +
+      " and has an overall  Imdb rating of" + " " + movie.rating +
+      ".It was released in the year " + " " + movie.year + " " + ". The Movie cast included"+ movie.cast     
+    btnCast.removeEventListener ('click', addActor)
+ 
+ 
+  }
+
+  btnCast.addEventListener ('click',addActor)
+
+
+
+
+
+
+
+
+</script>
+</body>
+
+</html>

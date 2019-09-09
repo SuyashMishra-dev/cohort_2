@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add customers</title>
+    <style>
+      label {
+        display :block;
+      }
+      p {
+        white-space: pre-line;
+        float :right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class = "allContainer">
+      <h1> Create new person objects </h1>
+      <div class = "displayContainer">
+        <h2> Person Display </h2>
+        <div class = "paraContainer"> </div>
+      </div>
+      <label for = "fname">First Name</label>
+      <input type="text" name = "fname" class = "custmrInfo"/>
+
+      <label for = "lname">Last Name</label>
+      <input type="text" name = "lname" class = "custmrInfo"/>
+
+      <label for = "birth">Date Of Birth</label>
+      <input type="text" name = "birth" class = "custmrInfo"/>
+
+      <label for = "balance">Balance</label>
+      <input type="text" name = "balance" class = "custmrInfo"/>
+
+      <label for = "account">Account Number</label>
+      <input type="text" name = "account" class = "custmrInfo"/>
+
+      <label for = "shared">Shared Account Holders(commas separated)</label>
+      <input type ="text" name = "shared" class = "custmrInfo">
+      <button  name = "submitbtn" id = "submit" >Add Customer</button> 
+
+      <label for = "displayCustomers">Display All customers</label>
+      <button name = "displayCustomer" id = 'displayBtn'>Print Customer</button>     
+    </div>
+    <script>
+    function Customers(fname, lname, birth, balance,account,shared){
+      this.fname =fname;
+      this.lname = lname;
+      this.birth = birth;
+      this.balance = balance ;
+      this.account = account;
+      this.shared = shared; 
+  // This function returns a string with all the properties of the object
+      this.displayDetails = function(){
+        var output = ''
+        output += "First Name" + ": " + this.fname + "\n"
+        output+= "Last Name" + ": " + this.lname + "\n"
+        output += "Date Of Birth" + ": " + this.birth + "\n"
+        output += "Balance" + ": " +this.balance + "\n"
+        output += "Account Number" + ": " +this.account + "\n"
+        output += "Share Account Holders" + ": " + this.shared + "\n"
+        return output // Output is a string!
+        }
+    }
+    var customerArr = [] // This array contains all the customers Objects!    
+    function createPerson(){
+    var inputs = document.querySelectorAll('.custmrInfo') // This will return an array of all the input objects with the class = "custmrInfo"
+    var newPerson = new Customers()// This creates an empty Customers() object
+    var i = 0 ;//This is a counter for each of the input boxes
+    for(key in newPerson){
+      if(newPerson[key] == undefined){
+        if(key != 'shared'){
+          newPerson[key] = inputs[i].value // This adds value to the empty Customers object
+        }
+        else {
+        newPerson[key] = inputs[i].value.split(',')
+        }
+        inputs[i].value = '' // Reset all the input values to empty string
+        i++
+      }
+  }
+  customerArr.push(newPerson) // Add the new person to the array
+}
+var submitBtn = document.querySelector('#submit')
+submitBtn.addEventListener('click', createPerson) // This is the listener for the submit button
+
+  function displayAll(){
+    var displayContainer = document.querySelector('.paraContainer') 
+    displayContainer.innerHTML = ''
+    for(var i = 0; i < customerArr.length;i++){ // Here we loop through all the objects in the personArr
+      var displayPara = document.createElement('p') // We create a new p tag
+      displayPara.textContent = customerArr[i].displayDetails() // We call the getDeatils function for each object get a string and set the p tags innertext to the returned string
+      displayContainer.appendChild(displayPara) //Append the new p tag to the displayContainer
+    }
+  } 
+    var displayBtn = document.querySelector('#displayBtn')
+    displayBtn.addEventListener('click',displayAll) // This is the listener for the display all people button
+  </script>
+</body>
+</html>
