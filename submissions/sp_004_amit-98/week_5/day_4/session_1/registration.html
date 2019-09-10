@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        input {
+            width: 450px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid mt-5 mx-5 row">
+        <div class="container col-md-6  mt-5  form-group" id="form">
+            <div id="nameShow">
+                <div id="name">NAME</div> <br>
+                <input type="text" id="nameUser">
+                <div id="live1"></div>
+            </div>
+            <div id="mailShow" style="display: none">
+                <div id="email">EMAIL</div><br>
+                <input type="text" id="emailUser">
+                <div id="live2"></div>
+            </div>
+            <div id="mobileShow" style="display: none">
+                <div id="mobile">MOBILE</div><br>
+                <input type="number" id="mobileUser">
+                <div id="live3"></div>
+                <br>
+                <div id="validMobile">Enter a valid mobile</div>
+            </div>
+            <br>
+            <button style="display: none; width: 450px" class="btn btn-block bg-dark rounded-0 text-white" id="btn">REGISTER</button>
+        </div>
+
+        <div class="container-fluid col-md-3 mt-5 bg-dark text-white" id="display" style="display: none">
+            <h2>NAME</h2>
+            <h1 id="showName"></h1>
+            <h2>EMAIL</h2>
+            <h3 id="showEmail"></h3>
+            <h2>MOBILE</h2>
+            <h3 id="showMobile"></h3>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var nameValidate = false;
+        var mailValidate = false;
+        var numValidate = false;
+
+        $('#nameUser').keyup(function () {
+            var name = $("#nameUser").val();
+            if (name.length < 3 || name.length > 10) {
+                $("#live1").text(" Not a valid Name");
+            }
+            else {
+                nameValidate = true;
+                if (nameValidate == true) {
+                    $("#live1").text("Valid Name");
+                    $("#mailShow").show();
+                }
+            }
+
+        });
+
+        $('#emailUser').keyup(function () {
+            var emailin = $("#emailUser").val();
+            lengthemail = emailin.length;
+            if (lengthemail > 6) {
+                var f = true;
+            }
+            if (emailin[lengthemail - 5] != '@') {
+                var e = true;
+            }
+            if (emailin[lengthemail - 5] != '.') {
+                var g = true;
+            }
+            if (emailin[0] != '@') {
+                var c = true;
+            }
+            if (emailin[0] != '.') {
+                var d = true;
+            }
+            for (i = 0; i < lengthemail; i++) {
+                if (emailin[i] == '@') {
+                    var a = true;
+                }
+                if (emailin[i] == '.') {
+                    var b = true;
+                }
+            }
+            if (a && b && c && d && e && f && g) {
+                mailValidate = true;
+                if (mailValidate == true) {
+                    $("#live2").text("Valid Mail");
+                    $("#mobileShow").show();
+                }
+            }
+            else {
+                $("#live2").text("Not a Valid Mail");
+            }
+
+        });
+        $('#mobileUser').keyup(function () {
+            var mobile = $("#mobileUser").val();
+            if (Number(mobile) == mobile) {
+                mobileLength = mobile.length;
+                if (mobileLength > 10) {
+                    $("#live3").text("Not a valid Mobile");
+                }
+                else if (mobileLength < 10) {
+                    $("#live3").text("Not a valid Mobile");
+                }
+                else {
+                    numValidate = true;
+                    if (numValidate == true)
+                        $("#live3").text("Valid Mobile");
+                    $("#btn").show();
+                }
+            }
+            else {
+                $("#live3").text("Not a valid Mobile");
+            }
+        });
+        $("#btn").click(function () {
+            $("#form").hide();
+        });
+        $("#btn").click(function () {
+            $("#display").show();
+        });
+
+        $("#btn").click(function () {
+
+            $("#showName").text($("#nameUser").val());
+            $("#showEmail").text($("#emailUser").val());
+            $("#showMobile").text($("#mobileUser").val());
+        });
+    </script>
+</body>
+
+</html>

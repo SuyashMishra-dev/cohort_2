@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Values</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<button id="btn-name">NAME</button>
+	<button id="btn-gender">GENDER</button>
+	<button id="btn-email">EMAIL</button>
+	<button id="btn-mobile">MOBILE</button>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script>
+		$('#btn-name').click(function() {
+			var p = document.createElement("p");
+			p.textContent = $('#name').val();
+			$('body').append(p);
+		})
+
+		$('#btn-gender').click(function() {
+			var p = document.createElement("p");
+			p.textContent = $('#gender').val();
+			$('body').append(p);
+		})
+
+		$('#btn-email').click(function() {
+			var p = document.createElement("p");
+			p.textContent = $('#email').val();
+			$('body').append(p);
+		})
+
+		$('#btn-mobile').click(function() {
+			var p = document.createElement("p");
+			p.textContent = $('#mobile').val();
+			$('body').append(p);
+		})
+	</script>
+	
+</body>
+</html>
