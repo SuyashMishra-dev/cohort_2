@@ -1,0 +1,259 @@
+<html>
+
+<head>
+    <style type="text/css">
+        .flexbox {
+            display: flex;
+            flex-direction: row;
+            margin-left: 200px;
+        }
+
+        .flexbox div {
+            padding: 20px
+        }
+
+        #red {
+            background-color: red;
+            float: left;
+
+        }
+
+        #green {
+            background-color: green;
+            float: left;
+            margin-left: 100px;
+        }
+
+        #score_box {
+            float: left;
+            margin-left: 30px;
+            font-size: 10px
+        }
+
+        #score {
+            background-color: gray;
+            height: 100px;
+            margin-left: -10px;
+        }
+
+        #enter {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            color: white;
+            margin-left: 85px
+        }
+
+        #pscore {
+            margin-left: 80px;
+        }
+
+        #zero {
+            margin-left: 110px;
+        }
+
+        .games {
+            margin-left: 1000px;
+            margin-top: -800px;
+        }
+
+        .btns {
+            background-color: black;
+            color: white;
+            width: 100px;
+            height: 50px;
+            margin-left: 1040px;
+            clear: left;
+            margin-top: 20px;
+        }
+
+        #display {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flexbox">
+        <div style="width:200px;margin-left: 80px;">
+            <h1>Total</h1>
+        </div>
+    </div>
+    <div class="flexbox">
+        <div><input type="text" id="total" style="margin-left:20px"></div>
+    </div>
+    <div class="flexbox">
+        <div id="red">
+            <p>Min</p>
+            <p id="pmin">-</p>
+        </div>
+
+        <div id="green">
+            <p>Max</p>
+            <p id="pmax">-</p>
+        </div>
+
+
+    </div>
+    <div class="flexbox">
+        <div>
+            <p ID="pscore">SCORE</p>
+        </div>
+    </div>
+    <div class="flexbox">
+
+        <div id="score_box"><input type="text" id="score"></div>
+    </div>
+    <div class="flexbox">
+        <div> <button id="one" value="1" onclick="press(1)">1</button></div>
+        <div> <button id="two" value="2" onclick="press(2)">2</button></div>
+        <div><button id="three" value="3" onclick="press(3)">3</button></div>
+
+    </div>
+    <div class="flexbox">
+        <div> <button id="four" value="4" onclick="press(4)">4</button></div>
+        <div> <button id="five" value="5" onclick="press(5)">5</button></div>
+        <div> <button id="six" value="6" onclick="press(6)">6</button></div>
+
+    </div>
+    <div class="flexbox">
+        <div> <button id="seven" value="7" onclick="press(7)">7</button> </div>
+        <div> <button id="eight" value="8" onclick="press(8)">8</button></div>
+        <div> <button id="nine" value="9" onclick="press(9)">9</button> </div>
+    </div>
+    <div class="flexbox">
+        <button id="zero" value="0" onclick="press(0)">0</button>
+
+    </div>
+    <div class="flexbox">
+
+        <button id="enter" onclick="press('enter')">ENTER</button>
+
+    </div>
+    <div class="flexbox games">
+        <div id="game">Game Score</div>
+        <p id="display"></p>
+    </div>
+
+    <div class="flexbox btns">
+        <button>REMOVE ALL</button>
+    </div>
+
+    <div class="flexbox btns">
+        <button>REMOVE ODD</button>
+    </div>
+
+    <div class="flexbox btns">
+        <button>REMOVE EVEN</button>
+    </div>
+    <div class="flexbox btns">
+        <button>REMOVE LAST</button>
+    </div>
+    <br>
+
+    <br>
+
+    <script>
+        var a = 0;
+        var b = 0;
+        var i = 0;
+        var all = 0;
+        var min = 0;
+        var max = 0;
+        var total = 0;
+        var total2 = 0;
+        var string = '';
+        function press(num) {
+
+            if (num == 1) {
+
+                total = total + '' + num;
+                string = string + '' + num
+                document.getElementById("score").value = string;
+            }
+            if (num == 2) {
+                total = total + '' + num;
+                string = string + '' + num
+                document.getElementById("score").value = string;
+            }
+            if (num == 3) {
+                total = total + '' + num;
+                string = string + '' + num
+                document.getElementById("score").value = string;
+
+            }
+            if (num == 4) {
+                total = total + '' + num;
+                string = string + '' + num
+                document.getElementById("score").value = string;
+
+            }
+            if (num == 5) {
+                total = total + '' + num;
+                string = string + '' + num
+                document.getElementById("score").value = string;
+
+            }
+            if (num == 6) {
+                total = total + '' + num;
+                string = string + '' + num
+                document.getElementById("score").value = string;
+
+            }
+            if (num == 7) {
+                total = total + '' + num;
+                string = string + '' + num
+                document.getElementById("score").value = string;
+
+            }
+            if (num == 8) {
+                total = total + '' + num;
+                string = string + '' + num
+                document.getElementById("score").value = string;
+
+            }
+            if (num == 9) {
+                total = total + '' + num;
+                string = string + '' + num
+                document.getElementById("score").value = string;
+
+            }
+            if (num == 0) {
+
+                total = total + '' + num;
+                string = string + '' + num
+                document.getElementById("score").value = string;
+
+            }
+
+            if (num == 'enter') {
+                total2 = total2 + Number(string)
+                console.log(total2)
+
+                document.getElementById('total').value = total2;
+
+                var games = document.getElementById("game");
+                var newgame = document.createElement('h1');
+                newgame.textContent = "game" + i + ':' + string;
+                i++;
+                games.appendChild(newgame);
+
+                if (Number(string) > max) {
+                    max = string;
+                    document.getElementById("pmax").innerHTML = max
+                }
+                else {
+                    min = string;
+                    document.getElementById("pmin").innerHTML = min
+                }
+                document.getElementById("score").value = ''
+
+                string = '';
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

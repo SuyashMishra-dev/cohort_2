@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>
+        API calling
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <blockquote class="row justify-content-md-center col-md-12 blockquote border border-secondary">
+                <h1 class="mb-1">See the Weather for any city</h1>
+            </blockquote>
+        </div>
+
+        <div>
+          
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-lg-8 my-1">
+                        <label class="sr-only" for="inlineFormInputGroupUsername">City Name</label>
+                        <input id="cityName" class=" row justify-content-md-center form-control mr-sm-2" type="search"
+                            placeholder="Search">
+                    </div>
+                    
+                </div>
+
+            </form>
+            <button id="getUserData" class=" btn btn-primary my-2 my-sm-0 row justify-content-md-center"
+                        type="submit">Search</button>
+        </div>
+    </div>
+    <div class="card" style="width: 50rem;">
+        <div class="card-body">
+          <p class="card-title" id="city_name"></p>
+          <p class="card-title" id="city_Temp"></p>
+          <p class="card-title" id="Wind"></p>
+          <p class="card-title" id="sunrise"></p>
+          <p class="card-title" id="city_sunset"></p>             
+         </div>
+      </div>
+        <script>
+            var displayOsData = function (input) {
+                var osObjects = JSON.parse(input);
+                console.log(osObjects["data"]);
+                document.querySelector('#city_name').innerHTML = "City: " +osObjects["data"][0].city_name;
+                document.querySelector('#city_Temp').innerHTML ="Temprature: " +osObjects["data"][0].temp + " `C";
+                document.querySelector('#Wind').innerHTML = "Wind: " + osObjects["data"][0].wind_cdir_full;
+                document.querySelector('#sunrise').innerHTML = "Sun Rise: " + osObjects["data"][0].sunrise;
+                document.querySelector('#city_sunset').innerHTML = "City Sunset: " + osObjects["data"][0].sunset;
+            }
+            function getUserData() {
+                console.log("madhu")
+                var city = document.getElementById('cityName').value;
+                var xhr = new XMLHttpRequest();
+                var apiKey = "794066b039204ed085340e81aa2e7d36"
+                var url = 'https://api.weatherbit.io/v2.0/current?city=' + city + ',IN&key=' + apiKey;
+                xhr.open('GET', url);
+                xhr.send();
+                xhr.onload = function () {
+                    if (xhr.status == 200) {
+                        result = xhr.response;
+                        console.log(result);
+                        displayOsData(result);
+                    }
+                    else {
+                        console.log("Error code is:" + xhr.status);
+                    }
+                }
+            }
+            //Button and listener for the click here to print the user data! button
+            var displayBtn = document.querySelector('#getUserData')
+            displayBtn.addEventListener('click', function () {
+                getUserData();
+            });
+        </script>
+</body>
+
+</html>

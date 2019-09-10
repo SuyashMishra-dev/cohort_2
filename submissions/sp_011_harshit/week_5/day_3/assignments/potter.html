@@ -1,0 +1,91 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="row mt-5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow-lg p-3 fixed-top rounded">
+      <a class="navbar-brand h2 " href="#">
+        <h1 class="text-white">Harry Potter</h1>
+      </a>
+      <button class=" round btn-dark rounded" onclick="callapi()">Harry Potter Character Names</button>
+      <button class=" ml-4 round btn-dark rounded" id="2" onclick="second()">Harry potter star cast</button>
+    </nav>
+  </div>
+  <div class="container-fluid  mt-5">
+    <div id="cont" class="row col-xl-8  mt-5"></div>
+    <div class="row mt-5 " id="actor"></div>
+  </div>
+  <!-- Javascript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+
+    function callapi() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://hp-api.herokuapp.com/api/characters')
+      xhr.send()
+      xhr.onload = function () {
+        if (xhr.status == 200) {
+          var body2 = document.querySelector(".row")
+          var a = JSON.parse(xhr.response)
+          var total = ''
+          for (key in a) {
+
+            var card1 = document.createElement('div');
+            card1.setAttribute('class', 'card col-xl-3 align-middle');
+
+            var ppp = document.createElement('img')
+            var pp = document.createElement('p')
+
+            ppp.setAttribute('src', a[key].image)
+            ppp.setAttribute('class', 'card-img img-fluid')
+
+
+            card1.appendChild(ppp)
+            pp.textContent = a[key].name;
+            pp.setAttribute('class', 'card-body bg-info')
+            card1.appendChild(pp)
+            console.log(a[key])
+
+            body2.appendChild(card1)
+          }
+
+        }
+        else {
+          console.log("error in code" + xhr.status);
+        }
+      }
+    }
+
+    function second() {
+      $(".card").hide(200)
+      var xho = new XMLHttpRequest();
+
+      xho.open('GET', 'http://hp-api.herokuapp.com/api/characters')
+      xho.send()
+
+      xho.onload = function () {
+        if (xho.status == 200) {
+
+          var body_actor = document.getElementById("actor");
+          var new3 = JSON.parse(xho.response)
+
+          for (key in new3) {
+            var text1 = document.createElement("p")
+            var divv = document.createElement('div')
+            divv.setAttribute('class', 'card')
+            text1.textContent = new3[key].actor
+            text1.setAttribute('class', 'card card-body text-success ml-2')
+            divv.appendChild(text1)
+            body_actor.appendChild(divv)
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API of code names</title>
+    </head>
+    <body>
+        <div>
+            <h1>You Can Get Some Code Names From Api Server Here..!</h1>
+            <label for ="codeLabel">Code Names:</label>
+                <select id = "selectId">
+                <option value = "android" id = "andriod">andriod</option>
+                <option value = "ubuntu" id = "ubuntu">ubuntu</option>
+                <option value = "windows" id = "windows">windows</option>
+                <option value = "macos" id = "macos">macos</option>
+            </select>
+            <br><br>
+            <button onclick =getUserData()>GET SOME CODE NAMES</button>
+        </div>
+        <div id ="tableOutput">
+
+        </div>
+        <script src = "os.js"></script>
+    </body>
+</html>

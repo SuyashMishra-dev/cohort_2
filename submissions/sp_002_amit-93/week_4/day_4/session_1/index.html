@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> JSON </title>
+</head>
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button> Click here to print the JSON object </button>
+  <div id = "container1"> </div>
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input type = "text"/>
+  <input type = "text"/>
+  <button> Calculate </button>
+  <p id="expo-out">Output:</p>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Multiplication Table Generator</h1>
+  <table border="1"></table>
+  <input type = "text"/>
+  <button> Generate Tables </button>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <table border="1"></table>
+  <input type = "text"/>
+  <button> Generate CAPS and small </button>
+  <script>
+  //DO NOT EDIT ANY CODE BELOW THIS LINE 
+  var items = [
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    },
+    {
+      name: "Rice",
+      price: 50,
+      id: 2323
+    },
+    {
+      name: "Banana",
+      price: 90,
+      id: 2323
+    },
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    }
+  ]
+  var mutiply = []
+  // Do NOT EDIT ANY CODE ABOVE THIS LINE 
+  //Place all your code below this line!
+  var contOne = document.getElementById("container1");
+  var buttons = document.querySelectorAll("button");
+  var inputs = document.querySelectorAll("input");
+  var tables = document.querySelectorAll("table");
+  var expoOut = document.getElementById("expo-out");
+  
+  buttons[0].addEventListener("click", printObj);
+  buttons[1].addEventListener("click", function() {
+    var num = inputs[0].value;
+    var pow = inputs[1].value;
+    output = exponent(num, pow, display);
+  });
+  buttons[2].addEventListener("click", generateTables);
+  buttons[3].addEventListener("click", generateCaps);
+  function printObj() {
+    for(key in items) {
+      var para = document.createElement("p");
+      para.innerHTML = items[key]['name'] + " : " + items[key]['price']; 
+      contOne.appendChild(para);
+    } 
+  }
+  function exponent(x, y, callBack) {
+    var out = x**y;
+    expoOut.innerHTML = callBack(out);
+  }
+  var display = function(input) {
+    return ("The exponent is: " + input);
+  }
+  function generateTables() {
+    var mutiply = [];
+    var limit = inputs[2].value;
+    
+    for(i = 1; i <= limit; i++) {
+      mutiply.push(i);
+    }
+    console.log(mutiply);
+    var tr = document.createElement("tr");
+    for(i = 1; i <= 5; i++) {
+      var td = document.createElement("td");
+      td.innerHTML = "*" + i;
+      tr.appendChild(td);
+    }
+    tables[0].appendChild(tr);
+    mutiply.forEach(function(number) {
+      var tr = document.createElement("tr");
+      for(i = 1; i <= 5; i++) {
+        var td = document.createElement("td");
+        td.innerHTML = number * i;
+        tr.appendChild(td);
+      }
+      tables[0].appendChild(tr);
+    })
+  }
+  function generateCaps() {
+    var casesInput = inputs[3].value.split(", ");
+    var capsOut = casesInput.map(function(element) {
+      return element.toUpperCase();
+    })
+    var smallOut = casesInput.map(function(element) {
+      return element.toLowerCase();
+    })
+    
+    var tableHeadings = ["Normal", "Upper", "Lower"];
+    var tr = document.createElement("tr");
+    for(i = 0; i < tableHeadings.length; i++) {
+      var td = document.createElement("td");
+      td.innerHTML = tableHeadings[i];
+      tr.appendChild(td);
+    }
+    tables[1].appendChild(tr);
+    for(i = 0; i < capsOut.length; i++) {
+      var tr = document.createElement("tr");
+      var firstC = document.createElement("td");
+      firstC.innerHTML = casesInput[i];
+      tr.appendChild(firstC);
+      var secondC = document.createElement("td");
+      secondC.innerHTML = capsOut[i];
+      tr.appendChild(secondC);
+      var thirdC = document.createElement("td");
+      thirdC.innerHTML = smallOut[i];
+      tr.appendChild(thirdC);
+      tables[1].appendChild(tr);
+    }
+    
+    
+  }
+  
+  </script>
+</body>
+</html>

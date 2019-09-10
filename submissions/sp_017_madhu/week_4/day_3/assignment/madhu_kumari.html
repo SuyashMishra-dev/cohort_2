@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>
+    </title>
+    <style type="text/css">
+    label {
+  
+   display:block; 
+}
+.displayContainer{
+  display:block;
+  float:right;
+  padding-right: 30%;
+}
+
+p{
+  padding-top: 2%;
+  white-space: pre-line;
+}
+    </style>
+  </head>
+  <body>
+    <h1> Check Your Fuel Before you Start </h1>
+    <div class = "inputContainer">
+       <label for = "name">Fuel Filled On</label>
+      <input type="date" name = "date" class = "fuelInput"/>
+      
+      <label for = "name">Fuel Filled</label>
+      <input type="text" name = "fuelFilled" class = "fuelInput"/>
+
+      <label for = "age">Trip Name</label>
+      <input type="text" id="tripName" name = "trip" class = "fuelInput"/>
+
+      <label for = "height">Total Distance travelled</label>
+      <input type="text" name = "distance" id="distanceTravelled" class = "fuelInput"/>
+<br/>
+      <div id="showDetails"><div>
+        <button id = 'submitBtn'>Submit</button><br/>
+
+      <button id="fuelFilledBtn">Total fuel Filled</button><br/>
+       <button id="distanceTravelledBtn">Total Distance Travelled</button><br/>
+       <button id="canTravelBtn">Display Total Range</button><br/>
+
+       <div class="displayContainer"></div>
+
+       <div id="detailsContainer"> </div>
+      <script>
+      function Vechile(FuelDate, Fuel, Trip, DistanceTravelled){
+  this.FuelDate = FuelDate;
+  this.Fuel = Fuel;
+  this.Trip = Trip;
+  this.DistanceTravelled = DistanceTravelled;
+  this.getDetails = function(){
+    var output = ''
+    for(key in this){
+      output += key + ":" + this[key] + "\n"
+      if(key == 'DistanceTravelled') break;
+     }
+     return output
+   }
+}
+var vechileArr = [] 
+function createDetails(){
+  var inputs = document.querySelectorAll('.fuelInput') 
+  var newVechile = new Vechile()
+  var i = 0 
+  for(key in newVechile){
+    if(newVechile[key] == undefined){ 
+      if(key != 'DistanceTravelled')  {
+        newVechile[key] = inputs[i].value 
+      }
+      else {
+        newVechile[key] = inputs[i].value.split(',')
+      }
+      inputs[i].value = ''
+      i++
+    }
+  }
+  vechileArr.push(newVechile) 
+}console.log(vechileArr)
+var submitBtn = document.querySelector('#submitBtn')
+submitBtn.addEventListener('click', createDetails)
+
+
+ var displayBtn = document.querySelector('#fuelFilledBtn')
+
+      function displayAll() {
+        var displayContainer = document.querySelector('#detailsContainer');
+        displayContainer.innerHTML = '';
+        for (var i = 0; i < vechileArr.length; i++) {
+          var displayPara = document.createElement('p')
+          displayPara.textContent = vechileArr[i].getDetails()
+          displayContainer.appendChild(displayPara)
+        } console.log(vechileArr);
+      }
+
+      displayBtn.addEventListener('click', displayAll) 
+      
+      </script>
+  </body>
+</html>

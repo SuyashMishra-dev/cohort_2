@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>
+            Registration
+        </title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <br><br>
+            <div class="row pl-5">
+                <div class="form-group">
+                    <label for="name" class="font-weight-bold h3" id="lname">NAME</label>
+                    <input type="text" class="form-control border border-dark" id="name" placeholder="Enter Name">
+                    <p id="para" class="border border-danger text-danger"></p>
+                    <br><br>
+                    <label for="email" class="font-weight-bold h3" id="lemail">EMAIL</label>
+                    <input type="email" class="form-control border border-dark" id="email" placeholder="Enter Email">
+                    <br><br>
+                    <label for="mobile" class="font-weight-bold h3" id="lmobile">MOBILE</label>
+                    <input type="text" class="form-control border border-dark" id="mobile" placeholder="Enter mobile number">
+                    <br>
+                    <button type="button" class="bg-dark text-light btn-lg" id="button">Register</button>
+                </div>
+
+                <div class="col-5 offset-5 mt-5">
+                    <div class="row">
+                        <div class="col-12 bg-dark text-light" id="colClass">
+                            <br>
+                            <div class="row">
+                                <div class="col-12 text-light h4 text-left" id="dName">NAME</div>
+                                <h1 id="head1"></h1>
+                                <div class="col-12 text-light h4 text-left" id="dEmail">EMAIL</div>
+                                <h2 id="head2"></h2>
+                                <div class="col-12 text-light h4 text-left" id="dMobile">MOBILE</div>
+                                <h3 id="head3"></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#name").show(2000);
+                $("#email").hide();
+                $("#mobile").hide();
+                $("#dName").hide();
+                $("#dEmail").hide();
+                $("#dMobile").hide();
+                $("#lemail").hide();
+                $("#lmobile").hide();
+                $("#colClass").hide();
+                $("#para").hide();
+                $("#button").hide();
+            });
+            $("#name").click(function(){
+                var name=$("#name").val();
+                if(name.length<3||name.length>10)
+                {
+                    $("#para").text("Valid characters 3-10");
+                    $("#para").show();
+                }
+                else
+                {   $("#para").hide();
+                    $("#head1").text(name);   
+                    $("#lemail").show(500);
+                    $("#email").show(500);
+                }
+            });
+            $("#email").click(function(){
+                var email=$("#email").val();
+				var result = "";
+			    for(var i=1;i<email.length;i++)
+                {
+				    if(email[i]=="@")
+                    {
+					    for(i=i+2;i<email.length;i++)
+                        {
+						    if(email[i]==".")
+                            {
+							    result=true;
+						    }
+					    }
+				    }
+			    }
+			    if(result==true)
+                {
+				    //alert("Valid Email");
+                    $("#head2").text(email);
+                    $("#lmobile").show(500);
+                    $("#mobile").show(500);
+			    }
+            });
+            $("#mobile").click(function(){
+                var mob=$("#mobile").val();
+                if(mob.length==10)
+                {
+                    //alert("Verified");
+                    $("#head3").text(mob);
+                    $("#button").show(500);
+                }
+            });
+            
+                $("#button").click(function(){
+                $("#colClass").show(500);
+                $("#dName").show(500);
+                $("#dEmail").show(500);
+                $("#dMobile").show(500);
+                $("#lname").hide();
+                $("#name").hide();
+                $("#lemail").hide();
+                $("#email").hide();
+                $("#lmobile").hide();
+                $("#mobile").hide();
+		    });
+        </script>
+    </body>
+</html>

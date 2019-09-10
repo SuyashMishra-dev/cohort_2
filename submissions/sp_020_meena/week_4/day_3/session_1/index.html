@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #displayContainer p{
+      white-space: pre-line
+     }
+    </style>
+  </head>
+<body>
+  <!-- FSD.W4.3.1_1 !-->
+  <h1>Click the button to add a new customer!</h1>
+  <label for = "Name">first Name</label>
+  <input type = "text" name = "firstname" id ="customerInput"/><br>
+
+  <label for = "age">lastName</label>
+  <input type = "text" name = "lastName" id = "customerInput"><br>
+
+  <label for = "dateofbirth">Date Of Birth</label>
+  <input type = "text" name = "dateOfBirth" id = "customerInput"><br>
+
+  <label for = "balance">Balance</label>
+  <input type = "text" name = "balance" id ="customerInput"><br>
+
+  <label for = "accountNumber">Accountnumber</label>
+  <input type = "text" name = "accountNumber" id = "customerInput"><br>
+
+  <label for = "sharedAccountHolders">Accountshare Holders</label>
+  <input type = "text" name = "sharedAccountHolders" id ="customerInput"><br>
+
+  <button id = "addBtn">Add customer</button>
+
+  <!-- FSD.W4.3.1_3 !-->
+  <h1> Click here to print all customers! <h1>
+  <button id ="printBtn">Print Customers</button>  
+  <div id="displayContainer"> </div>
+  
+
+  <script type = "text/javascript">
+  function AddCustomers(firstName,lastName,dateOfBirth,balance,accountNumber,sharedAccountHolders)
+{
+  this.firstName=firstName;
+  this.lastName=lastName;
+  this.dateOfBirth=dateOfBirth;
+  this.balance=balance;
+  this.accountNumber=accountNumber;
+  this.sharedAccountHolders=sharedAccountHolders;
+
+  this.getDetails=function(){
+    var output='';
+    for(key in this){
+      output+=key +": "+this[key]+ "\n" ;
+      if(key=='sharedAccountHolders')
+         break;
+    }
+    return output;
+  }
+}
+var customerArr=[];
+function createCustomer(){
+  var inputs=document.querySelectorAll('#customerInput');
+  var newCustomer=new AddCustomers();
+  var i=0;
+  for(key in newCustomer)
+  {
+    if(newCustomer[key]==undefined){
+      if(key !='sharedAccountHolders'){
+        newCustomer[key]=inputs[i].value;
+      }
+      else{
+        newCustomer[key]=inputs[i].value.split(',');
+      }
+      inputs[i].value='';
+      i++;
+    }
+  }
+  customerArr.push(newCustomer);
+}
+  function displayAll(){
+  var displayContainer=document.querySelector('#displayContainer');
+  for(var i=0;i<customerArr.length;i++){
+    var displayPara=document.createElement('p');
+    displayPara.textContent=customerArr[i].getDetails();
+    displayContainer.appendChild(displayPara);
+  }
+}
+  
+  var addBtn = document.querySelector('#addBtn');
+  addBtn.addEventListener('click', createCustomer);
+  
+  var printBtn  = document.querySelector('#printBtn');
+  printBtn.addEventListener('click', displayAll)
+
+ </script>
+</body>
+</html>
