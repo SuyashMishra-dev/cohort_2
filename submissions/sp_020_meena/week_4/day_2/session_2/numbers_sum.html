@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Sum of numbers</title>
+    </head>
+    <body>
+        <input type = "text" id = "numbersArray">
+        
+        <button onclick = "evenPositionSum()">Even Positions Sum </button>
+        <button onclick = "oddPositionSum()">Odd Positions Sum </button>
+        <button onclick = "evenSum()">Even Sum </button>
+        <button onclick = "oddSum()">Odd Sum </button>
+        <button onclick = "singleDigitSum()">Single Digit Sum </button>
+        <button onclick = "doubleDigitSum()">Double Digit Sum </button>
+    </body>
+    <script type = "text/javascript">
+     var num = document.getElementById("numbersArray").value;
+     var evensum = 0;
+     function evenPositionSum() {
+         for(var i =0; i<= num.length-1; i++){
+             if (num[i]%2 == 0) {
+                 evensum = evensum + num[i];
+                 cosole.log(evensum);
+                }
+            }
+         return evensum;
+            
+        }
+
+    </script>
+</html>
