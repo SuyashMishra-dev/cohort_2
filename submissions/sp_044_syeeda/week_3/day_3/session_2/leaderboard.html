@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>leaderboard</title>
+        <style>
+            .class1 {
+                height: 80px;
+                width: 200px;
+                border: 3px solid black;
+                margin-left: 280px;   
+            }
+            .class2 {
+                background: red;
+            }
+            .class3 {
+                background: green;
+            }
+            .min {
+                margin-left: 350px;
+                 margin-top: 10px
+            }
+            .max {
+                margin-left: 600px;    
+                margin-top:-40px
+            }
+            .score1 {
+                margin-left: 430px; 
+                margin-top: 20px;
+            }
+            .font {
+                font-size: 30px; 
+            }
+            .scoreBox {
+                height: 80px;
+                width: 300px;
+                border: 3px solid black;
+                margin-left: 350px; 
+                background: gray; 
+            }
+            .btnBox {
+                height: 80px;
+                width: 80px;
+                border: 2px solid black;
+                margin-left: 20px; 
+            }
+            .btnMargin {
+                margin-left: 330px;
+                margin-top: 30px;
+            }
+            .btnZeroMargin {
+                margin-left: 455px;
+                margin-top: 20px;
+            }
+            .enterBox {
+                height: 80px;
+                width: 250px;
+                border: 2px solid black;
+                margin-left: 360px; 
+                margin-top: 20px;
+                background: blueviolet
+            }
+        </style>
+    </head>
+    <body>
+        <div id="min" class="class1 class2">43
+            <div id="max" class="class1 class3">2019</div>   
+        </div>
+        <div class="min font">MIN</div>
+        <div class="max font">MAX</div>
+        <div class="score1 font">SCORE</div>
+        <p id="score" class="scoreBox"></p>
+        <div class="btnMargin">
+            <button class="btnBox font" onclick="btn(1)" id="btn1">1</button>
+            <button class="btnBox font" onclick="btn(2)" id="btn1">2</button>
+            <button class="btnBox font" onclick="btn(3)" id="btn1">3</button>     
+        </div>
+        <div class="btnMargin">
+            <button class="btnBox font" onclick="btn(4)" id="btn1">4</button>
+            <button class="btnBox font" onclick="btn(5)" id="btn1">5</button>
+            <button class="btnBox font" onclick="btn(6)" id="btn1">6</button>     
+        </div>
+        <div class="btnMargin">
+            <button class="btnBox font" onclick="btn(7)" id="btn1">7</button>
+            <button class="btnBox font" onclick="btn(8)" id="btn1">8</button>
+            <button class="btnBox font" onclick="btn(9)" id="btn1">9</button>     
+        </div>
+        <div>
+            <button class="btnBox font btnZeroMargin" onclick="btn(0)" id="btn1">0</button> 
+        </div>
+        <div>
+            <button class="enterBox font" onclick="btnEnter()" id="btn1">ENTER</button> 
+        </div>
+
+        <script>
+            var minval =43;
+            var maxval =2019;
+
+            function btn(num) {
+                var element = document.getElementById("score").innerHTML;
+                element = element + num ;
+                document.getElementById("score").innerHTML=element;
+            }
+
+            function btnEnter() {
+                var scoreval = document.getElementById("score").innerHTML;
+                
+                if (scoreval > maxval){
+                    document.getElementById("max").innerHTML=scoreval;
+                }
+                else if (scoreval < maxval){
+                    document.getElementById("min").innerHTML=scoreval;
+                }
+            }
+            
+        </script>
+    </body>
+</html>
