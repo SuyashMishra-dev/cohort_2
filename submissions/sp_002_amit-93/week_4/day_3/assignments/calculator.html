@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mileage Calculator</title>
+        <style>
+            p {
+                white-space: pre-line;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="fuelInput">Fuel Filled</label>
+        <input type="date">
+        <input type="text">
+        <button>Submit</button>
+        <label for="tripNameInput">Name of the trip</label>
+        <input type="text">
+        <label for="tripDistanceInput">Distance of the trip</label>
+        <input type="text">
+        <button>Submit</button>
+
+        <p>Total Fuel Filled</p>
+        <p>0</p>
+        <p>Total Distance Travelled</p>
+        <p>0</p>
+        <div id="fuel-log"></div>
+        <div id="trips-log"></div>
+        <p>Remaining Distance you can travel</p>
+        <p>0</p>
+        
+        <script>
+            var buttons = document.querySelectorAll("button");
+            buttons[0].addEventListener("click", fuelInput);
+            buttons[1].addEventListener("click", tripInput);
+            var inputs = document.querySelectorAll("input");
+            var paras = document.querySelectorAll("p");
+            var filledFuelArr = [];
+            var trips = [];
+            
+            function TripArr(tripName, tripDistance) {
+                this.name = tripName,
+                this.distance = tripDistance,
+                this.showLog = function() {
+                    var output = "";
+                    for(key in this) {
+                        if(key != 'showLog') {
+                            output = output + key + " : " + this[key] + '\n';
+                        }
+                    }
+                    return output;
+                }
+            }
+            function FuelLog(fuelDate, fuelInput) {
+                this.date = fuelDate,
+                this.fuel = fuelInput,
+                this.showLog = function() {
+                    var output = "";
+                    for(key in this) {
+                        if(key != 'showLog') {
+                            output = output + key + " : " + this[key] + '\n';
+                        }
+                    }
+                    return output;
+                }
+            }
+            function fuelInput() {
+                var newFuelLog = new FuelLog;
+                var i = 0;
+                for(key in newFuelLog) {
+                    if(key == 'showLog') {
+                        break;
+                    }
+                    else(newFuelLog[key] = inputs[i].value);
+                    inputs[i].value = "";
+                    i++;
+                }
+                filledFuelArr.push(newFuelLog);
+                console.log(filledFuelArr);
+                totalFuelFilled();
+                remainingDistance();
+                showFuelLog();
+            }
+            function showFuelLog() {
+                var parent = document.getElementById("fuel-log");
+                var p = document.createElement("p");
+                p.innerHTML = filledFuelArr[filledFuelArr.length - 1].showLog();
+                parent.appendChild(p);
+                
+            }
+            function showTripsLog() {
+                var parent = document.getElementById("trips-log");
+                var p = document.createElement("p");
+                p.innerHTML = trips[trips.length - 1].showLog();
+                parent.appendChild(p);
+                
+            }
+            function totalDistanceTravelled() {
+                var total = 0;
+                for(i = 0; i < trips.length; i++) {
+                    total = total + Number(trips[i].distance);
+                }
+                
+                paras[3].innerHTML = total;
+            }
+            function remainingDistance() {
+                var totalFuel = paras[1].innerHTML;
+                var totalDistanceTravelled = paras[3].innerHTML;
+                var mileage = 20;
+                var remaining = (Number(totalFuel) * Number(mileage)) - Number(totalDistanceTravelled);
+                paras[5].innerHTML = remaining;
+            }
+            function totalFuelFilled() {
+                var total = 0;
+                for(var i = 0; i < filledFuelArr.length; i++) {
+                    total = total + Number(filledFuelArr[i].fuel);
+                }
+                paras[1].innerHTML = total;
+            }
+            function tripInput() {
+                var newTrip = new TripArr;
+                var i = 2;
+                for(key in newTrip) {
+                    if(key != "showLog") {
+                        newTrip[key] = inputs[i].value;
+                        
+                    }
+                    else break;
+                    inputs[i].value = "";
+                    i++;
+                }
+                console.log(newTrip);
+                trips.push(newTrip);
+                totalDistanceTravelled();
+                remainingDistance();
+                showTripsLog();
+            }
+        </script>
+    </body>
+</html>

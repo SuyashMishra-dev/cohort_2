@@ -1,0 +1,114 @@
+    <html>
+        <head>
+            <title>
+                Registraton Form
+            </title>
+
+        </head><meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container p-5">
+                <div class="row">
+                        <div class="col" Id="box_1">
+                                <p>NAME</p>
+                                <input type="text" id="nameInput">
+                                <p id="nameAlert" class="text-danger"></p>
+                                <p id="labelEmail">EMAIL</p>
+                                <input type="text" id="emailInput">
+                                <p style="color:red" id="emailAlert"></p>
+                                <p id="labelMobile">MOBILE</p>
+                                <input type="text" id="mobileInput">
+                                <p id="mobileAlert"></p>
+                                <button id="registerButton">REGISTER</button>
+                        </div>
+                        <div class="col p-3 mb-2 bg-dark text-white" id="box_2"style="height: 400px">
+                                <p>Name</p>
+                                <h1 id="outputName">MASAI</h1>
+                                <br />
+                                <p>EMAIL</p>
+                                <p id="outputEmail">email@masaischool.com</p>
+                                <br />
+                                <p>MOBILE</p>
+                                <p id="outputMobile">9876543210</p>
+                        </div>
+                      </div>
+            
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            
+            $('#labelEmail').hide();
+            $('#emailInput').hide();
+            $('#labelMobile').hide();
+            $('#mobileInput').hide();
+            $('#registerButton').hide();
+            $('#box_2').hide();
+
+            $('#nameInput').keyup(function() {
+            $("#outputName").text($(this).val());
+            var namealert = $('#nameInput').val();
+            if(namealert.length < 3 || namealert.length > 10) {
+                $("#nameAlert").text('Enter a valid name');
+                $('#labelEmail').hide(1000);
+                $('#emailInput').hide(1500);
+                // $('#nameAlert').show(2000)
+
+            }
+            else {
+                $("#nameAlert").text(' ');
+                $('#labelEmail').show(900);
+                $('#emailInput').show(1000);
+                $('#nameAlert').hide(2000)
+            }
+        });
+
+        $('#emailInput').keyup(function() {
+            $("#outputEmail").text($(this).val());
+            var emailId= $('#emailInput').val();
+            var atPostion=emailId.indexOf("@");
+            var dotPostion=emailId.indexOf(".");
+            if(atPostion < 2 || dotPostion < atPostion+2 || dotPostion+2 >= emailId.length) {
+                $("#alertEmail").text('Enter a valid email ID');
+                $('#labelMobile').hide(1000);
+                $('#mobileInput').hide(1500);
+            }
+            else {
+                $("#emailAlert").text(' ');
+                $('#labelMobile').show(900);
+                $('#mobileInput').show(1000);
+            }
+        });
+
+         
+            $('#mobileInput').keyup(function() {           
+        $("#outputMobile").text($(this).val());
+            var mobilealert = $('#mobileInput').val();
+            if(mobilealert.length < 10 || mobilealert.length > 10) {
+                $("#mobileAlert").text('Enter a valid number');
+                $('#registerButton').hide(1000);
+                // $('#nameAlert').show(2000)
+
+            }
+            else {
+                $("#mobileAlert").text(' ');
+                $('#registerButton').show(900);
+            }   
+            });
+    
+         
+            // $("#outputMobile").text($("#mobileInput").val());
+			// });
+
+            $("#registerButton").click(function () {
+            $("#box_2").show(500);
+
+            $("#box_1").show(500);
+        });
+
+        </script>   
+    </body>
+    </html>
