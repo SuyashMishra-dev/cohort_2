@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Content Manipulation</title>
+</head>
+<body>
+	<h1 id="firstname">Hello</h1>
+	<div id="lastname">MASAI</div>
+	<p id="fullname">School</p>
+	<hr/>
+	<button id="firstName">FIRSTNAME</button>
+	<button id="lastName">LASTNAME</button>
+	<button id="firstNameName">FIRSTNAME NAME</button>
+	<button id="default">RESET DEFAULTS</button>
+	 <!-- Clicking the buttons should show the values in the respective place holders
+    the reset button should set the values to the original values -->
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$("#firstName").click(function(){
+			$("#firstname").text("First Name:- Madhu")
+		});
+		
+		$("#lastName").click(function(){
+			$("#lastname").text("Last Name:- Kumari")
+		});
+
+		$("#firstNameName").click(function(){
+			$("#fullname").text("Full Name:- Madhu Kumari")
+		});
+		$("#default").click(function(){
+			$("#firstname").text("Hello")
+			$("#lastname").text("MASAI")
+			$("#fullname").text("School")
+		});
+	</script>
+   </body>
+</html>
