@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Number Sums</title>
+</head>
+
+<body>
+    <label for="">Input</label>
+    <input id="input" type="text">
+
+    <button id="evenPosition">Even Position Sum</button>
+    <button id="oddPosition">Odd Position Sum</button>
+    <button id="evenSum">Even Sum</button>
+    <button id="oddSum">Odd Sum</button>
+    <button id="singleDigit">Single Digit Sum</button>
+    <button id="doubleDigit">Double Digit Sum</button>
+
+    <script type="text/javascript">
+
+        var inputValue;
+        var evenPositionSum = document.getElementById('evenPosition');
+        var oddPositionSum = document.getElementById('oddPosition')
+        var evenSum = document.getElementById('evenSum')
+        var oddSum = document.getElementById('oddSum')
+        var singleDigit = document.getElementById('singleDigit')
+        var doubleDigit = document.getElementById('doubleDigit')
+
+        evenPositionSum.addEventListener('click', sumEvenPosition)
+        // evenSum.addEventListener('click', sumEven);
+
+        var textInput = []
+
+        function inputArray() {
+            inputValue = document.getElementById('input').value;
+            for (var i = 0; i <= inputValue.length - 1; i++) {
+                textInput += [i]
+                console.log(textInput)
+            }
+        }
+
+        function sumEvenPosition() {
+            inputArray()
+            for (var i = 0; i <= inputArray.length - 1; i++) {
+                if (i % 2 == 0) {
+                    inputArray[i]
+                }
+                console.log('hi')
+            }
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
