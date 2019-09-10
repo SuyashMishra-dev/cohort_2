@@ -2,9 +2,119 @@
     <head>
         <title>Unix</title>
         <style>
+        .linusBox {
+            margin-left: 800px;
+            margin-top: 20px; 
+            width: 400px; 
+            height: 520px; 
+            background:lightgrey; 
+            text-align: center;
+            padding-top: 20px
+        }
+        .salKhanBox {
+            margin-left: 300px;
+            padding-top: 50px;
+            float: left;
+        }
+        .kenBox {
+            background: orangered;
+            margin-top: 350px;
+            height: 150px
+        }
+        .dennisBox {
+            padding: 5px;
+            float: right;
+            margin-top: -120px;
+        }
+        #marginPad {
+            padding-left: 350px;
+            margin-top: -200px;
+        }
+        #leftPad {
+            padding-left: 350px;
+        }
+        .color-white {
+            color: white
+        }
+        .color-blue {
+            color: darkblue
+        }
+        .color-red {
+            color: red
+        }
         </style>
     </head>
     <body>
-       <button>Create Page</button>
+       <button onclick="showContent()">Create Page</button>
     </body>
+    <script>
+        function showContent(){
+            var div1 = document.createElement('div');
+            var bodyElem = document.querySelector('body');
+            bodyElem.appendChild(div1);
+
+            div1.setAttribute('class','linusBox')
+            var linusImg = document.createElement('img');
+            var linusImgClass = document.querySelector('div');
+            linusImg.setAttribute('src' , 'https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/linus.jpg')
+            linusImgClass.appendChild(linusImg);  
+
+            var head1 = document.createElement('h1')
+            head1.textContent = 'Linus Torvalds'
+            var para1 = document.createElement('h3')
+            para1.textContent = 'The Creator of Linux & Github';
+            var div1Elem = document.querySelector('div')
+            div1Elem.appendChild(head1)
+            div1Elem.appendChild(para1)
+
+            var div2 = document.createElement('div')
+            bodyElem.appendChild(div2)
+            div2.setAttribute('class','salKhanBox')
+            var salImg = document.createElement('img')
+            var salImgClass = document.querySelector('.salKhanBox')
+            salImg.setAttribute('src','https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/khan.jpg')
+            salImgClass.appendChild(salImg)
+
+            var head2 = document.createElement('h1')
+            head2.textContent = 'Sal Khan'
+            head2.setAttribute('id','marginPad')
+            var para2 = document.createElement('p')
+            para2.innerHTML = 'Salman khan is the founder of khan academy which has a mission of providing <br> a free world class education for everyone,anywhere.' 
+            para2.setAttribute('id','leftPad')
+            var div2Elem = document.querySelector('.salKhanBox')
+            div2Elem.appendChild(head2)
+            div2Elem.appendChild(para2)
+
+            var div3 = document.createElement('div');
+            bodyElem.appendChild(div3);
+            div3.setAttribute('class','kenBox')
+            var div3_1 = document.createElement('div');
+            div3.appendChild(div3_1);
+            var ken = document.createElement('h1');
+            var kenName = document.querySelector('.kenBox');
+            ken.textContent="Ken Thompson"
+            ken.setAttribute('class','color-white')
+            kenName.appendChild(ken);
+            var kenIntro = document.createElement('p');
+            var kenPara = document.querySelector('.kenBox');
+            kenIntro.textContent="Designed and Implemented the original Unix operationg system"
+            kenPara.appendChild(kenIntro);
+            
+            var div3_2 = document.createElement('div');
+            div3.appendChild(div3_2);
+            var dennis = document.createElement('h1');
+            div3_2.setAttribute('class','dennisBox')
+            var dennisName = document.querySelector('.dennisBox');
+            dennis.textContent="Dennis Ritchie"
+            dennis.setAttribute('class','color-white')
+            dennisName.appendChild(dennis);
+            var dennisIntro = document.createElement('p');
+            var dennisPara = document.querySelector('.dennisBox');
+            dennisIntro.textContent="The creator of C programming language"
+            dennisPara.appendChild(dennisIntro);
+
+
+ 
+        }
+    </script>
 </html>
