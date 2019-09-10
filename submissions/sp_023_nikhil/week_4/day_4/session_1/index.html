@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <style type="text/css">
+    .table {
+      border: 1px solid black;
+      /* width: 100px;
+    height: 100px; */
+    }
+  </style>
+
+
+  <title> Week 4 Day 4Coding 1 </title>
+</head>
+
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button id="printJSON"> Click here to print the JSON object </button>
+  <div id="container1"> </div>
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input id="value1" type="text" />
+  <input id="value2" type="text" />
+  <button id="calculate"> Calculate </button>
+  <p id="output">Output:</p>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Multiplication Table Generator</h1>
+  <table></table>
+  <input id="tableSize" type="text" />
+  <button id="btnTable"> Generate Tables </button>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <table></table>
+  <input type="text" />
+  <button> Generate CAPS and small </button>
+  <script>
+    //DO NOT EDIT ANY CODE BELOW THIS LINE 
+    var items = [
+      {
+        name: "Water",
+        price: 20,
+        id: 0929
+      },
+      {
+        name: "Rice",
+        price: 50,
+        id: 2323
+      },
+      {
+        name: "Banana",
+        price: 90,
+        id: 2323
+      },
+      {
+        name: "Water",
+        price: 20,
+        id: 0929
+      }
+    ]
+
+    var mutiply = []
+    // Do NOT EDIT ANY CODE ABOVE THIS LINE 
+    //Place all your code below this line!
+
+    var printJson = document.getElementById('printJSON');
+    var mainBody = document.querySelector('body')
+    var container1 = document.getElementById('container1');
+    var calculate = document.getElementById('calculate');
+
+    printJson.addEventListener('click', objectToJson);
+
+
+    function objectToJson() {
+      var json = JSON.stringify(items);
+
+      for (key in items) {
+        var para1 = document.createElement('p');
+        var para2 = document.createElement('p');
+        para1.textContent = items[key]["name"];
+        para2.textContent = items[key]["price"];
+
+        container1.appendChild(para1)
+        container1.appendChild(para2)
+      }
+    }
+
+    function exponent(x, y, callBack) {
+      var exp = x ** y;
+      return callBack(exp)
+    }
+
+    var display = function (input) {
+      var msg = "The exponent is :" + input;
+      return msg
+    }
+
+    calculate.addEventListener('click', function () {
+      var x = document.querySelector('#value1').value;
+      var y = document.querySelector('#value2').value;
+      var output = document.querySelector('#output');
+      var result = exponent(x, y, display);
+      output.innerHTML = result;
+    });
+    //----------------W4.4.1_3----------------------
+    var btnTable = document.querySelector('#btnTable');
+    btnTable.addEventListener('click', genTable);
+
+    function genTable() {
+      var table = document.createElement('table');
+      table.setAttribute('class', 'table')
+      mainBody.appendChild(table)
+      var rowHeading = document.createElement('tr');
+      table.appendChild(rowHeading);
+      var tableLimit = document.querySelector('#tableSize').value
+
+      for (var i = 1; i <= 5; i++) {
+        var tableHead = document.createElement('th');
+        tableHead.textContent = '*' + i;
+        rowHeading.appendChild(tableHead)
+        var count = i;
+        
+      }
+      
+      
+      for (var i = 1; i <= tableLimit; i++) {
+        var mutiply2 = mutiply.push(tableLimit)
+        var rowData = document.createElement('tr');
+        table.appendChild(rowData)
+        var tableData = document.createElement('td');
+        tableData.textContent = i;
+        rowData.appendChild(tableData);
+        console.log(mutiply2)
+      }
+      for(var i = 2; i<=5; i++) {
+        var tableData2 = document.createElement('td')
+        tableData2.textContent = i * mutiply2;
+        rowData.appendChild(tableData2) 
+        //console.log()
+      }
+    }
+
+  </script>
+</body>
+
+</html>
