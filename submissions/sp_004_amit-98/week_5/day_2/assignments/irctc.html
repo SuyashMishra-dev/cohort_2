@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap" rel="stylesheet">
+
+
+  <title>IRCTC Next Generation eTicketing System</title>
+  <style>
+    .li-12 {
+      font-size: 12px;
+      margin-right: 6px;
+    }
+
+    .li-14 {
+      font-size: 14px;
+    }
+
+    #bgdiv {
+      background: url('http://via.placeholder.com/1920x1080') no-repeat center center fixed;
+      position: relative;
+    }
+
+    #irail {
+      font-size: 60px;
+      font-weight: bold;
+    }
+
+    #contents {
+      font-size: 20px;
+      margin-top: -300px;
+    }
+
+    .rotate-90 {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+      color: darkblue
+    }
+
+    .round-btn-white {
+      font-family: Raleway-SemiBold;
+      font-size: 12px;
+      color: darkblue;
+      line-height: 10px;
+      border: 1px solid darkblue;
+      border-radius: 40px;
+      background: transparent;
+    }
+
+    .round-btn-blue {
+      font-family: Raleway-SemiBold;
+      font-size: 13px;
+      font-weight: bold;
+      color: white;
+      line-height: 10px;
+      border: 1px solid darkblue;
+      border-radius: 40px;
+      background: darkblue;
+    }
+
+    .bg-darkblue {
+      background: darkblue;
+      border-radius: 0px;
+    }
+
+    .col-darkblue {
+      color: darkblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2 mt-3">
+        <div class="col-md-4">
+          <img src=" http://via.placeholder.com/100" class="card-img img-fluid" alt="...">
+        </div>
+      </div>
+      <div class="col-7 offset-1">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item li-12">
+                <a class="nav-link" href="#">07-Sep-2019[17:04:55]</a>
+              </li>
+              <li class="nav-item li-12">
+                <a class="nav-link text-danger" href="#">ALERTS</a>
+              </li>
+              <li class="nav-item li-12">
+                <a class="nav-link" href="#">A<sup>-</sup></a>
+              </li>
+              <li class="nav-item li-12">
+                <a class="nav-link" href="#">A</a>
+              </li>
+              <li class="nav-item li-12">
+                <a class="nav-link" href="#">A<sup>+</sup></a>
+              </li>
+              <li class="nav-item li-12">
+                <a class="nav-link" href="#">CONTACT US</a>
+              </li>
+              <li class="nav-item li-12">
+                <a class="nav-link" href="#">REGISTER</a>
+              </li>
+              <li class="nav-item li-12">
+                <a class="nav-link text-danger font-weight-bold" href="#">LOGIN</a>
+              </li>
+              <li class="nav-item li-12">
+                <a class="nav-link" href="#">AGENT LOGIN</a>
+              </li>
+              <li class="nav-item li-12">
+                <a class="nav-link" href="#">हिंदी</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="col-2 mt-3">
+        <div class="col-md-4 offset-8">
+          <img src=" http://via.placeholder.com/100" class="card-img img-fluid" alt="...">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-10 offset-1" style="margin-top: -30px">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a href="#" class="btn btn-lg glyphicon glyphicon-home text-secondary mx-2" style="font-size:15px">
+                </a>
+              </li>
+              <li class="nav-item  mt-3">
+                <div class="dropdown show">
+                  <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn round-btn-white">IRCTC</button>
+                    <button style="margin-left: -17px" type="button" class="btn round-btn-blue">Exclusive</button>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">IRCTC IMudra</a>
+                    <a class="dropdown-item" href="#">Digital Magazine</a>
+                    <a class="dropdown-item" href="#">Trains at the Glance</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark li-13" href="#">TRAINS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark li-13" href="#">HOLIDAYS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark li-13" href="#">STAYS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark li-13" href="#">FLIGHTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark li-13" href="#">LOYALITY</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark li-13" href="#">MEALS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark li-13" href="#">PROMOTIONS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark li-13" href="#">AT STATIONS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark li-13" href="#">IRCTC eWallet</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark li-13" href="#">MORE</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12" id="bgdiv" style="height: 650px;">
+        <div class="container-fluid " style="width: 86%;">
+          <div class="card col-sm-8 col-md-8 col-lg-3 mt-5">
+            <div class="text-center display-3 mt-2" style="font-family: 'Chilanka', cursive;">BOOK</div>
+            <h3 class="text-center" style="margin-top: -15px; font-family: 'Poiret One', cursive;">YOUR TICKET</h3>
+            <div class="col-md-4 offset-4 mb-4">
+              <div class="col-xs-2 col-sm-2 col-md-10 col-lg-10">
+                <img src=" http://via.placeholder.com/50" class=" card-img img-fluid" alt="...">
+              </div>
+            </div>
+            <input id="searchFrom" class="form-control mb-1 col-darkblue" type="text" placeholder="From*"
+              aria-label="Search">
+            <div><i class="fas fa-exchange-alt rotate-90" style="margin-left:160px"></i></div>
+            <input id="searchTo" class="form-control mb-4 col-darkblue" type="text" placeholder="To*"
+              aria-label="Search">
+            <input id="searchDate" class="form-control mb-4 col-darkblue" type="date" placeholder=""
+              aria-label="Search">
+            <div class="form-group ">
+              <select class="form-control mb-4 col-darkblue" id="sel1">
+                <option>All Classes</option>
+                <option>Anibhuti Class(EA)</option>
+                <option>AC First Class(1A)</option>
+                <option>Exec. Chair Car(EC)</option>
+                <option>AC 2 Tier(2A)</option>
+                <option>First Class(FC))</option>
+                <option>AC 3 Tier(3A)</option>
+                <option>AC 3 Economy(3E)</option>
+                <option>AC Chair Car(CC)</option>
+                <option>Sleeper(SL)</option>
+                <option>Second Sitting(2S)</option>
+              </select>
+
+              <div class="form-check">
+                <input type="checkbox">
+                <label>Flexible with date</label><br>
+                <input type="checkbox">
+                <label>Divyaang Concession</label> <span> <input type="checkbox" class="ml-4">
+                  <label>Journalist Concession</label></span>
+              </div>
+
+            </div>
+            <div class="container-fluid mb-4">
+              <button class="btn btn-primary col-12 font-weight-bold bg-darkblue">Find trains</button>
+            </div>
+          </div>
+          <div class="row mt-lg-5">
+            <div class="col-md-10 offset-1 my-lg-5  text-white" id="irail">
+
+            </div>
+            <div class="col-md-10 offset-1 my-lg-5  text-white" id="irail">
+
+            </div>
+            <div class="col-md-10 offset-2 my-lg-5 text-white" id="irail">
+              INDIAN RAILWAYS
+              <div class="col-md-10 offset-1 my-lg-5 text-white" id="contents">
+                Safety | Security | Punctuality
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="container-fluid " style="width: 84%;">
+          <div class="row">
+            <div class="card col-sm-8 col-md-8 col-lg-3 mt-2 " style="margin-left: -3px">
+              <div class="form-group mt-4">
+                <button class="btn btn-primary col-5 ml-3 font-weight-bold bg-darkblue">PNR STATUS</button>
+                <button class="btn btn-primary col-5 offset-1 font-weight-bold bg-darkblue">CHARTS/VACANCY</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid " style="width: 84%; height:110%;">
+          <div class="row">
+            <div class="card card col-sm-8 col-md-8 col-lg-3 mt-2 " style="margin-left: -3px">
+              <div class="mt-2">
+              </div>
+              <div class="border border-dark rounded text-danger font-weight-bold p-2">
+                Lucky Draw Scheme for users opting BHIM/UPI Payment mode
+              </div>
+              <div class="mb-2">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-8 mt-4 offset-2">
+        <div class="col-md-11 offset-1">
+          <img src=" http://via.placeholder.com/350x65" class="card-img img-fluid" style="height: 300px" alt="...">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-8 mt-3 offset-3">
+        <div class="col-md-10 display-2 text-center">
+          Have you not found the right one?<br>
+          Find a service suitable for you here.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2 mt-3 offset-3">
+        <div class="col-md-5 offset-4">
+          <img src=" http://via.placeholder.com/75" class="card-img img-fluid rounded-circle " alt="...">
+          <div class="text-center"> FLIGHTS</div>
+        </div>
+      </div>
+      <div class="col-2 mt-3" style="margin-left: -50px">
+        <div class="col-md-5 offset-2">
+          <img src=" http://via.placeholder.com/75" class="card-img img-fluid rounded-circle" alt="...">
+          <div class="text-center"> STAY</div>
+        </div>
+      </div>
+      <div class="col-2 mt-3" style="margin-left: -50px">
+        <div class="col-md-5 offset-2">
+          <img src=" http://via.placeholder.com/75" class="card-img img-fluid rounded-circle" alt="...">
+          <div class="text-center"> RAIL DRISHTI</div>
+        </div>
+      </div>
+      <div class="col-2 mt-3" style="margin-left: -50px">
+        <div class="col-md-5 offset-2">
+          <img src=" http://via.placeholder.com/75" class="card-img img-fluid rounded-circle" alt="...">
+          <div class="text-center"> E-CATERING</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row mt-3">
+      <div class="col-2 mt-3 offset-3">
+        <div class="col-md-5">
+          <img src=" http://via.placeholder.com/75" class="card-img img-fluid rounded-circle" alt="...">
+          <div class="text-center"> HOLIDAY PACKAGES</div>
+        </div>
+      </div>
+      <div class="col-2 mt-3" style="margin-left: -80px">
+        <div class="col-md-5">
+          <img src=" http://via.placeholder.com/75" class="card-img img-fluid rounded-circle" alt="...">
+          <div class="text-center"> TOURIST TRAIN</div>
+        </div>
+      </div>
+      <div class="col-2 mt-3" style="margin-left: -80px">
+        <div class="col-md-5">
+          <img src=" http://via.placeholder.com/75" class="card-img img-fluid rounded-circle" alt="...">
+          <div class="text-center"> HILL RAILWAYS</div>
+        </div>
+      </div>
+      <div class="col-2 mt-3" style="margin-left: -80px">
+        <div class="col-md-5">
+          <img src=" http://via.placeholder.com/75" class="card-img img-fluid rounded-circle" alt="...">
+          <div class="text-center"> CHARTER TRAIN</div>
+        </div>
+      </div>
+      <div class="col-2 mt-3" style="margin-left: -80px">
+        <div class="col-md-5">
+          <img src=" http://via.placeholder.com/75" class="card-img img-fluid rounded-circle" alt="...">
+          <div class="text-center"> GALLERY</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-7 mt-4 offset-3">
+        <div class="col-md-12">
+          <img src=" http://via.placeholder.com/350x65" class="card-img img-fluid" style="height: 100px" alt="...">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="display-2 text-center mt-4">HOLIDAYS</div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 offset-2">
+        <div class="col-10">
+          <div class="card">
+            <img class="card-img-top" src="http://via.placeholder.com/100" class="img-fluid" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Maharaja's Express</h4>
+              <p class="card-text">Best deals in International Holiday packages, handpicked by IRCTC,
+                for Thailand, Dubai, Sri Lanka, Hong Kong, China, Macau, Bhutan, Nepal, U.K., Europe, USA,
+                Australia etc. The packages are inclusive of sightseeing, meals, visa charges and overseas
+                medical insurance to give you a hassle-free and memorable experience.</p>
+              <a href="#" class="font-weight-bold text-dark">More Info</a> &nbsp;<i class="fa fa-arrow-right"
+                style="font-size:20px;color:red"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="col-10">
+          <div class="card">
+            <img class="card-img-top" src="http://via.placeholder.com/100" class="img-fluid" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">International Packages</h4>
+              <p class="card-text">Best deals in International Holiday packages, handpicked by IRCTC,
+                for Thailand, Dubai, Sri Lanka, Hong Kong, China, Macau, Bhutan, Nepal, U.K., Europe, USA,
+                Australia etc. The packages are inclusive of sightseeing, meals, visa charges and overseas
+                medical insurance to give you a hassle-free and memorable experience.</p>
+              <a href="#" class="font-weight-bold text-dark">More Info</a> &nbsp;<i class="fa fa-arrow-right"
+                style="font-size:20px;color:red"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="col-10">
+          <div class="card">
+            <img class="card-img-top" src="http://via.placeholder.com/100" class="img-fluid" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Domestic Air Packages</h4>
+              <p class="card-text">
+                Best deals in International Holiday packages, handpicked by IRCTC,
+                for Thailand, Dubai, Sri Lanka, Hong Kong, China, Macau, Bhutan, Nepal, U.K., Europe, USA,
+                Australia etc. The packages are inclusive of sightseeing, meals, visa charges and overseas
+                medical insurance to give you a hassle-free and memorable experience.</p>
+              <a href="#" class="font-weight-bold text-dark">More Info</a> &nbsp;<i class="fa fa-arrow-right"
+                style="font-size:20px;color:red"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col-md-3 offset-2">
+        <div class="col-10">
+          <div class="card">
+            <img class="card-img-top" src="http://via.placeholder.com/100" class="img-fluid" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Maharaja's Express</h4>
+              <p class="card-text">Best deals in International Holiday packages, handpicked by IRCTC,
+                for Thailand, Dubai, Sri Lanka, Hong Kong, China, Macau, Bhutan, Nepal, U.K., Europe, USA,
+                Australia etc. The packages are inclusive of sightseeing, meals, visa charges and overseas
+                medical insurance to give you a hassle-free and memorable experience.</p>
+              <a href="#" class="font-weight-bold text-dark">More Info</a> &nbsp;<i class="fa fa-arrow-right"
+                style="font-size:20px;color:red"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="col-10">
+          <div class="card">
+            <img class="card-img-top" src="http://via.placeholder.com/100" class="img-fluid" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">International Packages</h4>
+              <p class="card-text">Best deals in International Holiday packages, handpicked by IRCTC,
+                for Thailand, Dubai, Sri Lanka, Hong Kong, China, Macau, Bhutan, Nepal, U.K., Europe, USA,
+                Australia etc. The packages are inclusive of sightseeing, meals, visa charges and overseas
+                medical insurance to give you a hassle-free and memorable experience.</p>
+              <a href="#" class="font-weight-bold text-dark">More Info</a> &nbsp;<i class="fa fa-arrow-right"
+                style="font-size:20px;color:red"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="col-10">
+          <div class="card">
+            <img src="https://via.placeholder.com/300x600" style="height: 560px" class="img-fluid" alt="Card image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt-5" style="height: 250px;background: lightgrey">
+    <div class="row">
+      <div class="col-2 offset-2 mt-5 text-dark font-weight-bold">
+        <div>General Information</div><br>
+        <div>Important Information</div><br>
+        <div>Agents</div><br>
+        <div>Enquiries</div>
+      </div>
+      <div class="col-2  mt-5 text-dark font-weight-bold">
+        <div>How To</div><br>
+        <div>IRCTC Official App</div><br>
+        <div>Advertise with us</div><br>
+        <div>Refund Rules</div>
+      </div>
+      <div class="col-2  mt-5 text-dark font-weight-bold">
+        <div>IRCTC eWallet</div><br>
+        <div>IRCTC Loyality Program</div><br>
+        <div>About us</div><br>
+        <div>IRCTC Zone</div>
+      </div>
+      <div class="col-2 mt-5 text-dark font-weight-bold">
+        <div>For Newly Migrated Agents</div><br>
+        <div>Important Information</div><br>
+        <div>Mobile Zone</div><br>
+        <div>Integration Policy</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-7 border border-secondary offset-2 mt-2">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2 offset-4 mt-2">
+        <div class="col-md-3 offset-7">
+          <img src="https://www.pngfind.com/pngs/m/8-81787_instagram-facebook-icon-facebook-gray-circle-logo-hd.png"
+            class="card-img img-fluid rounded-circle " alt="...">
+        </div>
+      </div>
+      <div class="col-2 mt-2" style="margin-left: -100px">
+        <div class="col-md-3">
+          <img src="https://umsu.ca/wp-content/uploads/2017/07/black-and-white-twitter-icon-transparent_2372885.png"
+            class="card-img img-fluid rounded-circle " alt="...">
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid mb-4">
+      <div class="row">
+        <div class="col-8 mt-5">
+          <div class="col-md-12 offset-4">
+            <img src="https://www.irctc.co.in/nget/assets/images/security.png" class=" img-fluid" alt="...">
+          </div>
+        </div>
+        <div class="col-4 mt-5">
+          <div class="col-md-12">
+            <div>Copyright @2019-www.irctc.co.in.All Rights Reserved</div>
+            <div class="offset-3">Designed and Hosted by <span class="text-primary font-weight-bold"> AMIT</span> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  </script>
+</body>
+
+</html>
