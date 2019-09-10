@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row m-5">
+                <div class="col-lg-4 offset-lg-2">
+                    <form id="login-form">
+                        <p id="name-label" class="mb-2">NAME</p>
+                        <input type="text" id="name-input" class="mb-2 form-control">
+                        <p id="name-warning" class="mb-2">Name should be 3 to 10 characters wide</p>
+                        <p id="email-label" class="mb-2">EMAIL</p>
+                        <input type="text" id="email-input" class="mb-2 form-control">
+                        <p id="email-warning" class="mb-2">Enter a Valid Email ID</p>
+                        <p id="mobile-label" class="mb-2">MOBILE</p>
+                        <input type="text" id="mobile-input" class="mb-2 form-control">
+                        <p id="mobile-warning" class="mb-2">Phone number should be 10 digits long</p>
+                        <a id="register-button" type="button" class="btn btn-dark text-white my-lg-2">REGISTER</a>
+                    </form>
+                </div>
+                <div class="col-lg-4 bg-dark" id="output-block">
+                    <h2 class="text-white">NAME</h2>
+                    <p class="text-white" id="output-name"></p>
+                    <h2 class="text-white">EMAIL</h2>
+                    <p class="text-white" id="output-email"></p>
+                    <h2 class="text-white">MOBILE</h2>
+                    <p class="text-white" id="output-mobile"></p>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            var isValidName = true;
+            var isValidMobile = true;
+            var isValidEMail = false;
+            var animTime = 500;
+            
+            $('#name-warning').hide();
+            $('#email-label').hide();
+            $('#email-input').hide();
+            $('#email-warning').hide();
+            $('#mobile-label').hide();
+            $('#mobile-input').hide();
+            $('#mobile-warning').hide();
+            $('#register-button').hide();
+            $('#output-block').hide();
+            
+            $('#name-input').keyup(function() {
+                if(($(this).val().length < 3) || ($(this).val().length > 10)) {
+                    isValidName = false;
+                    $('#name-warning').show(animTime);
+                    $('#email-label').hide(animTime);
+                    $('#email-input').hide(animTime);
+                    $('#email-warning').hide(animTime);
+                }
+                else isValidName = true;
+                
+                if(isValidName) {
+                    $('#name-warning').hide(animTime);
+                    $('#email-label').show(animTime);
+                    $('#email-input').show(animTime);
+                }
+            })
+
+            $('#email-input').keyup(function() {
+                var emailInput = $(this).val();
+                for(var i = 0; i < emailInput.length; i++) {
+                    if(emailInput[i] == '@') {
+                        var atPos = i;
+                        for(var j = i+1; j < emailInput.length; j++) {
+                            console.log(j);
+                            if(emailInput[j] == '.') {
+                                var dotPos = j;
+                                isValidEMail = true;
+                            }
+                        }
+                    } 
+                }
+
+                if(isValidEMail) {
+                    $('#email-warning').hide(animTime);
+                    $('#mobile-label').show(animTime);
+                    $('#mobile-input').show(animTime);
+                    if((emailInput[atPos] == '@') && (emailInput[dotPos] == '.')) {
+                        isValidEMail = false;
+                    }
+                }
+                else if(!isValidEMail) {
+                    
+                    $('#email-warning').show(animTime);
+                    $('#mobile-label').hide(animTime);
+                    $('#mobile-input').hide(animTime);
+                }
+            })
+
+            $('#mobile-input').keyup(function() {
+                if($(this).val().length < 10) {
+                    isValidMobile = false;
+                }
+                else isValidMobile = true;
+
+                if(isValidMobile) {
+                    $('#mobile-warning').hide(animTime);
+                    $('#register-button').show(animTime);
+                }
+                else if(!isValidMobile) {
+                    $('#mobile-warning').show(animTime);
+                }
+            })
+
+            $('#register-button').click(function() {
+                $('#login-form').hide(animTime);
+                $('#output-block').show(animTime);
+                $('#output-name').text($('#name-input').val());
+                $('#output-email').text($('#email-input').val());
+                $('#output-mobile').text($('#mobile-input').val());
+            })
+        </script>
+    </body>
+</html>

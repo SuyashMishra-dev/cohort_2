@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    p {
+      white-space: pre-line;
+    }
+    </style>
+  </head>
+<body>
+  <!-- FSD.W4.3.1_1 !-->
+  <h1>Click the button to add a new customer!</h1>
+
+      <label for = "firstName">firstName</label>
+      <br>
+      <input id="firstName" type="text" name = "firstName" class = "personInput"/>
+      <br>
+      <label for = "lastName">lastName</label>
+      <br>
+      <input id="lastName" type="text" name = "lastName" class = "personInput"/>
+      <br>
+      <label for = "dateOfBirth">dateOfBirth</label>
+      <br>
+      <input id="dateOfBirth" type="text" name = "dateOfBirth" class = "personInput"/>
+      <br>
+      <label for = "balance">balance </label>
+      <br>
+      <input id="balance" type="text" name = "balance" class = "personInput"/>
+      <br>
+      <label for = "accountNumber">accountNumber</label>
+      <br>
+      <input id="accountNumber" type="text" name = "accountNumber" class = "personInput"/>
+      <br>
+      <label for = "sharedAccountHolders">sharedAccountHolders</label>
+      <br>
+      <input id="sharedAccountHolders" type="text" name = "sharedAccountHolders" class = "personInput"/>
+      <br>
+      <button onclick="addCustomer()">Add customer</button>
+
+      
+      
+  <!-- FSD.W4.3.1_3 !-->
+  <h1> Click here to print all customers! <h1>
+  <button onclick="printCustomer()">Print Customers</button>  
+    <div id="outputContainer"> </div>
+  
+
+
+  <script>
+    function Customer(firstName, lastName, dateOfBirth, balance, accountNumber, sharedAccountHolders){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.balance = balance;
+        this.accountNumber = accountNumber;
+        this.sharedAccountHolders = sharedAccountHolders;
+
+        this.getData = function(){
+          var output = " " ;
+          for(key in this){
+            output += document.getElementById(key).name + ":" + this[key] +"\n"
+            if (key == "sharedAccountHolders") 
+            break;
+          }
+          return output;
+        }
+        
+    }
+
+    customerData = []
+
+    function addCustomer(){
+      var inputData = document.querySelectorAll(".personInput");
+      var newCustomer = new Customer();
+      var i = 0 
+      
+      for (key in newCustomer){
+        if (newCustomer[key] == undefined){
+          if(key != "sharedAccountHolders"){
+            newCustomer[key] = inputData[i].value
+          }
+          else{
+            newCustomer[key] = inputData[i].value.split(":")
+          }
+          inputData[i].value = ""
+          i++
+        }
+      }
+      customerData.push(newCustomer)
+      console.log(customerData)
+    }
+
+    function printCustomer() {
+      var final = document.getElementById('outputContainer');
+      final.innerHTML = '';
+      
+      for ( var i = 0; i < customerData.length; i++) {
+      var display = document.createElement('p');
+      display.textContent = customerData[i].getData();
+      final.appendChild(display);
+      }
+    }
+
+  </script>
+</body>
+</html>
