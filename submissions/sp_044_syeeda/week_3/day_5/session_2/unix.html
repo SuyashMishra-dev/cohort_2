@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>unix</title>
+        <style>
+         .class1 {
+            background: pink;
+             height: 300px; 
+             width: 450px; 
+             float: left; 
+             margin-left: 650px; 
+             margin-top: 50px; 
+             clear:left
+          }
+          .class2 {
+            margin-left: 20px;
+            color: black;
+            font: bold;
+            font-size: 20px;
+          }
+          .class3 {
+            color: white;
+            font: bold;
+            font-size: 40px;
+          }
+          .class4 {
+            background: lightsalmon;
+            border: black; 
+            height: 180px;
+            width: 1200px;
+            float:left;
+            clear: left;
+            margin-left: 300px;
+            margin-top: 20px;
+          }
+          .is1 {
+            padding: 20px; 
+            margin-left: 140px;
+          }
+          .font {
+            text-align: center;
+            font-size: larger; 
+            font: bold;
+            color: blue;
+          }
+          .align {
+            text-align: center;
+          }
+          .mleft {
+            margin-left: 400px;
+            clear: left;
+            margin-top: 50px;
+          }
+          .cleft {
+            clear: left;
+            float: left;
+            text-align: left;
+          }
+          .sal {
+            margin-left: 50px;
+            margin-top: 0px;
+            float: left; 
+            color: red;
+            font-size: 40px;
+            font: bold;
+            text-align: left;
+          }
+          .salp {
+            margin-left: 0px;
+            float: left;
+            margin-top: 2px;
+            color: black;
+            font-size: 20px;
+            font: bold;
+          }
+          .ken {
+            float: left;
+            margin-top: 10px;
+            margin-left: 20px;
+          }
+          .den {
+            float: right;
+            margin-top: 10px;
+            margin-right: 20px;
+          }
+          .des {
+            float: left;
+            margin-top: 30px;
+          }
+          .the {
+            float: right;
+            margin-top: 60px;
+          }
+          .pop {
+            background: black;
+            height: 80px;
+            width: 10px;
+            margin-left:600px;
+          }
+          .clearleft {
+            clear: left;
+          }
+        </style>
+    </head>
+    <body> 
+        <button id="unixPage"> Create Page</button>
+
+        <script type="text/javascript">   
+
+        var body = document.querySelector("body");
+        var unix = document.getElementById("unixPage");
+
+        function createPage(){
+          var linus = linuxTor();
+          var sal = salKhan ();
+          var bottom = lastPara();
+        }
+        unix.addEventListener("click",createPage);
+// Linux
+        function linuxTor(){
+          var linux = document.createElement("div");
+          linux.setAttribute("class","class1")
+          body.appendChild(linux)
+          
+          var image = document.createElement("img");
+          image.setAttribute('src','https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/linus.jpg')
+          image.setAttribute("height",'150px');
+          image.setAttribute("width",'130px');
+          image.setAttribute('class','is1')
+          linux.appendChild(image);
+
+          var linux_tor = document.createElement('p')
+          linux_tor.textContent = "Linus Torvalds";
+          linux_tor.setAttribute("class","font")
+          linux.appendChild(linux_tor); 
+
+          var linuxPara = document.createElement('p');
+          linuxPara.textContent = "The creator of Linux & Git";
+          linuxPara.setAttribute("class","align");
+          linux.appendChild(linuxPara); 
+        }
+// Sal Khan
+        function salKhan (){
+          var div1 = document.createElement("div");
+          div1.setAttribute("class", "cleft");
+          body.appendChild(div1);
+
+          var image = document.createElement("img")
+          image.setAttribute("src","https://raw.githubusercontent.com/masai-school/full-stack-dev-1908/master/course/week_1/day_3/resources/images/khan.jpg");
+          image.setAttribute("height",'150px');
+          image.setAttribute("class", "mleft");
+          image.setAttribute("width",'130px');
+          div1.appendChild(image);
+
+          var div2 = document.createElement("div");
+          div2.setAttribute("class", "sal");
+          body.appendChild(div2); 
+          
+          var salp = document.createElement("p");
+          salp.textContent = "Sal Khan";
+          div2.appendChild(salp);
+
+          var salp2 = document.createElement("div");
+          salp2.innerHTML = "Salman Khan is the founder of the Khan Academy which has a mission <br>of providing a free world-class education for anyone, anywhere.";
+          salp2.setAttribute("class", "salp");
+          div2.appendChild(salp2);
+        }
+// Last Para 
+        function lastPara(){
+          var div1 = document.createElement("div");
+          div1.setAttribute("class", "class4");
+          body.appendChild(div1);
+
+          var div2 = document.createElement("div");
+          div1.appendChild(div2);
+
+          var div3 = document.createElement("div");
+          div3.setAttribute("class", "class3 ken");
+          div3.textContent = "Ken Thompson";
+          div2.appendChild(div3);
+
+          var div4 = document.createElement("div");
+          div4.setAttribute("class", "class3 den");
+          div4.textContent = "Dennis Ritche";
+          div2.appendChild(div4);
+
+          var div5 = document.createElement("div");
+          div5.setAttribute("class", "clearleft");
+          div2.appendChild(div5);
+
+          var div6 = document.createElement("div");
+          div6.setAttribute("class", "class2 des");
+          div6.innerHTML = "Designed and Implemented the <br>original Unix operating system ";
+          div5.appendChild(div6);
+
+          var div7 = document.createElement("div");
+          div7.setAttribute("class", "class2 the");
+          div7.innerHTML = "The creator of C Programming Language";
+          div5.appendChild(div7);
+
+          var div8 = document.createElement("div");
+          div8.setAttribute("class", "pop");
+          div5.appendChild(div8);
+        }
+        </script>    
+    </body>
+</html>
