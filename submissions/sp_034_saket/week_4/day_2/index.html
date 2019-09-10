@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <p id="movie1"></p>
+  
+  <button onclick="movieInf()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <p id="movie2"></p>
+  <button onclick="runtime()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button>Add cast member </button>
+  
+
+  <script type="text/javascript">
+  function movieInf(){
+    var movie={
+      name : "Zero Dark Thirty",
+      Director: "Kathryn Bigelow",
+      Writer: "Mark Boal", 
+      Runtime: "157 min",
+      Language: ["English" , "Arabic"], 
+      Stars: ["Jessica Chastain", "Joel Edgerton", "Chris Pratt"]
+    }
+    document.getElementById("movie1").innerHTML="Movie Name: "+ movie.name +'<br>'+ "Director : "+movie.Director +
+    '<br>'+ "Writter : "+movie.Writer +'<br>'+"Duration : "+ movie.Runtime +'<br>'+"Language : "+ movie.Language +
+    '<br>'+"Movie Stars : "+ movie.Stars ;
+  }
+  function runtime(){
+    movieInf();
+    movie.Runtime=157;
+    
+    document.getElementById("movie2").innerHTML=movie.Runtime;
+  }
+  
+  </script>
+</body>
+</html>

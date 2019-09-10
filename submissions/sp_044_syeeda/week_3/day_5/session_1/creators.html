@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <h1> <p id="tag"></p> </h1>
+        <div id="heading">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button onclick="headingH()">Create H1</button>
+        <button onclick="createH3()">Create 2 H3</button>
+        <button onclick="createdivs()">Create DIVS</button>
+        <button onclick="addStudents()">Add Students</button>
+        <button onclick="copyright()">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+
+            function headingH(){
+                var head = document.querySelector('#heading');
+                head.innerHTML = 'MASAI';                
+            }
+
+            function createH3() {
+                var head2 = document.querySelector('#heading');
+                head2.innerHTML = 'A Transformation in education! and Learn to earn, pay when you get.' ;
+            }          
+
+            function createdivs() {
+                for(var i = 1; i<= 10 ; i ++){
+                   var div = document.createElement('div');
+                   div.innerHTML = "Content" + ' ' +  i;
+                   var divs = document.querySelector('div');
+                   divs.appendChild(div);
+               }
+            }
+
+            function changeContent() {
+                var div = document.createElement('div');
+                div.innerHTML = '<ul><li>1</li><li>2</li></ul>';
+                var bodyElem = document.querySelector('body');
+                bodyElem.appendChild(div);
+            }
+
+            function addStudents() {
+                for (var i =0; i< students.length; i++) {
+                var body = document.getElementById('vikings') 
+                var add =document.createElement('li') 
+                add.textContent = students[i];
+                body.appendChild(add)
+                } 
+            }  
+            function copyright() {
+                var ptag = document.querySelector("p")
+                ptag.textContent=" @ masai 2019";
+            } 
+             
+        </script>
+    </body>
+</html>
