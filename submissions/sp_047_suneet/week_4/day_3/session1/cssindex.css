@@ -1,0 +1,106 @@
+body
+{
+        background-image: url(img1.jpg);
+        background-repeat: no-repeat;
+        height: 100%;
+        background-size: cover;
+}
+p 
+{
+        white-space: pre-line;
+}
+#lblFirstName
+{
+    position:relative;
+    left:450px;
+    font-size: 30px;
+}
+#firstName
+{
+    position:relative;
+    left:650px;
+}
+#lblLastName
+{
+    position:relative;
+    left:450px;
+    font-size: 30px;
+}
+#lastName
+{
+    position:relative;
+    left:652px;
+}
+#lblDateOfBirth
+{
+    position:relative;
+    left:450px;
+    font-size: 30px;
+}
+#dateOfBirth
+{
+    position:relative;
+    left:627px;
+}
+#lblBalance
+{
+    position:relative;
+    left:450px;
+    font-size: 30px;
+}
+#balance
+{
+    position:relative;
+    left:690px;
+}
+#AccountNumber
+{
+    position:relative;
+    left:450px;
+    font-size: 30px;
+}
+#accountNumber
+{
+    position:relative;
+    left:580px;
+}
+#SharedAccountHolders
+{
+    position:relative;
+    left:450px;
+    font-size: 30px;
+}
+#sharedAccountHolders
+{
+    position:relative;
+    left:490px;
+}
+#h1Data
+{
+    position:relative;
+    left:450px;
+    font-size: 30px;
+}
+#h2Data
+{
+    position:relative;
+    left:500px;
+    font-size: 30px;
+
+}
+#btnAddcustomer
+{
+    position:relative;
+    left:650px;
+    
+}
+#btnPrintCustomers
+{
+    position:relative;
+    left:650px;
+    
+}
+#displayContainer
+{
+    margin-left: 550px;
+}

@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <style>
+            .box1{
+                margin: 20px 20px 20px 100px ;
+                background-color: beige;
+                height:690px;
+                width: 398px ;
+                border: 1px dotted red;
+            }
+            .min{
+                height:73px ;
+                width: 100px ;
+                margin-left:46px;
+                margin-top:30px ;
+                background-color:red;
+                border: 1px solid black ;
+            }
+            .max{
+                height:73px ;
+                width: 100px ;
+                margin-left:234px;
+                margin-top:30px ;
+                background-color:green;
+                border: 1px solid black ;
+            }
+            .score{
+                margin:50px 97px 35px 97px ;
+
+            }
+            .btn_margin{
+                width:221px ;
+                height:53px ;
+                margin: 36px 99px 24px 99px ;
+
+            }
+            .btn_box{
+                height: 52px ;
+                width: 55px ;
+                border: 1px solid black ;
+                background-color: greenyellow ;
+                font-size: 30px ;
+            }
+            .btn1_box{
+                height: 52px ;
+                width: 55px ;
+                border: 1px solid black ;
+                background-color: orange;
+                font-size: 30px ;
+                margin-left: 21px ;
+            }
+            .btn2_box{
+                height: 52px ;
+                width: 55px ;
+                border: 1px solid black ;
+                background-color: greenyellow;
+                font-size: 30px ;
+                margin-left: 21px ;
+            }
+            .btn0_box{
+                height: 52px ;
+                width: 55px ;
+                border: 1px solid black ;
+                background-color: greenyellow;
+                font-size: 30px ;
+                margin-left: 81px ;
+            }
+            .enter_box{
+                 height:55px ;
+                 width: 210px ;
+                 margin-left:95px ;
+                 margin-bottom:10px ;
+                 background-color: black ;
+                 color: white ;
+            }
+            .font{
+                margin-top: 5px;
+                margin-left: 75px;
+                float: left ;
+            }
+            .font1{
+                margin-top: 5px;
+                margin-left: 250px;
+            }
+            
+            
+        
+        </style>
+
+    </head>
+    <body class="box1">
+        <div class="min" style="float: left">
+            <h1 id="min">45</h1>
+        
+        </div>
+        <div class="max">
+            <h1 id="max">2019</h1>
+        </div>
+        <div class="font">MIN</div>
+        <div class="font1">MAX</div>
+        <div class="score">
+                <h1>score</h1>
+                <input type="tel"  id="score" placeholder="#" style="height:81px ">
+        </div> 
+        <div class="btn_margin">
+            <button class="btn_box"  onclick="btn(1)"  id="btn1">1</button>
+            <button class="btn1_box" onclick="btn(2)"  id="btn2">2</button>
+            <button class="btn2_box" onclick="btn(3)"  id="btn3">3</button>   
+        </div>
+        <div class="btn_margin">
+                <button class="btn_box"  onclick="btn(4)"  id="btn4">4</button>
+                <button class="btn1_box" onclick="btn(5)"  id="btn5">5</button>
+                <button class="btn2_box" onclick="btn(6)"  id="btn6">6</button>   
+        </div>
+        <div class="btn_margin">
+                <button class="btn_box"  onclick="btn(7)"  id="btn7">7</button>
+                <button class="btn1_box" onclick="btn(8)"  id="btn8">8</button>
+                <button class="btn2_box" onclick="btn(9)"  id="btn9">9</button>   
+        </div>
+        <div class="btn_margin">
+                <button class="btn0_box"  onclick="btn(0)"  id="btn0">0</button>
+                 
+        </div>
+        <div >
+                 <button class="enter_box" onclick="enter()" id="enter">Enter</button>
+
+        </div>
+        <script type="text/javascript">
+          var output = 0 ;
+          function btn(input)
+          {
+            var x='';
+            x=document.getElementById("score").value ;
+            output=Number (x + input) ;
+            document.getElementById("score").value= output;
+            
+          }
+          function enter()
+          {
+            var max = Number(document.getElementById("max").innerHTML)
+            var min = Number(document.getElementById("min").innerHTML)
+            if (output < min) {
+                    document.getElementById("min").innerHTML= output;
+                    console.log(typeof(min))
+                    console.log(typeof(output))
+                }
+                else if (output > max){
+                    document.getElementById("max").innerHTML= output;
+                    console.log(typeof(max))
+                    console.log(typeof(output))
+                }
+                document.getElementById("score").value = '';
+         }
+        
+        </script>
+    
+    
+
+    </body>
+</html>

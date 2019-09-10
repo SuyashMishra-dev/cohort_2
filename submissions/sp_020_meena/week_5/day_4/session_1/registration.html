@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+            <div class="d-flex bd-highlight">
+                <div class="p-2 w-50 bd-highlight"><h1 id=dName>NAME</h1>
+                <input type =text id=name name=name><br>
+                <h1 id=dEmail>EMAIL</h1>
+                <input type =text id=email name=email><br>
+                <h1 id =dMobile>MOBILE</h1>
+                <input type =number id=mobile name=mobile><br><br>
+                <h5 class="text-danger" id = "valid">Enter valid number</h5>
+                <button id ="getstart">REGISTER</button>
+                </div>
+                <div class="p-2 w-40 bd-highlight bg-dark text-white" id = "black_box"><h1>MASAI SCHOOL</h1>
+                <h2 id = "get_name"></h2>
+                <h5 id = "get_email"></h5>
+                <h5 id = "get_mobile"></h5>
+                </div>
+                <div class="p-2 w-50 bd-highlight"></div>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script>
+                    $("#name").show();
+                    $("#dEmail").hide();
+                    $("#email").hide();
+                    //  $("#dEmail").show(1000);
+                    //  $("#email").show(1000);
+                    $("#dMobile").hide();
+                    $("#mobile").hide();
+                    // $("#dMobile").show(1000);
+                    // $("#mobile").show(1000);
+                    $("#valid").hide();
+                    // $("#valid").show(1000);
+                    $("#black_box").hide();
+                    // $("#black_box").show(3000);
+                    $('#name').keyup(function(){
+                        if(name.length>3 || name.length<10){
+                            $("#dEmail").show(1000);
+                            $("#email").show(1000);
+                            $("#get_name").text($(this).val());
+                        }
+                    });
+                    $('#email').keyup(function(){
+                        if(email[0]=="@" || email[email.length-1]=="@"){
+                            $("#email").html("<p>enter valid email</p>");
+                        }
+                        else{
+                            $("#get_email").text($(this).val()); 
+                            $("#dMobile").show(1000);
+                            $("#mobile").show(1000);
+                        }
+                    });
+                    $('#mobile').keyup(function(){
+                        if(mobile.length<10){
+                            $("#valid").html("<p>enter a valid mobile number</p>");
+                        }
+                        else{
+                            $("#get_mobile").text($(this).val());
+                        }
+            
+                    });
+                    $("#getstart").click(function(){ 
+                        $("#black_box").show(3000);
+                   });
+            </script>
+    </body>
+</html>

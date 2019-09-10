@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Session 1!</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.W3.3.1_1-->
+	<h1> Create your own exponentiation function! </h1>
+	<input type="text" name = "num1" id="expo1">
+	<input type="text" name = "num2" id="expo2">
+	<p id="expo3"> </p>
+	</hr>
+	<button onclick="exponent()">Click here to find the exponent!</button>
+	<!-- These elements above are for FSD.W3.3.1_1-->
+
+	<!-- These elements below are for FSD.W3.3.1_2-->
+	<h1>Sum of multiples of 3 and 5!</h1>
+	<p id="sumOut"></p>
+	<input type="text" id="sumIn">
+	<button onclick="sumOf3And5()">Click here for the output!</button>
+	
+	<!-- These elements above are for FSD.W3.3.1_2-->
+
+	<!-- These elements below are for FSD.W3.3.1_3-->
+	<h1>Check if the users email is valid!</h1>
+	<label for="Email">Email</label>
+	<input  type="text" id= "emailinput">
+	
+	
+	<button onclick="validateEmail()">Check Email!</button>
+	<!-- These elements above are for FSD.W3.3.1_3-->
+	<script type="text/javascript">
+		//Write javascript for FSD.W3.3.1_1 here
+		function exponent(){
+			var expo1 = document.getElementById("expo1").value;
+			var expo2 = document.getElementById("expo2").value;
+			var expo3 = expo1 ** expo2;
+			document.getElementById("expo3").innerHTML = expo3;
+		}
+		//Write javascript for FSD.W3.3.1_2 here
+		function sumOf3And5(){
+			var limit = document.getElementById("sumIn").value;
+			var sum =0;
+			var i=0;
+			
+			for( i=0; i<=limit; i++ ) {
+				if((i % 3 == 0) && (i % 5 == 0)) {
+					sum =sum + i
+   				}
+			}
+			document.getElementById("sumOut").innerHTML = sum;
+		}
+
+		//Write javascript for FSD.W3.3.1_3 here
+		function validateEmail(){		
+			var eval =document.getElementById("emailinput").value;
+			var e1 = eval[eval.length-1]
+			var e2 = eval[eval.length-2]
+			var e3 = eval[eval.length-3]
+			var e4 = eval[eval.length-4]
+
+			for (i = 1; i<eval.length-8; i++ ){
+				if (eval[i] == "@"){
+					if( (e1 == "m") && (e2 == "o" ) && (e3 == "c") && (e4 == ".") ) {
+						alert("This is valid Email")
+					}
+					else {
+						alert("This is invalid Email")
+					}
+				}
+			}	
+			document.getElementById("alert").innerHTML ="";			
+		}
+	</script>
+</body>
+</html>
