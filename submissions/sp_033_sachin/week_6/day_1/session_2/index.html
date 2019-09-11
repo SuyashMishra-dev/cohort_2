@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car Details</title>
+</head>
+<body>
+    <div id="carDetails">
+        
+            Car Make:<input type="text" id="carMakeInput">
+            Car Model:<input type="text" id="modelInput">
+            Top Speed:<input type="text" id="topSpeedInput">
+            <button onclick="initialiseCar()" type="button">Enter Details</button>
+        
+    </div>
+    <div id="travelDetails">
+        
+            <select id="selectCar">
+                <option value=""></option>
+            </select>
+            Speed:<input type="text" id="speedInput">
+            Time:<input type="text" id="timeInput">
+            <button onclick="calculateDistance()" type="button">Enter Details</button>
+        
+    </div>
+    <button onclick="displayDetails()" type="button">Display Details</button>
+    <div id="displayDetails">
+        
+        
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>

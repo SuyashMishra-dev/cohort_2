@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <p id='stopw'></p>
+        <div class="row">
+            <div class="col-xl-1"><button class="btn btn-info rounded-circle" onclick="start()">Start</button></div>
+            <div class="col-xl-1"><button class="btn btn-white border border-dark rounded-circle"
+                    onclick="split()">Split</button></div>
+            <div class="col-xl-1"><button class="btn btn-primary rounded-circle" onclick="reset()">Reset</button></div>
+
+        </div>
+
+
+        <script>
+            class time {
+                constructor(stopwatch, lap) {
+                    this.stopwatch = stopwatch;
+                    this.lap = lap;
+                }
+
+            }
+            var i
+            var number = 0;
+            var counting = document.getElementById("stopw")
+            counting.textContent = number
+            function start() {
+                clearInterval(i)
+                i = setInterval(function () {
+                    number++;;
+                    counting.textContent = number;
+                }, 10)
+            }
+            //   function split()
+            //   { 
+
+            //   }
+            function reset() {
+                clearInterval(i)
+                counting.textContent = 0;
+
+            }
+
+
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            LeaderBoard
+        </title>
+        <style type="text/css">
+            #max
+            {
+                background-color: red;
+                font-size:20px;
+                height:100px;
+                width:100px;
+                float:left;
+                margin-left:200px;
+                border: solid black;
+            }
+            #min
+            {
+                background-color: green;
+                font-size:20px;
+                height:100px;
+                width:100px;
+                float:right;
+                margin-right: 200px;
+                border: solid black;
+            }
+            #score
+            {
+                background-color: lightgray;
+                height:100px;
+                width:200px;
+                clear:left;
+                margin-left:225px;
+                margin-top: 50px;
+                border:solid black;
+                
+            }
+            .grid-box
+            {
+                display:grid;
+                grid-gap:20px;
+                grid-template-columns: 50px 50px 50px;
+                grid-template-rows: 50px 50px 50px 50px 50px;
+                margin-left:200px;
+
+            }
+            #enter
+            {
+                grid-area: 5 / 1 / span 1 / span 3;
+            }
+            .grid-box button
+            {
+                border:solid black;
+            }
+            .color-olive
+            {
+                background-color: olive;
+            }
+            .color-purple
+            {
+                background-color: purple;
+            }
+            .color-orange
+            {
+                background-color: orange;
+            }
+            .color-black
+            {
+                background-color: black;
+                
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            
+            <p id="max">2019</p>
+            <p id="min">45</p>
+            <p id="score"></p>
+
+        </div>
+        <div class="grid-box">
+            <button onclick="button1()" id="id1" class="color-olive">1</button>
+            <button onclick="button2()" id="id2" class="color-orange">2</button>
+            <button onclick="button3()" id="id3" class="color-olive">3</button>
+            <button onclick="button4()" id="id4" class="color-orange">4</button>
+            <button onclick="button5()" id="id5" class="color-orange">5</button>
+            <button onclick="button6()" id="id6" class="color-orange">6</button>
+            <button onclick="button7()" id="id7" class="color-olive">7</button>
+            <button onclick="button8()" id="id8" class="color-orange">8</button>
+            <button onclick="button9()" id="id9" class="color-olive">9</button>
+            <button onclick="button0()" id="id0" class="color-purple">0</button>
+            <button onclick="clear()">Clear</button>
+            <button onclick="buttonEnter()" id="enter" class="color-black">Enter</button>
+        </div>
+        <script>
+            function button1()
+            {      
+                console.log("hi");    
+               console.log(document.getElementById("score").innerHTML = document.getElementById("score").innerHTML +1);
+                console.log("hello");
+            }
+            function button2()
+            {
+                console.log(document.getElementById("score").innerHTML = document.getElementById("score").innerHTML +2);
+            }
+            function button3()
+            {          
+                console.log(document.getElementById("score").innerHTML = document.getElementById("score").innerHTML +3);
+            }
+            function button4()
+            {
+                console.log(document.getElementById("score").innerHTML = document.getElementById("score").innerHTML +4);
+            }
+            function button5()
+            {
+                console.log(document.getElementById("score").innerHTML = document.getElementById("score").innerHTML +5);
+            }
+            function button6()
+            {
+                console.log(document.getElementById("score").innerHTML = document.getElementById("score").innerHTML +6);
+            }
+            function button7()
+            {
+                console.log(document.getElementById("score").innerHTML = document.getElementById("score").innerHTML +7);
+            }
+            function button8()
+            {
+                console.log(document.getElementById("score").innerHTML = document.getElementById("score").innerHTML +8);
+            }
+            function button9()
+            {
+                console.log(document.getElementById("score").innerHTML = document.getElementById("score").innerHTML +9);
+            }
+            function button0()
+            {
+                console.log(document.getElementById("score").innerHTML = document.getElementById("score").innerHTML +0);
+            }
+            function buttonEnter()
+            
+            {
+                if(Number(document.getElementById("score").innerHTML) < Number(document.getElementById("min").innerHTML))
+            {
+              console.log(document.getElementById("min").innerHTML=document.getElementById("score").innerHTML);
+              document.getElementById("score").innerHTML="";
+            }
+            else if(Number(document.getElementById("score").innerHTML)>Number(document.getElementById("max").innerHTML))
+            {
+                console.log(document.getElementById('max').innerHTML=document.getElementById("score").innerHTML);
+                document.getElementById("score").innerHTML="";
+            }
+            else
+            {
+                console.log(alert("score is between minimum and maximum score"));
+            }
+            }
+            
+        </script>
+    </body>
+</html>
