@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Make of the Car</p>
+        <input type="text" id="make" class="carDetails">
+        <p>Model</p>
+        <input type="text" id="model" class="carDetails">
+        <p>Top Speed</p>
+        <input type="text" id="topSpeed" class="carDetails">
+        <button onclick="submit()">Submit</button>
+    </div>
+
+    <div id="secondForm">
+        <p>Select your Car</p>
+        <select id="carList">
+        </select>
+        <p>Ride Time</p>
+        <input type="text">
+        <p>Ride Speed</p>
+        <input type="text">
+        <button>Get Car Status</button>
+        <button onclick="travelDist()">Travel Distance</button>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
