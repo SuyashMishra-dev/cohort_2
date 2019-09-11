@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>Registration</title>
+        <style>
+            .grid {
+                display: grid;
+                grid-template-columns: 500px 700px;
+                grid-template-rows: auto;
+                margin: 100px;
+                grid-gap: 50px;
+                height: 500px;
+                margin-left: 300px;
+            }
+
+            .box1 {
+                grid-area: 1 / 1 / 1 / 1; 
+            }
+
+            .box2 {
+                grid-area: 1 / 2 / 1 /  2;
+                background: black; 
+                color:aliceblue;
+                font-size: 40px;            
+            }
+
+            .red{
+                color: red;
+            }
+
+            .inp {
+                font-size: 40px;
+                height: 55px;
+                width: 400px;
+            }
+
+        </style>
+        <body>
+            <div class="grid">
+                <div class="box1">
+                    <label class="inp">NAME</label>
+                    <br>
+                    <input class="inp" type="text" name="name" id="name">
+                    <p class="red" id="validName"></p>
+
+                    <label class="inp">EMAIL</label>
+                    <br>
+                    <input class="inp" type="text" name="email" id="email">
+                    <p class="red" id="validEmail"></p>
+
+                    <label class="inp">MOBILE</label>
+                    <br>
+                    <input class="inp" type="text" name="mobile" id="mobile" maxlength="12"> 
+                    <p class="red" id="validNumber"></p>
+
+                    <button class="inp" onclick="check()">Register</button>
+                </div>
+                <div class="box2">
+                    <p>NAME</p>
+                    <P class="red" id="outputName"></P>
+                    <p>EMAIL</p>
+                    <p class="red" id="outputEmail"></p>
+                    <p>MOBILE</p>
+                    <P class="red" id="outputMobile"></P>
+                </div>
+            </div>
+            <script>
+                function check(){
+                    var name = document.getElementById("name").value;
+                    var email = document.getElementById("email").value;
+                    var mobile = document.getElementById("mobile").value;
+
+                    var countName = name.length;
+                    if(countName<3 || countName>=10){
+                        document.getElementById("validName").innerHTML="Character with in 3 to 10"
+                    }
+                    else {
+                        document.getElementById("outputName").innerHTML = document.getElementById("name").value;
+                        document.getElementById("name").value ="";
+                    }
+                    
+                    var checkEmail = email.length;
+                    var output = "";
+                    for( var i = 1; i < checkEmail; i++ ){
+                        if(email[i] == "@"){
+                            for(i = i + 2; i < checkEmail; i++){
+                                if( email[i] == "."){
+                                    output = true;
+                                }
+                            }
+                        }
+
+                    }
+                    if(output = true){
+                        document.getElementById("outputEmail").innerHTML = document.getElementById("email").value;
+                        document.getElementById("email").value = " ";
+                    }
+                    else{
+                        document.getElementById("outputEmail").innerHTML = "Please Enter Valid Email"
+                    }
+
+                    var countNumber = mobile.length;
+                    if (countNumber < 10 || countNumber > 10) {
+                        document.getElementById("validNumber").innerHTML = " Please enter valid Number"
+                    }
+                    else {
+                        document.getElementById("outputMobile").innerHTML = document.getElementById("mobile").value;
+                        document.getElementById("mobile").value = "";
+
+                    }
+                }
+            </script>
+        </body>
+    </head>
+</html>
