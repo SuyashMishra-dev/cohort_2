@@ -6,13 +6,30 @@ let milliseconds = 0;
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
-let tableCounter = 0;
+let tableCounter = 1;
 let isPaused = false;
-var x;
+let x;
+
+
+populateTable = () => {
+    let length = localStorage.length;
+    table.innerHTML = '';
+    for(let i = 0; i < length; i++) {
+        let tr = document.createElement("tr");
+        let tdOne = document.createElement("td");
+        tdOne.textContent = i+1;
+        tr.appendChild(tdOne);
+        let tdTwo = document.createElement("td");
+        tdTwo.textContent = localStorage.getItem(i+1);
+        tr.appendChild(tdTwo);
+        table.appendChild(tr);
+    }
+}
+
+populateTable();
 
 buttons[0].addEventListener("click", function() {
     isPaused = !isPaused;
-    console.log("hi");
     if(!isPaused) {
         buttons[0].textContent = "Start";
         clearInterval(x);
@@ -54,18 +71,28 @@ buttons[0].addEventListener("click", function() {
 })
 
 buttons[1].addEventListener("click", function() {
-    var tr = document.createElement("tr");
-    for(let i = 0; i < 7; i+=2) {
-        var td = document.createElement("td");
-        td.textContent = headings[i].innerHTML;
-        tr.appendChild(td);
-    }
-    table.appendChild(tr);
+    localStorage.setItem(`${tableCounter}`, `${headings[0].innerHTML}:${headings[2].innerHTML}:${headings[4].innerHTML}:${headings[6].innerHTML}`);
+    populateTable();
+    tableCounter++;
 })
 
 buttons[2].addEventListener("click", function() {
-    milliseconds, seconds, minutes, hours = 0;
-    console.log(minutes);
+    clearInterval(x);
+    milliseconds = 0;
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    secondsHandler();
+    minutesHandler();
+    secondsHandler();
+    hoursHandler();
+    headings[6].innerHTML = '00';
+    buttons[0].textContent = "Start";
+    isPaused = false;
+    localStorage.clear();
+    table.innerHTML = '';
+    tableCounter = 1;
+    return 1;
 })
 
 function secondsHandler() {
