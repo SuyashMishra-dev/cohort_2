@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1 id="first">First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <div id="headings">
+            <h5>First H5</h5>
+            <h5>Second H5</h5>
+            <h5>Third H5</h5>
+        </div>
+        <div id="cont">
+            <div class="green">First DIV</div>
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button onclick="removeh1()">Remove H1</button>
+        <button onclick="removeh3()">Remove H3</button>
+        <button onclick="removeh5()">Remove H5</button>
+        <button onclick="removered()">Remove Red</button>
+        <button onclick="removediv()">Remove DIVS</button>
+        <script>
+            function removeh1(){
+            var h1 = document.getElementById("first");
+            h1.remove();
+        }
+
+        function removeh3(){
+            var rmvh3 = document.querySelectorAll("h3");
+            for (var i = 0; i < rmvh3.length; i++){
+                rmv3 = rmvh3 [i];
+                rmv3.remove(); 
+            }
+        }
+
+        function removeh5(){
+            var rmvh5 = document.querySelectorAll("h5");
+            for (var i = 0; i < rmvh5.length; i++){
+                rmh5 = rmvh5 [i];
+                rmh5.remove();
+            }
+        }
+
+        function removered(){
+            var removered = document.getElementById("cont");
+            for (var i = 0; i < removered.length; i++){
+                rmred = removered [i];
+                rmred.remove();
+            }
+        }
+
+        </script>
+    </body>
+</html>

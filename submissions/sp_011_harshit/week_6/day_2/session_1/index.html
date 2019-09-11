@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <input type="text" id="item_value">
+    <button class="btn btn-dark" id="one">Add element</button>
+    <button class="btn btn-success" id="show">ShowAll</button>
+    <div class="container">
+
+        <div id="container" class="col-xl-3"></div>
+        <h1>Remaining list</h1>
+        <div id="display_remain" class="col-xl-3"></div>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var items_arr = [];
+        class items {
+            constructor(item) {
+                this.items = item;
+            }
+            display() {
+                return this.items;
+            }
+        }
+
+        var btn1 = document.getElementById("one")
+        btn1.addEventListener('click', function () {
+            var one = document.getElementById("item_value").value;
+            var car1 = new items(one)
+            $("#container").empty();
+            items_arr.push(car1)
+            var body = document.getElementById("container")
+
+
+            items_arr.forEach(element => {
+                console.log(element);
+                var elem = document.createElement('p')
+                elem.textContent = '*' + element.items;
+                var item_btn = document.createElement('button')
+                item_btn.setAttribute('class', 'btn btn-danger align-items-end')
+                item_btn.textContent = "*"
+                body.appendChild(elem)
+                body.appendChild(item_btn)
+
+                elem.addEventListener("click", function () {
+                    console.log('Im here user')
+                    elem.setAttribute('style', 'text-decoration-line: line-through')
+                })
+
+
+                item_btn.addEventListener('click', function () {
+                    console.log('IM here user')
+                    body.removeChild(elem)
+                    body.removeChild(item_btn)
+                    items_arr.pop(element.items)
+                })
+
+            });
+
+            document.getElementById("item_value").value = '';
+        })
+
+        var btn_show = document.getElementById("show")
+        var remain_disp_body = document.getElementById("display_remain")
+        btn_show.addEventListener('click', function () {
+            $("#display_remain").empty();
+            items_arr.forEach(element => {
+                var item_left = document.createElement('p')
+                item_left.textContent = element.items
+                remain_disp_body.appendChild(item_left)
+            });
+        })
+    </script>
+</body>
+
+</html>

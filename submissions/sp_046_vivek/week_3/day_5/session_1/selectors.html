@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr/>
+        <button onclick="h1colour()">Change H1</button>
+        <button onclick="h3colour()">Change H3</button>
+        <button onclick="h5colour()">Change H5</button>
+        <button onclick="colorgreen()">Change Green</button>
+        <button onclick="colorred()">Change Red</button>
+        <button onclick="colorblue()">Change Blue</button>
+        <script>
+            function h1colour() {
+                var first_h = document.querySelectorAll('h1');
+                for (var i = 0; i < first_h.length; i++){
+                var h1 = first_h [i];
+                h1.style.color = "red";
+               }
+            }
+
+            function h3colour() {
+                var second_h = document.querySelectorAll('h3');
+                for (var i = 0; i < second_h.length; i++){
+                var h3 = second_h [i];
+                h3.style.color = "green";
+                }
+            }
+
+            function h5colour() {
+                var third_h = document.querySelectorAll('h5');
+                for (var i = 0; i < third_h.length; i++){
+                    var h5 = third_h [i];
+                    h5.style.color = "blue";
+                }
+            }
+
+            function colorgreen() {
+                var div = document.querySelector('div');
+                div.style.color = "green";
+                var p = document.querySelector('p');
+                p.style.color = "green";
+            }
+
+            function colorred() {
+                var p = document.querySelectorAll('p');
+                var p1 = p[1];
+                p1.style.color = "red";
+                var div = document.querySelectorAll('div');
+                var div1 = div[1];
+                div1.style.color = "red";
+            }
+
+            function colorblue() {
+                var div3 = document.querySelectorAll('div');
+                var div4 = div3[2];
+                div4.style.color = "blue";
+                var p3 = document.querySelectorAll('p');
+                var p4 = p3[2];
+                p4.style.color = "blue";
+            }
+        </script>
+    </body>
+</html>
