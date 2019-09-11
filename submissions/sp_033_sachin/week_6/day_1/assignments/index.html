@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie</title>
+</head>
+<body>
+    <div id="moviesContainer">
+        <form id="movieForm">
+            <h2>Add New Movie</h2>
+            Name: <input type="text" id="movieNameInput">
+            Directors: <input type="text" id="directorsInput">
+            Year: <input type="text" id="yearInput">
+            Rating: <input type="text" id="ratingInput">
+            Writers: <input type="text" id="writersInput">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div id="actorsContainer">
+        <form id="actorForm">
+            <h2>Add New Actor</h2>
+            Name: <input type="text" id="actorNameInput">
+            Age: <input type="text" id="ageInput">
+            DOB: <input type="text" id="dobInput">
+            Movie: <input type="text" id="movieInput">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <br>
+    <hr>
+    <div id="btnContainer">
+        <button onclick="printAllMovies()" id="displayBtn">Print All Movies</button>
+    </div>
+    <br>
+    <hr>
+
+    <div id="btnContainer2">
+        <button onclick="printAllActors()">Print All Actors</button>
+        <button onclick="">Print Actor Movies</button>
+    </div>
+    <br>
+    <hr>
+
+    <div id="displayContainer">
+
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

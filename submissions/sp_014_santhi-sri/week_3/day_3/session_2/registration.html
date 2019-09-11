@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Registration</title>
+    </head>
+    <style>
+        #display_box {
+            background-color: black;
+            height: 400px;
+            width : 300px;
+            color :white;
+            margin-right:200px;margin-top: 100px;
+            text-align: center;
+            float: right;
+            }
+            #container {
+                margin-left: 200px;
+                margin-top: 150px;
+                float: left;
+            }
+            #display_box p{
+                color :blue;
+                font-size: 20px;
+            }
+            .name_div p{
+            color : red;
+            }
+            .mobile_div p{
+            color : red;            
+            }
+            .email_div p{
+            color : red;            
+            } 
+            input {
+            height : 50px;
+            width :500px;
+            font-size: 20px;
+            }
+            button {
+            background-color: black;
+            color: white;
+            height : 50px;
+            width : 90px;
+            font-size: 20px;
+            border-radius: 5px;
+            margin-left: 40px;
+            }      
+    </style>
+<body>
+    <div id = "display_box">
+        <h3>Name</h3>
+        <p id = "display_name"></p><br>
+        <h3>EmailId</h3>
+        <p id = "display_email"></p><br>
+        <h3>Mobile Number</h3>
+        <p id ="display_mobile"></p>
+        </div>
+        
+        <div id = "container">
+            <!-- Name input -->
+            <div class = "name_div">
+                <label for = "name">Name<br><br></label>
+                <input id = "name" type="text" placeholder="Enter Your Name">
+                <p id = "name_invalid"></p>
+            </div>
+            <!-- Email input -->
+            <div class = "email_div">
+                <label for = "email">Email Id<br><br></label>
+                <input id = "email" type="text" placeholder="Enter your Email Id">
+                <p id = "email_invalid"></p>
+            </div>
+            <!-- Mobile input -->
+            <div class = "mobile_div">
+                <label for = "mobile">Mobile Number<br><br> </label>
+                <input id = "mobile" tupe = "number" placeholder="Enter Mobile Number">
+                <p id ="mobile_invalid"></p>
+            </div>
+            <button onclick="validation()" id = "register">Register</button>
+        </div>
+        <script>
+        function validateName(name){
+            if (name.length < 3 || name.length >10){
+                document.getElementById('name_invalid').innerHTML = 'Enter a Valid Name';
+            }
+            else {
+                document.getElementById('display_name').innerHTML = name;
+                document.getElementById('name_invalid').innerHTML = '';
+            }
+        }
+
+        function validateEmail(email){
+             var len = email.length; 
+			var pos1 = email.indexOf("@");
+			var pos2 = email.lastIndexOf(".");
+			if (pos1<1 || (pos2-pos1)<2 || pos2==len-1){
+				 document.getElementById('email_invalid').innerHTML = 'Enter valid Email Id';
+			}
+			else{
+				  document.getElementById('display_email').innerHTML = email;
+                  document.getElementById('email_invalid').innerHTML = '';
+			}
+        }
+
+        function validateMobile(mobile){
+            if (mobile.length <10){
+                document.getElementById('mobile_invalid').innerHTML = 'Enter valid Mobile number';
+            }
+            else {
+                document.getElementById('display_mobile').innerHTML = mobile;
+                document.getElementById('mobile_invalid').innerHTML = '';               
+            }
+        }
+    
+        function validation(){
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var mobile = document.getElementById('mobile').value;
+            validateName(name);
+            validateEmail(email);
+            validateMobile(mobile);
+            }
+        </script>
+    </body>
+</html>

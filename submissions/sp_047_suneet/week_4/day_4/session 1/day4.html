@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title> Week 4 Day 4Coding 1 </title>
+        <link rel="stylesheet" type="text/css" href="cssday4.css">
+    </head>
+    <body>
+  
+      <h1 id="h1"> Printing a JSON object</h1>
+      <button onclick="printJSON()" id="btnprintJSON"> Click to print JSON object </button>
+      <div id = "container1"> </div>
+
+      <h1 id="h2"> An Exponent Calculator </h1>
+      <input id="txtFirstNumber" type = "text" placeholder="Enter First Number"/>
+      <input id="txtSecondNumber" type = "text" placeholder="Enter Second Number"/>
+
+      <button id="btnCalculate"> Calculate </button>
+      <p id="para-output">Output:</p>
+
+      <h1 id="h3"> Multiplication Table Generator</h1>
+      <table></table>
+      <input id="txtMultiplication" type = "text" placeholder="Enter A Number"/>
+      <button onclick="Multiplication()" id="btnGenerateTables"> Generate Tables </button>
+
+      <h1 id="h4"> Different Cases</h1>
+      <table id="table2"></table>
+      <input id="txtUpperLowerCase" type = "text" placeholder="Enter A String"/>
+      <button onclick="generateUpperLowerCase()" id="btnGenerateUpper"> Generate Upper Case And Lower Case </button>
+
+    <script type="text/javascript">
+
+      var items = 
+      [
+            {
+              name: "Water",
+              price: 20,
+              id: 0929
+            },
+            {
+              name: "Rice",
+              price: 50,
+              id: 2323
+            },
+            {
+              name: "Banana",
+              price: 90,
+              id: 2323
+            },
+            {
+              name: "Water",
+              price: 20,
+              id: 0929
+            }
+      ]
+      var mutiply = []
+
+      console.log(JSON.stringify(items));
+
+      var displayDiv = document.getElementById('container1');
+
+      function printJSON ()
+      {
+            var jsonObject = JSON.stringify(items);
+            for ( var i = 0; i < items.length; i++) 
+            {
+                var displayP = document.createElement('p');
+                displayP.textContent = items[i].name + ' : ' + items[i].price;
+                displayDiv.appendChild(displayP);
+            }
+      }
+
+      function exponent(x, y, callBack) 
+      {
+        var result = x ** y;
+        return callBack(result)
+      }
+
+      var display = function(input) 
+      {
+         var outputDisplay = 'The exponent is value: ' + input;
+         return outputDisplay;
+      }
+
+      var btnCalculate = document.getElementById('btnCalculate');
+      btnCalculate.addEventListener('click', function() 
+      {
+        var x = Number(document.getElementById('txtFirstNumber').value);
+        var y = Number(document.getElementById('txtSecondNumber').value);
+        document.getElementById('para-output').innerHTML = exponent(x,y, display);
+      });
+
+      function Multiplication()
+      {
+            multiply = [];
+            var limit = Number(document.getElementById('txtMultiplication').value);
+            
+            for (var i = 1; i <= limit; i++)
+                multiply.push(i);
+
+            var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            var table = document.querySelector('table');
+
+            for (var i = 0; i < arr.length; i++)
+            {
+              var th = document.createElement('th');
+              table.appendChild(th);
+              th.textContent = '* ' + arr[i];
+            }
+            multiply.forEach(function(element)
+            {
+              var tr = document.createElement('tr');
+              table.appendChild(tr);
+              
+              for (var i = 0; i < arr.length; i++) 
+              {
+                var compute = element * arr[i];
+                //console.log('The value of a at this point is: ' + compute);
+                var td = document.createElement('td');
+                tr.appendChild(td);
+                td.textContent = compute;
+              }
+            });
+      }
+      function generateUpperLowerCase() 
+      {
+            var caparr = [];
+            var inputString = document.getElementById('txtUpperLowerCase').value;
+            caparr = inputString.split(',');
+            
+            var uprarr = [];
+            var lwrarr = [];
+            var table2 = document.getElementById('table2');
+            var tablearray = ['Normal ' , 'UPPER ' , 'Lower'];
+            for (i = 0; i < tablearray.length; i++) 
+            {
+                var th = document.createElement('th');
+                table2.appendChild(th);
+                th.textContent = tablearray[i];
+            }
+            
+            caparr.map(function (element)
+            {
+              uprarr.push(element.toUpperCase());
+              lwrarr.push(element.toLowerCase());
+            });
+          
+            console.log(uprarr,lwrarr)
+          
+            for (i = 0; i < caparr.length; i++) 
+            {
+                var tr = document.createElement('tr');
+                table2.appendChild(tr);
+
+                var td1 = document.createElement('td');
+                tr.appendChild(td1);
+                var td2 = document.createElement('td');
+                tr.appendChild(td2);
+                var td3 = document.createElement('td');
+                tr.appendChild(td3);
+                td1.textContent = caparr[i];
+                td2.textContent = uprarr[i];
+                td3.textContent = lwrarr[i];
+
+            }
+        }
+      </script>
+    </body>
+</html>
