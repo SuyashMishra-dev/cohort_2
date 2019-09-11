@@ -33,14 +33,6 @@ newTodoItemBtn.addEventListener("click", function() {
     console.log(todoArr);
 })
 
-showAllBtn.addEventListener("click", function() {
-    
-})
-
-showPendingBtn.addEventListener("click", function() {
-    
-})
-
 populateListItems = function(arr) {
     todoListItems.innerHTML = '';
     let i = 0;
