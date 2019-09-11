@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Number Sums</title>
+    </head>
+    <body>
+        <input id="numbers" type="text" name="input_numbers" placeholder="Enter Numbers"><br>
+        <button id="eps">Even Position Sum</button><br>
+        <button id="ops">Odd Position Sum</button><br>
+        <button id="es">Even Sum</button><br>
+        <button id="os">Odd Sum</button><br>
+        <button id="sds">Single Digit Sum</button><br>
+        <button id="dds">Double digit Sum</button>
+
+        <script type="text/javascript">
+       
+        function array() {
+            var num = document.getElementById('numbers').value;
+            var arr =[];
+            var res = "";
+            for(var i = 0; i < num.length; i++){
+                if(num[i] != ",") {
+                    res = res + num[i];
+                }   
+                else {
+                    arr.push(Number(res));
+                    res = "";
+                    continue;
+                }        
+            }
+            console.log(arr);
+            return(arr);
+        }
+
+        function display(number) {
+            var output = document.createElement('h3');
+            output.textContent = "Sum is: " + number;
+
+            var body = document.querySelector('body');
+            body.appendChild(output);
+        }
+
+        var even_psum = document.getElementById('eps');
+        function even_position_sum() {
+            var arr = array();
+            var sum = 0;
+            for(var i=0; i<arr.length; i++) {
+                if(i % 2 == 0) {
+                    sum = sum + arr[i];
+                }
+            }
+            display(sum);
+        }
+        even_psum.addEventListener('click' , even_position_sum);
+
+        var odd_psum = document.getElementById('ops');
+        function odd_position_sum() {
+            var arr = array();
+            var sum = 0;
+            for(var i=0; i<arr.length; i++) {
+                if(i % 2 != 0) {
+                    sum = sum + arr[i];
+                }
+            }
+            display(sum);
+        }
+        odd_psum.addEventListener('click', odd_position_sum);
+
+        var even_sum = document.getElementById('es');
+        function final_esum() {
+            var arr = array();
+            var sum = 0;
+            for(var i=0; i<arr.length; i++) {
+                if(arr[i] % 2 == 0) {
+                    sum = sum + arr[i];
+                }
+            }
+            display(sum);
+        }
+        even_sum.addEventListener('click' , final_esum);
+
+        var odd_sum = document.getElementById('os');
+        function final_osum() {
+            var arr = array();
+            var sum = 0;
+            for(var i=0; i<arr.length; i++) {
+                if(arr[i] % 2 != 0) {
+                    sum = sum + arr[i];
+                }
+            }
+            display(sum);
+        }
+        odd_sum.addEventListener('click' , final_osum);
+
+        var single_digit_sum = document.getElementById('sds');
+        function one_digit_sum() {
+            var arr = array();
+            var sum = 0;
+            for(var i = 0; i < arr.length ; i++) {
+                if(arr[i] < 10) {
+                    sum = sum + arr[i];
+                }
+            }
+            display(sum);
+        }
+        single_digit_sum.addEventListener('click' , one_digit_sum);
+
+        var double_digit_sum = document.getElementById('dds');
+        function two_digit_sum() {
+            var arr = array();
+            var sum = 0;
+            for(var i = 0; i < arr.length ; i++) {
+                if(arr[i] >= 10) {
+                    sum = sum + arr[i];
+                }
+            }
+            display(sum);
+        }
+        double_digit_sum.addEventListener('click' , two_digit_sum);
+        </script>
+    </body>
+</html>

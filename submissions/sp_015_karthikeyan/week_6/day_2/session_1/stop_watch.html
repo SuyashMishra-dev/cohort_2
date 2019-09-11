@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Stop Watch</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="stop_watch.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 row offset-lg-2">
+                    <h1 class="display-1">00</h1>
+                    <h1 class="display-1">:</h1>
+                    <h1 class="display-1">00</h1>
+                    <h1 class="display-1">:</h1>
+                    <h1 class="display-1">00</h1>
+                    <h1 class="display-1">:</h1>
+                    <h1 class="display-1">00</h1>
+                </div>   
+            </div>
+            <div class="row">
+                <button class="btn btn-primary m-1">Start</button>
+                <button class="btn btn-secondary m-1">Split</button>
+                <button class="btn btn-success m-1">Reset</button>
+            </div>
+            <table class="table my-2" id="table-records"></table>
+        </div>
+
+        <script src="stop_watch.js"></script>
+    </body>
+</html>
