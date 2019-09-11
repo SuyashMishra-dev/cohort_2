@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button onclick="header1()">Create H1</button>
+        <button onclick="header2()">Create 2 H3</button>
+        <button onclick="DIVS()">Create DIVS</button>
+        <button onclick="addStud()">Add Students</button>
+        <button>Add Copyright</button>
+        <script>
+            
+            function header1() {
+                var new1 =document.createElement('h1');
+                new1.textContent="Massai";
+                var new2=document.querySelector('div');
+                new2.appendChild(new1);
+                
+            }
+            function header2() {
+                var new3 =document.createElement('h3');
+                new3.textContent="A Transformation in education!" ;
+                new3.textContent="Learn to earn, pay when you get." ;
+                var new4=document.querySelector('div');
+                new4.appendChild(new3);
+                
+                
+            }
+            function DIVS() {
+                var new5=document.getElementById('cont');
+                for(var i = 1 ; i <= 10 ; i++){
+                    var new6 = document.createElement ('div') ;
+                    new6.textContent = ' Content ' + (i) ;
+                    new5.appendChild(new6) ;
+                }
+                
+            }
+            function addStud() {      
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+              for(var i=0;i<students.length;i++){
+                  var new7 = document.getElementById("vikings") ;
+                  var new8=document.createElement('li');
+                  new8.textContent=students[i] ;
+                  new7.appendChild(new8);
+              }
+            }
+        </script>
+
+    </body>
+</html>
