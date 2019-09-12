@@ -10,27 +10,26 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
     </script>
-    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
     <div class="container-fluid mt-3 row">
-        <div class="container-fluid col-2" id="firstBox">
+        <div class="container-fluid col-2" id="left_box">
             <h3 id="name">NAME</h3>
-            <input id="dName">
-            <h4 id="nameError" class="text-danger"></h4>
+            <input id="Name">
+            <h4 id="name_error" class="text-danger"></h4>
             <br>
             <h3 id="email">EMAIL</h3>
-            <input id="dEmail">
-            <h4 id="emailError" class="text-danger"></h4>
+            <input id="Email">
+            <h4 id="email_error" class="text-danger"></h4>
             <br>
             <h3 id="mobile">MOBILE</h3>
-            <input id="dMobile">
-            <h4 id="mobileError" class="text-danger"></h4>
+            <input id="Mobile">
+            <h4 id="mobile_error" class="text-danger"></h4>
             <br>
-            <button class="bg-dark col-lg-9 p-2 text-white" id="btnRegister">REGISTER</button>
+            <button class="bg-dark col-lg-9 p-2 text-white" id="regt_button">REGISTER</button>
         </div>
     
-        <div class="container-fluid bg-dark text-white col-lg-2" id="secondBox">
+        <div class="container-fluid bg-dark text-white col-lg-2" id="right_box">
             <h3 class="mt-5 b2Elems">NAME</h3>
             <h1 class="b2Elems" id="newName">MASAI</h1>
             <h3 class="mt-4 b2Elems">EMAIL</h3>
@@ -41,6 +40,87 @@
         <div class="col-8"></div>
     </div>
 
+    <script>
+        $(document).ready(function () {
+            $("#right_box").hide();
+            $("h3").hide();
+            $("input").hide();
+            $("button").hide();
+            $("#name").show();
+            $("#Name").show();
+        });
+        
+        $('#Name').keyup(function() {
+           var name = $(this).val();
+           if (name.length > 10 || name.length < 3) {
+                $("#name_error").text("Enter a valid name");
+                $("#Email").hide();
+                $("#email").hide();
+            } else {
+                $("#name_error").hide()
+                $("#Email").show();
+                $("#email").show();
+                $("#newName").text(name);
+            }
+        });
+
+        $('#Email').keyup(function() {
+            var email = $(this).val();
+            var vaildFormat = false;
+            var i = 0;
+            var j = 0; 
+            validDot = false; 
+            validAt = false; 
+
+            for (i = 0; i < email.length; i++) {
+                if (email[0] != '.' && email[email.length-1] != '.') {
+                    if (email[i] == '.') {
+                        if (email[i+1] != '' && email[i+1] != ' ' && email[i+1] != '@' && email[i-1] != '@' && email[i-1] != ' ') {
+                            validDot = true;
+                        }
+                    }
+                } 
+                
+                if (email[0] != '@' && email[email.length-1] != '@' && email[email.length-2] != '@' && email[i+1] != '.' && email[i-1] != '.' && email[i-1] != '' && email[i-1] != ' ' && email[i+1] != ' ') {
+                    if (email[i] == '@' && email[i-1] != ' ') {
+                        for (j = i; j < email.length; j++) {
+                            if (email[j+1] == '.') {
+                                validAt = true;
+                            }
+                        }				
+                    }
+                }
+            }
+
+            if(validDot != true || validAt != true) {
+                $("#email_error").text("Enter a valid email");
+                $("#Mobile").hide();
+                $("#mobile").hide();
+            } else {
+                $("#email_error").hide();
+                $("#Mobile").show();
+                $("#mobile").show();
+                $("#newEmail").text(email);
+            }
+        });
+
+        $('#Mobile').keyup(function() {
+            var mobile = $(this).val();
+            if (mobile.length != 10) {
+                $("#mobile_error").text('Enter a valid mobile');
+                $("#regt_button").hide();
+            } else {
+                $("#mobile_error").hide();
+                $("#regt_button").show();  
+                $("#newMobile").text(mobile);              
+            }
+        });
+
+        $("#regt_button").click(function () {
+            $("#left_box").hide();
+            $("#right_box").show();             
+            $(".b2Elems").show(); 
+        });
 
     </script>
 </body>
