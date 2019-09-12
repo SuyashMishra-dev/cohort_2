@@ -1,6 +1,5 @@
 $(document).ready(function(){
-    var title1 = document.getElementById('dataVal').value;
-    console.log(title1);
+   
     class Header{
         name;
         color;
@@ -28,8 +27,52 @@ $(document).ready(function(){
             this.font_size=ufont;
         }
     }
-    var newhead= new Header();
-    
+    class listHeader extends Header{
+        constructor(newname){
+            console.log("..."+newname);
+            super();
+            this.newname=newname;
+            this.name = [newname];
+            console.log(this.newname);
+        }
+     add(newName){
+        this.name[this.name.length] = newName;
+        var listname = document.querySelector('#updateNameId');
+        var option=document.createElement("option");
+        option.innerHTML= newName;
+        listname.append(option);
+       
+     }
+     show(){
+       
+       var  that = this.name;
+       var title = document.getElementById('dataVal');
+
+        for(var i=1;i<that.length;i++){
+            var divs = document.createElement("h1");
+            divs.innerHTML=that[i];
+            title.appendChild(divs);
+        }
+        
+     }
+     delName(name){
+      var that = this.name;
+      that.pop(name);
+      var listname = document.querySelector('#updateNameId');
+      var divs = document.querySelectorAll("option");
+      console.log(divs);
+      for(var i=0;i<divs.length;i++){
+      listname.removeChild(divs[i]);
+    }
+    for(var i=1;i<that.length;i++){
+        var option=document.createElement("option");
+        option.innerHTML= that[i];
+        listname.appendChild(option);
+    }
+     }
+    }
+    var newHead= new Header();
+    var newListHeader = new listHeader();
     $('#displayBtn').click(function(event){
         var head = $('#name').val();
         var color=$('#color').val();
@@ -45,11 +88,17 @@ $(document).ready(function(){
         title.innerHTML =newHead.render();
       
     })
+    $('#newRen').click(function(event){
+        event.preventDefault();
+       var title = document.getElementById('dataVal');
+        newListHeader.show();
+      
+    })
     $('#updateNameBtn').click(function(event){
         var uname = $('#Uname').val();
-       var headName = new Header();
+      
        event.preventDefault();
-       headName.updateName(uname);
+       newHead.updateName(uname);
      
     })
     $('#updatenFontBtn').click(function(event){
@@ -65,5 +114,21 @@ $(document).ready(function(){
        
       
     })
-   
+    
+    
+   $('#updateNameBtnNew').click(function(event){
+       var upname = $('#updatedName').val();
+       console.log(upname)
+       newListHeader.add(upname);
+       event.preventDefault();
+       console.log("yes clicked");
+       
+      
+   })
+   $('#delBtn').click(function(){
+       var delName = $('#updateNameId').val();
+       event.preventDefault();
+       console.log(delName);
+       newListHeader.delName(delName);
+   })
 })
