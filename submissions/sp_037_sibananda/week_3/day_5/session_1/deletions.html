@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1 id="h_">First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <div id="headings">
+            <h5>First H5</h5>
+            <h5>Second H5</h5>
+            <h5>Third H5</h5>
+        </div>
+        <div id="cont">
+            <div class="green">First DIV</div>
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button onclick="RH1()">Remove H1</button>
+        <button onclick="RH3()">Remove H3</button>
+        <button onclick="RH5()">Remove H5</button>
+        <button onclick="RHR()">Remove Red</button>
+        <button onclick="RDIVS()">Remove DIVS</button>
+        <script>
+            function RH1() {
+                var rh_1 = document.querySelector ("body") ;
+                var rh_11= document.getElementById ("h_") ;
+                rh_1 . removeChild (rh_11) ;
+                
+            }
+            function RH3() {
+                var rh_2 = document.querySelector("body") ;
+        
+                var rh_22 = document . querySelectorAll ("h3") ;
+                for(var i=0;i<=rh_22.length;i++){
+                rh_2.removeChild (rh_22[i]) ;
+                }  
+            }
+            function RH5() {
+                var rh_5=document.querySelector("body") ;
+                var rh_55=document.querySelectorAll("#headings") ;
+                for (var i=0;i<=rh_55.length;i++){
+                    rh_5.removeChild (rh_55[i]) ;
+                }
+                
+            }
+            function RHR() {
+                var rh_6=document.querySelector("#cont") ;
+                var rh_66=document.querySelector(".red") ;
+                rh_6.removeChild (rh_66) ; 
+            }
+            function RDIVS() {
+                var rh_7=document.querySelector("#cont") ;
+                var rh_77=document.querySelectorAll("div") ;
+               for (var i=0;i<=rh_77.length;i++){
+                   rh_7.removeChild (rh_77[i]) ;
+               }
+            }
+        </script>
+    </body>
+</html>

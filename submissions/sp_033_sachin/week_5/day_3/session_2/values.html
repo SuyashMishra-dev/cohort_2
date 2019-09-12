@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Values</title>
+</head>
+
+<body>
+	Name:<input type="text" name="name" id="name">
+	Gender:<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	Email:<input type="text" name="email" id="email">
+	Mobile:<input type="text" name="mobile" id="mobile">
+	<hr>
+	<button id="getName">NAME</button>
+	<button id="getGender">GENDER</button>
+	<button id="getEmail">EMAIL</button>
+	<button id="getMobile">MOBILE</button>
+	<div>
+		<div>
+			<h3 id="nameDisplay"></h3>
+		</div>
+		<div>
+			<h3 id="genderDisplay"></h3>
+		</div>
+		<div>
+			<h3 id="emailDisplay"></h3>
+		</div>
+		<div>
+			<h3 id="mobileDisplay"></h3>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script>
+
+		$('#getName').click(function(){
+			var name = $('#name').val();
+			$('#nameDisplay').text(name);
+		})
+
+		$('#getGender').click(function(){
+			var gender = $("#gender").val();
+			$("#genderDisplay").text(gender);
+		})
+
+		$('#getEmail').click(function(){
+			$("#emailDisplay").text($("#email").val());
+		})
+
+		$('#getMobile').click(function(){
+			$("#mobileDisplay").text($("#mobile").val());			
+		})
+
+	</script>
+</body>
+
+</html>

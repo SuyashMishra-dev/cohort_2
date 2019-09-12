@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>String Play</title>
+    </head>
+    <body>
+        <input type="text" name="string" id="input" placeholder="Enter a sentence"><br>
+        <button id = "remove_spaces">Remove Spaces</button><br>
+        <button id = "camel_case">Camel Case</button><br>
+        <button id = "snake_case">Snake Case</button><br>
+        <button id = "hypen_case">Hypen Case</button><br>
+        <button id = "mirror_image">Mirror Image</button>
+
+        <script type="text/javascript">
+        var input_string = document.getElementById('input').value;
+
+        var spaces = document.getElementById('remove_spaces');
+        function extra_spaces() {
+            var arr = [];
+            console.log(input_string.length);
+            if(input_string[0] == " ") {
+                input_string[0] = "";
+            }
+            console.log(input_string.length);
+            // for(var i = 0 ; i < input_string.length ; i++) {
+                
+            // }
+            //console.log(arr);
+        }
+        spaces.addEventListener('click' , extra_spaces);
+
+        var camel = document.getElementById('camel_case');
+        function change_camel(){
+            var inp = "";
+            for(var i=0; i<input_string.length; i++) {
+                if(input_string[i] != " "){
+                    inp = inp + input_string[i];
+                }
+            }
+            console.log(inp);
+        }
+        camel.addEventListener('click' , change_camel); 
+        </script>
+    </body>
+</html>

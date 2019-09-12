@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>State City Selectors</title>
+</head>
+<body>
+    <select id="state"></select>
+    <button id="btnNext">Next</button>
+    <select id="city"></select>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+
+    <script>
+        var state_cities = [{"state": "Karnataka", "cities": ["Bangalore", "Mysore"]}, {"state": "Tamil Nadu", "cities": ["Chennai", "Tanjore"]}] 
+
+        $("document").ready(function () {
+            for (i = 0; i < state_cities.length; i++) {
+                $("#state").append("<option>" + state_cities[i].state + "</option>");
+            }
+        });
+        
+        $("#btnNext").click(function () {
+            $("#city").empty();
+            for (i = 0; i < state_cities.length; i++) {
+                    if( state_cities[i].state == $("#state").val()) {
+                        for (j = 0; j < state_cities[i].cities.length; j++) {
+                            $("#city").append("<option>" + state_cities[i].cities[j] + "</option>");
+                        }
+                    }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- 
+
+var person = {
+    name : "Sidharth",
+    age : 100,
+    height: "6 Ft 12 In",
+    gender : "Female",
+    hobbies: ["Coding", "Weight Lifting", "Running", "Eating"]
+}
+
+for(key in person){
+    var output = key + ":" + person[key]
+    console.log(output)
+}
+ -->
