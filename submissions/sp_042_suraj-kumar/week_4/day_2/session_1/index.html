@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button onclick="favourateMovie()">Movie Information!</button>
+  <div id="print"></div>
+
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="runTime()" id="addkey">Add Runtime to the movie object! </button>
+
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="addCastMember()">Add cast member </button>
+
+
+  <script type="text/javascript">
+
+    var movie = {
+      Name: "AvengersEndGame",
+      Director: "Anthony Russo",
+      year: 2019,
+      Rating: 8.6,
+      Cast: ["Robert Downey, Jr.", "Chris Hemsworth", "Chris Evans", "Mark Ruffalo", "Scarlett Johansson", "Scarlett Johansson"]
+    };
+
+    console.log(movie.Name)
+    console.log(movie.Director)
+    console.log(movie.year)
+    console.log(movie.Rating)
+    function favourateMovie() {
+      var movielist = "My favourita movie: " + movie.Name + "."
+        + "Director:" + movie.Director + "." + " year:" + movie.Year + "."
+        + "Rating: " + movie.Rating + "." + "Cast: " + movie.Cast;
+      var output = document.createElement('div');
+      output.textContent = movielist;
+      var container = document.querySelector("#print");
+      container.appendChild(output);
+    }
+    function runTime() {
+
+      movie.runtime = 3 + " " + "Hr" + " " + 2 + " " + "Min";
+      var movielist = "My favourita movie: " + movie.Name + "."
+        + "Director:" + movie.Director + "." + " year:" + movie.Year + "."
+        + "Rating: " + movie.Rating + "." + "Cast: " + movie.Cast + "Runtime: " + movie.runtime;
+      var output = document.createElement('div');
+      output.textContent = movielist;
+      var container = document.querySelector("#print");
+      container.appendChild(output);
+
+    }
+     function addCastMember() {
+      movie.extracast = ["Benedict Cumberbatch", "Chadwick Boseman", "Brie Larson"];
+      var movielist = "My favourite movie is: " + movie.Name + "."
+        + "Director:" + movie.Director + "." + " Year:" + " " + movie.Year + "."
+        + "Rating:" + " " + movie.Rating + "."
+        + " Cast: " + movie.Cast + "." + "Runtime" + " " + movie.runtime + "." + "Added Cast:" + movie.extracast + ".";
+      var output = document.createElement('div');
+      output.textContent = movielist;
+      var container = document.querySelector("#print");
+      container.appendChild(output);
+    }
+  </script>
+</body>
+
+</html>
+
+
+
+  
