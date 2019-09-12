@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Week 4 Day 4Coding 1 </title>
+</head>
+
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button id="jsonObj"> Click here to print the JSON object </button>
+  <div id="container1"> </div>
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input type="text" name="num1" id="num1">
+  <input type="text" name="num2" id="num2">
+  <button id="callbackExpo">Calculate!</button>
+  <br />
+  Output:<p id="outputExpo"></p>
+  </hr>
+  <!-- FSD.W4.4.1_3 !-->
+  <br/>
+  <h1> Multiplication Table Generator</h1>
+  
+  <input type="text" name="num" id="num">
+
+  <button id="callbackMultiply">Generate Tables</button>
+  <br />
+  <table id="outputMultiply"></table>
+  </hr>
+
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <table></table>
+  <input type="text" />
+  <button> Generate CAPS and small </button>
+  <script>
+    //DO NOT EDIT ANY CODE BELOW THIS LINE 
+    var items = [
+      {
+        name: "Water",
+        price: 20,
+        id: 0929
+      },
+      {
+        name: "Rice",
+        price: 50,
+        id: 2323
+      },
+      {
+        name: "Banana",
+        price: 90,
+        id: 2323
+      },
+      {
+        name: "Water",
+        price: 20,
+        id: 0929
+      }
+    ]
+
+    // Do NOT EDIT ANY CODE ABOVE THIS LINE 
+    //Place all your code below this line!
+    function objListener() {
+      var output = JSON.stringify(items)
+      var displayPara = document.querySelector('#container1')
+      displayPara.innerText = output
+    }
+    var jsonBtn = document.querySelector('#jsonObj')
+    jsonBtn.addEventListener('click', objListener)
+
+
+
+    function exponent(input, power, callBack) {
+      var input = Number(document.getElementById('num1').value);
+      var power = Number(document.getElementById('num2').value);
+      var i = 0;
+      var exp = 1;
+      while (i < power) {
+        exp = exp * input;
+        i++;
+      }
+      callBack(exp)
+      }
+
+    var print = function (toPrint) {
+      console.log(toPrint)
+      document.getElementById('outputExpo').innerHTML = toPrint;
+    }
+
+    var calculateBtn = document.querySelector('#callbackExpo');
+
+    calculateBtn.addEventListener('click', function () {
+      exponent(num1, num2, print)
+    });
+
+
+
+    function generateTables(limit, callBack) {
+      var mutiply = [];
+      var limit = Number(document.getElementById('num').value);
+      for (var i = 1; i <= limit; i++) {
+        mutiply.push(i);
+      }
+      var outTable = document.getElementById('outputMultiply');
+      var tr = document.createElement('tr');
+      for (var i = 1; i <= limit; i++) {
+        var td = document.createElement('td');
+        td.innerHTML = "*" + i;
+        tr.appendChild(td);
+      }
+      outTable.appendChild(tr);
+      mutiply.forEach(function (multiple) {
+        var tr = document.createElement('tr');
+        for (var i = 1; i <= limit; i++) {
+          var td = document.createElement('td');
+          td.innerHTML = multiple * i;
+          tr.appendChild(td);
+        }
+        outTable.appendChild(tr);
+      });
+      callBack(multiply)
+    }
+    var print = function (toPrint) {
+      // console.log(toPrint)
+      document.getElementById('outputMultiply').innerHTML = toPrint;
+    }
+    var calculateMultiplyBtn = document.querySelector('#callbackMultiply');
+
+    calculateMultiplyBtn.addEventListener('click', function () {
+      generateTables(num, print)
+    });
+
+  </script>
+</body>
+</html>
