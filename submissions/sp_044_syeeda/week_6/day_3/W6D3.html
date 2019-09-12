@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html>
-
 <body>
     <div>
-        <input type="text" name="name" id="inputId" />
-        <button onclick="displayDetails()" id="displayAll"></button>
-        <button onclick="render()" id="render"></button>
+        <div id="root"></div>
+
+        <input type="text" id="inputId" />
+
+        <button onclick='name_stack.push(document.getElementById("inputId").value)'>PUSH</button>
+        <button onclick="render()">CHANGE</button>
     </div>
     <script>
+//create a class and constructor
 
-        class Header {
+        class Header {//paramters should be passed in the constructor
             constructor(name, color, fontsize) {
-                this.name = name;
+                this.name = name;//assign values to the property
+                this.name = [name]
                 this.color = color;
                 this.fontsize = fontsize;
+                //print and check if the output is displayed on cosole
+                console.log(this.name, this.color, this.fontsize)
+            }
+
+            //change the format of the output or name  call display function
+            render() {
+                this.displayName()
+                return `<h1 style="color:${this.color}; font-size:${this.fontsize}px">${this.name}</h1>`
+            }
+            push(name){
+    this.name[this.name.length] = name;
+    this.displayName()
+    console.log(this.name)
+  }
+//will only display the output
+            displayName() {
+                console.log('display Name', this.name);
             }
         }
-
-        let tag = new Header('misba', 'red', '15px');
-
-        console.log(tag.name, tag.color, tag.fontsize);
-
-        function displayDetails() {
-            var text = document.getElementsById("")
-
-        }
+//create a new object with values to display
+        var name_stack = new Header('misba', 'red',20);
+  //store the output somewhere .... <div> output is stored in the innerhtml tag (values are passed for ) 
         function render() {
-
+            output = document.getElementById('root')
+            output.innerHTML = name_stack.render()
         }
+
+        console.log(name_stack.name);
 
     </script>
 </body>
