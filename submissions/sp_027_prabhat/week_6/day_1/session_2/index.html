@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+</head>
+<body>
+    <h2 style="text-align: center">Car Details</h2>
+    <div>
+       <label>Car Make</label>
+       <input id="carMake" type="text">
+       <label>Car Model</label>
+       <input id="carModel" type="text">
+       <label>Top Speed</label>
+       <input id="carSpeed" type="number">
+       <label>Total Distance</label>
+       <input id="totalDistance" type="number">
+       <br>
+       <br>
+       <button id="getDetails">Get Details</button>
+       <p id="printdata"></p>
+    </div>
+
+    <script>
+        var cars=[]
+        var output = [];
+
+        class Car {
+            constructor(carmake,carmodel,carspeed,totaldistance=0) {
+                this.carmake = carmake;
+                this.carmodel = carmodel;
+                this.carspeed = carspeed;
+                this.totaldistance = totaldistance;
+            }
+        }
+
+        function printCar(){    
+            var car_make= document.getElementById("carMake").value;
+            var car_model = document.getElementById("carModel").value;
+            var car_speed = document.getElementById("carSpeed").value;
+            var total_distance = document.getElementById("totalDistance").value;
+           
+            var output = new Car(car_make,car_model,car_speed,total_distance)
+            var outputData = document.querySelector('#printdata');
+            //outputData.innerHTML =output
+
+            //for(var i = 0; i < cars.length; i++){
+            // outputData.innerHTML= "";
+            //var displayPara = document.createElement('p')
+            outputData.innerHTML = `Car Make - ${output.carmake}
+            Car Model - ${output.carmodel}
+            Car Speed - ${output.carspeed}
+            Total Distance - ${output.totaldistance}`;
+            // outputData.appendChild(displayPara)   
+            // }
+            cars.push(output)
+            console.log(output);
+          
+            console.log(cars[i])
+            console.log(cars)
+        
+        }
+
+        var btn = document.querySelector('#getDetails')
+        btn.addEventListener('click',printCar);
+
+
+        // function displacar(output){
+            
+        //     // printCar();
+        //      var outputData = document.querySelector('#printdata');
+        //      //var output = ''
+        //      outputData.innerHTML = "";
+        //      for(var i = 0; i < cars.length;i++){
+        //      var displayPara = document.createElement('p')
+        //      displayPara.textContent = cars[i].output
+        //      outputData.appendChild(displayPara)     
+        //      }
+        //  }
+        //  var btn2 = document.getElementById("getDetails2")
+        //  btn2.addEventListener('click',displacar)
+
+        
+    </script>
+</body>
+</html>
