@@ -1,0 +1,30 @@
+<html>
+    <head></head>
+    <body>
+        <input type="text" id="string">
+        <button onclick="removeSpace()">Remove space</button>
+        <script>
+           
+            function removeSpace() {
+                var data=document.getElementById("string").value;
+            var newData=[];
+            var count=0;
+            
+            for(var i=0;i<data.length;i++)
+            {
+              if(data[i]!=' ')
+              {
+                  newData[count++]=data[i];
+                  
+                  
+                  data[count] = '\0';
+              }
+              
+            }
+            console.log(newData);
+               
+            }
+        </script>
+    </body>
+</html>
+

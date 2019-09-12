@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<body>
+    <div id='root'></div>
+    <button id="give" onclick='render()'>RENDER</button>
+    <br />
+    <br />
+    <label>Enter</label>
+    <input id='val' />
+    <button onclick='masai_stack.push(document.getElementById("val").value)'>PUSH</button>
+
+    <script>
+        class Header {
+            constructor(name, color, font_size) {
+                this.name = [name]
+                this.color = [color]
+                this.font_size = [font_size]
+                console.log(this.name, this.color, this.font_size)
+            }
+            render() {
+                console.log('rendering')
+                this.displayName()
+                return `<h1> ${this.name} </h1>`
+                return `<h1> ${this.color} </h1>`
+                return `<h1> ${this.font_size} </h1>`
+            }
+            push(name) {
+                this.name[this.name.length] = name
+                this.displayName()
+            }
+
+            displayName() {
+                console.log('display Name', this.name, this.color, this.font_size)
+            }
+        }
+
+        var masai_stack = new Header('Masai', 'blue', 2)
+        function render() {
+            cont = document.getElementById('root')
+            cont.style.color = "blue";
+            cont.innerHTML = masai_stack.render()
+        }
+        // $("#give").click(function(){
+        //     $("#root").css({"color":"blue"});
+        // });
+        console.log(masai_stack.name)
+    </script>
+</body>
+</html>
