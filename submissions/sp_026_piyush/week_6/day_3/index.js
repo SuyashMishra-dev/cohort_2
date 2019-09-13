@@ -1,5 +1,3 @@
-
-
 class Header {
     constructor (name) {
         this.name = name;
@@ -13,17 +11,17 @@ class Header {
 
     updateName(newName) {
         this.name = newName;
-        document.querySelector('#container').innerHTML = this.render();
+        // document.querySelector('#container').innerHTML = this.render();
     }
     
     updateColor(newColor) {
         this.color = newColor;
-        document.querySelector('#container').innerHTML = this.render();
+        // document.querySelector('#container').innerHTML = this.render();
     }
 
     updateFontSize(newSize) {
         this.fontSize = newSize;
-        document.querySelector('#container').innerHTML = this.render();
+        // document.querySelector('#container').innerHTML = this.render();
     }
 
     render() {
@@ -45,19 +43,99 @@ class Header {
 
 var heading = new Header('Piyush');
 
-
-
-
-
-
-
-
-
-
-
 // var newName = document.getElementById('name').value;
 // var newColor = document.getElementById('color').value;
 // var newSize = document.getElementById('fontSize').value;
 // heading.displayDetails();
 // console.log(heading)
 // heading.render();
+
+class listHeader extends Header {
+    constructor(name) {
+        super(name);
+        this.name = [name];
+    }
+
+    displayDetails() {
+        console.log(`Name is ${this.name}, Color is ${this.color}, Font Size is ${this.fontSize}`);
+    }
+
+    render() {
+        console.log(this.name);
+        // return `<h1 style='color: ${this.color}; font-size: ${this.fontSize}px;'> ${this.name[0]} </h1>`;
+
+        // console.log( this.name.map(element => `<h1 style='color: ${this.color}; font-size: ${this.fontSize}px;'> ${element} </h1>`));
+        return this.name.map(element => `<h1 style='color: ${this.color}; font-size: ${this.fontSize}px;'> ${element} </h1>`);
+        // return displayData;
+    }
+
+    push(name){
+        this.name[this.name.length] = name;
+    }
+
+   
+}
+
+var listHeading = new listHeader('Arunabh');
+// listHeading.push('ArunabhSingh');
+// listHeading.displayDetails();
+// listHeading.updateColor('red');
+
+
+
+
+/*
+class myClass{
+  constructor(company){
+    this.company = company
+    this.name = [company]
+    console.log(this.company)
+  }
+  render(){
+    console.log('rendering')
+    this.displayName()
+    return `<h1> ${this.name} </h1>`
+
+  }
+  push(name){
+    this.name[this.name.length] = name
+    this.displayName()
+    // console.log(this.name)
+  }
+  top(){
+    console.log(this.name[this.name.length-1])
+  }
+  remove(){
+    this.name.pop()
+    this.displayName()
+    // console.log(this.name)
+  }
+  displayName(){
+    console.log('display Name',this.name)
+  }
+}
+
+
+
+
+
+
+var masai_stack = new myClass('Masai')
+
+function render(){
+  cont = document.getElementById('root')
+  cont.innerHTML = masai_stack.render()
+}
+
+var x = new Array(10).fill(0)
+console.log(x)
+console.log(masai_stack.name)
+
+*/
+
+
+
+
+// var arr = [1,2,4,5,6,4]
+// arr = arr.map((element) => 
+// {element * 5})
