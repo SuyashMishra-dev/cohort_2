@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Weather check</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class=row>
+            <div class="col-2"></div>
+            <div class="col-8">
+                <h1>Let's Check The Weather Of Any City </h1>
+                <input type="text" id = "city">
+                <button onclick =getWeather() class="btn btn-primary" type="submit">Button</button>
+            </div>
+            <p></p>
+        </div>
+        <script type="text/javascript">
+                function getWeather(){
+                    var output = document.getElementById("city").value;
+                      var xhr = new XMLHttpRequest();
+                      var apiKey= "95f3e37544834db59f1b09a673e251da";
+                      var url ='https://api.weatherbit.io/v2.0/current?city='+city+'&key='+apiKey;
+                      xhr.open('GET',url);
+                      xhr.send();
+                      xhr.onload = function(){
+                          if(xhr.status == 200){
+                           var objSelect =JSON.parse(xhr.response);
+                           console.log(objSelect);
+                          }
+                          else{
+                              console.log("Error Code is:" + xhr.status);
+                          }
+                          var bodyElm = document.querySelector("body");
+                          var para = document.querySelector("p");
+                          para.append(objSelect);
+
+                        }
+                    }
+                    
+        </script>
+    </body>
+</html>

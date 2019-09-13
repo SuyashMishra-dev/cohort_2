@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="display"></div>
+
+
+    <input type="text" id="name" placeholder="Name" >
+    <input type="submit" id="namBtn" onclick="updateName()" value="Name">
+    <input type="text" id="color" placeholder="Color" >
+    <input type="submit" id="namBtn" onclick="updateColor()" value="Color">
+    <input type="text" id="fontSize" placeholder="Font-Size" >
+    <input type="submit" id="namBtn" onclick="updateSize()" value="Size">
+    <hr>
+    <input type="submit" id="renderBtn" onclick="render()" value="Render">
+    
+    <script>
+        var name = document.getElementById('name').value;
+        var color = document.getElementById('color').value;
+        var font = document.getElementById('fontSize').value;
+        class Header {
+            constructor(name, color, font) {
+                this.Name = name
+                this.Color = color
+                this.Font = font
+                this.Array = [name, color, font]
+                console.log(this.Name + " " + this.Color + " " + this.Font);
+            }
+            render() {
+                console.log("rendering...");    
+                this.displayName();
+                return `<h1 style="color:${this.Color};font-size:${this.Font}+"px"">${this.Name}</h1>`
+            }
+
+            displayName() {
+                console.log(this.Name + this.Color + this.Font )
+            }
+            
+            updateName() {
+                this.Name = name;
+                this.render()
+            }
+
+            updateColor() {
+                this.Color = color;
+                this.render();
+            }
+            updateSize() {
+                this.Font = font;
+                this.render()
+            }
+        }
+
+        var masai_stack = new Header("Ravi", "red", 20);
+
+        function render() {
+            cont = document.getElementById('display')
+            cont.innerHTML = masai_stack.render()
+        }
+    </script>
+</body>
+</html>
