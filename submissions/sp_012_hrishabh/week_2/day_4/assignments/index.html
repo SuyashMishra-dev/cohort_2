@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>
+        The Powerpuff Girls
+
+    </title>
+    
+    <style type="text/css">
+      body {
+        background: pink; 
+      }
+      
+      nav {
+        text-align: center; 
+        width: 500px;
+        height: 50px;
+      }
+
+      .table_margin_contact_us {
+        margin-left: 360px;
+      }
+
+      .table_margin_home {
+        margin-top: -25px;
+      }
+
+      .table_margin_about {
+        margin-top: -25px;
+        margin-left: 90px;
+      }
+
+      .table_margin_live {
+        margin-top: -25px;
+        margin-left: 180px;
+      }
+
+      .table_help {
+        margin-top: -25px;
+        margin-left: 270px;
+      }
+
+      .slider {
+        margin-top: -25px; 
+        margin-left: -20px; 
+        margin-right: -7px;
+      }
+
+      .slider_img {
+        height: 500px; 
+        width: 100%; 
+      }
+
+      .slider_para {
+        margin-top: -180px; 
+        margin-left: 320px;
+        font-size: 50px;
+        color:red;
+      }
+
+      .btn {
+        border-radius: 10px;
+        background:green;
+        color: white 
+      }
+
+      .login {
+        width: 150px;
+        margin-top: -180px;
+        margin-left: 530px; 
+      }
+
+      .signup_margin {
+        margin-left: 15px;
+      }
+
+      .introduction_title {
+        color:blue; 
+        text-align: justify; 
+        font-family: Arial, Helvetica, sans-serif; 
+        font-size: 25px; 
+        margin-top: 100px;
+      }
+      .elder_girl_img {
+        height: 200px;
+        margin-top: 50px;
+        margin-left: 100px;
+      }
+
+      .younger_girl_img {
+        margin-top: -75px; 
+        margin-left: 670px;
+      }
+
+      .youngest_girl_img {
+        height: 200px; 
+        width:400px; 
+        float: left; 
+        margin-top: 200px;
+      }
+
+      .elder_girl_para {
+        color: blue; height: 150px; 
+        width: 800px;  
+        float: right;
+      }
+
+      .younger_girl_para {
+        color:blue; font-style: italic;font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 20px; 
+        margin-top: 50px; 
+        height: 180px; 
+        width: 600px;
+      }
+
+      .youngest_girl_para {
+        color:blue; 
+        font-size: large; 
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-top: 150px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-rows: 1fr, 1fr, 1fr;
+        grid-template-columns: 1fr, 1fr, 1fr
+      }
+
+      @media (max-width: 600px) {
+        .grid {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .younger_girl_img {
+          margin: 0px;
+        }
+
+        .younger_girl_para {
+          font-size: 15px;
+        }
+
+        .introduction_title {
+          font-size: 20px;
+        }
+
+        .login {
+          margin: 0px;
+        }
+
+        .slider_para {
+          font-size: 30px;
+          margin-left: 0px
+        }
+
+        .youngest_girl_para {
+          font-size: 15px;
+        }
+      }
+      
+    </style>
+    
+    
+    <body>
+      <!--------- Navigation Bar ---------->
+        <nav>
+            <table class="table_margin_contact_us">
+                  <tr>
+                      <td><label><a href="#">Contact-us</a></label></td>
+                  </tr>
+            </table>
+            <table class="table_margin_home">
+                    <tr>
+                       <td ><label><a href="#">Home</a></label></td>
+                    </tr>
+            </table>
+            <table class="table_margin_about">
+                    <tr>
+                        <td ><label><a href="#">About</a></label></td>
+                    </tr>
+            </table>
+            <table class="table_margin_live">
+                    <tr>
+                        <td ><label><a href="#">Live</a></label></td>
+                    </tr>
+            </table>
+            <table class="table_help">
+                    <tr>
+                        <td ><label><a  href="#">Help</a></label></td>
+                    </tr>
+            </table>                
+        </nav>            
+        
+        
+        <!-------Main Slider Image------->
+        
+        <div class="slider">   
+          <img class="slider_img" src="resources/bg.jpg" alt="slider_img">
+          <p class="slider_para">
+            <b>
+              Welcome To The TownsVille
+            </b>
+          </p>
+        
+          <!------Login Signup Button------->  
+          
+          <input class="login btn" type="button" value="LOG IN">
+          <input class="login btn signup_margin" type="button" value="SIGN UP">
+        </div>
+        
+        <!-----Introduction Of Title------> 
+        <div class="grid">
+        
+        <p class="introduction_title"> 
+          <b>
+            The Powerpuff Girls is an American superhero animated television series 
+            created by animator Craig McCracken and produced by
+            Hanna-Barbera (later Cartoon Network Studios) for Cartoon Network. 
+            The show centers on Blossom, Bubbles, and Buttercup, 
+            three kindergarten-aged girls with superpowers. 
+            The girls all live in the fictional city of Townsville, 
+            USA with their father and creator, a scientist named Professor Utonium, 
+            and are frequently called upon by the city's mayor to help fight nearby criminals 
+            and other enemies using their powers. 
+          </b>
+        </p>
+        
+        <!--Elder girl image & introduction-->
+
+
+        <img class="elder_girl_img" src="resources/blossom.jpeg" alt="">
+            
+          
+        <p class="elder_girl_para">
+          Her personality ingredient is "everything nice", 
+          her signature color is pink, and she has long orange hair with a red bow 
+          She was named for having spoken freely and honestly to the Professor shortly after her creation as 
+          shown in The Powerpuff Girls Movie. She is often seen as the most level-headed, 
+          and composed member of the group and also strong and determined. 
+          Her unique abilities include "Ice Breath" (develops in "Ice Sore"), 
+          microscopic vision, and advanced intelligence; she is also a master strategist and apt planner.
+        </p>
+
+        <!--Younger girl image & introduction-->
+        
+        
+        <img class="younger_girl_img" src="resources/bubble.jpg" alt="younger_girl_img">          
+          
+          
+        <p class="younger_girl_para">
+          Bubbles (voiced by Tara Strong in the series and by Kath Soucie in the What a Cartoon! 
+          episodes) is the "softest and sweetest" of the three.
+          Her signature color is blue, her personality ingredient is "sugar", and she has blonde hair in pigtails. 
+          Bubbles is seen as kind and very sweet but she is also capable of extreme rage and can fight monsters 
+          just as well as her sisters can. 
+          Her best friend is a stuffed octopus doll she calls "Octi", 
+          and she also loves animals. 
+          She exhibits the ability to both understand multiple languages and communicate with various animals, 
+          and hr unique power is emitting supersonic waves.
+        </p>
+
+        <!--Youngest girl image & introduction-->     
+              
+          
+        <img class="youngest_girl_img" src="resources/buttercup.jpg" alt="youngest_girl_img">
+
+
+        <p class="youngest_girl_para">
+          Buttercup (voiced by E. G. Daily) is described as a "tough hotheaded tomboy".
+          Her personality ingredient is spice, 
+          her signature color is green, and she has black hair in a flip. She loves to get dirty, 
+          fights hard and plays rough; she does not plan and is all action.[16] Buttercup is the only 
+          Powerpuff Girl without any unique superpowers (aside from being able to curl 
+          her tongue as shown in the episode "Nuthin' Special").[17] McCracken originally 
+          wanted to name the character "Bud" until a friend suggested the name Buttercup.
+        </p>
+        </div>  
+    </body>
+    
+
+</html>         
+               
+             
+              
+       
+
+      
