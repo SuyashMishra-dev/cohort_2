@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Harry Potter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .img {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-center">
+        <img src="resources/logo.png" alt="harry_potter" class="mt-3" style="height: 100px; width: 500px">
+    </div>
+
+    <!-- Navigation Start Here -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info static-top">
+        <div class="container">
+            <div class="collapse navbar-collapse float-left" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto float-right">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="characters.html">Characters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="students.html">Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="staffs.html">Staff</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="house.html">House</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Ends Here -->
+
+    <div id="display"></div>
+
+    <script>
+        window.onload = function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://hp-api.herokuapp.com/api/characters');
+            xhr.send()
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    var characters_object = JSON.parse(xhr.response);
+                } else {
+                    console.log(xhr.status);
+                }
+
+
+
+                characters_object.forEach(function(element) {
+                    $("#display").append("<div class='col-4 float-left text-center mb-5 mt-5'>" + "<div class='card bg-color text-dark font-weight-bolder'>" +
+                        "<div class='card-body'>" + "<img class = 'card-img-top img' src =" + element.image + ">" + "<h5 class='card-title'>" + "<b>" + element.name + "</b>" +
+                        "</h5>" + "<p class='card-text'>Species: " + element.species + "</p>" +
+                        "<p class='card-text'>Gender: " + element.gender + "</p>" +
+                        "<p class = 'card-text'>House:" + element.house + "</p>" +
+                        "<p>Birth Year:" + element.dateOfBirth + "</p>" + "</div>" + "</div>" + "</div>");
+                });
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="conatiner">
+            <div id="dataVal">
+                
+            </div>
+            <form class="form-inline py-5 px-3">
+                
+                    <input type="text" class="form-control mr-2" id="name" placeholder="Name">
+                    <input type="text" class="form-control mr-2" id="color" placeholder="Color">
+                    <input type="text" class="form-control mr-2" id="fontSize" placeholder="Font Size">
+
+                    <button type="submit" id="displayBtn" class="btn btn-secondary mr-2">Display</button>
+                    <button type="submit" id="renderBtn" class="btn btn-secondary mr-2">Render</button>
+                    
+                </form>
+                <form class="form-inline py-5 px-3">
+                
+                        <input type="text" class="form-control mr-2" id="Uname" placeholder="Name">
+                        <button type="submit" id="updateNameBtn" class="btn btn-secondary mr-2">Name</button>
+                        <input type="text" class="form-control mr-2" id="Ucolor" placeholder="Color">
+                        <button type="submit" id="updatenColrBtn" class="btn btn-secondary mr-2">color</button>
+                        <input type="text" class="form-control mr-2" id="UfontSize" placeholder="Font Size">
+                        <button type="submit" id="updatenFontBtn" class="btn btn-secondary mr-2">font-size</button>
+                       
+                    </form>
+                    <form  class="form-inline py-5 px-3">
+                        <input type="text" class="form-control mr-2" id="updatedName" placeholder="Update Name">
+                        <button type="submit" id="updateNameBtnNew" class="btn btn-secondary mr-2">Update Name</button>
+                        <button type="submit" id="newRen" class="btn btn-secondary mr-2">New Render</button>
+                        <div class="form-group">
+                            <label for="name">Updated Name</label>
+                            <select id="updateNameId" class="form-control px-3">
+                               
+                            </select>
+                        </div>
+                        <button type="submit" id="delBtn" class="btn btn-secondary mr-2">Delete Name</button>
+                    </form>
+            
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

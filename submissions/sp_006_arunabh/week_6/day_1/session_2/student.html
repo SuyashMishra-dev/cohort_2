@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Students</title>
+
+        <!--Required Metadata-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!--JS-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <!--Bootstrap Plugin-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <script>
+        var marks;
+
+        class Student {
+            constructor(name = "invalid", email = "invalid", phone = "invalid") {
+                this.name = name;
+                this.email = email;
+                this.phone = phone;
+            }
+
+            assignMarks(...num) {
+                marks = num;
+                console.log(marks);
+            }
+
+            highestMarks() {
+                var highestMarks = marks[0];
+                for(var i = 1; i < marks.length; i++){
+                    if(marks[i] > highestMarks) {
+                        highestMarks = marks[i];
+                    }
+                    console.log(highestMarks);
+                }
+            }
+
+            totalSubjects() {
+                var subjects = marks.length;
+                    console.log(subjects);
+            }
+
+            showMarks() {
+                console.log(marks);
+            }
+
+            average() {
+                var num = marks.length;
+                var avg = 0;
+                var sum = 0;
+                for (var i = 0; i < num ; i++){
+                    sum = sum + marks[i];
+                }
+                avg = sum / num;
+                console.log(avg);
+            }
+
+            low() {
+                var lowestMarks = marks[0];
+                for(var i = 1; i < marks.length; i++){
+                    if(marks[i] < lowestMarks) {
+                        lowestMarks = marks[i];
+                    }
+                    console.log(lowestMarks);
+                }
+            }
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div>
+        <input type="text" id="nameInput" placeholder="Name">
+        <input type="text" id="colorInput" placeholder="Color">
+        <input type="text" id="fontSizeInput" placeholder="Font Size">
+        <button onclick="coruName()">Name</button>
+        <button onclick="uColor()">Color</button>
+        <button onclick="uFontSize()">Font Size</button>
+        <button onclick="render()">Render</button>
+    </div>
+    <br>
+    <hr>
+    <div id="displayContainer">
+
+    </div>
+    <br>
+    <hr>
+    <div id="containerExtends">
+        <input type="text" id="exNameInput" placeholder="Ex Name">
+        <input type="text" id="exColorInput" placeholder="Ex Color">
+        <input type="text" id="exFontSizeInput" placeholder="Ex Font Size">
+        <input type="text" id="exDeleteName" placeholder="Ex Delete Name">
+        <select id="selectName">
+            <option>----</option>
+        </select>
+        <button onclick="exName()">Name</button>
+        <button onclick="exColor()">Color</button>
+        <button onclick="exFontSize()">Font Size</button>
+        <button onclick="exDelete()">Delete Name</button>
+        <button onclick="exUpdateName()">Update Name</button>
+        <button onclick="exRender()">Render</button>
+    </div>
+    <div id="exDisplayContainer">
+
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

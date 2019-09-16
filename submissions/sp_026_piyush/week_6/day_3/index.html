@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <p>Name</p>
+        <input type="text" id="name">
+        <button onclick="heading.updateName(document.getElementById('name').value)">Name</button>
+        
+        <p>Color</p>
+        <input type="text" id="color">
+        <button onclick="heading.updateColor(document.getElementById('color').value)">Color</button>
+
+        <p>Font Size</p>
+        <input type="text" id="fontSize">
+        <button onclick="heading.updateFontSize(document.getElementById('fontSize').value)">Font Size</button>
+
+        <button onclick="document.querySelector('#container').innerHTML = heading.render()">Render</button>
+        <div id = "container">
+
+        </div>
+    </div>
+    <hr>
+    <div>
+        <p>Name</p>
+        <input type="text" id="name2">
+        <p>Color</p>
+        <input type="text" id="color2">
+        <p>Font Size</p>
+        <input type="text" id="fontSize2">
+        <p>Update Name</p>
+        <select name="" id="">
+
+        </select>
+        <p>Delete Name</p>
+        <select name="" id="">
+
+        </select>
+
+        <button onclick="listHeading.name.push(document.getElementById('name2').value)">Name</button>
+        <button onclick="listHeading.updateColor(document.getElementById('color2').value)">Color</button>
+        <button onclick="listHeading.updateFontSize(document.getElementById('fontSize2').value)">Font Size</button>
+        <button onclick="">Delete Name</button>
+        <button onclick="document.querySelector('#container').innerHTML = listHeading.render().reduce((a,b)=>a+b)">Render</button>
+
+    </div>
+    
+
+    <script src="./index.js">
+    </script>
+</body>
+</html>
