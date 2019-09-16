@@ -1,0 +1,69 @@
+#joinUs
+{
+    height:50px;
+    width:150px;
+    background-color:blue;
+    color:white;
+    border-radius:10px;
+}
+#login
+{
+    height:50px;
+    width:150px;
+    background-color:orange;
+    color:white;
+    border-radius:10px;
+}
+#search
+{
+    height:50px;
+    width:150px;
+    background-color:green;
+    color:white;
+    border-radius:10px;
+}
+#home
+{
+    height:50px;
+    width:150px;
+    background-color:pink;
+    color:white;
+    border-radius:10px;
+}
+#right
+{
+    margin-left:300px;
+    margin-top:-265px;
+}
+#settings
+{
+    height:50px;
+    width:150px;
+    background-color:teal;
+    color:white;
+    border-radius:10px;
+}
+#contact
+{
+    height:50px;
+    width:150px;
+    background-color:maroon;
+    color:white;
+    border-radius:10px;
+}
+#help
+{
+    height:50px;
+    width:150px;
+    background-color:purple;
+    color:white;
+    border-radius:10px;
+}
+#download
+{
+    height:50px;
+    width:150px;
+    background-color:gray;
+    color:white;
+    border-radius:10px;
+}
