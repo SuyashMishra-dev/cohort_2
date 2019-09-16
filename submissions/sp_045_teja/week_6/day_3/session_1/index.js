@@ -56,11 +56,96 @@ function font() {
 }
 
 
+let count = 0;
 
+class listHeader extends Header {
+    constructor(name) {
+        super(name)
+        this.name = [name]
+    }
 
+    // render1() {
+    //     for (var i = 0; i < this.name.length; i++){
+    //     return this.name[i]
+    //     }
+    // }
 
+    pushes(names) {
+        this.displayDetails()
+        this.name[this.name.length] = names;
+    }
 
+    remove() {
+        this.displayDetails()
+        this.name.pop();
+    }
+}
 
+let arrname_stack = null;
+
+function name1() {
+   cont2 = document.getElementById('input4').value;
+   if(count == 0) {
+    arrname_stack = new listHeader(cont2);
+    arrname_stack.displayDetails()
+    dropdown(arrname_stack)
+    count++
+   }
+   else if(count > 0){
+       arrname_stack.pushes(cont2);
+       dropdown(arrname_stack)
+   }
+}
+
+// function render1() {
+//     cont1 = document.getElementById("root2")
+//     var a = arrname_stack.render1();
+//     a.forEach(element => {
+//         var elem=document.createElement('h1')
+//         elem.innerHTML=element;
+//         cont1.appenChild(elem)
+//     });
+// }
+
+function dropdown(items) {
+    cont3 = document.getElementById('select1');
+    cont3.innerHTML = "";
+    for(var i = 0; i < items.name.length; i++) {
+        var opt = document.createElement("option");
+        opt.setAttribute("value", items.name[i]);
+        opt.textContent = items.name[i];
+        select1.appendChild(opt)
+    }
+
+}
+
+function del() {
+    var elems = document.getElementById("select1").value;
+    let tempArr = arrname_stack.name.filter((element) => {
+        if(element != elems) {
+            return element;
+        }
+    })
+    
+    console.log(tempArr);
+
+    arrname_stack.name = tempArr;
+    dropdown(arrname_stack)
+}
+
+function updatename() {
+    var elems = document.getElementById("select1").value;
+    var cont2 = document.getElementById('input4').value;
+    let nameArr = arrname_stack.name.map((element) => {
+        if(element == elems) {
+            return cont2;
+        }
+        else return element;
+    })
+    arrname_stack.name = nameArr;
+    dropdown(arrname_stack)    
+
+}
 
 
 

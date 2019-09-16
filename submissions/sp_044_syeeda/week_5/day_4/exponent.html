@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <body>
+      <div><input type="number" name="box" id="multi1">
+        <input type="number" name="box" id="multi2" />
+        <button onclick ="mathExpo()" id="demo3">CALCULATE EXPONENT</button>
+      <button onclick ="mathMulti()" id="demo2">MULTIPLY </button>
+    </div>
+  
+<div id="display">
+
+
+</div>
+   <script>
+
+function mathMulti()
+{
+  var num1=document.getElementById("multi1").value
+  var num2=document.getElementById("multi2").value
+    var result=num1*num2;
+  document.getElementById("display").innerHTML=result;
+  console.log(result);  
+}
+  
+function mathExpo()
+{
+  var num1=Number(document.getElementById("multi1").value)
+  var num2=Number(document.getElementById("multi2").value)
+  for (var i=0;i<=10;i++)
+    {
+       var result1=(num1)**(num2);
+    }
+    document.getElementById("display").innerHTML=result1;
+
+    console.log(result1);
+  }
+  
+
+</script>
+  
+</body>
+</html>
+  

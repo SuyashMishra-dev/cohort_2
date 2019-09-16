@@ -1,0 +1,48 @@
+#mainDiv
+{
+    background-color:blue;
+    height:400px;
+    width:500px;
+}
+#insideDiv
+{
+    background-color:teal;
+    text-align:center;
+}
+#profile
+{
+    height:150px;
+    width:150px;
+    border-radius:100%;
+    border: black 2px;
+}
+#message
+{
+    background-color:blue;
+    border-radius:20%;
+    color:white;
+    height:50px;
+    width:150px;
+}
+#follow
+{
+    background-color:teal;
+    color:white;
+    height:50px;
+    width:150px;
+    border-radius:20%;
+}
+#innerDiv
+{
+    background-color:teal;
+}
+#skills
+{
+    color:lightgray;
+    font-weight:bold;
+}
+#uiUx
+{
+    color:white;
+    border:white 2px;
+}
