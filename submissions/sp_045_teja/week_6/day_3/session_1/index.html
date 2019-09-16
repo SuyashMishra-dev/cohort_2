@@ -22,26 +22,30 @@
                     <button class="btn btn-secondary mt-2" onclick="font()">font-size</button>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="box2">
                 <div class= "col-lg-4 mt-3">
                     <input type="text" class="form-control" id="input4">
-                    <button class="btn btn-secondary mt-2" onclick="name1()">update-name</button>
-                    <select>
-                        <option></option>
+                    <button class="btn btn-secondary mt-2" onclick="name1()">name</button>
+                    <select id="select1">
+                        <!-- <option>update-name</option> -->
                     </select>
+                    <button class="btn btn-secondary mt-2" onclick="updatename()">updatename</button>
                 </div>
                 <div class="col-lg-4 mt-3">
                     <input type="text" class="form-control" id="input5">
-                    <button class="btn btn-secondary mt-2" onclick="color1()">update-color</button>
+                    <button class="btn btn-secondary mt-2" onclick="color1()">color</button>
                 </div>
                 <div class="col-lg-4 mt-3">
                     <input type="text" class="form-control" id="input6">
-                    <button class="btn btn-secondary mt-2" onclick="font1()">update-font-size</button>
+                    <button class="btn btn-secondary mt-2" onclick="font1()">font-size</button>
                 </div>
             </div>
-
+            <div class="row">
+                <button class="btn btn-secondary mt-2" onclick="del()">delete-name</button>
+            </div>
         </div>
-        
+        <div id="root2"></div>
+        <button type="button" class="btn btn-secondary mt-5" onclick="render1()">render</button> 
     </body>
     <script src="index.js"></script>
 </html>
