@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Leaderboard 2</title>
+        <style>
+            .block1{
+                width:800px;
+                float:center;
+                height:400px;
+                margin-left: 50px;
+            }
+            
+            .block2{
+                width:800px;
+                float:center;
+                height:400px;
+                margin-left: 700px;
+                margin-top: -420px;
+            }
+          
+            .leftMargin{
+                margin-left: 200px;
+            }
+
+            .leftMargin1{
+                margin-left: 300px;
+            }
+
+            .min{
+                background:rgb(238, 23, 23);
+                width:120px;
+                height:80px;
+                float: left;
+                text-align: center;
+                font-size: 20px;
+                margin-left: 200px;
+            }
+
+            .max {
+                background:rgb(26, 163, 26);
+                width:120px;
+                height:80px;
+                float: left;
+                margin-left: 200px;
+                text-align: center;
+                font-size: 20px;
+            }
+
+            .border{
+                border: 2px solid black;
+            }
+
+            .clear-left{
+                clear: left;
+            }
+
+            .text{
+            text-align:center;
+            }
+
+            .paragraph{
+                margin-left:525px; 
+                margin-top: -30px;
+            }
+
+            #score {           
+                width: 200px;
+                height: 70px;            
+                margin: 15px;
+                margin-left:310px;
+                border:2px solid black;
+                font-size:50px;
+                text-align:center;
+            }
+
+            #total {           
+                width: 200px;
+                height: 90px;            
+                margin: 15px;
+                margin-left:310px;
+                border:2px solid black;
+                font-size:50px;
+                text-align:center;
+            }
+
+            .keyboard {    
+                margin-left: 315px;                       
+                display: grid;
+                grid-template-columns: 60px 60px 60px;
+                grid-template-rows: 50px 50px 50px 50px;
+                grid-gap: 10px;
+                text-align:center;
+            }
+
+            button{
+            border-radius: 10px;
+            }
+            .grey{
+            background:grey;
+            }
+
+            .green{
+            background:rgb(46, 216, 120);
+            }
+
+            .orange{
+            background:rgb(255, 175, 27);
+            }
+
+            .violet{
+            background:rgb(248, 74, 248);
+            }
+
+            .button{
+                text-align: center;
+                width: 150px;
+                color: white;
+                background: black;
+                margin-left: 340px;
+                padding: 10px;
+                margin-top: 20px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="block1">
+            <h1 class="leftMargin1">
+                    TOTAL
+            </h1>
+                    
+            <div  class="grey" id="total">
+                        -
+                    </div>
+            <p class="leftMargin">
+                Min
+            </p>
+            
+            <div  class="min border" id="min">
+                -
+            </div>
+            
+            <p class="paragraph">
+                Max
+            </p>
+
+            <div  class="max border" id="max">
+                -
+            </div> 
+
+            <div class="clear-left">
+            </div>
+            
+            <div class="clear-left">
+            </div>
+            
+            <h2 class="text">SCORE
+            </h2>
+
+            <div class="grey" id="score">
+                #
+            </div>
+    
+            <div class="keyboard">
+                <button class="green" onclick="input('1')">1</button>
+                <button class="orange" onclick="input('2')">2</button>
+                <button class="green" onclick="input('3')">3</button>
+                <button class="orange" onclick="input('4')">4</button>
+                <button class="orange" onclick="input('5')">5</button>
+                <button class="orange" onclick="input('6')">6</button>
+                <button class="green" onclick="input('7')">7</button>
+                <button class="orange" onclick="input('8')">8</button>
+                <button class="green" onclick="input('9')">9</button>
+                <button class="violet" onclick="input('*')">*</button>
+                <button class="violet" onclick="input('0')">0</button>
+                <button class="violet" onclick="input('#')">#</button>
+                
+            </div>
+        
+            <div>
+                <button class="button" onclick="calculate()">
+                    Enter
+                </button>
+            </div>
+
+        </div>
+        <div class="block2">
+            <h1 class="leftMargin1">
+                    GAME SCORES
+            </h1>
+            <p class="leftMargin1">Game 1 - </p>
+            <p class="leftMargin1">Game 2 - </p>
+            <p class="leftMargin1">Game 3 - </p>
+            <p class="leftMargin1">Game 4 - </p>
+            <p class="leftMargin1">Game 5 - </p>
+            <p class="leftMargin1">Game 6 - </p>
+           
+            <div class="clear-left">
+            </div>
+            
+            <div>
+                <button class="button" onclick="calculate()">
+                    REMOVE ALL
+                </button>
+                <button class="button" onclick="calculate()">
+                    REMOVE ODD
+                </button>
+                <button class="button" onclick="calculate()">
+                    REMOVE EVEN
+                </button>
+                <button class="button" onclick="calculate()">
+                    REMOVE LAST
+                </button>
+            </div>
+
+        </div>    
+    </body>
+
+    <script>
+        var value = '';
+        var min = 43;
+        var max = 2019;
+        function input(num){
+            value = value + num;
+            document.getElementById('score').innerHTML = value;
+        }
+        
+        function calculate(){
+            value = Number(value);
+            if( value < min){
+                min = value;
+                document.getElementById('min').innerHTML = min;
+                scoreReset();
+            }
+            else if(value > max){
+                    max = value;
+                    document.getElementById('max').innerHTML = max;
+                    scoreReset();
+                }
+            else{
+                scoreReset();
+            }
+        }
+
+        function scoreReset(){
+            value = '';
+            document.getElementById('score').innerHTML = '#';
+            }
+    </script>
+        
+</html>
