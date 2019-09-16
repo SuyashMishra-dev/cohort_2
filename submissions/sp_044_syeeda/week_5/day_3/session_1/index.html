@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  
+  
+  <button id="movieDetails">Movie Information! </button>
+  //common id is given 
+  <div id ="allMovies"></div>
+
+  <!-- FSD.W4.2.1_2 !-->
+  <button>Add Runtime to the movie object! </button>
+
+  
+
+  <!-- FSD.W4.2.1_3 !-->
+  <button>Add cast member </button>
+  <script>
+
+  var movie= {
+    name: "race3",
+    director: "Siddhaert",
+    year: 2019,
+    rating: 3,
+    cast: ["salman","sharukh","kajol","katrina","aamir"]
+    }
+    
+    function printMovie()
+    {
+    var outputMovie = "Movie name is"  + movie.name + "."
+    + "director name is" +movie.director+ "nominated for being best director of the year"
+    + "awarded in the year" + movie.year
+    + "rating for the movie" + movie.ratings
+    +"and actor and actresses casted in this movie are" + movie.cast[3];
+    
+    var outputAssign = document.createElement('p')//create the data given in a particular format div or p
+    outputAssign.textContent = outputMovie //execute the above paragraph
+    
+    var container = document.querySelector('#allMovies')
+    container.appendChild(outputAssign)
+    }
+      var movieButton = document.querySelector('#movieDetails')
+      movieButton.addEventListener('click', printMovie)
+</script>
+</body>
+</html>
