@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <style type="text/css">
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .main{
+          display: grid;
+          grid-template-rows: 1fr, 4fr;
+          grid-template-columns: 1fr, 1fr;
+          grid-gap: 20px;
+          height: 600px;
+          
+        
+    }
+
+
+    .itemred{
+        background: red;
+        grid-area: 2 / 1 / 2 / 2;
+    
+
+        
+        
+    }
+    .itemgreen{
+        background: green;
+        grid-area: 2 / 2 / 2 / 2;
+    }
+    .itemyellow{
+        background: yellow;
+        grid-area: 1 / 1 / 1 / 3;
+       
+    }
+
+    @media (max-width: 800px) {
+        .main {
+            display: grid;
+            grid-template-rows: 1fr , 3fr, 3fr;
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+        .itemyellow {
+            grid-area: 1 / 1 ;
+            
+        }
+        .itemred {
+            grid-area: 3 / 1 ; 
+        }
+        .itemgreen {
+            grid-area: 2 / 1;
+        }
+
+    }
+    </style>
+    <body>
+        <div class="main">
+            <div class="itemyellow">Navigation</div>
+            <div class="itemred">LEFT BOX</div>
+            <div class="itemgreen">RIGHT BOX</div>
+        </div>
+    </body>
+</html>

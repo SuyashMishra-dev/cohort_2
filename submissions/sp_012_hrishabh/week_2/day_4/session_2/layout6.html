@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <style type="text/css">
+    .gridbox{
+        display: grid;
+        width: 100%;
+        grid-template-rows: repeat(4, 150px);
+       grid-template-columns: repeat(4, 150px); 
+       grid-gap: 20px;
+    }  
+    .gridbox div{
+        background: darkcyan;
+        margin-top: 20px;
+    }
+    #position{
+        grid-row-start: 3;
+    }
+    #position1{
+        grid-row-start: 4;
+    }
+
+    @media(max-width: 500px) {
+        .gridbox div{
+        background: green;
+        margin-top: 20px;
+    }
+    #position{
+        grid-row-start: 3;
+    }
+    #position1{
+        grid-row-start: 3;
+    }
+         
+    }
+    
+     
+    
+    </style>
+    <body>
+        <div class="gridbox">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div id="position"></div>
+            <div id="position"></div>
+            <div id="position1"></div>
+            
+        </div>
+       
+    </body>
+</html>
