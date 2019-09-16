@@ -1,0 +1,127 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.JoinUs{
+  background: blue;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  margin: 5px 10px;
+  width: 175px;
+}
+
+.Settings{
+  background: #6666ff;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  margin: 5px 10px;
+  width: 175px;
+}
+
+.Login{
+  background: orange;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  margin: 5px 10px;
+  width: 175px;
+}
+
+.ContactUs{
+  background: maroon;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  margin: 5px 10px;
+  width: 175px;
+}
+
+.Search{
+  background: seagreen;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  margin: 5px 10px;
+  width: 175px;
+}
+
+.Help{
+  background: purple;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  margin: 5px 10px;
+  width: 175px;
+}
+
+.Home{
+  background: #ff0066;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  margin: 5px 10px;
+  width: 175px;
+}
+
+.Download{
+  background: #cc6600;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  margin: 5px 10px;
+  width: 175px;
+}
+.Profile{
+  background: #61dafb;
+  text-align: center;
+  width: 400px;
+  height: 400px;
+}
+.Profile span{
+  padding: 3px 5px;
+  margin: 5px;
+  border: 1px solid gray;
+}
+.Profile button:first-child {
+  background: blue;
+}
+.Pro{
+  width: 40px;
+  background: orange;
+}
+.Image{
+  margin: -20px 150px;
+  border-radius: 50%;
+}
