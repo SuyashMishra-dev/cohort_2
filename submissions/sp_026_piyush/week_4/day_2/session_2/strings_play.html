@@ -12,26 +12,57 @@
         <button onclick="hyphenCase()">Hyphen Case</button>
         <button onclick="mirrorImage()">Mirror Image</button>
         <button onclick="getString()">Get String</button>
+        <button onclick="addSpaceBetweenWords()">Add space</button>
     </div>
 
     <script>
 
         var usableString = [];
         var inputString = [];
+        var newString = [];
+        var noSpaceArray = [];
+
+        function getString() {
+            var inputString = document.getElementById('inputBox').value;
+            var splitSymbol = ' ';
+            var a = '';
+            var b = [];
+            for (i = 0; i < inputString.length; i++) {
+                if(inputString[i] != splitSymbol) {
+                    a = a + inputString[i];
+                } else if (inputString[i] == splitSymbol) {
+                    b.push(a);
+                    a = '';
+                }
+            }
+            b.push(a);
+            usableString = b;
+            // console.log(usableString);
+            return usableString;    
+        }
         
         function removeSpaces() {
             getString();
-            if (usableString[usableString.length - 1] == ' ') {
-                usableString.length - 1;
-                console.log(usableString);
+            var a = [];
+            for (var i = 0; i < usableString.length; i++) {
+                if ( usableString[i] != '') {
+                    a.push(usableString[i]);
+                }
             }
+            noSpaceArray = a;
+            // console.log(noSpaceArray);
+            return noSpaceArray;
+        }
 
-            // if (usableString[0] == ' ') {
-
-            // }
-            
-            // for (i = 0; i < usableString.length; i++) {
-            // }
+        function addSpaceBetweenWords() {
+            removeSpaces();
+            var spacedString = '';
+            for ( i = 0; i < noSpaceArray.length; i++) {
+                spacedString = spacedString + noSpaceArray[i] + ' ';
+                console.log(spacedString); 
+            }
+            // console.log(spacedString);
+            document.getElementById('inputBox').value = spacedString;
         }
 
         function camelCase() {
@@ -56,13 +87,7 @@
             // working
         }
 
-        function getString() {
-            inputString = document.getElementById('inputBox').value;
-            for (i = 0; i < inputString.length; i++) {
-                usableString.push(inputString[i]);
-            }
-            return usableString;    
-        }
+        
 
         function toLowerCase() {
             var arr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
@@ -158,3 +183,70 @@
     </script>
 </body>
 </html>
+
+
+
+<!-- ################################################
+    function getValues() {
+        // Custom Split Function
+        var inputString = document.getElementById('inputBox').value;
+        var a = '';
+        var b = [];
+        for (i = 0; i < inputString.length; i++) {
+            if(inputString[i] != ',') {
+                a = a + inputString[i];
+            } else if (inputString[i] == ',') {
+                b.push(Number(a));
+                a = '';
+            }
+        }
+        b.push(Number(a));
+        usableArray = b;
+        console.log(usableArray); 
+        return usableArray; 
+    }
+
+
+    
+    function pushElement(array, element) {
+        // Custom push function
+        array[array.length] = element;
+        return array;
+    } // works exactly as it should
+
+
+    function mirrorImage() {
+            getString();
+            var tempArray = [];
+            for (i = usableString.length-1; i >= 0; i--) {
+                tempArray.push(usableString[i]); 
+            }
+            console.log(tempArray);
+            // working
+        }
+
+    
+
+    function getString() {
+        var inputString = document.getElementById('inputBox').value;
+        var splitSymbol = ' ';
+        var a = '';
+        var b = [];
+        for (i = 0; i < inputString.length; i++) {
+            if(inputString[i] != splitSymbol) {
+                a = a + inputString[i];
+            } else if (inputString[i] == splitSymbol) {
+                b.push(a);
+                a = '';
+            }
+        }
+        b.push(a);
+        usableString = b;
+        console.log(usableString);
+        return usableString;    
+    }
+
+
+
+################################################
+ -->

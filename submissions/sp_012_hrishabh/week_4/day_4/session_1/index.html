@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Week 4 Day 4Coding 1 </title>
+</head>
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button onclick="onclickJsonObject()"> Click here to print the JSON object </button>
+  <div id = "container1"> </div>
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input id="inputExp1" type = "text"/>
+  <input id="inputExp2" type = "text"/>
+  <button id = "btnExpo"> Calculate </button>
+  <p id="showExp">Output:</p>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Multiplication Table Generator</h1>
+  <table id="table"></table>
+  <input id="multiInput" type = "text"/>
+  <button onclick="createTable()"> Generate Tables </button>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <table id="letterCase"></table>
+  <input id="caps" type = "text"/>
+  <button onclick="caps()"> Generate CAPS and small </button>
+  <script>
+  //DO NOT EDIT ANY CODE BELOW THIS LINE 
+  var items = [
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    },
+    {
+      name: "Rice",
+      price: 50,
+      id: 2323
+    },
+    {
+      name: "Banana",
+      price: 90,
+      id: 2323
+    },
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    }
+  ]
+
+  var mutiply = []
+  // Do NOT EDIT ANY CODE ABOVE THIS LINE 
+  //Place all your code below this line!
+  
+
+
+  /* function for FSD.W4.4.1_1 */
+
+
+   function onclickJsonObject() {
+    var jsonObject = JSON.stringify(items);  
+    jsonObjectShowParent = document.querySelector('#container1');
+    items.forEach(function(items) {
+      var jsonObjectShow = document.createElement('p');
+      jsonObjectShow.innerHTML = (items["name"] + " : " + items["price"]);
+      jsonObjectShowParent.appendChild(jsonObjectShow);
+
+    })   
+      
+   }
+
+  /* function of FSD.W4.4.1_2 */
+
+
+   function exponent(x, y, callBack){
+    var total = x ** y
+    callBack(total)
+  }
+
+var display = function(input){
+    var expShow = document.createElement('p');
+      expShowParent = document.querySelector('#showExp');
+      expShowParent.appendChild(expShow);      
+      expShow.innerHTML = 'The exponent is:' + " " + input;
+}
+
+var buttonListner = document.getElementById('btnExpo');
+buttonListner.addEventListener('click' , function () {
+    var exp1 = document.getElementById('inputExp1').value;
+    var exp2 = document.getElementById('inputExp2').value;
+    exponent(exp1, exp2, display);
+});
+
+
+/* function of FSD.W4.4.1_3 */
+function createTable(){
+    mutiply=[];
+    var tableShow = document.querySelector('#table');
+    tableShow.setAttribute('border',1);
+    var multiInput = document.getElementById('multiInput').value;
+    var tr = document.createElement('tr');
+    var tableHeadingFirst = document.createElement('th');
+    tableHeadingFirst.innerHTML="*1";
+    tr.appendChild(tableHeadingFirst);
+    var tableHeadingSecond = document.createElement('th');
+    tableHeadingSecond.innerHTML="*2";
+    tr.appendChild(tableHeadingSecond);
+    var tableHeadingThird = document.createElement('th');
+    tableHeadingThird.innerHTML="*3";
+    tr.appendChild(tableHeadingThird);
+    var tableHeadingFourth = document.createElement('th');
+    tableHeadingFourth.innerHTML="*4";
+    tr.appendChild(tableHeadingFourth);
+    var tableHeadingFive = document.createElement('th');
+    tableHeadingFive.innerHTML="*5";
+    tr.appendChild(tableHeadingFive);
+    tableShow.appendChild(tr);
+
+
+    for(var i = 1; i <= 5; i++){   
+     
+      for(var j = 1; j <= multiInput; j++) {
+        mutiply.push(j*i*1);
+      }
+      
+    }
+    for(var k = 0; k < multiInput; k++){
+      var temp = k;
+      var tableRow = document.createElement('tr');
+      while(temp < 5*multiInput){
+        var tableData = document.createElement('td');
+        tableData.innerHTML = mutiply[temp];
+        tableRow.appendChild(tableData);
+        temp = temp + multiInput*1;
+      }
+      table.appendChild(tableRow);
+    }
+  }
+
+/* function of FSD.W4.4.1_4 */
+
+function caps () {
+  var capsArr = [];
+    var inputString = document.getElementById('caps').value;
+    capsArr = inputString.split(',');
+     console.log(capsArr);
+    
+    
+    var upperArr = [];
+    var lowerArr = [];
+
+
+    var letterCase = document.getElementById('letterCase');
+    var tr = document.createElement('tr');
+    var tableHeadingFirst = document.createElement('th');
+    tableHeadingFirst.innerHTML="Normal" + "Case";
+    tr.appendChild(tableHeadingFirst);
+    var tableHeadingSecond = document.createElement('th');
+    tableHeadingSecond.innerHTML="Upper" + "Case";
+    tr.appendChild(tableHeadingSecond);
+    var tableHeadingThird = document.createElement('th');
+    tableHeadingThird.innerHTML="Lower" + "Case";
+    tr.appendChild(tableHeadingThird)
+    letterCase.appendChild(tr);
+
+
+    capsArr.forEach(function (element){
+      upperArr.push(element.toUpperCase());
+      lowerArr.push(element.toLowerCase());
+    });
+
+
+    for (i = 0; i < capsArr.length; i++) {
+      var tableRow = document.createElement('tr');
+      letterCase.appendChild(tableRow);
+      
+      var tableData1 = document.createElement('td');
+        tableRow.appendChild(tableData1);
+        var tableData2 = document.createElement('td');
+        tableRow.appendChild(tableData2);
+        var tableData3 = document.createElement('td');
+        tableRow.appendChild(tableData3);
+        tableData1.textContent = capsArr[i];
+        tableData2.textContent = upperArr[i];
+        tableData3.textContent = lowerArr[i];
+    
+    
+  }
+}
+
+
+
+ 
+
+  </script>
+</body>
+</html>

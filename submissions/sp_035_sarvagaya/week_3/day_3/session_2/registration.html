@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Registration Form
+        </title>
+        <style type="text/css">
+            .div1
+            {
+                float:left;
+                background-color: bisque;
+                margin-left:200px;
+            }
+            .button
+            {
+                background-color: black;
+                color:white;
+                height:50px;
+                width:150px;
+                margin-left:50px;
+            }
+            .div2
+            {
+                float:right;
+                background-color: black;
+                width:200px;
+                margin-right:200px;
+            }
+            .color
+            {
+                color:white;
+                text-align: center;
+            }
+            @media(max-width: 900px)
+            {
+                .div2
+            {
+                float:right;
+                background-color: white;
+                width:200px;
+                
+                margin-left:200px;
+            }
+            .color
+            {
+                color:black;
+                text-align: center;
+            }   
+
+            }
+            #error
+            {
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div1">
+            <p>NAME</p>
+            <input type="text" id="name" placeholder="Name">
+            <p>EMAIL</p>
+            <input type="text" id="email" placeholder="EMAIL">
+            <p>MOBILE</p>
+            <input type="text" id="mobile" placeholder="MOBILE NO.">
+            <br>
+            <p id="error"></p>
+            <br>
+            <button onclick="register()" class="button">REGISTER</button>
+        </div>
+        <div class="div2">
+            <h2 class="color">NAME</h2>
+            <br>
+            <p class="color" id="pName"></p>
+            <br>
+            <h2 class="color">EMAIL</h2>
+            <br>
+            <p class="color" id="pEmail"></p>
+            <br>
+            <h2 class="color">MOBILE</h2>
+            <br>
+            <p class="color" id="pMobile"></p>
+
+        </div>
+        <script>
+            function register()
+            {
+            var name=document.getElementById("name").value;
+            var mob=document.getElementById("mobile").value;
+            var email=document.getElementById("email").value;
+
+            if((name.length < 3)||(name.length>10)||(mob.length>10)||(mob.length<10))
+            {
+                document.getElementById("error").innerHTML="*Please check your name and mobile no.";
+            }
+            else if((name.length>3)||(name.length<10)&&(mob.length==10))
+            {
+                document.getElementById("error").innerHTML="";
+                document.getElementById("pName").innerHTML=document.getElementById("name").value;
+                document.getElementById("pMobile").innerHTML=document.getElementById("mobile").value;
+
+            }
+
+			var result = "";
+			for(var i=1;i<email.length;i++){
+				if(email[i]=="@"){
+					for(i=i+2;i<email.length;i++){
+						if(email[i]=="."){
+							result=true;
+						}
+					}
+				}
+			}
+			if(result==true){
+				document.getElementById("pEmail").innerHTML=document.getElementById("email").value;
+			}else{
+				alert("Invalid Email");
+			}
+            
+            }
+            
+            
+        </script>
+    </body>
+</html>

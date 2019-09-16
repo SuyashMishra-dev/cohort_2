@@ -1,0 +1,147 @@
+.btn{
+    background: rgb(156, 156, 221);
+    border-radius: 19px;
+    height: 35px;
+    width: 120px;
+    color:white;
+    font-size: 17px;
+    font-weight: bold;
+    border: 1px solid rgb(156, 156, 221);
+}
+.btnSet{
+    background: blue;
+    border-radius: 19px;
+    height: 35px;
+    width: 120px;
+    color:white;
+    font-size: 17px;
+    font-weight: bold;
+    margin-left:50px;
+    border:1px solid blue;
+}
+.next{
+    margin-top:3px;
+}
+.loginbtn{
+    background: orange;
+    border-radius: 19px;
+    height: 35px;
+    width: 120px;
+    color:white;
+    font-size: 17px;
+    font-weight: bold;
+    border:1px solid orange;
+}
+.contactbtn{
+    background: maroon;
+    border-radius: 19px;
+    height: 35px;
+    width: 120px;
+    color:white;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left:50px;
+    border:1px solid maroon
+}
+.serachBtn{
+    background: green;
+    border-radius: 19px;
+    height: 35px;
+    width: 120px;
+    color:white;
+    font-size: 17px;
+    font-weight: bold;
+    border: 1px solid green;
+}
+.helpBtn{
+    background: purple;
+    border-radius: 19px;
+    height: 35px;
+    width: 120px;
+    color:white;
+    font-size: 17px;
+    font-weight: bold;
+    margin-left:50px;
+    border: 1px purple;
+}
+.homeBtn{
+    background: pink;
+    border-radius: 19px;
+    height: 35px;
+    width: 120px;
+    color:white;
+    font-size: 17px;
+    font-weight: bold;
+    border:1px solid pink;
+}
+.downloadBtn{
+    background: rgba(154, 167, 135, 0.733);
+    border-radius: 19px;
+    height: 35px;
+    width: 120px;
+    color:white;
+    font-size: 17px;
+    font-weight: bold;
+    margin-left:50px;
+    border :1px solid rgba(154, 167, 135, 0.733);
+}
+.borderArea{
+    border:2px solid black;
+    height: 650px;
+    width:1920px;
+    background: purple;
+}
+.mainArea{
+    text-align: center;
+    border:1px solid purple;
+    height: 650px;
+    width: 500px;
+    margin-left: 600px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .5);
+}
+.name{
+    color:white;
+}
+.msgBtn{
+    border:1px solid lightskyblue;
+    border-radius: 5px;
+    height: 45px;
+    width: 120px;
+    background: lightskyblue;
+    color: blue;
+    font-size: 15px;
+    margin-right: 2px;
+}
+.flwBtn{
+    border:1px solid lightskyblue;
+    border-radius: 5px;
+    height: 45px;
+    width: 120px;
+    background: purple;
+    color: lightskyblue;
+    font-size: 15px;
+    margin-left: 5px;
+}
+.Img{
+    border-radius: 50%;
+}
+.area{
+    margin-top: 60px;
+    background: purple;
+    height: 165px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .5);
+}
+.skname{
+   color:white;
+   text-align: left
+}
+.skillset{
+    text-align:left; 
+    float: left;
+    margin-right: 12px;
+    border: 1px solid white;
+    margin-left: 12px;
+    color:white;
+    margin-top: 20px;
+
+}

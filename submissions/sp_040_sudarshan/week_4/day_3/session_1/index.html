@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>index</title>
+  </head>
+<body>
+  <!-- FSD.W4.3.1_1 !-->
+  <h1>Click the button to add a new customer!</h1>
+  <button id="add-customer">Add customer</button>
+
+  <p>firstname</p>
+  <input type="text" id="firstname">
+
+  <p>lastname</p>
+  <input type="text" id="lastname">
+
+  <p>dob</p>
+  <input type="text" id="dob">
+
+  <p>balance</p>
+  <input type="text" id="balance">
+
+  <p>acno</p>
+  <input type="text" id="acno">
+
+  <p>shareholder</p>
+  <input type="text" id="shareholder">
+
+  <!-- FSD.W4.3.1_3 !-->
+  <h1> Click here to print all customers! <h1>
+  <button id="print-customer">Print Customers</button>  
+  <div id="displayContainer"> </div>
+  
+
+  <script>
+    var customerArr = [];
+
+
+    var addCustomerButton = document.getElementById("add-customer");
+    var printCustomerButton = document.getElementById("print-customer");
+
+
+    addCustomerButton.addEventListener('click',saveCustomer);
+    printCustomerButton.addEventListener('click',printCustomerDetails);
+
+    function Customers(firstName,lastName,dateOfBirth,balance,accountNumber,sharedAccountHolders) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.dateOfBirth = dateOfBirth;
+      this.balance = balance;
+      this.accountNumber = accountNumber;
+      this.sharedAccountHolders = sharedAccountHolders;
+      this.displayDetails = function () {
+        var output = '';
+        for (key in this) {
+          if (key != "displayDetails") {
+            output += key + ":" + this[key] + "\n";
+          }
+        }
+        return output;
+      }
+    }
+    function pushToArray(arr,element) {
+      arr[arr.length] = element;
+    }
+
+    function splitString(inputString,separator) {
+      var word = '';
+      var wordArray = [];
+      for (var i=0; i <= inputString.length;i++) {
+        if (inputString.length == i && word.length !=0) {
+          pushToArray(wordArray,word);
+        }
+
+        if (inputString[i] != separator) {
+          word += inputString[i];
+        }
+        else if (inputString[i] == separator) {
+          if (word.length > 0) {
+            pushToArray(wordArray,word);
+          }
+          word = '';
+        }
+      }
+      return wordArray;
+    }
+  function saveCustomer() {
+    var firstName = document.getElementById('firstname').value;
+    var lastName = document.getElementById('lastname').value;
+    var dateOfBirth = document.getElementById('dob').value;
+    var balance = document.getElementById('balance').value;
+    var accountNumber = document.getElementById('acno').value;
+    var sharedAccountHolders = document.getElementById('shareholder').value;
+    var customer = new Customers (firstName,lastName,dateOfBirth,balance,accountNumber,sharedAccountHolders);
+    pushToArray(customerArr,customer);
+
+    console.log(customerArr);
+  }
+
+  function printCustomerDetails() {
+    var displayContainer = document.getElementById('displayContainer');
+    for (var i = 0; i < customerArr.length;i++) {
+      var pElement = document.createElement('p');
+      var customerDetails = customerArr[i].displayDetails();
+      console.log(customerArr[i]);
+      console.log(customerDetails);
+      pElement.innerText = customerDetails;
+      displayContainer.appendChild(pElement);
+    }
+  }
+  </script>
+</body>
+</html>

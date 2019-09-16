@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset='utf-8'>
+  </head>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button id="mviinfo">Movie Information!</button>
+  <div id="mvidetails"></div>
+  <!-- FSD.W4.2.1_2 !-->
+  <button id="addruntime">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button id="addcast">Add cast member </button>
+  
+
+  <script>
+  var movie = {
+      name : "Avengers endgame",
+      director : "AnthonyRusso",
+      year : 2019,
+      rating : 8.6,
+      cast : ["Tony Stark" , "Steve Rogers" , "Bruce Banner" , "Caroldanvers" , "Peter Parker"]
+      };
+
+      var moviedetails = document.getElementById('mviinfo');
+      moviedetails.addEventListener('click',showMovieDetails);
+
+      function showMovieDetails() {
+        var movieDiv = document.getElementById('mvidetails');
+
+        var movieName = document.createElement('p');
+        movieName.innerText = 'Movie Name: ' + movie.name;
+        movieDiv.appendChild(movieName);
+
+        var movieDirector = document.createElement('p');
+        movieDirector.innerText = 'Movie Director: ' + movie.director;
+        movieDiv.appendChild(movieDirector);
+
+        var movieYear = document.createElement('p');
+        movieYear.innerText = 'Movie Year: ' + movie.year;
+        movieDiv.appendChild(movieYear);
+
+        var movieRating = document.createElement('p');
+        movieRating.innerText = 'Movie Rating: ' + movie.rating;
+        movieDiv.appendChild(movieRating);
+
+        var movieCast = document.createElement('p');
+        movieCast.innerText = 'Movie Cast: ' + movie.cast;
+        movieDiv.appendChild(movieCast);
+      }
+
+      var addRunTimeButton = document.getElementById('addruntime');
+      addRunTimeButton.addEventListener('click',addRuntime);
+
+      function addRuntime() {
+        movie.runTime = 3.2;
+        var outputTEXT = movie.runTime;
+        showMovieDetails();
+        var movieDiv = document.getElementById("mvidetails");
+        var movieRunTime = document.createElement('p');
+        movieRunTime.innerTEXT = 'Movie Run Time: ' + movie.runTime;
+        movieDiv.appendChild(movieRunTime);
+      }
+
+      var addCast = document.getElementById('addcast');
+      addCast.addEventListener('click',addCast);
+
+      function addCast() {
+        var cast = 'Scott Lang';
+        mobie.cast.push(cast);
+        showMovieDetails();
+      }
+  </script>
+</body>
+</html>
