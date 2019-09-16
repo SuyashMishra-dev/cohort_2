@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.3.1_1 !-->
+  <h1>Click the button to add a new customer!</h1>
+ <p>
+    <label for="firstName">firstName</label>
+    <input type="text" name="firstName" class="customerDetails">
+ </p> 
+  <p>
+      <label for="lastName">lastName</label>
+      <input type="text" name="lastName" class="customerDetails">
+  </p>
+  <p>
+      <label for="dateOfBirth">dateOfBirth</label>
+      <input type="text" name="dateOfBirth" class="customerDetails">
+  </p>
+  <p>
+      <label for="balance">balance</label>
+      <input type="text" name="balance " class="customerDetails">
+  </p>
+  <p>
+      <label for="accountNumber">accountNumber</label>
+      <input type="text" name="accountNumber" class="customerDetails">
+  </p>
+  <p>
+      <label for="sharedAccountHolders">sharedAccountHolders</label>
+      <input type="text" name="sharedAccountHolders" class="customerDetails">
+  </p>
+
+  <button id="Add_customer">Add customer</button>
+  <!-- FSD.W4.3.1_3 !-->
+  <h1> Click here to print all customers! <h1>
+  <button id="Print_Customers">Print Customers</button>  
+  <div id="displayContainer"> </div>
+  
+
+  <script>
+    var customerArr = [] ;
+    function Customers(firstName,lastName,dateOfBirth,balance,accountNumber,sharedAccountHolders)
+    {
+              this.firstName=firstName;
+              this.lastName=lastName;
+              this.dateOfBirth=dateOfBirth;
+              this.balance=balance;
+              this.accountNumber=accountNumber;
+              this.sharedAccountHolders=sharedAccountHolders;
+              this.displayDetails = function() {
+                for(key in this){
+                  var output = key + ":" + this[key] + "\n" ;
+                  
+                }
+                
+              }
+             return output
+    }
+    var addCustomer = document.getElementById("Add_customer") ;
+    var printCustomer = document.getElementById("Print_Customers") ;
+    addCustomer.addEventListener(click,Addcustomer);
+    printCustomer.addEventListener(click,Printcustomer);
+
+  
+  </script>
+</body>
+</html>
