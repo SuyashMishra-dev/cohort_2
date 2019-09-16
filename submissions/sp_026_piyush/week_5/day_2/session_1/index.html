@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Weather</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="h1">See the weather for any City!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-2">
+                <div class="form-group">
+                    <input type="text" class="form-control border-success" id="location" placeholder="e.g. Delhi">
+                </div>
+            </div>
+            <div class="col-2">
+                <button onclick="getWeather()" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="card-header col-8 text-center">
+                Delhi
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-2">
+                <p>40 C</p>
+                <p>Min: 20 C</p>
+                <p>Max: 40 C</p>
+                <p>Humidity 100%</p>
+                <p>Pressure: 1027 Mb</p>
+            </div>
+            <div class="col-2">
+                <p>Rain</p>
+                <p>Light Rain</p>
+            </div>
+            <div class="col-2">
+                <p>Wind</p>
+                <p>8.12 Mph</p>
+                <p>Deg: 202</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function getWeather() {
+            var xhr = new XMLHttpRequest(); 
+            var location = document.getElementById('location').value;
+
+            // This configures the object to perform a GET request to the given url
+            // Notice how we pass page=2
+            xhr.open('GET', 'https://www.metaweather.com/api/location/search/?query=' + location);
+            // This will send the GET request to the server.
+            xhr.send()
+            // This function will be called after the information is retrieved
+            xhr.onload = function (){
+            // The HTTP 200 code is returned when your request is successful so we check for that
+            if(xhr.status == 200){
+                console.log(xhr.response) // Print the response from the server after a successful request
+            }
+            else{
+                console.log("Error Code is:" + xhr.status)
+            }
+            }
+        }
+    </script>
+</body>
+</html>

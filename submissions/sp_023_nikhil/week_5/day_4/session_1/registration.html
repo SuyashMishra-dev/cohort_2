@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+</head>
+
+<body>
+    <div class="m-3">
+        <label for="">Name</label> <br>
+        <input id="name" type="text">
+    </div>
+    <div class="m-3">
+        <label for="">Email</label> <br>
+        <input id="email" type="text">
+    </div>
+    <div class="m-3">
+        <label for="">Mobile</label> <br>
+        <input id="mobile" type="text"> <br>
+        <button id="btnR" class="m-3">Register</button>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script>
+            $('#btnR').click(function () {
+                var name = $('#name').val()
+                for (var i = 0; i <= name.length - 1; i++) {
+                    if (isNaN(name[i]) && (name.length > 3) && (name.length < 10)) {
+                        console.log('valid')
+                    } else {
+                        console.log('Not valid');
+                    }
+                }
+                var email = $("#email").val()
+                if((email[1] == "@") )
+                for (var i = 0; i <= email.length-1; i++){
+                    
+                }
+                var mobile = $('#mobile').val();
+                for (var i = 0; i <= mobile.length; i++) {
+                    if (isNaN(mobile[i]) && (mobile.length != 10)) {
+                        console.log('Not a valid number')
+                    } else if (mobile.length == 10) {
+                        console.log('Is a valid number')
+                    }
+                }
+            });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-6">
+                    <h1>NAME </h1>
+
+                <input type="text" name="name" value="name" id="text1" />
+                </br>
+                <h1>EMAIL</h1>
+                <input type="text" name="email" value="email" id="text2" /></br>
+                <h1>MOBILE</h1>
+                <input type="number" name="phone number" value="number" id="text3" /></br>
+                </br></br>
+                <button id="register">REGISTER</button>
+            </div>
+            <div class="col-6">
+                    <div class="text-white bg-dark">
+
+                    <h1>NAME</h1>
+                    <p id="para"> </p>
+                    <h1>EMAIL</h1>
+                    <p id="para1"> </p>
+                    <h1>MOBILE</h1>
+                    <p id="para2"> </p>
+</div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+ $( "#register" ).click(function() {
+     $("#para").text($("#text1").val());//output the data from input field
+     var output=$("#text1").val();
+if((output.length>=3) || (output.length<=10))
+{
+
+}
+         });
+
+$("#register").click(function()
+{
+$("#para1").text($("#text2").val());
+});
+
+$("#register").click(function()
+{
+    $("#para2").text($("#text3").val());
+})
+
+
+    </script>
+
+</body>
+
+</html>

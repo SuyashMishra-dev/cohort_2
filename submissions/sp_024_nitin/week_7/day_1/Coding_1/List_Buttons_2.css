@@ -1,0 +1,63 @@
+.JoinUs {
+    background: Blue;
+    border-radius: 10px;
+    color: white;
+    margin: 5px 10px;
+    width: 100px;
+}
+
+.Settings {
+    background: #43AB92;
+    border-radius: 10px;
+    color: white;
+    margin: 5px 10px;
+    width: 100px;
+}
+
+.Login {
+    background: #F75F00;
+    border-radius: 10px;
+    color: white;
+    margin: 5px 10px;
+    width: 100px;
+}
+
+.ContactUs {
+    background: #C70D3A;
+    border-radius: 10px;
+    color: white;
+    margin: 5px 10px;
+    width: 100px;
+}
+
+.Search {
+    background: #91B029;
+    border-radius: 10px;
+    color: white;
+    margin: 5px 10px;
+    width: 100px;
+}
+
+.Help {
+    background: indigo;
+    border-radius: 10px;
+    color: white;
+    margin: 5px 10px;
+    width: 100px;
+}
+
+.Home {
+    background: #FF3F98;
+    border-radius: 10px;
+    color: white;
+    margin: 5px 10px;
+    width: 100px;
+}
+
+.Download {
+    background: #672F2F;
+    border-radius: 10px;
+    color: white;
+    margin: 5px 10px;
+    width: 100px;
+}
