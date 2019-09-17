@@ -1,0 +1,77 @@
+button{
+	height: 50px;
+	width: 150px;
+	margin: 10px;
+	
+
+}
+
+.btnfont {
+	color:white;
+	font-size: 25px;
+	
+}
+
+.colorblue{
+	height: 50px;
+	width: 150px;
+	background-color: blue;
+	color:white;
+	font-size: 20px;
+	border-radius: 30px;
+	
+}
+
+.colorred{
+	background: red;
+	color:white;
+	font-size: 20px;
+	border-radius: 30px;
+}
+
+.colorgreen{
+	background: green;
+	color:white;
+	font-size: 20px;
+	border-radius: 30px;
+}
+
+.colororange{
+	background-color: orange;
+	color:white;
+	font-size: 20px;
+	border-radius: 30px;
+}
+.colorpurple{
+	background: purple;
+	color:white;
+	font-size: 20px;
+	border-radius: 30px;
+}
+
+.colorpink{
+	background: pink;
+	color:white;
+	font-size: 20px;
+	border-radius: 30px;
+}
+
+.coloryellow{
+	background: yellow;
+	color:white;
+	font-size: 20px;
+	border-radius: 30px;
+}
+
+.colorgrey{
+	background: grey;
+	color:white;
+	font-size: 20px;
+	border-radius: 30px;
+}
+
+
+
+
+
+
