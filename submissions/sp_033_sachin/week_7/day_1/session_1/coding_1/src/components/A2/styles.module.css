@@ -1,0 +1,39 @@
+.radius {
+    border-radius: 15px;
+}
+
+.download {
+    background: brown;
+    color: white;    
+}
+
+.joinus {
+    background: blueviolet;
+    color: white;    
+}
+
+.login {
+    background: orange;
+    color: white;   
+}
+
+.home {
+    background: pink;
+    color: white;    
+}
+
+.help {
+    background: blue;
+    color: white;   
+}
+
+.settings {
+    background: lightblue;
+    color: white;   
+}
+
+.search {
+    background: green;
+    color: white;   
+}
+

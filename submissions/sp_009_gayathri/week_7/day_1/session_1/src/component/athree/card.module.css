@@ -1,0 +1,89 @@
+.card {
+    background: darkblue;
+    width: 400px;
+    height: 700px;
+    margin: 10px;
+    margin-left: 460px;
+    padding: 100px;
+    color:whitesmoke;
+    align-self: center;
+
+
+}
+.insetbox{
+background: #311B92;
+
+    
+}
+  
+.innercard {
+ 
+    width: 200px;
+    height: 200px;
+    margin: 20px; 
+    border-radius:120px;
+    padding:20px;
+    border:1px solid teal;
+   
+}
+
+.tabledata {
+    font-size: 12px;
+    font-weight: lighter;
+    color:white;
+}
+
+.cellproperties{
+   caption-side: initial;
+   border-collapse: separate;
+   border-spacing: 15px;
+   font-size: 12px;
+   font-weight: lighter;
+   color: white;
+   
+   
+   /* table-border :1px solid #311B92; */
+     }
+.cellareacol{
+ border: 1px solid teal;
+padding:2px;
+font-size: 12px;
+font-weight: lighter;
+color: white;
+column-span: 2;
+}
+.cellarea{
+ border: 1px solid teal;
+ padding:2px;
+ font-size: 12px;
+font-weight: lighter;
+color: white;
+border-spacing: 15px;
+}   
+.cellareaempty{
+    /* border: 1px solid teal; */
+    padding:2px;
+    font-size: 12px;
+   font-weight: lighter;
+   color: white;
+   border-spacing: 15px;
+}     
+ 
+
+
+/* button{
+	height: 50px;
+	width: 150px;
+	margin: 10px;
+
+} */
+
+.buttonbg {
+    background: teal;
+    border: 1px solid teal;
+}
+.buttonselfbg {
+    background: darkblue;
+    color:teal;
+    border: 1px solid teal;
+}

@@ -1,0 +1,150 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.class1{
+  margin-left: 400px;
+}
+
+.class2{
+  margin-left: 50px;
+  border-radius: 20px;
+  padding: 5px;
+  margin-top: 20px;
+  margin-left: 10px;
+  width: 150px;
+  color: white;
+}
+.class3{
+  background-color: blue;
+}
+.class4{
+  background-color: lightslategray;
+}
+.class5{
+  background-color: orange;
+}
+.class6{
+  background-color: red;
+}
+.class7{
+  background-color: green;
+}
+.class8{
+  background-color: blue;
+}
+.class9{
+  background-color: pink;
+}
+.class10{
+  background-color: burlywood;
+}
+.class11{
+  background-color: darkgoldenrod;
+}
+
+ 
+
+
+.class13{
+  background-color: darkmagenta;
+  height: 1000px;
+  width: 800px;
+  margin-left: 200px;
+  margin-top: 100px;
+}
+.class14{
+  background-color: violet;
+  height: 800px;
+  width: 600px;
+  margin-left: 100px;
+  margin-top: 100px;
+}
+.image{
+  border-radius: 70%;
+  border:1px solid blue;
+  margin-left: 200px;
+  margin-top: 50px;
+}
+.class15{
+  margin-left:230px;
+  color: white;
+}
+.class16{
+  margin-left:240px;
+  color: white;
+}
+.class17{
+  margin-left:180px;
+  color: white;
+}
+.class18{
+  margin-left: 10px;
+  border-radius: 2px;
+  padding: 5px;
+  margin-top: 20px;
+  margin-left: 150px;
+  width: 150px;
+  color: teal;
+  background: #751978;
+}
+.class19{
+ 
+  border-radius: 2px;
+  padding: 5px;
+  margin-top: 20px;
+  margin-left: 5px;
+  width: 150px;
+  color: teal;
+  background: turquoise;
+}
+.class20{
+  width: 80px;
+  margin-top: 90px;
+  margin-left: 10px;
+  color: white;
+  ;
+}
+.class21{
+  width: 80px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.class22{
+  width: 150px;
+  margin-top: 0px;
+  margin-left: 30px;
+}
+.class23{
+  width: 80px;
+  margin-left:30px;
+}

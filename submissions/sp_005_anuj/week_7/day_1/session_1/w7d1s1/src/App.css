@@ -1,0 +1,106 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btnsize {
+  border-radius: 35%;
+  height: 30px;
+  width: 100px;
+  margin-left: 15px;
+  margin-top: 7px;
+  color: white;
+}
+.btn1{
+  background-color:red;
+  margin-top: 5%;
+}
+.btn2{
+  background-color:blue;
+  margin-top:5%;
+}
+.btn3{
+  background-color: yellow;
+}
+.btn4 {
+  background-color:green;
+}
+.btn5 {
+  background-color: purple;
+}
+.btn6 {
+  background-color: orange;
+}
+.btn7 {
+  background-color:rgb(214, 113, 130);
+}
+.btn8 {
+  background-color:olive;
+}
+.main {
+  background-color: blueviolet;
+  margin-top : 5%;
+  width: 800px;
+  margin-left: 300px;
+}
+/* .mid_section {
+  background-color:blueviolet;
+  margin-top: 50px;
+  width: 400px;
+  margin-left: 200px;
+  box-shadow: 500px blueviolet;
+} */
+.img {
+  height: 200px;
+  width: 200px;
+  border-radius:50%;
+}
+.msg_button {
+  background-color: aqua;
+  color: black;
+  height: 30px;
+  width: 100px;
+  border: 10px;
+}
+.following_btn {
+  background-color: blueviolet;
+  color:blue;
+  height: 30px;
+  width: 100px;
+  border:1px solid aqua;
+}
+.button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  margin: 5px;
+
+}
