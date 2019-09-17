@@ -1,0 +1,39 @@
+button{
+    width:150px;
+    height: 30px;
+    border-radius:10px;
+    color:white;
+    margin: 20px;
+}
+table{
+    margin-left: 450px;
+}
+.blue{
+    background: blue;
+}
+
+.gray{
+    background:gray;
+}
+
+.yellow{
+    background:yellow
+}
+
+.red{
+    background:red;
+}
+
+.green{
+    background:green;
+}
+
+.purple{
+    background: purple;
+}
+.pink{
+    background:pink;
+}
+.brown{
+    background:brown;
+}
