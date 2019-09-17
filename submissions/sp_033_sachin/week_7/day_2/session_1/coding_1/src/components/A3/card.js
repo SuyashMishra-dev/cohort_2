@@ -2,8 +2,8 @@ import React from 'react';
 import styles from '../../card.module.css';
 
 const Card = (props) => {
-    let alist = props.data.skills.map(element => {
-        return (<a href="#" className="btn btn-outline-primary mb-1 ml-1">{element}</a>);
+    let alist = props.data.skills.map((element,i) => {
+        return (<a key={i.toString()+'id'} href="#" className="btn btn-outline-primary mb-1 ml-1">{element}</a>);
     });
     return (
         <div className={`${styles.bgrnd} p-3`}>

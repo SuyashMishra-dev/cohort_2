@@ -3,7 +3,7 @@ import React from 'react';
 
 const MobileOs = (props) => {
 
-    let list = props.list.map(el=><li>{el}</li>)
+    let list = props.list.map((el,i)=><li key={i.toString()+'id'}>{el}</li>)
 
     return (
         <ul>
