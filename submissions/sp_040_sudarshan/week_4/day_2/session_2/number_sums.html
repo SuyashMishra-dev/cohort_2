@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Number sums</title>
+    </head>
+    <body>
+        <input type="text" id="numbers-ip">
+        <br>
+        <button id="even_pos">Even position sum</button>
+        <br>
+        <button id="odd_pos">Odd position sum</button>
+        <br>
+        <button id="even_sum">Even sum</button>
+        <br>
+        <button id="odd_sum">Odd sum</button>
+        <br>
+        <button id="single_digit">Single digit sum</button>
+        <br>
+        <button id="double_digit">Double digit sum</button>
+    </body>
+
+    <script>
+    var tempNumber = '';
+    var numberArray = [];
+
+    var evenPositionButton = document.getElementById('even_pos');
+    evenPositionButton.addEventListener('click',evenPositionSum);
+
+    var oddPositionButton = document.getElementById('odd_pos');
+    oddPositionButton.addEventListener('click',oddPositionSum);
+
+    var evenSumButton = document.getElementById('even_sum');
+    evenSumButton.addEventListener('click',evenSum);
+
+    var oddSumButton = document.getElementById('odd_sum');
+    oddSumButton.addEventListener('click',oddSum);
+
+    var singleDigitSumButton = document.getElementById('single_digit');
+    singleDigitSumButton.addEventListener('click',singleDigitSum);
+
+    var doubleDigitSumButton = document.getElementById('double_digit');
+    doubleDigitSumButton.addEventListener('click',doubleDigitSum);
+
+    function pushToArray(arr,element) {
+        arr[arr.lenght] = element;
+    }
+
+    function clearArray () {
+        numberArray = []
+    }
+
+    function convertStringToArry () {
+        var numberString = document.getElementById("numbers-ip").value;
+        for(var i=0;i <= numberString.length;i++) {
+            if ((numberString[i] != ',') && (numberString[i])) {
+            tempNumber += numberString[i];
+        }
+        else {
+            pushToArray(numberArray,Number(tempNumber));
+            tempNumber = '';
+        }
+    }
+}
+
+function evenPositionSum() {
+    convertStringToArry();
+    var evenSum = 0;
+    for (var i = 0; i < numberArray.length;i++) {
+        if ((i % 2) == 0) {
+            evenSum += numberArray[i];
+        }
+    }
+    clearArray();
+    alert(evenSum);
+    return evenSum;
+}
+
+function oddPositionSum() {
+    convertStringToArry();
+    var oddSum = 0;
+    for (var i=0; i < numberArray.length;i++) {
+        if ((i % 2) != 0) {
+            oddSum += numberArray[i];
+        }
+    }
+    clearArray();
+    alert(oddSum);
+}
+
+function oddSum() {
+    convertStringToArry();
+    var evenSum = 0;
+    for (var i = 0; i < numberArray.length;i++) {
+        if ((numberArray[i] % 2) == 0) {
+            evenSum += numberArray[i];
+        }
+    }
+    clearArray();
+    alert(evenSum);
+}
+
+function evenSum() {
+    convertStringToArry();
+    var oddSum = 0;
+    for (var i = 0; i < numberArray.length;i++) {
+        if ((numberArray[i] % 2) != 0) {
+            oddSum += numberArray[i];
+        }
+    }
+    clearArray();
+    alert(oddSum);
+}
+
+function singleDigitSum() {
+    convertStringToArry();
+    var singleDigitSum = 0;
+    for (var i = 0; i < numberArray.length;i++) {
+        if ((numberArray[i] + '').length == 1) {
+            singleDigitSum += numberArray[i];
+        }
+    }
+    clearArray();
+    alert(singleDigitSum);
+}
+
+
+function doubleDigitSum() {
+    convertStringToArry();
+    var doubleDigitSum = 0;
+    for (var i = 0; i < numberArray.length;i++) {
+        if ((numberArray[i] + '').length == 2) {
+            doubleDigitSum += numberArray[i];
+        }
+    }
+    clearArray();
+    alert(doubleDigitSum);
+}
+    </script>
+</html>

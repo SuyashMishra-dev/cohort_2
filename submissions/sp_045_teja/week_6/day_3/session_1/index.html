@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <button type="button" class="btn btn-secondary mt-5" onclick="render()">render</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="input1">
+                    <button class="btn btn-secondary mt-2" onclick="nam()">name</button>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="input2">
+                    <button class="btn btn-secondary mt-2" onclick="col()">color</button>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="input3">
+                    <button class="btn btn-secondary mt-2" onclick="font()">font-size</button>
+                </div>
+            </div>
+            <div class="row" id="box2">
+                <div class= "col-lg-4 mt-3">
+                    <input type="text" class="form-control" id="input4">
+                    <button class="btn btn-secondary mt-2" onclick="name1()">name</button>
+                    <select id="select1">
+                        <!-- <option>update-name</option> -->
+                    </select>
+                    <button class="btn btn-secondary mt-2" onclick="updatename()">updatename</button>
+                </div>
+                <div class="col-lg-4 mt-3">
+                    <input type="text" class="form-control" id="input5">
+                    <button class="btn btn-secondary mt-2" onclick="color1()">color</button>
+                </div>
+                <div class="col-lg-4 mt-3">
+                    <input type="text" class="form-control" id="input6">
+                    <button class="btn btn-secondary mt-2" onclick="font1()">font-size</button>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn btn-secondary mt-2" onclick="del()">delete-name</button>
+            </div>
+        </div>
+        <div id="root2"></div>
+        <button type="button" class="btn btn-secondary mt-5" onclick="render1()">render</button> 
+    </body>
+    <script src="index.js"></script>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Strings Play</title>
+    </head>
+    <body>
+        <input type="text" id="input-text">
+        <hr>
+        <button id="remove-spaces">Remove Spaces</button>
+        <hr>
+        <button id="camel-case">Camel Case</button>
+        <hr>
+        <button id="snake-case">Snake Case</button>
+        <hr>
+        <button id="hypen-case">Hypen Case</button>
+        <hr>
+        <button id="mirror-image">Mirror Image</button>
+        <hr>
+        <div id="result"></div>
+    </body>
+
+    <script>
+        var removeSpacesButton = document.getElementById('remove-spaces');
+        removeSpacesButton.addEventListener('click',removeSpaces);
+
+        var camelCaseButton = document.getElementById('camel-case');
+        camelCaseButton.addEventListener('click',camelCase);
+
+        var snakeCaseButton = document.getElementById('snake-case');
+        snakeCaseButton.addEventListener('click',snakeCase);
+
+        var hypenCaseButton = document.getElementById('hypen-case');
+        hypenCaseButton.addEventListener('click',hypenCase);
+
+        var mirrorImageButton = document.getElementById('mirror-image');
+        mirrorImageButton.addEventListener('click',mirrorImage);
+
+        function removeSpaces() {
+            var inputString = document.getElementById('input-text').value;
+            var wordArray = splitString (inputString, '');
+            var sentence = join(wordArray, '');
+            var resultDiv = document.createElement('div');
+            var res = document.getElementById('result');
+            resultDiv.textContent = 'Space Removed : ' + sentence;
+            res.appendChild(resultDiv);
+        }
+
+        function camelCase() {
+            var inputString = document.getElementById('input-text').value;
+            var wordArray = splitString(inputString, '');
+            var camelArray = camelify(wordArray);
+            console.log(camelArray);
+            var sentence = join(camelArray, '');
+            var resultDiv = document.createElement('div');
+            var res = document.getElementById('result');
+            resultDiv.textContent = 'Cameled up : ' + sentence;
+            res.appendChild(resultDiv);
+        }
+
+        function snakeCase() {
+            var inputString = document.getElementById('input-text').value;
+            var wordArray = splitString(inputString, '');
+            var sentence = join(wordArray, '_');
+            var resultDiv = document.createElement('div');
+            var res = document.getElementById('result');
+            resultDiv.textContent = 'snakey snakerson : ' + sentence;
+            res.appendChild(resultDiv);
+        }
+
+        function hypenCase() {
+            var inputString = document.getElementById('input-text').value;
+            var wordArray = splitString(inputString, '');
+            var sentence = join(wordArray, '_');
+            var resultDiv = document.createElement('div');
+            var res = document.getElementById('result');
+            resultDiv.textContent = 'hyphning the class up : ' + sentence;
+            res.appendChild(resultDiv);
+        }
+
+        function mirrorImage() {
+            var inputString = document.getElementById('input-text').value;
+            var wordArray = splitString(inputString, '');
+            var alphabets = 'abcdefghijklmnopqrstuvwxyz'
+            var mirrorWordArray = [];
+            var sentence = '';
+            for (var i =0; i < wordArray.length;i++) {
+                var word = wordArray[i];
+                var mirrorWord = '';
+                for(var j = 0; j < word.length;j++) {
+                    mirrorWord += alphabets[25 - alphabets.indexOf(word[j])];
+                }
+                sentence += mirrorWord + '';
+            }
+            var resultDiv = document.createElement('div');
+            var res = document.getElementById('result');
+            resultDiv.textContent = 'tupsy turvy: '+ sentence;
+            res.appendChild(resultDiv);
+        }
+
+        function camelify(words) {
+            camelWords = []
+            pushToArray(camelWords,words[0]);
+            for (var i=1; i < words.length;i++) {
+                var word = words[i];
+                var camelWord = word[0].toUpperCase() + word.substring (1, word.length);
+                console.log(camelWord);
+                pushToArray(camelWords,camelWord);
+            }
+            return camelWords;
+        }
+
+        function pushToArray(arr,element) {
+            arr[arr.length] = element;
+        }
+
+        function splitString(inputString,separator) {
+            var word = '';
+            var wordArray = [];
+            for (var i=0; i <= inputString.length;i++) {
+                if (inputString.length == i && word.length !=0) {
+                    pushToArray(wordArray,word);
+                }
+                if (inputString[i] != separator) {
+                    word += inputString[i];
+                }
+                else if (inputString[i] == separator) {
+                    if (word.length > 0) {
+                        pushToArray(wordArray,word);
+                    }
+                    word = '';
+                }
+            }
+            return wordArray;
+        }
+
+        function join(words,separator) {
+            var sentence = '';
+            for (var i = 0; i < words.length;i++) {
+                if (words[i].length !=0) {
+                    if (i == words.length - 1) {
+                        sentence += words[i];
+                    }
+                    else {
+                        sentence += words[i] + separator;
+                    }
+                    console.log(sentence);
+                }
+            }
+            return sentence.substring(0,sentence.length);
+        }
+    
+    </script>
+</html>
