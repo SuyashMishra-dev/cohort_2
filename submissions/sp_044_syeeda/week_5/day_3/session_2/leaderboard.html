@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <title>Grid</title>
+  </head>
+  <style>
+ 
+  #cont {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-rows:auto auto auto;
+    grid-template-columns: auto auto auto;
+    background: black;
+    padding: 200px;
+  }
+  
+  #cont div {
+    background: yellow;
+    font-size: 30px;
+    text-align: center;
+  }
+  #item
+  {
+   grid-area:span 1/ span 3/span 1/span 3;
+    height:60px;
+    margin-bottom:20px;
+  }
+  
+  #item1
+  {
+    grid-area:2/0/2/2;
+  }
+  
+  #item2
+  {
+    grid-area:2/0/2/2;
+  }
+  
+  #item3
+  {
+    grid-area:2/0/2/2;
+  }
+  
+  #item4
+  {
+    grid-area:2/0/2/2;
+  }
+  
+  #item5
+  {
+    grid-area:2/0/2/2;
+  }
+  
+  #item6
+  {
+    grid-area:2/0/2/2;
+  }
+  
+  #item7
+  {
+    grid-area:2/0/2/2;
+  }
+  
+  #item8
+  {
+    grid-area:2/0/2/2;
+  }
+  
+  #item9
+  {
+    grid-area:2/0/2/2;
+  }
+  #item0
+  {
+    grid-area:span 5/2/span 5/ 2;
+  }
+  
+  #enter
+  {
+  grid-area:span 6/ span 3/ span 6/ span 3 
+  }
+  #score
+  {
+grid-area:span 6/span 4/span 6/span 4
+width
+  }
+  
+</style>  
+  <body>
+
+    <div id="cont">
+    <div id="score">SCOREBOARD</div>
+    <input type="text" id="myscore" />
+
+
+      <div id="max">max</div>
+      <div id="min">mix</div>
+      
+
+      <button onclick="item('1')" id="item1">1</button>
+      <button onclick="item('2')" id="item2">2</button>
+      
+      <button id="enter" onclick="calculate()">ENTER</button>
+
+ </div>
+  
+<script>
+
+var score='';
+var min=50;
+var max=2000;
+
+function calculate(item)
+{
+var click1=document.getElementById("item1").value;
+var click2=document.getElementById("item2").value;
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.button {
+  display: grid;
+  grid-template-rows: repeat(2, 50px);
+  grid-template-columns: repeat(2, 50px);
+  grid-row-gap: 20px;
+  grid-column-gap: 120px;
+  margin: 50px;
+}
+
+.join {
+  width: 150px;
+  height: 40px;
+  background: #1E9ACE;
+  border-radius: 25px;
+}
+
+.login {
+  width: 150px;
+  height: 40px;
+  background: #F79528;
+  border-radius: 25px;
+}
+
+.search {
+  width: 150px;
+  height: 40px;
+  background: #6BA13F;
+  border-radius: 25px;
+}
+
+.home {
+  width: 150px;
+  height: 40px;
+  background: #D84281;
+  border-radius: 25px;
+}
+
+.setting {
+  width: 150px;
+  height: 40px;
+  background: #6A9399;
+  border-radius: 25px;
+}
+
+.contact {
+  width: 150px;
+  height: 40px;
+  background: #4B447A;
+  border-radius: 25px;
+}
+
+.help {
+  width: 150px;
+  height: 40px;
+  background: #584F8E;
+  border-radius: 25px;
+}
+
+.download {
+  width: 150px;
+  height: 40px;
+  background: #A48946;
+  border-radius: 25px;
+
+}
+
+.divCard {
+  width: 800px;
+  height: 700px;
+  background: #28223F;
+  margin-left: 150px;
+}
+
+.divInside {
+  width: 400px;
+  height: 530px;
+  background: #231E39;
+  margin-top: -600px;
+  margin-left: 350px;
+}
+
+.inside {
+  background: #1F1A36;
+  margin-top: -100px;
+  height: 150px;
+}
+
+.divPro {
+  width: 50px;
+  height: 30px;
+  background: #FEBB0B;
+  text-align: center;
+  margin-left: 380px;
+  margin-top: -480px;
+  border-radius: 5px;
+}
+
+.img {
+  width:100px;
+  border-radius: 50%;
+  margin-left: 500px;
+  margin-top: -20px;
+
+}
+
+.firstName {
+  margin-left: 500px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold
+}
+
+.cityName {
+  margin-left: 520px;
+  margin-top: 30px;
+  font-size: 15px;
+  color: white;
+}
+
+.description{
+  color: whitesmoke;
+  margin-left: 450px;
+}
+
+.line {
+  margin-left: 480px;
+}
+
+.message {
+  width: 100px;
+  background: #03BFCB;
+  text-align: center;
+  height: 20px;
+  margin-left:430px;
+  margin-top: 20px;
+}
+
+.following {
+  width: 100px;
+  margin-right: 350px;
+  color: #03BFCB;
+  background: #231E39;
+  border: 2px solid #03BFCB;
+  text-align: center;
+  height: 20px;
+  margin-top: -20px;
+  margin-left:580px;
+}
+
+.skills {
+  display: grid;
+  grid-template-rows: repeat(3, 30px);
+  grid-template-columns: repeat(6, 90px);
+  margin-left: 350px;
+  margin-top: 80px;
+  color: white;
+  grid-gap: 10px;
+}
+
+.ui {
+  border: 1px solid white;
+  text-align: center;
+  grid-area: 2
+  
+}
+
+.front {
+  border: 1px solid white;
+  text-align: center;
+  grid-area: 2/2/2/4
+ 
+}
+
+.html {
+  border: 1px solid white;
+  text-align: center;
+  grid-area: 2
+
+}
+
+.css {
+  grid-area: 3;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.javascript {
+  border: 1px solid white;
+  text-align: center;
+  grid-area: 3;
+
+}
+
+.react {
+  border: 1px solid white;
+  text-align: center;
+  grid-area: 3;
+  
+
+}
+
+.node {
+  border: 1px solid white;
+  text-align: center;
+  grid-area: 3;
+}
+/* 
+.span {
+  color: white;
+  margin-left: 350px;
+  margin-top: 150px;
+  
+} */
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
