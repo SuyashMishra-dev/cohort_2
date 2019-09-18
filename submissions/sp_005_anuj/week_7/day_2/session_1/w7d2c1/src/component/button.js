@@ -5,7 +5,7 @@ class Button extends React.Component {
         return (
 
             <div>
-                <button className="btn margin button" style={{ background: this.props.colors }}>{this.props.label}</button>
+                <button className="button" style={{ background: this.props.colors }}>{this.props.label}</button>
             </div>
         );
     }
