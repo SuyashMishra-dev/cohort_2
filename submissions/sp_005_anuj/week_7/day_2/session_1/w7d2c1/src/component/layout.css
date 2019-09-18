@@ -1,0 +1,50 @@
+.main {
+    background-color: blueviolet;
+    margin-top: 5%;
+    width: 800px;
+    margin-left: 300px;
+}
+
+
+/* .mid_section {
+  background-color:blueviolet;
+  margin-top: 50px;
+  width: 400px;
+  margin-left: 200px;
+  box-shadow: 500px blueviolet;
+} */
+
+.img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.msg_button {
+    background-color: aqua;
+    color: black;
+    height: 30px;
+    width: 100px;
+    border: 10px;
+}
+
+.following_btn {
+    background-color: blueviolet;
+    color: blue;
+    height: 30px;
+    width: 100px;
+    border: 1px solid aqua;
+}
+
+.button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: 5px;
+}
+
+.pro {
+    background-color: yellow;
+    color: black;
+    margin-left: -300px;
+    margin-top: 50px;
+}
