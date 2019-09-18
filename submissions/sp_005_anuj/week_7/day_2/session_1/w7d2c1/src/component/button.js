@@ -1,18 +1,13 @@
 import React from 'react';
+import './button.css';
+class Button extends React.Component {
+    render() {
+        return (
 
-class Button extends React.component{
-constructor(props) {
-    super(props)
-    this.state = {
-        label : ["JOINS US","SETTINGS","LOGIN","CONTACT US", "SEARCH", "HELP", "HOME", "DOWNLOAD", ],
+            <div>
+                <button className="btn margin button" style={{ background: this.props.colors }}>{this.props.label}</button>
+            </div>
+        );
     }
 }
-render() {
-    return (
-        <div>
-            Hi
-        </div>
-    );
-}
-}
-export default Button;
+export default Button
