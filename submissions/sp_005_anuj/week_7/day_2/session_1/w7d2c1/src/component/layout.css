@@ -1,18 +1,9 @@
-.main {
+.mainls {
     background-color: blueviolet;
     margin-top: 5%;
-    width: 800px;
+    width: 600px;
     margin-left: 300px;
 }
-
-
-/* .mid_section {
-  background-color:blueviolet;
-  margin-top: 50px;
-  width: 400px;
-  margin-left: 200px;
-  box-shadow: 500px blueviolet;
-} */
 
 .img {
     height: 200px;
