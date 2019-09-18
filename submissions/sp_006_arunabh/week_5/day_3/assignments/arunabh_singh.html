@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Harry Potter</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body class="font-weight-bold text-danger align-center" style="background : black">
+        <img src="https://www.broadcastingcable.com/.image/t_share/MTU2ODkyMDMxNTM5NDg4MzY4/harry-potter-logo.jpg" class="img-fluid" alt="Responsive image" style="height: 300px; width: 100%">
+        <div class="container-fluid text-center "></div>
+            <div class="row" style="height: 300px">
+                <div class="col-sm-12 col-lg-3" id="characters">
+                    <button id="characters">Harry Potter Characters</button>
+                </div>
+                <div class="col-sm-12 col-lg-3" id="studentsList">
+                    <button id="students">Hogwarts Students</button>
+                </div>
+                <div class="col-sm-12 col-lg-3" id="staffList">
+                    <button id="staff">Hogwarts Staff</button>
+                </div>
+                <div class="col-sm-12 col-lg-3" id="houseList">
+                    <button id="magic">House Magicians</button>
+                    <select id="houses">
+                        <option>Gryffindor</option>
+                        <option>Slytherin</option>
+                        <option>Ravenclaw</option>
+                        <option>Hufflepuff</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                
+            });
+
+            var characters = document.getElementById("characters");
+            characters.addEventListener('click' , function(){
+                showList(display);
+            });
+
+            function showList(callback){
+                var result ;
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET' , 'http://hp-api.herokuapp.com/api/characters');
+                xhr.send();
+                xhr.onload = function() {
+                    if(xhr.status == 200) {
+                        result = JSON.parse(xhr.response);
+                        display(result);
+                    }
+                }
+            }
+
+            function display(result){
+                //console.log(result[0]["name"])
+                var charactersList = document.getElementById("characters");
+
+                var table = document.createElement('table');
+                table.setAttribute('id' , 'tab');
+                charactersList.appendChild(table);
+                for(var i = 0; i < 10; i++) {
+                    var tab = document.getElementById("tab");
+
+                    var trow = document.createElement('tr');
+                    trow.setAttribute('class' , 'row'+i);
+                    tab.appendChild(trow);
+
+                    var prow = document.querySelector('.row'+i);
+
+                    var timg = document.createElement('img');
+                    timg.setAttribute('src' , result[i]["image"]);
+                    timg.setAttribute('alt' , 'Image');
+                    timg.setAttribute('width' , '150');
+                    timg.setAttribute('height' , '300');
+                    prow.appendChild(timg);
+
+                    var tdata = document.createElement('td');
+                    tdata.textContent = result[i]["name"] + " - " + result[i]["gender"] + " - " + result[i]["ancestry"] + " - " + result[i]["actor"];
+                    prow.appendChild(tdata);
+                }
+            }
+
+            //Students
+
+            var hogwartsStudents = document.getElementById('students');
+            hogwartsStudents.addEventListener('click' , function(){
+                showStudents(displayStudents);
+            });
+
+            function showStudents(callback) {
+                var result = "";
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET' , 'http://hp-api.herokuapp.com/api/characters/students');
+                xhr.send();
+                xhr.onload = function(){
+                    if(xhr.status == 200) {
+                        result = JSON.parse(xhr.response);
+                        displayStudents(result);
+                    }
+                }
+            }
+
+            var displayStudents = (result) => {
+                var studList = document.getElementById('studentsList');
+
+                for(var i = 0; i < 10; i++) {
+                    var div1 = document.createElement('div');
+                    div1.setAttribute('class' , 'card border border-dark');
+                    div1.setAttribute('style' , 'width:18rem');
+
+                    var imgs = document.createElement('img');
+                    imgs.setAttribute('src' , result[i]["image"]);
+                    imgs.setAttribute('class' , 'card-img-top');
+                    imgs.setAttribute('alt' , 'Students');
+
+                    var div2 = document.createElement('div');
+                    div2.setAttribute('id' , 'cdiv');
+                    div2.setAttribute('class' , 'card-body');
+
+                    var cardTitle = document.createElement('h5');
+                    cardTitle.setAttribute('class' , 'card-body');
+                    cardTitle.textContent = result[i]["name"];
+
+                    var details = document.createElement('p');
+                    details.setAttribute('class' , 'card-text');
+                    details.textContent = result[i]["dateOfBirth"];
+
+                    cardTitle.appendChild(details);
+                    div2.appendChild(cardTitle);
+
+                    div1.appendChild(imgs);
+                    div1.appendChild(div2);
+
+                    studList.appendChild(div1);
+                }
+            }
+
+            //Staff
+
+            
+            var hogwartsStaff = document.getElementById('staff');
+            hogwartsStaff.addEventListener('click' , function(){
+                showStaff(displayStaff);
+            });
+
+            function showStaff(callback) {
+                var result = "";
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET' , 'http://hp-api.herokuapp.com/api/characters/staff');
+                xhr.send();
+                xhr.onload = function(){
+                    if(xhr.status == 200) {
+                        result = JSON.parse(xhr.response);
+                        displayStaff(result);
+                    }
+                }
+            }
+
+            var displayStaff = (result) => {
+                var staffList = document.getElementById('staffList');
+
+                for(var i = 0; i < result.length; i++) {
+                    var div1 = document.createElement('div');
+                    div1.setAttribute('class' , 'card border border-dark');
+                    div1.setAttribute('style' , 'width:18rem');
+
+                    var imgs = document.createElement('img');
+                    imgs.setAttribute('src' , result[i]["image"]);
+                    imgs.setAttribute('class' , 'card-img-top');
+                    imgs.setAttribute('alt' , 'Students');
+
+                    var div2 = document.createElement('div');
+                    div2.setAttribute('id' , 'cdiv');
+                    div2.setAttribute('class' , 'card-body');
+
+                    var cardTitle = document.createElement('h5');
+                    cardTitle.setAttribute('class' , 'card-body');
+                    cardTitle.textContent = result[i]["name"];
+
+                    var details = document.createElement('p');
+                    details.setAttribute('class' , 'card-text');
+                    details.textContent = result[i]["dateOfBirth"];
+
+                    cardTitle.appendChild(details);
+                    div2.appendChild(cardTitle);
+
+                    div1.appendChild(imgs);
+                    div1.appendChild(div2);
+
+                    staffList.appendChild(div1);
+                }
+            }
+
+            //House
+
+            var hogwartsStaff = document.getElementById('magic');
+            hogwartsStaff.addEventListener('click' , function(){
+                var house = document.getElementById('houses').value;
+                showHouse(house, displayHouse);
+            });
+
+            function showHouse(house, callback) {
+                var result = "";
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET' , 'http://hp-api.herokuapp.com/api/characters/house/'+house);
+                xhr.send();
+                xhr.onload = function(){
+                    if(xhr.status == 200) {
+                        result = JSON.parse(xhr.response);
+                        displayHouse(result);
+                    }
+                }
+            }
+
+            var displayHouse = (result) => {
+                var houseList = document.getElementById('houseList');
+
+                for(var i = 0; i < result.length; i++) {
+                    var div1 = document.createElement('div');
+                    div1.setAttribute('class' , 'card border border-dark');
+                    div1.setAttribute('style' , 'width:18rem');
+
+                    var imgs = document.createElement('img');
+                    imgs.setAttribute('src' , result[i]["image"]);
+                    imgs.setAttribute('class' , 'card-img-top');
+                    imgs.setAttribute('alt' , 'Students');
+
+                    var div2 = document.createElement('div');
+                    div2.setAttribute('id' , 'cdiv');
+                    div2.setAttribute('class' , 'card-body');
+
+                    var cardTitle = document.createElement('h5');
+                    cardTitle.setAttribute('class' , 'card-body');
+                    cardTitle.textContent = result[i]["name"];
+
+                    var details = document.createElement('p');
+                    details.setAttribute('class' , 'card-text');
+                    details.textContent = result[i]["dateOfBirth"];
+
+                    cardTitle.appendChild(details);
+                    div2.appendChild(cardTitle);
+
+                    div1.appendChild(imgs);
+                    div1.appendChild(div2);
+
+                    houseList.appendChild(div1);
+                }
+            }
+
+        </script>
+    </body>
+</html>
