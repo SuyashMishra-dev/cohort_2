@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <title>
+            Harry Potter
+        </title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <img style="height:500px;width:1350px;" src="https://wallpaperplay.com/walls/full/b/c/a/64792.jpg">
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button class="btn btn-dark" id="reveal">Reveal Cast</button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12" id="output"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var display=function(callback)
+            {
+                for(var i=0;i<=10;i++)
+                {
+                    var name=callback[i]["name"];
+                    console.log(name);
+                    var gender=callback[i]["gender"];
+                    console.log(gender);
+                    var house=callback[i]["house"];
+                    console.log(house);
+                    var ancestry=callback[i]["ancestry"];
+                    console.log(ancestry);
+                    var wand=callback[i]["wand"]["core"];
+                    console.log(wand);
+                    var actor=callback[i]["actor"];
+                    console.log(actor);
+                    var img=callback[i]["image"];
+                    console.log(img)
+
+                    var output=document.getElementById("output");
+                    var div=document.createElement("div");
+                    div.setAttribute("class" , "card");
+                    div.setAttribute("style" , "width: 18rem;float-left");
+                    // var card=document.createElement("card");
+                    var image=document.createElement("img");
+                    image.setAttribute("class" , "card-img-top");
+                    image.setAttribute("src" , img)
+                    // image.append(img);
+                    // var image=document.createElement("img");
+                    var head=document.createElement("h5");
+                    head.setAttribute("class" , "card-title");
+                    head.append(name);
+                    // var head=document.createElement("h5");
+                    var para1=document.createElement("p");
+                    para1.setAttribute("class" , "card-text");
+                    para1.append(gender);
+                    // var para1=document.createElement("p");
+                    var para2=document.createElement("p");
+                    para2.setAttribute("class" , "card-text");
+                    para2.append(house);
+                    // var para2=document.createElement("p");
+                    var para3=document.createElement("p");
+                    para3.setAttribute("class" , "card-text");
+                    para3.append(ancestry);
+                    // var para3=document.createElement("p");
+                    var para4=document.createElement("p");
+                    para4.setAttribute("class" , "card-text");
+                    para4.append(wand);
+                    // var para4=document.createElement("p");
+                    var para5=document.createElement("p");
+                    para5.setAttribute("class" , "card-text");
+                    para5.append(actor);
+                    // var para5=document.createElement("p");
+                    div.appendChild(image);
+                    div.appendChild(head);
+                    div.appendChild(para1);
+                    div.appendChild(para2);
+                    div.appendChild(para3);
+                    div.appendChild(para4);
+                    div.appendChild(para5);
+                    output.appendChild(div);
+                    
+                }
+                
+
+            };
+            $("#reveal").click(function(){
+                var xhr=new XMLHttpRequest();
+                var response="";
+                xhr.open("GET", "http://hp-api.herokuapp.com/api/characters ");
+                xhr.send();
+                xhr.onload=function()
+                {
+                    if(xhr.status==200)
+                    {
+                        response=JSON.parse(xhr.response);
+                        // console.log(response);
+                        display(response);
+                    
+                    }
+                }
+                
+            })
+        </script>
+    </body>
+</html>
