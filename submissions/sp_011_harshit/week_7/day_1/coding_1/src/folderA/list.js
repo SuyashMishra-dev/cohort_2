@@ -1,6 +1,6 @@
 import React from 'react';
 
-function List(){
+function List(props){
 
     return (
         <div >
@@ -15,6 +15,6 @@ function List(){
             </div>
         </div>
     );
-}
+}	
 
 export default List;
