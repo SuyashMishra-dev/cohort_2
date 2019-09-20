@@ -30,6 +30,13 @@ class App extends React.Component{
     
   }
 
+  removeTodo = (index) =>{
+    let arr = this.state.todos.filter((el,i)=>i!=index);
+    this.setState({
+      todos : [...arr] 
+    })
+  }
+
   handleCheck = (index) => {
     
     let arr = this.state.todos;
@@ -45,8 +52,8 @@ class App extends React.Component{
     let todoList = 'Add a Todo'
     let completed = '';
     if (this.state.todos.length !== 0) {
-      todoList =  this.state.todos.filter(el=>el.done===false).map((todo,i)=><Todo changeCheck={()=>(this.handleCheck(i))} key={i} data={todo} />)   
-      completed =  this.state.todos.filter(el=>el.done===true).map((todo,i)=><Todo changeCheck={()=>(this.handleCheck(i))} key={i} data={todo} />)   
+      todoList =  this.state.todos.filter(el=>el.done===false).map((todo,i)=><Todo remove={()=>{this.removeTodo(i)}} changeCheck={()=>(this.handleCheck(i))} key={i} data={todo} />)   
+      completed =  this.state.todos.filter(el=>el.done===true).map((todo,i)=><Todo remove={()=>{this.removeTodo(i)}} changeCheck={()=>(this.handleCheck(i))} key={i} data={todo} />)   
 
     }    
     return (
