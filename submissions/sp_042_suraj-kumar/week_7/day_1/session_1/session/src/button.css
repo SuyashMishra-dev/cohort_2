@@ -1,0 +1,142 @@
+
+.button {
+     
+    background: blue;
+    width:80px;
+  
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+   }
+   .button1{
+       
+    background: blue;
+    width:80px;
+  
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+   }
+   .button2{
+       
+    background:yellow;
+    width:80px;
+  
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin-top: 5px;
+   }
+   .button3{
+       
+    background:red;
+    width:100px;
+  
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin-top: 5px;
+   }
+   .button4{
+       
+    background:greenyellow;
+    width:100px;
+  
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin-top: 5px;
+   }
+   .button5{
+       
+    background:rgb(50, 47, 255);
+    width:100px;
+  
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin-top: 5px;
+   }
+   .button6{
+       
+    background:rgb(50, 47, 255);
+    width:100px;
+  
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin-top: 5px;
+   }
+   .button6{
+       
+    background:rgb(50, 47, 255);
+    width:100px;
+  
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin-top: 5px;
+   }
+   .button7{
+       
+    background:rgb(50, 47, 255);
+    width:100px;
+  
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin-top: 5px;
+   }
+   .background {
+     background: blue;
+     color: blue;
+     height:600px;
+     width: 600px;
+     margin-left: 10px;
+     margin-top: 10px;
+   }
+  
+  .card {
+    background: navy;
+    height:500px;
+    width:400px;
+    margin-left:70px;
+     
+  }
+  .pro {
+    background-color: yellow;
+  }
+  .Img {
+    height: 80px;
+    width:80px;
+    margin-left:90px;
+    border-radius: 20%;
+    
+  }
+  .message {
+    background-color:  aqua;
+    margin:5px;
+    
+  }
+  .following {
+   background-color:blue;
+   margin:5px;
+  }
+  .Btn {
+    margin:5px;
+    
+  }
+  .name {
+    margin-left: 10px;
+  }
+  
+   

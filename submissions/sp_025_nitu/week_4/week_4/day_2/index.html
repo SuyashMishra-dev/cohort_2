@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1 id="movieid1">Click the button to see information about my favourite movie</h1>
+  <button onclick ="printmovie()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick ="addProperty()" >Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick ="function3()">Add cast member </button>
+  
+
+  <script>
+    var super30=["hritik raushan","rajan","pratik","rashami","meera"];
+
+      var movie = {
+          name : "super30", 
+          year: 2019,
+          director: "dharmaproduction",
+          story : "anandkumar",
+          cast:super30
+      }
+
+      function printmovie(){
+        var outputText = "My favorite movie is" + movie.name + ". "
+                    + "movie released " + movie.year +"amirkhan is producer of "+movie.director + " movie story " +movie.story +"movie cast"+ movie.cast;
+                    
+                    
+        
+        var outputPara = document.createElement('p')
+        outputPara.textContent = outputText
+        
+        var id1 = document.querySelector('#movieid1')
+         id1.appendChild(outputPara)
+        
+      }
+    function addProperty (){
+        movie.runTime = 160
+        var outputText = "My favorite movie is" + movie.name + ". "
+                    + "movie released " + movie.year + "amirkhan is producer of "+movie.director + " movie story " +movie.story +" movie runTime" +movie.runTime;
+                    
+      var outputPara = document.createElement('p')
+      outputPara.textContent = outputText
+  
+        var id1 = document.querySelector('#movieid1')
+        id1.appendChild(outputPara)
+    }
+    function function3(){
+      len = super30.length;
+      super30[len]="nitin";
+      
+      console.log(super30)
+      printmovie()
+    }
+
+      
+  
+  </script>
+</body>
+</html>
