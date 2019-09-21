@@ -1,16 +1,11 @@
-
 import React from 'react';
 
 function Button(props){
-  
-      return (
-        <div >
-
-        <button style={{backgroundColor:props.items2}} className=" rounded-pill text-white" >{props.items}</button>
-
-      </div>
+      return (  
+              <div className="col-xl-6 " >
+                      <button style={{backgroundColor:props.items2}} className="rounded-pill " >{props.items}</button>
+              </div>
       )
-  
 }
 
 
