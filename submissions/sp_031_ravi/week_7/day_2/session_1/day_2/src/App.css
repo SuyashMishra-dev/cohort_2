@@ -23,17 +23,90 @@
   color: #435880;
 }
 
-.card{
-  width: 50%;
-  background: #282c34;
-  height: 700px;
-  margin-left: 50px;
-  margin-bottom: 10px;
+.container{
+  background: #2F2F4A;
+  width: 600px;
+  height: 800px;
+  margin: 30px;
+  padding: 5px;
 }
-.template {
-  width: 20%;
-  height: 200px;
-  margin: 10px;
+.cardBox {
+  background:#0d0d3d;
+  width: 400px;
+  height: 600px;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.proTag {
+  background: #c59c2c;
+  float: left;
+  margin: 20px;
+  border-radius: 3px;
+}
+
+.picture {
+  background: 200px;
+  height: 130px;
+  width: 130px;
+  border-radius: 100px;
+  margin-left: 65px;
+  margin-top: 20px;
+}
+
+.messageBtn {
+  background: teal;
+  text-align: center;
+  margin-left: 84px;
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  border: teal;
+  color: black;
+  border-radius: 3px;
+}
+
+.followBtn {
+  background: #0d0d3d;
+  text-align: center;
+  color: teal;
+  margin-left: 30px;
+  width: 100px;
+  height: 30px;
+  border-radius: 3px;
+  
+}
+.skills {
+  color: white;
+  margin-left: 10px;
+}
+
+.small {
+  float: left;
+  height: 30px;
+  border: 1px solid white;
+  padding-top:10px;
+  text-align: center;
+  color:white;
+  margin: 5px;
+  border-radius: 3px;
+  margin-left: 10px;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.frontEnd {
+  float: left;
+  width: 200px;
+  height: 30px;
+  border: 1px solid white;
+  margin: 5px;
+  padding-top: 10px;
+  text-align: center;
+  border-radius: 3px;
+  margin-left: 10px;
+  color: white;
+  font-size: 14px;
 }
 
 @keyframes App-logo-spin {
