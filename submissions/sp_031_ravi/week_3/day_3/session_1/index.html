@@ -25,6 +25,7 @@
 		<label for="Email">Email</label>
 		<input type="text" id="txtemail">
 		<button onclick="ValidEmail()">Check Email!</button>
+		<p id="result"></p>
 		<!-- These elements above are for FSD.W3.3.1_3-->
 
 		<script type="text/javascript">
@@ -47,20 +48,28 @@
 			//Write javascript for FSD.W3.3.1_2 here
 			function sumOf3And5(){
 				var limit = document.getElementById("limit").value;
-				var mul = 3 * 5;
-				var output = 0;	
+				var sum = 0;	
 
-				for (var i = 2; mul <= limit; i++) {
-					output = output + mul;
-					mul = 3 * 5 * i;
+				for (var i = 0; i <= limit; i++) {
+					if(i%3 ==0 || i%5 == 0){
+						sum = sum + i;
+					}
 				}
-				console.log(mul);
-				document.getElementById("sumOutput").innerHTML = output;
+				console.log(sum);
+				document.getElementById("sumOutput").innerHTML = sum;
 			}
 
-			function validateEmail(){
-				var email = document.getElementById("email").value;
-
+			function ValidEmail(){
+				var email = document.getElementById("txtemail").value;
+				var countAt = 0;
+				var countDot = 0;
+				var At = email.indexOf('@');
+				if(At < 1) {
+					document.getElementById("result").innerHTML = "Incorrect Email"
+				}
+				else {
+					document.getElementById("result").innerHTML = "Correct Email"
+				}
 			}
 		</script>
 	</body>
