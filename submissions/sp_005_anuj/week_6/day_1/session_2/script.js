@@ -1,19 +1,19 @@
 var arr = []
+var submit_details = document.getElementById("submi")
+
+
 class car {
     constructor(carMake, model, topSpeed, dist) {
         this.carMake = carMake;
         this.model = model;
         this.topSpeed = topSpeed;
-        this.dist = dist;
+        this.distance = dist;
     }
-}
-
-function details() {
-    var car_make = document.getElementById('cmp_nm').value;
-    var model = document.getElementById('mod_nm').value;
-    var top_speed = document.getElementById('top_speed').value;
-
-    var newDetails = new details(car_make, model, top_speed)
-    arr.push(newDetails)
-    console.log(arr)
+    travelDist( time = 1, speed = topSpeed /2) {
+        var dist = time * speed;
+        this.distance = dist;
+    }
+    presentStatus() {
+        return (this.carMake + this.model + this.topSpeed + this.distance)
+    }
 }
