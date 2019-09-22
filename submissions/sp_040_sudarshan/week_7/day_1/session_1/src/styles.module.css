@@ -1,0 +1,40 @@
+.join {
+    background-color: rgb(58, 167, 204);
+}
+
+.setting {
+    background-color: rgba(128, 128, 128, 0.678);
+}
+
+.login {
+    background-color: orange;
+}
+
+.contact {
+    background-color: rgba(128, 0, 0, 0.753);
+}
+
+.search {
+    background-color: rgb(77, 211, 77);
+}
+
+.help {
+    background-color: rgba(0, 0, 139, 0.658);
+}
+
+.home {
+    background-color: rgb(231, 105, 126);
+}
+
+.download {
+    background-color: rgb(196, 145, 80);
+}
+
+button {
+    color: white;
+    margin-left: 50px;
+    margin-top: 10px;
+    width: 140px;
+    height: 40px;
+    border-radius: 25px;
+}
