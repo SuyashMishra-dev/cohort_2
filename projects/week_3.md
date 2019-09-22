@@ -9,5 +9,7 @@ Build a web page for the topic assigned to you
 | sp_033 | Sachin | Chess    | [github](https://github.com/sachinkapalidigi/masai-week-3) |
 | sp_043 | Suraj Singh | Tic Tac Toe | [github](https://github.com/Suraj10074/masai-week-3) |
 | sp_004 | Amit | Snakes and Ladders | [github](https://github.com/amit036/masai-week-3) |
+| sp_011 | Harshit | Ludo | [github](https://github.com/harshit860/masai-week-3) |
+| sp_025 | Nitu Kumari | Tic Tac Toe | [github](https://github.com/nitu023/masai-week-3) |
 
 

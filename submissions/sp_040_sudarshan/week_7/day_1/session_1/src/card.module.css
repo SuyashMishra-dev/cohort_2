@@ -1,0 +1,66 @@
+.cardcontainer {
+    background: #2F2F4A;
+    width: 600px;
+    height: 800px;
+    margin: 30px;
+    padding: 5px;
+}
+.cardbox {
+    background: #0d0d3d;
+    width: 400px;
+    height: 500px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.protext {
+    background: yellow;
+    float: left;
+    margin-left:20px;
+}
+.picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin-left: 70px;
+}
+.msgbutton {
+    background: teal;
+    text-align: center;
+    width: 100px;
+    margin-left: 170px;
+}
+.followingbutton {
+    background: #0d0d3d;
+    text-align: center;
+    color: white;
+    width: 100px;
+}
+.cardfooter {
+    background: rgb(47, 47, 74);
+    width: 400px;
+    margin-left: 100px;
+    height: 100px;
+}
+.skills{
+    color: white;
+}
+.small {
+    float: left;
+    width: 70px;
+    height: 30px;
+    border: 1px solid white;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+    margin: 5px;
+}
+.fronted {
+    float: left;
+    width: 200px;
+    height: 30px;
+    border: 1px solid white;
+    margin: 5px;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+}

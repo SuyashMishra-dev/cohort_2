@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import OS from './components/a1/OS';
+import Mobile from './components/a1/Mobile'
+import Buttons from './components/a2/Buttons'
+import Card from './components/a3/Card'
+import styles from './components/a1/lists.module.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const Lists= () => {
+    return(
+        <div  className={styles.adj}>
+            <OS />
+            <Mobile />
+            <Buttons />
+            <Card />
+        </div>
+    )
 }
 
-export default App;
+export default Lists 
