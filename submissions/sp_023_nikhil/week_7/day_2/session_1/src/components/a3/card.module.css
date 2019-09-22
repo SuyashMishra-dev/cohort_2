@@ -1,0 +1,43 @@
+.card1 {
+    background: purple;
+    width: 50%
+}
+img {
+    border-radius: 100px;
+    margin-left: 180px;
+    margin-top: 10px;
+}
+.btn1{
+    background: skyblue;
+    width: 150px;
+    text-align: center;
+    margin-left:50px;
+}
+.btn2{
+    border: skyblue;
+    width: 150px;
+    margin-left: 20px;
+    
+}
+.title{
+    text-align: center;
+    color:white
+}
+.bdr{
+    border: 1px solid white;
+    width: auto;
+    margin-right: 10px;
+    color: white
+}
+.fl{
+    display: flex;
+}
+.txt{
+    color: white;
+}
+h6{
+    color: aliceblue;
+}
+.foot{
+    background: plum;   
+}

@@ -1,0 +1,138 @@
+.main{
+    background-color: #28223F;
+    width: 50%;
+    color: #9D91A1;
+    text-align: center;
+    padding:10px;
+}
+.intro{
+    background-color: #231E39;
+    width: 400px;
+    margin-left: 120px;
+    margin-top:30px;
+}
+.image{
+    border-radius: 50%;
+    margin-top:30px;
+    border: 2px solid #2EBFCB;
+    margin-left: -75px;
+}
+.message{
+    background-color: #2EBFCB;
+    width:120px;
+    height: 42px;
+    border: 1px solid #231E39;
+    margin-right:3px;
+    border-radius: 5px;
+}
+.following{
+    background-color: #231E39;
+    width:120px;
+    height: 40px;
+    color: #2EBFCB;
+    border: 1px solid #2EBFCB;
+    border-radius: 5px;
+}
+.skillsdiv{
+    margin-top:30px;
+    background-color: #1F1A36;
+    text-align: left;
+    padding: 3px;
+}
+.skillbuttons{
+    background-color: #1F1A36;
+    color: white;
+    border: 1px solid #28223F;
+    height:30px;
+    margin: 7px;
+}
+.skills{
+    margin:7px;
+    font-size: 12px;
+}
+.pro{
+    background-color: #FEBC3C;
+    color: #231E39;
+    border: 1px solid #28223F;
+    height:25px;
+    width: 50px;
+    border-radius: 5px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.eightButtons{
+
+}
+.join{
+    background-color: #1F91C7;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+    width: 120px;
+    height: 25px;
+    font-weight: bold;
+}
+.login{
+    background-color: #F6A539;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+    width: 120px;
+    height: 25px;
+    font-weight: bold;
+}
+.search{
+    background-color: #83B33B;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+    width: 120px;
+    height: 25px;
+    font-weight: bold;
+}
+.home{
+    background-color: #E25189;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+    width: 120px;
+    height: 25px;
+    font-weight: bold;
+}
+.settings{
+    background-color: #6D9DA8;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+    width: 120px;
+    height: 25px;
+    font-weight: bold;
+}
+.contact{
+    background-color: #B12D33;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+    width: 120px;
+    height: 25px;
+    font-weight: bold;
+}
+.help{
+    background-color: #615FA1;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+    width: 120px;
+    height: 25px;
+    font-weight: bold;
+}
+.download{
+    background-color: #A88A3A;
+    color: white;
+    border-radius: 20px;
+    margin: 10px;
+    width: 120px;
+    height: 25px;
+    font-weight: bold;
+}
