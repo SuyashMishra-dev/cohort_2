@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-dark">
+    <div class="container-fluid">
+        <div class="text-center display-4">Harry Potter</div>
+        <img
+            src="https://d2o1nr2nayhfv9.cloudfront.net/hero-banner-png/movies/media/browser/HP_8COL_H_DD_4320x1080_300dpi_EN.png">
+    </div>
+    <div class="container">
+        <button id="btn1" type="button" class="btn btn-primary">View All Characters</button>
+        <button id="btn2" type="button" class="btn btn-primary">Student Characters</button>
+        <button id="btn3" type="button" class="btn btn-primary">Hogwarts staff during the book series</button>
+        <button id="btn4" type="button" class="btn btn-primary">Characters in a certain house</button>
+    </div>
+    <div class="container">
+        <p id="para1"></p>
+        <p id="para2"></p>
+        <p id="para3"></p>
+        <p id="para4"></p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#para1').hide();
+            $('#para2').hide();
+            $('#para3').hide();
+            $('#para4').hide();
+
+        });
+        function btn1() {
+            $('#para1').show();
+            $('#para2').hide();
+            $('#para3').hide();
+            $('#para4').hide();
+            var xhr = new XMLHttpRequest();
+            var result1;
+            xhr.open('GET', 'http://hp-api.herokuapp.com/api/characters');
+            xhr.send()
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    result1 = JSON.parse(xhr.response);
+                    console.log(xhr.response)
+                }
+                else {
+                    console.log("Error Code is: " + xhr.status);
+                }
+                result1.forEach(function (element) {
+                    console.log("r")
+                    $('#para1').append("<div class=' col-4 float-right text-center mb-5'>" + "<div class='card'>"
+                        + "<div class='card-body'>" + " <img src=" + element.image + " class='card-img-top'>" +
+                        "<h5 class='card-title'>" + element.name + "</br>" + "</h5>" + "<p class='card-text'>Catogery: " + element.species + "</p>" +
+                        "<p class='card-text'>Type: " + element.gender + "</p>" + "<p>" + element.house + "</p>" + "<p>" + element.actor +
+                        "</p>" + "</div>" + "</div>" + "</div>")
+                })
+            }
+        }
+
+        var button2 = document.querySelector("#btn1")
+        button2.addEventListener('click', btn1)
+
+        function btn2() {
+            $('#para1').hide();
+            $('#para2').show();
+            $('#para3').hide();
+            $('#para4').hide();
+            var xhr = new XMLHttpRequest();
+            var result2;
+            xhr.open('GET', 'http://hp-api.herokuapp.com/api/characters/students');
+            xhr.send()
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    result2 = JSON.parse(xhr.response);
+                    console.log(xhr.response)
+                }
+                else {
+                    console.log("Error Code is: " + xhr.status);
+                }
+                result2.forEach(function (element) {
+                    console.log("r")
+                    $('#para2').append("<div class=' col-4 float-right text-center mb-5'>" + "<div class='card'>"
+                        + "<div class='card-body'>" + " <img src=" + element.image + " class='card-img-top'>" +
+                        "<h5 class='card-title'>" + element.name + "</br>" + "</h5>" + "<p class='card-text'>Catogery: " + element.species + "</p>" +
+                        "<p class='card-text'>Type: " + element.gender + "</p>" + "<p>" + element.house + "</p>" + "<p>" + element.actor +
+                        "</p>" + "</div>" + "</div>" + "</div>")
+                })
+            }
+        }
+
+        var button2 = document.querySelector("#btn2")
+        button2.addEventListener('click', btn2)
+
+        function btn3() {
+            $('#para1').hide();
+            $('#para2').hide();
+            $('#para3').show();
+            $('#para4').hide();
+            var xhr = new XMLHttpRequest();
+            var result3;
+            xhr.open('GET', 'http://hp-api.herokuapp.com/api/characters/staff');
+            xhr.send()
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    result3 = JSON.parse(xhr.response);
+                    console.log(xhr.response)
+                }
+                else {
+                    console.log("Error Code is: " + xhr.status);
+                }
+                result3.forEach(function (element) {
+                    console.log("r")
+                    $('#para3').append("<div class=' col-4 float-right text-center mb-5'>" + "<div class='card'>"
+                        + "<div class='card-body'>" + " <img src=" + element.image + " class='card-img-top'>" +
+                        "<h5 class='card-title'>" + element.name + "</br>" + "</h5>" + "<p class='card-text'>Catogery: " + element.species + "</p>" +
+                        "<p class='card-text'>Type: " + element.gender + "</p>" + "<p>" + element.house + "</p>" + "<p>" + element.actor +
+                        "</p>" + "</div>" + "</div>" + "</div>")
+                })
+            }
+        }
+
+        var button3 = document.querySelector("#btn3")
+        button3.addEventListener('click', btn3)
+
+        function btn4() {
+            $('#para1').hide();
+            $('#para2').hide();
+            $('#para3').hide();
+            $('#para4').show();
+            var xhr = new XMLHttpRequest();
+            var result4;
+            xhr.open('GET', 'http://hp-api.herokuapp.com/api/characters/house/gryffindor');
+            xhr.send()
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    result4 = JSON.parse(xhr.response);
+                    console.log(xhr.response)
+                }
+                else {
+                    console.log("Error Code is: " + xhr.status);
+                }
+                result4.forEach(function (element) {
+                    console.log("r")
+                    $('#para4').append("<div class=' col-4 float-right text-center mb-5'>" + "<div class='card'>"
+                        + "<div class='card-body'>" + " <img src=" + element.image + " class='card-img-top'>" +
+                        "<h5 class='card-title'>" + element.name + "</br>" + "</h5>" + "<p class='card-text'>Catogery: " + element.species + "</p>" +
+                        "<p class='card-text'>Type: " + element.gender + "</p>" + "<p>" + element.house + "</p>" + "<p>" + element.actor +
+                        "</p>" + "</div>" + "</div>" + "</div>")
+                })
+            }
+        }
+
+        var button4 = document.querySelector("#btn4")
+        button4.addEventListener('click', btn4)
+    </script>
+
+</body>
+
+</html>
