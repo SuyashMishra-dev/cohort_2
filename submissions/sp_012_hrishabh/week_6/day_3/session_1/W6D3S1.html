@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Header</title>
+</head>
+<body>
+    <div>
+        <input id="nameInput" type="text" placeholder="updateName"><br><br>
+        <input id="colorInput" type="text" placeholder="updateColor"><br><br>
+        <input id="fontInput" type="text" placeholder="updateFontSize"><br><br>
+    </div>
+    <button onclick="changes()" type="submit">Render</button>
+    <button onclick="changes()" type="submit">Name</button>
+    <button onclick="changes()" type="submit">color</button>
+    <button onclick="changes()" type="submit">font-size</button>
+    
+
+    <div id="root" ></div><br><br>
+
+    <div>
+        <input id="name2Input" type="text" placeholder="name"><br><br>
+        <input id="color2Input" type="text" placeholder="color"><br><br>
+        <input id="font2Input" type="text" placeholder="font-size"><br><br>
+        <select id = "nameShow">
+            <option></option>
+        </select><br><br>
+        <input id="delete2Input" type="text" placeholder="delete-name"><br><br>
+
+        
+        <button onclick="getDetail()" type="submit">Name</button>
+        <button onclick="colorChange()" type="submit">color</button>
+        <button onclick="fontChange()" type="submit">font-size</button>
+        <button onclick="deleteName()" type="submit">Delete Name</button>        
+        <button onclick="renderShow()" type="submit">Render</button>
+    </div>
+</body>
+<script src="W6D3S1.js"></script>
+</html>
