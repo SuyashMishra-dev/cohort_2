@@ -1,0 +1,74 @@
+.joinButton{
+    background-color: aqua;
+    border-radius:20px;
+    width:120px;
+    height:30px;
+    color:white;
+}
+.settingButton{
+    background-color:blueviolet;
+    border-radius:20px;
+    width:120px;
+    height:30px;
+    color:white;
+}
+.loginButton{
+    background-color:orange;
+    border-radius:20px;
+    width:120px;
+    height:30px;
+    color:white;
+}
+.contactButton{
+    background-color:palevioletred;
+    border-radius:20px;
+    width:120px;
+    height:30px;
+    color:white;
+}
+.searchButton{
+    background-color:green;
+    border-radius:20px;
+    width:120px;
+    height:30px;
+    color:white;
+}
+.helpButton{
+    background-color:yellowgreen;
+    border-radius:20px;
+    width:120px;
+    height:30px;
+    color:white;
+}
+.homeButton{
+    background-color:hotpink;
+    border-radius:20px;
+    width:120px;
+    height:30px;
+    color:white;
+}
+.downloadButton{
+    background-color:brown;
+    border-radius:20px;
+    width:120px;
+    height:30px;
+    color:white;
+}
+.blueback{
+    background-color:purple;
+    width:500px;
+    height:500px;
+    margin:80px;
+
+}
+.img{
+    border-radius:50%;
+    margin-top:50px;
+}
+.textPara{
+    color:white;
+}
+.msgbtn{
+    background-color: aqua;
+}
+
