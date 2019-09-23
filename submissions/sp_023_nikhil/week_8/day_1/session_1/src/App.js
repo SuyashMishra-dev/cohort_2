@@ -38,7 +38,7 @@ class App extends React.Component {
         .catch(error => console.log(error))
       }  
   render() {
-    let info = this.state.data.map(elm => { return (<Github name={elm.login} picture={elm.avatar_url} repo={elm.url} />)})      
+    let info = this.state.data.map(elm => { return (<Github name={elm.login} picture={elm.avatar_url} score={elm.score} link={elm.link} repo={elm.repos_url} />)})      
     
     return (
       <div>
