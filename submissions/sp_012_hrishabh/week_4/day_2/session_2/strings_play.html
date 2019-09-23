@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>string play</title>
+</head>
+<body>
+    <input id="getInput" type="text" placeholder="enter String"><br>
+    <button onclick="spaceCheck()" type="submit">Remove Space</button>
+    <button onclick="camelCase()" type="submit">Camel Case</button>
+    <button onclick="snakeCase()" type="submit">Snake Case</button>
+    <button onclick="hypencase()" type="submit">Hypen Case</button>
+    <button onclick="mirrorImage()" type="submit">Mirror Image</button>
+    <div id="show"></div>
+    <script>
+
+        /*Show Function start*/
+        function show (output) {
+            var div = document.createElement('p');
+            var divParent = document.getElementById('show');
+            div.innerHTML = 'Space Remove: ' +output;
+            divParent.appendChild(div); 
+        }
+        /*Show Function end*/
+        
+        
+        
+        
+        /*Removing Space */
+        function spaceCheck () {
+            var inputString = document.getElementById('getInput').value;
+            // console.log(getString)
+            // var lenString = getString.length;
+            // console.log(lenString)
+            // for(var i = 1; i < lenString; i++) {
+            //     if(getString[i] = " ")
+            //     i++;
+            //     else {
+            //     removeSpaceString += getString[i]
+            // }
+            // }
+            // console.log(removeSpaceString);
+                 var wordArray = splitString(inputString, " ");
+                 var sentence = join(wordArray, " ");
+                 var div = document.createElement('p');
+                var divParent = document.getElementById('show');
+                div.innerHTML = 'Space Remove: ' +sentence;
+                divParent.appendChild(div);
+                       
+        }
+        /*Removed Space*/
+
+        
+        
+        /* camel case start*/
+        function camelCase () {
+            var inputString = document.getElementById('getInput').value;
+            var wordArray = splitString(inputString, ' ');
+            var camelArray = camelify(wordArray);
+            var sentence = join(camelArray, '');           
+            var div = document.createElement('p');
+            var divParent = document.getElementById('show');
+            div.innerHTML = 'camel case: ' +sentence;
+            divParent.appendChild(div);
+        }
+        /*camel case end*/
+
+        function snakeCase () {
+            var inputString = document.getElementById('getInput').value;
+            var wordArray = splitString(inputString, ' ');
+            var sentence = join(wordArray, "_");
+            var div = document.createElement('p');
+            var divParent = document.getElementById('show');
+            div.innerHTML = 'snake case: ' +sentence;
+            divParent.appendChild(div);
+        }
+
+        function hypenCase () {
+            var inputString = document.getElementById('getInput').value;
+            var wordArray = splitString(inputString, ' ');
+            var sentence = join(wordArray, "-");
+            var div = document.createElement('p');
+            var divParent = document.getElementById('show');
+            div.innerHTML = 'snake case: ' +sentence;
+            divParent.appendChild(div);
+        }
+
+        function mirrorImage () {
+        var inputString = document.getElementById('getInput').value;
+        var wordArray = splitString(inputString, ' ');
+        var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        var mirrorWordArray = [];
+        var sentence = ' ';
+        for(var i = 0; i  < wordArray; i++) {
+            var word = wordArray[i];
+            var mirrorWord = "";
+            for(var j = 0; j< word.length; j++) {
+            mirrorWord += alphabet[25 - alphabet.indexOf(word[j])];
+        }
+        sentence += mirrorWord + ' ';
+    }
+       
+        
+        
+        var div = document.createElement('p');
+        var divParent = document.getElementById('show');
+        div.innerHTML = 'mirror image: ' +sentence;
+        divParent.appendChild(div);
+        }
+
+
+
+
+
+
+
+        /*camlify function start*/
+        function camelify (words) {
+            camelWords = [];
+            pushToArray(camelWords, words[0]);
+            for(var i = 0; i < words.length; i++) {
+                var word = words[0];
+                var camelWord = word[0].toUpperCase() + word.substring(1, words.length)
+                pushToArray(camelWords, camelWord);        
+        }
+        return camelWords;
+    } 
+
+
+
+
+
+       /* array push function start*/
+        function pushToArray(arr, elm) {
+            arr[arr.length] = elm;
+        }
+        /* array push function end*/
+
+
+
+
+
+        /*split function start*/
+        function splitString(inputString, seprator) {
+            var word = "";
+            var seperator = " ";
+            var wordArray = [];
+            for(var i = 0; i <= inputString.length; i++) {
+                if(inputString.length == 1 && word.length != 0) {
+                pushToArray(wordArray, word);
+            }
+            if(inputString[i] != seperator) {
+                word += inputString[i];
+            }
+            else if (inputString[i] == seperator) {
+                if(word.length > 0) {
+                    pushToArray(wordArray, word);
+                }
+                word = "";
+            }
+        }
+        return wordArray;
+            
+    }
+    /*split function end*/
+
+
+
+
+     /* join function start*/
+    function join (words, seperator) {
+        var sentence = "";
+        for(var i = 0; i < words.length; i++) {
+            if(words[i].length != 0) {
+                if(i == words.length - 1) {
+                    sentence += words[i];
+                }
+                else {
+                    sentence += words[i] + seperator;
+                }
+            }
+        }
+        return sentence.substring(0 , sentence.length);
+    }
+    /* join function end */
+    </script>
+</body>
+</html>
