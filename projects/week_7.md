@@ -12,4 +12,4 @@ Build a web page for the topic assigned to you
 | sp_021 | Mohammed Tanveer | Flipkart | [github](https://github.com/tanveer86/masai-week-7) |
 | sp_031 | Ravichandra Gornal | Bhive | [github](https://github.com/ravigornal/masai-week-7) |
 | sp_005 | Anuj Choudhary | Microsoft | [github](https://github.com/choudharyanuj/masai-week-7) |
-
+| sp_043 | Suraj Singh |Microsoft | [github](https://github.com/Suraj10074/masai-week-7) |
