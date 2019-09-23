@@ -3,7 +3,7 @@
 | Code   | Candidate             | Character             | Repo Link                                                    |
 | ------ | --------------------- | --------------------- | ------------------------------------------------------------ |
 | sp_000 | Nrupul                | BB8                   | [github](https://github.com/nrupuld/masai-week-2)            |
-| sp_009 | Gayathri              | Toy Story             | [github](https://github.com/gaaithri/masai-week-1)           |
+| sp_009 | Gayathri              | ToyStory              | [github](https://github.com/gaaithri/masai-week-1)           |
 | sp_015 | Karthikeyan           | Richie Rich           | [github](https://github.com/karthikeyanranasthala/masai-week-1) |
 | sp_033 | Sachin                | Avatar Aang           | [github](https://github.com/sachinkapalidigi/masai-week-1)   |
 | sp_023 | Nikhil                | Huey, Dewey and Louie | [github](https://github.com/nikhilgudur/masai-week-1)        |
