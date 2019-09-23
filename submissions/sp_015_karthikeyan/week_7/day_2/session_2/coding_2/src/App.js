@@ -2,7 +2,6 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import RestaurantDetails from './components/RestaurantDetails'
-import Buttons from './components/Buttons';
 
 class App extends React.Component {
   constructor(props) {
@@ -29,20 +28,26 @@ class App extends React.Component {
         {name: "URU BREWPARK", categories: "Continental, Pizza, Asian, Desserts", cost: 300, payments: 'Online', votes: 80, reviews: 800, rating: 1.5},
         {name: "URU BREWPARK", categories: "Continental, Pizza, Asian, Desserts", cost: 200, payments: 'Online', votes: 90, reviews: 900, rating: 1},
         {name: "URU BREWPARK", categories: "Continental, Pizza, Asian, Desserts", cost: 100, payments: 'Online', votes: 100, reviews: 100, rating: 0.5}
-      ]
+      ],
+      currentFilter: 0
     }
-    this.filter = [4, 3, 2, 1];
   }
 
 filter(range) {
-  console.log(range);
+  let temp = range;
+  this.setState({currentFilter: temp});
 }
 
 render() {
+  let rest = this.state.restaurants.filter(el => Number(el.rating) > Number(this.state.currentFilter))
   return(
     <div>
-      <Buttons filterItems={this.filter}/>
-      <RestaurantDetails details={this.state.restaurants}/>
+      <button className = "btn btn-success mr-2" onClick = {() => {this.filter(4)}}>4</button>
+      <button className = "btn btn-success mr-2" onClick = {() => {this.filter(3)}}>3</button>
+      <button className = "btn btn-success mr-2" onClick = {() => {this.filter(2)}}>2</button>
+      <button className = "btn btn-success mr-2" onClick = {() => {this.filter(1)}}>1</button>
+      <button className = "btn btn-success mr-2" onClick = {() => {this.filter(0)}}>Clear</button>
+      <RestaurantDetails details={rest} />
     </div>
   )
 }

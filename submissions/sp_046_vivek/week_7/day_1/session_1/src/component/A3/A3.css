@@ -1,0 +1,134 @@
+.A3 {
+    font-family: sans-serif;
+    text-align: center;
+    background: rgb(24, 25, 80);
+    color: whitesmoke;
+    margin-left: 250px;
+    width: 800px;
+    height: 600px;
+  }
+    
+  .heading{
+    height: 500px;
+    width: 400px;
+    background:rgb(33, 33, 73);
+    margin-left: 200px;
+
+  }
+
+  .image{
+    border-radius: 70px;
+    border: 2px solid blue;
+    margin-top: 20px;
+    margin-right: 120px;
+  }
+  
+  .msg{
+    background: skyblue;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  
+  .follow{
+    height: 40px;
+    width: 100px;
+    border: 2px solid skyblue;
+    background: rgb(33, 33, 73);
+    color: skyblue;
+    border-radius: 5px;
+  }
+  
+  .buttons1{
+    display: grid;
+    text-align: center;
+    grid-template-columns: 60px 210px 60px;
+    grid-template-rows: 25px;
+    margin-left: 20px;
+  }
+  
+  .buttons2{
+    display: grid;
+    grid-template-columns: 60px 90px 60px 60px;
+    grid-template-rows: 25px;
+    margin: 20px;
+  }
+  
+  .pro{
+      background: rgb(243, 193, 27);
+      height: 25px;
+      width: 50px;
+      border-radius: 5px;
+      text-align: center;
+      line-height: 25px;
+      margin: 35px;
+      color: black;
+      float: left;
+  }
+
+  .skill{
+      font-size: 15px;
+      margin-left: -300px;
+  }
+
+  .box1{
+      border: 1px solid black;
+      height:25px;
+      width:50px;
+      line-height: 25px;
+      margin: 10px;
+  }
+
+  .box2{
+    border: 1px solid black;
+    height:25px;
+    width:200px;
+    line-height: 25px;
+    margin: 10px;
+  }
+  
+  .box3{
+      border: 1px solid black;
+      height:25px;
+      width:50px;
+      line-height: 25px;
+      margin: 10px;
+  }
+  
+  .box4{
+      border: 1px solid black;
+      height:25px;
+      width:50px;
+      line-height: 25px;
+      margin: 10px;
+  }
+  
+  .box5{
+      border: 1px solid black;
+      height:25px;
+      width:80px;
+      line-height: 25px;
+      margin: 10px;
+  }
+  
+  .box6{
+      border: 1px solid black;
+      height:25px;
+      width:50px;
+      line-height: 25px;
+      margin: 10px;
+  }
+  
+  .box7{
+      border: 1px solid black;
+      height:25px;
+      width:50px;
+      line-height: 25px;
+      margin: 10px;
+  }
+
+  .headbuttom{
+      background: rgb(9, 14, 53);
+      height: 150px;
+  }
