@@ -12,21 +12,22 @@ class App extends React.Component {
     this.state = {
       stopWatch : false,
       timer: false,
-      counter : 0
+      swCounter : 0,
+      tCounter : 60
     };
   }
 
   createInterval = () => {
     if(this.state.stopWatch) {
       sw = setInterval(() => {
-        this.setState({counter: this.state.counter + 1})
+        this.setState({swCounter: this.state.swCounter + 1})
       }, 1000);
     }
     else clearInterval(sw);
 
     if(this.state.timer) {
       t = setInterval(() => {
-        this.setState({counter: this.state.counter - 1})
+        this.setState({tCounter: this.state.tCounter - 1})
       }, 1000);
     }
     else clearInterval(t);
@@ -34,29 +35,72 @@ class App extends React.Component {
 
   swSwitch = () => {
     this.setState({
-      counter: 0,
       stopWatch: !this.state.stopWatch,
     })
     this.createInterval();
   }
 
+  swReset = () => {
+    this.setState({
+      swCounter: 0,
+      stopWatch: false
+    })
+    this.createInterval();
+  }
 
   tSwitch = () => {
+    console.log(this.state.timer)
+    let val = document.querySelector("input").value
+    if(this.state.timer && val) {
+      this.setState({
+        tCounter: val
+      })
+    }
     this.setState({
-      counter: 300,
       timer: !this.state.timer
     })
     this.createInterval();
   }
 
-  render = () => {
+  tReset = () => {
+    this.setState({
+      tCounter: 60,
+      timer: false
+    })
+    this.createInterval();
+  }
+
+  render = () => {  
+    if(this.state.tCounter == 0) {
+      this.tReset();
+      alert("Time's up");
+    }
+
     return (
-      <div>
-        <p>Stopwatch</p>
-        <Stopwatch data={this.state}/>
-        <Stopwatch data={this.state}/>
-        <button onClick={this.tSwitch}>Timer</button>
-        <button onClick={this.swSwitch}>SW</button>
+      // <div>
+      //   <Stopwatch data={this.state}/>
+      //   {/* <Stopwatch data={this.state}/> */}
+      //   {/* <button onClick={this.tSwitch}>Timer</button> */}
+      //   <button onClick={this.swSwitch}>SW</button>
+      // </div>
+      
+
+      <div className = "container">
+        <div className = "row text-center">
+          <div className = "col">
+            <p className = "display-3">StopWatch</p>
+            <Stopwatch data={this.state} />
+            <button onClick={this.swSwitch} className = "btn btn-primary m-1">Toggle</button>
+            <button onClick={this.swReset} className = "btn btn-primary m-1">Reset</button>
+          </div>
+          <div className = "col">
+            <p className = "display-3">Timer</p>
+            <Timer data={this.state} />
+            <input placeholder = "Enter time in seconds" className = "form-control text-center"></input>
+            <button onClick={this.tSwitch} className = "btn btn-primary m-1">Toggle</button>
+            <button onClick={this.tReset} className = "btn btn-primary m-1">Reset</button>
+          </div>
+        </div>
       </div>
     )
   }

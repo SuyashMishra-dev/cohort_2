@@ -3,7 +3,6 @@ import pic from '../150x150.png';
 
 const RestaurantDetails = (props) => {
     let i = -1;
-    console.log(props)
     return(
         <div>
             {props.details.map(ele => {
