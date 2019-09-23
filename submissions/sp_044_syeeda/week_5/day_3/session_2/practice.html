@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div class="allCOntainer">
+            <div class="displayContainer">
+                <h2>Person Display</h2>
+                <div class ="paraContainer"></div>
+                <h1>Click the button to see all the values of the object! </h1>
+                <button id = "printObject">Click here to print the values of the object!</button>
+                <div id = "outputContainer"> </div>
+                <button id = "addHobby">Click here to add a hobby!</button>
+                <input id ="hobbyInput" type = "text" />
+                <h1> Create new person objects </h1>
+                <div class = "inputContainer">
+                  <label for = "name">Name</label>
+                  <input type="text" name = "name" class = "personInput"/>
+            
+                  <label for = "age">Age</label>
+                  <input type="text" name = "Age" class = "personInput"/>
+            
+                  <label for = "height">Height</label>
+                  <input type="text" name = "height" class = "personInput"/>
+            
+                  <label for = "gender">Gender</label>
+                  <input type="text" name = "gender" class = "personInput"/>
+            
+                  <label for = "name">Hobbies (Comma separated!</label>
+                  <input type="text" name = "name" class = "personInput"/>
+            
+                  <label for = "submit">Submit Information:</label>
+                  <button name = "submit" id = 'submitBtn'>Submit</button>
+            
+                  <label for = "displayPeople">Display All People</label>
+                  <button name = "displayPeople" id = 'displayBtn'>Display All Poeple</button>
+                </div>
+              </div>
+            </body>
+            </html>
+            
+            <script>
+//print the values of the object below!
+//object is syeeda
+var syeeda = 
+{
+    name : "SYEEDA MISBA ANJUM",
+    age: 100,
+    height:"6 ft 12 In",
+    gender : "Female",
+    hobbies :["Coding ","Weight Lifting","Running","Eating"],
+    //adds all the keys with values of the object and resturns a string called output
+    getDetails: function()
+    {
+var output=''
+for (key in this)
+{
+    output += key + ":" +syeeda[key] + "\n"
+if(key =='hobbies') break;
+}
+return output
+    }
+};
+//CODE FOR PRINTING THE OBJECT VALUES-SYEEDA IS THE OBJECT//
+//This printObjPara function is called to print the values of
+// object syeeda to a <p> tag.
+
+function printObjPara()
+{
+    //call id for output and store it in a varaible
+    var container = document.querySelector('#outputContainer')
+    //call object function now and store it in a variable
+    var outputString = syeeda.getDetails()
+    //output should be in paragrah so create html p tag for output and store the data in a variable
+    var outputPara = document.createElement('p')
+//outputpara is html tag we are saying that this will have object details of syeeda
+    outputPara.innerText = outputString
+    container.innerHTML ='' //the div container has nothing for now let this be informed to teh computer
+    container.appendChild(outputPara)//for printing the output at last
+}
+//to print the values you need to call the button id use query selector
+  var btnObj = document.querySelector('#printObject');//call button id
+btnObj.addEventListener('click' , printObjPara);//event listener to make the function work
+
+//CODE FOR MODIFYING THE OBJECT PROPERTY BY ADDING A FUNCTION 
+//*****************************************-------------********************//
+syeeda.addHobby = function(hobby)
+//calls hobby function and push hobby key into object
+{
+    this.hobbies.push(hobby)
+}//this is  a keyword used to refer object 
+
+ //function for hobby button to work
+function hobbyBtnFunction()
+{  //call button id and store it in a varaible
+var hobbyString = document.querySelector('#hobbyInput').value
+  syeeda.addHobby(hobbyString);//obj.key(variable where th ebutton id is stored)
+}
+var hobbyBtn=document.querySelector('#addHobby');
+hobbyBtn.addEventListener('click',hobbyBtnFunction);
+
+
+
+       </script>

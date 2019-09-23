@@ -1,0 +1,32 @@
+
+button {
+    margin: 10px;
+    border-radius: 50px;
+    width: 150px;
+    height: 30px;
+    color: white;
+}
+.blue {
+    background: blue
+}
+.grey {
+    background-color: rgb(63, 62, 62)
+}
+.yellow {
+    background-color: yellow
+}
+.red {
+    background-color: red
+}
+.green {
+    background-color: green
+}
+.purple {
+    background-color: purple
+}
+.pink {
+    background-color: rgb(238, 13, 51)
+}
+.brown {
+    background-color: brown
+}

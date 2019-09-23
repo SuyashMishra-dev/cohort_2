@@ -4,7 +4,7 @@
         Number Sums
     </title>
     <body>
-        <h1>Click the button to get the sums of the input numbers</h1>
+        <h1>Click the button to get the sums of the input numbers (Comma separated!)</h1>
         <input id="numInput" type="text"/>
         <button onclick="evenSum()">Even Positions Sum</button>
         <button onclick="oddSum()">Odd Positions Sum</button>
@@ -12,20 +12,89 @@
         <button onclick="odd()">Odd Sum</button>
         <button onclick="singleSum()">Single digit Sum</button>
         <button onclick="doubleSum()">Double digit Sum</button>
+        <p id="output"></p>
     </body>
     <script>
-        var numbers=[];
-        var sum = 0;
+        var numbers="";
+        var value = "";
+        var evenPos = 0;
+        var oddPos = 0;
+        var evenVal = 0;
+        var oddVal = 0;
+        var singleDigit = 0;
+        var doubleDigit = 0;
         function evenSum(){
-        numbers = document.getElementById("numInput").value;
-            for (var i = 0; i < numbers.length;i++){
-                if (i % 2 == 1){
-                    sum = sum + Number(numbers[i+1]);
+            numbers = document.getElementById("numInput").value;
+            var numArr = numbers.split(",");
+            console.log(numArr)
+            console.log(numbers)
+            for (var i = 1 ; i< numArr.length;i =  i + 2){
+                evenPos = evenPos + Number(numArr[i]);
+            }
+            document.getElementById("output").innerHTML=evenPos;
+            console.log(evenPos)
+        }
+        function oddSum(){
+            numbers = document.getElementById("numInput").value;
+            var numArr = numbers.split(",");
+            console.log(numArr)
+            console.log(numbers)
+            for (var i = 0 ; i< numArr.length;i =  i + 2){
+                oddPos = oddPos + Number(numArr[i]);
+            }
+            document.getElementById("output").innerHTML=oddPos;
+            console.log(oddPos)
+        }
+
+        function even(){
+            numbers = document.getElementById("numInput").value;
+            var numArr = numbers.split(",");
+            console.log(numArr)
+            console.log(numbers)
+            for (var i = 0 ; i< numArr.length;i++){
+                if (numArr[i] % 2 == 0)
+                evenVal = evenVal + Number(numArr[i]);
+            }
+            document.getElementById("output").innerHTML=evenVal;
+            console.log(evenVal)
+        }
+        function odd(){
+            numbers = document.getElementById("numInput").value;
+            var numArr = numbers.split(",");
+            console.log(numArr)
+            console.log(numbers)
+            for (var i = 0 ; i< numArr.length;i++){
+                if (numArr[i] % 2 == 1)
+                oddVal = oddVal + Number(numArr[i]);
+            }
+            document.getElementById("output").innerHTML=oddVal;
+            console.log(oddVal)
+        }
+        function singleSum(){
+            numbers = document.getElementById("numInput").value;
+            var numArr = numbers.split(",");
+            console.log(numArr)
+            console.log(numbers)
+            for (var i = 0 ; i< numArr.length;i++){
+                if ( numArr[i].length == 1){
+                    singleDigit = singleDigit + Number(numArr[i]);
                 }
             }
-            console.log(document.getElementById("numInput").value)
-            console.log(sum)
+            document.getElementById("output").innerHTML=singleDigit;
+            console.log(singleDigit)
         }
-    
+        function doubleSum(){
+            numbers = document.getElementById("numInput").value;
+            var numArr = numbers.split(",");
+            console.log(numArr)
+            console.log(numbers)
+            for (var i = 0 ; i< numArr.length;i++){
+                if ( numArr[i].length == 2){
+                    doubleDigit = doubleDigit + Number(numArr[i]);
+                }
+            }
+            document.getElementById("output").innerHTML=doubleDigit;
+            console.log(doubleDigit)
+        }
     </script>
 </html>

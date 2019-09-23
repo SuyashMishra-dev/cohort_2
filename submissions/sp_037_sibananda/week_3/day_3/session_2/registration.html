@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <title>Registration Form</title>
+        <style>
+            .box{
+                height: 600px;
+                width: 800px;
+                margin:200px;
+                background-color: aqua;
+            }
+            .box1{
+                height:437px;
+                width: 282px;
+                margin-top:87px;
+                margin-bottom: 87px;
+                margin-right: 10px;
+                margin-left: 78px;
+                float: left;
+                background-color: aliceblue;
+            }
+            .box2{
+                height:437px;
+                width:318px;
+                margin-top:87px;
+                margin-right: 20px;
+                margin-left: 40px;
+                
+                background-color: black;
+                float:right ;
+            }
+            .red{
+                color: brown ;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div class="box1">
+                    <p>Name</p>
+                    <input id="input_Name" required minlength="3" maxlength="10">
+                    <p class="red" id="incorrect_Name"></p>
+                    <p>Email</p>
+                    <input id="input_Email">
+                    <p class="red" id="incorrect_Email"></p>
+                    <p>Mobile</p>
+                    <input id="input_Mobile" required maxlength="10">
+                    <p class="red" id="incorrect_Mobile"></p>
+                     
+            </div>
+            
+            <div class="box2">
+                <P style="color:white">NAME</P>
+                <h1 style="color:white" id="output_Name">MASAI</h1>
+                <p style="color:white">EMAIL</p>
+                <h4 style="color: white" id="output_Email">email@masaischool.com</h4>
+                <p style="color: white">MOBILE</p>
+                <h4 style="color: white" id="output_Mobile">9843015897</h4>
+            </div>
+            <div><button onclick="Register()">Register</button></div>
+            <script>
+                function Register() 
+                {
+                    var name = document.getElementById("input_Name").value ;
+                    var email = document.getElementById("input_Email").value ;
+                    var phone =document.getElementById("input_Mobile").value ;
+                    //validation of name
+                    var count_Name = name.length ;
+                    if(count_Name < 3 || count_Name > 10){
+                        document.getElementById("incorrect_Name").innerHTML="character should be within 3 to 10" ;
+                    }
+                    else{
+                        document.getElementById("output_Name").innerHTML=document.getElementById("input_Name").value ;
+                        document.getElementById("input_Name").value="" ;
+
+                    }
+                    //validation of Email
+                    if((email[0]=="@")&&(email[email.length-1]=="@")){
+                        document.getElementById("incorrect_Email").innerHTML="Invalid Email" ;
+                    }
+                    // if((email[0]==".")&&(email[email.length-1]=="."))
+                    // {
+                    //     document.getElementById("incorrect_Email").innerHTML="Invalid Email" ;
+                    
+                    
+                    // }
+                    if((email[0]==".")&&(email[email.length-1]==".")){
+                        document.getElementById("incorrect_Email").innerHTML="Invalid Email" ;
+                        alert("invalid")
+                    }
+
+                    else{
+                        document.getElementById("output_Email").innerHTML=document.getElementById("input_Email").value ;
+                        document.getElementById("input_Email").value="" ;
+
+                    //validation of Mobile no
+                    var count_mobile=phone.length;
+                    if(count_mobile == 10)
+                    {
+                        document.getElementById("output_Mobile").innerHTML=document.getElementById("input_Mobile").value;
+                        document.getElementById("input_Mobile").value="";
+
+                    }
+                    else
+                    {
+                        document.getElementById("incorrect_Mobile").innerHTML="You must enter 10-digit number";
+                    }
+
+                }
+            }
+            </script>
+            
+
+
+
+
+
+
+
+
+        </div>
+        
+
+    </body>
+</html>

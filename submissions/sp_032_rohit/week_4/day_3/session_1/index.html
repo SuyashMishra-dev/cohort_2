@@ -1,106 +1,108 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <!-- FSD.W4.3.1_1 ! -->
-    <h1>Click the button to add a new customer!</h1>
-    <div class="customerDetails">
-      <label for="fName">First Name</label>
-      <input id="fName" class="customerInfo" type="text"/>
-      <label for="lName">Last Name</label>
-      <input id="lName" class="customerInfo" type="text"/>
-      <label for="dob">Date of Birth</label>
-      <input id="dob" class="customerInfo" type="text"/>
-      <label for="balance">Balance</label>
-      <input id="balance" class="customerInfo" type="number"/>
-      <label for="accNo">Account Number</label>
-      <input id="accNo" class="customerInfo" type="number"/>
-      <label for="accHolders">Shared Account Holders</label>
-      <input id="accHolders" class="customerInfo" type="text"/>
-    </div>
 
-    <button onclick="addCustomer()">Add customer</button>
-    <!-- FSD.W4.3.1_3 ! -->
-    <h1> Click here to print all customers! <h1>
-    <button onclick="printDetails()">Print Customers</button>  
-    <div id="displayContainer"> </div>
-    
+<body>
+  <!-- FSD.W4.3.1_1 ! -->
+  <h1>Click the button to add a new customer!</h1>
+  <div class="customerDetails">
+    <label for="fName">First Name</label>
+    <input id="fName" class="customerInfo" type="text" />
+    <label for="lName">Last Name</label>
+    <input id="lName" class="customerInfo" type="text" />
+    <label for="dob">Date of Birth</label>
+    <input id="dob" class="customerInfo" type="text" />
+    <label for="balance">Balance</label>
+    <input id="balance" class="customerInfo" type="number" />
+    <label for="accNo">Account Number</label>
+    <input id="accNo" class="customerInfo" type="number" />
+    <label for="accHolders">Shared Account Holders</label>
+    <input id="accHolders" class="customerInfo" type="text" />
+  </div>
 
-    <script>
-      var arrCust = [];
-      function Customers(firstName, lastName, dateOfBirth, balance, accountNumber, sharedAccountHolders){
-        this.firstName = firstName
-        this.lastName  = lastName 
-        this.dateOfBirth = dateOfBirth 
-        this.balance = balance 
-        this.accountNumber = accountNumber
-        this.sharedAccountHolders = sharedAccountHolders
-        this.display = function() {
-        var str = "";
-        for(key in this) {
-        str = str + key + ":" + this[key] + "\n";
-        if(key == 'sharedAccountHolders' ) {
-          break;
-      }
-      }
-      return str;
-    }
-      }
-      var details = document.querySelectorAll(".customerDetails")
-      var customer = new Customers()
-      var i = 0
-      for (key in Customers){
-        if (customer[key] == undefined){
-          if (key != sharedAccountHolders){
-            customer[key] = details[i].value
+  <button onclick="addCustomer()">Add customer</button>
+  <!-- FSD.W4.3.1_3 ! -->
+  <h1> Click here to print all customers! <h1>
+      <button onclick="printDetails()">Print Customers</button>
+      <div id="displayContainer"> </div>
+
+      <script>
+        var arrCust = [];
+        function Customers(firstName, lastName, dateOfBirth, balance, accountNumber, sharedAccountHolders) {
+          this.firstName = firstName
+          this.lastName = lastName
+          this.dateOfBirth = dateOfBirth
+          this.balance = balance
+          this.accountNumber = accountNumber
+          this.sharedAccountHolders = sharedAccountHolders
+          this.display = function () {
+            var str = "";
+            for (key in this) {
+              str = str + key + ": " + this[key] + "\n";
+              if (key == "sharedAccountHolders") {
+                break;
+              }
+            }
+            return str;
           }
-          else {
-            customer[key] = details[i].value.split(",")
+        }
+        var details = document.querySelectorAll(".customerDetails")
+        var customer = new Customers()
+        var i = 0
+        for (key in Customers) {
+          if (customer[key] == undefined) {
+            if (key != sharedAccountHolders) {
+              customer[key] = details[i].value
+            }
+            else {
+              customer[key] = details[i].value.split(",")
+            }
+            input[i].value = "";
+            i++
           }
-          input[i].value="";
-          i++
         }
-      }
-      function addCustomer(){
-        var custDetails = [];
-        var firstName = document.getElementById('fName').value;
-        var lastName = document.getElementById('lName').value;
-        var dateOfBirth = document.getElementById('dob').value;
-        var balance = document.getElementById('balance').value;
-        var accountNumber = document.getElementById('accNo').value;
-        var sharedAccountHolders = document.getElementById('accHolders').value;
-        custDetails = sharedAccountHolders.split(',');
-        var newCustomer = new Customers(firstName, lastName, dateOfBirth, balance, accountNumber, custDetails);
-        
-        arrCust.push(newCustomer);
-        for(var i = 0; i<arrCust.length; i++) {
-          var string = arrCust[i].display();
-          console.log(string);
+        function addCustomer() {
+          var custDetails = [];
+          var firstName = document.getElementById("fName").value;
+          var lastName = document.getElementById("lName").value;
+          var dateOfBirth = document.getElementById("dob").value;
+          var balance = document.getElementById("balance").value;
+          var accountNumber = document.getElementById("accNo").value;
+          var sharedAccountHolders = document.getElementById("accHolders").value;
+          custDetails = sharedAccountHolders.split(",");
+          var newCustomer = new Customers(firstName, lastName, dateOfBirth, balance, accountNumber, custDetails);
+
+          arrCust.push(newCustomer);
+          for (var i = 0; i < arrCust.length; i++) {
+            var string = arrCust[i].display();
+            console.log(string);
+          }
+          document.getElementById("fName").value = "";
+          document.getElementById("lName").value = "";
+          document.getElementById("dob").value = "";
+          document.getElementById("balance").value = "";
+          document.getElementById("accNo").value = "";
+          document.getElementById("accHolders").value = "";
         }
-        document.getElementById('fName').value = "";
-        document.getElementById('lName').value = "";
-        document.getElementById('dob').value = "";
-        document.getElementById('balance').value = "";
-        document.getElementById('accNo').value = "";
-        document.getElementById('accHolders').value = ""; 
-      }
-      function printDetails() {
-        for(var i = 0; i<arrCust.length; i++) {
-          var display = document.createElement('p');
-          var string = arrCust[i].display();
-          display.textContent = string + "\n";
-          
-          var parent = document.getElementById("displayContainer");
-          parent.appendChild(display);
+        function printDetails() {
+          for (var i = 0; i < arrCust.length; i++) {
+            var display = document.createElement("p");
+            var string = arrCust[i].display();
+            display.textContent = string;
+
+            var parent = document.getElementById("displayContainer");
+            parent.appendChild(display);
+          }
         }
-      }
-    </script>
-    <style>
-      label {
-        display: block;
-      }  
-      button{
-        margin-top: 10px;
-      }
-    </style>
-  </body>
+      </script>
+      <style>
+        label {
+          display: block;
+        }
+
+        button {
+          margin-top: 10px;
+        }
+      </style>
+</body>
+
 </html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Weather Forecast</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-fluid text-center mb-5">
+            <h1 class="border border-dark py-3">See the weather for any City</h1>
+            <input type="text" name="place" placeholder="Delhi" id="place">
+            <input class="btn btn-primary" type="submit" value="Submit" id="submit">
+        </div>
+        <div class="container text-center border border-dark w-50 p-5" style="height: 250px;" id="displayResult">
+        </div>
+    </body>
+    <script type="text/javascript">
+    var weather = document.getElementById('submit');
+    weather.addEventListener('click' , function() {
+        var city = document.getElementById('place').value;
+        findWeather(city, display);
+
+    });
+
+    function findWeather(city, display) {
+        var result;
+        var xhr  = new XMLHttpRequest();
+        xhr.open('GET' , 'https://api.weatherbit.io/v2.0/current?city='+city+'&key=95f3e37544834db59f1b09a673e251da');
+        xhr.send();
+        xhr.onload = function() {
+            if(xhr.status == 200) {
+                result = JSON.parse(xhr.response);
+                display(city, result);
+            }
+        }
+    }
+
+    var display = function(city, result) {
+       
+        var timezone = result["data"][0]["timezone"];
+        var time = result["data"][0]["ob_time"];
+        var sunset = result["data"][0]["sunset"];
+        var sunrise = result["data"][0]["sunrise"];
+        var temp = result["data"][0]["temp"];
+
+        var output = document.getElementById('displayResult');
+        var para1 = document.createElement('p');
+        para1.textContent = "City : " + city;
+        output.appendChild(para1);
+
+        var para2 = document.createElement('p');
+        para2.textContent = "Timezone : " + timezone;
+        output.appendChild(para2);
+
+        var para3 = document.createElement('p');
+        para3.textContent = "Time : " + time;
+        output.appendChild(para3);
+
+        var para4 = document.createElement('p');
+        para4.textContent = "Sunset : " + sunset;
+        output.appendChild(para4);
+
+        var para5 = document.createElement('p');
+        para5.textContent = "Sunrise : " + sunrise;
+        output.appendChild(para5);
+
+        var para6 = document.createElement('h2');
+        para6.textContent = "Temprature : " + temp;
+        output.appendChild(para6)
+    }
+    </script>
+</html>
