@@ -8,3 +8,5 @@ Build a web page for the topic assigned to you
 | sp_031 | Ravichandra Gornal | Human Resource Management System | [github](https://github.com/ravigornal/masai-week-6) |
 | sp_005 | Anuj Choudhary | Cricket Scoreboard | [github](https://github.com/choudharyanuj/masai-week-6) |
 | sp_021 | Mohammed Tanveer | Movie Booking System | [github](https://github.com/tanveer86/masai-week-6) |
+| sp_043 | Suraj Singh | Movie Booking System | [github](https://github.com/Suraj10074/masai-week-6) |
+
