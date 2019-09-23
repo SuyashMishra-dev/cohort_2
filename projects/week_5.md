@@ -9,4 +9,5 @@ Build a web page for the topic assigned to you
 | sp_031 | Ravichandra Gornal | Dog | [github](https://github.com/ravigornal/masai-week-5) |
 | sp_005 | Anuj Choudhary | Star War | [github](https://github.com/choudharyanuj/masai-week-5) |
 | sp_021 | Mohammed Tanveer | Movie Database | [github](https://github.com/tanveer86/masai-week-4) |
+| sp_043 | Suraj Singh| Dog | [github](https://github.com/Suraj10074/masai-week-5) |
 
