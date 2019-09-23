@@ -1,0 +1,108 @@
+#heading {
+    border: 1px solid black;
+    height: 40px;
+}
+
+.line2 {
+    text-align: center;
+    display: flex;
+}
+
+.line2 div {
+    margin: 20px;
+    border: 1px solid black;
+    height: 45px;
+    width: 45px;
+    color: white;
+    background: black;
+}
+
+.line3 {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+}
+
+.line3 div {
+    margin: 20px;
+    border: 1px solid black;
+    height: 45px;
+    width: 45px;
+    color: white;
+    background: black;
+}
+
+.line4 {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+}
+
+.line4 div {
+    margin: 20px;
+    border: 1px solid black;
+    height: 45px;
+    width: 45px;
+    color: white;
+    background: black;
+}
+
+.line5 {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+}
+
+.line5 div {
+    margin: 20px;
+    border: 1px solid black;
+    height: 45px;
+    width: 45px;
+    color: white;
+    background: black;
+}
+
+#spacebar {
+    display: flex;
+    width: 400px;
+    margin: 20px;
+    height: 35px;
+    background: black;
+}
+
+.line7 {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    height: 30px;
+    margin: 20px;
+    margin-left: 20px;
+}
+
+.line7 div{
+    margin: 20px;
+    border: 2px solid black;
+    width: 100px;
+    margin-left: 50px;
+
+}
+
+.line8 {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    height: 30px;
+    margin: 20px;
+    margin-left: 20px;
+}
+
+.line8 div{
+    margin: 20px;
+    border: 2px solid black;
+    width: 100px;
+    color: green;
+}
+
+.space {
+    margin-left: 25px;
+}
