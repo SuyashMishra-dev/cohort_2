@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car</title>
+</head>
+<body>
+    <div>
+        <label>Car Make :</label><br>
+        <input type="text" id="carMake"><br><br>
+        <label>Model :</label><br>
+        <input type="text" id="model"><br><br>
+        <label>Top Speed :</label><br>
+        <input type="text" id="topSpeed"><br><br>
+        <button onclick="submitBtn()">Submit</button><br><br>
+    </div>
+    <div>
+        <select id="carName">
+        </select><br>
+        <label>Time :</label><br>
+        <input type="text" id="time"><br><br>
+        <label>Speed:</label><br>
+        <input type="text" id="speed"><br><br>
+        <button onclick="submitDetails()">Submit</button>
+    </div><br>
+    <button onclick="getDetails()">Get Car Details</button>
+    <div id="displayDetails"></div>
+    <script src="index.js"></script>
+</body>
+</html>
