@@ -7,43 +7,53 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
-      status: false
+      data:[],
+      status: false,
+      value: ''
     };
   }
 
-  componentDidMount() {
-    const requestParam = {
-      method: "get",
-      url: "https://api.github.com/users?q"
+  
+  // componentDidMount = () => {
+    handleChange = (e) => {
+      this.setState({
+        value: e.target.value 
+      });
     }
-
-    axios(requestParam)
-      .then(response => {
-        this.setState({
-          data: response.data,
-          status: true
+  
+  handleClick = () => {
+      const requestParam = {
+        method: "get",
+        url: `https://api.github.com/search/users?q=${this.state.value}`
+      }
+      
+      axios(requestParam)
+        .then(response => {
+          this.setState({
+            data: response.data.items,
+            status: true
+          })
+          console.log(this.state.data)
         })
-      })
-      .catch(err => console.log(err))
-  };
-
+        .catch(error => console.log(error))
+      }  
   render() {
-    console.log(this.state.data)
-    let info = this.state.data.map(elm => {
-      return (
-        <Github name={elm.login} picture={elm.avatar_url} repo={elm.url} />
-      )
-    })
+    let info = this.state.data.map(elm => { return (<Github name={elm.login} picture={elm.avatar_url} repo={elm.url} />)})      
+    
     return (
       <div>
-        <input type="text" />
-        <button>Search</button>
-        {this.state.status ? info : (<h1>Loading...</h1>)}
+        <input type="text" onChange={(e) => this.handleChange(e)} value={this.state.value} />
+        <button onClick={() => this.handleClick()}>Search</button>
+
+        {this.state.status ? info : (<h2>Enter Name</h2>)}
 
       </div>
     )
   }
+
+  
 }
 
 export default App;
+
+{/* <Github data={this.state.data} /> */}
