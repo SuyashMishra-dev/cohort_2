@@ -1,0 +1,144 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.flex{
+  display:flex;
+  width:300px;
+}
+.box1{
+  background-color: rgb(158, 14, 151);
+  width: 700px;
+  height: 600px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.box2{
+  background-color: rgb(108, 15, 116);
+  width: 400px;
+  height: 500px;
+  margin-top: 60px;
+  margin-left: 130px;
+  display: center;
+
+ 
+}
+.img{
+  border-radius: 50%;
+  width:200px;
+  height: 100px;
+  margin-left: 110px;
+  border: 2px solid yellow;
+}
+.pro{
+  background-color: yellow;
+  width:50px;
+  height:30px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.Ricky1{
+  margin-left: 120px;
+  font-size: 30px;
+}
+.Ricky2{
+  margin-left: 150px;
+  font-size: 20px;
+  margin-top: -20px;
+}
+.btn9{
+  background-color: aqua;
+  width:100px;
+  height:30px;
+  margin-left: 70px;
+}
+.btn10{
+  background-color: gray;
+  width:100px;
+  height:30px;
+  margin-left: 10px;
+ 
+}
+.box3{
+  background:purple;
+  width: 350px;
+  height: 100px;
+  margin-top: 60px;
+  margin-left: 20px;
+  display: center;
+  color: beige;
+}
+.class1{
+  color: azure;
+  background-color: purple;
+  margin-left: 10px;
+
+}
+.class2{
+  color: azure;
+  background-color: purple;
+  margin-left: 10px;
+  
+}
+.class3{
+  color: azure;
+  background-color: purple;
+  margin-left: 10px;
+  
+}
+.class4{
+  color: azure;
+  background-color: purple;
+  margin-left: 10px;
+  
+  
+}
+.class5{
+  color: azure;
+  background-color: purple;
+  margin-top: 10px;
+  margin-left: 10px;
+  
+}
+.class6{
+  color: azure;
+  background-color: purple;
+  margin-left: 10px;
+  
+}
+.class7{
+  color: azure;
+  background-color: purple;
+  margin-left: 10px;
+  
+}

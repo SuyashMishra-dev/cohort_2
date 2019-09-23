@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Getting user data!
+        </title>
+    </head>
+    <style>
+        #osTable,td,tr {
+                        border: 2px solid grey;
+                        border-collapse: collapse;
+                        margin : 5px;
+                        padding :10px;
+                        background-color: aqua;
+        }
+    </style>
+    <body>
+        
+        <h1> Click the button to get the user data for any user!</h1>
+        <select id="user">
+            <option value="android">Android</option>
+            <option value="ubuntu">Ubuntu</option>
+            <option value="windows">Windows</option>
+            <option value="macos">Macos</option>
+        </select>
+        <button id="print-user"> Click here to print the user data! </button>
+        <table id = "osTable"></table>
+
+        
+        <script src="os.js"></script>
+    </body>
+</html>
