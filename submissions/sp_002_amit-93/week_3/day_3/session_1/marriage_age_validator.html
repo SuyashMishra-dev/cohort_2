@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Marriage age validater||</title>
+    <style>
+        .box {
+            margin-left: 500px;
+            margin-top: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <h1>Marriage Age Validater</h1>
+        <label for="gender">Select Your Gender</label>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <div>Birth Year </div>
+        <input type="text" id="age">
+        <br><br>
+        <button onclick="check()">Check if I amd read to Marry</button>
+        <p id="output"></p>
+
+    </div>
+    <script>
+
+        function check() {
+            var gender = document.getElementById("gender").value;
+            var age = 2019 - Number(document.getElementById("age").value);
+
+            if ((gender == 'male' && age >= 21) || (gender == 'female' && age >= 18)) {
+                document.getElementById("output").innerHTML = "Eligible to get married";
+            }
+
+
+            else if ((gender == 'male' && age <= 21) || (gender == 'female' && age <= 18)) {
+                document.getElementById("output").innerHTML = "You are not eligible"
+            }
+
+            else if (gender == 'other') {
+                document.getElementById("output").innerHTML = "inter your right gender";
+            }
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

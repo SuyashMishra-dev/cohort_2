@@ -64,11 +64,14 @@ class listHeader extends Header {
         this.name = [name]
     }
 
-    // render1() {
-    //     for (var i = 0; i < this.name.length; i++){
-    //     return this.name[i]
-    //     }
-    // }
+    render1() {
+        for (var i = 0; i < this.name.length; i++){
+            cont1 = document.getElementById("root2")
+            var h1 = document.createElement("h1")
+            h1.innerHTML = `<h1 style = color:${this.color}; font-size:${this.fontsize} >${this.name}</h1>`
+            cont1.appenChild(h1)
+        }
+    }
 
     pushes(names) {
         this.displayDetails()
@@ -97,15 +100,9 @@ function name1() {
    }
 }
 
-// function render1() {
-//     cont1 = document.getElementById("root2")
-//     var a = arrname_stack.render1();
-//     a.forEach(element => {
-//         var elem=document.createElement('h1')
-//         elem.innerHTML=element;
-//         cont1.appenChild(elem)
-//     });
-// }
+function render1() {
+     arrname_stack.render1();
+}
 
 function dropdown(items) {
     cont3 = document.getElementById('select1');

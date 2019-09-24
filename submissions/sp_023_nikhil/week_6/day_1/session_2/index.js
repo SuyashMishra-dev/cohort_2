@@ -10,29 +10,29 @@ class Car {
         this.topSpeed = topSpeed;
         this.distance = dist;
     }
-    dist(timeVal , speedVal) {
-        return timeVal * speedVal;
+    dis() {
+        this.distance =  speed;
+        return this.distance
     }
 }
 
 
+var carSelect = document.querySelector("#carSelect");
 
+var myCar;
 function carData() {
     var carMakeVal = document.querySelector("#carMake").value;
     var modelVal = document.querySelector("#model").value;
     var topSpeedVal = document.querySelector("#topSpeed").value;
 
-    
-    var myCar = new Car(carMakeVal, modelVal, topSpeedVal);
+    myCar = new Car(carMakeVal, modelVal, topSpeedVal)
     cars.push(myCar)
-    console.log(cars)
 
-    var carSelect = document.querySelector("#carSelect");
     var option = document.createElement("option");
     option.textContent = carMakeVal;
     option.setAttribute("id", carMakeVal)
     carSelect.appendChild(option);
-
+    return myCar
 }
 
 var click = document.querySelector("#click")
@@ -40,10 +40,10 @@ click.addEventListener('click', function () {
 
     var timeVal = document.querySelector("#time").value;
     var speedVal = document.querySelector("#speed").value;
+    var speed = timeVal * speedVal
     
-    // for(var i = 0; i< cars.length; i++) {
-    //     if()
-    // }
-
+    var display = document.createElement("h4");
+    display.textContent =  myCar,speed
+    document.querySelector("body").appendChild(display)
 });
 

@@ -23,7 +23,6 @@
     function favMovie(){
       var mov = document.createElement('p');    
       mov.textContent = "My favorite movie is " + movie.Name + " which is directed by "+ movie.Director + ". It was released in the year " + movie.Year + ". The cast of the movie is " + movie.Cast[0] + ", " + movie.Cast[1] + ", " + movie.Cast[2] + ", " + movie.Cast[3] + " and " + movie.Cast[4] + "." ;
-      console.log(mov);
       bodyE.appendChild(mov);
     }
     movie.Runtime = 109;
@@ -32,12 +31,11 @@
       runtime.textContent = "The runtime is " + movie.Runtime +" minutes."; 
       bodyE.appendChild(runtime);
     }
-    movie.Cast[5] = "Vineet Kumar";
+    movie.Cast.push("Vineet Kumar");
     function newCast(){
       var Cast = document.createElement('p');    
       Cast.textContent = "This movie also features " + movie.Cast[5] + "."; 
       bodyE.appendChild(Cast);
-      console.log(movie.Cast)
     }
   </script>
 </body>

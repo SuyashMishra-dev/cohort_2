@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>number sums</title>
+</head>
+<body>
+    <input id="getInput" type = "text" placeholder = "Enter your numbers"><br><br>
+    <p id = "show"></p>
+    <button onclick = "evenSum()" type = "text">Even Positions Sum</button>
+    <button onclick = "oddSum()" type = "text">Odd Positions Sum</button>
+    <button onclick = "evenNumberSum()" type = "text">Even Sum</button>
+    <button onclick = "oddNumberSum()" type = "text">Odd Sum</button>
+    <button onclick = "singleDigitSum ()" type = "text">Single Digit Sum</button>
+    <button onclick = "doubleDigitSum()" type = "text">Double Digit Sum</button>
+</body>
+<script>
+    var tempNum = '';
+    var numArr = [];
+    function pushArr (arr, elm) {
+        arr[arr.length] = elm;
+    }
+
+    function clearArr () {
+        numArr = [];
+    }
+
+    function inputToNumber () {
+        var getString = document.getElementById('getInput').value;
+        for(var i = 0; i <= getString.length; i++) {
+            if((getString[i] != ',') && (getString[i] != undefined)) {
+                tempNum += getString[i];
+            }
+            else {
+                pushArr(numArr, Number(tempNum));
+                tempNum = '';
+            }
+        }
+    }
+
+    function evenSum () {
+        inputToNumber();
+        console.log((numArr));
+        var evenSum = 0;
+        for(var i = 0; i < numArr.length; i++) {
+            if((i % 2) == 0) {
+                evenSum += numArr[i];
+            }
+            
+        }
+            clearArr();
+            alert(evenSum);
+            return evenSum;
+    }
+
+    function oddSum () {
+        inputToNumber();
+        console.log((numArr));
+        var oddSum = 0;
+        for(var i = 0; i < numArr.length; i++) {
+            if((i % 2) != 0) {
+                oddSum += numArr[i];
+            }
+            
+        }
+            clearArr();
+            alert(oddSum);
+            return oddSum;
+    }
+
+    function evenNumberSum () {
+        inputToNumber();
+        console.log((numArr));
+        var evenNumberSum = 0;
+        for(var i = 0; i < numArr.length; i++) {
+            if((numArr[i] % 2) == 0) {
+                evenNumberSum += numArr[i];
+            }
+            
+        }
+            clearArr();
+            alert(evenNumberSum);
+            return evenNumberSum;
+    }
+
+    function oddNumberSum () {
+        inputToNumber();
+        console.log((numArr));
+        var oddNumberSum = 0;
+        for(var i = 0; i < numArr.length; i++) {
+            if((numArr[i] % 2) != 0) {
+                oddNumberSum += numArr[i];
+            }
+            
+        }
+            clearArr();
+            alert(oddNumberSum);
+            return oddNumberSum;
+    }
+
+    function singleDigitSum () {
+        inputToNumber();
+        var singleDigit = 0;
+        for(var i = 0; i < numArr.length; i++) {
+            if(numArr[i].toString().length == 1) {
+                singleDigit += numArr[i];
+            }
+        }
+        clearArr();
+        alert(singleDigit)
+    }
+
+    function doubleDigitSum () {
+        inputToNumber();
+        var doubleDigit = 0;
+        for(var i = 0; i < numArr.length; i++) {
+            if(numArr[i].toString().length == 2) {
+                doubleDigit += numArr[i];
+            }
+        }
+        clearArr();
+        alert(doubleDigit)
+    }
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Tax Calculator
+        </title>
+        <style type="text/css">
+        
+        
+        
+        </style>
+    </head>
+    <body>
+        <p>Insert your Annual Income</p>
+        <input type="number" id="income">
+        <p>Insert your Annual Savings</p>
+        <input type="number" id="savings">
+        <p id="output"></p>
+        <br>
+        <button onclick="tax()">Calculate Income Tax</button>
+        <script>
+        
+        function tax()
+        {
+            var income=document.getElementById("income").value;
+            var savings=document.getElementById("savings").value;
+            var out=0;
+            var net=0;
+            if(income<=250000)
+            {
+                net=Number(income)+Number(savings);
+                // alert(Number(net));
+                out=net-250000;
+                out=out-0.5*savings
+                // out=out*0.5;
+                alert("Your income tax is" + out);
+            }
+            else if((income>250000)&&(income<=500000))
+            {
+                // out=0.5*income-250000;
+                net=Number(income)+Number(savings);
+                out=net-250000;
+                out=out-0.10*savings;
+                alert("Your income tax is" + out);
+            }
+            else if((income>500000)&&(income<=1000000))
+            {
+                // out=0.20*income-250000;
+                net=Number(income)+Number(savings);
+                out=net-250000;
+                out=out-0.20*savings;
+                alert("Your income tax is" + out);
+            }
+            else if(income>1000000)
+            {
+                net=Number(income)+Number(savings);
+                out=net-250000;
+                out=out-0.30*savings;
+                alert("your income tax is" + out);
+            }
+        }
+     
+        
+        </script>
+    </body>
+</html>
