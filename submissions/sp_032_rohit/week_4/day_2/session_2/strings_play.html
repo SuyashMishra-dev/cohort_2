@@ -23,10 +23,11 @@
         var inputString;
         var string = [];
         var noSpace =  "";
-        var Caps = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M']
-        var small = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' ]
+        var Caps = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"]
+        var small = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m" ]
         function removeSpace(){
-            inputString = document.getElementById('input').value;
+            inputString = document.getElementById("input").value;
+            console.log(inputString);
             string = inputString.split(" ");
             console.log(string);
                 for (var i = 0; i < string.length; i++){
@@ -38,16 +39,17 @@
             console.log(string);
             document.getElementById("output").innerHTML= noSpace;
         }
+
         function camelCase(){
             var output = "";
-            inputString = document.getElementById('input').value;
+            inputString = document.getElementById("input").value;
             console.log(inputString);
                 for (var i = 0; i < inputString.length; i++){
                     for (var j = 0; j<26;j++){
-                        if( inputString[i] == ' ' && inputString[i+1] == Caps[j] ){
+                        if( inputString[i] == " " && inputString[i+1] == Caps[j] ){
                             output = output + Caps[j] ;
                         }
-                        else if( inputString[i] == ' ' && inputString[i+1] == small[j] ){
+                        else if( inputString[i] == " " && inputString[i+1] == small[j] ){
                             output = output + Caps[j] ;
                         }
                         else if( inputString[i] == Caps[j] && inputString[i-1] != " " ){
@@ -56,23 +58,24 @@
                         else if( inputString[i] == small[j] && inputString[i-1] != " " ){
                             output = output + small[j] ;
                         }
-                        else if( inputString[i] == ' ' && inputString[i+1] == small[j] ){
+                        else if( inputString[i] == " " && inputString[i+1] == small[j] ){
                             output = output + Caps[j] ;
                         }
                     }
                 }
             document.getElementById("output1").innerHTML= output;    
         }
+
         function snakeCase(){
             var output = "";
-            inputString = document.getElementById('input').value;
+            inputString = document.getElementById("input").value;
             console.log(inputString);
                 for (var i = 0; i < inputString.length; i++){
                     for (var j = 0; j<26;j++){
-                        if( inputString[i] == ' ' && inputString[i+1] == Caps[j] ){
+                        if( inputString[i] == " " && inputString[i+1] == Caps[j] ){
                             output = output + "_" + Caps[j] ;
                         }
-                        else if( inputString[i] == ' ' && inputString[i+1] == small[j] ){
+                        else if( inputString[i] == " " && inputString[i+1] == small[j] ){
                             output = output + "_" +  small[j] ;
                         }
                         else if( inputString[i] == Caps[j] && inputString[i-1] != " " ){
@@ -84,23 +87,24 @@
                         else if( inputString[i] == small[j] && inputString[i-1] != " " ){
                             output = output + small[j] ;
                         }
-                        else if( inputString[i] == ' ' && inputString[i+1] == small[j] ){
+                        else if( inputString[i] == " " && inputString[i+1] == small[j] ){
                             output = output + "_" +  small[j] ;
                         }
                     }
                 }
             document.getElementById("output2").innerHTML= output;    
         }
+
         function hypenCase(){
             var output = "";
-            inputString = document.getElementById('input').value;
+            inputString = document.getElementById("input").value;
             console.log(inputString);
                 for (var i = 0; i < inputString.length; i++){
                     for (var j = 0; j<26;j++){
-                        if( inputString[i] == ' ' && inputString[i+1] == Caps[j] ){
+                        if( inputString[i] == " " && inputString[i+1] == Caps[j] ){
                             output = output + "-" + Caps[j] ;
                         }
-                        else if( inputString[i] == ' ' && inputString[i+1] == small[j] ){
+                        else if( inputString[i] == " " && inputString[i+1] == small[j] ){
                             output = output + "-" +  small[j] ;
                         }
                         else if( inputString[i] == Caps[j] && inputString[i-1] != " " ){
@@ -112,12 +116,13 @@
                         else if( inputString[i] == small[j] && inputString[i-1] != " " ){
                             output = output + small[j] ;
                         }
-                        else if( inputString[i] == ' ' && inputString[i+1] == small[j] ){
+                        else if( inputString[i] == " " && inputString[i+1] == small[j] ){
                             output = output + "-`" +  small[j] ;
                         }
                     }
                 }
             document.getElementById("output3").innerHTML= output;    
         }
+
     </script>
 </html>

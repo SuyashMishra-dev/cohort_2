@@ -21,8 +21,7 @@ Build a web page for the topic assigned to you
 | sp_027 | Prabhat Kumar Ranjan | Guitar | [github](https://github.com/PrabhatKrRanjan/masai-week-2) |
 | sp_026 | Piyush Yadav         | Tennis | [github](https://github.com/piyush-git/masai-week-2)      |
 | sp_034 | Saket Paras        | Drums | [github](https://github.com/SaketParas/masai-week-2)      |
-
-
+| sp_031 | Ravichandra Gornal | Indian Trains | [github](https://github.com/ravigornal/masai-week-2) |
 
 
 
