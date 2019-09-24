@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import List from './components/List';
 import Buttons from './components/Buttons';
+import styles from './components/mystyle.module.css'
+import Intro from './components/Intro';
 
 class App extends React.Component{
   constructor(){
@@ -11,8 +13,17 @@ class App extends React.Component{
         osNames: ['Android','Blckberry','iPhone','Windows Phone'],
         makerCompany: 'Mobile Manufacturers',
         makerName: ['Samsung','HTC','Micromax','Apple'],
-        label: ['JOIN US','LOGIN','SEARCH','HOME','SETTINGS','CONTACT US','HELP','DOWNLOAD'],
-        color: ['.join','.login','.search','.home','.settings','.contact','.help','.download']
+        buttons: [
+            {label: 'JOIN US', color: 'join'},
+            {label: 'LOGIN', color: 'login'},
+            {label: 'SEARCH', color: 'search'},
+            {label: 'HOME', color: 'home'},
+            {label: 'SETTINGS', color: 'settings'},
+            {label: 'CONTACT US', color: 'contact'},
+            {label: 'HELP', color: 'help'},
+            {label: 'DOWNLOAD', color: 'download'}
+        ], 
+        profile: {name: 'Mohammed Tanveer', location: 'BANGALORE', description: 'User interface designer and front-end developer', skills: ['UI/UX', 'HTML', 'CSS', 'JavaScript', 'React', 'Node']}
       }
   }
 
@@ -28,10 +39,14 @@ class App extends React.Component{
             </div>
 
             <div>
-                {this.state.label.map(allLabels => {
-                    
-                    return(<Buttons nameLabel={allLabels}/>);
+                {this.state.buttons.map(buttonData => {
+
+                    return(<Buttons allLabels={buttonData.label} allColors={buttonData.color} />);
                 })}
+            </div>
+
+            <div>
+                <Intro allProfile={this.state.profile}/>
             </div>
 
           </div>
