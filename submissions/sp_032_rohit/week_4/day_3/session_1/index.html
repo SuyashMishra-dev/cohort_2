@@ -38,7 +38,7 @@
             var str = "";
             for (key in this) {
               str = str + key + ": " + this[key] + "\n";
-              if (key == 'sharedAccountHolders') {
+              if (key == "sharedAccountHolders") {
                 break;
               }
             }
@@ -62,13 +62,13 @@
         }
         function addCustomer() {
           var custDetails = [];
-          var firstName = document.getElementById('fName').value;
-          var lastName = document.getElementById('lName').value;
-          var dateOfBirth = document.getElementById('dob').value;
-          var balance = document.getElementById('balance').value;
-          var accountNumber = document.getElementById('accNo').value;
-          var sharedAccountHolders = document.getElementById('accHolders').value;
-          custDetails = sharedAccountHolders.split(',');
+          var firstName = document.getElementById("fName").value;
+          var lastName = document.getElementById("lName").value;
+          var dateOfBirth = document.getElementById("dob").value;
+          var balance = document.getElementById("balance").value;
+          var accountNumber = document.getElementById("accNo").value;
+          var sharedAccountHolders = document.getElementById("accHolders").value;
+          custDetails = sharedAccountHolders.split(",");
           var newCustomer = new Customers(firstName, lastName, dateOfBirth, balance, accountNumber, custDetails);
 
           arrCust.push(newCustomer);
@@ -76,16 +76,16 @@
             var string = arrCust[i].display();
             console.log(string);
           }
-          document.getElementById('fName').value = "";
-          document.getElementById('lName').value = "";
-          document.getElementById('dob').value = "";
-          document.getElementById('balance').value = "";
-          document.getElementById('accNo').value = "";
-          document.getElementById('accHolders').value = "";
+          document.getElementById("fName").value = "";
+          document.getElementById("lName").value = "";
+          document.getElementById("dob").value = "";
+          document.getElementById("balance").value = "";
+          document.getElementById("accNo").value = "";
+          document.getElementById("accHolders").value = "";
         }
         function printDetails() {
           for (var i = 0; i < arrCust.length; i++) {
-            var display = document.createElement('p');
+            var display = document.createElement("p");
             var string = arrCust[i].display();
             display.textContent = string;
 
