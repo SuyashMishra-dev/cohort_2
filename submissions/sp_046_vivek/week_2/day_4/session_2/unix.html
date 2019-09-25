@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <style type="text/css">
+        #heading{
+            display: grid;
+            grid-template-columns: 500px 300px 100px;
+        }
+
+        .image{
+            height: 200px;
+            width: 150px;
+            margin: 20px;
+        }
+
+        .top{
+            text-align: center;
+            background: wheat;
+        }
+
+        .linus{
+            color: blue;
+        }
+
+        .discrp{
+            font-size: 7mm;
+        }
+
+        #middle{
+            display: grid;
+            grid-template-columns: 200px 150px 450px;
+        }
+
+        .khan{
+            height: 200px;
+            width: 120px;
+        }
+
+        .khantext{
+            color: red;
+        }
+        .buttomtext{
+            color: white;
+            font-size: 10mm;
+            margin: 20px;
+        }
+
+        #buttom{
+            display: grid;
+            background: orange;
+            grid-template-columns: 600px 350px 300px;
+            margin: 10px;
+        }
+        
+        .text{
+            margin-left: 20px;
+        }
+
+        .divider{
+            height: 100px;
+            width: 5px;
+            background: black;
+            margin: 30px;
+        }
+
+        @media(max-width: 600px){
+            #heading{
+                display: grid;
+                grid-template-columns: 500px;
+            }
+
+            #middle{
+                display: grid;
+                grid-template-columns: 500px;
+            }
+
+            #buttom{
+                display: grid;
+                background: orange;
+                grid-template-columns: 500px;
+                margin: 10px;
+            }
+
+            .divider{
+                height: 5px;
+                width: 100px;
+                background: black;
+                margin: 30px;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div id="heading">
+            <div></div>
+            <div class="top">
+            <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg">
+              <h1 class="linus">Linus Torvalds</h1>
+              <p class="discrp">The Creator of Linux & Git</p>
+            </div>
+        </div>
+
+        <div id="middle">
+            <div></div>
+            <img class="khan" src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Salman_Khan_TED_2011.jpg">
+            <div>
+               <h1 class="khantext">SAL KHAN</h1>
+               <p>Salman khan is the founder of the khan academy which has a mission of providing a free-world class education for anyone, anywhere.</p>
+           </div>
+        </div>
+
+        <div id="buttom">
+           <div>
+               <p class="buttomtext">Kem Thompson</p>
+               <p class="text">Designed and Implemented the <br>Original Unix operating system</p>
+           </div>
+           <div class="divider"></div>
+           <div>
+               <p class="buttomtext">Dennis Ritchie</p>
+               <p>The Creator of C Programming Language</p>
+           </div>
+        </div>
+    </body>
+</html>
