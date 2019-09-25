@@ -5,7 +5,7 @@ const Buttons = (props) => {
 
     return (
         <div>
-            {props.name.map((element,index) => <div><button style={{background: props.color[index]}}>{element}</button></div>)}
+            {props.name.map((element,index) => <div><button className="btn rounded mb-2" style={{background: props.color[index]}}>{element}</button></div>)}
         </div>
     );
 }
