@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Restraunt from './component/RestrauntDetails.js'
-import Sort from './component/Sort.js'
+
 class App extends React.Component {
 
   constructor(props) {
@@ -84,7 +84,8 @@ class App extends React.Component {
           minprice:60,
           time:40,
           votes:540,
-          reviews:670
+          reviews:670,
+          rating:3.2
         },
         {
           url : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn3SiUWW9MKzrH07SiAAAPsEVHKTQItWahE8T0PqYeBPRXl16lsw",
@@ -120,20 +121,41 @@ class App extends React.Component {
           reviews:870,
           rating:4.1
         },
-      
-      ],
-        
+      ], 
+      i:0,
           
     }
+
   }
+  setval=(arg)=>{
+    this.setState({
+      i:arg
+      
+    })
+  
+  }
+
+
   render() {
-    let a=this.state.info.map(a=> {
+    console.log(this.state.i)
+
+    let x=this.state.info.filter((v)=>v.rating<=this.state.i).map(a=> {
       return <Restraunt price={a.cost} min={a.minprice} rate={a.rating} vote={a.votes} review={a.reviews} time={a.time} link={a.url} headred={a.name} type={a.cuisine}/>
     })
     return (
       <div className="App">
-          {a}
-          <Sort />
+          <h3>Click on Sort buttons to display accordingly</h3>
+          <div className="row">
+                <button className="btn btn-primary " onClick={()=>this.setval(5)}>Sort4</button>
+                <button className="btn btn-primary offset-1" onClick={()=>this.setval(4)}>Sort3</button>
+                <button className="btn btn-primary offset-1" onClick={()=>this.setval(3)}>Sort2</button>
+                <button className="btn btn-primary offset-1" onClick={()=>this.setval(2)}>Sort1</button>
+          </div>
+          <div className="mt-4">
+          {x}
+          </div>
+ 
+         {/* <Sort value={this.display.array_detail}/> */}
       </div>
     );
   }
