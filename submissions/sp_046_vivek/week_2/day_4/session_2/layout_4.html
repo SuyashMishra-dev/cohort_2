@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style type="text/css">
+        #demo{
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px 100px;
+            grid-template-rows: 100px 100px; 
+        }
+
+        .box{
+            background: tan;
+            margin: 10px;
+        }
+
+        @media(max-width: 800px){
+            #demo{
+                display: grid;
+                grid-template-columns: 50px 50px 50px 50px 50px;
+                grid-template-rows: 50px 50px; 
+            }
+
+            .box{
+                background: teal;
+                margin: 5px;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div id="demo">
+            <p class="box"></p>
+            <p class="box"></p>
+            <p class="box"></p>
+            <p class="box"></p>
+            <p class="box"></p>
+            <p class="box"></p>
+            <p class="box"></p>
+            <p class="box"></p>
+            <p class="box"></p>
+            <p class="box"></p>
+        </div>
+    </body>
+</html>
