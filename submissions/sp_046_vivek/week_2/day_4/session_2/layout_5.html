@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style type="text/css">
+
+        body{
+            margin: 100px;
+        }
+
+        #demo1{
+            display: grid;
+            grid-template-columns: 600px;
+            grid-template-rows: 50px;
+        }
+
+        #demo2{
+            display: grid;
+            grid-template-rows: 400px;
+            grid-template-columns: 250px 350px;
+        }
+
+        .box1{
+            background: orangered;
+            margin: 10px;
+        }
+
+        .box2{
+            background: greenyellow;
+            margin: 10px;
+        }
+
+        .box3{
+            background: lightseagreen;
+            margin: 10px;
+        }
+
+        @media(max-width: 850px){
+            .box1{
+                background: black;
+            }
+            .box2{
+                background: red;
+            }
+            .box3{
+                background: aqua;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div id="demo1">
+            <p class="box1"></p>
+        </div>
+        <div id="demo2">
+            <p class="box2"></p>
+            <p class="box3"></p>
+        </div>
+    </body>
+</html>
