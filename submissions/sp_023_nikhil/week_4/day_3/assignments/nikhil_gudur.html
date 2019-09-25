@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mileage Calculator</title>
+</head>
+
+<body>
+    <label>Fuel Filled</label>
+    <input id="fuel" type="text">
+    <label>Distance</label>
+    <input id="distance" type="text">
+    <button onclick="calculate()">Calculate</button>
+    <div id="display"></div>
+
+    <script type="text/javascript">
+        
+
+
+        function Mileage(fuel, dist) {
+            this.fuel = fuel;
+            this.dist = dist;
+            this.mileageCalculator = function(){
+                return (fuel*dist)
+            }
+        }    
+
+        //var arr = []
+        
+        function calculate() {
+            var addFuel = document.getElementById('fuel').value;
+            var distance = document.getElementById('distance').value;
+            console.log(distance)
+            var mil = new Mileage(addFuel, distance)
+            console.log(mil)
+
+        }
+
+        // function disp() {
+        //     calculate();
+        //     var display = document.getElementById("display");
+        //     console.log(calculate())
+        //     // dislay.appendChild(calculate)
+
+        // }
+
+
+    </script>
+
+</body>
+
+</html>

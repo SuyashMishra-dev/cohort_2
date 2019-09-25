@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Week 4 Day 4 Coding 1 </title>
+</head>
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button onclick="json()"> Click here to print the JSON object </button>
+  <div id = "container"> </div>
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input id="x" type = "text"/>
+  <input id="y" type = "text"/>
+  <button onclick="calculate()"> Calculate </button>
+  <p id="output">Output:</p>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Multiplication Table Generator</h1>
+  <input type="text" id="limit" />
+  <button onclick="generate()"> Generate Tables </button>
+  <table id="table"></table>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <input type = "text" id="inputText"/>
+  <button onclick="capsAndSmall()"> Generate CAPS and small </button>
+  <table id="cases"></table>
+  <script>
+  //DO NOT EDIT ANY CODE BELOW THIS LINE 
+  var items = [
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    },
+    {
+      name: "Rice",
+      price: 50,
+      id: 2323
+    },
+    {
+      name: "Banana",
+      price: 90,
+      id: 2323
+    },
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    }
+  ]
+
+  var mutiply = []
+  // Do NOT EDIT ANY CODE ABOVE THIS LINE 
+  //Place all your code below this line!
+  
+  // Display items and prices
+    function json() {
+	    var output = JSON.stringify(items)
+      items.forEach(function(items){
+        var display = document.getElementById("container");
+        var displayName = document.createElement("p");
+        var displayPrice = document.createElement("p");
+        displayName.textContent = ("Item name: " + items["name"]);
+        displayPrice.textContent = ("Price: " + items["price"]);
+        display.appendChild(displayName);
+        display.appendChild(displayPrice);
+  	  });
+    }
+
+// Print exponential of the input
+    function exponent(x,y, callBack){
+      var result = x**y;
+      callBack(result);
+    }
+    
+    var display = function(input) {
+    document.getElementById("output").innerHTML = "Output: The exponent is "+ input;
+    }
+
+    function calculate() {
+      x = Number(document.getElementById('x').value);
+      y = Number(document.getElementById('y').value);
+      exponent(x,y,display);
+    }
+
+// Generate multiplication table
+    function generate(){
+      multiply = []
+      var inputVal = document.getElementById("limit").value
+      for (var i = 1; i <= 5; i++) {
+        multiply.push(i);
+      }
+      var tableMul = document.getElementById('table')
+      for (var i = 1; i <= 5; i++){
+        var th = document.createElement('th');
+        th.setAttribute("class","border");
+        th.innerHTML = '*'+i;
+        tableMul.appendChild(th);
+      }
+
+      for (var i = 1; i <= inputVal; i++)
+       {
+        var tr = document.createElement('tr')
+        tableMul.appendChild(tr)
+        multiply.forEach(function (finalValue) {
+          td = document.createElement('td');
+          td.setAttribute("class","border");
+          td.innerHTML = finalValue * i
+          tr.appendChild(td)
+          console.log(finalValue * i)
+        })
+      }
+    }
+    function capsAndSmall(){
+      var textInput = document.getElementById("inputText").value;
+      var textArray = textInput.split(",");
+      var word;
+      var tableVal = document.getElementById('cases')
+      for (var i = 1; i <= 5; i++){
+        var th = document.createElement('th');
+        th.setAttribute("class","border");
+        th.innerHTML = '*'+i;
+        tableMul.appendChild(th);
+      }
+
+      for (var i = 1; i <= inputVal; i++)
+       {
+        var tr = document.createElement('tr')
+        tableMul.appendChild(tr)
+        multiply.forEach(function (finalValue) {
+          td = document.createElement('td');
+          td.setAttribute("class","border");
+          td.innerHTML = finalValue * i
+          tr.appendChild(td)
+          console.log(finalValue * i)
+        })
+      }
+
+      
+
+    }
+
+    </script>
+  </body>
+  <style>
+    .border {
+      border: 1px solid black;
+    }
+  </style>
+</html>

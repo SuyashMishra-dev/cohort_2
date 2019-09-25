@@ -1,0 +1,105 @@
+<html>
+    <head>
+
+        <title>
+            Registraton Form
+        </title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    </head>
+    
+    <body>
+        
+        <div class="container p-5">
+            <div class="row">
+
+                    <div class="col" Id="values">
+                        <p>NAME</p>
+                        <input type="text" id="name">
+                        <p id="nameAlert" class="text-danger"></p>
+                        <p id="labelEmail">EMAIL</p>
+                        <input type="text" id="emailInput">
+                        <p id="emailAlert"></p>
+                        <p id="labelMobile">MOBILE</p>
+                        <input type="text" id="mobile">
+                        <p id="mobileAlert"></p>
+                        <button id="register">REGISTER</button>
+                    </div>
+
+                    <div class="col p-3 mb-2 text-white" id="display"style="height: 320px; background:black; width:50px">
+                        <p>Name</p>
+                        <h1 id="outputName"></h1>
+                        <br />
+                        <p>EMAIL</p>
+                        <p id="outputEmail"></p>
+                        <br />
+                        <p>MOBILE</p>
+                        <p id="outputMobile"></p>
+                    </div>
+            </div>
+        </div>
+    </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script>
+        
+        $('#labelEmail').hide();
+        $('#emailInput').hide();
+        $('#labelMobile').hide();
+        $('#mobile').hide();
+        $('#register').hide();
+        $('#display').hide();
+
+        $('#name').keyup(function() {
+            $("#outputName").text($(this).val());
+            var namealert = $('#name').val();
+            if(namealert.length < 3 || namealert.length > 10) {
+                $("#nameAlert").text('Enter a valid name');
+            }
+            else {
+                $("#nameAlert").text(' ');
+                $('#labelEmail').show(900);
+                $('#emailInput').show(1000);
+            }
+        });
+
+        $('#emailInput').keyup(function() {
+            $("#outputEmail").text($(this).val());
+            var emailId= $('#emailInput').val();
+            var atPostion=emailId.indexOf("@");
+            var dotPostion=emailId.indexOf(".");
+            if(atPostion < 2 || dotPostion < atPostion+2 || dotPostion+2 >= emailId.length) {
+                $("#alertEmail").text('Enter a valid email ID');
+            }
+            else {
+                $("#emailAlert").text(' ');
+                $('#labelMobile').show(900);
+                $('#mobile').show(1000);
+            }
+        });
+
+        $('#mobile').keyup(function() {           
+            $("#outputMobile").text($(this).val());
+            var mobilealert = $('#mobile').val();
+            if(mobilealert.length < 10 || mobilealert.length > 10) {
+                $("#mobileAlert").text('Enter a valid number');
+
+            }
+            else {
+                $("#mobileAlert").text(' ');
+                $('#register').show(900);
+            }   
+            });
+
+            $("#register").click(function () {
+            $("#display").show(500);
+
+            $("#values").show(500);
+        });
+    </script>   
+</html>

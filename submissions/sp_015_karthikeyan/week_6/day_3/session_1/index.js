@@ -30,7 +30,7 @@ class ListHeader extends Header {
         this.name = [name];
     }
 
-    updateNames(newName) {
+    pushNames(newName) {
         this.name[this.name.length] = newName;
     }
     displayDetails() {
@@ -38,11 +38,31 @@ class ListHeader extends Header {
             console.log(`Name: ${this.name[i]} \nColor: ${this.color} \nFont-Size: ${this.fontSize}`)
         }
     }
+
+    updateNames(element) {
+        let temp = this.name.map((ele) => {
+            if(ele == selector.value) {
+                return element;
+            }
+            else return ele;
+        })
+        this.name = temp;
+    }
+
+    deleteName(element) {
+        let temp = newListHeader.name.filter((ele) => {
+            if(ele != element) {
+                return ele;
+            } 
+        })
+        this.name = temp;
+    }
     renders() {
-        let output = '';
-        for(let i = 0; i < this.name.length; i++) {
-            output += `<h1 style="color: ${this.color}">${this.name[i]}</h1>`
+        let output = "";
+        for(let i = 0; i < newListHeader.name.length; i++) {
+            output += "<h1 style='color:" + this.color + "'>" + this.name[i] + "</h1>";
         }
+        console.log("hi" + output);
         return output;
     }
 }
@@ -68,7 +88,7 @@ buttons[1].addEventListener("click", function() {
        newHeader.displayDetails();
    }
    else if(isNamePressed) {
-       newHeader.updateNames(inputs[0].value);
+       newHeader.pushNames(inputs[0].value);
    }
 })
 
@@ -83,7 +103,7 @@ buttons[3].addEventListener("click", function() {
 //Second Form
 
 buttons[4].addEventListener("click", function() {
-    mainDiv.innerHTML = newListHeader.render();
+    mainDiv.innerHTML = newListHeader.renders();
 })
 
 buttons[5].addEventListener("click", function() {
@@ -94,22 +114,28 @@ buttons[5].addEventListener("click", function() {
         populateSelector(newListHeader);
     }
     else if(isOtherNamePressed) {
-        newListHeader.updateNames(inputs[3].value);
+        newListHeader.pushNames(inputs[3].value);
         newListHeader.displayDetails();
         populateSelector(newListHeader);
     }
 })
 
 buttons[6].addEventListener("click", function() {
-    newListHeader.updateColor(inputs[4].value);
+    newListHeader.updateNames(inputs[3].value);
+    populateSelector(newListHeader);
 })
 
 buttons[7].addEventListener("click", function() {
-    newListHeader.updateFontSize(inputs[5].value);
+    newListHeader.updateColor(inputs[4].value);
 })
 
 buttons[8].addEventListener("click", function() {
-    
+    newListHeader.updateFontSize(inputs[5].value);
+})
+
+buttons[9].addEventListener("click", function() {
+    newListHeader.deleteName(inputs[3].value);
+    populateSelector(newListHeader);
 })
 
 function populateSelector(ele) {
