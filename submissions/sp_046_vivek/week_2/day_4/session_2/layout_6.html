@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style type="text/css">
+        #demo1{
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px;
+            grid-template-rows: 100px;
+        }
+
+        #demo2{
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px;
+        }
+
+        #demo3{
+            display: grid;
+            grid-template-columns: 100px 100px;
+            grid-template-rows: 100px;
+        }
+
+        #demo4{
+            display: grid;
+            grid-template-columns: 100px;
+            grid-template-rows: 100px;
+        }
+
+        .box{
+            background: khaki;
+            margin: 10px;
+        }
+
+        @media(max-width: 850px){
+            .box{
+                background: palevioletred;
+                margin: 5px;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div id="demo1">
+            <p class="box"></p>
+            <p class="box"></p>
+            <p class="box"></p>
+            <p class="box"></p>
+        </div>
+        <div id="demo2">
+            <p class="box"></p>
+            <p class="box"></p>
+            <p class="box"></p>
+        </div>
+        <div id="demo3">
+            <p class="box"></p>
+            <p class="box"></p>
+        </div>
+        <div id="demo4">
+            <p class="box"></p>
+        </div>
+    </body>
+</html>
