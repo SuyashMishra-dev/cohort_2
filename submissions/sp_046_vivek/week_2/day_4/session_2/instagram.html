@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <style type="text/css">
+        #heading{
+            display: grid;
+            grid-template-columns: 600px 400px;
+            grid-template-rows: 700px;
+        }
+
+        .box1{
+            background: rgb(247, 243, 243);
+        }
+
+        .box2{
+            background: rgb(247, 243, 243);
+            height: 50px;
+            width: 400px;
+            line-height: 50px;
+        }
+
+        .image{
+            height: 600px;
+            width: 600px;
+        }
+
+        .fblogo{
+            height: 15px;
+            width: 15px;
+        }
+
+        .fbbox{
+            background: blue;
+            height: 25px;
+            width: 250px;
+            line-height: 25px;
+            color: white;
+            border-radius: 2px;
+            margin-left: 75px;
+        }
+
+        .loginpage{
+            text-align: center;
+        }
+
+        .discrp{
+            color: gray;
+        }
+
+        .box{
+            height: 30px;
+            width: 250px;
+            color: gray;
+            line-height: 30px;
+            background: rgb(234, 227, 240);
+            margin-left: 75px;
+        }
+
+        .logo{
+            height: 50px;
+            width: 100px;
+        }
+
+        #boxes{
+            float: right;
+            margin-right: 75px;
+        }
+
+        @media(max-width: 800px){
+            #heading{
+                display: grid;
+                grid-template-columns: 400px;
+                grid-template-rows: 500px 500px;
+                margin: 20px;
+            }
+            .image{
+                height: 400px;
+                width: 400px;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div id="heading">
+            <div><img class="image" src="https://smedia2.intoday.in/btmt/images/stories/instagram-dm-feature_660_021419093716.jpg"></div>
+            <div class="loginpage">
+                <div class="box1">
+                   <h1>Instagram</h1>
+                   <b class="discrp">Sign up to see photos and <br>videos from your friends.</b>
+                      <p class="fbbox"><img class="fblogo" src="https://downloadfacebookliteapk.files.wordpress.com/2016/03/4.jpg?w=512"> Log in with Facebook</p>
+                      <p>OR</p>
+                      <p class="box">Mobile Number or Email</p>
+                      <p class="box">Full Name</p>
+                      <p class="box">Username</p>
+                      <p class="box">Password</p>
+                      <p class="fbbox">Sign up</p>
+                   <p class="discrp">By signing up, you agree to our<br> <b>Terms, Data Policy</b> and <b>Cookies <br>Policy.</b></p>
+                </div>
+                <div class="box2">
+                    <p>Have an account?Log in</p>
+                </div>
+                <p>Get the app.</p>
+                <img class="logo" src="https://cdn.worldvectorlogo.com/logos/download-on-the-app-store-apple.svg">
+                <img class="logo" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png">
+            </div>
+        </div>
+    </body>
+</html>
