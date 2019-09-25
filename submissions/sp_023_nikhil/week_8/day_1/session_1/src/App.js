@@ -43,7 +43,7 @@ class App extends React.Component {
     return (
       <div>
         <input type="text" onChange={(e) => this.handleChange(e)} value={this.state.value} />
-        <button onClick={() => this.handleClick()}>Search</button>
+        <button onClick={() => this.handleClick}>Search</button>
 
         {this.state.status ? info : (<h2>Enter Name</h2>)}
 
