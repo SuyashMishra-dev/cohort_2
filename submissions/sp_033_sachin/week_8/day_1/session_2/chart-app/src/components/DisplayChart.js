@@ -28,7 +28,8 @@ class DisplayChart extends React.Component {
                             pointHoverBorderWidth: 2,
                             pointRadius: 1,
                             pointHitRadius: 10,
-                            data: []
+                            data: [],
+                            
                         }
                     ]
                 },
@@ -83,7 +84,14 @@ class DisplayChart extends React.Component {
             data: {...this.state.data,...newDataSets},
             toggle: !this.state.toggle            
         })
+        // callback();
+        
     }
+
+    // force = () => {
+    //     console.log(Line)
+    //     // Line.forceUpdate();
+    // }
 
     render() {
         // console.log(this.state.data.datasets[0].data)
@@ -97,7 +105,8 @@ class DisplayChart extends React.Component {
                 <div className="row">
                     {el}
                     <input className="form-control" onChange={(e)=>{this.inputChangeHandler(e)}} value={this.state.inputValue} />
-                    <button className="btn btn-success" onClick={this.setValue}>Set Value</button>
+                    <button className="btn btn-success" onClick={()=>{this.setValue()}}>Set Value</button>
+                    <div>{this.state.toggle}</div>
                 </div>
             </div>
         )

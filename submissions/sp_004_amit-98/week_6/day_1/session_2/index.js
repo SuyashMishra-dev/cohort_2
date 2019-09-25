@@ -57,7 +57,7 @@ function status() {
 }
 function displayDetails(){
   var display=document.getElementById("displayDetails");
-  cars.forEach(car=>{
+  car.forEach(car=>{
     display.append(car.status());
 })
 }
