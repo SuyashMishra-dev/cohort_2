@@ -1,0 +1,178 @@
+.App {
+  text-align: left;
+  background: whitesmoke;
+}
+
+.App-logo {
+  height: 30px;
+  float: left;
+  margin-left: 100px;
+  padding-top: 20px;
+}
+
+.App-image {
+  height: 370px;
+  float: left;
+  margin-left: 200px;
+  padding-top: 4px;
+}
+.App-image2 {
+  width: 90%;
+  margin-left: 70px;
+}
+.App-image3 {
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.App-header {
+  background-color: whitesmoke;
+  display: flex;
+  color: black;
+  font-size: 15px;
+  height: 120px;
+}
+
+.App-header1 {
+  padding-top: 10px;
+  background-color: whitesmoke;
+  display: flex;
+  color: black;
+  font-size: 15px;
+  height: 400px;
+}
+
+
+.App-link1 {
+  margin-left: 220px;
+  color: rgb(134, 122, 122);
+  font-size: 18px;
+}
+
+.App-link2 {
+  margin-left: 80px;
+  color: rgb(134, 122, 122);
+  font-size: 18px;
+}
+
+.App-link3 {
+  margin-top: 15px;
+  margin-left: 800px;
+  color: cyan;
+  font-size: 20px;
+}
+
+.Gen-text {
+  margin-left: 3px;
+}
+
+.Car-text {
+  background: orange;
+  padding: 2px 8px 2px 8px;
+  font-size: 20px;
+  margin-left: 3px;
+  text-align: center;
+  height: 5%;
+  border-radius: 30px;
+}
+
+.Bike-text {
+  font-size: 20px;
+  text-align: center;
+  padding: 2px 8px 2px 8px;
+  margin-left: 8px;
+}
+
+.Grey-text {
+  color: grey;
+  margin-left: 3px;
+}
+
+.secure-text {
+  font-size: 20px;
+}
+
+.Text-text {
+  background: orange;
+  padding: 2px 8px 2px 8px;
+  font-size: 20px;
+  margin-left: 3px;
+  text-align: center;
+  height: 5%;
+  border-radius: 30px;
+}
+.inputCustomer {
+  margin-top: 5px;
+  border-radius: 30px;
+  height: 30px;
+  width: 300px;
+  font-size: 20px;
+}
+
+#submitButton{
+  border-radius: 30px;
+  background: purple;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  width: 30%;
+  margin-left: 10px;
+}
+
+.purple-link {
+  color: purple;
+}
+
+.below-purplelink {
+  font-size: 20px;
+}
+
+.third-header {
+  background: whitesmoke;
+  margin-top: 100px;
+}
+
+.fourth-header {
+  background: whitesmoke;
+  margin: 100px;
+  width: 50%;
+}
+
+.fifth-header{
+  background: whitesmoke;
+  display: flexbox;
+  flex-wrap: wrap;
+  float: right; 
+  width: 50%;
+  padding: 50px;
+}
+
+.customIm{
+  background: whitesmoke;
+  float: left;
+  width: 900px; 
+  margin-left: 400px;
+}
+
+.Homepagekiller {
+  background: whitesmoke;
+  width: 30%;
+  float: right;
+}
+.Homepageterrible {
+  background: whitesmoke;
+  float: left;
+  width: 30%;
+  margin-top: 10px; 
+  margin-left: 100px;
+  padding: 50px;
+}
+
+.Homepagestress {
+  background: whitesmoke;
+  float: right;
+  width: 30%;
+}
+
+.footerend {
+  background: darkgrey;
+}

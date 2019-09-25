@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>
+            Weather Forecast
+        </title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row m-l-5">
+                <p class="col-10 text-center text-uppercase h1 border border-dark">See the weather of any city!</p>
+                <form>
+                    <div class="form-group">
+                        <div class="container">
+                            <div class="row text-center">
+                                <label for="city" class="h3 text-center col-8 m-l-5">Enter City name</label>
+                                <input type="search" class="form-control border border-warning" id="city" placeholder="eg:Delhi">
+                            </div>
+                            <br>
+                            <button type="button" class="btn btn-primary">Check Weather Forecast</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container border border-info">
+            <div class="row" id="mainRow">
+                <label for="temp" id="temp">Temperature</label>
+                <div class="col-12" id="col1"></div>
+                <br>
+                <label for="pressure" id="pressure">Pressure</label>
+                <div class="col-12" id="col2"></div>
+                <br>
+                <label for="clouds" id="clouds">Clouds</label>
+                <div class="col-12" id="col3"></div>
+                <br>
+                <label for="windSpeed" id="windSpeed">Wind Speed</label>
+                <div class="col-12" id="col4"></div>
+                <br>
+                <label for="windDirection" id="windDirection">Wind Direction</label>
+                <div class="col-12" id="col5"></div>
+            </div>
+        </div>
+
+        <script>
+            var display = function(callback){
+                var temp=callback["data"][0]["temp"];
+                var pres=callback['data'][0]['pres'];
+                var clouds=callback['data'][0]['clouds'];
+                var windSpeed=callback['data'][0]['wind_spd'];
+                var windDirection=callback['data'][0]['wind_dir'];
+                console.log();
+                $("#col1").append(temp);
+                $("#col2").append(pres);
+                $("#col3").append(clouds);
+                $("#col4").append(windSpeed);
+                $("#col5").append(windDirection);
+            };
+
+            $("button").click(function(){
+                var response="";
+                var error="";
+                var cityName = $("#city").val();
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET' , 'https://api.weatherbit.io/v2.0/current?city=' + cityName + '&key=95f3e37544834db59f1b09a673e251da');
+                xhr.send();
+                xhr.onload=function(){
+                    if(xhr.status == 200)
+                    {
+                        response = JSON.parse(xhr.response);
+                        display(response);
+                        console.log(response);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
