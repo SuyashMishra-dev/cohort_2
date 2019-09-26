@@ -13,9 +13,9 @@ class List2 extends React.Component {
     render() {
         //console.log(this.props);
         return (
-            <div className = "Shape Design">
-                {this.props.obj3.map((item, index) =>{
-                     return <button style={{background:item.color}} key={index}>{item.label}</button>
+            <div className = "Shape">
+                {this.props.obj3.map((item, index) => {
+                     return <button style={{background:item.color}} className = "Design" key={index}>{item.label}</button>
                 }) }
             </div>
         );

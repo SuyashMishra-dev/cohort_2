@@ -1,6 +1,7 @@
 import React from 'react';
 import List1 from './List1';
 import List2 from './List2';
+import List3 from './List3';
 
 const OS = {
   heading : "Mobile Operating System",
@@ -29,7 +30,13 @@ const Format = [
 
 ];
   
-  
+const Card = {
+  name: "Ricky Park",
+  location: "New York",
+  description: "User Interface Designer and Full Stack Developer",
+  skillset: ["UI/UX", "Front End Development", "HTML", "CSS", "JavaScript", "React", "Node"]
+}
+
     
 
 function ListApp() {
@@ -37,6 +44,7 @@ function ListApp() {
       <div>
         <List1 obj1 = {OS} obj2 = {MF}/>
         <List2 obj3 = {Format}/>
+        <List3 obj4 = {Card} />
       </div>
     );
   }
