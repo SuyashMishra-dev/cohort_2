@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Leaderboard
+        </title>
+
+        <style>
+            .flex_box {
+                display: flex;
+                margin-top: 20px;
+            }
+            #min_box {
+                background: red;
+                border: 1px solid black;
+                padding: 45px;
+            }
+            #total {
+                background: grey;
+                border: 1px solid black;
+                padding: 45px;
+                width: 150px;
+            }
+
+            #max_box {
+                background: green;
+                border: 1px solid black;
+                padding: 45px;
+                margin-left: 50px;
+            }
+
+            #score_box {
+                background: grey;
+                padding:45px;
+                width: 150px;
+            }
+
+            #button_one {
+                background: lightgreen;
+                padding: 15px;
+            }
+
+            #button_two {
+                background: orange;
+                padding: 15px;
+                margin-left: 15px;
+            }
+
+            #button_three {
+                background: lightgreen;
+                padding: 15px;
+                margin-left: 15px;
+            }
+
+            #button_four {
+                background: orange;
+                padding: 15px;
+            }
+
+            #button_five {
+                background: orange;
+                padding: 15px;
+                margin-left: 15px;
+            }
+
+            #button_six {
+                background: orange;
+                padding: 15px;
+                margin-left: 15px;
+            }
+
+            #button_seven {
+                background: lightgreen;
+                padding: 15px;
+            }
+
+            #button_eight{
+                background: orange;
+                padding: 15px;
+                margin-left: 15px;
+            }
+
+            #button_nine {
+                background: lightgreen;
+                padding: 15px;
+                margin-left: 15px;
+            }
+
+            #button_zero {
+                background: violet;
+                padding: 15px;
+                margin-left: 60px;
+            }
+
+            #button_enter {
+                background: black;
+                color: white;
+                padding: 15px;
+                margin-left: 45px;
+            }
+            .remove_button{
+                color: white;
+                background: black;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div style="float: left">
+            <div>
+                <h1>Total</h1>
+                <div id="total">-</div>
+            </div>
+            <div class = "flex_box">
+                <h1>Min</h1>
+                <div id = "min_box">-</div>
+                <h1>Max</h1>
+                <div id = "max_box">-</div>
+            </div>
+            
+            <div>
+                <h1>Score</h1>
+                <div id="score_box"></div>
+            </div>
+            <br>
+
+            <div>
+                <button id = "button_one" onclick="number(1)">1</button>
+                <button id = "button_two" onclick="number(2)">2</button>
+                <button id = "button_three" onclick="number(3)">3</button>
+            </div>
+            <br>
+
+            <div>
+                <button id = "button_four" onclick="number(4)">4</button>
+                <button id = "button_five" onclick="number(5)">5</button>
+                <button id = "button_six" onclick="number(6)">6</button>
+            </div>
+            <br>
+
+            <div>
+                <button id = "button_seven" onclick="number(7)">7</button>
+                <button id = "button_eight" onclick="number(8)">8</button>
+                <button id = "button_nine" onclick="number(9)">9</button>
+            </div>
+            <br>
+
+            <div>
+                <button id = "button_zero" onclick="number(0)">0</button>
+            </div>
+            <br>
+
+            <div>
+                <button id = "button_enter" onclick="enter()">ENTER</button>
+            </div>
+        </div>
+    <div>
+        <h1 id ="game_Score" >Game Score</h1>
+        <div>Game -1 <p id="game_1"></p> </div>
+        <div>Game -2 <p id="game_2"></p> </div>
+        <div>Game -3 <p id="game_3"></p> </div>
+        <div>Game -4 <p id="game_4"></p> </div>
+        <div>Game -5 <p id="game_5"></p> </div>
+        <div>Game -6 <p id="game_6"></p> </div><br>
+    </div>
+    <div>
+        <div><button class="remove_button" onclick="removeall()">REMOVE ALL</button></div>
+        <button class="remove_button" style="margin-top: 20px" onclick="removeodd()">REMOVE ODD</button><br />
+        <button class="remove_button" style="margin-top: 20px" onclick="removeeven()">REMOVE EVEN</button><br />
+        <button class="remove_button" style="margin-top: 20px" onclick="removelast()">REMOVE LAST</button>
+    </div>
+    </body>
+    <script>
+        var score = '';
+        var min = 50;
+        var max = 200;
+
+        function number(digit) {
+                score = score + digit;
+                document.getElementById("score_box").innerHTML = score;
+        }
+
+        function enter() {
+            var finalnumber = Number(score);
+
+            if (finalnumber < min) {
+                min = finalnumber;
+                document.getElementById("min_box").innerHTML = min;
+                document.getElementById("game_1").innerHTML = min
+            } 
+            else if (finalnumber > max) {
+                max = finalnumber;
+                document.getElementById("max_box").innerHTML = max;
+                document.getElementById("game_1").innerHTML = max;
+            } 
+            
+            document.getElementById("score_box").innerHTML = '';
+            score = ' ';
+        }
+
+        function removeall(){
+            document.getElementById('game_1').innerHTML = ' ';
+            document.getElementById('game_2').innerHTML = ' ';
+            document.getElementById('game_3').innerHTML = ' ';
+            document.getElementById('game_4').innerHTML = ' ';
+            document.getElementById('game_5').innerHTML = ' ';
+            document.getElementById('game_6').innerHTML = ' ';
+        }
+        function removeeven(){
+            document.getElementById('game_2').innerHTML = ' ';
+            document.getElementById('game_4').innerHTML = ' ';
+            document.getElementById('game_6').innerHTML = ' ';
+        }
+        function removeodd(){
+            document.getElementById('game_1').innerHTML = ' ';
+            document.getElementById('game_5').innerHTML = ' ';
+            document.getElementById('game_3').innerHTML = ' ';
+        }
+        function removelast(){
+            document.getElementById('game_6').innerHTML = ' ';
+        }
+    </script>
+</html>
