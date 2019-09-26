@@ -6,33 +6,45 @@ const searchButton = document.getElementById("search-button");
 const table = document.getElementById("result-table");
 
 let i = 0; 
-var reposArr = [];
+let response;
+//LocalStorage Implementation
+let storage = window.localStorage;
+let localArr = [];
+
+let content = storage.getItem("Details");
+console.log(typeof(content));
+if(content != null) {
+    let contentObj = JSON.parse(content);
+    contentObj.forEach((ele) => {
+        localArr.push(ele);
+    })
+    populateSavedTable(localArr);
+}
 
 const search = () => {
     fetch(mainUrl + input.value)
         .then(resp => resp.json())
-        .then(resp => repoSearch(resp));      
+        .then(resp => {
+            response = resp;
+            populateTable(response)
+        });      
 }
 
-const repoSearch = (mainResp) => {
-    
-    mainResp.items.forEach(ele => {
-        fetch(ele.repos_url)
-            .then(reposResp => reposResp.json())
-            .then(reposResp => reposArr.push(Number(reposResp.length)));
-    })
-    populateTable(mainResp, reposArr);
+const save = (que) => {
+    console.log(response.items[que]);
+    localArr.push(JSON.stringify(response.items[que]));
+    storage.setItem("Details", localArr);
 }
 
-const populateTable = (response, reposArr) => {
+const populateTable = (response) => {
     table.innerHTML = "";
     input.value = "";
     let thead = document.createElement("thead");
-    thead.innerHTML = `<tr><th class="align-middle">Avatar</th> <th class="align-middle">User Name</th> <th class="align-middle">Score</th> <th class="align-middle">Total Repositories</th> <th class="align-middle">Link</th></tr>`;
+    thead.innerHTML = `<tr><th class="align-middle">Avatar</th> <th class="align-middle">User Name</th> <th class="align-middle">Score</th> <th class="align-middle">Link</th> <th class="align-middle">Action</th></tr>`;
     table.appendChild(thead);
-    response.items.forEach(ele => {
+    response.items.slice(0,9).forEach(ele => {
         let tr = document.createElement("tr");
-        tr.innerHTML = `<td><img src="${ele.avatar_url}" class="img-thumbnail img-responsive w-25 h-25"></td> <td class="align-middle">${ele.login}</td> <td class="align-middle">${ele.score}</td> <td class="align-middle">` + reposArr[i] + `<td class="align-middle"><a href="${ele.html_url}">View On Github</a></td>`
+        tr.innerHTML = `<td><img src="${ele.avatar_url}" class="img-thumbnail img-responsive w-25 h-25"></td> <td class="align-middle">${ele.login}</td> <td class="align-middle">${ele.score}</td> <td class="align-middle"><a href="${ele.html_url}">View On Github</a></td> <td class="align-middle"><button class="btn btn-success" onclick="save(${i})">Save</button></td>`
         table.appendChild(tr);
         i++;
     })

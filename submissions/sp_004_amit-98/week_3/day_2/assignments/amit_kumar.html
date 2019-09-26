@@ -46,11 +46,12 @@
     </select>
     <button id="btnSelect" onclick="selectConv()">Select</button>
      <!-- Length Converter -->
-    <div id="lengthCoverter" style="display: none">
+    <div id="lengthCoverter" >
         <h2>Length Conversion</h2>
         <input type="number" value="number" id="inputNumber">
         <span>From</span>
         <select id="selectUnit1">
+            <option value="Select"> Select </option>
             <option value="Meter"> Meter </option>
             <option value="Kilometer">Kilometer</option>
             <option value="Mile">Mile </option>
@@ -58,10 +59,18 @@
         </select>
         <span>To</span>
         <select id="selectUnit2">
+            <option value="Select"> Select </option>
             <option value="Meter"> Meter </option>
             <option value="Kilometer">Kilometer</option>
             <option value="Mile">Mile </option>
             <option value="Light Year">Light Year</option>
+            <option value="Celsius"> Celsius </option>
+            <option value="Kelvin">Kelvin</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Liter"> Liter </option>
+            <option value="Mililiter">Mililiter</option>
+            <option value="Us Gallon">Us Gallon</option>
+            <option value="Imperial Tea Spoon">Imperial Tea Spoon</option>
         </select>
         <button onclick="lenghtConverter()">Convert</button><br>
         <span>Output:</span>
@@ -75,15 +84,25 @@
         <input type="number" value="number" id="inputTemp">
         <span>From</span>
         <select id="selectTempUnit1">
+            <option value="Select"> Select </option>
             <option value="Celsius"> Celsius </option>
             <option value="Kelvin">Kelvin</option>
             <option value="Fahrenheit">Fahrenheit</option>
         </select>
         <span>To</span>
         <select id="selectTempUnit2">
+            <option value="Select"> Select </option>
+            <option value="Meter"> Meter </option>
+            <option value="Kilometer">Kilometer</option>
+            <option value="Mile">Mile </option>
+            <option value="Light Year">Light Year</option>
             <option value="Celsius"> Celsius </option>
             <option value="Kelvin">Kelvin</option>
             <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Liter"> Liter </option>
+            <option value="Mililiter">Mililiter</option>
+            <option value="Us Gallon">Us Gallon</option>
+            <option value="Imperial Tea Spoon">Imperial Tea Spoon</option>
         </select>
         <button onclick="tempConverter()">Convert</button><br>
         <span>Output:</span>
@@ -97,6 +116,7 @@
         <input type="number" value="number" id="inputVol">
         <span>From</span>
         <select id="selectVolUnit1">
+            <option value="Select"> Select </option>
             <option value="Liter"> Liter </option>
             <option value="Mililiter">Mililiter</option>
             <option value="Us Gallon">Us Gallon</option>
@@ -104,6 +124,14 @@
         </select>
         <span>To</span>
         <select id="selectVolUnit2">
+            <option value="Select"> Select </option>
+            <option value="Meter"> Meter </option>
+            <option value="Kilometer">Kilometer</option>
+            <option value="Mile">Mile </option>
+            <option value="Light Year">Light Year</option>
+            <option value="Celsius"> Celsius </option>
+            <option value="Kelvin">Kelvin</option>
+            <option value="Fahrenheit">Fahrenheit</option>
             <option value="Liter"> Liter </option>
             <option value="Mililiter">Mililiter</option>
             <option value="Us Gallon">Us Gallon</option>
@@ -177,8 +205,11 @@
                 ly_Mile = (data * 5878559666946);
                 document.getElementById("lengthUnit").innerHTML = ly_Mile + " Miles";
             }
-            else {
+            else if(unit2 == "Light Year" && unit1 == "Light Year") {
                 document.getElementById("lengthUnit").innerHTML = data + " Light Year";
+            }
+            else{
+                alert('Incorrect Unit are selected by you ');
             }
         }
         // Temperature converter function
@@ -218,8 +249,11 @@
                 feh_Kel = ((temp - 32) * (5 / 9) + 273.15);
                 document.getElementById("tempUnit").innerHTML = feh_Kel + " K";
             }
-            else {
+            else if (tempUnit1 == "Fahrenheit" && tempUnit2 == "Fahrenheit"){
                 document.getElementById("tempUnit").innerHTML = temp + " F";
+            }
+            else{
+                alert('Incorrect Unit are selected by you ');
             }
         }
         // Volume converter function
@@ -284,10 +318,14 @@
             else if (volUnit1 == "Imperial Tea Spoon" && volUnit2 == "Imperial Tea Spoon") {
                 document.getElementById("volUnit").innerHTML = vol + " Imperial Tea Spoon";
             }
-            else {
+            else if(volUnit1 == "Imperial Tea Spoon" && volUnit2 == "US Gallon") {
                 its_Us = (vol / 639.494);
                 document.getElementById("volUnit").innerHTML = vol + " US Gallon";
             }
+            else{
+                alert('Incorrect Unit are selected by you ');
+            }
+
         }
            // Display & Hide function
         function selectConv() {
