@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Make a page that will take input from a user of a Car</h1>
+    <input type="text" id="make" placeholder="Car company">
+    <input type="number" id="make" placeholder="model">
+    <input type="number" id="topspeed" placeholder="top speed in km/hr">
+    <input type="number" id="total distance" placeholder="total distance">
+    <script>
+        class car {
+            constructor(carMake, model, topSpeed, dist = 0) {
+                this.carMaker = carMake;
+                this.modelName = model;
+                this.topSpeed = topSpeed;
+                this.totalDistance = totalDistance;
+
+            }
+            travelDist(time = 1, speed = this.topSpeed / 2)
+             {
+                this.totalDistance = time * speed;
+                return this.totalDistance;
+
+            }
+            presentStatus()
+            {
+                 return `${this.carMaker} ${this.modelName} ${this.topSpeed}km/hr ${this.totalDistance}km `
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
