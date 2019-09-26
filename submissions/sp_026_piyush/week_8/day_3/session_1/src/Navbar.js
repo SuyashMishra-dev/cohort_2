@@ -13,16 +13,16 @@ class Navbar extends Component {
     return (
       // <BrowserRouter>
         <React.Fragment>
+
+          <Link className="btn btn-primary" to="/">Home</Link>
           
-          <Link to="/">Home</Link>
-          
-          <Link to="/about">About</Link>
+          <Link className="btn btn-primary" to="/about">About</Link>
 
-          <Link to="/contact">Contact</Link>
+          <Link className="btn btn-primary"to="/contact">Contact</Link>
 
-          <Link to="/services">Services</Link>
+          <Link className="btn btn-primary"to="/services">Services</Link>
 
-          <Link to="/login">Login</Link>
+          <Link className="btn btn-primary"to="/login">Login</Link>
 
           <Route path="/" exact component={Home} />
 
