@@ -1,404 +1,460 @@
-# Week 2 - Day 2
+# Week 2 - Day 3
+
+### Session 1
 
 **SUBMISSION:**
+
 - Download this file
 - Fill the answers
-- Place the file into the location `~/repos/cohort_2/submissions/<your_folder>/week_2/day_2/session1` 
+- Place the file into the location `~/repos/cohort_2/submissions/<your_folder>/week_2/day_3/session1` 
 - Push the file  back to the online repo
 
 <u>Don't use the web browser or any online tool to answer these questions. Only refer to the notes and apply the basic concepts</u>
 
 Sample Submission
 
-```
-white
-```
-```
-20px
-```
-
-Consider the below styles for solving the problems
-
-```css
-* {
-    color: yellow;
-    font-size: 12px;
-}
-div {
-	height: 100px;
-    width: 100px;
-    margin: 6px;
-    padding: 4px;
-    background-color: black;
-    color: white;
-}
-#id1 {
-    height: 50px;
-    color: red;
-}
-#id2 {
-    width: 75px;
-    margin: 10px;
-}
-#id3 {
-    font-size: 14px;
-    margin-left: 10px;
-    color: blue;
-}
-.class1 {
-    background-color:white;
-    color: black;
-    font-size: 16px;
-}
-.class2 {
-    font-size: 22px;
-    width: 150px;
-}
-.class3 {
-    height: 200px;
-    color: red;
-    padding-right: 20px;
-    margin-left: 15px;
-}
-.class4 {
-    margin-bottom: 20px;
-    font-size: 11px;
-}
-.class5 {
-    height: 100px;
-    margin: 6px;
-    background-color: black;
-}
-.class6 {
-    width: 100px;
-    padding-left: 6px;
-    padding-right: 8px;
-    color: orange;
-}
-#id2 {
-    font-size: 20px;
-    margin-right: 20px;
-    background-color: red;
-}
-.class2 {
-    height: 50px;
-    color: black;
-}
-.class4 {
-    color: purple;
-    background-color: red;
-}
-```
-
-
-
-### FSD.W2.2.1_1
-
-```
-<div>MASAI</div>
-```
-Fill the below property values for the `div`
 1. Color
 ```
- white 
-```
-2. Height
-```
-100px
-
-```
-
-### FSD.W2.2.1_2
-
-```
-<div style="height:50px;">MASAI</div>
-```
-Fill the below property values for the `div`
-1. Width
-```
-100px
-```
-2. Height
-```
-50px
-```
-3. Padding
-```
-4px
-```
-### FSD.W2.2.1_3
-```
-<div class="class1">MASAI</div>
-```
-1. Width
-```
-100px
-```
-2. Height
-```
-100px
-```
-3. Padding-Left
-```
-4px
-```
-4. Margin-Right
-```
-6px
-```
-5. Font-Size
-```
-16px
-```
-6. Color
-```
 black
 ```
-### FSD.W2.2.1_4
-```
-<div id="id2">MASAI</div>
-```
-1. Color
-```
-white
-```
-2. Background Color
-```
-black
-```
-3. Padding-Bottom
-```
-4px
-```
-4. Margin-Top
-```
-10px
-```
-5. Font-Size
-```
-20px
-```
-6. Height
-```
-100px
-```
-### FSD.W2.2.1_5
-```
-<div class="class1 class4" style="color:violet">MASAI</div>
-```
-1. Width
-```
-100px
-```
-2. Background Color
-```
-red
-```
-3. Padding-Bottom
-```
-4px
-```
-4. Margin-Right
-```
-6px
-```
-5. Font-Size
-```
-11px
-```
-6. Color
-```
-violet
-```
-### FSD.W2.2.1_6
-```
-<div class="class5 class3" id="id1">MASAI</div>
-```
-1. Width
-```
-100px
-```
-2. Color
-```
-red
-```
-3. Padding-Right
-```
-20px
-```
-4. Margin-Left
-```
-6px
-```
-5. Font-Size
-```
-12px
-```
-6. Background Color
-```
-black
-```
-### FSD.W2.2.1_7
-```
-<div class="class2" id="id2">MASAI</div>
-```
-1. Width
-```
-75px
-```
-2. Height
-```
-50px
-```
-3. Padding-Top
-```
-4px
-```
-4. Margin-Bottom
-```
-6px
-```
-5. Font-Size
-```
-22px
-```
-6. Color
-```
-black
-```
-### FSD.W2.2.1_8
-```
-<div class="class4 class2 class6" style="font-size:20px">MASAI</div>
-```
-1. Width
-```
-100px
-```
-2. Height
-```
-100px
-```
-3. Padding-Left
-```
-6px
-```
-4. Margin-Right
-```
-6px
-```
-5. Font-Size
-```
-20px
-```
-6. Color
-```
-Orange
-```
-### FSD.W2.2.1_9
-```
-<div class="class5 class3" id="id2">MASAI</div>
-```
-1. Width
-```
-75px
-```
-2. Height
-```
-100px
-```
-3. Background Color
-```
-black
-```
-4. Color
-```
-Red
-```
-5. Font-Size
-```
-20px
-```
-### FSD.W2.2.1_10
-```
-<div class="class2 class4 class5" id="id3" style="margin-left:22px">MASAI</div>
-```
-1. Width
-```
-150px
-```
-2. Height
-```
-100px
-```
-3. Padding-Top
-```
-4px
-```
-4. Margin-Left
-```
-22px
-```
-5. Font-Size
+2. Font Size
 ```
 14px
 ```
-6. Color
-```
-blue
-```
-### FSD.W2.2.1_11
-```
-<div class="class5 class3" id="id3" style="color:orange; font-size:28px; margin:20px">MASAI</div>
-```
-1. Background Color
-```
-black
-```
-2. Height
-```
-100px
-```
-3. Margin-Left
-```
-20px
-```
-4. Padding-Right
-```
-20px
-```
-5. Font-Size
-```
-28px
-```
-6. Color
-```
-orange
-```
-### FSD.W2.2.1_12
-```
-<div id="id2">MASAI</div>
-```
-1. Width
-```
-75px
-```
-2. Height
-```
-100px
-```
 3. Background Color
+```
+white
+```
+4. IDs
+```
+#id1
+#id2
+#id3
+```
+
+The CSS for each problem is mentioned above the HTML Code
+
+### FSD.W2.3.1_1
+
+```css
+p {
+    font-size: 16px;
+    color: green;
+}
+div {
+    font-size: 20px;
+}
+div, p {
+    color: red;
+}
+```
+
+```
+<div id="id1">
+	First DIV
+</div>
+<p id="id2">
+	First P
+</p>
+```
+
+Fill the below property values for the `div` having `id1`
+
+1. Color
+
 ```
 red
 ```
-4. Margin-Right
+2. Font Size
+
 ```
 20px
 ```
-5. Font-Size
+
+Fill the below property values for the `p` having `id2`
+
+3. color
+
+
 ```
-20px
+red
 ```
-6. Color
+4. Font Size
+
+
 ```
-white
+16px
+```
+
+### FSD.W2.3.1_2
+
+```css
+div.class1 {
+    color: red;
+}
+p.class1 {
+    color: green;
+}
+p.class2 {
+    font-size: 10px;
+}
+div.class2 {
+    font-size: 12px;
+}
+```
+
+```html
+<div id="id1" class="class1">
+    First DIV
+</div>
+<div id="id2" class="class2">
+    Second DIV
+</div>
+<p id="id3" class="class1">
+    First Para
+</p>
+<p id="id4" class="class2">
+    Second Para
+</p>
+```
+
+Fill the below property values for the `div` having `id1`
+
+1. Color
+
+
+```
+red
+```
+
+Fill the below property values for the `div` having `id2`
+
+2. Font Size
+
+
+```
+12px
+```
+
+Fill the below property values for the `p` having `id3`
+
+3. Color
+
+
+```
+green
+```
+
+Fill the below property values for the `p` having `id4`
+
+4. Font Size
+
+
+```
+10px
+```
+
+### FSD.W2.3.1_3
+
+```css
+p + div {
+    background-color: red;
+}
+.class1 + p {
+    background-color: green;
+}
+```
+
+```html
+<div id="id1" class="class1">
+	<p id="id2"></p>
+	<div id="id3"></div>
+</div>
+
+<p id="id4"></p>
+
+<div id="id5"></div>
+
+<div id="id6" class="class1"></div>
+
+<p id="id7"></p>
+
+<p id="id8" class="class1"></p>
+
+<p id="id9"></p>
+
+<div id="id10"></div>
+
+<div id="id11">
+	<p id="id12" class="class1"></p>
+	<p id="id13"></p>
+	<p id="id14"></p>
+	<div id="id15" class="class1"></div>
+	<p id="id16"></p>
+	<p id="id17"></p>
+</div>
+
+<p id="id18" class="class1"></p>
+<p id="id19"></p>
+<div id="id20"></div>
+```
+
+All the `div` tags whose background color will be `red`
+
+1. IDs
+
+
+```
+#id5
+#id10
+#id15
+#id20
+```
+
+
+All the `p` tags whose background color will be `green`
+
+2. IDs
+
+
+```
+#id4
+#id7
+#id9
+#id13
+#id16
+#id19
+```
+
+### FSD.W2.3.1_4
+
+```css
+div ~ p {
+    background-color: red;
+}
+.class1 ~ div {
+    background-color: green;
+}
+```
+
+```html
+<div id="id1" class="class1">
+	<p id="id2"></p>
+	<div id="id3"></div>
+</div>
+
+<p id="id4"></p>
+
+<div id="id5"></div>
+
+<div id="id6" class="class1"></div>
+
+<p id="id7"></p>
+
+<p id="id8" class="class1"></p>
+
+<p id="id9"></p>
+
+<div id="id10"></div>
+
+<div id="id11">
+	<p id="id12" class="class1"></p>
+	<p id="id13"></p>
+	<p id="id14"></p>
+	<div id="id15" class="class1"></div>
+	<p id="id16"></p>
+	<p id="id17"></p>
+</div>
+
+<p id="id18" class="class1"></p>
+<p id="id19"></p>
+<div id="id20"></div>
+```
+
+All the `p` tags whose background color will be `red`
+
+1. IDs
+
+
+```
+#id4
+#id7
+#id7
+#id8
+#id9
+#id16
+#id17
+#id18
+#id19
+```
+
+All the `div` tags whose background color will be `green`
+
+2. IDs
+
+
+```
+#id5
+#id6
+#id10
+#id11
+#id15
+#id20
+```
+
+### FSD.W2.3.1_5
+
+```css
+div > p {
+    background-color: red;
+}
+.class1 > div {
+    background-color: green;
+}
+```
+
+```html
+<div id="id1" class="class1">
+	<p id="id2"></p>
+	<div id="id3"></div>
+</div>
+
+<p id="id4"></p>
+
+<div id="id5"></div>
+
+<div id="id6" class="class1"></div>
+
+<p id="id7"></p>
+
+<p id="id8" class="class1"></p>
+
+<p id="id9"></p>
+
+<div id="id10"></div>
+
+<div id="id11">
+	<p id="id12" class="class1"></p>
+	<p id="id13"></p>
+	<p id="id14"></p>
+	<div id="id15" class="class1">
+        <div id="id16"></div>
+    </div>
+	<p id="id17"></p>
+</div>
+
+<p id="id18" class="class1"></p>
+<p id="id19"></p>
+<div id="id20">
+    <p id="id21"></p>
+</div>
+```
+
+All the `p` tags whose background color will be `red`
+
+1. IDs
+
+
+```
+#id2
+#id12
+#id13
+#id14
+#id21
+```
+
+All the `div` tags whose background color will be `green`
+
+2. IDs
+
+
+```
+#id3
+#id16
+```
+
+### FSD.W2.3.1_6
+
+```css
+.class1 p {
+    background-color: green;
+}
+
+#id20 p {
+    background-color: red;
+}
+```
+
+```html
+<div id="id1" class="class1">
+	<p id="id2"></p>
+	<div id="id3"></div>
+</div>
+
+<p id="id4"></p>
+
+<div id="id5"></div>
+
+<div id="id6" class="class1">
+    <p id="id7"></p>
+    <p id="id8" class="class1"></p>
+    <p id="id9"></p>
+</div>
+
+<div id="id10"></div>
+
+<div id="id11">
+	<p id="id12" class="class1"></p>
+	<p id="id13"></p>
+	<p id="id14"></p>
+	<div id="id15" class="class1">
+        <p id="id16"></p>
+    </div>
+	<p id="id17"></p>
+</div>
+
+<p id="id18" class="class1"></p>
+<p id="id19"></p>
+<div id="id20">
+    <p id="id21"></p>
+    <div id="id22">
+        <p id="id23"></p>
+        <div id="id24">
+            <p id="id25"></p>
+            <div id="id26">
+                <p id="id27"></p>
+                <div id="id28">
+                    <p id="id29"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p id="id30"></p>
+```
+
+All the `p` tags whose background color will be `red`
+
+1. IDs
+
+
+```
+#id21
+#id23
+#id25
+#id27
+#id29
+```
+
+All the `p` tags whose background color will be `green`
+
+2. IDs
+
+
+```
+#id2
+#id7
+#id8
+#id9
+#id16
 ```

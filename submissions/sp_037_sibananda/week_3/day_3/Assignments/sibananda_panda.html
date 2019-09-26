@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Tax Calculator</title>
+    </head>
+    <body>
+        <div>
+                <label>Total Annual Income</label>
+                <input type="tel" id="Input1">
+                <label>Total Annual Saving</label>
+                <input type="tel" id="Input2">
+                <p id="output"></p>
+                <button onclick="calculator()">Calculator</button>
+        </div>
+        <script>
+            function calculator() {
+                    var Output="" ;
+                    var inputIncome = document.getElementById("Input1").value ;
+                    var inputSaving = document.getElementById("Input2").value ;
+                    if (inputIncome<250000){
+                        Output="No Tax" ;
+                        document.getElementById("output").innerHTML=Output ;
+                    }
+                    else if(inputIncome > 250000 && inputIncome < 500000 )
+                    {
+                        Output=(inputIncome-(0.5*inputSaving))* 0.1 ;
+                        document.getElementById("output").innerHTML =Output ;
+                        console.log(Output);
+                    }
+                    else if(inputIncome > 500000 && inputIncome < 1000000 )
+                    {
+                        Output=(inputIncome-(0.3*inputSaving))* 0.2 ;
+                        document.getElementById("output").innerHTML =Output ;
+                    }
+                    else if (inputIncome > 1000000)
+                     {
+                        if ( inputSaving > 500000) {
+                             inputSaving = 500000;
+                }
+                output = (inputIncome - 0.1 * inputSaving)* 0.3;
+                document.getElementById("output").innerHTML = Output;
+                console.log(Output);
+            }
+            
+                
+            }
+        
+
+        
+        </script>
+        
+
+    </body>
+
+</html>
