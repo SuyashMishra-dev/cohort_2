@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style type="text/css">
+
+        body{
+            margin: 200px;
+        }
+
+        #demo1{
+            display: grid;
+            grid-template-columns: 150px 300px 150px;
+            grid-template-rows: 150px;
+        }
+
+        #demo2{
+            display: grid;
+            grid-template-columns: 300px 150px 150px;
+            grid-template-rows: 150px;
+        }
+
+        #demo3{
+            display: grid;
+            grid-template-columns: 150px 150px 300px;
+            grid-template-rows: 150px;
+        }
+
+        .box1, .box2, .box3{
+            background: sienna;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="demo1">
+            <p class="box1"></p>
+            <p class="box2"></p>
+            <p class="box3"></p>
+        </div>
+        <div id="demo2">
+            <p class="box2"></p>
+            <p class="box1"></p>
+            <p class="box3"></p>
+        </div>
+        <div id="demo3">
+            <p class="box1"></p>
+            <p class="box3"></p>
+            <p class="box2"></p>
+        </div>
+    </body>
+</html>
