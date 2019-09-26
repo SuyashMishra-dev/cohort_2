@@ -19,7 +19,7 @@ black
 ```
 2. Font Size
 ```
-14px
+24px
 ```
 3. Background Color
 ```
