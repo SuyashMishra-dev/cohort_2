@@ -1,0 +1,60 @@
+<html>
+<head>
+    <style type="text/css">
+    body{
+        margin: 150px;
+    }
+    #demo1{
+        display: grid;
+        grid-template-columns: 100px 200px 100px;
+        grid-template-rows: 100px 100px 100px;
+    }
+
+    #demo2{
+        display: grid;
+        grid-template-columns: 200px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+    }
+
+    #demo3{
+        display: grid;
+        grid-template-columns: 100px 100px 200px;
+        grid-template-rows: 100px 100px 100px;
+    }
+
+    .box2,.box1, .box3{
+        margin: 10px;
+        background: black;
+    }
+
+    @media (max-width: 700px){
+        .box1{
+            background: yellow;
+        }
+        .box2{
+            background: red;
+        }
+        .box3{
+            background: plum;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="demo1">
+        <p class="box1"></p>
+        <p class="box2"></p>
+        <p class="box3"></p>
+    <div id="demo2">
+        <p class="box2"></p>
+        <p class="box1"></p>
+        <p class="box3"></p>
+    <div id="demo3">
+        <p class="box1"></p>
+        <p class="box3"></p>
+        <p class="box2"></p>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
