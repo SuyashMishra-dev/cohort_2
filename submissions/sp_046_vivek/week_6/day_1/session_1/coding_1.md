@@ -30,7 +30,7 @@ b = func(5)
 Answer
 
 ```
-
+120
 ```
 3. What is the value of `arr`? If the answer is in an array please use [num1,num2,num3] format
 
