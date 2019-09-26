@@ -14,8 +14,6 @@
 ```javascript
 arr = [55,200,215,230,280]
 arr.map(a=>a*10)
-
-
 ```
 Answer
 
@@ -30,7 +28,7 @@ b = func(5)
 Answer
 
 ```
-
+120
 ```
 3. What is the value of `arr`? If the answer is in an array please use [num1,num2,num3] format
 
@@ -53,7 +51,7 @@ z = y(101)
 Answer
 
 ```
-101
+102
 ```
 5.  What is the value of `arr`? If the answer is in an array please use [num1,num2,num3] format
 ```javascript
@@ -63,7 +61,7 @@ arr.filter(a=>a>220)
 Answer
 
 ```
-[280]
+280
 ```
 6.  What is the value of `arr`? If the answer is in an array please use [num1,num2,num3] format
 ```javascript
@@ -83,7 +81,7 @@ arr.reduce((a,b)=>a>b?a:b)
 Answer
 
 ```
-[300]
+300
 ```
 8.  What is the value of `arr`? If the answer is in an array please use [num1,num2,num3] format
 ```javascript
@@ -93,7 +91,7 @@ arr.reduce((a,b)=>a>b?a+100:b)
 Answer
 
 ```
-[300,230]
+500
 ```
 9. What is the value of `x` and `y` ?
 ```javascript
@@ -109,5 +107,5 @@ y = z(90)
 Answer
 
 ```
-x=110, y=100
+110 and 100
 ```
