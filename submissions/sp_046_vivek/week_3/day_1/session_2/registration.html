@@ -27,30 +27,42 @@
 	<script type="text/javascript">
 		function showName() {
 			// Show filled name inside h1
-			var showname = document.getElementById("name").innerHTML;
-			document.getElementById("dName").value= showname;
+			var showname = document.getElementById("name").value;
+			document.getElementById("dName").innerHTML= showname;
 		}
 
 		function showGender() {
 			// Show the selected gender inside h2
-			var gend = document.getElementById("gender").innerHTML;
-			document.getElementById("dGender").value="gend";
+			var gen = document.getElementById("gender").value;
+			document.getElementById("dGender").innerHTML= gen;
 		}
 
 		function showEmail() {
 			// Show the filled email inside h3
+			var mail = document.getElementById("email").value;
+			document.getElementById("dEmail").innerHTML= mail;
 		}
 
 		function showMobile() {
 			// Show the filled mobile inside h4
+			var mob = document.getElementById("mobile").value;
+			document.getElementById("dMobile").innerHTML= mob;
 		}
 
 		function resetForm() {
 			// Reset all the form elements to default values (blank "")
+			document.getElementById("dName").innerHTML= "NAME";
+			document.getElementById("dGender").innerHTML= "GENDER";
+			document.getElementById("dEmail").innerHTML= "EMAIL";
+			document.getElementById("dMobile").innerHTML= "MOBILE";
 		}
 
 		function resetDisplay() {
 			// Reset all the headings (h1, h2, h3, h4) to blank values
+			document.getElementById("name").value= " ";
+			document.getElementById("gender").value= " ";
+			document.getElementById("email").value= " ";
+			document.getElementById("mobile").value= " ";
 		}
 	</script>
 </body>
