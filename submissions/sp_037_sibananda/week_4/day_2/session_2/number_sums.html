@@ -1,0 +1,40 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input id="input1" type="text">
+        <button id="evenSum">Even Positions Sum</button>
+        <button id="oddSum">Odd Positions Sum</button>
+        <button id="evenSum">Even Sum</button>
+        <button id="oddSum">Odd Sum</button>
+        <button id="single">Single Digit Sum</button>
+        <button>Double Digit Sum</button>
+    </body>
+    <script>
+        var tempNumber='';
+        var arr1=[];
+        function pushArray_Ele(arr, element) {
+            arr[arr.length] = element ;
+            
+        }
+        function convertStringToArray() 
+        {
+            var numberString = document.getElementById("input1").value ;
+            for (var i=0;i<=numberString.length;i++)
+            {
+                if((numberString[i]!=',') && (numberString[i] != undefined)){
+                    tempNumber += numberString[i];
+                }
+                else
+                 {
+                    pushArray_Ele(arr1, Number(tempNumber));
+                    tempNumber = '';
+                 }
+                
+            }
+        }
+
+        var EvenPositionsSum=document.getElementById("")
+    </script>
+</html>

@@ -84,7 +84,7 @@
 // ##############################################
 
 // ##############################################
-// Call a fucntion from a parent to child
+// Call a function from a parent to child
 // import React, {Component} from 'react';
 // import './App.css';
 // import Profile from './components/profile/Profile';
@@ -175,7 +175,11 @@
 // Did that in order to change the count from the child to the parent or something 
 import React, {Component} from 'react';
 import './App.css';
-import Profile from './components/profile/Profile';
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+// import Profile from './components/profile/Profile';
+import Search from './components/Search';
+
 
 const follow = (name = "default", count) => {
   console.log("Followed " + name, " Total Followers " + count)
@@ -192,32 +196,35 @@ class App extends Component {
   }
   render() {
     return( 
-      <div className="flex">
-        Hey empty app
-        <Profile 
-            src = "https://avatars0.githubusercontent.com/u/20015769?s=460&v=4" 
-            name = "Piyush Yadav" 
-            userName = "piyush-git" 
-            location = "Bangalore, India"
-            follow = {(a, b) => follow(a, b)} 
-            count = {100} />
+      // <div className="flex">
+      //   Hey empty app
+      //   <Profile 
+      //       src = "https://avatars0.githubusercontent.com/u/20015769?s=460&v=4" 
+      //       name = "Piyush Yadav" 
+      //       userName = "piyush-git" 
+      //       location = "Bangalore, India"
+      //       follow = {(a, b) => follow(a, b)} 
+      //       count = {100} />
 
-        <Profile 
-            src = "https://avatars2.githubusercontent.com/u/31788669?s=460&v=4"
-            name = "Sachin CV"
-            userName = "sachinkapalidigi"
-            location = "Bangalore, India"
-            follow = {(a, b) => follow(a, b)} 
-            count = {50} />
+      //   <Profile 
+      //       src = "https://avatars2.githubusercontent.com/u/31788669?s=460&v=4"
+      //       name = "Sachin CV"
+      //       userName = "sachinkapalidigi"
+      //       location = "Bangalore, India"
+      //       follow = {(a, b) => follow(a, b)} 
+      //       count = {50} />
 
-        <Profile 
-            src = "https://avatars3.githubusercontent.com/u/51873417?s=460&v=4"
-            name = "Anuj Choudhary" 
-            userName = "choudharyanuj" 
-            location = "Bangalore, India"
-            follow = {(a, b) => follow(a, b)} 
-            count = {this.state.val3} />
-        <button onClick = {() => this.setState({val3: this.state.val3 + 1})}>Increase Val3: {this.state.val3}</button>
+      //   <Profile 
+      //       src = "https://avatars3.githubusercontent.com/u/51873417?s=460&v=4"
+      //       name = "Anuj Choudhary" 
+      //       userName = "choudharyanuj" 
+      //       location = "Bangalore, India"
+      //       follow = {(a, b) => follow(a, b)} 
+      //       count = {this.state.val3} />
+      //   <button onClick = {() => this.setState({val3: this.state.val3 + 1})}>Increase Val3: {this.state.val3}</button>
+      // </div>
+      <div>
+        <Search />
       </div>
     );
   }
