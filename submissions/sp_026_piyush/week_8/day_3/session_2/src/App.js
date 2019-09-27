@@ -4,11 +4,13 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Navbar from './components/Navbar';
+import TopDeals from './TopDeals';
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
+        <TopDeals />
         <Navbar />
       </React.Fragment>
     );
