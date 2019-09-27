@@ -1,23 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-class Gitsearch extends React.Components{
-    constructor(props){
-        super(props);
-        this.state = {
-            userInput : '',
-        }
-    }
-
-    getInput = (event) => this.setState({[event.target.name] : event.target.value})
-
-    render(){
-        return (
+const Gitsearch = (props) => {
+    return(
         <div>
-            <input type="text" placeholder="Enter Git Name" onChange={this.getInput}  />
-            <button>Search User</button>
+            <img src={props.gitDetails.avatar_url}/>
+            <p>{props.gitDetails.login}</p>
+            <button onClick={() => props.getRepos(props.gitDetails.repos_url)}>Full Profile</button>
         </div>
-        )
-    }
+    )
 }
 
 export default Gitsearch;
