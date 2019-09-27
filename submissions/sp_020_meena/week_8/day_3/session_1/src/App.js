@@ -77,7 +77,7 @@ export default class App extends React.Component{
               <br/>
               <Link to ="/contact">Contact Us</Link>
               <br/>
-              <Link to ="/">Courses</Link>
+              <Link to ="/course">Courses</Link>
               <br/> 
            </div>
            <Route path = "/" exact component = {Home}></Route>
