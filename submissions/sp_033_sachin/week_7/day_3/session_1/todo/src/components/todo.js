@@ -10,14 +10,15 @@ const Todo = (props) => {
     }
      
     return (
+        <>
         <div>
             <label>
                 <input onChange={props.changeCheck} type="checkbox" name="todo" checked={props.data.done}/>
                 <span style={lineDecoration}>{props.data.value}</span>
             </label>
             <button onClick={props.remove}>Remove</button>
-        </div>
-        
+        </div>        
+        </>
     )
 }
 
