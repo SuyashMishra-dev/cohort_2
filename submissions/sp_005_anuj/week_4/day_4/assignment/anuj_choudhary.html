@@ -1,107 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="UTF-8">
-	<title>Countries Database</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-
+    <title>Countries Database</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
+    <div>
+        <div id="header">
+            <h1 class="text-center text-warning">Countries Database</h1>
+        </div>
+        <div id="country_section">
+            <div id="country_form row">
+                <h3 class="text-center text-warning">Add a New Country</h3>
+                <div class="container bg-color w-50 text-center rounded-circle mt-5 text-info col-6">
+                    <label class="font-size">Name</label><br>
+                    <input type="text"><br>
+                    <label class="font-size">Population</label><br>
+                    <input type="text"><br>
+                    <label class="font-size">GDP</label><br>
+                    <input type="text"><br>
+                    <label class="font-size">Life Expectancy</label><br>
+                    <input type="text"><br>
+                    <label class="font-size">languages</label><br>
+                    <input type="text"><br>
+                    <button class="text-center">Submit</button>
+                </div>
+            </div>
+            <div id="filter_section" class="container w-50 text-center mt-5 text-info bg-color rounded-circle">
+                <label class=" mt-5 font-size">Filter</label><br>
+                <input type="text">
+                <div>
+                    <input type="checkbox" id="population_greater_than" class="filter-toggle">
+                    <label for="population_greater_than">Population Greater Than</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="gdp_greater_than" class="filter-toggle">
+                    <label for="gdp_greater_than">GDP Greater Than</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="population_lesser_than" class="filter-toggle">
+                    <label for="population_lesser_than">Population Lesser Than</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="gdp_lesser_than" class="filter-toggle">
+                    <label for="gdp_lesser_than">GDP Lesser Than</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="life_expectancy_equal_to" class="filter-toggle">
+                    <label for="life_expectancy_equal_to">Life Expectancy Equal To</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="language" class="filter-toggle">
+                    <label for="language">languageguage</label>
+                </div>
 
-	<div class="header">
-		<h1>Coutries Database</h1>
-	</div>
-	<div class="input_field">
-		<h2>Add a New Country </h2>
-		<label>Name</label>
-		<input type="text" name="name" placeholder="Country Name" class="common" id="name"><br><br>
-		<label>Population</label>
-		<input type="text" name="Population" placeholder="Enter Population" class="common" id="population"><br><br>
-		<label>GDP</label>
-		<input type="text" name="GDP" placeholder="Enter GDP" class="common" id="gdp"><br><br>
-		<label>Life Expectancy</label>
-		<input type="text" name="life" placeholder="Enter Life Expectancy" class="common" id="life"><br><br>
-		<label>Languages</label>
-		<input type="text" name="Languages" placeholder="Enter Language(s)" class="common" id="languages"><br><br>
-		<button onclick="country_data()">Submit</button>
-		<h1> Click here to print all customers! <h1>
- 		<button onclick="show_details()">Print Customers</button>  
- 	 	<div id="displayContainer"> </div>
-
-	</div>
-	<div class = "selector">
-		
-	<label>Filter Input</label><br> 
-	<input type="text" name="filter input" placeholder="Enter Data">
-
-	<input type="checkbox" name="pgreater"> Populatin Greater Than <br>
-	<input type="checkbox" name="plessthan"> Population Lesser Than <br>
-	<input type="checkbox" name="life_expectancy"> Life Expectany Equal to <br>
-	<input type="checkbox" name="gdpgrater"> GDP Greater Than<br>
-	<input type="checkbox" name="gdplesser"> GDP Lesser Than<br>
-	<input type="checkbox" name="Language"> Language	
-	</div>
-	<script type="text/javascript">
-		function Country (name, population, gdp, life, languages) {
-			this.name = name;
-			this.population = population;
-			this.gdp = gdp;
-			this.life = life;
-			this.languages = languages;
-
-			this.displayDetails = function () {
-        	var output = '';
-        	for (key in this) {
-          		output = output + document.getElementById(key).name + ': ' + this[key] + '\n';
-          		if(key == 'languages') {
-            	break;
-        		}
-        	return output;
-      		}
-    	}
-    }
-
-    var data = [];
-
-    function country_data() {
-      var inputs = document.querySelectorAll('.common');
-      var newCountry = new Country();
-      var i = 0;
-      
-      for (key in newCountry) {
-
-        if(newCountry[key] == undefined) {
-
-          if(key != 'languages') {
-
-            newCountry[key] = inputs[i].value;
-          } 
-
-          else {
-            newCountry[key] = inputs[i].value.split(',');
-          }
-
-          inputs[i].value = '';
-          i++;
-        }
-      }
-
-      data.push(newCountry);
-      
-    }
-     function show_details() {
-
-      var displayDiv = document.getElementById('displayContainer');
-      displayDiv.innerHTML = '';
-      for ( var i = 0; i < data.length; i++) {
-
-        var displayP = document.createElement('p');
-        displayP.textContent = data[i].displayDetails();
-        displayDiv.appendChild(displayP);
-      }
-    }
-
-	</script>
+            </div>
+            <div class=" bg-danger text-center">
+                <table class="ml-5">
+                    <tr class="text-center ml-5">
+                        <td class="text-center ml-5">Name</td>
+                        <td class="text-center ml-5">Population</td>
+                        <td class="text-center ml-5">GDP</td>
+                        <td class="text-center ml-5">Life Expectancy</td>
+                        <td class="text-center ml-5">languages</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
