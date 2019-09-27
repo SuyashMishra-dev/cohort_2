@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Movies Database</title>
+</head>
+
+<body>
+    <h1 class="text-center text-light"><u>Create Movie Database</u></h1>
+    <div class="row">
+        <div class="container col-6">
+            <form title="add_new_movie" class="float-right">
+                <label class="text-light"> Enter Movie Name</label><br>
+                <input type="text"><br>
+                <label class="text-light"> Enter Directors Name</label><br>
+                <input type="text"><br>
+                <label class="text-light">Ente Releasing Year</label><br>
+                <input type="text"><br>
+                <label class="text-light">Enter Rating</label><br>
+                <input type="text"><br>
+                <label class="text-light">Enter Writers Name</label><br>
+                <input type="text"><br>
+                <button type="submit" id="submit_movie" class="mt-5">Submit</button>
+                <button id="see_movies_details">Print All Movies</button>
+            </form>
+        </div>
+
+        <div class="container col-6">
+            <form title="add_new_actor">
+                <label class="text-light">Enter Actor Name</label><br>
+                <input type="text"><br>
+                <label class="text-light">Enter Actor's Age</label><br>
+                <input type="text"><br>
+                <label class="text-light">Enter Actor's DOB</label><br>
+                <input type="text"><br>
+                <label class="text-light">Enter Actor's Movie</label><br>
+                <input type="text"><br>
+                <button type="submit" id="submit_actor" class="mt-5">Submit</button>
+                <button id="see_all_actors">Print All Actors</button>
+            </form>
+        </div>
+    </div>
+    <div class="text-center mt-5">
+        <form>
+            <label class="text-light">Search by Actor's Name</label>
+            <input type="text">
+            <button id="see_all_movie">Print Actor Movies</button>
+        </form>
+    </div>
+
+    <div id="root"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

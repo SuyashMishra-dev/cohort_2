@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <title>
+        Weather
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="navbar-light bg-light text-center">
+        <h1 class="navbar-brand text-center">See the Weather for any City!</h1>
+    </div>
+        <div class="text-center">
+            <nav class="navbar navbar-light text-center">
+                <form class="form-inline">
+                    <input id="cityName" class="form-control mr-sm-2" type="search" placeholder="City Name" aria-label="Search">
+                    <button onclick="getUserData()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+        </div>
+
+    <div class="card">
+        <div class="card-body">
+          <p class="card-title" id="city"></p>
+          <p class="card-title" id="cityTemp"></p>
+          <p class="card-title" id="Wind"></p>
+          <p class="card-title" id="sunrise"></p>
+          <p class="card-title" id="citySunset"></p>             
+        </div>
+    </div>
+        <script>
+            var displayData = function (input) {
+                var objects = JSON.parse(input);
+                document.querySelector('#city').innerHTML = "City: " +objects["data"][0].city_name;
+                document.querySelector('#cityTemp').innerHTML ="Temprature: " +objects["data"][0].temp + " C";
+                document.querySelector('#Wind').innerHTML = "Wind: " + objects["data"][0].wind_cdir_full;
+                document.querySelector('#sunrise').innerHTML = "Sun Rise: " + objects["data"][0].sunrise;
+                document.querySelector('#citySunset').innerHTML = "City Sunset: " + objects["data"][0].sunset;
+            }
+            function getUserData() {
+                var city = document.getElementById('cityName').value;
+                        console.log("hi")
+                var xhr = new XMLHttpRequest();
+                var apiKey = "794066b039204ed085340e81aa2e7d36"
+                var url = 'https://api.weatherbit.io/v2.0/current?city=' + city + ',IN&key=' + apiKey;
+                xhr.open('GET', url);
+                xhr.send();
+                xhr.onload = function () {
+                    if (xhr.status == 200) {
+                        console.log("hi")
+                        result = xhr.response;
+                        console.log(result);
+                        displayData(result);
+                    }
+                    else {
+                        console.log("Error code is:" + xhr.status);
+                    }
+                }
+            }
+            
+            
+
+        </script>
+</body>
+
+</html>
