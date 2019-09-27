@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <style type="text/css">
+
+        #id2 {
+            display: flex;
+            flex-direction:row;
+        }
+
+        #id1 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .box {
+            background: yellow;
+            margin: 10px;
+            width: 1600px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 10mm;
+        }
+
+        .box1, .box2, .box3, .box4{
+            margin: 10px;
+            height: 300px;
+            width: 400px;
+            font-size: 6mm;
+        }
+
+        .box1{
+            background: red;
+        }
+
+        .box2 {
+            background: green;
+        }
+
+        .box3 {
+            background:blue;
+        }
+
+        .box4 {
+            background:grey;
+        }
+
+        @media(min-width: 700px) and (max-width: 1200px){
+
+            body{
+                margin: 100px;
+            }
+
+            .box{
+                width: 520px;
+            }
+
+            .box1{
+                height: 200px;
+                width: 250px;
+                margin: 10px;
+            }
+            .box2{
+                height: 200px;
+                width: 250px;
+                margin: 10px;
+                float: left;
+                margin-top: 230px;
+                margin-left: -260px;
+            }
+            .box3{
+                height: 200px;
+                width: 250px;
+                margin: 10px;
+                float: right;
+            }
+            .box4{
+                height: 200px;
+                width: 250px;
+                margin: 10px;
+                margin-top: 230px;
+                margin-left:-260px;
+            }
+        }
+
+        @media(max-width: 700px){
+
+            body{
+                margin: 100px;
+            }
+
+            .box{
+                width: 250px;
+            }
+
+            .box1{
+                height: 100px;
+                width: 250px;
+                margin: 10px;
+            }
+            .box2{
+                height: 100px;
+                width: 250px;
+                margin: 10px;
+                float: left;
+                margin-top: 250px;
+                margin-left: -260px;
+            }
+            .box3{
+                height: 100px;
+                width: 250px;
+                margin: 10px;
+                float: left;
+                margin-top: 370px;
+                margin-left: -260px;
+            }
+            .box4{
+                height: 100px;
+                width: 250px;
+                margin: 10px;
+                float: left;
+                margin-top: 130px;
+                margin-left:-260px;
+            }
+        }
+
+        </style>
+    </head>
+    <body>
+        <div id="id1">
+            <p class="box">Navigation</p>
+        </div>
+        <div id="id2">
+            <p class="box1">BOX 1</p>
+            <p class="box2">BOX 2</p>
+            <p class="box3">BOX 3</p>
+            <p class="box4">BOX 4</p>
+        </div>
+    </body>
+</html>
