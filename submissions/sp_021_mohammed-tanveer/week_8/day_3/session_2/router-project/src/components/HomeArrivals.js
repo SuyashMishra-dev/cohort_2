@@ -13,11 +13,11 @@ class HomeArrivals extends React.Component{
 
         let eachNewProduct = this.state.newItems.map(eachNew => 
             <div className={styles.newProducts}>
-            <img src={eachNew.image} />
-            <p>{eachNew.name}</p>
-            <p className={styles.price}>Rs. {eachNew.price}</p>
-            <button className={styles.productbutton}>Add to Cart</button>
-        </div>)
+                <img src={eachNew.image} />
+                <p>{eachNew.name}</p>
+                <p className={styles.price}>Rs. {eachNew.price}</p>
+                <button className={styles.productbutton}>Add to Cart</button>
+            </div>)
 
         return(
             <div>
