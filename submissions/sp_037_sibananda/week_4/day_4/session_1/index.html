@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Week 4 Day 4Coding 1 </title>
+</head>
+
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button id="button1"> Click here to print the JSON object </button>
+  <div id="container1"> </div>
+
+
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input type="text" id="Number1" />
+  <input type="text" id="Number2" />
+  <button id="Mul"> Calculate </button>
+  <p id="output">Output:</p>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Multiplication Table Generator</h1>
+  <table id="table"></table>
+  <input type="text" id="numberTable" />
+  <button id="genTable"> Generate Tables </button>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <table></table>
+  <input type="text" />
+  <button> Generate CAPS and small </button>
+  <script>
+    //DO NOT EDIT ANY CODE BELOW THIS LINE 
+    var items = [
+      {
+        name: "Water",
+        price: 20,
+        id: 0929
+      },
+      {
+        name: "Rice",
+        price: 50,
+        id: 2323
+      },
+      {
+        name: "Banana",
+        price: 90,
+        id: 2323
+      },
+      {
+        name: "Water",
+        price: 20,
+        id: 0929
+      }
+    ]
+
+    var mutiply = []
+    // Do NOT EDIT ANY CODE ABOVE THIS LINE 
+    //Place all your code below this line!
+    function convert() {
+      var conversion = JSON.stringify(items)
+
+      var displayData = document.getElementById("container1");
+      displayData.innerText = conversion;
+    }
+    var button1 = document.getElementById("button1");
+    button1.addEventListener("click", convert);
+
+    function exponent(x, y, callback) {
+      var exponent = x ** y;
+      return callback(exponent);
+
+    }
+    var display=function(dis) {
+      return "The exponent is:" + dis;
+    }
+    var calculate = document.getElementById("Mul");
+    calculate.addEventListener('click', function () {
+      var x = document.getElementById('Number1').value;
+      var y = document.getElementById('Number2').value;
+      var displayString = exponent(x, y, display);
+      var Output = document.getElementById("output");
+      Output.innerText += displayString;
+
+    });
+    function generateTable() {
+      var numberTable=document.getElementById('numberTable').value;
+      var table=document.querySelector("table");
+      
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+.navbar{
+    background-color: #1C233B;
+    height:60px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.navlinks{
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.header{
+    background-color: #BDE9F1;
+    text-align: center;
+    padding: 60px;
+    background-image: url('https://www.dunzo.com/static/images/home_banner.png')
+}
+
+.searchform{
+    padding-top: 30px;
+}
+
+.searchInput{
+    width: 550px;
+    height: 40px;
+}
+
+.searchbutton{
+    height: 45px;
+    width: 100px;
+    background-color: #4BC18C;
+    color: white;
+    border: 1px solid #4BC18C;
+    border-radius: 8px;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.homeSecond{
+    padding: 50px;
+    text-align: center;
+    display: flex;
+}
+
+.eachItem{
+    width: 500px;
+    margin-left: 50px;
+}
+
+.homeButton{
+    width: 400px;
+    height: 50px;
+    background-color: #4BC18C;
+    border: 1px solid #4BC18C;
+    color: white;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bolder
+}
+
+.pageheader{
+    background-color: #4BC18C;
+    color: white;
+    font-size: 20px;
+    padding: 50px;
+    text-align: center;
+}
+
+.form{
+    display: flex;
+}
+
+.forminput{
+    height: 20px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.formbutton{
+    background-color: #1C233B;
+    border: 1px solid #1C233B;
+    color: white;
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    font-size: 25px;
+    margin-left: 100px;
+    border-radius: 10px;
+}

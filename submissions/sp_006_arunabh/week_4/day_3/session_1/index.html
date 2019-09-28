@@ -5,23 +5,24 @@
     <style type="text/css">
     .d_para {
       white-space: pre-line;
+      font-size: 20px;
     }
     </style>
   </head>
 <body>
   <!-- FSD.W4.3.1_1 !-->
   <h1>Click the button to add a new customer!</h1>
-  <label>First Name</label>
+  <label>First Name</label><br>
   <input type="text" name="firstname" id="fs" placeholder="Enter Your First Name"><br>
-  <label>Last Name</label>
+  <label>Last Name</label><br>
   <input type="text" name="lastname" id="ls" placeholder="Enter Your Last Name"><br>
-  <label>Date Of Birth</label>
+  <label>Date Of Birth</label><br>
   <input type="text" name="dob" id="dob" placeholder="Enter Your DOB"><br>
-  <label>Balance</label>
+  <label>Balance</label><br>
   <input type="text" name="balance" id="bal" placeholder="Enter Your Balance"><br>
-  <label>Account Number</label>
+  <label>Account Number</label><br>
   <input type="text" name="accnum" id="accnum" placeholder="Enter Your Account Number"><br>
-  <label>Shared Account Holders</label>
+  <label>Shared Account Holders</label><br>
   <input type="text" name="accholders" id="acchols" placeholder="Account Holders"><br>
   <button id="add_customer">Add customer</button>
   <!-- FSD.W4.3.1_3 !-->
@@ -69,6 +70,7 @@
     var new_customer = new Customers(first_name, last_name, date_of_birth, balance, account_number, str);
     
     customer_arr.push(new_customer);
+
     for(var i = 0; i<customer_arr.length; i++) {
       var string = customer_arr[i].displayDetails();
       console.log(string);
@@ -85,13 +87,14 @@
 
   var display = document.getElementById("print");
   function show_cust() {
+    var parent = document.getElementById("displayContainer");
+    parent.innerHTML = "";
     for(var i = 0; i<customer_arr.length; i++) {
       var display_para = document.createElement('p');
       display_para.setAttribute('class' , 'd_para');
       var string = customer_arr[i].displayDetails();
       display_para.textContent = string + "\n";
       
-      var parent = document.getElementById("displayContainer");
       parent.appendChild(display_para);
     }
 

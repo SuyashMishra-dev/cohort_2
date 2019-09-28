@@ -1,0 +1,135 @@
+const RestaurantItems = [
+    {
+        id: "item1",
+        url: "https://assets3.thrillist.com/v1/image/2797371/size/tmg-article_default_mobile.jpg",
+        name: "A2B",
+        description: "Continental, Pizza, Asian",
+        price: "Cost 600 for one",
+        minPrice: "Min 50",
+        time: "Up to 30 min",
+        payments: "Accepts online payments only",
+        rating: "4.3",
+        votes: "766 votes",
+        reviews: "512 reviews"
+    },
+    {
+        id: "item2",
+        url: "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/15_surprisingly_healthy_foods_slideshow/493ss_thinkstock_rf_spaghetti_with_tomatoes_on_plate.jpg",
+        name: "World Of Asia",
+        description: "Asian, Chinese",
+        price: "Cost 200 for one",
+        minPrice: "Min 50",
+        time: "Up to 45 min",
+        payments: "Accepts cash & online payments",
+        rating: "2.2",
+        votes: "164 votes",
+        reviews: "69 reviews"
+    },
+    {
+        id: "item3",
+        url: "http://www.foodofy.com/wp-content/uploads/2015/07/11014_14_site_clear.jpeg",
+        name: "Muthashy's",
+        description: "Kerala, South Indian, Chinese",
+        price: "Cost 200 for one",
+        minPrice: "Min 50",
+        time: "Up to 45 min",
+        payments: "Accepts cash & online payments",
+        rating: "3.1",
+        votes: "551 votes",
+        reviews: "127 reviews"
+    },
+    {
+        id: "item4",
+        url: "https://www.bbcgoodfood.com/sites/default/files/editor_files/2018/01/bibimbap.jpg",
+        name: "Bengali Fun Foods",
+        description: "Bengali, North Indian",
+        price: "Cost 250 for one",
+        minPrice: "Min 50",
+        time: "Up to 30 min",
+        payments: "Accepts online payments only",
+        rating: "4.1",
+        votes: "197 votes",
+        reviews: "78 reviews"
+    },
+    {
+        id: "item5",
+        url: "https://images.livemint.com/rf/Image-621x414/LiveMint/Period1/2015/10/22/Photos/freshmenu-kj1--621x414@LiveMint.jpg",
+        name: "Fresh Menu",
+        description: "Hyderabadi, Biryani, Chinese",
+        price: "Cost 200 for one",
+        minPrice: "Min 50",
+        time: "Up to 45 min",
+        payments: "Accepts cash & online payments",
+        rating: "1.9",
+        votes: "691 votes",
+        reviews: "344 reviews"
+    },
+    {
+        id: "item6",
+        url: "https://images.indulgexpress.com/uploads/user/imagelibrary/2017/7/27/original/Food09Leadnew.jpg",
+        name: "eat.fit",
+        description: "Healthy Food, North Indian",
+        price: "Cost 200 for one",
+        minPrice: "Min 50",
+        time: "Up to 45 min",
+        payments: "Accepts cash & online payments",
+        rating: "4.3",
+        votes: "1464 votes",
+        reviews: "274 reviews"
+    },
+    {
+        id: "item7",
+        url: "https://img.traveltriangle.com/blog/wp-content/tr:w-700,h-400/uploads/2017/10/Ela-Sadya.jpg",
+        name: "14 Districts",
+        description: "Kerala",
+        price: "Cost 150 for one",
+        minPrice: "Min 50",
+        time: "Up to 30 min",
+        payments: "Accepts cash & online payments",
+        rating: "3.1",
+        votes: "120 votes",
+        reviews: "65 reviews"
+    },
+    {
+        id: "item8",
+        url: "https://www.culturalindia.net/iliimages/South-Indian-Food-ili-273-img-9.JPG",
+        name: "Nandhini Deluxe",
+        description: "Andhra, Biryani, South Indian",
+        price: "Cost 350 for one",
+        minPrice: "Min 50",
+        time: "Up to 30 min",
+        payments: "Accepts cash & online payments",
+        rating: "2.0",
+        votes: "158 votes",
+        reviews: "113 reviews"
+    },
+    {
+        id: "item9",
+        url: "http://cafechennai.in/wp-content/uploads/2017/06/cover-photo-759x500.jpg",
+        name: "Dadi's Dum Biryani",
+        description: "Biryani, North Indian",
+        price: "Cost 350 for one",
+        minPrice: "Min 50",
+        time: "Up to 30 min",
+        payments: "Accepts cash & online payments",
+        rating: "4.1",
+        votes: "2787 votes",
+        reviews: "1102 reviews"
+    },
+    {
+        id: "item10",
+        url: "https://www.culturalindia.net/iliimages/South%20Indian%20Food_1.jpg",
+        name: "Sri Krishna Sagar",
+        description: "South Indian, North Indian",
+        price: "Cost 150 for one",
+        minPrice: "Min 50",
+        time: "Up to 30 min",
+        payments: "Accepts cash & online payments",
+        rating: "1.1",
+        votes: "83 votes",
+        reviews: "24 reviews"
+    }
+    
+]
+
+export default RestaurantItems;
