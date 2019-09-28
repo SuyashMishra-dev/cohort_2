@@ -49,19 +49,23 @@ handleSubmit =(event) => {
   render(){
     return (
       <div className="App">
+        <div className="App">
+        <h1> To do list </h1>
+        <h3> Add tasks to your list </h3>
         <Todolist
         handleChange={this.handleChange}
         inputValue= {this.state.inputValue}
         handleSubmit={this.handleSubmit}
         />
-
-     
-     
+  
        <TodoItem 
        handleClick={this.handleClick}
        tasksTodo ={this.state.tasksTodo}
        />
+
+       <h5>Todos are orgainsational tools</h5>
        
+      </div>
        
       </div>
     );
