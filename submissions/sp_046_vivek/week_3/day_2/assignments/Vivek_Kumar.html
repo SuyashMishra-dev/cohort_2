@@ -1,0 +1,238 @@
+<html>
+    <head>
+        <style type="text/css">
+        .heading{
+            text-align: center;
+            background: whitesmoke;
+            width: 800px;
+            height: 500px;
+            margin-left: 250px;
+            margin-top: 100px;
+            border: 1px solid whitesmoke;
+        }
+
+        h1{
+            color: orangered;
+        }
+
+        #inputbox, #outputbox, #tempinputbox, #tempoutputbox, #volinputbox, #voloutputbox{
+            height: 35px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        #tempinput, #tempoutput{
+            margin: 0px 100px 0px 20px;
+        }
+
+        #input, #output{
+            margin: 0px 105px 0px 20px;
+        }
+
+        #volinput, #voloutput{
+            margin: 0px 50px 0px 20px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="heading">
+            <h1>CONVERTER</h1>
+            <h2>Length Converter</h2>
+            <input type="text" id="inputbox">
+            <span> = </span>
+            <input type="text" id="outputbox">
+            <br>
+            <select id="input">
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="mile">Mile</option>
+                <option value="lightyear">Light Year</option>
+            </select>
+            <select id="output">
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="mile">Mile</option>
+                <option value="lightyear">Light Year</option>
+            </select>
+    
+            <h2>Temperature Converter</h2>
+            <input type="text" id="tempinputbox">
+            <span> = </span>
+            <input type="text" id="tempoutputbox">
+            <br>
+            <select id="tempinput">
+                <option value="celsius">Celsius</option>
+                <option value="kelvin">Kelvin</option>
+                <option value="fahrenheit">Fahrenheit</option>
+            </select>
+            <select id="tempoutput">
+                <option value="celsius">Celsius</option>
+                <option value="kelvin">Kelvin</option>
+                <option value="fahrenheit">Fahrenheit</option>
+            </select>
+    
+            <h2>Volume Converter</h2>
+            <input type="text" id="volinputbox">
+            <span> = </span>
+            <input type="text" id="voloutputbox">
+            <br>
+            <select id="volinput">
+                <option value="liter">Liter</option>
+                <option value="milliliter">Milliliter</option>
+                <option value="usgallon">US Gallon</option>
+                <option value="imperialteaspoon">Imperial Tea Spoon</option>
+            </select>
+            <select id="voloutput">
+                <option value="liter">Liter</option>
+                <option value="milliliter">Milliliter</option>
+                <option value="usgallon">US Gallon</option>
+                <option value="imperialteaspoon">Imperial Tea Spoon</option>
+            </select>
+        </div>
+
+        <script>
+            var input = document.getElementById("input");
+            var output = document.getElementById("output");
+            var inputbox = document.getElementById("inputbox");
+            var outputbox = document.getElementById("outputbox");
+            var inputvalue,outputvalue;
+            inputbox.addEventListener("keyup",lengthConverter);
+            input.addEventListener("change",lengthConverter);
+            output.addEventListener("change",lengthConverter);
+            function lengthConverter(){
+                inputvalue = input.value;
+                outputvalue = output.value;
+
+                if (inputvalue === "meter" && outputvalue === "kilometer") {
+                    outputbox.value = Number(inputbox.value)*0.001;
+                } else if(inputvalue === "meter" && outputvalue === "mile"){
+                    outputbox.value = Number(inputbox.value)*0.000621371;
+                } else if(inputvalue === "meter" && outputvalue === "lightyear"){
+                    outputbox.value = Number(inputbox.value)*1.057e-16;
+                } else if(inputvalue === "meter" && outputvalue === "meter"){
+                    outputbox.value = inputbox.value;
+                }
+
+                if (inputvalue === "kilometer" && outputvalue === "meter") {
+                    outputbox.value = Number(inputbox.value)*1000;
+                } else if(inputvalue === "kilometer" && outputvalue === "mile"){
+                    outputbox.value = Number(inputbox.value)*0.621371;
+                } else if(inputvalue === "kilometer" && outputvalue === "lightyear"){
+                    outputbox.value = Number(inputbox.value)*1.057e-13;
+                } else if(inputvalue === "kilometer" && outputvalue === "kilometer"){
+                    outputbox.value = inputbox.value;
+                }
+
+                if (inputvalue === "mile" && outputvalue === "meter") {
+                    outputbox.value = Number(inputbox.value)*1609.34;
+                } else if(inputvalue === "mile" && outputvalue === "kilometer"){
+                    outputbox.value = Number(inputbox.value)*1.60934;
+                } else if(inputvalue === "mile" && outputvalue === "lightyear"){
+                    outputbox.value = Number(inputbox.value)*1.70108e-13;
+                } else if(inputvalue === "mile" && outputvalue === "mile"){
+                    outputbox.value = inputbox.value;
+                }
+
+                if (inputvalue === "lightyear" && outputvalue === "meter") {
+                    outputbox.value = Number(inputbox.value)*9.461e+15;
+                } else if(inputvalue === "lightyear" && outputvalue === "kilometer"){
+                    outputbox.value = Number(inputbox.value)*9.461e+12;
+                } else if(inputvalue === "lightyear" && outputvalue === "mile"){
+                    outputbox.value = Number(inputbox.value)*5.879e+12;
+                } else if(inputvalue === "lightyear" && outputvalue === "lightyear"){
+                    outputbox.value = inputbox.value;
+                }
+            }
+
+            var tempinputbox = document.getElementById("tempinputbox");
+            var tempoutputbox = document.getElementById("tempoutputbox");
+            var tempinput = document.getElementById("tempinput");
+            var tempoutput = document.getElementById("tempoutput");
+            var tempinputvalue,tempoutputvalue;
+            tempinputbox.addEventListener("keyup",tempConverter);
+            tempinput.addEventListener("change",tempConverter);
+            tempoutput.addEventListener("change",tempConverter);
+            function tempConverter() {
+                tempinputvalue = tempinput.value;
+                tempoutputvalue = tempoutput.value;
+
+                if (tempinputvalue === "celsius" && tempoutputvalue === "kelvin") {
+                    tempoutputbox.value = Number(tempinputbox.value)+ 273.15;
+                } else if(tempinputvalue === "celsius" && tempoutputvalue === "fahrenheit"){
+                    tempoutputbox.value = (Number(tempinputbox.value)*9/5)+32;
+                } else if(tempinputvalue === "celsius" && tempoutputvalue === "celsius"){
+                    tempoutputbox.value = tempinputbox.value;
+                }
+
+                if (tempinputvalue === "kelvin" && tempoutputvalue === "celsius") {
+                    tempoutputbox.value = Number(tempinputbox.value)+ -273.15;
+                } else if(tempinputvalue === "kelvin" && tempoutputvalue === "fahrenheit"){
+                    tempoutputbox.value = (Number(tempinputbox.value)- 273.15)* 9/5+32;
+                } else if(tempinputvalue === "kelvin" && tempoutputvalue === "kelvin"){
+                    tempoutputbox.value = tempinputbox.value;
+                }
+
+                if (tempinputvalue === "fahrenheit" && tempoutputvalue === "celsius") {
+                    tempoutputbox.value = (Number(tempinputbox.value)-32)*5/9;
+                } else if(tempinputvalue === "fahrenheit" && tempoutputvalue === "kelvin"){
+                    tempoutputbox.value = (Number(tempinputbox.value)-32)*5/9+273.15;
+                } else if(tempinputvalue === "fahrenheit" && tempoutputvalue === "fahrenheit"){
+                    tempoutputbox.value = tempinputbox.value;
+                }
+            }
+
+            var volinput = document.getElementById("volinput");
+            var voloutput = document.getElementById("voloutput");
+            var volinputbox = document.getElementById("volinputbox");
+            var voloutputbox = document.getElementById("voloutputbox");
+            var volinputvalue, voloutputvalue;
+            volinputbox.addEventListener("keyup",volConverter);
+            volinput.addEventListener("change",volConverter);
+            voloutput.addEventListener("change",volConverter);
+            function volConverter() {
+                volinputvalue = volinput.value;
+                voloutputvalue = voloutput.value;
+
+                if (volinputvalue === "liter" && voloutputvalue === "milliliter") {
+                    voloutputbox.value = Number(volinputbox.value)*1000;
+                } else if(volinputvalue === "liter" && voloutputvalue === "usgallon"){
+                    voloutputbox.value = Number(volinputbox.value)*0.264172;
+                } else if(volinputvalue === "liter" && voloutputvalue === "imperialteaspoon"){
+                    voloutputbox.value = Number(volinputbox.value)*168.936;
+                } else if(volinputvalue === "liter" && voloutputvalue === "liter"){
+                    voloutputbox.value = volinputbox.value;
+                }
+
+                if (volinputvalue === "milliliter" && voloutputvalue === "liliter") {
+                    voloutputbox.value = Number(volinputbox.value)*0.001;
+                } else if(volinputvalue === "milliliter" && voloutputvalue === "usgallon"){
+                    voloutputbox.value = Number(volinputbox.value)*0.000264172;
+                } else if(volinputvalue === "milliliter" && voloutputvalue === "imperialteaspoon"){
+                    voloutputbox.value = Number(volinputbox.value)*0.168936;
+                } else if(volinputvalue === "milliliter" && voloutputvalue === "milliliter"){
+                    voloutputbox.value = volinputbox.value;
+                }
+
+                if (volinputvalue === "usgallon" && voloutputvalue === "liter") {
+                    voloutputbox.value = Number(volinputbox.value)*3.78541;
+                } else if(volinputvalue === "usgallon" && voloutputvalue === "milliliter"){
+                    voloutputbox.value = Number(volinputbox.value)*3785.41;
+                } else if(volinputvalue === "usgallon" && voloutputvalue === "imperialteaspoon"){
+                    voloutputbox.value = Number(volinputbox.value)*639.494;
+                } else if(volinputvalue === "usgallon" && voloutputvalue === "usgallon"){
+                    voloutputbox.value = volinputbox.value;
+                }
+
+                if (volinputvalue === "imperialteaspoon" && voloutputvalue === "liter") {
+                    voloutputbox.value = Number(volinputbox.value)*0.00591939;
+                } else if(volinputvalue === "imperialteaspoon" && voloutputvalue === "milliliter"){
+                    voloutputbox.value = Number(volinputbox.value)*5.91939;
+                } else if(volinputvalue === "imperialteaspoon" && voloutputvalue === "usgallon"){
+                    voloutputbox.value = Number(volinputbox.value)*0.00156374;
+                } else if(volinputvalue === "imperialteaspoon" && voloutputvalue === "liter"){
+                    voloutputbox.value = volinputbox.value;
+                }
+            }
+        </script>
+    </body>
+</html>

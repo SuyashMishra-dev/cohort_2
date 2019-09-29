@@ -1,33 +1,12 @@
- 
- body {
- 	background-color: lightblue;
+body {
+    background-image: url("https://images8.alphacoders.com/101/thumb-1920-1011824.jpg");
+    background-size: 100% 100%;
 }
-.header h1 {
-	color: black;
-	font-size: 40px;
-	text-align: center;
-	padding-top: 20px;
-	font-family: 'Lobster', cursive
+
+.font-size {
+    font-size: 35px;
 }
-label {
-	color: white;
-}
-.input_field h2 {
-	color: white;
-	text-align: center;
-}
-button {
-	margin-left: 50px;	
-}
-.selector {
-	width:700px; 
-	margin-left: 50px;
-	margin-top: -220px;
-	float: right;
-}
-.selector label {
-	margin-left: 380px;	
-}
-.selector input {
-	margin-left: 300px;
+
+.bg-color {
+    background-color: rgba(0, 0, 0, 0.5)
 }
