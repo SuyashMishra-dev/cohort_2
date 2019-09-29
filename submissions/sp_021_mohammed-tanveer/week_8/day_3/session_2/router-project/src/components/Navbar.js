@@ -8,8 +8,8 @@ class Navbar extends React.Component{
         this.state = {
             menuLinks: [{name: 'Home', url: '/'},
                         {name: 'Fashion', url: '/fashion'},
-                        {name: 'Men Clothing', url: '/fashion/men'},
                         {name: 'Women Clothing', url: '/fashion/women'},
+                        {name: 'Men Clothing', url: '/fashion/men'},
                         {name: 'Kids Clothing', url: '/fashion/kids'},
                         {name: 'Current Trends', url: '/current'}]
         }
@@ -21,7 +21,7 @@ class Navbar extends React.Component{
         return(
             <div className={styles.menubar}>
                 <div className={styles.logo}>
-                    <img src="http://logok.org/wp-content/uploads/2014/03/MasterCard-Logo.png" width="100"/>
+                    <Link to="/"><img src="http://logok.org/wp-content/uploads/2014/03/MasterCard-Logo.png" width="100"/></Link>
                 </div>
                 <div className={styles.navbardiv}>
                     {allLinks}

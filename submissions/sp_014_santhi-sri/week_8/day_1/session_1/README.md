@@ -1,18 +1,4 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-## Mohammed Tanveer
-
-![Image ](https://i.ibb.co/47Gn3Bs/screencapture-localhost-3000-2019-09-28-01-15-09.png)
-
-
-- [ ] Your website must contain a navigation bar with links to different product categories and other pages.
-- [ ] Your website must contain a banner at the very top advertising an ongoing deal or coupon code.
-- [ ] You website must contain a footer with some social media icons and some links for FAQ, Job opportunities etc.
-- [ ] A Shopping Cart Icon on your navigation bar. This does not have to do anything for now.
-
-- [ ] Products categories depending on the kind of product you have. Eg: A clothing store would have Mens, Womens, Unisex etc. It is up to you.
-- [ ] About Us Page.
-- [ ] FAQ page.
-- [ ] Contact Us page.
 
 ## Available Scripts
 
