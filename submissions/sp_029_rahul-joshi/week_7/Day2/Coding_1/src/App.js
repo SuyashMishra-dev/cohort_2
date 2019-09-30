@@ -3,6 +3,7 @@ import React from 'react';
 // import './App.css';
 import List from "./List"
 import Button from "./button"
+import Profile from "./Profile"
 
 
 class App extends React.Component {
@@ -16,6 +17,8 @@ class App extends React.Component {
             <Button b1="LOGIN" b2="CONTACT US" color1="yellow" color2="red" />
              <Button b1="SEARCH" b2="HELP" color1="green" color2="purple" />
               <Button b1="HOME" b2="DOWNLOAD" color1="pink" color2="brown" />
+              <Profile />
+              
 
         
 
