@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Week 4 Day 4Coding 1 </title>
+</head>
+<body>
+  <!-- FSD.W4.4.1_1 !-->
+  <h1> Printing a JSON object!</h1>
+  <button id="print_json"> Click here to print the JSON object </button>
+  <div id = "container1"> </div>
+  <!-- FSD.W4.4.1_2 !-->
+  <h1> An exponent calculator </h1>
+  <input type = "text" id="first_num"/>
+  <input type = "text" id="second_num"/>
+  <button id="cal"> Calculate </button>
+  <p id="out">Output:</p>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Multiplication Table Generator</h1>
+  <table></table>
+  <input type = "text" id="num"/>
+  <button id="generate"> Generate Tables </button>
+  <!-- FSD.W4.4.1_3 !-->
+  <h1> Different Cases</h1>
+  <table id="alpha"></table>
+  <input type = "text" id="alphabets_input"/>
+  <button id="alphabets"> Generate CAPS and small </button>
+  <script>
+  //DO NOT EDIT ANY CODE BELOW THIS LINE 
+  var items = [
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    },
+    {
+      name: "Rice",
+      price: 50,
+      id: 2323
+    },
+    {
+      name: "Banana",
+      price: 90,
+      id: 2323
+    },
+    {
+      name: "Water",
+      price: 20,
+      id: 0929
+    }
+  ]
+
+  var multiply = [];
+  // Do NOT EDIT ANY CODE ABOVE THIS LINE 
+  //Place all your code below this line!
+
+  var create_json = document.getElementById('print_json');
+  function convert_object() {
+    var item = JSON.stringify(items);
+    // console.log(typeof(item));
+    // console.log(item);
+ 
+    var parent = document.getElementById('container1');
+
+    for(var i = 0; i < items.length; i++ ) {
+      var para1= document.createElement('p');
+      para1.textContent = "Name:" + items[i].name + " " + "Price:" + items[i].price;
+      parent.appendChild(para1);
+    }
+  }
+  create_json.addEventListener('click' , convert_object);
+
+  var calculas = document.getElementById('cal');
+  function exponent(x, y, callback) {
+    //console.log("2nd");
+
+    var result = x ** y;
+    //console.log(result);
+    callback(result);
+  }
+  function display(number) {
+    //console.log("3rd");
+
+    var output = document.getElementById('out');
+    output.textContent = output.textContent + "The Exponent is: " + number;
+    console.log(output.textContent);
+
+    
+  }
+  calculas.addEventListener('click' , function() {
+  //  console.log("1st");
+
+    var x = Number(document.getElementById('first_num').value);
+    var y = Number(document.getElementById('second_num').value);
+    exponent(x , y , display);   
+  });
+
+  var create_table = document.getElementById('generate');
+  var outer = document.querySelector('table');
+
+  // function make_table(number , callback) {
+  //   for(var i = 1; i <= number; i++) {
+  //     var trow = document.createElement('tr');
+  //     trow.setAttribute('class' , 'class'+i);
+
+  //     outer.appendChild(trow);
+
+  //     multiply.push(i);
+  //   }
+  //   callback(multiply);
+  // }
+
+  // function table_data(arr) {  
+
+  //   for(var i=1; i <= arr.length; i++) {
+  //     var row = document.querySelector('.class'+i);
+
+  //     arr.forEach(function(element){
+  //       var t_data = document.createElement('td');
+  //       t_data.textContent = element * i;
+  //       row.appendChild(t_data);
+  //       console.log(t_data.textContent);
+  //     });
+  //   }
+  // }
+
+  function make_table(num){
+    for(var i = 0; i <= 3; i++){
+      var trow = document.createElement('tr');
+      trow.setAttribute('class','class'+i);
+      outer.appendChild(trow);
+
+      for(var j = 1; j <= num; j++){
+        if(i == 0){
+          var thead = document.createElement('th');
+          thead.textContent = (j)+"*";
+          thead.setAttribute('style','border:1px solid gray');
+          trow.appendChild(thead);
+        }
+        else{
+          var tdata = document.createElement('td');
+          tdata.textContent = j*(i+1);
+          tdata.setAttribute('style','border:1px solid gray');
+          trow.appendChild(tdata);
+        }
+      }
+    }
+  }
+
+  create_table.addEventListener('click' , function() {
+    var number = Number(document.getElementById('num').value);
+      make_table(number);
+  });
+  
+
+  var alpha = document.getElementById('alphabets');
+  function change_alpha() {
+    var talpha = document.getElementById("alpha");
+
+    var str = document.getElementById('alphabets_input').value;
+    var words = str.split(',');
+    //console.log(words);
+
+    for(var i = 0; i <= words.length; i++) {
+      var trow = document.createElement('tr');
+      for(var j = 0; j < 3; j++){
+        if(i == 0) {
+          var thead = document.createElement('th');
+          if(j==0){
+            thead.textContent = "Normal";
+            thead.setAttribute('style','border:1px solid gray');
+            trow.appendChild(thead);
+            talpha.appendChild(trow);
+          }
+          else if(j == 1){
+            thead.textContent = "UPPER";
+            thead.setAttribute('style','border:1px solid gray');
+            trow.appendChild(thead);
+            talpha.appendChild(trow);
+          }
+          else{
+            thead.textContent = "lower";
+            thead.setAttribute('style','border:1px solid gray');
+            trow.appendChild(thead);
+            talpha.appendChild(trow);
+          } 
+        }
+        else{
+          var tdata = document.createElement('td');
+          var upper_case = words.map(function(element){
+            return element.toUpperCase();
+           // console.log(upper_case);
+          });
+          var lower_case = words.map(function(element){
+            return element.toLowerCase();
+          });
+          // console.log(lower_case);
+
+          if(j==0){
+            tdata.textContent = words[i-1];
+            tdata.setAttribute('style','border:1px solid gray');
+            trow.appendChild(tdata);
+            talpha.appendChild(trow);
+          }
+          else if(j == 1){
+            tdata.textContent = upper_case[i-1];
+            tdata.setAttribute('style','border:1px solid gray');
+            trow.appendChild(tdata);
+            talpha.appendChild(trow);
+          }
+          else{
+            tdata.textContent = lower_case[i-1];
+            tdata.setAttribute('style','border:1px solid gray');
+            trow.appendChild(tdata);
+            talpha.appendChild(trow);
+          } 
+        }
+      }
+    }
+  }
+  alpha.addEventListener('click' , change_alpha);
+  </script>
+</body>
+</html>
+ 
