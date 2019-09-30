@@ -113,3 +113,73 @@
     font-weight: bolder;
     margin-left: 130px;
 }
+
+.footerDiv{
+    display: flex;
+    text-align: center;
+    padding: 20px;
+}
+
+.eachFooter{
+    width: 300px;
+    margin-left: 65px;
+}
+
+.footerMain{
+    background-color: #2D4493;
+    margin-top: 10px;
+    color: white;
+}
+
+.footerText{
+    padding: 20px;
+
+}
+
+.socialLinks img{
+    padding: 5px;
+}
+
+.copright{
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+}
+
+.footerInput{
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.footerButton{
+    height: 35px;
+    background-color: #f44336;
+    border: 1px solid #f44336;
+    color: white;
+    font-weight: bolder;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.eachFooter a{
+    color: white;
+}
+
+.fashionDiv{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.about{
+    text-align: center;
+    padding: 30px;
+}
+
+.womenImagae{
+    margin-bottom: 20px;
+}
+
+.clearAll{
+    clear: both;
+}
