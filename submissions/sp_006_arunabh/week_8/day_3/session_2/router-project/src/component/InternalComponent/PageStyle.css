@@ -1,0 +1,8 @@
+.content1{
+    text-align: center;
+    color: white;
+    background: black;
+}
+.content1 > p{
+    color: gray;
+}
