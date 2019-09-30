@@ -10,7 +10,7 @@ import Login from './component/login.js';
 
 function App() {
   return (
-   
+    <div>
       <div>
 
         <React.Fragment>
@@ -24,7 +24,6 @@ function App() {
             <Link to="/service">Service</Link><br />
 
           </div>
-          
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
@@ -33,6 +32,7 @@ function App() {
 
         </React.Fragment>
       </div>  
+    </div>
   );
 }
 
