@@ -17,7 +17,7 @@ const ProductTemplate = () => {
   };
 
   const Product = (props) => {
-    if (props.name == "iPhone") {
+    if (props.name === "iPhone") {
       return (
         <React.Fragment>
           <h1> Apple iPhone </h1>
@@ -41,7 +41,7 @@ const ProductTemplate = () => {
         </React.Fragment>
       );
     }
-    if (props.name == "iPad") {
+    if (props.name === "iPad") {
       return (
         <React.Fragment>
           <h1> Best Tablet Ever </h1>
