@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Convertor from './Convetor';
+import Form from './Form';
 const volUnit=["...","Litre","mililitre","cubic foot"];
 const speedUnit=["...","m/s","km/hour","miles/hr"];
 const tempUnit=["...","K","C","Farenheit"];
@@ -137,6 +138,9 @@ class App extends React.Component {
           {this.state.value==='vol'?<Convertor unit={this.state.value}/>:null}
           {this.state.value==='speed'?<Convertor unit={this.state.value}/>:null}
           {this.state.value==='temp'?<Convertor unit={this.state.value}/>:null}
+          <div>
+            <Form />
+          </div>
        </div>
        
     );

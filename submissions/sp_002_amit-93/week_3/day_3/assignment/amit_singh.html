@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            margin-left: 500px;
+            margin-top: 150px;
+            padding: 20px;
+            border: 1px solid brown;
+            width: 200px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <label for="salary">Income</label>
+        <input type="text"  id="take1"><br>
+        <label for="saving">Saving</label>
+        <input type="text" id="take2">
+        <br>
+        <p id="display"></p>
+        <button onclick="btn()">tax calculate</button>
+    </div>
+
+    
+    
+    <script>
+        function btn() {
+            var totalIncm = document.getElementById("take1").value;
+            totalIncm = Number(totalIncm);
+            
+            var totalSaving = document.getElementById("take2").value;
+            totalSaving = Number(totalSaving); 
+
+            if (totalIncm<=250000){
+                document.getElementById("display").innerHTML = 0;
+            }
+            else if (totalIncm>250000 && totalIncm<=500000){
+                
+                totalSavingRebate = (totalSaving*0.5);
+                total=(totalIncm+totalSaving-250000-totalSavingRebate);
+                tax  = (total * 0.1);
+                document.getElementById("display").innerHTML = tax;
+
+            }
+            else if (totalIncm > 500000 && totalIncm <= 1000000) {
+                totalSavingRebate = (totalSaving * 0.3);
+                total = (totalIncm + totalSaving -500000- totalSavingRebate);
+                tax = (total * 0.2) + 250000*0.1;
+                document.getElementById("display").innerHTML = tax;
+
+            }
+            else  {
+                totalSavingRebate = (totalSaving * 0.1);
+                total = (totalIncm + totalSaving -1000000 -totalSavingRebate);
+                tax = (total * 0.3)+(500000*0.2)+(250000*0.1);
+                document.getElementById("display").innerHTML = tax;
+            }
+        }
+          
+    
+
+
+    </script>
+</body>
+</html>
