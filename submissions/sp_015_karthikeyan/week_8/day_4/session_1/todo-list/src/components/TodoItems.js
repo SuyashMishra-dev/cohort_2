@@ -1,10 +1,10 @@
 import React from 'react';
-import { List, ListItem, ListItemIcon, Checkbox, ListItemText, ListItemSecondaryAction, IconButton } from '@material-ui/core';
+import { ListItem, ListItemIcon, Checkbox, ListItemText, ListItemSecondaryAction, IconButton } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 const TodoItem = (props) => {
     return (
-        <List>
+        <>
             {props.data.map((ele, i) => {
                 let decor = '';
                 if(ele.isCompleted) {
@@ -14,7 +14,7 @@ const TodoItem = (props) => {
                 return (
                     <ListItem key={ele.item} role={undefined} dense button onChange={(e) => props.changeFunc(e, i)} key={i}>
                         <ListItemIcon>
-                            <Checkbox edge='start' />
+                            <Checkbox edge='start' checked={ele.isCompleted} />
                         </ListItemIcon>
                         <ListItemText primary={ele.item} style={decor} />
                         <ListItemSecondaryAction onClick={(e) => {props.removeFunc(e,i)}} key={i} >
@@ -25,7 +25,7 @@ const TodoItem = (props) => {
                     </ListItem>
                 )
             })}    
-        </List>
+        </>
     )
 }
 

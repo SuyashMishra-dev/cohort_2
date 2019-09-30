@@ -55,7 +55,7 @@ class App2 extends React.Component {
     }
 }
 
-class App extends React.Component {
+    [class App extends React.Component {
     render() {
         var arr = [{
             label: 'JOIN US',
@@ -94,7 +94,7 @@ class App extends React.Component {
             label : "DOWNLOAD",
             color : "olive",
         },
-        ]
+    ]
         var os = [{
             name:"Android",
                 }]
@@ -123,6 +123,6 @@ class App extends React.Component {
     }
 }
 
-// export { App , App2 }
+// export { App , App2 } 
 export default App;
 // export default App2
