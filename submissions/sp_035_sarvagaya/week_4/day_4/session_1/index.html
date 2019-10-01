@@ -17,13 +17,13 @@
     <!-- FSD.W4.4.1_3 !-->
     <h1> Multiplication Table Generator</h1>
     <table></table>
-    <input type = "text"/>
-    <button> Generate Tables </button>
+    <input id="tables" type = "text"/>
+    <button onclick="createTable()"> Generate Tables </button>
     <!-- FSD.W4.4.1_3 !-->
     <h1> Different Cases</h1>
     <table></table>
-    <input type = "text"/>
-    <button> Generate CAPS and small </button>
+    <input id="input" type = "text"/>
+    <button onclick="differentCase()"> Generate CAPS and small </button>
     <script>
     //DO NOT EDIT ANY CODE BELOW THIS LINE 
     var items = 
@@ -63,14 +63,15 @@
       
     }
 
-    x=document.getElementById("number1").value;
-      y=document.getElementById("number2").value;
+    var x=document.getElementById("number1").value;
+      var y=document.getElementById("number2").value;
 
     function sum(x,y,callback)
     {
       
       var calculate=x**y;
       callback(calculate);
+      
     }
     var print=function(display)
     {
@@ -82,9 +83,92 @@
       display=sum(x,y,print);
       
     }
+
     var mutiply = []
     // Do NOT EDIT ANY CODE ABOVE THIS LINE 
     //Place all your code below this line!
+    function createTable()
+    {
+      var data = document.getElementById("tables").value;
+      var body = document.querySelector("body");
+      for(var i=1;i<=data;i++)
+      {
+        for(var j=1;j<=3;j++)
+        {
+          // console.log(i*j);
+          body.append(i*j);
+        }
+      }
+    }
+    function differentCase()
+    {
+      var lower = [];
+      var upper = [];
+      var normal = [];
+      var input = document.getElementById("input").value;
+
+      for(var i=0;i<=input.length-1;i++)
+      {
+        normal.push(input[i]);
+        upper.push(input[i]);
+        lower.push(input[i]);
+      }
+      // console.log(upper);
+      // console.log(lower);
+      // var data = normal.split(",");
+      normal=normal.join("");
+      lower=lower.join("");
+      upper=upper.join("");
+      // console.log((lower.toUpperCase()));
+      lower=lower.toLowerCase();
+      // console.log(lower);
+
+      upper=upper.toUpperCase();
+      // console.log(upper);
+
+      // console.log(normal);
+      var bodyEle = document.querySelector("body");
+      var table = document.createElement("table");
+
+      var tableRow1 = document.createElement("tr");
+      var tableCol1 = document.createElement("td");
+      var tableCol2 = document.createElement("td");
+      var tableCol3 = document.createElement("td");
+
+      var tableRow2 = document.createElement("tr");
+      var tableCol4 = document.createElement("td");
+      var tableCol5 = document.createElement("td");
+      var tableCol6 = document.createElement("td");
+
+      tableCol1.textContent = "Normal";
+      tableCol1.setAttribute("style", "border: 1px solid black")
+      tableCol2.textContent = "Upper";
+      tableCol2.setAttribute("style", "border: 1px solid black")
+      tableCol3.textContent = "Lower";
+      tableCol3.setAttribute("style", "border: 1px solid black")
+
+      tableCol4.append(normal);
+      tableCol4.setAttribute("style", "border: 1px solid black")
+      tableCol5.append(upper);
+      tableCol5.setAttribute("style", "border: 1px solid black")
+      tableCol6.append(lower);
+      tableCol6.setAttribute("style", "border: 1px solid black")
+
+      
+      tableRow1.appendChild(tableCol1);
+      tableRow1.appendChild(tableCol2);
+      tableRow1.appendChild(tableCol3);
+
+      tableRow2.appendChild(tableCol4);
+      tableRow2.appendChild(tableCol5);
+      tableRow2.appendChild(tableCol6);
+
+      table.appendChild(tableRow1);
+      table.appendChild(tableRow2);
+
+      bodyEle.appendChild(table);
+
+    }
     
     </script>
   </body>

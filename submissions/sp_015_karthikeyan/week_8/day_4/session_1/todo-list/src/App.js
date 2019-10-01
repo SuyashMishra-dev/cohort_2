@@ -61,7 +61,7 @@ export default class App extends React.Component {
                 </form>
                 <Divider style={{marginTop: '30px'}} />
                 <Grid container justify='center' alignItems='center'>
-                    <Grid item md={4}>
+                    <Grid item xs={12} md={4}>
                         <List>
                             <TodoItems data={this.state.savedItems} changeFunc={(e,i) => {this.changeCompletedStatus(i)}} removeFunc={(e,i) => this.removeToDoItem(i)} />
                         </List>
