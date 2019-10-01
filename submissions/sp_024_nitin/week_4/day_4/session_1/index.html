@@ -22,7 +22,7 @@
   <p id = "expOut">Output:</p>
   <!-- FSD.W4.4.1_3 !-->
   <h1> Multiplication Table Generator</h1>
-  <table border = "1"></table>
+  
   <input type = "text" id = 'tables'/>
   <button id = "click"> Generate Tables </button>
   <!-- FSD.W4.4.1_3 !-->
@@ -95,23 +95,24 @@
   });
   //Exponent Calculator end
   //Multiplication Table start
-  var mutiply = [];
-  var result = '\n';
   click.addEventListener("click", function() {
     var target = document.getElementById('tables').value;
-    console.log(target);
-  })
-  function table(target) {
-    for(var i = 0; i <= target; i++) {
-      for(var j = 0; j <= target; j++) {
-        result = result + (i * j) + ' ';
+    var table1 = document.createElement('table');
+    table1.setAttribute('border', 1);
+    for(var i = 1; i <= target; i++) {
+      var tr1 = document.createElement('tr');
+      for(var j = 1; j <= target; j++) {
+        var td1 = document.createElement('td');
+        td1.innerHTML = (i * j);
+        tr1.appendChild(td1);
+        //console.log(i * j);
     }
-    result = result + '\n';
-    console.log(result);
+      table1.appendChild(tr1);
   }
+  var body1 = document.querySelector('body');
+  body1.appendChild(table1);
+  })
   
-    
-  }
   //Multiplication Table end
   //Generate Caps Start
   function change() {
