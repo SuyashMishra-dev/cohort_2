@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button id="movie-info">Movie Information!</button>
+  <button id="movie-details"></button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button id="add-runtime">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button id="add-cast">Add cast member </button>
+  
+
+  <script>
+
+    var movie ={
+      name: 'Business no 1',
+      director: 'Mahesh',
+      year: 2018,
+      rating: 5,
+      cast:['Akshay','sanjay']
+    }
+
+    var addRunTimeButton = document.getElementById('add-runtime');
+    addRunTimeButton.addEventListener('click', addRuntime);;
+
+
+    var addCastButton = document.getElementById('add-cast');
+    addCastButton.addEventListener('click', addCast);
+
+    var movieDetails = document.getElementById('movie-info');
+    movieDetails.addEventListener('click',showMovieDetails);
+
+    function showMovieDetails(){
+        // var details = ['movieName', 'director', 'rating', 'poster'];
+        var movieDiv = document.getElementById('movie-details');
+
+        var movieName = document.createElement('p');
+        movieName.innerText= 'movie name' +movie.name;
+        movieDiv.appendChild(movieName);
+
+        var movieRaing = document.createElement('p');
+        movieRaing.innerText = 'movie rating ' + movie.rating;
+        movieDiv.appendChild(movieRaing);
+
+        var movieD = document.createElement('p');
+        movieD.innerText = 'movie director ' + movie.director;
+        movieDiv.appendChild(movieD);  
+
+        var movieyear =document.createElement('p');
+        movieyear.innerText = 'Movie year ' + 'movie.year';
+        movieDiv.appendChild(movieyear);
+
+        var movieC =document.createElement('p');
+        movieC.innerText = 'Movie cast ' + 'movie.cast';
+        movieDiv.appendChild(movieC);
+
+    }
+
+    function addRuntime (){
+      movie.runTime =2.7;
+      var outputText = movie.runTime;
+
+      showMovieDetails();
+      var movieDiv = document.getElementById('movie-details');
+      var moviRunTime =document.createElement('p');
+      moviRunTime.innerText = 'movie run time ' + movie.runTime;
+      movieDiv.appendChild(moviRunTime);
+
+    }
+
+    function addcast(){
+      var cast = 'sanjay';
+      movie.cast.push(cast);
+      showMovieDetails();
+    }
+  
+  </script>
+</body>
+</html>
