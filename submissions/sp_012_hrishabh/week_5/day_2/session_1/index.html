@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+    <style>
+         p {
+            text-align: center;
+        }
+
+        /*.btn-primary {
+            float: right;
+            margin-right: 350px;
+            width: 150px;
+        }
+
+        #searchBox {
+         
+            margin-left: 550px;
+            width: 300px;
+            height: 40px;
+            border-radius: 5px;
+        } */
+            
+    </style>
+    <body>
+        <p class="display-4 m-5">See Weather For Any City</p>
+       <div class = "d-flex justify-content-center">
+            
+            <input class = "w-25" type="text" placeholder="Search" id="searchBox">
+            <button onclick="callApi()" type="button" class="btn btn-primary">Submit</button>
+       </div>
+
+       
+        <script>
+            function callApi () {
+                var showInTable;
+                 var getSelect = document.getElementById('searchBox').value;
+        
+                 var xhr = new XMLHttpRequest();
+                 var call = 'https://www.metaweather.com//api/location/search/?query=' + getSelect;
+                 xhr.open('GET' , call);    
+                 /*console.log(jsonObject);*/
+                 xhr.send()
+                 xhr.onload = function () {
+                 if(xhr.status == 200) {
+                     console.log(xhr.response);
+                 }
+        
+             
+            
+        }
+        console.log(showInTable);
+    }
+        </script>
+    </body>
+</html>

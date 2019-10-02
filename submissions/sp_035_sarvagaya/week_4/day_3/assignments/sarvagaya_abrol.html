@@ -53,7 +53,7 @@
         </style>
     </head>
     <body>
-        <div class="head">MILAGE CALCULATOR</div>
+        <div class="head">MILEAGE CALCULATOR</div>
         <div class="mainDiv">
             <div class="secondDiv">
                 <label for="Total Fuel">ENTER TOTAL FUEL</label>
@@ -70,21 +70,53 @@
             <div class="thirdDiv">
                 <br>
                 <label for="totalFuel">TOTAL FUEL</label>
+                <p id="dFuel"></p>
                 <br><br>
                 <label for="toatlDistance">TOTAL DISTANCE</label>
+                <p id="dTotalDistance"></p>
                 <br><br>
                 <label for="logFuelDistance">FUEL AND DISTANCE LOG</label>
+                <p id="dLogFuelDistance"></p>
                 <br><br>
                 <label for="indicator">INDICATOR</label>
+                <p id="dIndicator"></p>
 
             </div>
 
         </div>
         <script>
-            function Car(fuel, distance)
+            var arr = [];
+            var totalFuel=0;    
+
+            function submit()
             {
-                this.fuel=document.getElementById('fuel');
-                this.distance=document.getElementById('distance');
+                function Car(fuel, distance)
+                {
+                    this.fuel=document.getElementById('fuel');
+                    this.distance=document.getElementById('distance');
+                }
+                var fuel=document.getElementById("dFuel");
+                var enteredFuel=document.getElementById("fuel").value;
+                totalFuel=Number(enteredFuel)+totalFuel;
+                fuel.append(enteredFuel);
+
+                var distance=document.getElementById("dTotalDistance");
+                var enteredDistance=document.getElementById("distance").value;
+                distance.append(enteredDistance);
+
+                var indicator=document.getElementById("dIndicator");
+                var coveredDistance=enteredDistance/enteredFuel;
+                var distanceIndicator=enteredDistance-coveredDistance;
+                indicator.append(distanceIndicator);
+                
+                var log=document.getElementById("fuel").value;          
+                var loggedFuel=document.getElementById("dLogFuelDistance");
+                // loggedFuel.append(totalFuel);
+
+                arr.push(totalFuel);
+                loggedFuel.append(arr);
+                console.log(arr) 
+
             }
 
         </script>
