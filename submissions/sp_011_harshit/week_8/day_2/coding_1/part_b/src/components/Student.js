@@ -35,13 +35,15 @@ class Student extends React.Component {
 
     }
     deleteit = (q) => {
-                console.log(q)
-       
-        this.setState({
-            flag:true
-        })
-        this.state.saved.pop(q)
+        this.state.saved.splice(q,1)
+           this.setState({
+               flag:true
+           })
 
+        // this.setState({
+        //     flag:true,
+        //     saved:[newarr]
+        // })
     }
 
 

@@ -13,14 +13,18 @@
         <button onclick="mirrorImage()">Mirror Image</button>
         <button onclick="getString()">Get String</button>
         <button onclick="addSpaceBetweenWords()">Add space</button>
+        <button onclick="toLowerCase()">Make all lowercase</button>
     </div>
 
     <script>
-
+        var loweredCaseArray = [];
         var usableString = [];
         var inputString = [];
         var newString = [];
         var noSpaceArray = [];
+        var noSpaceString = '';
+        var upperCaseArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+        var lowerCaseArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
         function getString() {
             var inputString = document.getElementById('inputBox').value;
@@ -37,7 +41,6 @@
             }
             b.push(a);
             usableString = b;
-            // console.log(usableString);
             return usableString;    
         }
         
@@ -50,7 +53,8 @@
                 }
             }
             noSpaceArray = a;
-            // console.log(noSpaceArray);
+
+            console.log(noSpaceArray);
             return noSpaceArray;
         }
 
@@ -58,128 +62,98 @@
             removeSpaces();
             var spacedString = '';
             for ( i = 0; i < noSpaceArray.length; i++) {
-                spacedString = spacedString + noSpaceArray[i] + ' ';
-                console.log(spacedString); 
+                i != (noSpaceArray.length -1) ? spacedString = spacedString + noSpaceArray[i] + ' ' : spacedString = spacedString + noSpaceArray[i];
             }
-            // console.log(spacedString);
             document.getElementById('inputBox').value = spacedString;
         }
 
         function camelCase() {
+            toLowerCase();
+            var camelCaseString = loweredCaseArray[0];
             
+            for(j = 1; j < loweredCaseArray.length; j++) {
+                loweredCaseArray[j] = toUpperCase(loweredCaseArray[j]);
+            }
+            for(j = 1; j < loweredCaseArray.length; j++) {
+                camelCaseString = camelCaseString + loweredCaseArray[j]
+            }
+            console.log(camelCaseString)
         }
 
         function snakeCase() {
-            
+            toLowerCase();
+            var snakeCaseString = loweredCaseArray[0];
+            for(i = 1; i <loweredCaseArray.length; i++) {
+                i < loweredCaseArray.length ? snakeCaseString = snakeCaseString + '_' + loweredCaseArray[i] : snakeCaseString = snakeCaseString + loweredCaseArray[i];
+            }
+            console.log(snakeCaseString)
         }
 
         function hyphenCase() {
-            
+            toLowerCase();
+            var hyphenCaseString = loweredCaseArray[0];
+            for(i = 1; i <loweredCaseArray.length; i++) {
+                i < loweredCaseArray.length ? hyphenCaseString = hyphenCaseString + '-' + loweredCaseArray[i] : hyphenCaseString = hyphenCaseString + loweredCaseArray[i];
+            }
+            console.log(hyphenCaseString)
         }
 
         function mirrorImage() {
-            getString();
-            var tempArray = [];
-            for (i = usableString.length-1; i >= 0; i--) {
-                tempArray.push(usableString[i]); 
+            var string = document.getElementById('inputBox').value;
+            var mirrorString = ''
+            var mirrorArr = [];
+            for(k = 0; k < string.length; k++) {
+                mirrorArr.push(string[k])
             }
-            console.log(tempArray);
-            // working
-        }
-
-        
-
-        function toLowerCase() {
-            var arr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-            var arrLowerCase = [];
-
-            for (i = 0; i < arr.length; i++) {
-                switch (arr[i]) {
-                    case 'A':
-                        arr[i] = 'a';
-                        break;
-                    case 'B':
-                        arr[i] = 'b';
-                        break;
-                    case 'C':
-                        arr[i] = 'c';
-                        break;
-                    case 'D':
-                        arr[i] = 'd';
-                        break;
-                    case 'E':
-                        arr[i] = 'e';
-                        break;
-                    case 'F':
-                        arr[i] = 'f';
-                        break;  
-                    case 'G':
-                        arr[i] = 'g';
-                        break;
-                    case 'H':
-                        arr[i] = 'h';
-                        break;
-                    case 'I':
-                        arr[i] = 'i';
-                        break;  
-                    case 'J':
-                        arr[i] = 'j';
-                        break;
-                    case 'K':
-                        arr[i] = 'k';
-                        break;
-                    case 'L':
-                        arr[i] = 'l';
-                        break;  
-                    case 'M':
-                        arr[i] = 'm';
-                        break;
-                    case 'N':
-                        arr[i] = 'n';
-                        break;
-                    case 'O':
-                        arr[i] = 'o';
-                        break;  
-                    case 'P':
-                        arr[i] = 'p';
-                        break;
-                    case 'Q':
-                        arr[i] = 'q';
-                        break;
-                    case 'R':
-                        arr[i] = 'r';
-                        break;
-                    case 'S':
-                        arr[i] = 's';
-                        break;
-                    case 'T':
-                        arr[i] = 't';
-                        break;
-                    case 'U':
-                        arr[i] = 'u';
-                        break;  
-                    case 'V':
-                        arr[i] = 'v';
-                        break;
-                    case 'W':
-                        arr[i] = 'w';
-                        break;
-                    case 'X':
-                        arr[i] = 'x';
-                        break;  
-                    case 'Y':
-                        arr[i] = 'y';
-                        break;
-                    case 'Z':
-                        arr[i] = 'z';
-                        break;                                                 
-                
-                    default: console.log(arr);
-                        break;
+            for(i = 0; i < mirrorArr.length; i++) {
+                for(j = 0; j < lowerCaseArray.length; j++) {
+                    if(mirrorArr[i] == lowerCaseArray[j]) {
+                        mirrorArr[i] = lowerCaseArray[lowerCaseArray.length-j-1]
+                        i++
+                    }
                 }
             }
+
+            for(i = 0; i < mirrorArr.length; i ++) {
+                mirrorString = mirrorString + mirrorArr[i]
+            }
+            console.log(mirrorString);
         }
 
+        function toLowerCase() {
+            removeSpaces();
+            for(i = 0; i < noSpaceArray.length; i++) {
+                var tempString = ''
+                for(j = 0; j < noSpaceArray[i].length; j++) {
+                    for (k = 0; k < upperCaseArray.length; k++) {
+                        if(noSpaceArray[i][j] == upperCaseArray[k]) {
+                            tempString = tempString + lowerCaseArray[k];
+                        } else if(noSpaceArray[i][j] == lowerCaseArray[k]){
+                            tempString = tempString + lowerCaseArray[k];
+                        }
+                    }
+                }
+                loweredCaseArray.push(tempString);
+            }
+            return loweredCaseArray;
+        }
+
+        function toUpperCase(str) {
+            var tempArr = [];
+            var tempStr = '';
+            for (i = 0; i < str.length; i++) {
+                tempArr.push(str[i])
+            }
+            for(i = 0; i < lowerCaseArray.length; i++) {
+                if(tempArr[0] == lowerCaseArray[i]) {
+                    tempArr[0] = upperCaseArray[i];
+                }
+            }
+            for(i = 0; i < tempArr.length; i++) {
+                tempStr = tempStr + tempArr[i];
+            } 
+            return tempStr;
+        }
     </script>
 </body>
 </html>
