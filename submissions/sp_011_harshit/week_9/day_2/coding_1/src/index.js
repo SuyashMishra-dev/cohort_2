@@ -2,12 +2,12 @@ import { createStore } from 'redux'
 import React from 'react'
 import ReactDom from 'react-dom'
 import counter from './reducer'
-import {incrementCounter, decrementCounter ,increment_1 ,divide,remainder,multiply} from "./action"
+import {incrementCounter, decrementCounter ,increment_1 ,multiply,divide,remainder} from "./action"
 let val1;
 
 const store = createStore(counter);
 
-const handleChaNge=(val)=>{
+const handleChange=(val)=>{
         val1=val.target.value
 
 }
@@ -17,7 +17,7 @@ function App() {
         <div>
             count :{store.getState().count}
             <br />
-            <input onChange={(e)=>handleChaNge(e)} ></input>
+            <input onChange={(e)=>handleChange(e)} ></input>
             <button onClick={()=>store.dispatch(incrementCounter(Number(val1)))}>Increment</button>
             <button onClick={()=>store.dispatch(decrementCounter(val1))}>Decrement</button>
             <button onClick={()=>store.dispatch(increment_1(val1))}>Condition</button>
