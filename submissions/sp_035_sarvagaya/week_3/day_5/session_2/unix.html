@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            .mainDiv
+            {
+                margin: auto;
+                background-color: lightgray;
+                height: 300px;
+                width: 400px
+            }
+            .para2
+            {
+                text-align: center;
+                font-size: 20px;
+                padding-top: 20px;
+            }
+            .para
+            {
+                text-align: center;
+                font-size: 20px;
+            }
+            .salKhan
+            {
+                color: red;
+                font-size: 20px;
+                font-weight: bold;
+                margin-left: 580px;
+                margin-top: -100px;
+            }
+            .salPara
+            {
+                font-size: 13px;
+                margin-left: 580px;
+            }
+            .bottomDiv
+            {
+                height: 200px;
+                width: 1200px;
+                background-color: rgb(221, 150, 19);
+                margin-top: 80px;
+                margin-left: 250px;
+            }
+            .bottomOne
+            {
+                font-size: 30px;
+                /* font-weight: bold; */
+                margin-left: 20px;
+                padding-top: 20px;
+                color: white;
+
+            }
+            .linusImg
+            {
+                height: 150px;
+                margin-left: 150px;
+            }
+            .salImg
+            {
+                margin-top: 100px;
+                height:150px;
+                margin-left: 450px;
+            }
+            .bottomPara
+            {
+                margin-left: 20px;
+                margin-top: -100px;
+            }
+            .blackDiv
+            {
+                background-color: black;
+                height: 150px;
+                width: 20px;
+                margin-left: 550px;
+                margin-top: -50px;
+            }
+            .bottomTwo
+            {
+                color: white;
+                font-size: 30px;
+                float: right;
+                margin-top:-100px;
+                margin-right: 20px;
+            }
+            .bottomParaTwo
+            {
+                float: right;
+                margin-top: -50px;
+            }
+        </style>
+        <title>
+            Unix
+        </title>
+    </head>
+    <body>
+        <div id="page"></div>
+        <button onclick="show()">Press to see the magic</button>
+        <script>
+            function show()
+            {
+
+            
+
+            var page = document.getElementById("page");
+            
+            var mainDiv = document.createElement("div");
+            mainDiv.setAttribute("class" , "mainDiv");
+
+            var para = document.createElement("p");
+            para.textContent = "Linus Torvalds";
+            para.setAttribute("class" , "para")
+
+            var linusImg = document.createElement("img");
+            linusImg.setAttribute("src" , "https://upload.wikimedia.org/wikipedia/commons/0/01/LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg");
+            linusImg.setAttribute("class" , "linusImg")
+            
+            var para2 = document.createElement("p");
+            para2.textContent = "The creator of Linux and Git"
+            para2.setAttribute("class" , "para2");
+
+            var salImg = document.createElement("img");
+            salImg.setAttribute("class" , "salImg");
+            salImg.setAttribute("src" , "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Salman_Khan_TED_2011.jpg/220px-Salman_Khan_TED_2011.jpg")
+            
+            var salKhan = document.createElement("p");
+            salKhan.setAttribute("class" , "salKhan");
+            salKhan.textContent = "Sal Khan";
+
+            var salPara = document.createElement("p");
+            salPara.setAttribute("class" , "salPara");
+            salPara.textContent = "Sal khan is the founder of Khan Academy. The vision of Khan Academy is to provide free education to anyone and anywhere at any time."
+
+            var bottomDiv = document.createElement("div");
+            bottomDiv.setAttribute("class" , "bottomDiv")
+
+            var bottomOne = document.createElement("p");
+            bottomOne.setAttribute("class" , "bottomOne")
+            bottomOne.textContent = "Ken Thompson";
+
+            var bottomPara = document.createElement("p");
+            bottomPara.textContent = "Desiged and implemented the original unix operating system.";
+            bottomPara.setAttribute("class" , "bottomPara")
+
+            var blackDiv = document.createElement("div");
+            blackDiv.setAttribute("class" , "blackDiv");
+
+            var bottomTwo = document.createElement("p");
+            bottomTwo.textContent = "Dennis Ritchie"
+            bottomTwo.setAttribute("class" , "bottomTwo")
+
+            var bottomParaTwo = document.createElement("p");
+            bottomParaTwo.textContent = "The creator of C programming Language";
+            bottomParaTwo.setAttribute("class" , "bottomParaTwo");
+
+            bottomDiv.appendChild(bottomOne);
+            bottomDiv.appendChild(blackDiv);
+            bottomDiv.appendChild(bottomPara);
+            bottomDiv.appendChild(bottomTwo)
+            bottomDiv.appendChild(bottomParaTwo);
+
+            mainDiv.appendChild(para2);
+            mainDiv.appendChild(linusImg)
+            mainDiv.appendChild(para);
+
+            page.appendChild(mainDiv);
+            page.appendChild(salImg);
+            page.appendChild(salKhan)
+            page.appendChild(salPara);
+            page.appendChild(bottomDiv);
+            // page.appendChild(bottomPara);
+            }
+
+        </script>
+    </body>
+</html>
