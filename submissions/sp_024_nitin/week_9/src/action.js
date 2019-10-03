@@ -1,7 +1,9 @@
 const inc_counter = "countinc";             //this is a type of action.
 const dec_counter = "countdec";
-const inc_oddcounter = "counteveninc";
-const inc_evencounter = "countoddinc";
+const inc_oddevencounter = "countoddeveninc";
+const mul_counter = "countmul";
+const div_counter = "countdiv";
+const rem_counter = "countrem";
 
 const countincrementer = (amount) => {
     return {
@@ -17,22 +19,30 @@ const countdecrementer = (amount) => {
     };
 };
 
-const countoddincrementer = (amount) => {
-    if(amount % 2 != 0) {
+const countoddevenincrementer = (amount) => {
     return {
-        type: inc_oddcounter,
+        type: inc_oddevencounter,
         amount
     };
-  }
 };
 
-const countevenincrementer = (amount) => {
-    if(amount % 2 == 0) {
+const countmulincrementer = (amount) => {
     return {
-        type: inc_evencounter,
+        type: mul_counter,
         amount
     };
-  }
 };
 
-export {countincrementer, countdecrementer, countoddincrementer, countevenincrementer};
+const countdivincrementer = (amount) => {
+    return {
+        type: div_counter,
+        amount
+    };
+};
+const countremainder = (amount) => {
+    return {
+        type: rem_counter,
+        amount
+    };
+};
+export {countincrementer, countdecrementer, countoddevenincrementer, countmulincrementer, countdivincrementer, countremainder};
