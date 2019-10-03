@@ -19,11 +19,11 @@ function App() {
             <br />
             <input onChange={(e)=>handleChange(e)} ></input>
             <button onClick={()=>store.dispatch(incrementCounter(Number(val1)))}>Increment</button>
-            <button onClick={()=>store.dispatch(decrementCounter(val1))}>Decrement</button>
-            <button onClick={()=>store.dispatch(increment_1(val1))}>Condition</button>
-            <button onClick={()=>store.dispatch(multiply())}>multiply</button>
-            <button onClick={()=>store.dispatch(divide())}>divide</button>
-            <button onClick={()=>store.dispatch(remainder())}>Remainder</button>
+            <button onClick={()=>store.dispatch(decrementCounter(Number(val1)))}>Decrement</button>
+            <button onClick={()=>store.dispatch(increment_1(Number(val1)))}>Condition</button>
+            <button onClick={()=>store.dispatch(multiply(Number(val1)))}>multiply</button>
+            <button onClick={()=>store.dispatch(divide(Number(val1)))}>divide</button>
+            <button onClick={()=>store.dispatch(remainder(Number(val1)))}>Remainder</button>
         
         </div>
     )
