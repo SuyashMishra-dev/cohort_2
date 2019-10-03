@@ -20,12 +20,13 @@ const initialState = {
 const counter = (state = initialState, action) => {
   switch (action.type) {
     case INC_COUNTER:
+        
         return {
-        count: state.count + action.amount
+            count: state.count + action.amount
         };
     case DEC_COUNTER:
         return {
-        count: state.count - action.amount
+            count: state.count - action.amount
         };
     case MUL_COUNTER:
         return {

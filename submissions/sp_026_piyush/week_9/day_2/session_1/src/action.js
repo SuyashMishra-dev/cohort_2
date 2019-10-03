@@ -14,7 +14,8 @@ const MOD_COUNTER = "MOD_COUNTER";
 const incrementCounter = amount => {
   return {
     type: INC_COUNTER,
-    amount: amount % 2 === 0 ? 2 : 1
+    // amount: amount % 2 === 0 ? 2 : 1
+    amount
     // Same as amount: amount
   };
 };
