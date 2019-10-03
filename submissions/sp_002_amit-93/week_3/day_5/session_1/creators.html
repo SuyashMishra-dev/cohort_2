@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button onclick="h1()">Create H1</button>
+        <button onclick="createH3()">Create 2 H3</button>
+        <button onclick="createDivs()">Create DIVS</button>
+        <button onclick="addStudent()">Add Students</button>
+        <button onclick="addc()">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+        
+            function h1() {
+                var divs = document.getElementById("headings");
+                var h1 = document.createElement("h1")
+                    h1.textContent= "MASAI";
+                    divs.appendChild(h1);
+            }
+
+            function createH3(){
+                var p = document.createElement("div");
+                p.textContent = "Learn to earn , pay when you get";
+                var p1 = document.createElement("div");
+                p1.textContent = "Learn to earn , pay when you get";
+
+                var bodyElement = document.querySelector("body");
+                bodyElement.appendChild(p);
+                bodyElement.appendChild(p1);
+            }
+
+            function createDivs(){
+                var number = document.getElementById("cont");
+                for(i=1; i<=10; i++){
+                    var p =document.createElement("p");
+                    p.textContent= "content " + i;
+                    number.appendChild(p);
+                }
+            }
+
+            function addStudent(){
+                no=students.length;
+            
+                     for(i=0; i<(no); i++) {
+                         var item = document.createElement("ul");
+                         item.textContent= students[i];
+                         std.appendChild(li);
+                     }
+            }
+
+            function addc(){
+                var p = document.createElement("p");
+                p.textContent ="@masai 2019";
+                var body =document.querySelector("body");
+                var btn = document.querySelector("button");
+                body.insertBefore(p,btn);
+            }
+
+        </script>
+    </body>
+</html>
