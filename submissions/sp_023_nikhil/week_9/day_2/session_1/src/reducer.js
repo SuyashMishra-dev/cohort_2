@@ -7,21 +7,24 @@ const MULTIPLY_COUNTER = "MULTIPLY_COUNTER"
 const DIVIDE_COUNTER = "DIVIDE_COUNTER"
 
 const initialState = {
-    count: Number(0)
+    count: 1
 }
 
 const counter = (state = initialState, action) => {
     switch (action.type) {
         case INC_COUNTER:
-            case state.count % 2 !== 0: 
+            if (state.count % 2 !== 0){ 
                 return {
                     count: state.count + action.amount + 1
                 }
-            case state.count % 2 === 0 :
+            }
+            else if (state.count % 2 === 0){
                 return {
                     count: state.count + action.amount + 2
                 }
-        case DEC_COUNTER:
+            }
+            break;
+            case DEC_COUNTER:
             return {
                 count: state.count - action.amount
             }
@@ -30,14 +33,17 @@ const counter = (state = initialState, action) => {
                 count: state.count * action.amount
             }
         case DIVIDE_COUNTER:
-            case state.count % action.amount === 0:
+            if (state.count % action.amount === 0){
                 return {
-                    count: state.coount / action.amount
+                    count: state.count / action.amount
                 }
-            case state.count % action.amount !== 0:
+            }
+            else if (state.count % action.amount !== 0){
                 return {
                     count: state.count % action.amount
                 }
+            }
+            break;
         default:
             return state
     }
