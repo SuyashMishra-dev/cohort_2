@@ -7,6 +7,7 @@ import { incrementCounter, decrementCounter, multiplyCounter, divideCounter, mod
 // We created a store. We pass counter as an argument
 //
 const store = createStore(counter);
+// const x = Number(document.getElementById('input').value);
 console.log(incrementCounter(1));
 // store.dispatch(incrementCounter(1))
 console.log(store.getState()); // Log the initial state
@@ -15,7 +16,7 @@ console.log(store.getState()); // Log the initial state
 // subscribe
 // dispatch
 
-function App() {
+function App(x) {
   return (
     <div className="App">
       Count : {store.getState().count}
@@ -23,7 +24,7 @@ function App() {
       <input type="number" id="input"></input>
       <br />
       
-      <button onClick={() => store.dispatch(incrementCounter(Number(document.getElementById('input').value)))}>
+      <button onClick={({x =  Number(document.getElementById('input').value)}) => store.dispatch(incrementCounter(x % 2 === 0 ? x+2 : x+1 ))}>
         Increment by x
       </button>
       <br />
