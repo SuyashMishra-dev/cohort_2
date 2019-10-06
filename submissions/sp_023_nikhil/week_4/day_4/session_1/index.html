@@ -34,8 +34,8 @@
   <!-- FSD.W4.4.1_3 !-->
   <h1> Different Cases</h1>
   <table></table>
-  <input type="text" />
-  <button> Generate CAPS and small </button>
+  <input id="caplow" type="text" />
+  <button id="capbtn" > Generate CAPS and small </button>
   <script>
     //DO NOT EDIT ANY CODE BELOW THIS LINE 
     var items = [
@@ -107,39 +107,113 @@
     //----------------W4.4.1_3----------------------
     var btnTable = document.querySelector('#btnTable');
     btnTable.addEventListener('click', genTable);
-
+    
     function genTable() {
+      mutiply = []
+      var tableLimit = document.querySelector('#tableSize').value
+      
+      for(var i = 1; i<=tableLimit;i++){
+        mutiply.push(i)
+      }
+
       var table = document.createElement('table');
       table.setAttribute('class', 'table')
       mainBody.appendChild(table)
       var rowHeading = document.createElement('tr');
       table.appendChild(rowHeading);
-      var tableLimit = document.querySelector('#tableSize').value
 
-      for (var i = 1; i <= 5; i++) {
+      for(var i = 1;i<=5;i++){
+
         var tableHead = document.createElement('th');
         tableHead.textContent = '*' + i;
-        rowHeading.appendChild(tableHead)
-        var count = i;
-        
+        rowHeading.appendChild(tableHead)    
       }
       
+      mutiply.forEach(function(elm){
+
+          var tabelRow = document.createElement('tr')
+          var data1 = document.createElement('td')
+          var data2 = document.createElement('td')
+          var data3 = document.createElement('td')
+          var data4 = document.createElement('td')
+          var data5 = document.createElement('td')
+          
+            data1.textContent = elm * 1
+            data2.textContent = elm * 2
+            data3.textContent = elm * 3
+            data4.textContent = elm * 4
+            data5.textContent = elm * 5
+
+            tabelRow.appendChild(data1)
+            tabelRow.appendChild(data2)
+            tabelRow.appendChild(data3)
+            tabelRow.appendChild(data4)
+            tabelRow.appendChild(data5)
+            
+          table.appendChild(tabelRow)
+
+      })
+    }
+
+        //----------------W4.4.1_4----------------------
+    var cap = document.getElementById("caplow");
+    var capbtn = document.getElementById("capbtn");
+
+    capbtn.addEventListener('click', convert);
+
+    function convert() {
+      var data = cap.value
+      data = data.split(",")
+      var upper = []
+      var lower = []
+
+      data.map(function (elm){
+        var x = elm.toUpperCase()
+        upper.push(x)
       
-      for (var i = 1; i <= tableLimit; i++) {
-        var mutiply2 = mutiply.push(tableLimit)
-        var rowData = document.createElement('tr');
-        table.appendChild(rowData)
-        var tableData = document.createElement('td');
-        tableData.textContent = i;
-        rowData.appendChild(tableData);
-        console.log(mutiply2)
+      })
+
+      data.map(function(elm) {
+        var y = elm.toLowerCase()
+        lower.push(y)
+      })
+
+      var table1 = document.createElement('table')
+      var tR = document.createElement('tr')
+      var tH1 = document.createElement('th')
+      var tH2 = document.createElement('th')
+      var tH3 = document.createElement('th')
+      
+      tH1.textContent = "Normal"
+      tH2.textContent = "UPPER"
+      tH3.textContent = "Lower"
+      tR.appendChild(tH1)
+      tR.appendChild(tH2)
+      tR.appendChild(tH3)
+
+      table1.appendChild(tR)
+      mainBody.appendChild(table1)
+
+      // var cnt = 0
+
+      for(var i = 0; i<=data.length-1;i++){
+        var row = document.createElement('tr')
+        var info1 = document.createElement('td')
+        var info2 = document.createElement('td')
+        var info3 = document.createElement('td')
+
+        info1.textContent = data[i] 
+        info2.textContent = upper[i]
+        info3.textContent = lower[i]
+        row.appendChild(info1)
+        row.appendChild(info2)
+        row.appendChild(info3)
+        table1.appendChild(row)
+
       }
-      for(var i = 2; i<=5; i++) {
-        var tableData2 = document.createElement('td')
-        tableData2.textContent = i * mutiply2;
-        rowData.appendChild(tableData2) 
-        //console.log()
-      }
+    
+      console.log(upper, lower)
+
     }
 
   </script>
