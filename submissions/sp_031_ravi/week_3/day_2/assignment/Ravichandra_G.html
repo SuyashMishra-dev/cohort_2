@@ -1,146 +1,198 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Unit Convertor</title>
-    </head>
-    <body>
-        <h1>Unit Convertor</h1>
-        <table>
-            <tr>
-                <td>Type</td>
-                <td></td>
+<head>
+    <title>Unit Convertor</title>
+</head>
+<body>
+    <h1>Unit Convertor</h1>
+    <table>
+        <tr>
+            <td></td>
+            <td>
+                <input type="number" id="input" placeholder="Enter a value">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>From</label>
+            </td>
+            <td>
+                <select id="from_ip">
+                    
+                    <option id="meter">Meter</option>
+                    <option id="kilometer">Kilometer</option>
+                    <option id="mile">Mile</option>
+                    <option id="lightyear">Light Year</option>
+                    
+                    <p><b>Temperature</b></p>
+                    <option id="celsius">Celsius</option>
+                    <option id="kelvin">Kelvin</option>
+                    <option id="fahrenhit">Fahrenhit</option>
+                    
+                    <p><b>Volume</b></p>
+                    <option id="liter">Liter</option>
+                    <option id="milliliter">Milliliter</option>
+                    <option id="us_gallon">US Gallon</option>
+                    <option id="imperial">Imperial Tea Spoon</option>
+                </select>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <label>To</label>
+            </td>
+            <td>
+                <select id="to_ip">
+                    <option id="meter1">Meter</option>
+                    <option id="kilometer1">Kilometer</option>
+                    <option id="mile1">Mile</option>
+                    <option id="lightyear1">Light Year</option>
 
-            </tr>
-            <tr>
-                <td>
-                    <label>From</label>
-                </td>
-                <td>
-                    <select id="from_ip">
-                        <option>Meter</option>
-                        <option>Kilometer</option>
-                        <option>Mile</option>
-                        <option>Light Year</option>
-                        <option>Celsius</option>
-                        <option>Kelvin</option>
-                        <option>Fahrenhit</option>
-                        <option>Liter</option>
-                        <option>Milliliter</option>
-                        <option>US Gallon</option>
-                        <option>Imperial Tea Spoon</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>To</label>
-                </td>
-                <td>
-                    <select id="to_ip">
-                        <option>Meter</option>
-                        <option>Kilometer</option>
-                        <option>Mile</option>
-                        <option>Light Year</option>
-                        <option>Celsius</option>
-                        <option>Kelvin</option>
-                        <option>Fahrenhit</option>
-                        <option>Liter</option>
-                        <option>Milliliter</option>
-                        <option>US Gallon</option>
-                        <option>Imperial Tea Spoon</option>
-                    </select>                   
-                </td>
-            </tr>
-            <tr>
-                <td>Value to be Converted</td>
-                <td>
-                    <input type="text" id="input" placeholder="Enter a value">
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="2">
-                   <button type="submit" onclick="Calculation()">Convert</button>
-                </td>
-            </tr>
-        </table>
-        <script>
-            function Calculation() 
-            {
+                    <option id="celsius1">Celsius</option>
+                    <option id="kelvin1">Kelvin</option>
+                    <option id="fahrenhit1">Fahrenhit</option>
+
+                    <option id="liter1">Liter</option>
+                    <option id="milliliter1">Milliliter</option>
+                    <option id="us_gallon1">US Gallon</option>
+                    <option id="imperial1">Imperial Tea Spoon</option>
+                </select>                   
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit" onclick="Calculation()" style="width: 200px">Convert</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function Calculation(){
+    
             var ip_from = document.getElementById("from_ip").value;
+            var ip_to = document.getElementById("to_ip").value;
+            var ip = Number(document.getElementById("input").value);
             
-				switch(ip_from) 
-				{
-					case "Meter":
-                        switch(ip_to)
-                        var ip_to = document.getElementById("to_op").value;
-                        {
-                            case "Kilometer":
-                                var result_m_km=in_from/1000;
-                                alert(+result+ "Kilometer")
-                        }
-                        document.getElementById("result").innerHTML="";
-						
+                //Length Converter
+                //meter
+                if (ip_from === "Meter" && ip_to === "Kilometer") {
+                    alert(ip/1000 + "Kilometer")
+                }
+                else if(ip_from === "Meter" && ip_to === "Mile"){
+                    alert(ip/1609.344 + "Mile")
+                }
+                else if(ip_from === "Meter" && ip_to === "Light Year"){
+                    alert(ip*(1.057*10**(-16)) + "Light Year")
+                }
+                
+                //kilometer
+                else if(ip_from === "Kilometer" && ip_to === "Meter"){
+                    alert(ip*1000 + "Meters")
+                }
+                else if(ip_from === "Kilometer" && ip_to === "Light Year"){
+                    alert(ip*(1.057*10**(-13)) + "Light Year")
+                }
+                else if(ip_from === "Kilometer" && ip_to === "Mile"){
+                    alert(ip/1.609 + "miles")
+                }
 
-					case "United States of America":
-						alert("The continent is North America");
-						break;
-					
-					case "China":
-						alert("The continent is Asia");
-						break;
+                //mile
+                else if(ip_from === "Mile" && ip_to === "Meter"){
+                    alert((ip*1609.344) + "Light Year")
+                }
+                else if(ip_from === "Mile" && ip_to === "Kilometer"){
+                    alert(ip*1.609 + "Kilometers")
+                }
+                else if(ip_from === "Mile" && ip_to === "Light Year"){
+                    alert(ip*(1.701*10**(-13)) + "Light Year")
+                }
 
-					case "Nepal":
-						alert("The continent is Asia");
-						break;
+                //light year
+                else if(ip_from === "Light Year" && ip_to === "Mile"){
+                    alert(ip/(5.879*10**(12)) + "miles")
+                }
+                else if(ip_from === "Light Year" && ip_to === "Meter"){
+                    alert(ip*(9.461*(10**(15))) + "Meters")
+                }
+                else if(ip_from === "Light Year" && ip_to === "Kilometer"){
+                    alert(ip*(9.461*(10**(12))) + "Light Year")
+                }
 
-					case "Australia":
-						alert("The continent is Australia");
-						break;
 
-					case "France":
-						alert("The continent is Europe");
-						break;
+                //Temperature
+                //celsius
+                else if(ip_from === "Celsius" && ip_to === "Kelvin"){
+                    alert(ip+273.15 + "K")
+                }
+                else if(ip_from === "Celsius" && ip_to === "Fahrenhit"){
+                    alert((ip*(9/5)+32) + "F")
+                }
 
-					case "Germany":
-						alert("The continent is Europe");
-						break;
+                //kelvin
+                else if(ip_from === "Kelvin" && ip_to === "Celsius"){
+                    alert(ip-273.15 + "C")
+                }
+                else if(ip_from === "Kelvin" && ip_to === "Fahrenhit"){
+                    alert(((ip-273.15)*(9/5)+32) + "F")
+                }
 
-					case "South Africa":
-						alert("The continent is Africa");
-						break;
+                //fahrenhit
+                else if(ip_from === "Fahrenhit" && ip_to === "Kelvin"){
+                    alert((ip-32)*(5/9)+273.15 + "K")
+                }
+                else if(ip_from === "Fahrenhit" && ip_to === "Celsius"){
+                    alert((ip-32)*(5/9) + "C")
+                }
 
-					case "Nigeria":
-						alert("The continent is Africa");
-						break;
-					
-					case "Mexico":
-						alert("The continent is North America");
-						break;
+                //Volume    
+                //litre
+                else if (ip_from === "Liter" && ip_to === "Milliliter") {
+                    alert(ip*1000 + "milliliter")
+                }
+                else if(ip_from === "Liter" && ip_to === "US Gallon"){
+                    alert(ip/3.785 + "US gallons")
+                }
+                else if(ip_from === "Liter" && ip_to === "Imperial Tea Spoon"){
+                    alert(ip*168.936 + "imperial teaspoons")
+                }
 
-					case "Argentina":
-						alert("The continent is South America");
-						break;
+                //millimeter
+                else if(ip_from === "Milliliter" && ip_to === "Liter"){
+                    alert(ip/1000 + "litre")
+                }
+                else if(ip_from === "Milliliter" && ip_to === "US Gallon"){
+                    alert(ip/3785.412 + "US gallons")
+                }
+                else if(ip_from === "Milliliter" && ip_to === "Imperial Tea Spoon"){
+                    alert(ip/5.919 + "imperial teaspoons")
+                }
 
-					case "Brazil":
-						alert("The continent is South America");
-						break;
+                //us gallons
+                else if(ip_from === "US Gallon" && ip_to === "Milliliter"){
+                    alert((ip*3785.412) + "Light Year")
+                }
+                else if(ip_from === "US Gallon" && ip_to === "Liter"){
+                    alert(ip*3.785 + "Kilometers")
+                }
+                else if(ip_from === "US Gallon" && ip_to === "Imperial Tea Spoon"){
+                    alert(ip*639.494 + "imperial teaspoons")
+                }
 
-					case "Canada":
-						alert("The continent is North America");
-						break;
+                //imperial teaspoon
+                else if(ip_from === "Imperial Tea Spoon" && ip_to === "Liter"){
+                    alert(ip/168.936 + "litre")
+                }
+                else if(ip_from === "Imperial Tea Spoon" && ip_to === "Milliliter"){
+                    alert(ip*5.919 + "millimeters")
+                }
+                else if(ip_from === "Imperial Tea Spoon" && ip_to === "US Gallon"){
+                    alert(ip/639.494 + "US gallon")
+                }
 
-					case "Singapore":
-						alert("The continent is Asia");
-						break;
-
-					case "Sweden":
-						alert("The continent is Europe");
-						break;
-				}
-            }
-        </script>
-            
-          
-    </body>
+                else{
+                    alert("error")
+                }
+        }	
+    </script>       
+</body>
 </html>
