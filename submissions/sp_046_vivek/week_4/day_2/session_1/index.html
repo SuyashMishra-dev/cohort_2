@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button onclick="movieinform()">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button onclick="runtime()">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button onclick="cast()">Add cast member </button>
+  <p id="information"></p>
+  <p id="addruntime"></p>
+  <p id="addcast"></p>
+  <script>
+    var movie = {
+      Name: "zindagi na milegi dobara",
+      Director: "Zoya Akhtar",
+      Year: 2011,
+      Rating: 8.1,
+      Cast: ["Hrithik Roshan", " Farhan Akhtar", " Abhay Deol", " Katrina Kaif", " Ariadna Cabrol"]
+    }
+  function movieinform() {
+    document.getElementById("information").innerHTML= "My favourite movie is " + movie.Name + "directed by " + movie.Director + ", and released in year " + movie.Year + ". Rating " + movie.Rating + " on IMDB. The cast of this movie " + movie.Cast + ".";
+  }
+
+  function runtime() {
+      movie.runTime = 155
+    document.getElementById("addruntime").innerHTML= "Movie run time is " +movie.runTime+ "min.";
+  }
+  function cast() {
+      movie.Cast[5] = " Kalki Koechlin",
+      movie.Cast[6] = " Naseeruddin Shah"
+    document.getElementById("information").innerHTML= "My favourite movie is " + movie.Name + "directed by " + movie.Director + ", and released in year " + movie.Year + ". Rating " + movie.Rating + " on IMDB. The cast of this movie " + movie.Cast + ".";
+  }
+  </script>
+</body>
+</html>
