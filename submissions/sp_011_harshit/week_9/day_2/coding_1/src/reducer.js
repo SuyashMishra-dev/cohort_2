@@ -8,10 +8,10 @@ const MULTIPLY = "MULTPLY"
 
 const DIVIDE = "DIVIDE"
 
-const remainder  = "remainder"
+const REMAINDER  = "REMAINDER"
 
 const initialState ={
-    count:0
+    count:1
 }
 
 const counter  = (state = initialState , action) =>{
@@ -44,7 +44,7 @@ const counter  = (state = initialState , action) =>{
                     count:state.count/Number(action.amount)
             }
 
-        case remainder:
+        case REMAINDER:
             return{
                     count:state.count%action.amount
             }
