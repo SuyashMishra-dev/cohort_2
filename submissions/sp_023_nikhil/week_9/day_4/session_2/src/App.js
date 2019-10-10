@@ -1,13 +1,15 @@
 import React from 'react';
-import NavBar from './components/NavBar'
-// import { Link, Route } from 'react-router-dom'
- 
-function App() {
-  return (
-    <>
-      <NavBar />
-    </>
-  );
+import './App.css';
+import Navbar from './components/Navbar'
+
+class App extends React.Component{
+  render() {
+    return(
+      <React.Fragment>
+        <Navbar />
+      </React.Fragment>
+    )
+  }
 }
 
 export default App;
