@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom'
 import { Link } from 'react-router-dom';
-import Home from './component/home.js';
-import Cart from './component/cart.js';
+import Home from './home.js';
+import App1 from './cart.js';
 function App() {
   return (
     <div>
@@ -15,7 +15,7 @@ function App() {
             <Link to="/cart" className="text-decoration-none text-light">Go to Cart</Link><br />
           </nav>
           <Route path="/" exact component={Home} />
-          <Route path="/cart" component={Cart} />
+          <Route path="/cart"  component={App1} />
         </React.Fragment>
       </div>
     </div>
