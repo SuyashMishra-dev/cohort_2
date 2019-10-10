@@ -15,11 +15,16 @@ class TodoList extends React.Component{
         })
     }
     render() {
+        let tsk = this.props.item.list.map((elm) => {
+            return(
+                <li>{elm}<button onClick={}>X</button></li>
+            )
+            })
         return(
             <>
                 <input type="text" value={this.state.text} onChange={(e) => {this.getInput(e.target.value)}} />
                 <button onClick={() =>{this.props.add(this.state.text)}} >Add</button>
-                {/* {this.props.items.map((elm) => <li>elm</li>)} */}
+                {tsk}
             </>
         )
     }
@@ -27,7 +32,7 @@ class TodoList extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        items: state.list
+        item: state.addTask
     }
 }
 
