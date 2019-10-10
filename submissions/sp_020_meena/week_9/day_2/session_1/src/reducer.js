@@ -26,12 +26,20 @@ const counter = (state = intialState, action) =>{
         };
         case EVEN_COUNTER:
             return {
-            count :state.count - action.amount
+            count :state.count + action.amount + 2
         };
         case ODD_COUNTER:
             return {
-            count :state.count - action.amount
+            count :state.count + action.amount + 1
         };
+        case MUL_COUNTER:
+            return{
+                count:(state.count) * (action.amount)
+            };
+        case DIV_COUNTER:
+            return{
+                count:(state.count) / (action.amount)
+            }    
         default :
         return state;
     }

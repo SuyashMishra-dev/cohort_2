@@ -44,7 +44,6 @@ const decrementCounter = amount =>{
             amount
         };
     };
-
     const remainder = amount =>{
         return{
             type:REMAINDER,
@@ -52,4 +51,4 @@ const decrementCounter = amount =>{
         }
     }
 
-export {incrementCounter,decrementCounter,increment_1,divide,multiply,remainder}
+export {incrementCounter,decrementCounter,increment_1,multiply,divide,remainder}
