@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
+
 
 export default class BabyLama extends Component {
     render() {
@@ -11,6 +13,9 @@ export default class BabyLama extends Component {
                   qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis </p>
                   <h5> Qty : 2 </h5>
                  <h5> Price: $600</h5>
+                 <Link to="/ShopCart" className="nav-link"> 
+      <button><i className="fas fa-shopping-cart"></i> Add to Cart</button></Link>
+    
                   </div>
         
             

@@ -58,7 +58,8 @@ export default class App extends React.Component  {
         <Route path= "/India" component={India} />
         <Route path= "/FineArtMural" component={FineArtMural} />
         <Route path= "/BabyLama" component={BabyLama} />
-        
+        <Route path= "/Orders" component={Orders} />
+         
         <Route component={PageNotfound} />
         
         </Switch>
