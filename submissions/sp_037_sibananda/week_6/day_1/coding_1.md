@@ -35,7 +35,7 @@ var x = 110
 const y = x => x++;
 x++;
 z = y(101)
-Answer
+
 
 
 What is the value of arr? If the answer is in an array please use [num1,num2,num3] format

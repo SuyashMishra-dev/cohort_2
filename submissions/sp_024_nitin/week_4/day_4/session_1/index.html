@@ -3,7 +3,7 @@
 <head>
   <title> Week 4 Day 4Coding 1 </title>
   <style>
-  p {
+  .p {
     padding-top: 5px;
     white-space: pre-line;
   }
@@ -22,14 +22,15 @@
   <p id = "expOut">Output:</p>
   <!-- FSD.W4.4.1_3 !-->
   <h1> Multiplication Table Generator</h1>
-  <table></table>
-  <input type = "text"/>
-  <button> Generate Tables </button>
+  
+  <input type = "text" id = 'tables'/>
+  <button id = "click"> Generate Tables </button>
   <!-- FSD.W4.4.1_3 !-->
   <h1> Different Cases</h1>
   <table></table>
-  <input type = "text"/>
-  <button> Generate CAPS and small </button>
+  <input type = "text" id = 'caps1'/>
+  <button onclick = change()> Generate CAPS and small </button>
+  <div id = caps></div>
   <script>
   //DO NOT EDIT ANY CODE BELOW THIS LINE 
   var items = [
@@ -55,9 +56,10 @@
     }
   ]
 
-  var mutiply = []
+  
   // Do NOT EDIT ANY CODE ABOVE THIS LINE 
   //Place all your code below this line!
+  //Function to print a JSON string as an object start
   function jsonChange() {
     var items1 = JSON.stringify(items);
     var contain = document.getElementById('container1');
@@ -74,12 +76,14 @@
       contain.appendChild(pCreate);
     } );
   }
-
+  //JSON string to object end
+  //Exponent Calculator start
   function changeExp(x, y, callBack) {
     var expo = x ** y;
     expOut.innerHTML = callBack(expo);
   }
-
+  
+  
   var display = function(input) {
       return("The Exponent is: " + input);
     }
@@ -89,7 +93,69 @@
     var y = document.getElementById('y').value;
     output = changeExp(x, y, display);
   });
+  //Exponent Calculator end
+  //Multiplication Table start
+  click.addEventListener("click", function() {
+    var target = document.getElementById('tables').value;
+    var table1 = document.createElement('table');
+    table1.setAttribute('border', 1);
+    for(var i = 1; i <= target; i++) {
+      var tr1 = document.createElement('tr');
+      for(var j = 1; j <= target; j++) {
+        var td1 = document.createElement('td');
+        td1.innerHTML = (i * j);
+        tr1.appendChild(td1);
+        //console.log(i * j);
+    }
+      table1.appendChild(tr1);
+  }
+  var body1 = document.querySelector('body');
+  body1.appendChild(table1);
+  })
   
+  //Multiplication Table end
+  //Generate Caps Start
+  function change() {
+  var string = document.getElementById('caps');
+  var data = document.getElementById('caps1').value;
+  var input1 = data.split(' ');
+  var table1 = document.createElement('table');
+  var th1 = document.createElement('th');
+  var td1 = document.createElement('td');
+  td1.innerHTML = "Normal";
+  th1.appendChild(td1);
+  var td2 = document.createElement('td');
+  td2.innerHTML = "Upper";
+  th1.appendChild(td2);
+  var td3 = document.createElement('td');
+  td3.innerHTML = "Lower";
+  th1.appendChild(td3);
+  table1.appendChild(th1);
+  string.appendChild(table1);
+  var tr1 = document.createElement('tr');
+  var td4 = document.createElement('td');
+  td4.textContent = input1[0];
+  tr1.appendChild(td4);
+  var td5 = document.createElement('td');
+  td5.textContent = input1[0].toUpperCase();
+  tr1.appendChild(td5);
+  var td6 = document.createElement('td');
+  td6.textContent = input1[0].toLowerCase();
+  tr1.appendChild(td6);
+  table1.appendChild(tr1);
+  var tr2 = document.createElement('tr');
+  var td7 = document.createElement('td');
+  td7.textContent = input1[1];
+  tr2.appendChild(td7);
+  var td8 = document.createElement('td');
+  td8.textContent = input1[1].toUpperCase();
+  tr2.appendChild(td8);
+  var td9 = document.createElement('td');
+  td9.textContent = input1[1].toLowerCase();
+  tr2.appendChild(td9);
+  table1.appendChild(tr2);
+}
+  //Generate Caps End
   </script>
 </body>
 </html>

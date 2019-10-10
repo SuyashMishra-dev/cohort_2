@@ -11,13 +11,26 @@
 <body>
     <div class="header">
         <input type="text" placeholder="Enter name" id="name">
-        <button>Name</button><br>
+        <button onclick=" take_input()">Name</button><br>
         <input type="text" placeholder="Enter Color" id="color">
         <button>Color</button><br>
         <input type="text" placeholder="Enter Font Size" id="font-size">
         <button>Font Size</button>
+        <div id="show">
 
+        </div>
     </div>
+    <script>
+        take_input = () => {
+            var a = document.getElementById("name").value;
+            var b = document.getElementById("color");
+            var c = document.getElementById("font-size");
+            var para = document.createElement("p");
+            var xyz = document.getElementBy("a").textContent
+            para.textContent = 'a';
+            document.getElementById("show").appendChild("para")
+        }
+    </script>
 </body>
 
-</html>
+</html>3

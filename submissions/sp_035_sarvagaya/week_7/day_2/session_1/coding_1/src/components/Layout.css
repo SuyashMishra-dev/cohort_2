@@ -1,0 +1,94 @@
+.mainDiv
+{
+    height:700px;
+    width: 900px;
+    background-color: rgb(9, 9, 65);
+}
+.firstDiv
+{
+    color: white;
+    padding-top: 50px;
+    margin-left: 250px;
+    height: 400px;
+    width:450px;
+    background-color: rgb(3, 3, 54);
+}
+.pro
+{
+    color: black;
+    width: 35px;
+    background-color: yellow;
+}
+.messageBtn
+{
+    height: 40px;
+    width: 100px;
+    color: white;
+    background-color: teal;
+}
+.followingBtn
+{
+    height: 40px;
+    width:100px;
+    color:white;
+    background-color: rgb(3, 3, 54);
+    border: thick double #32a1ce;
+}
+.secondDiv
+{
+    margin-left: 100px;
+    width: 700px;
+    color:white;
+    background-color: rgb(10, 10, 51);
+}
+.Skills
+{
+    margin-left:-350px;
+}
+.ui
+{
+    margin-left: 150px;
+    width: 100px;
+    border: solid white;
+}
+.developer
+{
+    margin-top: -40px;
+    margin-left: 280px;
+    border: solid white;
+    width: 250px;
+}
+.html
+{
+    margin-top: -40px;
+    margin-left:550px;
+    border: solid white;
+    width:100px;
+}
+.css
+{
+    margin-left: 150px;
+    border: solid white;
+    width: 50px;
+}
+.js
+{
+    border: solid white;
+    width: 120px;
+    margin-left:240px;
+    margin-top: -40px;
+}
+.react
+{
+    border: solid white;
+    width: 70px;
+    margin-left: 400px;
+    margin-top: -40px;
+}
+.node
+{
+    border: solid white;
+    width: 60px;
+    margin-left: 500px;
+    margin-top:-40px;
+}
