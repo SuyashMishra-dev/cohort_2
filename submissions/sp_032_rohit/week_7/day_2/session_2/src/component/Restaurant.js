@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Restraunt(props) {
+function Restaurant(props) {
     return (
         <div className="m-5">
 
@@ -47,4 +47,4 @@ function Restraunt(props) {
         </div>
     )
 }
-export default Restraunt;
+export default Restaurant;
