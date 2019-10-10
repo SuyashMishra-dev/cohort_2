@@ -1,0 +1,8 @@
+const userActionTypes = {    
+    LOGOUT_USER : 'LOGOUT_USER',
+    SET_USER_REQUEST : 'SET_USER_REQUEST',
+    USER_REQUEST_SUCCESS : 'USER_REQUEST_SUCCESS',
+    USER_REQUEST_FAILURE : 'USER_REQUEST_FAILURE'
+}
+
+export default userActionTypes;
