@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    
+        <div class="container-fluid">
+            <h4 class="my-2">See the weather for any city!</h4>
+            <div class="form-group">
+
+                <input type="text" class="form-control" id="cityName" placeholder="Search City here"><br><br>
+                <button onclick="getUserData()" class="btn btn-outline-success my-2 my-sm-0"
+                    type="submit">Search</button>
+            </div>
+
+            <h2>City Name:</h2>
+            <p id="city_name"></p>
+            <h2>Temperature:</h2>
+            <p id="cityTemp"></p>
+            <h3>Wind:</h3>
+            <p id="Wind"></p>
+            <h2>sunrise:</h2>
+            <p id="sunrise"></p>
+            <h2>Sunset :</h2>
+            <p id="citySunset"></p>
+            <h2>Wind Direction:</h2>
+            <p id="cityWindDir"></p>
+            <h2>Weather:</h2>
+            <p id="cityWeather"></p>
+            <h2>Humidity:</h2>
+            <p id="humidity"></p>
+        </div>
+        </div>
+        <script> 
+        function getUserData() {
+            var city =document.getElementById('cityName').value;
+                var xhr = new XMLHttpRequest();
+                var apiKey = "95f3e37544834db59f1b09a673e251da";
+              //  console.log(apiKey)
+                var url = 'https://api.weatherbit.io/v2.0/current?city='+city+'&key='+apiKey;
+              //  console.log(url);
+                xhr.open('GET', url);
+                xhr.send();
+                xhr.onload = function () {
+                    if (xhr.status == 200) {
+                        var printObjects = JSON.parse(xhr.response);
+                          console.log(printObjects);
+                       document.getElementById("city_name").innerHTML = printObjects.data[0].city_name;
+                        document.getElementById("cityTemp").innerHTML = printObjects.data[0].temp + " C";
+                        document.getElementById("Wind").innerHTML = printObjects.data[0].wind_spd + " mph";
+                        document.getElementById("sunrise").innerHTML = printObjects.data[0].sunrise ;
+                        document.getElementById("citySunset").innerHTML = printObjects.data[0].sunset ;
+                        document.getElementById("cityWindDir").innerHTML = printObjects.data[0].wind_dir ;
+                        document.getElementById("cityWeather").innerHTML = printObjects.data[0].weather.description;
+                        document.getElementById("humidity").innerHTML = printObjects.data[0].humidity;
+                    
+                    }
+                    else {
+                        console.log("Error code is:" + xhr.status);
+                   }
+                }
+            }
+
+        </script>
+</body>
+
+</html>

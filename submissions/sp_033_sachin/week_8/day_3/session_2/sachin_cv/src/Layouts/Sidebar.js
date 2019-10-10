@@ -32,6 +32,12 @@ class Sidebar extends React.Component {
         
     }
 
+    toggleSubSideBar = () => {
+        this.setState({
+            show : !this.state.show
+        })
+    }
+
     render() {
         
         return (
@@ -58,7 +64,7 @@ class Sidebar extends React.Component {
                             </a>))
                     }
                 </div>
-                {this.state.selectedCategory!==null? <SubSideBar items={this.state.collection[this.state.selectedCategory]} active={this.state.show} /> : ''}
+                {this.state.selectedCategory!==null? <SubSideBar toggle={this.toggleSubSideBar} items={this.state.collection[this.state.selectedCategory]} active={this.state.show} /> : ''}
                 
             </React.Fragment>
         )
