@@ -6,7 +6,7 @@ class Home extends React.Component {
             latest : [
                 {
                 img :  "c1i1.jpeg",
-                name : 'EA SPORTS™ FIFA 20',
+                name : 'FIFA 20',
                 btn : 'Click',
             },
             {
@@ -119,7 +119,11 @@ class Home extends React.Component {
                                     <div className = "card-body font-family">
                                         <h4 className = "text-center">{item.name}</h4>
                                         <center>
-                                        <button className = "btn btn-outline-danger">Details</button>
+                                        <button className = "btn btn-outline-danger">Details</button><br/>
+                                                <div className="row">
+                                                    <button className="btn btn-outline-danger mt-2">Buy Now</button>
+                                                    <button className="btn btn-outline-danger mt-2 ml-2">Add to Cart</button>
+                                                </div>
                                         </center>
                                     </div>  
                                 </div>
@@ -137,7 +141,11 @@ class Home extends React.Component {
                                     <div className = "card-body font-family">
                                         <h4 className = "text-center">{item.name}</h4>
                                         <center>
-                                        <button className = "btn btn-outline-danger">Details</button>
+                                        <button className = "btn btn-outline-danger">Details</button><br/>
+                                                <div className="row">
+                                                    <button className="btn btn-outline-danger mt-2">Buy Now</button>
+                                                    <button className="btn btn-outline-danger mt-2 ml-2">Add to Cart</button>
+                                                </div>
                                         </center>
                                     </div>  
                                 </div>
@@ -155,15 +163,19 @@ class Home extends React.Component {
                                     <div className = "card-body font-family">
                                         <h4 className = "text-center">{item.name}</h4>
                                         <center>
-                                        <button className = "btn btn-outline-danger">Details</button>
+                                        <button className = "btn btn-outline-danger">Details</button><br/>
+                                        <div className = "row">
+                                            <button className="btn btn-outline-danger mt-2">Buy Now</button>
+                                            <button className="btn btn-outline-danger mt-2 ml-2">Add to Cart</button>
+                                        </div>
                                         </center>
                                     </div>  
                                 </div>
                             </div> 
                             )})}
                     </div>
-                    {/* <div>&nbsp</div> */}
                     <div>.</div>
+                  
                 </div>
 
                 {/* Card Section Ends Here */}
