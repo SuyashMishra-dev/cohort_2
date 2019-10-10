@@ -18,7 +18,7 @@ class Home extends React.Component {
                 </div>              
                 <div className="row">
                     <div className="col-md-3 border border-danger">
-                        xyz
+                        
                     </div>
                     <div className="col-md-3 border border-danger">
                         xyz
