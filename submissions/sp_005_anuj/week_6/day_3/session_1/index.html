@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <title>ES 6</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="./styles.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="./script.js"></script>
+    </head>
+    <body class=" container border border-dark text-center m-5">
+        <form>
+            <input type="text" id="name"><br>
+            <button onclick="changeName(event)">Update Name</button><br><br>
+            <input type="text" id="color"><br>
+            <button onclick="changeColor(event)">Update Color</button><br><br>
+            <input type=number id="fsize"><br>
+            <button onclick="changeFont(event)">Update Font-Size</button><br><br>
+            <button onclick="show(event)">Show</button>
+        </form>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Coding Session 1</title>
-</head>
+        <form>
+            <input type="text" id="newName"><br>
+            <button onclick="formName(event)">Submit Name</button><br><br>
+            <input type="text" id="newColor"><br>
+            <button onclick="formColor(event)">Submit Color</button><br><br>
+            <input type=number id="newFsize"><br>
+            <button onclick="formFont(event)">Submit Font-Size</button><br><br>
+            <label>Update-Name</label>
+            <select id="modifyName"></select>
+            <button onclick="deleteFormName(event)">Delete-Name</button>
+            <br><br>
+            <button onclick="showForm(event)">Render</button>
+        </form>
 
-<body>
-    <div class="header">
-        <input type="text" placeholder="Enter name" id="name">
-        <button onclick=" take_input()">Name</button><br>
-        <input type="text" placeholder="Enter Color" id="color">
-        <button>Color</button><br>
-        <input type="text" placeholder="Enter Font Size" id="font-size">
-        <button>Font Size</button>
-        <div id="show">
-
-        </div>
-    </div>
-    <script>
-        take_input = () => {
-            var a = document.getElementById("name").value;
-            var b = document.getElementById("color");
-            var c = document.getElementById("font-size");
-            var para = document.createElement("p");
-            var xyz = document.getElementBy("a").textContent
-            para.textContent = 'a';
-            document.getElementById("show").appendChild("para")
-        }
-    </script>
-</body>
-
-</html>3
+        <div id="display"></div>
+    </body>
+</html>
