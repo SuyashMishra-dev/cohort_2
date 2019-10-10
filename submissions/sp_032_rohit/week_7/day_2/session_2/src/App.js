@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Restraunt from './component/Restraunt'
+import Restaurant from './component/Restaurant'
 // import Sort from './component/Sort.js'
 class App extends React.Component {
 
@@ -12,7 +12,7 @@ class App extends React.Component {
       [
         {
           url : "https://via.placeholder.com/150",
-          name : "URU Brewpark",
+          name : "URU BrewPark",
           cuisine:["North Indian","Asian","continental"],
           cost:600,
           minprice:50,
@@ -23,7 +23,7 @@ class App extends React.Component {
         },
         {
           url : "https://via.placeholder.com/150",
-          name : "Restraunt2",
+          name : "Restaurant 2",
           cuisine:["North Indian","Asian","continental"],
           cost:700,
           minprice:60,
@@ -34,7 +34,7 @@ class App extends React.Component {
         },
         {
           url : "https://via.placeholder.com/150",
-          name : "Restraunt3",
+          name : "Restaurant 3",
           cuisine:["North Indian","fast food","Asian","continental"],
           cost:390,
           minprice:45,
@@ -45,8 +45,8 @@ class App extends React.Component {
         },
         {
           url : "https://via.placeholder.com/150",
-          name : "Restraunt4",
-          cuisine:["North Indian","Asian","continental","indian"],
+          name : "Restaurant 4",
+          cuisine:["North Indian","Asian","continental","South Indian"],
           cost:430,
           minprice:60,
           time:80,
@@ -56,7 +56,7 @@ class App extends React.Component {
         },
         {
           url : "https://via.placeholder.com/150",
-          name : "Restraunt5",
+          name : "Restaurant 5",
           cuisine:["North Indian","Asian","continental"],
           cost:655,
           minprice:60,
@@ -67,7 +67,7 @@ class App extends React.Component {
         },
         {
           url : "https://via.placeholder.com/150",
-          name : "Restraunt6",
+          name : "Restaurant 6",
           cuisine:["North Indian","Asian","continental"],
           cost:567,
           minprice:60,
@@ -78,7 +78,7 @@ class App extends React.Component {
         },
         {
           url : "https://via.placeholder.com/150",
-          name : "Restraunt7",
+          name : "Restaurant 7",
           cuisine:["North Indian","Asian","continental"],
           cost:700,
           minprice:60,
@@ -89,7 +89,7 @@ class App extends React.Component {
         },
         {
           url : "https://via.placeholder.com/150",
-          name : "Restraunt8",
+          name : "Restaurant 8",
           cuisine:["North Indian","Asian","continental"],
           cost:700,
           minprice:60,
@@ -101,7 +101,7 @@ class App extends React.Component {
       
         {
           url : "https://via.placeholder.com/150",
-          name : "Restraunt9",
+          name : "Restaurant 9",
           cuisine:["North Indian","Asian","continental"],
           cost:700,
           minprice:60,
@@ -112,7 +112,7 @@ class App extends React.Component {
         },
         {
           url : "https://via.placeholder.com/150",
-          name : "Restraunt10",
+          name : "Restaurant 10",
           cuisine:["North Indian","Asian","continental"],
           cost:450,
           minprice:70,
@@ -132,7 +132,7 @@ class App extends React.Component {
   }
   render() {
     let a=this.state.content.filter(a => a.rating > this.state.rating).map(a=> {
-      return <Restraunt
+      return <Restaurant
       key = {a.name}
       price={a.cost}
       min={a.minprice}
