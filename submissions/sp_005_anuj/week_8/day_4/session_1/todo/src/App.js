@@ -1,8 +1,7 @@
 import React from 'react'
 import Todo from './component/index.js';
 import './App.css'
-import { makeStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
+import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
@@ -10,8 +9,8 @@ import AddIcon from '@material-ui/icons/Add';
 
 
 class App extends React.Component {
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
     this.state = {
       value: '',
       data: []
@@ -24,14 +23,13 @@ class App extends React.Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({data: [...this.state.data, {name: this.state.value, isFInished: false}]});
-    console.log(this.state)
+    this.setState({data: [...this.state.data, {name: this.state.value, isFinished: false}]});
   }
 
 changeStatus =(id) => {
   let temp = this.state.data.filter((ele,i) => {
     if(id == i) {
-      ele.isFinished = !ele.isFInished
+      ele.isFinished = !ele.isFinished
     }
     return ele;
   })
@@ -46,24 +44,24 @@ removeitem = (id) => {
 
   render() {
     return(
-      <div className = "text-center">
+      <div className="text-center">
         <h1>Your Personalize TODO</h1>
-          <div className = "container mt-5">
-            <form onSubmit = {this.handleSubmit}>
+        <div className="container mt-5">
+          <form onSubmit={this.handleSubmit}>
             <TextField
               label="Enter Item"
               type="text"
               value={this.state.value}
               onChange={this.handleInput}
             />
-            <Fab size = "small" color="secondary" aria-label="add" type = "submit">
+            <Fab size="small" color="secondary" aria-label="add" type="submit">
               <AddIcon />
             </Fab>
-            </form>
-            </div>
-          <div>
-            <Todo data = {this.state.data} changefunc = {(e,i) => this.changeStatus(i)} removefunc = {(e,i) => this.removeitem(i)}/>
-          </div>
+          </form>
+        </div>
+        <div>
+          <Todo data={this.state.data} changefunc={(e, i) => this.changeStatus(i)} removefunc={(e, i) => this.removeitem(i)} />
+        </div>
       </div>
     )
   }

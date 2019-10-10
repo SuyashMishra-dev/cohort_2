@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add new Movie</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body style="text-align: center">
+        <div>
+            <h3>Add new Movie</h3>
+            <form>
+                <label>Name</label><br>
+                <input type="text" id="name" required>
+                <br><br>
+                <label>Directors</label><br>
+                <input type="text" id="directors" required>
+                <br><br>
+                <label>Year</label><br>
+                <input type="text" id="year" required>
+                <br><br>
+                <label>Rating</label><br>
+                <input type="text" id="rating" required>
+                <br><br>
+                <label>Writers</label><br>
+                <input type="text" id="writers" required>
+                <br><br>
+                <input type="submit" id="submitMovie" value="Submit">
+                <button id="print">Print all movies</button>
+            </form>
+    
+            <div id="root"></div>
+        </div>
+
+        <div>
+            <h3>Add new Actor</h3>
+            <form>
+                <label>Actor Name</label><br>
+                <input type="text" id="actorName" required>
+                <br><br>
+                <label>Actor Age</label><br>
+                <input type="number" id="actorAge" required>
+                <br><br>
+                <label>Actor DOB</label><br>
+                <input type="date" id="actorDob" required>
+                <br><br>
+                <label>Actor Movie</label><br>
+                <input type="text" id="actorMovie" required>
+                <br>
+                <input type="submit" id="submitActor" value="Submit Info">
+            </form>
+    
+            <div>
+                <input type="text" id="mainActor">
+                <br><br>
+                <button id="actorMovies">Print Actor Movies</button>
+                <br><br>
+                <button id="allActors">Print All Actors</button>
+            </div>
+            <ul id="display"></ul>
+            <div id="moviesDisplay"></div>
+        </div>
+
+        <script src = "./index.js"></script>
+    </body>
+</html>

@@ -7,7 +7,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import DeleteIcon from '@material-ui/icons/Delete';
-
+import { spacing } from '@material-ui/system';
 const Todo = (props) => {
     return(
         <div>
@@ -20,7 +20,7 @@ const Todo = (props) => {
                 decoration = { textDecoration: 'none' }
             }
             return(
-                <div>
+                <div >
                     <List>
                         <ListItem  role={undefined} dense button key = {ele.name}>
                             <ListItemIcon>

@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-fluid" style="background-color: blue; font-size: 30px;">
+            <div class="row">
+                <div class="col" style="text-align: center;">
+               See the weather for any city!
+                </div>
+              </div>
+            </div>
+            <div>
+            <input  id ="city"class="navbar-toggler"type="text" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <form class="form-inline my-2 my-lg-0">
+              <input id ="cityName" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button id ="getUserData" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+          <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <p class="card-title" id="city_name"></p>
+                <p class="card-title" id="city_Temp"></p>
+                <p class="card-title" id="Wind"></p>
+                <p class="card-title" id="sunrise"></p>
+                <p class="card-title" id="city_sunset"></p>
+                
+              </div>
+            </div>
+          <script>
+                  var displayOsData = function(input){
+                    var osObjects = JSON.parse(input);
+                    console.log(osObjects["data"]);
+                    document.querySelector('#city_name').innerHTML=osObjects["data"][0].city_name;
+                    document.querySelector('#city_Temp').innerHTML=osObjects["data"][0].temp +" C";
+                    document.querySelector('#Wind').innerHTML= "Wind "+osObjects["data"][0].wind_cdir_full;
+                    document.querySelector('#sunrise').innerHTML="Sun Rise "+osObjects["data"][0].sunrise;
+                    document.querySelector('#city_sunset').innerHTML="city sunset "+osObjects["data"][0].sunset;
+                  }
+                function getUserData() {
+                  var city =document.getElementById('cityName').value;
+                        var xhr = new XMLHttpRequest();
+                        var apiKey= "e5d478969b6c4c6987dc27bec99646bd"
+                        var url ='https://api.weatherbit.io/v2.0/current?city='+city+',IN&key='+apiKey;
+                        xhr.open('GET',url);
+                        xhr.send();
+                        xhr.onload=function(){
+                      if(xhr.status==200){
+                          result = xhr.response;
+                          console.log(result);
+                          displayOsData(result);
+                      }
+                      else{
+                          console.log("Error code is:"+xhr.status);
+                        }
+                      }
+                }
+                    //Button and listener for the `click here to print the user data!` button
+                    var displayBtn = document.querySelector('#getUserData')
+                    displayBtn.addEventListener('click',function(){
+                      getUserData();
+                    });
+                    </script>
+                </body>
+            </html>
