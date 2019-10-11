@@ -1,0 +1,6 @@
+export default {
+    ADD_OPERATION : 'ADD_OPERATION',
+    CALCULATE : 'CALCULATE',
+    GET_ANSWER : 'GET_ANSWER',
+    DELETE_LAST : 'DELETE_LAST' 
+}

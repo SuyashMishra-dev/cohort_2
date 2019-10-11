@@ -4,27 +4,32 @@ class Github extends React.Component {
     constructor(props) {
         super(props);
         this.state= {
-        picture: props.picture,
-        name: props.name,
-        repos: props.repo,
+        repo info 
         }
-
-        this.setState({
-            picture: props.picture,
-            name: props.name,
-            repos: props.repo
-        })
+    }
+    getRepos = () => {
+        const reqParams = {
+            methos: 'get',
+            url: this.props.repo,
+        
+        }
+        axios(this.props.repo)
+            .then(response => {
+                this.settState({
+                    
+                })
+            })
     }
     render() {
     // const Github = (props) =>{
         return (
             <div>
                 <div className="card mt-4 mx-5" style={{ width: "18rem" }}>
-                    <img src={this.state.picture} className="card-img-top" alt="" />
+                    <img src={this.props.picture} className="card-img-top" alt="" />
                     <div className="card-body">
-                        <h5 className="card-title">{this.state.name}</h5>
+                        <h5 className="card-title">{this.props.name}</h5>
                         {/* <p className="card-text"></p> */}
-                        <a href={this.state.repo} className="btn btn-success">Repos</a>
+                        <button onclick={()=>getRepos()}  className="btn btn-success"><a href={this.props.repo} >Repos</a></button>
                     </div>
                 </div>
             </div>
