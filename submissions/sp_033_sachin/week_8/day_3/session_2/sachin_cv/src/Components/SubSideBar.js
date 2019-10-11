@@ -26,6 +26,8 @@ class SubSideBar extends React.Component {
                             +generalStyles.gFontSize}
                             `}
                         
+                        onClick={this.props.toggle}
+
                          to={'/collection/'+item.toLowerCase().split(' ').join('-')}
                          
                         >

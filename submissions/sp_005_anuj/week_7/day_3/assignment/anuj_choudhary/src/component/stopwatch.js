@@ -12,7 +12,7 @@ class Stopwatch extends React.Component {
         this.second = setInterval(() => { this.setState({ sec: this.state.sec + 1, milisec: 0,})}, 1000);
         this.mili_second = setInterval(() => { this.setState({ milisec: this.state.milisec + 1 })}, 10);
     }
-
+    
     handleClick_Stop() {
         clearInterval(this.second)
         clearInterval(this.mili_second)
