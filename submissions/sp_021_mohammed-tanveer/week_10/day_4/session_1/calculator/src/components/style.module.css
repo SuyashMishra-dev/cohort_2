@@ -1,0 +1,79 @@
+.body{
+    width: 400px;
+    margin-left: 430px;
+    margin-top: 50px;
+}
+
+.headerDiv{
+    background-color: #F44336;
+    text-align: center;
+    color: white;
+    height: 60px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.headerTitle{
+    padding-top: 12px;
+}
+
+.displayScreen{
+    background-color: #9E9E9E;
+    height: 50px;
+    border: 3px solid #F44336;
+    text-align: right;
+    padding-right: 20px;
+    font-weight: bolder;
+}
+
+.displayKeys{
+    background-color: #4CAF50;
+    display: flex;
+}
+
+.numberKeys{
+    padding: 10px;
+}
+
+.numberKeys button {
+    width: 80px;
+    height: 80px;
+    font-weight: bolder;
+    font-size: 30px;
+    margin: 5px;
+    background-color: #3F51B5;
+    color: white;
+    border: 1px solid #3F51B5;
+
+}
+
+.showKeys{
+    width: 170px !important;
+}
+
+.operatorKeys{
+    padding: 10px; 
+}
+
+.operatorKeys button{
+    width: 80px;
+    height: 80px;
+    font-weight: bolder;
+    font-size: 30px;
+    margin: 5px;
+    background-color: #F44336;
+    color: white;
+    border: 1px solid #F44336;
+}
+
+.historyButton{
+    background-color: #FF9800;
+    width: 400px;
+    border: 1px solid #FF9800;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bolder;
+    color: white;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
