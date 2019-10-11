@@ -23,10 +23,7 @@ handleChange=(val)=>{
     console.log(this.state.name)
    
 }
-// handleClick=()=>{
 
-//       this.props.reg(this.state)
-// }
 
 render()
 {

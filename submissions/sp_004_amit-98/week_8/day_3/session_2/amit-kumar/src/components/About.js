@@ -1,6 +1,8 @@
 import React from "react";
+import Footer from "./Footer";
 const About = () => {
   return (
+    <div>
     <div>
       <div style={{ marginTop: "100px", float: "left" }}>
         <img src="https://i.pinimg.com/originals/a6/cb/b4/a6cbb43cc5d2877e1961106b046d0df5.jpg" style={{ width: "500px", height: "800px", marginLeft: "200px" }}></img>
@@ -23,6 +25,10 @@ const About = () => {
            Amit graduated in 2019 with a Bachelor of Technology as well as design from Delhi University.
            Her artistry combines attention to detail, assorted materials and symbolic design elements.
       </p>
+      </div>
+      </div>
+      <div style={{clear:"both"}} >
+      <Footer />
       </div>
     </div>
   );
