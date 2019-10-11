@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.display-4{
+  text-align: center;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Dancing Script', cursive !important;
+   font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.card {
+ 
+ height: 40 px;
+ margin: 0;
+ display: grid;
+ /* grid-template-columns:repeat(autofit , minmax(255px,1fr)); */
+ grid-row-gap: 2rem;
+ grid-column-gap: 50px;
+ margin-bottom: 4rem;
+}
+@media screen and (min-width:768px){
+  .card{
+    
+    grid-template-columns:repeat(2,1fr)
+  }
+}
+
+@media screen and (min-width:1140px){
+  .card{
+    grid-template-columns: repeat(4,1fr)
+  }
+}
+
+.header {
+ 
+  background-image: url("/banner.jpg");
+  height: 275px;
+}
+
+.Page-info{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.App-link {
+  color: #09d3ac;
+}

@@ -2,12 +2,13 @@ const INC_COUNTER = "INC_COUNTER";
 const DEC_COUNTER = "DEC_COUNTER";
 const INC_ODD = "INC_ODD";
 const INC_EVEN = "INC_EVEN";
-const MULT_COUNTER = "MULT_COUNTER";
-const DIV_COUNTER = "DIV_COUNTER";
+const MULT = "MULT";
+const DIVIDE = "DIVIDE";
+const REMAINDER = "REMAINDER";
 
 const incrementCounter = amount =>
 {
-    return {
+    return{
         type: INC_COUNTER,
         amount
     };
@@ -21,7 +22,7 @@ const decrementCounter = amount =>
     };
 };
 
-const incrementOdd = amount => 
+const incrementOdd = amount =>
 {
     return{
         type: INC_ODD,
@@ -37,20 +38,28 @@ const incrementEven = amount =>
     };
 };
 
-const multCounter = amount =>
+const multiplication = amount =>
 {
     return{
-        type: MULT_COUNTER,
+        type: MULT,
         amount
     };
 };
 
-const divCounter = amount =>
+const division = amount =>
 {
     return{
-        type: DIV_COUNTER,
+        type: DIVIDE,
         amount
-    }
-}
+    };
+};
 
-export {incrementCounter , decrementCounter , incrementOdd , incrementEven , multCounter , divCounter};
+const remainder = amount =>
+{
+    return{
+        type: REMAINDER,
+        amount
+    };
+};
+
+export {incrementCounter , decrementCounter , incrementOdd , incrementEven , multiplication , division , remainder}

@@ -2,14 +2,15 @@ const INC_COUNTER = "INC_COUNTER";
 const DEC_COUNTER = "DEC_COUNTER";
 const INC_ODD = "INC_ODD";
 const INC_EVEN = "INC_EVEN";
-const MULT_COUTER = "MULT_COUNTER";
-const DIV_COUNTER = "DIV_COUNTER";
+const MULT = "MULT";
+const DIVIDE = "DIVIDE";
+const REMAINDER = "REMAINDER";
 
-const initialState = {
+const initialState ={
     count: 0
 };
 
-const counter = (state = initialState , action) =>
+const Counter = (state = initialState, action) =>
 {
     switch(action.type)
     {
@@ -17,41 +18,52 @@ const counter = (state = initialState , action) =>
             return{
                 count: state.count + action.amount
             };
+        
         case DEC_COUNTER:
             return{
                 count: state.count - action.amount
             };
+
         case INC_ODD:
-            {
-            if(action.amount % 2 ===1)
+            if(action.amount %2 ==1)
             {
                 return{
                     count: state.count + 1
                 };
             }
-        };
-        case INC_EVEN:
+            else
             {
-            if(action.amount % 2 ==0)
-            {
+                return state
+            }
 
-            
-            return{
-                count: state.count + 2
-            };
-        }
-    };
-        case MULT_COUTER:
+        case INC_EVEN:
+            if(action.amount %2 ==0)
+            {
+                return{
+                    count: state.count + 2
+                };
+            }
+
+        case MULT:
             return{
                 count: state.count * action.amount
             };
-        case DIV_COUNTER:
+
+        case DIVIDE:
             return{
                 count: state.count / action.amount
             };
-        default:
-            return state;
-    }
-};
 
-export default counter;
+        case REMAINDER:
+            return{
+                count: state.count % action.amount
+            };
+
+        default:
+        {
+            return state
+        }
+    }
+}
+
+export default Counter;
