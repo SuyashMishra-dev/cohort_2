@@ -22,8 +22,6 @@ class StopWatch extends React.Component {
             this.setState(prevstate =>({
             count:prevstate.count+10,
             start:true
-            
-        
           }))
         },10)
       
@@ -32,15 +30,13 @@ class StopWatch extends React.Component {
         handleResetClick = () => {
             this.setState(prevstate =>({
             count:prevstate.count-prevstate.count
-            
-              
             }))
         }
     render() {
         const {count} =this.state
         // console.log(count)
         // const { count} = this.state;
-         let centiseconds = ("0" + (Math.floor(count / 10) % 100)).slice(-2);
+        let centiseconds = ("0" + (Math.floor(count / 10) % 100)).slice(-2);
         let seconds = ("0" + (Math.floor(count / 1000) % 60)).slice(-2);
         let minutes = ("0" + (Math.floor(count / 60000) % 60)).slice(-2);
         let hours = ("0" + Math.floor(count / 3600000)).slice(-2);

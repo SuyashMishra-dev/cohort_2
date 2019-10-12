@@ -1,0 +1,28 @@
+.wallpaper {
+    background-image: url("https://wallpapercave.com/wp/wp3049846.jpg");
+    height: 800px;
+    color: white;
+}
+
+.wallpaper1 {
+    background-image: url("https://wallpapercave.com/wp/wp2686809.jpg");
+    height: 800px;
+    width: 1900px;
+}
+
+.wallpaper2 {
+    background-image: url("https://images.alphacoders.com/442/thumb-1920-442879.jpg");
+    height: 700px;
+}
+
+.inputValue {
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.Create {
+    width: 10%;
+    height: 5%;
+    font-size: 20px;
+    border-radius: 20px;
+}

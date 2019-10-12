@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Session 1!</title>
+</head>
+<body>
+	<!-- These elements below are for FSD.W3.3.1_1-->
+	<h1> Create your own exponentiation function! </h1>
+	<input type="text" name = "num1">
+	<input type="text" name = "num2">
+	<p> </p>
+	</hr>
+	<button onclick="exponent()">Click here to find the exponent!</button>
+	<!-- These elements above are for FSD.W3.3.1_1-->
+
+	<!-- These elements below are for FSD.W3.3.1_2-->
+	<h1>Sum of multiples of 3 and 5!</h1>
+	<p></p>
+	<input type="text">
+	<button onclick="sumOf3And5()">Click here for the output!</button>
+	
+	<!-- These elements above are for FSD.W3.3.1_2-->
+
+	<!-- These elements below are for FSD.W3.3.1_3-->
+	<h1>Check if the users email is valid!</h1>
+	<label for="Email">Email</label>
+	<input type="text" />
+	<button onclick="validateEmail()">Check Email!</button>
+	<!-- These elements above are for FSD.W3.3.1_3-->
+	<script type="text/javascript">
+		//Write javascript for FSD.W3.3.1_1 here
+		function exponent(){
+			var num1 = document.getElementsByTagName("input")[0].value;
+			var num2 = document.getElementsByTagName("input")[1].value;
+			var expo = document.getElementsByTagName("p")[0];
+			let result = 1;
+			let count = 0;
+			while (count < num2) {
+				result = result * num1;
+				count = count + 1;
+			}
+			expo.innerHTML = result;
+			
+		}
+		//Write javascript for FSD.W3.3.1_2 here
+		function sumOf3And5(){
+			var num = Number(document.getElementsByTagName("input")[2].value);
+			var result = 0;
+			var sum = '';
+			for(var i = 1; i <= num; i++){
+				if((i % 3 == 0) && (i % 5 == 0)){
+					result += i;
+					sum = sum + ' + ' + i;
+				}
+			}
+			document.getElementsByTagName("p")[1].innerHTML = sum + " = " + result;
+		}
+
+		//Write javascript for FSD.W3.3.1_3 here
+		function validateEmail(){
+			// var show = /^([a-z A-Z 0-9/.-])@([a-z]).([a-z])$/;
+			var check = document.getElementsByTagName("input")[3].value;
+			var atvalue = check.indexOf("@");
+			var dotvalue = check.lastIndexOf(".");
+			if ((atvalue <= 1) || (dotvalue <= 1) || (atvalue >= dotvalue) || (atvalue == check.length-1) || (dotvalue == check.length-1)){
+				alert("Invalid Email!");
+			}
+			else {
+				alert("Valid Email!");
+			}
+		}
+	</script>
+</body>
+</html>
