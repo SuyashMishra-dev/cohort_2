@@ -30,7 +30,7 @@ class Create extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.addPlayer(this.state);
-        this.setState({name: '', country: '', t20Score: '', odiScore: '', testScore: ''})
+        this.setState({name: '', t20Score: '', odiScore: '', testScore: ''})
         alert('Player Added Successfully');
     }
 
@@ -40,27 +40,30 @@ class Create extends React.Component {
             {
                 label: 'Player Name',
                 name: 'name',
-                value: this.state.name 
+                value: this.state.name,
+                type: 'text'
             },
             {
                 label: 'T20 Score',
                 name: 't20Score',
-                value: this.state.t20Score
+                value: this.state.t20Score,
+                type: 'number'
             },
             {
                 label: 'ODI Score',
                 name: 'odiScore',
-                value: this.state.odiScore
+                value: this.state.odiScore,
+                type: 'number'
             },
             {
                 label: 'Test Score',
                 name: 'testScore',
-                value: this.state.testScore
+                value: this.state.testScore,
+                type: 'number'
             }
         ]
         return (
             <div className='container'>
-                <Link to='/showplayers'>Goto Show</Link>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
                     {inputsData.map(ele => <FormInputField data={ele} func={this.handleChange} key={ele.label} />)}
                     <label>Country</label>

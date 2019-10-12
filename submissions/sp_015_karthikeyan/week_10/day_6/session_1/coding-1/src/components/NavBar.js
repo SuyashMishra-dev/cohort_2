@@ -4,21 +4,11 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
-        <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+        <nav className='navbar justify-content-between'>
             <Link to='/' className='navbar-brand'>PlayerDB</Link>
-            <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent'>
-                <span className="navbar-toggler-icon"></span>
-            </button>
-
-            <div className='collapse navbar-collapse' id='#navbarSupportedContent'>
-                <ul className='navbar-nav mr-auto'>
-                    <li className='nav-item'>
-                        <Link to='/create' className='nav-link'>Create</Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to='/showplayers' className='nav-link'>Show Players</Link>
-                    </li>
-                </ul>
+            <div className='d-flex justify-content-between'>
+                <Link to='/' className='nav-link'>Create</Link>
+                <Link to='/showplayers/0' className='nav-link'>Show Players</Link>
             </div>
         </nav>
     )

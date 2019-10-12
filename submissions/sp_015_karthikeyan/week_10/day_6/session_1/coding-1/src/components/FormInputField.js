@@ -4,7 +4,7 @@ const FormInputField = (props) => {
     return (
         <div className='form-group'>
             <label>{props.data.label}</label>
-            <input type='text' className='form-control' name={props.data.name} value={props.data.value} onChange={(e) => props.func(e)} />
+            <input className='form-control' type={props.data.type} name={props.data.name} value={props.data.value} onChange={(e) => props.func(e)} required />
         </div>
     )
 }
