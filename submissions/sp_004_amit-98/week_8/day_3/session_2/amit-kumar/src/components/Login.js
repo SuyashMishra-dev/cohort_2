@@ -1,26 +1,27 @@
 import React from "react";
+import './Login.css';
 const Login = () => {
   return (
     <div>
-      <form style={{ marginTop: "100px", marginLeft: "700px" }}>
-
-        <div className="container" >
-          <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required></input><br></br>
-
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required></input><br></br>
-
-          <button className="btn btn-primary ml-5" type="submit">Login</button>
-          <label>
-            <input className="ml-5" type="checkbox" checked="checked" name="remember"></input> Remember me
-    </label>
+      <div className="login-form" style={{marginTop:"120px"}}>
+    <form action="/examples/actions/confirmation.php" method="post">
+        <h2 className="text-center">Log in</h2>       
+        <div className="form-group">
+            <input type="text" className="form-control" placeholder="Username" required="required" />
         </div>
-
-        <div className="container">
-          <span className="psw ml-3">Forgot <a href="#">password?</a></span>
+        <div className="form-group">
+            <input type="password" className="form-control" placeholder="Password" required="required" />
         </div>
-      </form>
+        <div className="form-group">
+            <button type="submit" className="btn btn-primary btn-block">Log in</button>
+        </div>
+        <div className="clearfix">
+            <label className="pull-left checkbox-inline"><input type="checkbox" /> Remember me</label>
+            <a href="#" className="pull-right">Forgot Password?</a>
+        </div>        
+    </form>
+    <p className="text-center"><a href="./Signup">Create an Account</a></p>
+</div>
     </div>
   );
 

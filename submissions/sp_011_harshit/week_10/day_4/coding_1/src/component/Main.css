@@ -5,9 +5,9 @@
 .flex
 {
     display:flex;
-flex-direction: row;
-width: 1000px;
-margin-top: 10px;
+    flex-direction: row;
+    width: 1000px;
+    margin-top: 10px;
 
 }
 .flex button
@@ -16,17 +16,52 @@ margin-top: 10px;
     width: 100px;
     height:100px;
     border: 1px white solid;
-    background-color: blue;
+    background-color: orange;
     color:white ;
-    font-size: 50px;
+    font-size: 30px;
 
 }
 
 button:hover{
         border:2px solid orange;
         background-color: white;
-        color:orange;
-     font-size:80px;
-        width: 130px;
-        height:110px;
+        color:black;
+        font-size:50px;
+        width: 100px;
+        height:100px;
 }
+#input 
+    {
+        width:420px !important;
+        margin-left: -35px;
+     
+    }
+@media (max-width: 450px)
+{
+    .flex{
+        width: 390px;
+        
+    }
+    #input 
+    {
+        width:100% !important;
+     
+    }
+   
+}
+@media (max-width: 560px)
+{
+    .flex{
+        width: 390px;
+        
+    }
+    #input 
+    {
+        width:100% !important;
+     
+    }
+   
+}
+
+
+
