@@ -1,0 +1,122 @@
+.flexContainer {
+    display: flex;
+    flex-direction: row ;
+    height: 600px;
+}
+
+.displayContainerInner {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.displayOperation {
+    /* border: 1px solid red; */
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px;
+    font-size: 55px;
+}
+
+.displayAnswer {
+    flex: 1;
+    /* border: 1px solid black; */
+    color: lightslategray;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px;
+    font-size: 35px;
+}
+
+.flexItem {
+    flex : auto;    
+    /* border : 1px solid red;     */
+}
+
+.operatorColumn {
+    width : 150px ;
+    /* border: 1px solid blue; */
+    background: orange;
+    color: white;
+    display: flex;
+    flex-direction: column;     
+}
+
+.operatorItem {
+    flex : auto;    
+    text-align: center;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.operatorItem:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.displayContainer {
+    display: flex;
+    flex-direction: row ;
+    height: 200px;
+}
+
+.numbersGrid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr; 
+}
+
+.numberButtons {
+    background: gray;
+    /* border: 1px solid green; */
+    color : white;
+    text-align: center;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.numberButtons:hover {
+    opacity: 0.8;
+}
+
+.historyButton {
+    width: 100%;
+    height: 25px;
+    
+}
+
+.historyContainer {
+    width: 100%;
+}
+
+.historyHidden{
+    width : 35%;
+    height: 0px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;    
+    color: orange;
+    position: absolute;
+    top: 200px;
+    left: auto;    
+    background: rgb(185, 185, 185);
+    transition: height 2s;
+}
+
+.historyShow {
+    
+    height: 600px;
+    display: block !important;
+    font-size: 30px;
+}
+
+.historyItem {
+    margin: 10px 0 0 10px;
+}
