@@ -1,9 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 var data=localStorage.getItem("arr");
 var details=JSON.parse(data);
-console.log(details);
 function Show() {
-   
     let list = details.map((item) => {
         return(
             <div className="mt-4 offset-5 text-light">
@@ -19,7 +18,7 @@ function Show() {
                     </thead>
                     <tbody>
                         <tr>
-                            <td> {item.playername}</td>
+                          <Link to={`/details/${item.playername}`}> <td> {item.playername}</td></Link>
                             <td> {item.country}</td>
                             <td> {item.t20}</td>
                             <td> {item.odi}</td>

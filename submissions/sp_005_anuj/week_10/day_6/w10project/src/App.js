@@ -5,6 +5,8 @@ import Create from './component/create.js';
 import Show from './component/show.js';
 import {Route} from 'react-router-dom';
 import {Link} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
+import Details from './component/Details';
 
 function App() {
   return (
@@ -23,12 +25,15 @@ function App() {
         </div>
 
       </div> */}
+      <BrowserRouter>
       <Link to = "/" ></Link>
       <Link to = "/create" >Create</Link>
       <Link to = "/show" >Show</Link>
       <Route path = "/home" exact component = {Home} /> 
       <Route path = "/create" component = {Create} /> 
       <Route path = "/show" component = {Show} />
+      <Route path ="/details/:name" component={Details}/>
+      </BrowserRouter>
     </div>
 
   );
