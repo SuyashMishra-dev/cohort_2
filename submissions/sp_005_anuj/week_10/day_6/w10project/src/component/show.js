@@ -1,13 +1,40 @@
 import React from 'react';
-class Show extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>
-                    Helllo
-                </h1>
+var data=localStorage.getItem("arr");
+var details=JSON.parse(data);
+console.log(details);
+function Show() {
+   
+    let list = details.map((item) => {
+        return(
+            <div className="mt-4 offset-5 text-light">
+                <table style = {{border: "2px solid white"}}>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>country</th>
+                            <th>T20</th>
+                            <th>ODI</th>
+                            <th>Test</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> {item.playername}</td>
+                            <td> {item.country}</td>
+                            <td> {item.t20}</td>
+                            <td> {item.odi}</td>
+                            <td> {item.test}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         )
-    }
+    })
+  return (
+    <div >  
+          {list}
+    </div>
+  )
+  
 }
 export default Show;
