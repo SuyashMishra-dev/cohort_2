@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Marraiage_age_validator</title>
+    </head>
+    <body>
+        <div>
+            <h1>Marraiage_age_validator</h1>
+            <select id="gender">
+                <option>Choose</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <input type="text" id="inputbox">
+            <button onclick="showResult()">Show</button>
+        </div>
+        <script type="text/javascript">
+        var output = document.getElementById("inputbox");
+        var gender = document.getElementById("gender");
+        function showResult() {
+            if (gender.value == "male") {
+                if (output.value <= 1998) {
+                    alert("It is the valid legal age to get married");
+                }
+                else {
+                    alert("It is not the valid legal age to get married");
+                }
+            }
+            else if (gender.value == "female"){
+                if(output.value <= 2001){
+                    alert("It is the valid legal age to get married");
+                }
+                else{
+                    alert("It is not the valid legal age to get married");
+                }
+            }
+            else {
+                alert("Please provide details");
+            }
+        }
+        </script>
+    </body>
+</html>

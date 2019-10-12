@@ -1,33 +1,40 @@
-const ADD = "ADD";
-const SUBTRACT = "SUBTRACT";
-const MULTIPLY = "MULTIPLY";
-const DIVIDE = "DIVIDE";
+const EQUAL = "EQUAL"
+const SUBTRACT = "SUBTRACT"
+const MULTIPLY = "MULTIPLY"
+const DIVIDE = "DIVIDE"
+const CLEAR = "CLEAR"
 
-const additionSum = amount => {
-    return {
-        type : ADD,
-        amount
-    };
-};
+export const equal = value =>{
+	return{
+		type : EQUAL,
+		value
+	}
+}
 
-const subtractMinus = amount => {
-    return {
-        type : SUBTRACT,
-        amount
-    };
-};
+export const subtract = value =>{
+	return{
+		type:SUBTRACT,
+		value
+	}
+}
 
-const multiplyMul = amount => {
-    return {
-        type : MULTIPLY,
-        amount
-    };
-};
+export const multiply = value =>{
+	return{
+		type:MULTIPLY,
+		value
+	}
+}
 
-const divideDiv = amount => {
-    return {
-        type : DIVIDE,
-        amount 
-    };
-};
-export {additionSum,subtractMinus,multiplyMul,divideDiv};
+export const divide = value =>{
+	return{
+		type:DIVIDE,
+		value
+	}
+}
+
+export const clear = value =>{
+	return{
+		type:CLEAR,
+		value
+	}
+}
