@@ -1,0 +1,15 @@
+.nav{
+    color:blueviolet;
+    border-radius:25px;
+    margin-left:600px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 60px;
+}
+.header{
+    height:100px;
+    width:1520px;
+    background:greenyellow;
+   
+    
+    margin-top: 10px;
+}

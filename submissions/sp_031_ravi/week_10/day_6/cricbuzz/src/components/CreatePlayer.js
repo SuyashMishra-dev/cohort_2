@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
 class CreatePlayer extends React.Component{
     constructor(){
         super()
-        this.state ={
+        this.state = {
             name:"",
             country:"",
             t20:"",
@@ -42,6 +42,7 @@ class CreatePlayer extends React.Component{
     render(){
         return(
             <div className="form">
+                
                 <Input
                     placeholder="Player Name"
                     onChange={e => {
@@ -105,6 +106,7 @@ class CreatePlayer extends React.Component{
                 /><br></br>
                 <Button variant="outlined" className={useStyles.button} id="margin" >Submit
                 </Button>
+                
             </div>
         )
     }
