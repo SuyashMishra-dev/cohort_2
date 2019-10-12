@@ -1,0 +1,4 @@
+export default {
+    ADD_PLAYER : 'ADD_PLAYER',
+    UPDATE_FROM_STORAGE : 'UPDATE_FROM_STORAGE'
+}
