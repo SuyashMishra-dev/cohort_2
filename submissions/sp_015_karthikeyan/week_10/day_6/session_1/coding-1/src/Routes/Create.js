@@ -7,8 +7,6 @@ import CountrySelector from '../components/CountrySelector';
 
 import { addPlayer } from '../redux/actions';
 
-import { Link } from 'react-router-dom';
-
 class Create extends React.Component {
     constructor(props) {
         super(props);

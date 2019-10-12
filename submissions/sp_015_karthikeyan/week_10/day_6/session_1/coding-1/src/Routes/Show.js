@@ -28,7 +28,6 @@ class Show extends React.Component {
             <div className='container'>
                 <Filters />
                 <Table data={tableData} width='100%' />
-
                 <Pagination id={id} length={length} />
             </div>
         )

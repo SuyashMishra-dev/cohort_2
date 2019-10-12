@@ -35,7 +35,9 @@ const reducer = (state = initState, action) => {
         }
         case FILTER: {
             let temp = state.playerDetails.filter(ele => ele.country === action.country);
-            console.log(temp);
+            if(action.country === '') {
+                return { ...state, filter: action.country, currentItems: state.playerDetails }
+            }
             return { ...state, filter: action.country, currentItems: temp };
         }
         case SORT: {
