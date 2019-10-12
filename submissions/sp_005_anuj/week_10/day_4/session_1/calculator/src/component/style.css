@@ -1,0 +1,21 @@
+body {
+    background: linear-gradient(#33ccff, #ff99cc );
+    height: 100vh;
+}
+.container {
+    width: 50%;
+    border: 2px solid black;   
+}
+.main {
+    border: 2px solid black;
+    margin: 5%;
+}
+/* .result, input {
+    border-radius: 20px;
+} */
+.btn {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    font-size: 30px;
+}

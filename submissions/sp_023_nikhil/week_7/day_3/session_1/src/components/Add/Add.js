@@ -7,7 +7,6 @@ class Add extends React.Component {
             value: '',
             data: [],
             done: [],
-            doneStatus: false,
             vis: false
         };
     }
@@ -19,10 +18,12 @@ class Add extends React.Component {
     }
 
     handleClick = () => {
-        let arr = this.state.data
-        arr.push(this.state.value)
+        let obj = {
+            task : this.state.value,
+            doneStatus : false
+        }
         this.setState({
-            data: arr,
+            data: [...this.state.data, obj],
             value: ""
         });
     }
