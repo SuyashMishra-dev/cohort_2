@@ -40,29 +40,30 @@ class Create extends Component {
        }
   render() {
     return (
-        
-        <div className = "App">
-          <h1 className = "text-center">Create Player </h1> 
+      <div>
+        <h1 className = "text-center text-light mt-5">Create Player </h1> 
+        <div className = "App w-50 mt-2 rounded-pill offset-3 mt-5" style = {{backgroundColor: "rgba(0,0,0,0.5)"}}>
         <form onSubmit = {this.handleSubmit}>
-        <input type = "text" className = "" name = "playername" value = {this.state.playername} onChange = {(e)=>this.handleChange(e)}></input><br></br>
-        <select className = " w-40" name = "country" value = {this.state.country} onChange = {(e)=>this.handleChange(e)}>
-                <option value = " ">SELECT COUNTRY</option>
-                <option value = "India">INDIA</option>
-                <option value = "England">England</option>
-                <option value = "Pakistan">Pakistan</option>
-                <option value = "New Zealand">New Zealand</option>
-                <option value = "Australia">Australia</option>
-                <option value = "Zimbabwe">Zimbabwe</option>
-                <option value = "USA">USA</option>
-                <option value = "Canada">Canada</option>
-                <option value = "China">China</option>
-                <option value = "West Indies">West Indies</option>
-        </select> <br></br>
-        <input className = "text-center" type = "number" name="t20" value = {this.state.t20} placeholder = "Enter T20 Score" onChange = {(e)=>this.handleChange(e)}></input><br></br>
-        <input className = "text-center" type = "number" name="odi" value = {this.state.odi} placeholder = "Enter ODI Score" onChange = {(e)=>this.handleChange(e)}></input><br></br>
-        <input className = "text-center" type = "number" name="test" value = {this.state.test} placeholder = "Enter Test Score" onChange = {(e)=>this.handleChange(e)}></input><br></br>
-        <button className = "btn-outline-danger">Submit</button>
+          <input type = "text" className = "w-50 mt-2 rounded-pill text-center" placeholder = "Player Name" name = "playername" value = {this.state.playername} onChange = {(e)=>this.handleChange(e)}></input><br></br>
+          <select className = " custom-select w-50 mt-2 rounded-pill" name = "country" value = {this.state.country} onChange = {(e)=>this.handleChange(e)}>
+                  <option value = " ">SELECT COUNTRY</option>
+                  <option value = "India">INDIA</option>
+                  <option value = "England">England</option>
+                  <option value = "Pakistan">Pakistan</option>
+                  <option value = "New Zealand">New Zealand</option>
+                  <option value = "Australia">Australia</option>
+                  <option value = "Zimbabwe">Zimbabwe</option>
+                  <option value = "USA">USA</option>
+                  <option value = "Canada">Canada</option>
+                  <option value = "China">China</option>
+                  <option value = "West Indies">West Indies</option>
+          </select> <br></br>
+          <input className = "text-center w-50 mt-2 rounded-pill" type = "number" name="t20" value = {this.state.t20} placeholder = "Enter T20 Score" onChange = {(e)=>this.handleChange(e)}></input><br></br>
+          <input className = "text-center w-50 mt-2 rounded-pill" type = "number" name="odi" value = {this.state.odi} placeholder = "Enter ODI Score" onChange = {(e)=>this.handleChange(e)}></input><br></br>
+          <input className = "text-center w-50 mt-2 rounded-pill" type = "number" name="test" value = {this.state.test} placeholder = "Enter Test Score" onChange = {(e)=>this.handleChange(e)}></input><br></br>
+          <button className = "btn-outline-danger w-50 mt-2 mb-4 rounded-pill">Submit</button>
         </form> 
+      </div>
       </div>
     )
   }
