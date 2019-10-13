@@ -39,7 +39,7 @@ export default class Details extends Component {
                             <h1>T20 Score:{rr.t20}</h1>
                             <h1>ODI Score:{rr.odi}</h1>
                             <h1>Test ODI :{rr.test}</h1>
-                            <h1>Total: {this.state.total}</h1>
+                            <h1>Total: {total}</h1>
                             <h1>Quote:{this.state.api}</h1>
                         </div>
                     </div>

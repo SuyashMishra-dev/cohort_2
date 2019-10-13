@@ -1,3 +1,4 @@
+import {FILTER, SORT } from './action.js'
 var data =  JSON.parse(localStorage.getItem("arr"));
 if(data === null) {}
 else{
