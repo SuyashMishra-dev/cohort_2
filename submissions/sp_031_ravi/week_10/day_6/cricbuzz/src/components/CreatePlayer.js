@@ -1,115 +1,79 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import Input from '@material-ui/core/Input';
-import Button from '@material-ui/core/Button';
-import './../App.css'
+import React, { Component } from 'react'
 
-const useStyles = makeStyles(theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  input: {
-    margin: theme.spacing(1),
-  },
-}));
 
-class CreatePlayer extends React.Component{
-    constructor(){
-        super()
-        this.state = {
-            name:"",
-            country:"",
-            t20:"",
-            odi:"",
-            test:""
-        }
-    }
+let playerDetails=[];
+var a=JSON.parse(localStorage.getItem("playerDetails"));
+if(a===null){}
+else{playerDetails=[...a]}
 
-    handleChange = (e) => {
-        this.setState({
-            name:e.target.value,
-            // country:e.target.value,
-            // t20:e.target. value,
-            // odi:e.target.value,
-            // test:e.target.value
-        })
-      };
-      handleClick =(e) => {
-    }
+class Create extends Component {
+    constructor(props) {
+        super(props)
       
-
-    render(){
-        return(
-            <div className="form">
-                
-                <Input
-                    placeholder="Player Name"
-                    onChange={e => {
-                        this.handleChange(e);
-                      }}
-                    value={this.state.name}
-                    className={useStyles.input}
-                    inputProps={{
-                    'aria-label': 'description',
-                    id:"margin",
-                    }}
-                /><br></br>
-                <Input
-                    placeholder="Country"
-                    type="dropdown"
-                    onChange={e => {
-                        this.handleChange(e);
-                      }}
-                    value={this.state.country}
-                    className={useStyles.input}
-                    inputProps={{
-                    'aria-label': 'description',
-                    id:"margin",
-                    }}
-                /><br></br>
-                <Input
-                    placeholder="T20 Score"
-                    onChange={e => {
-                        this.handleChange(e);
-                      }}
-                    value={this.state.t20}
-                    className={useStyles.input}
-                    inputProps={{
-                    'aria-label': 'description',
-                    id:"margin",
-                    }}
-                /><br></br>
-                <Input
-                    placeholder="ODI Score"
-                    onChange={e => {
-                        this.handleChange(e);
-                      }}
-                    value={this.state.odi}
-                    className={useStyles.input}
-                    inputProps={{
-                    'aria-label': 'description',
-                    id:"margin",
-                    }}
-                /><br></br>
-                <Input
-                    placeholder="Test Score"
-                    onChange={e => {
-                        this.handleChange(e);
-                      }}
-                    value={this.state.test}
-                    className={useStyles.input}
-                    inputProps={{
-                    'aria-label': 'description',
-                    id:"margin",
-                    }}
-                /><br></br>
-                <Button variant="outlined" className={useStyles.button} id="margin" >Submit
-                </Button>
-                
+        this.state = {
+           id:0,
+           name:'',
+           country:'',
+           t20:0,
+           odi:0,
+           test:0,
+        }
+      }
+      handleChange=(event)=>{
+          event.preventDefault();
+           this.setState({
+               [event.target.name]:event.target.value
+              });
+       }
+       handleSubmit=(event)=>{
+          event.preventDefault();
+          var obj={
+              id:this.state.id++,
+              name:this.state.name,
+              playerName:this.state.playerName,
+              country:this.state.country,
+              t20:this.state.t20,
+              odi:this.state.odi,
+              test:this.state.test
+          }
+          playerDetails.push(obj);
+          localStorage.setItem("playerDetails",JSON.stringify(playerDetails));
+        console.log(this.state)
+       }
+  render() {
+    return (
+        <div style={{marginLeft:"250px",marginTop:""}}>
+          <h1 className="offset-2 mb-5">ADD INFORMATION ABOUT PLAYER </h1> 
+          <form onSubmit={this.handleSubmit}>
+            <h5 >Player Name</h5>
+            <input type="text" className="form-control w-40 mb-4 mr-5" required name="playerName" value={this.state.playerName} onChange={(e)=>this.handleChange(e)}></input>
+            <h5>Country</h5>
+            <select className="form-control w-40" name="country" value={this.state.country} onChange={(e)=>this.handleChange(e)}>
+                    <option value=" ">SELECT COUNTRY</option>
+                    <option value="India">INDIA</option>
+                    <option value="Australia">AUSTRALIA</option>
+                    <option value="England">ENGLAND</option>
+                    <option value="South Africa">SOUTH AFRICA</option>
+                    <option value="Pakistan">PAKISTAN</option>
+                    <option value="Bangladesh">BANGLADESH</option>
+                    <option value="Sri Lanka">SRI LANKA</option>
+                    <option value="New Zealand">NEW ZEALAND</option>
+                    <option value="Afganistan">AFGANISTAN</option>
+                    <option value="West Indies">WEST INDIES</option>
+            </select> 
+            <h5>T-20 Score</h5>
+            <div className="col-4 ">
+              <input type="text" className="form-control" required name="t20" value={this.state.t20} placeholder="" onChange={(e)=>this.handleChange(e)}></input>
             </div>
-        )
-    }
+            <h5>ODI Score</h5>
+            <input type="text" className="form-control w-60 mb-4 mr-5" required name="odi" value={this.state.odi} placeholder="" onChange={(e)=>this.handleChange(e)}></input>
+            <h5>Test Score</h5>
+            <input type="text" className="form-control w-40 mb-4 mr-5" required name="test" value={this.state.test} placeholder="" onChange={(e)=>this.handleChange(e)}></input>
+            <br></br>
+            <button className="btn btn-secondary w-40 ">Submit</button>
+          </form> 
+      </div>
+    )
+  }
 }
-
-export default CreatePlayer;
+export default Create;

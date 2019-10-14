@@ -2,14 +2,15 @@
 import React from "react";
 import { addPlayer } from '../redux/action'
 import { connect } from "react-redux";
-// var data=[];
-// var temp =JSON.parse(localStorage.getItem("PlayerDetails"))
-// if(temp===null){
+var data=[];
+var details=JSON.parse(localStorage.getItem("players"))
+if(details==null){
 
-// }
-// else{
-//     data=[...temp]
-// }
+}
+else{
+    data=[...details]
+}
+
 
 class Create extends React.Component {
     constructor(props) {
@@ -32,17 +33,18 @@ class Create extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(e.target)
-        this.props.orderList.push(this.state)
-        //     localStorage.setItem("PlayerDetails",JSON.stringify(this.props. orderList))
-        let obj = {
+        alert('Form Submitted')
+               let obj = {
             player: this.state.player,
             T20score: this.state.T20score,
             odiscore: this.state.odiscore,
             testscore: this.state.testscore,
             selectedcountry: this.state.selectedcountry,
-            num: this.state.num + 1
+        
         };
+        data.push(obj)
         this.props.add(obj);
+        localStorage.setItem('players',JSON.stringify(data))
     };
 
     render() {
@@ -96,13 +98,13 @@ class Create extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    console.log("map State called ");
-    return {
+// const mapStateToProps = state => {
+//     console.log("map State called ");
+//     return {
 
-        orderList: state.orderList
-    };
-};
+//         orderList: state.orderList
+//     };
+// };
 const mapDispatchToProps = dispatch => {
     console.log("map Dispatcher ");
         return {
@@ -111,6 +113,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-    mapStateToProps,
+null,
     mapDispatchToProps
 )(Create);

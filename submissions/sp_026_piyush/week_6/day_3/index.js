@@ -65,14 +65,61 @@ class listHeader extends Header {
         // return `<h1 style='color: ${this.color}; font-size: ${this.fontSize}px;'> ${this.name[0]} </h1>`;
 
         // console.log( this.name.map(element => `<h1 style='color: ${this.color}; font-size: ${this.fontSize}px;'> ${element} </h1>`));
+
+        // for(var i = 0; i < this.name.length; i++) {
+        //   var element = document.getElementById('update');
+        //   var option = document.createElement('option');
+        //   option.value = this.name[i];
+        //   option.textContent = this.name[i];
+        //   // console.log(option.value);
+        //   element.appendChild(option);
+
+        //   var elementDelete = document.getElementById('delete');
+        //   var option = document.createElement('option');
+        //   option.value = this.name[i];
+        //   option.textContent = this.name[i];
+        //   // console.log(option.value);
+        //   elementDelete.appendChild(option);
+        // }
+        this.populateDropDown();
+        
         return this.name.map(element => `<h1 style='color: ${this.color}; font-size: ${this.fontSize}px;'> ${element} </h1>`);
         // return displayData;
+        
+    }
+
+    populateDropDown() {
+      for(var i = 0; i < this.name.length; i++) {
+        var element = document.getElementById('update');
+        var option = document.createElement('option');
+        option.value = this.name[i];
+        option.textContent = this.name[i];
+        // console.log(option.value);
+        element.appendChild(option);
+
+        var elementDelete = document.getElementById('delete');
+        var option = document.createElement('option');
+        option.value = this.name[i];
+        option.textContent = this.name[i];
+        // console.log(option.value);
+        elementDelete.appendChild(option);
+      }
     }
 
     push(name){
         this.name[this.name.length] = name;
     }
 
+    deleteName() {
+      var toDelete = document.getElementById('delete').value;
+      // console.log(this.name.filter(elem => elem === toDelete));
+      for(var i = 0; i < this.name.length; i++) {
+        if(this.name[i] === toDelete) {
+          this.name.splice(i, 1)
+        }
+      }
+      this.populateDropDown();
+    }
    
 }
 
