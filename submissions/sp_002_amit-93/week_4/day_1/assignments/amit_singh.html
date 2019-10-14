@@ -27,11 +27,6 @@
             <input id="input" type="text" value="0" style="width: 250px; height: 80px; background: greenyellow; text-align: center">
         </div>
 
-
-
-
-
-
         <div class="btn1">
             <button onclick="one()" style="width: 80px; height: 80px; background: greenyellow">1</button>
             <button onclick="two()" style="width: 80px; height: 80px; background: greenyellow">2</button>
@@ -60,139 +55,130 @@
         </div>
 
     </div>
+        <script>   
+
+            function one() {
+                var input = document.getElementById("input").value;
+                if (input.length == 0) {
+                    document.getElementById("input").value = "1";
+                }
+                else {
+                    document.getElementById("input").value = input + "1";
+                }
+            }
+
+            function two() {
+
+                var input = document.getElementById("input").value;
+                if (input.length == 0) {
+                    document.getElementById("input").value = "2";
+                }
+                else {
+                    document.getElementById("input").value = input + "2";
+                }
+            }
+
+            function three() {
+
+                var input = document.getElementById("input").value;
+                if (input.length == 0) {
+                    document.getElementById("input").value = "3";
+                }
+                else {
+                    document.getElementById("input").value = input + "3";
+                }
+            }
+            function four() {
+                var input = document.getElementById("input").value;
+                if (input.length == 0) {
+                    document.getElementById("input").value = "4";
+                }
+                else {
+                    document.getElementById("input").value = input + "4"
+                }
+
+            }
+            function five() {
+                var input = document.getElementById("input").value;
+                if (input.length == 0) {
+                    document.getElementById("input").value = "5";
+                }
+                else {
+                    document.getElementById("input").value = input + "5";
+                }
+
+            }
+            function six() {
+                var input = document.getElementById("input").value;
+                if (input.length == 0) {
+                    document.getElementById("input").value = "6";
+                }
+                else {
+                    document.getElementById("input").value = input + "6";
+                }
+
+            }
+
+            function seven() {
+                var input = document.getElementById("input").value;
+                if (input.length == 0) {
+                    document.getElementById("input").value = "7";
+                }
+                else {
+                    document.getElementById("input").value = input + "7";
+                }
+            }
+            function eight() {
+                var input = document.getElementById("input").value;
+                if (input.length == 0) {
+                    document.getElementById("input").value = "8"
+                }
+                else {
+                    document.getElementById("input").value = input + "8";
+                }
+
+            }
+            function nine() {
+                var input = document.getElementById("input").value;
+                if (input.length == 0) {
+                    document.getElementById("input").value = "9"
+                }
+                else {
+                    document.getElementById("input").value = input + "9";
+                }
+            }
+            function ten() {
+                var input = document.getElementById("input").value;
+                if (input.length == 0) {
+                    document.getElementById("input").value = "0"
+                }
+                else {
+                    document.getElementById("input").value = input + "0";
+                }
+            }
 
 
+            function enter() {
+                var input = document.getElementById("input").value;
+                input = Number(input);
 
-    
+                var min = document.getElementById("input2").value;
+                min = Number(min);
+
+                var max = document.getElementById("input3").value;
+                max = Number(max);
+
+                if (input < min) {
+                    document.getElementById("input2").value = input;
+                }
+                else if (input > max) {
+                    document.getElementById("input3").value = input;
+                }
+                else {
+                    alert('No change')
+                }
+
+            }
+        </script>
 </body>
-<script>
-
-    //var input=document.getElementById("input").value();
-    function one() {
-        var input = document.getElementById("input").value;
-        if (input.length == 0) {
-            document.getElementById("input").value = "1";
-        }
-        else {
-            document.getElementById("input").value = input + "1";
-        }
-    }
-
-    function two() {
-
-        var input = document.getElementById("input").value;
-        if (input.length == 0) {
-            document.getElementById("input").value = "2";
-        }
-        else {
-            document.getElementById("input").value = input + "2";
-        }
-    }
-
-    function three() {
-
-        var input = document.getElementById("input").value;
-        if (input.length == 0) {
-            document.getElementById("input").value = "3";
-        }
-        else {
-            document.getElementById("input").value = input + "3";
-        }
-    }
-    function four() {
-        var input = document.getElementById("input").value;
-        if (input.length == 0) {
-            document.getElementById("input").value = "4";
-        }
-        else {
-            document.getElementById("input").value = input + "4"
-        }
-
-    }
-    function five() {
-        var input = document.getElementById("input").value;
-        if (input.length == 0) {
-            document.getElementById("input").value = "5";
-        }
-        else {
-            document.getElementById("input").value = input + "5";
-        }
-
-    }
-    function six() {
-        var input = document.getElementById("input").value;
-        if (input.length == 0) {
-            document.getElementById("input").value = "6";
-        }
-        else {
-            document.getElementById("input").value = input + "6";
-        }
-
-    }
-
-    function seven() {
-        var input = document.getElementById("input").value;
-        if (input.length == 0) {
-            document.getElementById("input").value = "7";
-        }
-        else {
-            document.getElementById("input").value = input + "7";
-        }
-    }
-    function eight() {
-        var input = document.getElementById("input").value;
-        if (input.length == 0) {
-            document.getElementById("input").value = "8"
-        }
-        else {
-            document.getElementById("input").value = input + "8";
-        }
-
-    }
-    function nine() {
-        var input = document.getElementById("input").value;
-        if (input.length == 0) {
-            document.getElementById("input").value = "9"
-        }
-        else {
-            document.getElementById("input").value = input + "9";
-        }
-    }
-    function ten() {
-        var input = document.getElementById("input").value;
-        if (input.length == 0) {
-            document.getElementById("input").value = "0"
-        }
-        else {
-            document.getElementById("input").value = input + "0";
-        }
-    }
-
-
-    function enter() {
-        var input = document.getElementById("input").value;
-        input = Number(input);
-
-        var min = document.getElementById("input2").value;
-        min = Number(min);
-
-        var max = document.getElementById("input3").value;
-        max = Number(max);
-
-        if (input < min) {
-            document.getElementById("input2").value = input;
-        }
-        else if (input > max) {
-            document.getElementById("input3").value = input;
-        }
-        else {
-            alert('No change')
-        }
-
-    }
-
-
-
-</script>
-
 </html>
