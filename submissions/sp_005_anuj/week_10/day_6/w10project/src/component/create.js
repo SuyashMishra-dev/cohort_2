@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addPlayer } from '../redux/action.js';
 let arr = [];
 var item = JSON.parse(localStorage.getItem("arr"));
 if(item === null){
@@ -35,6 +37,7 @@ class Create extends Component {
               odi:this.state.odi,
               test:this.state.test
           }
+          this.props.add(obj) 
           arr.push(obj);
           localStorage.setItem("arr",JSON.stringify(arr));
        }
@@ -68,4 +71,10 @@ class Create extends Component {
     )
   }
 }
-export default Create;
+const mapDispatchToProps = dispatch => {
+  console.log("dispatcher");
+  return {
+    add: item => dispatch(addPlayer(item))
+  };
+}
+export default connect(null,mapDispatchToProps)(Create);
