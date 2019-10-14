@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link, Route } from 'react-router-dom'
+// import { Link, Route } from 'react-router-dom'
 
 class Show extends React.Component {
     filter = (e) => {
@@ -8,12 +8,17 @@ class Show extends React.Component {
     }
 
     render() {
-        let name = this.props.player.map(elm => elm.name)
-        let country = this.props.player.map(elm => elm.country)
-        let t20Score = this.props.player.map(elm => elm.t20)
-        let odiScore = this.props.player.map(elm => elm.odi)
-        let testScore = this.props.player.map(elm => elm.test)
+        // let name = this.props.player.map(elm => <div><h4>{elm.name}{elm.country} {elm.t20} {elm.odi} {elm.test} </h4></div>)
+        // let country = this.props.player.map(elm => elm.country)
+        // let t20Score = this.props.player.map(elm => elm.t20)
+        // let odiScore = this.props.player.map(elm => elm.odi)
+        // let testScore = this.props.player.map(elm => elm.test)
 
+        let info = JSON.parse(window.localStorage.getItem('player'))
+        let data = info.map(elm => <li>{elm.name}</li>)
+
+        // let data = info.map(elm => <li>{elm.name}</li>)
+        console.log(info)
         return (
             <>
                 <div style={{marginTop:"20px"}}>
@@ -31,22 +36,9 @@ class Show extends React.Component {
                     </select>
                 </div>
 
-                {/* <table>
-                    <th>
-                        <td>Name</td>
-                        <td>T20 Runs</td>
-                        <td>ODI Runs</td>
-                        <td>Test Runs</td>
-                    </th>
-                    <tr>
-                    </tr>
-                </table> */}
-                <Link to={"/"+ name} >{name}</Link>
-                {country}
-                {t20Score}
-                {odiScore}
-                {testScore}
-                <Route path={"/" + name} render={() => {}} />
+                {/* {name} */}
+                {data}
+                {/* {info} */}
             </>
         )
     }

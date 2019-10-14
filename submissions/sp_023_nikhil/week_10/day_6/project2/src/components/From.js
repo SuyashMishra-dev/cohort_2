@@ -47,7 +47,13 @@ class Form extends React.Component {
             test: this.state.test
         } 
         this.props.add(info);
-        this.setState({name:"",country:"",t20:0,odi:0,test:0})
+        this.setState({
+            name:"",
+            country:"",
+            t20:0,
+            odi:0,
+            test:0
+        })
     }
 
     render() { 

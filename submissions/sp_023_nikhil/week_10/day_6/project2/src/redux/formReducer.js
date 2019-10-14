@@ -15,14 +15,14 @@ const details = (state = initialState, action) => {
                 odi: action.details.odi,
                 test: action.details.test
             }
-            window.localStorage.setItem('Player', JSON.stringify(obj))
             return {
+                set: window.localStorage.setItem('Player', JSON.stringify(state.data)),
                 data: [...state.data, obj]
             }
-        default:
-            return state
-    }
-}
+            default:
+                return state
+            }
+        }
 
 
 export default details
