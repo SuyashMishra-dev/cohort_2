@@ -41,20 +41,16 @@
 
 
 
-var buttonOnce = document.getElementById('changetwotimes');
-
-function switchColorOnce(){
-  var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')'; // 
-  buttonOnce.style.backgroundColor = randomColor
-  buttonOnce.removeEventListener('click', switchColorOnce)
-}
-
-buttonOnce.addEventListener('click', switchColorOnce)
-
-
-
-
+       var buttonOnce = document.getElementById('changetwotimes');
+       function switchColorOnce(){
+           var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';  
+          buttonOnce.style.backgroundColor = randomColor
+          buttonOnce.removeEventListener('click', switchColorOnce)
+       }
+          buttonOnce.addEventListener('click', switchColorOnce)
+       
   
-  </script>
+      </script>
+
 </body>
 </html>
