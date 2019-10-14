@@ -1,14 +1,12 @@
-const FILTER  = "FILTER";
-const SORT = "SORT";
-const filterByCountry = (country) => {
-    return FILTER,
-    country
-}
-const sort = (sortType, sortOrder) => {
-    return{
-        type : sort,
-        sortType,
-        sortOrder
-    }
-}
-export {FILTER, filterByCountry, SORT, sort}
+const ADD_PLAYER = "ADD_PLAYER"
+const addPlayer = item => {
+    return {
+        type: ADD_PLAYER,
+        playername: item.playername,
+        country: item.country,
+        t20: item.t20,
+        odi:item.odi,
+        test :item.test
+      };
+};
+export {addPlayer};
