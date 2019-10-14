@@ -10,10 +10,12 @@ const details = (state = initialState, action) => {
             console.log(state)
             const obj = {
                 name: action.details.name,
+                country: action.details.country,
                 t20: action.details.t20,
                 odi: action.details.odi,
                 test: action.details.test
             }
+            window.localStorage.setItem('Player', JSON.stringify(obj))
             return {
                 data: [...state.data, obj]
             }
@@ -21,5 +23,6 @@ const details = (state = initialState, action) => {
             return state
     }
 }
+
 
 export default details

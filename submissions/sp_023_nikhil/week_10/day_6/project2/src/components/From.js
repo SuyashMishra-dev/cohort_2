@@ -1,12 +1,14 @@
 import React from 'react'
 import formAction from '../redux/fromAction'
 import { connect } from 'react-redux'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button';
 
 class Form extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pName: "",
+            name: "",
             country: "",
             t20: 0,
             odi: 0,
@@ -15,7 +17,7 @@ class Form extends React.Component {
     }
 
     nameChange = (e) => {
-        this.setState({ pName: e })
+        this.setState({ name: e })
     }
 
     countryChange = (e) => {
@@ -38,50 +40,45 @@ class Form extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
         let info = {
-            name: this.state.pName,
+            name: this.state.name,
+            country: this.state.country,
             t20: this.state.t20,
             odi: this.state.odi,
             test: this.state.test
         } 
         this.props.add(info);
+        this.setState({name:"",country:"",t20:0,odi:0,test:0})
     }
 
     render() { 
         return (
-            <div>
+            <div style={{marginLeft:"50px"}}>
+                <h2>Add Player</h2>
                 <form onSubmit={(e)=> this.handleSubmit(e) } >
-                    <legend>
-                        Player Name:
-                    <input value={this.state.pName} onChange={(e) => this.nameChange(e.target.value)} type="text" />
-                    </legend>
+                    <TextField required style={{marginBottom:"20px"}} label="Player Name" value={this.state.name} onChange={(e) => this.nameChange(e.target.value)} margin="normal" type="text" />
+                    
                     <legend>
                         Country:
-                        <select onClick={(e) => {this.countryChange(e.target.value)}}>
+                        <select required style={{marginBottom:"20px"}} onClick={(e) => {this.countryChange(e.target.value)}}>
                             <option>India</option>
                             <option>Pakistan</option>
                             <option>Afganistan</option>
                             <option>South Africa</option>
-                            <option>Australia</option>
                             <option>England</option>
+                            <option>Australia</option>
                             <option>Sri Lanka</option>
                             <option>Bangladesh</option>
                             <option>New Zealand</option>
                             <option>West Indies</option>
                         </select>
                     </legend>
-                    <legend>
-                        T20 Score:
-                    <input value={this.state.t20} onChange={(e) => this.t20Change(e.target.value)} />
-                    </legend>
-                    <legend>
-                        ODI Score:
-                    <input value={this.state.odi} onChange={(e) => this.odiChange(e.target.value)} />
-                    </legend>
-                    <legend>
-                        Test Score:
-                    <input value={this.state.test} onChange={(e) => this.testChange(e.target.value)} />
-                    </legend>
-                    <input type="submit" value="Click" />
+                    <TextField required style={{marginBottom:"20px"}} label="T20 Score" type="number" onChange={(e) => this.t20Change(e.target.value)} />
+                    <br />
+                    <TextField required style={{marginBottom:"20px"}} label="ODI Score" type="number" onChange={(e) => this.odiChange(e.target.value)} />
+                    <br />
+                    <TextField required style={{marginBottom:"20px"}} label="Test Score" type="number" onChange={(e) => this.testChange(e.target.value)} />
+                    <br />
+                    <Button type="submit" color="primary" variant="contained">Add Player</Button>
                 </form>
             </div>
         )
@@ -99,4 +96,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect (null, mapDispatchToProps) (Form)
-// connect (mapStateToProps, mapDispatchToProps)
