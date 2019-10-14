@@ -6,9 +6,18 @@ const MULTIPLY_COUNTER = "MULTIPLY_COUNTER"
 
 const DIVIDE_COUNTER = "DIVIDE_COUNTER"
 
+const COND_INC = "COND_INC"
+
 const incrementCounter = (amount) => {
     return {
         type : INC_COUNTER,
+        amount
+    }
+}
+
+const conditionalIncrement = (amount) => {
+    return{
+        type : COND_INC,
         amount
     }
 }
@@ -34,4 +43,4 @@ const divideCounter = (amount) => {
     }
 }
 
-export { incrementCounter, decrementCounter, multiplyCounter, divideCounter }
+export { incrementCounter, decrementCounter, multiplyCounter, divideCounter, conditionalIncrement }

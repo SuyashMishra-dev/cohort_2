@@ -1,22 +1,27 @@
+//Part 1st
+
+let info = null;
+let display = document.getElementById('display');
+
 class Header {
-    constructor(name) {
+    constructor(name, color="black", fsize="20") {
         this.name = name;
-        this.color = "black";
-        this.fsize = 20;
+        this.color = color;
+        this.fsize = fsize;
     }
 
     displayDetails() {
-        console.log(
-            `Name : ${this.name}
-            Color : ${this.color}
-            Font-Size : ${this.fsize}`
-        )
+        console.log(`
+        Name : ${this.name}
+        Color : ${this.color}
+        Font-Size : ${this.fsize}`
+        );
     }
 
     render() {
         return `<div>
-            <h1 style = 'color : ${this.color}; font-size : ${this.fsize}px'> ${this.name} </h1>
-            </div>`;
+                    <h1 style = 'color : ${this.color}; font-size : ${this.fsize}px'> ${this.name} </h1>
+                </div>`;
     }
 
     updateName(name) {
@@ -32,61 +37,117 @@ class Header {
     }
 }    
 
-var header1 = new Header("Masai");
-var doc = document.getElementById('display');
-
-function changeName() {
+changeName = (event) => {
+    event.preventDefault();
     var name = document.getElementById('name').value;
-    header1.updateName(name);
+    if(name === "") {
+        alert("Empty Name Input!")
+    }
+    else{
+        if(info == null) {
+            info = new Header(name);
+        }
+        else {
+            info.updateName(name);
+        }
+        document.getElementById('name').value = "";
+        console.log(info);
+    }
 }
 
-function changeColor() {
+changeColor = (event) => {
+    event.preventDefault();
     var color = document.getElementById('color').value;
-    header1.updateColor(color);
+    if(color === "") {
+        alert("Empty Color Input!")
+    }
+    else {
+        info.updateColor(color);
+    }
+    document.getElementById('color').value = "";
+    console.log(info);
 }
 
-function changeFont() {
+changeFont = (event) => {
+    event.preventDefault();
     var fsize = document.getElementById('fsize').value;
-    header1.updateFontSize(fsize);
+    if(fsize === "") {
+        alert("Empty Font-Size Input")
+    }
+    else {
+        info.updateFontSize(fsize);
+    }
+    document.getElementById('fsize').value = "";
+    console.log(info);
 }
 
-function show() {
-    header1.displayDetails();
-    doc.innerHTML = header1.render();
-}
+show = (event) => {
+    event.preventDefault();
+    display.innerHTML = info.render();
+} 
 
 
+//Part 2nd
+let selectName = document.getElementById('modifyName');
 
-class listHeader extends Header{
-   render() {
-      for(var i = 0; i < nameArr.length; i++) {
-        doc.innerHTML = doc.innerHTML + `<div>
-            <h1 style = 'color : ${this.color}; font-size : ${this.fsize}px'> ${nameArr[i]} </h1>
+class ListHeader extends Header {
+    render() {
+        display.innerHTML = "";
+       info.name.forEach(el => {
+           var div = `
+            <div>
+            <h1 style = 'color : ${info.color}; font-size : ${info.fsize}px'> 
+            ${el} 
+            </h1>
             </div>`;
-      }
-   }
-
-    formColor() {
-        var color = document.getElementById('newColor').value;
-        super.changeColor(color);
-    }
-
-    formFont() {
-        var fsize = document.getElementById('newFsize').value;
-        super.changeFont(fize);
+            display.innerHTML = display.innerHTML + div;
+        })
     }
 }
+formName = (event) => {
+    event.preventDefault();
+    var listNames = document.getElementById('newName').value;
+    listNames = listNames.split(',');
+    listNames.forEach((ele) => {
+        var option = document.createElement('option');
+        option.textContent = ele;
+        selectName.appendChild(option);
+    })
+    
+    if(info === null) {
+        info = new ListHeader(listNames);
+    }
+    else {
+        info.updateName(listNames);
+    }
 
+    // info.displayDetails();
+    console.log(info);
+    // info.render();
+}
 
+formColor = (event) => {
+    event.preventDefault();
+    var color = document.getElementById('newColor').value;
+    // console.log(color);
+    info.updateColor(color);
+}
 
+formFont = (event) => {
+    event.preventDefault();
+    var fsize = document.getElementById('newFsize');
+    info.updateFontSize(fsize);
+}
 
+deleteFormName = (event) => {
+    event.preventDefault();
 
+    var name = document.getElementById('modifyName').value;
+    info.name = info.name.filter(el => el !== name);
+    console.log(info);
+}
 
-
-// var ls = new listHeader("AA,BB,CC,DD,EE");
-// var nameArr = ls.name.split(',');
-// var opt = document.getElementById('modifyName');
-// for(var i =0; i<nameArr.length; i++){
-//     opt.innerHTML = opt.innerHTML + "<option>" + nameArr[i] + "</option>";
-// }
-// ls.render();
+showForm = (event) => {
+    event.preventDefault();
+    info.render();
+}
