@@ -11,6 +11,7 @@ const Routes=()=>{
         <Route path="/show" component={Show}/>
         <Route path='/' exact component={Home}/>
         <Route path='/details/:id' render={props => <Details {...props} />} />
+            
         </div>
     )
 }
