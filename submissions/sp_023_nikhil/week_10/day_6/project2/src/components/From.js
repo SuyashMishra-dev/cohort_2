@@ -48,11 +48,11 @@ class Form extends React.Component {
         } 
         this.props.add(info);
         this.setState({
-            name:"",
-            country:"",
-            t20:0,
-            odi:0,
-            test:0
+            name: "",
+            country: "",
+            t20: 0,
+            odi: 0,
+            test: 0
         })
     }
 
@@ -66,16 +66,17 @@ class Form extends React.Component {
                     <legend>
                         Country:
                         <select required style={{marginBottom:"20px"}} onClick={(e) => {this.countryChange(e.target.value)}}>
-                            <option>India</option>
-                            <option>Pakistan</option>
-                            <option>Afganistan</option>
-                            <option>South Africa</option>
-                            <option>England</option>
-                            <option>Australia</option>
-                            <option>Sri Lanka</option>
-                            <option>Bangladesh</option>
-                            <option>New Zealand</option>
-                            <option>West Indies</option>
+                        <option value="" >Select Country</option>
+                        <option value="India" >India</option>
+                        <option value="Pakistan" >Pakistan</option>
+                        <option value="Afganistan" >Afganistan</option>
+                        <option value="South Africa" >South Africa</option>
+                        <option value="Australia" >Australia</option>
+                        <option value="England" >England</option>
+                        <option value="Sri Lanka" >Sri Lanka</option>
+                        <option value="Bangladesh" >Bangladesh</option>
+                        <option value="New Zealand" >New Zealand</option>
+                        <option value="West Indies" >West Indies</option>
                         </select>
                     </legend>
                     <TextField required style={{marginBottom:"20px"}} label="T20 Score" type="number" onChange={(e) => this.t20Change(e.target.value)} />

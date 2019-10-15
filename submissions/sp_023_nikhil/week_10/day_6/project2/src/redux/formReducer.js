@@ -15,8 +15,9 @@ const details = (state = initialState, action) => {
                 odi: action.details.odi,
                 test: action.details.test
             }
+            // let num = 0
             return {
-                set: window.localStorage.setItem('Player', JSON.stringify(state.data)),
+                set: window.localStorage.setItem('player', JSON.stringify(state.data)),
                 data: [...state.data, obj]
             }
             default:

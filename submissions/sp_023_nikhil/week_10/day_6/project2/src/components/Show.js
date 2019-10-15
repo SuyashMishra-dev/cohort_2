@@ -3,42 +3,60 @@ import { connect } from 'react-redux'
 // import { Link, Route } from 'react-router-dom'
 
 class Show extends React.Component {
+    constructor(){
+        super();
+        this.state={
+            sortCountry: ""
+        }
+    }
+    
     filter = (e) => {
-        this.props.player.filter(elm => elm.country === e)
+        this.setState({sortCountry:e})
     }
 
     render() {
-        // let name = this.props.player.map(elm => <div><h4>{elm.name}{elm.country} {elm.t20} {elm.odi} {elm.test} </h4></div>)
-        // let country = this.props.player.map(elm => elm.country)
-        // let t20Score = this.props.player.map(elm => elm.t20)
-        // let odiScore = this.props.player.map(elm => elm.odi)
-        // let testScore = this.props.player.map(elm => elm.test)
+        let data;
+        if(this.state.sortCountry === ""){
+            data = this.props.player
+        }
+        else {
+            data = this.props.player.filter(elm => elm.country === this.state.sortCountry)
+        }
 
-        let info = JSON.parse(window.localStorage.getItem('player'))
-        let data = info.map(elm => <li>{elm.name}</li>)
-
-        // let data = info.map(elm => <li>{elm.name}</li>)
-        console.log(info)
+        let playerInfo = data.map(elm => <h3>{elm.name}</h3>)
+        
         return (
             <>
                 <div style={{marginTop:"20px"}}>
-                    <select onClick={(e) => { this.filter(e.target.value) }} >
-                        <option>India</option>
-                        <option>Pakistan</option>
-                        <option>Afganistan</option>
-                        <option>South Africa</option>
-                        <option>Australia</option>
-                        <option>England</option>
-                        <option>Sri Lanka</option>
-                        <option>Bangladesh</option>
-                        <option>New Zealand</option>
-                        <option>West Indies</option>
+                    <select onClick={(e) => {this.filter(e.target.value)}} >
+                        <option value="" >All</option>
+                        <option value="India" >India</option>
+                        <option value="Pakistan" >Pakistan</option>
+                        <option value="Afganistan" >Afganistan</option>
+                        <option value="South Africa" >South Africa</option>
+                        <option value="Australia" >Australia</option>
+                        <option value="England" >England</option>
+                        <option value="Sri Lanka" >Sri Lanka</option>
+                        <option value="Bangladesh" >Bangladesh</option>
+                        <option value="New Zealand" >New Zealand</option>
+                        <option value="West Indies" >West Indies</option>
                     </select>
                 </div>
 
-                {/* {name} */}
-                {data}
-                {/* {info} */}
+                <table style={{background:"black", color:"white", borderRadius:"5px"}}>
+                    <th>
+                        <td>Name</td>
+                        <td>Country</td>
+                        <td>T20 Runs</td>
+                        <td>ODI Runs</td>
+                        <td>Test Runs</td>
+                    </th>
+                </table>
+
+                {playerInfo}            
+                
+                {/* <Route /> */}
+
             </>
         )
     }
