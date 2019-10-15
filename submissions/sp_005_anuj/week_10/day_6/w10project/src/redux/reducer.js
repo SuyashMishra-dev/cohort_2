@@ -16,11 +16,7 @@ const Reduce = (state = initialState, action) => {
             odi:action.odi,
             test :action.test
           };
-          console.log('adding success')
-          return {
-            state: [...state, temp]
-          };
-    
+          console.log('adding success')    
         default:
           return state;
         }

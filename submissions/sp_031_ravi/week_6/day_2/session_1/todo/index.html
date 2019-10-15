@@ -13,8 +13,9 @@
     <button id="add">ADD</button>
     <button id="clear"></button>
     <div id ="list"></div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
     
     let totalArray = []
@@ -27,7 +28,7 @@
       todoOption = JSON.parse(localStorage.getItem("allTodo"))
       document.getElementById("list").innerHTML ="";
       todoOption.forEach(x =>{
-      document.getElementById("list").innerHTML += "<p id='para'>"+ x + "</p>"
+      document.getElementById("list").innerHTML += "<div><p id=`para`>"+ x + "<button >Delete</button></p> </div>"
       })
     }
 
@@ -35,11 +36,11 @@
     localStorage.clear();
     }
 
-    $(document).ready(function(){
+   
     $("#para").click(function(){
     $("p").css("text-decoration", "line-through");
   });
-});
+
 
     // document.getElementById("para").onclick = () => {
     //   complete.push
