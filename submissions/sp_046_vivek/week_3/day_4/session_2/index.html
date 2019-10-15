@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W3.4.2_1 !-->
+  <h1>Change the buttons text color random value</h1>
+  <button id="singleclick">Click here to change my color</button>
+  <button id="click_on">click here to change my backgroundColor</button>
+
+  <!-- FSD.W3.4.2_2 !-->
+  <h1 id="tagh1">My color should change when I double click the button!</h1>
+  <button id="doubleclick">Double Click here to change the color of the h1 tag !</button>
+  
+  <!-- FSD.W3.4.2_3 !-->
+  <h1>The buttons color changes to a random value when it is clicked! But only two times!</h1>
+  <button id="changetwice">Click here to change my color!</button>
+  <script>
+
+    var changecolor = document.getElementById("singleclick");
+    function random(number){
+      return Math.floor(Math.random()*number);
+    }
+    function randomColor() {
+      var differentcolor = 'rgb(' + random(255) + ',' +random(255) + ',' +random(255) + ')';
+      changecolor.style.color = differentcolor;
+    }
+    changecolor.addEventListener('click',randomColor);
+
+
+    var arraycolor = document.getElementById("click_on");
+      array = 0;
+    function newColor() {
+    var colours = ["red","green","blue","yellow","purple","pink"];
+      // for (let i = 0; i <= colours.length; i++) {
+        array++ ;
+        if(array == colours.length) {
+          array = 0;
+        }
+      // }
+      arraycolor.style.backgroundColor = colours[array];
+    }
+    arraycolor.addEventListener('click',newColor);
+
+
+    var textcolor = document.getElementById("tagh1");
+    var buttoncolor = document.getElementById("doubleclick");
+    function doubleClick() {
+      var randomcolor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+      textcolor.style.color = randomcolor;
+    }
+    buttoncolor.addEventListener('dblclick',doubleClick);
+
+
+    var changedouble = document.getElementById("changetwice");
+    count = 0;
+    function changeColorTwice() {
+          var tworandomcolor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+          changedouble.style.backgroundColor = tworandomcolor;
+        count++;
+        if (count == 2) {
+          changedouble.removeEventListener('click',changeColorTwice);
+        }
+    }
+
+    changedouble.addEventListener('click',changeColorTwice);
+    // changedouble.onmouseover('click',changeColorTwice);
+  </script>
+</body>
+</html>

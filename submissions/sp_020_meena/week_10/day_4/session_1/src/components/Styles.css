@@ -1,0 +1,12 @@
+.App {
+    text-align: center;
+  }
+.head{
+    height:50px;
+    background-color: aqua;
+    color:red;
+}
+.btn{
+    width:60px;height:50px;background-color:orange;
+    margin:5px;padding: 4px;
+}
