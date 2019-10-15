@@ -35,18 +35,18 @@
         <p>Font Size</p>
         <input type="text" id="fontSize2">
         <p>Update Name</p>
-        <select name="" id="">
+        <select name="" id="update">
 
         </select>
         <p>Delete Name</p>
-        <select name="" id="">
+        <select name="" id="delete">
 
         </select>
 
         <button onclick="listHeading.name.push(document.getElementById('name2').value)">Name</button>
         <button onclick="listHeading.updateColor(document.getElementById('color2').value)">Color</button>
         <button onclick="listHeading.updateFontSize(document.getElementById('fontSize2').value)">Font Size</button>
-        <button onclick="">Delete Name</button>
+        <button onclick="listHeading.deleteName()">Delete Name</button>
         <button onclick="document.querySelector('#container').innerHTML = listHeading.render().reduce((a,b)=>a+b)">Render</button>
 
     </div>
