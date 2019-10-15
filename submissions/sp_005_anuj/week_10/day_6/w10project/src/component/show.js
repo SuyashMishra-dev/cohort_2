@@ -1,8 +1,28 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+// import Pagination from 'react-bootstrap/Pagination'
+import PaginationBasic from './pagination.js'
 var data = localStorage.getItem("arr");
 var details=JSON.parse(data);
 let list;
+// let active = 1;
+// for(let i = 1; i <= 5; i++) {
+//     details.push(
+//         <Pagination.details Key = {i} active = {i === active}>
+//             {i}
+//         </Pagination.details>
+//     )
+// }
+// const paginationBasic = (
+//     <div>
+//         <Pagination>{details}</Pagination>
+//         <br></br>
+//         <Pagination sixe = "lg">{details}</Pagination>
+//         <br></br>
+//     </div>
+    
+// );
 class Show extends React.Component {
     constructor (props) {
         super(props)
@@ -43,7 +63,6 @@ class Show extends React.Component {
              }
             }
         if(event.target.value === "d" ) {
-            console.log("HEY")
             if(this.state.sortType === "t20") {
                 let x = this.state.list.sort((a,b) => Number(b.t20) - Number(a.t20))
                 console.log(x)
@@ -124,8 +143,17 @@ class Show extends React.Component {
                 </tbody>
             </table>
         </div> 
+        <div>
+            <PaginationBasic/>
+        </div>
     </div>
   )}
-  
 }
-export default Show;
+const mapStateToProps = (state)=>{
+    console.log('state is',state)
+    return {
+      details: state
+}
+// console.log(state)
+};
+    export default connect(mapStateToProps,null)(Show);
