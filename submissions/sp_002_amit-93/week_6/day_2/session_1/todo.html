@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title> TODO</title>
 </head>
+
 <body>
-    
-  <h2>Todo</h2>
+    <div class="w-auto p-3" style="background-color: #eee;">
+        <div class="container">
 
-  <input type="text" id="todo">
+            <h2>Todo</h2>
+            <input type="text" placeholder="Todo...." id="todo">
 
-  <button onclick="display()">ADD</button>
-  <button onclick="">Remove it</button>
+            <button onclick="display()">ADD</button>
+            <button onclick="remove()">Remove it</button>
+            <div id="show"></div>
+        </div>
+    </div>
+    <script>
 
-  <div id="show"></div>
+        var arr = [];
+        function display() {
+            var input = document.getElementById("todo").value;
+            arr.push(input)
+            localStorage.setItem("amit", JSON.stringify(arr));  // JSON.stringify
 
+            var output = JSON.parse(localStorage.getItem("amit")); // we use JSON.PARSE
 
-   <script>
+            document.getElementById("show").innerHTML = "";
 
-       var arr=[]
-       function display(){
-           var input = document.getElementById("todo").value;
-           arr.push(input)
-           localStorage.setItem("amit", JSON.stringify(arr));
+            output.forEach(e => {
+                document.getElementById("show").innerHTML += "<p>" + e + "</p>"
+            });
 
-           var output = JSON.parse(localStorage.getItem("amit"));
-           document.getElementById("show").innerHTML = "";
-           output.forEach(element => {
-               document.getElementById("show").innerHTML += "<p>" + element + "</p>"
-           });
-        //    console.log(output);
-       }
-   </script>
+        }
+
+        function remove() {
+            localStorage.removeItem
+        }
+    </script>
 </body>
+
 </html>
