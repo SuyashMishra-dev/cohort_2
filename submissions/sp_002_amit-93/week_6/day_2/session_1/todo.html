@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> TODO</title>
+</head>
+<body>
+    
+  <h2>Todo</h2>
+
+  <input type="text" id="todo">
+
+  <button onclick="display()">ADD</button>
+  <button onclick="">Remove it</button>
+
+  <div id="show"></div>
+
+
+   <script>
+
+       var arr=[]
+       function display(){
+           var input = document.getElementById("todo").value;
+           arr.push(input)
+           localStorage.setItem("amit", JSON.stringify(arr));
+
+           var output = JSON.parse(localStorage.getItem("amit"));
+           document.getElementById("show").innerHTML = "";
+           output.forEach(element => {
+               document.getElementById("show").innerHTML += "<p>" + element + "</p>"
+           });
+        //    console.log(output);
+       }
+   </script>
+</body>
+</html>
