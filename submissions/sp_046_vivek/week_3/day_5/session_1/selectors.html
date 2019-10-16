@@ -25,11 +25,7 @@
         <button onclick="colorblue()">Change Blue</button>
         <script>
             function h1colour() {
-                var first_h = document.querySelectorAll('h1');
-                for (var i = 0; i < first_h.length; i++){
-                var h1 = first_h [i];
-                h1.style.color = "red";
-               }
+                document.querySelector('h1').style.color = "red";
             }
 
             function h3colour() {
@@ -49,28 +45,18 @@
             }
 
             function colorgreen() {
-                var div = document.querySelector('div');
-                div.style.color = "green";
-                var p = document.querySelector('p');
-                p.style.color = "green";
+                document.querySelector('div.green').style.color = "green";
+                document.querySelector('p.green').style.color = "green";
             }
 
             function colorred() {
-                var p = document.querySelectorAll('p');
-                var p1 = p[1];
-                p1.style.color = "red";
-                var div = document.querySelectorAll('div');
-                var div1 = div[1];
-                div1.style.color = "red";
+                document.querySelector('div.red').style.color = "red";
+                document.querySelector('p.red').style.color = "red";
             }
 
             function colorblue() {
-                var div3 = document.querySelectorAll('div');
-                var div4 = div3[2];
-                div4.style.color = "blue";
-                var p3 = document.querySelectorAll('p');
-                var p4 = p3[2];
-                p4.style.color = "blue";
+                document.querySelector('div.blue').style.color = "blue";
+                document.querySelector('p.blue').style.color = "blue";
             }
         </script>
     </body>
