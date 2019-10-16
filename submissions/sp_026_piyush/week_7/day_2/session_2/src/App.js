@@ -130,11 +130,17 @@ class App extends React.Component {
   //   });
   // }
 
-  handleOnclick = (number) => {
-      this.setState((state) => {
-        return state.ratingCheck = number;
-      });
-    }
+  // handleOnclick = (number) => {
+  //     this.setState((state) => {
+  //       return state.ratingCheck = number;
+  //     });
+  // }
+
+handleOnclick = (number) => {
+  this.setState({
+    ratingCheck: number
+  });
+}
 
   render() {
     return( 
