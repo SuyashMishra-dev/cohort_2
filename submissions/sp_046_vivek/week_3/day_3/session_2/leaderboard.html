@@ -121,12 +121,13 @@
         }
 
         function enter() {
-            inpscore.value = result;
             if (result <= min) {
                 inpmin.value = result;
+                result = "";
             }
             else {
                 inpmax.value = result;
+                result = "";
             }
 
             inpscore.value = "";
