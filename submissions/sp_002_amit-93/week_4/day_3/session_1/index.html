@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+      
+        <h2> Person Display </h2>
+        <div class = "paraContainer"> </div>
+      
+
+      <h1>Click the button to see all Customer </h1>
+      <button id = "printObject">Click here to print</button>
+      <div id = "outputContainer"> </div>
+      <button id = "addHobby">Click here to add customer</button>
+      <input id ="hobbyInput" type = "text" /><br><br>
+
+
+
+         <div>
+          <Label for="name"> Name</Label>
+          <Input type="text"  name="name" placeholder="name" class="input" />
+
+          <Label for="lastName">Last Name</Label>
+          <Input type="text"  name="lastName" placeholder="last name" class="input" />
+
+          <Label for="dateOfBirth">Date of Birth</Label>
+          <Input type="text"  name="dateOfBirth" placeholder="DOB" class="input" />
+
+          <Label for="balance">Balance</Label>
+          <Input type="text"  name="balance" placeholder="Balance" class="input" />
+
+          <Label for="accountNumber">Account Number</Label>
+          <Input type="text"  name="account" placeholder="Account Number" class="input" />
+
+          <Label for ="submit">submit Information </Label>
+          <button name="submit" id="submit1">submit</button>
+
+        </div>
+        
+      <script>
+        var customers = {
+               name : "Amit",
+               lastName: "Singh",
+               dateOfBirth: 24/05/1995,
+               balance: 5000000,
+               sharedAccount: ["Coding", "Weight Lifting", "Running", "Eating"],
+               getDetails: function(){
+       
+                      var output = ''
+                      for(key in this){
+                      output += key + ":" + customers[key] + "\n"
+                      if(key == 'sharedAccount') break;
+                   }
+                     return output 
+                 }
+             };
+
+
+              function printObjPara(){
+                var container = document.querySelector('#outputContainer')
+                var outputString = customers.getDetails()
+                var outputPara = document.createElement('p')
+                outputPara.innerText = outputString
+                container.innerHTML = ''
+                container.appendChild(outputPara)
+              }
+              var btnObj = document.querySelector('#printObject');
+              btnObj.addEventListener('click', printObjPara)  
+
+              customers.addHobby = function(hobby){
+                this.sharedAccount.push(hobby)
+              }
+
+              function hobbyBtnFunction(){
+                var hobbyString = document.querySelector('#hobbyInput').value;
+                
+                customers.addHobby(hobbyString);
+              }
+
+              var hobbyBtn = document.querySelector('#addHobby');
+              hobbyBtn.addEventListener('click', hobbyBtnFunction);
+              
+              
+      </script>
+</body>
+</html>

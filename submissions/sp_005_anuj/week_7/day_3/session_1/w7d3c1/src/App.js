@@ -1,5 +1,5 @@
 import React from 'react'
-import Todo from './component/index.js';
+import Todo from './component/todo.js';
 import './App.css'
 class App extends React.Component {
   constructor () {
@@ -17,7 +17,6 @@ class App extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.setState({data: [...this.state.data, {name: this.state.value, isFInished: false}]});
-    console.log(this.state)
   }
 
 changeStatus =(id) => {
@@ -47,7 +46,7 @@ removeitem = (id) => {
             </form>
             </div>
           <div>
-            <Todo data = {this.state.data} changefunc = {(e,i) => this.changeStatus(i)} removefunc = {(e,i) => this.removeitem(i)}/>
+            <Todo data = {this.state.data} changefunc = {(i) => this.changeStatus(i)} removefunc = {(i) => this.removeitem(i)}/>
           </div>
       </div>
     )
