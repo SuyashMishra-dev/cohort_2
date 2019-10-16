@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import AllPlayer from './AllPlayer';
 
 
-let playerDetails=[];
-var a=JSON.parse(localStorage.getItem("playerDetails"));
+let Details=[];
+var a=JSON.parse(localStorage.getItem("Details"));
 if(a===null){}
-else{playerDetails=[...a]}
+else{Details=[...a]}
 
 class Create extends Component {
     constructor(props) {
@@ -36,12 +37,13 @@ class Create extends Component {
               odi:this.state.odi,
               test:this.state.test
           }
-          playerDetails.push(obj);
-          localStorage.setItem("playerDetails",JSON.stringify(playerDetails));
+          Details.push(obj);
+          localStorage.setItem("Details",JSON.stringify(Details));
         console.log(this.state)
        }
   render() {
     return (
+      
         <div style={{marginLeft:"250px",marginTop:""}}>
           <h1 className="offset-2 mb-5">ADD INFORMATION ABOUT PLAYER </h1> 
           <form onSubmit={this.handleSubmit}>
@@ -49,17 +51,17 @@ class Create extends Component {
             <input type="text" className="form-control w-40 mb-4 mr-5" required name="playerName" value={this.state.playerName} onChange={(e)=>this.handleChange(e)}></input>
             <h5>Country</h5>
             <select className="form-control w-40" name="country" value={this.state.country} onChange={(e)=>this.handleChange(e)}>
-                    <option value=" ">SELECT COUNTRY</option>
-                    <option value="India">INDIA</option>
-                    <option value="Australia">AUSTRALIA</option>
-                    <option value="England">ENGLAND</option>
-                    <option value="South Africa">SOUTH AFRICA</option>
-                    <option value="Pakistan">PAKISTAN</option>
-                    <option value="Bangladesh">BANGLADESH</option>
-                    <option value="Sri Lanka">SRI LANKA</option>
-                    <option value="New Zealand">NEW ZEALAND</option>
-                    <option value="Afganistan">AFGANISTAN</option>
-                    <option value="West Indies">WEST INDIES</option>
+              <option value=" ">SELECT COUNTRY</option>
+              <option value="India">INDIA</option>
+              <option value="Australia">AUSTRALIA</option>
+              <option value="England">ENGLAND</option>
+              <option value="South Africa">SOUTH AFRICA</option>
+              <option value="Pakistan">PAKISTAN</option>
+              <option value="Bangladesh">BANGLADESH</option>
+              <option value="Sri Lanka">SRI LANKA</option>
+              <option value="New Zealand">NEW ZEALAND</option>
+              <option value="Afganistan">AFGANISTAN</option>
+              <option value="West Indies">WEST INDIES</option>
             </select> 
             <h5>T-20 Score</h5>
             <div className="col-4 ">
