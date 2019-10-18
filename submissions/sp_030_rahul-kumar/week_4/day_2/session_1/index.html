@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- FSD.W4.2.1_1 !-->
+  <h1>Click the button to see information about my favourite movie</h1>
+  <button id="movie_details">Movie Information!</button>
+  <!-- FSD.W4.2.1_2 !-->
+  <button id="durations">Add Runtime to the movie object! </button>
+  
+  <!-- FSD.W4.2.1_3 !-->
+  <button id="new_cast">Add cast member </button>
+  
+
+  <script>
+  var movie_detail = document.getElementById("movie_details");
+  var body = document.querySelector("body");
+  var movie_on= document.querySelector('#movie_details');
+  var movie = {
+    name : "Raazi",
+    director : "Meghna Gulzar",
+    year : 2018,
+    rating :4.5,
+    cast: 	["Alia Bhatt","Vicky Kaushal","Jaideep Ahlawat","Rajit Kapur","Shishir Sharma"]  
+  } 
+  function the_movie(){
+    var mName = document.createElement('p');
+    mName.textContent = "Name: " + movie.name;
+    var mDirector = document.createElement('p')
+    mDirector.textContent = "Director: " + movie.director;
+    var mYear = document.createElement('p');
+    mYear.textContent = "Year: " + movie.year;
+    var mRating = document.createElement('p');
+    mRating.textContent = "Rating: " + movie.rating;
+    var mCast = document.createElement('p');
+    mCast.textContent ="Cast: "+ movie.cast;
+
+    body.insertBefore(mName, movie_on);
+    body.insertBefore(mDirector, movie_on);
+    body.insertBefore(mYear,movie_on);
+    body.insertBefore(mRating,movie_on);
+    body.insertBefore(mCast,movie_on); 
+  }
+  movie_detail.addEventListener('click',the_movie);
+  var duration = document.getElementById("durations");
+  function movieDuration(){
+    movie.duration = 140;
+    var mDuration = document.createElement('p');
+    mDuration.textContent ="Duration: " + movie.duration;
+    the_movie();
+    body.insertBefore(mDuration, movie_on);
+  }
+  duration.addEventListener('click', movieDuration);
+  var add_cast = document.getElementById("new_cast")
+  function adding_cast(){
+    movie.cast.push("Sanjay Suri");
+    the_movie();
+  }
+  add_cast.addEventListener('click',adding_cast)
+  </script>
+  
+  </script>
+</body>
+</html>
