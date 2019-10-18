@@ -1,20 +1,19 @@
 class car {
-        constructor(make, model, topSpeed, distance = 0) {
-          this.make = make;
-          this.model = model;
+        constructor(Company, Model, topSpeed, Distance = 0) {              //to construct a new object
+          this.Company = Company;
+          this.Model = Model;
           this.topSpeed = topSpeed;
-          this.distance = distance;
-        }
-        travelDist(time = 1, speed = topSpeed / 2) {
-            var distance1 = speed * time;
-            this.distance = distance1;
-        }
-        presentStatus() { 
-           return (this.make + " " + this.model + " " + this.topSpeed + "km/hr " + this.distance);
+          this.Distance = Distance;
         }
       }
-      var arrOfCar = [];
-      var submit1 =  document.getElementById("submitInfo");
-      submit1.addEventListener('click', function() {
-
+      var carArr = [];
+      var submitButton = document.querySelector('#submitInfo');
+      var newInput = document.querySelectorAll('.inputValue');
+      submitInfo.addEventListener('click', function() {
+        var newCar = new car(newInput[0].value, newInput[1].value, newInput[2].value);
+        carArr.push(newCar);
+        console.log(carArr);
+        localStorage.setItem(this.carArr);
+        //console.log(document.querySelectorAll('inputValue').value);
       });
+      
