@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button';
 
+
 class Form extends React.Component {
     constructor(props) {
         super(props);
@@ -21,7 +22,7 @@ class Form extends React.Component {
     }
 
     countryChange = (e) => {
-        this.setState({country: e})
+        this.setState({ country: e })
         console.log(this.state.country)
     }
 
@@ -45,7 +46,7 @@ class Form extends React.Component {
             t20: this.state.t20,
             odi: this.state.odi,
             test: this.state.test
-        } 
+        }
         this.props.add(info);
         this.setState({
             name: "",
@@ -56,34 +57,34 @@ class Form extends React.Component {
         })
     }
 
-    render() { 
+    render() {
         return (
-            <div style={{marginLeft:"50px"}}>
+            <div style={{ marginLeft: "50px" }}>
                 <h2>Add Player</h2>
-                <form onSubmit={(e)=> this.handleSubmit(e) } >
-                    <TextField required style={{marginBottom:"20px"}} label="Player Name" value={this.state.name} onChange={(e) => this.nameChange(e.target.value)} margin="normal" type="text" />
-                    
+                <form onSubmit={(e) => this.handleSubmit(e)} >
+                    <TextField required style={{ marginBottom: "20px" }} label="Player Name" value={this.state.name} onChange={(e) => this.nameChange(e.target.value)} margin="normal" type="text" />
+
                     <legend>
                         Country:
-                        <select required style={{marginBottom:"20px"}} onClick={(e) => {this.countryChange(e.target.value)}}>
-                        <option value="" >Select Country</option>
-                        <option value="India" >India</option>
-                        <option value="Pakistan" >Pakistan</option>
-                        <option value="Afganistan" >Afganistan</option>
-                        <option value="South Africa" >South Africa</option>
-                        <option value="Australia" >Australia</option>
-                        <option value="England" >England</option>
-                        <option value="Sri Lanka" >Sri Lanka</option>
-                        <option value="Bangladesh" >Bangladesh</option>
-                        <option value="New Zealand" >New Zealand</option>
-                        <option value="West Indies" >West Indies</option>
+                        <select required style={{ marginBottom: "20px" }} onChange={(e) => { this.countryChange(e.target.value) }}>
+                            <option value="">---select country----</option>
+                            <option value="India" >India</option>
+                            <option value="Pakistan" >Pakistan</option>
+                            <option value="Afganistan" >Afganistan</option>
+                            <option value="South Africa" >South Africa</option>
+                            <option value="Australia" >Australia</option>
+                            <option value="England" >England</option>
+                            <option value="Sri Lanka" >Sri Lanka</option>
+                            <option value="Bangladesh" >Bangladesh</option>
+                            <option value="New Zealand" >New Zealand</option>
+                            <option value="West Indies" >West Indies</option>
                         </select>
                     </legend>
-                    <TextField required style={{marginBottom:"20px"}} label="T20 Score" type="number" onChange={(e) => this.t20Change(e.target.value)} />
+                    <TextField required style={{ marginBottom: "20px" }} label="T20 Score" type="number" onChange={(e) => this.t20Change(e.target.value)} />
                     <br />
-                    <TextField required style={{marginBottom:"20px"}} label="ODI Score" type="number" onChange={(e) => this.odiChange(e.target.value)} />
+                    <TextField required style={{ marginBottom: "20px" }} label="ODI Score" type="number" onChange={(e) => this.odiChange(e.target.value)} />
                     <br />
-                    <TextField required style={{marginBottom:"20px"}} label="Test Score" type="number" onChange={(e) => this.testChange(e.target.value)} />
+                    <TextField required style={{ marginBottom: "20px" }} label="Test Score" type="number" onChange={(e) => this.testChange(e.target.value)} />
                     <br />
                     <Button type="submit" color="primary" variant="contained">Add Player</Button>
                 </form>
@@ -92,14 +93,10 @@ class Form extends React.Component {
     }
 }
 
-// const mapStateToProps = (state) => {
-
-// }
-
 const mapDispatchToProps = (dispatch) => {
-    return {  
+    return {
         add: (details) => dispatch(formAction(details))
     }
 }
 
-export default connect (null, mapDispatchToProps) (Form)
+export default connect(null, mapDispatchToProps)(Form)
