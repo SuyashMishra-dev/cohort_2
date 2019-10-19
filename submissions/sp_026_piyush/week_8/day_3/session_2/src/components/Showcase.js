@@ -27,7 +27,7 @@ class Showcase extends Component {
             ],
         }
     }
-    
+
     render() {
         return (
             <div className="row col-10 offset-lg-1 mt-5">
