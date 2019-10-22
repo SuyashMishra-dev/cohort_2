@@ -1,44 +1,123 @@
 import React from 'react'
 import { connect } from 'react-redux'
-// import { Link, Route } from 'react-router-dom'
+import Button from '@material-ui/core/Button';
+import Profile from './Profile'
+import { Link, Route } from 'react-router-dom';
 
 class Show extends React.Component {
-    filter = (e) => {
-        this.props.player.filter(elm => elm.country === e)
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: props.player,
+            sortCountry: "",
+            sortFormat:""
+        }
     }
 
+    filter = (e) => {
+        this.setState({ sortCountry: e })
+    }
+
+    sortRuns = (e) => {
+        this.setState({sortFormat: e})
+        console.log(this.state.sortFormat)
+    }
+
+    asc = () => {
+        if(this.state.sortFormat === "t20" ) {
+            let temp =  this.state.data.sort((a,b) => a.t20 - b.t20)
+             this.setState({data:temp})
+        }
+        else if(this.state.sortFormat === "odi" ) {
+            let temp =  this.state.data.sort((a,b) => a.odi - b.odi)
+             this.setState({data:temp})
+        } 
+        else if(this.state.sortFormat === "test" ) {
+            let temp =  this.state.data.sort((a,b) => a.test - b.test)
+             this.setState({data:temp})
+        } 
+    }
+
+    dec = () => {
+        if(this.state.sortFormat === "t20" ) {
+            let temp =  this.state.data.sort((a,b) => b.t20 - a.t20)
+             this.setState({data:temp})
+        }
+        else if(this.state.sortFormat === "odi" ) {
+            let temp =  this.state.data.sort((a,b) => b.odi - a.odi)
+             this.setState({data:temp})
+        } 
+        else if(this.state.sortFormat === "test" ) {
+            let temp =  this.state.data.sort((a,b) => b.test - a.test)
+             this.setState({data:temp})
+        } 
+    }
+
+
     render() {
-        // let name = this.props.player.map(elm => <div><h4>{elm.name}{elm.country} {elm.t20} {elm.odi} {elm.test} </h4></div>)
-        // let country = this.props.player.map(elm => elm.country)
-        // let t20Score = this.props.player.map(elm => elm.t20)
-        // let odiScore = this.props.player.map(elm => elm.odi)
-        // let testScore = this.props.player.map(elm => elm.test)
+        let data;
+        if (this.state.sortCountry === "") {
+            data = this.state.data
+        }
+        else {
+            data = this.state.data.filter(elm => elm.country === this.state.sortCountry)
+        }
 
-        let info = JSON.parse(window.localStorage.getItem('player'))
-        let data = info.map(elm => <li>{elm.name}</li>)
+        let playerInfo = data.map(elm => {
+            return (
+                <table>
+                    <tr>
+                        <td><Link to={`/profile/${elm.name}`} >{elm.name}</Link></td>
+                        <td>{elm.country}</td>
+                        <td>{elm.t20}</td>
+                        <td>{elm.odi}</td>
+                        <td>{elm.test}</td>
+                    </tr>
+                </table>
+            )
+        })
 
-        // let data = info.map(elm => <li>{elm.name}</li>)
-        console.log(info)
         return (
             <>
-                <div style={{marginTop:"20px"}}>
-                    <select onClick={(e) => { this.filter(e.target.value) }} >
-                        <option>India</option>
-                        <option>Pakistan</option>
-                        <option>Afganistan</option>
-                        <option>South Africa</option>
-                        <option>Australia</option>
-                        <option>England</option>
-                        <option>Sri Lanka</option>
-                        <option>Bangladesh</option>
-                        <option>New Zealand</option>
-                        <option>West Indies</option>
+                <div style={{ marginTop: "20px" }}>
+
+                    <select onChange={(e) => { this.filter(e.target.value) }} >
+                        <option value="" >--show by Country--</option>
+                        <option value="India" >India</option>
+                        <option value="Pakistan" >Pakistan</option>
+                        <option value="Afganistan" >Afganistan</option>
+                        <option value="South Africa" >South Africa</option>
+                        <option value="Australia" >Australia</option>
+                        <option value="England" >England</option>
+                        <option value="Sri Lanka" >Sri Lanka</option>
+                        <option value="Bangladesh" >Bangladesh</option>
+                        <option value="New Zealand" >New Zealand</option>
+                        <option value="West Indies" >West Indies</option>
                     </select>
+                    <select onChange={(e) => {this.sortRuns(e.target.value)}}>
+                        <option value="" >---sort by---</option>
+                        <option value="t20" >T20</option>
+                        <option value="odi" >ODI</option>
+                        <option value="test" >Test</option>
+                    </select>
+                    <Button onClick={() => this.asc()}>Ascending</Button>
+                    <Button onClick={() => this.dec()}>Decending</Button>
                 </div>
 
-                {/* {name} */}
-                {data}
-                {/* {info} */}
+                <table style={{ background: "black", color: "white", borderRadius: "5px" }}>
+                    <th>
+                        <td>Name</td>
+                        <td>Country</td>
+                        <td>T20 Runs</td>
+                        <td>ODI Runs</td>
+                        <td>Test Runs</td>
+                    </th>
+                </table>
+
+                {playerInfo}
+
+                <Route path="/profile/:id" render={data => <Profile {...data} />} />
+
             </>
         )
     }
