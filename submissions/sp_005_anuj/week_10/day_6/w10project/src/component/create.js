@@ -40,6 +40,7 @@ class Create extends Component {
           this.props.add(obj) 
           arr.push(obj);
           localStorage.setItem("arr",JSON.stringify(arr));
+          {alert("Successfully Added")}
        }
   render() {
     return (

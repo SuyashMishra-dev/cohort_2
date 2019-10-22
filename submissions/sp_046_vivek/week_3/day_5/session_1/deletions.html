@@ -21,41 +21,48 @@
             <p class="blue">Third P</p>
         </div>
         <hr/>
-        <button onclick="removeh1()">Remove H1</button>
-        <button onclick="removeh3()">Remove H3</button>
-        <button onclick="removeh5()">Remove H5</button>
-        <button onclick="removered()">Remove Red</button>
-        <button onclick="removediv()">Remove DIVS</button>
+        <button onclick="removeH1()">Remove H1</button>
+        <button onclick="removeH3()">Remove H3</button>
+        <button onclick="removeH5()">Remove H5</button>
+        <button onclick="removeRed()">Remove Red</button>
+        <button onclick="removeDiv()">Remove DIVS</button>
         <script>
-            function removeh1(){
+            function removeH1(){
             var h1 = document.getElementById("first");
             h1.remove();
         }
 
-        function removeh3(){
-            var rmvh3 = document.querySelectorAll("h3");
-            for (var i = 0; i < rmvh3.length; i++){
-                rmv3 = rmvh3 [i];
-                rmv3.remove(); 
+        function removeH3(){
+            var delh3 = document.querySelectorAll("h3");
+            for (var i = 0; i < delh3.length; i++){
+                remove3 = delh3 [i];
+                remove3.remove(); 
             }
         }
 
-        function removeh5(){
-            var rmvh5 = document.querySelectorAll("h5");
-            for (var i = 0; i < rmvh5.length; i++){
-                rmh5 = rmvh5 [i];
-                rmh5.remove();
+        function removeH5(){
+            var delh5 = document.querySelectorAll("h5");
+            for (var i = 0; i < delh5.length; i++){
+                remove5 = delh5 [i];
+                remove5.remove();
             }
         }
 
-        function removered(){
-            var removered = document.getElementById("cont");
-            for (var i = 0; i < removered.length; i++){
-                rmred = removered [i];
-                rmred.remove();
+        function removeRed(){
+            var redid = document.getElementById("cont");
+            var redclass = document.querySelectorAll(".red");
+            for (var i = 0; i < redclass.length; i++){
+                redid.removeChild(redclass[i]);
             }
         }
 
+        function removeDiv() {
+            var divid = document.getElementById("cont");
+            var divclass = document.querySelectorAll("div > div");
+            for (var i = 0; i < divclass.length; i++){
+                divid.removeChild(divclass[i]);
+            }
+        }
         </script>
     </body>
 </html>

@@ -1,0 +1,115 @@
+.container{
+    width: 500px;
+    height: 800px;
+    background-color: rgb(99, 95, 155);
+    margin-left: 100px;
+}
+.align{
+    text-align: center;
+}
+.flex{
+    width:100px;
+    height:50px;
+    background-color: rgb(47, 56, 56);
+    margin: 5px 0px 0px 200px;
+    color: white;
+    text-align: center;
+    font-size: 30px; 
+    
+}
+.flex1{
+    width:80px;
+    height:50px;
+    background-color:black;
+    margin: 0px 0px 0px 150px;
+    float:left;
+    color: white;
+    text-align: center;
+    font-size: 30px;   
+}
+.align1{
+    margin: 5px 0px 0px 170px;
+    float:left;
+}
+.flex2{
+    width:80px;
+    height:50px;
+    background-color:black;
+    margin: 0px 0px 0px 40px;
+    color:white;
+    float:left;
+    text-align: center;
+    font-size: 30px;
+}
+.align2{
+    margin: 5px 0px 0px 80px;
+    float:left;
+}
+.row{
+    float:left;
+}
+.display{
+    width:200px;
+    height:70px;
+    background-color: rgb(27, 92, 8);
+    margin: 50px 0px 0px 150px;
+    color:white;
+    text-align: center;
+    font-size: 30px;
+}
+.number{
+    margin-left:180px;
+    margin-right:150px;
+    border: 1px solid black;
+    float: left;
+}
+.num1{
+    width:40px;
+    height:40px;
+    background-color: coral;
+    text-align: center;
+    float: left;
+    margin:5px;
+}
+.num2{
+    background-color: darkblue;
+    margin:150px 0px 0px 55px;
+    width:40px;
+    height:40px;
+    text-align: center;
+}
+.enter{
+    width:100px;
+    height:30px;
+    background-color: black;
+    color:white;
+    margin-left: 20px;
+    text-align: center;
+   
+}
+.remove{
+    height: 50px;
+    width: 250px;
+    border: 2px solid black;
+    color: white;
+    background: black;
+    float: right;
+    text-align: center;
+    margin-right: 250px;
+    font-size: 30px;
+    margin-top: 10px;
+}
+.total{
+    text-align: center;
+    margin: 10px;
+    font-size: 30px;
+}
+.displayBox{
+    height: 900px;
+    width: 520px;
+    margin: 0px 0px 0px 0px;
+    float: right;
+}
+.left{
+    float : left;
+}

@@ -1,27 +1,36 @@
-import Pagination from 'react-bootstrap/Pagination'
-import React from 'react';
-let active = 1;
-let items = [];
-for (let number = 1; number <= 5; number++) {
-  items.push(
-    <Pagination.Item key={number} active={number === active}>
-      {number}
-    </Pagination.Item>,
-  );
-}
+// import React from 'react';
 
-const PaginationBasic = (
-  <div>
-    <Pagination>{items}</Pagination>
-    <br />
-    
-    <Pagination size="lg">{items}</Pagination>
-    <br />
+// import { Link } from 'react-router-dom';
 
-    <Pagination size="sm">{items}</Pagination>
-  </div>
-);
+// const Pagination = (data) => {
+//   var data = localStorage.getItem("arr");
+// console.log(data)
+//     let limit = Math.floor(data.length/1);
+//     return (
+//         <nav>
+//             <ul className='pagination justify-content-center'>
+//                 {data.id === '0' ? (
+//                     <li className='page-item disabled'>
+//                         <Link to={`/ksjss54544/${Number(data.id) - 1}`} disabled className='page-link'>Previous</Link>
+//                     </li>
+//                 ) : (
+//                     <li className='page-item'>
+//                         <Link to={`/ksjss54544/${Number(data.id) - 1}`} className='page-link'>Previous</Link>
+//                     </li>
+//                 )}
+//                 {Number(data.id) >= limit ? (
+//                     <li className='page-item disabled'>
+//                         <Link to={`/ksjss54544/${Number(data.id) + 1}`} className='page-link'>Next</Link>
+//                     </li>
+//                 ) : (
+//                     <li className='page-item'>
+//                         <Link to={`/ksjss54544/${Number(data.id) + 1}`} className='page-link'>Next</Link>
+//                     </li>
+//                 )}
+                
+//             </ul>
+//         </nav>
+//     )
+// }
 
-render(PaginationBasic);
-
-export default PaginationBasic;
+// export default Pagination;

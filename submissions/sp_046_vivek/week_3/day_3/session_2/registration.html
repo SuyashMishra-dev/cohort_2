@@ -31,7 +31,7 @@
         }
 
         #result{
-            background: black;
+            background: rgb(190, 43, 43);
             color: white;
             margin: -350px 0px 0px 600px; 
         }
@@ -71,6 +71,7 @@
             var name = document.getElementById("namebox").value;
                 if ((name.length >= 3) && (name.length <= 10)) {
                     document.getElementById("displayname").innerText = "NAME \n" + name;
+                    document.getElementById("nameinvalid").innerText = "";
                     }
                 else {
                     document.getElementById("nameinvalid").innerHTML = "Enter a valid name";
@@ -85,12 +86,14 @@
                     }
                 else {
                     document.getElementById("displayemail").innerText = "EMAIL \n" + email;
+                    document.getElementById("emailinvalid").innerText = "";
                     }
 
 
             var mobile = document.getElementById("mobilebox").value;
                 if (mobile.length == 10){
                     document.getElementById("displaymobile").innerText = "MOBILE \n" + mobile;
+                    document.getElementById("mobileinvalid").innerText = "";
                     } 
                 else {
                     document.getElementById("mobileinvalid").innerHTML = "Enter a valid mobile";
