@@ -12,7 +12,7 @@ class Country extends Component{
         .then(res=> {
             console.log(res)
             this.setState({
-                details:res.data.slice(0,10)
+                details:res.data.slice(0,20)
             })
         })
     }
