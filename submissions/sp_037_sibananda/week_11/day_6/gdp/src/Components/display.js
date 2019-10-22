@@ -9,7 +9,7 @@ const Display = (props) => {
     var val = props.show.map(a => {
         return (
         <div className="row">
-        <table class="table">
+        <table className="table table-striped table-dark">
         <thead>
         <tr>
       <th scope="col">#</th>
