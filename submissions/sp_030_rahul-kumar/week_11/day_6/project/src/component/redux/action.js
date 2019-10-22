@@ -4,4 +4,11 @@ const Add = (val)=>(
         val
     }
 )
-export  {Add}
+const Name =(name)=>(
+    console.log(name),
+    {
+        type:"name",
+        name
+    }
+) 
+export  {Add,Name}
