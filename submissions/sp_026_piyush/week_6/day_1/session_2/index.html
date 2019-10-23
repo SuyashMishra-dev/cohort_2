@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>2A</title>
 </head>
 <body>
     <div>
@@ -14,7 +14,7 @@
         <input type="text" id="model" class="carDetails">
         <p>Top Speed</p>
         <input type="text" id="topSpeed" class="carDetails">
-        <button onclick="submit()">Submit</button>
+        <button onclick="honda.submit()">Submit</button>
     </div>
 
     <div id="secondForm">
@@ -22,11 +22,15 @@
         <select id="carList">
         </select>
         <p>Ride Time</p>
-        <input type="text">
+        <input type="text" id="time">
         <p>Ride Speed</p>
-        <input type="text">
-        <button>Get Car Status</button>
-        <button onclick="travelDist()">Travel Distance</button>
+        <input type="text" id="speed">
+        <button onclick="honda.presentStatus()">Get Car Status</button>
+        <button onclick="honda.travelDist()">Travel Distance</button>
+    </div>
+
+    <div id="display">
+
     </div>
     <script src="./index.js"></script>
 </body>

@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <style type="text/css">
+
+        input{
+            font-size: 6mm;
+        }
+
+        #namebox, #emailbox, #mobilebox{
+            height: 40px;
+            width: 250px;
+            border: 2px solid black;
+            margin-top: -10px;
+        }
+
+        .text{
+            font-size: 6mm;
+        }
+
+        .nametext{
+            font-size: 10mm;
+        }
+
+        .register{
+            background: black;
+            color: white;
+            height: 40px;
+            width: 250px;
+            font-size: 6mm;
+            text-align: center;
+        }
+
+        #result{
+            background: rgb(190, 43, 43);
+            color: white;
+            margin: -350px 0px 0px 600px; 
+        }
+
+        body{
+            margin: 150px;
+        }
+
+        #nameinvalid, #emailinvalid, #mobileinvalid{
+            color: red;
+            font-weight: bold;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <p class="text">NAME</p>
+            <input type="text" id="namebox">
+            <p id="nameinvalid"></p>
+            <p class="text">EMAIL</p>
+            <input type="text" id="emailbox">
+            <p id="emailinvalid"></p>
+            <p class="text">MOBILE</p>
+            <input type="text" id="mobilebox">
+            <p id="mobileinvalid"></p>
+            <button onclick="showValue()" class="register">REGISTER</button>
+        </div>
+        <div id="result">
+            <p class="nametext" id="displayname"></p>
+            <p class="classemail" id="displayemail"></p>
+            <p class="text" id="displaymobile"></p>
+        </div>
+        <script>
+
+            function showValue() {
+            var name = document.getElementById("namebox").value;
+                if ((name.length >= 3) && (name.length <= 10)) {
+                    document.getElementById("displayname").innerText = "NAME \n" + name;
+                    document.getElementById("nameinvalid").innerText = "";
+                    }
+                else {
+                    document.getElementById("nameinvalid").innerHTML = "Enter a valid name";
+                    }
+
+
+            var email = document.getElementById("emailbox").value;
+            var atvalue = email.indexOf("@");
+            var dotvalue = email.lastIndexOf(".");
+                if ((atvalue <= 1) || (dotvalue <= 1) || (atvalue >= dotvalue) || (atvalue == email.length-1) || (dotvalue == email.length-1)) {
+                    document.getElementById("emailinvalid").innerHTML = "Enter a valid email";
+                    }
+                else {
+                    document.getElementById("displayemail").innerText = "EMAIL \n" + email;
+                    document.getElementById("emailinvalid").innerText = "";
+                    }
+
+
+            var mobile = document.getElementById("mobilebox").value;
+                if (mobile.length == 10){
+                    document.getElementById("displaymobile").innerText = "MOBILE \n" + mobile;
+                    document.getElementById("mobileinvalid").innerText = "";
+                    } 
+                else {
+                    document.getElementById("mobileinvalid").innerHTML = "Enter a valid mobile";
+                    }
+            }
+        </script>
+    </body>
+</html>
