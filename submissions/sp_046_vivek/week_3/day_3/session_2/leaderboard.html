@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <style type="text/css">
+
+        input{
+            height: 60px;
+            width: 80px;
+            margin: 50px;
+            border: 2px solid black;
+        }
+
+        .scorebox{
+            height: 75px;
+            width: 190px;
+            margin: 0px 0px 0px 75px;
+            background: grey;
+        }
+
+        #box{
+            display: flex;
+            flex-direction: row;
+        }
+        #button123, #button456, #button789{
+            display: flex;
+            flex-direction: row;
+            margin: 0px 0px 0px 65px;
+        }
+
+        .enter{
+            height: 60px;
+            width: 190px;
+            margin-left: 70px;
+            background: black;
+            color: white;
+        }
+
+        button{
+            height: 50px;
+            width: 50px;
+            margin: 10px;
+            border: 1px solid black;
+            background: rgb(214, 103, 13);
+        }
+
+        .zero{
+            margin-left: 145px;
+            background: purple;
+            color: white;
+        }
+
+        #text{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .min, .max, .score{
+            font-size: 6mm;
+            margin: -45px 75px 0px 60px;
+        }
+
+        .score{
+            margin: 10px 0px 0px 130px;
+        }
+
+        .minbox{
+            background: red;
+        }
+
+        .maxbox{
+            background: green;
+        }
+
+        .one, .three, .seven, .nine{
+            background: rgb(48, 199, 48);
+        }
+
+        </style>
+        <div id="box">
+            <input type="text" class="minbox">
+            <input type="text" class="maxbox">
+        </div>
+        <div id="text">
+            <p class="min">MIN</p>
+            <p class="max">MAX</p>
+        </div>
+        <div>
+            <p class="score">SCORE</p>
+            <input type="text" class="scorebox">
+        </div>
+        <div id="button123">
+            <button value="1" onclick="number('1')" class="one">1</button>
+            <button value="2" onclick="number('2')">2</button>
+            <button value="3" onclick="number('3')" class="three">3</button>
+        </div>
+        <div id="button456">
+            <button value="4" onclick="number('4')">4</button>
+            <button value="5" onclick="number('5')">5</button>
+            <button value="6" onclick="number('6')">6</button>
+        </div>
+        <div id="button789">
+            <button value="7" onclick="number('7')" class="seven">7</button>
+            <button value="8" onclick="number('8')">8</button>
+            <button value="9" onclick="number('9')" class="nine">9</button>
+        </div>
+        <div>
+            <button value="0" onclick="number('0')" class="zero">0</button>
+        </div>
+        <div>
+            <button value="enter" onclick="enter()" class="enter">ENTER</button>
+        </div>
+        <script type="text/javascript">
+        var min = 43;
+        var max = 2019;
+        var result = '';
+        var inpscore = document.getElementsByTagName("input")[2];
+        var inpmin = document.getElementsByTagName("input")[0];
+        var inpmax = document.getElementsByTagName("input")[1];
+        function number(digit) {
+            result += digit;
+            inpscore.value = result;
+        }
+
+        function enter() {
+            if (result <= min) {
+                inpmin.value = result;
+                result = "";
+            }
+            else {
+                inpmax.value = result;
+                result = "";
+            }
+
+            inpscore.value = "";
+        }
+        </script>
+    </head>
+</html>

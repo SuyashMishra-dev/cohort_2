@@ -1,0 +1,40 @@
+#display{
+    background: #c9c9c5;
+    width: 340px;
+    font-size: 50px;
+    align-content: center;
+    margin-left: 37%;
+    text-align: center;
+}
+
+.btn{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    font-size: 20px;
+    border: solid #a5a0a0;
+    color: white;
+}
+
+#startStop{
+    background: #69d1e4;
+}
+
+#reset{
+    background: #6d84ec;
+}
+
+#split{
+    background: #706d6d;
+}
+
+.buttons{
+    margin-left: 39%;
+    margin-top: 40px;
+}
+
+#record{
+    margin-left: 48%;
+    margin-top: 30px;
+    font-size: 25px;
+}
