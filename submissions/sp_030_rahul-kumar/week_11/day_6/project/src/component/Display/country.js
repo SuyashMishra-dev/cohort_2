@@ -1,8 +1,11 @@
 import React from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import { connect } from 'react-redux';
+import {Name} from './../redux/action'
+
  
-export default class CountryList extends React.Component{
+ class CountryList extends React.Component{
     state ={
         country :[],
     };
@@ -12,15 +15,28 @@ export default class CountryList extends React.Component{
        console.log(res)
        this.setState({country:res.data});
     })
-    }
+    
+}
 
 render(){
     return (
+        <div>
         <ul>
-            {this.state.country.map(person =><Link to =  {`/:${person.name}`}>
-                <li key ={person.name}>{person.name}</li></Link>
-            )}
+            {this.state.country.map(person =>
+            
+               <Link to="/Create"> <li onClick={()=>this.props.Namesave(person.name)} key={person.name}>{person.name}</li></Link>)}
+            
         </ul>
+        </div>
     )
-}
-}
+       }
+    }
+    const mapDispatchToProps =(dispatch)=>{
+        return{
+                Namesave:(val)=>dispatch(Name(val))
+        }
+    }
+    export default connect(
+        null,
+        mapDispatchToProps
+    )(CountryList);

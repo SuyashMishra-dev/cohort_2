@@ -5,13 +5,14 @@ import Data from './component/Display/data'
 import Home from './component/Create'
 import CountryList from './component/Display/country'
 import Display from './component/Display/data'
+import {connect} from 'react-redux'
 
-function App() {
+function App(props) {
   return (        
     <Router>
     <div className="App1">
       <div className="bg-success">
-      <Link to ="/" className="bg-danger m-5 ">Home</Link>
+      {/* <Link to ="/" className="bg-danger m-5 ">Home</Link> */}
       <Link to ="/data"><button>Data</button></Link>
      
       
@@ -19,7 +20,7 @@ function App() {
       {/* <Link to ="countryList">dataa</Link> */}
       </div>
        <div>
-        <Route path="/" exact render={()=><Home/>}/>
+        <Route path='/Create/' render={()=><Home/>}/>
         <Route path="/data"  render={()=><Display />} />
         <Route path='/component/Display/country' render={()=><Home />} />
         {/* <Route path='/home'exact render={()=><Home />} /> */}
@@ -33,5 +34,14 @@ function App() {
 
   );
 }
+const mapStateToProps=(state)=>{
+  console.log(state)
+  return{
+    selectname:state.name
 
-export default App;
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(App);
