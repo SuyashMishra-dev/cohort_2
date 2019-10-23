@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {  Link } from 'react-router-dom'
 
 class Data extends Component {
   state = {
@@ -18,9 +19,10 @@ class Data extends Component {
   render(){
       return(
         <div>  
-            <button>Data</button>
+            
                <ol>
-        {this.state.posts.map(country=><li>{country.name}</li>)}
+        {this.state.posts.map(country=>
+        <Link to="/Home"><li>{country.name}</li></Link>)}
         
     </ol></div>
  )
