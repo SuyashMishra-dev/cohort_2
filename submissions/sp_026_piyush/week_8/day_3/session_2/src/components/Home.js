@@ -4,15 +4,15 @@ import TopBanner from './TopBanner';
 import Showcase from './Showcase';
 
 const Home = () => {
-    return (
+  return (
     <div>
       <Carousel />
 
       <TopBanner />
 
-      <Showcase />      
+      <Showcase />
     </div>
-    );
-  };
+  );
+};
 
 export default Home;
