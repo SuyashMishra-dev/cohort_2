@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="container border border border-primary">
+    <div class="container-fluid row justify-content-md-center p-3 border border-primary">
+        <h1>See the Weather for any City</h1>
+    </div>
+    <input  id ="cityName" type="text"  class="offset-4 mt-5" >
+    <button type="button" class="btn btn-primary" type="submit" onclick="getCityWeather()">Submit</button>
+</div>
+<div id="hide" class="container border border-primary mt-5 p-3">
+    <div class="card-body mx-10">
+        <b>CITY NAME:</b>  <p class="card-title" id="city_name"></p>
+        <b>TEMP:</b><p class="card-title" id="city_Temp"></p>
+        <b>WIND:</b> <p class="card-title" id="Wind"></p>
+        <b>SUNRISE:</b> <p class="card-title" id="sunrise"></p>
+        <b>SUNSET :</b><p class="card-title" id="city_sunset"></p>
+        <b>Wind Direction:</b><p class="card-title" id="city_wind_dir"></p>
+        <b>Weather:</b><p class="card-title" id="city_weather"></p>
+        </div>
+</div>
+
+
+<script>
+    // $('document').ready(function(){
+    //     $('#hide').hide()
+    //     $('#submit').click(function(){
+    // $('#hide').show(2000);
+    // })
+        function getCityWeather() {
+          var city =document.getElementById('cityName').value;
+                var xhr = new XMLHttpRequest();
+                var apiKey= "95f3e37544834db59f1b09a673e251da";
+                var url ='https://api.weatherbit.io/v2.0/current?city='+city+'&key='+apiKey;
+                xhr.open('GET',url);
+                xhr.send();
+                xhr.onload=function(){
+                if(xhr.status==200){
+                  var dataApi=JSON.parse(xhr.response);   
+                  document.getElementById("city_name").innerHTML=dataApi.data[0].city_name;
+                  document.getElementById("city_Temp").innerHTML=dataApi.data[0].temp+" C";
+                  document.getElementById("Wind").innerHTML=dataApi.data[0].wind_spd +" mph";
+                  document.getElementById("sunrise").innerHTML=dataApi.data[0].sunrise+" GST";
+                  document.getElementById("city_sunset").innerHTML=dataApi.data[0].sunset+" GST";
+                  document.getElementById("city_wind_dir").innerHTML=dataApi.data[0].wind_dir +" degrees"; 
+                  document.getElementById("city_weather").innerHTML=dataApi.data[0].weather.description;                                                                                          
+              }
+              else{
+                  console.log("Error code is:"+xhr.status);
+                }
+              }
+        }
+            </script>
+</body>
+</html>
