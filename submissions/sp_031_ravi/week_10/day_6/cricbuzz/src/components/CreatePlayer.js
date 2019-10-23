@@ -1,115 +1,91 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import Input from '@material-ui/core/Input';
-import Button from '@material-ui/core/Button';
-import './../App.css'
+import React, { Component } from 'react'
 
-const useStyles = makeStyles(theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  input: {
-    margin: theme.spacing(1),
-  },
-}));
+import { connect } from 'react-redux'
+import addPlayerDetails from './redux/actions/action'
 
-class CreatePlayer extends React.Component{
-    constructor(){
-        super()
-        this.state = {
-            name:"",
-            country:"",
-            t20:"",
-            odi:"",
-            test:""
-        }
-    }
 
-    handleChange = (e) => {
-        this.setState({
-            name:e.target.value,
-            // country:e.target.value,
-            // t20:e.target. value,
-            // odi:e.target.value,
-            // test:e.target.value
-        })
-      };
-      handleClick =(e) => {
-    }
+
+let Details=[];
+var a=JSON.parse(localStorage.getItem("Details"));
+if(a===null){}
+else{Details=[...a]}
+
+class Create extends Component {
+    constructor(props) {
+        super(props)
       
-
-    render(){
-        return(
-            <div className="form">
-                
-                <Input
-                    placeholder="Player Name"
-                    onChange={e => {
-                        this.handleChange(e);
-                      }}
-                    value={this.state.name}
-                    className={useStyles.input}
-                    inputProps={{
-                    'aria-label': 'description',
-                    id:"margin",
-                    }}
-                /><br></br>
-                <Input
-                    placeholder="Country"
-                    type="dropdown"
-                    onChange={e => {
-                        this.handleChange(e);
-                      }}
-                    value={this.state.country}
-                    className={useStyles.input}
-                    inputProps={{
-                    'aria-label': 'description',
-                    id:"margin",
-                    }}
-                /><br></br>
-                <Input
-                    placeholder="T20 Score"
-                    onChange={e => {
-                        this.handleChange(e);
-                      }}
-                    value={this.state.t20}
-                    className={useStyles.input}
-                    inputProps={{
-                    'aria-label': 'description',
-                    id:"margin",
-                    }}
-                /><br></br>
-                <Input
-                    placeholder="ODI Score"
-                    onChange={e => {
-                        this.handleChange(e);
-                      }}
-                    value={this.state.odi}
-                    className={useStyles.input}
-                    inputProps={{
-                    'aria-label': 'description',
-                    id:"margin",
-                    }}
-                /><br></br>
-                <Input
-                    placeholder="Test Score"
-                    onChange={e => {
-                        this.handleChange(e);
-                      }}
-                    value={this.state.test}
-                    className={useStyles.input}
-                    inputProps={{
-                    'aria-label': 'description',
-                    id:"margin",
-                    }}
-                /><br></br>
-                <Button variant="outlined" className={useStyles.button} id="margin" >Submit
-                </Button>
-                
-            </div>
-        )
-    }
+        this.state = {
+           id:null,
+           name:'',
+           country:'',
+           t20:0,
+           odi:0,
+           test:0,
+        }
+      }
+      handleChange=(event)=>{
+          event.preventDefault();
+           this.setState({
+               [event.target.name]:event.target.value
+              });
+       }
+       handleSubmit=(event)=>{
+          event.preventDefault();
+          var obj={
+              id:this.state.id++,
+              name:this.state.name,
+              playerName:this.state.playerName,
+              country:this.state.country,
+              t20:this.state.t20,
+              odi:this.state.odi,
+              test:this.state.test
+          }
+          Details.push(obj);
+          localStorage.setItem("Details",JSON.stringify(Details));
+        console.log(this.state)
+       }
+  render() {
+    return (
+      
+        <div style={{marginLeft:"230px",marginTop:"40px"}}>
+          <h3 className="offset-2 mb-5 " style={{marginLeft:"300px"}}>ADD INFORMATION ABOUT PLAYER </h3> 
+          <form onSubmit={this.handleSubmit}>
+            <h6 style={{textAlign:'center'}}>Player Name</h6>
+            <input type="text" className="form-control w-40 mb-2 mr-5 col-3" style={{textAlign:'center',marginLeft:'420px'}} required name="playerName" value={this.state.playerName} onChange={(e)=>this.handleChange(e)}></input>
+            <h6 style={{textAlign:'center'}}>Country</h6>
+            <select className="form-control w-40 col-3 mb-2" name="country" style={{textAlign:'center',marginLeft:'420px'}} value={this.state.country} onChange={(e)=>this.handleChange(e)}>
+              <option value=" ">SELECT COUNTRY</option>
+              <option value="India">INDIA</option>
+              <option value="Australia">AUSTRALIA</option>
+              <option value="England">ENGLAND</option>
+              <option value="South Africa">SOUTH AFRICA</option>
+              <option value="Pakistan">PAKISTAN</option>
+              <option value="Bangladesh">BANGLADESH</option>
+              <option value="Sri Lanka">SRI LANKA</option>
+              <option value="New Zealand">NEW ZEALAND</option>
+              <option value="Afganistan">AFGANISTAN</option>
+              <option value="West Indies">WEST INDIES</option>
+            </select> 
+            <h6 style={{textAlign:'center'}}>T-20 Score</h6>
+            
+            <input type="text" className="form-control col-3 mb-2" style={{textAlign:'center',marginLeft:'420px'}} required name="t20" value={this.state.t20} placeholder="" onChange={(e)=>this.handleChange(e)}></input>
+            
+            <h6 style={{textAlign:'center'}}>ODI Score</h6>
+            <input type="text" className="form-control w-60 mb-2 ml-8 col-3" style={{textAlign:'center',marginLeft:'420px'}}  required name="odi" value={this.state.odi} placeholder="" onChange={(e)=>this.handleChange(e)}></input>
+            <h6 style={{textAlign:'center'}}>Test Score</h6>
+            <input type="text" className="form-control w-40 mb-2 mr-5 col-3" style={{textAlign:'center',marginLeft:'420px'}} required name="test" value={this.state.test} placeholder="" onChange={(e)=>this.handleChange(e)}></input>
+            
+            <button className="btn btn-secondary w-40 " style={{marginLeft:"530px"}}>Submit</button>
+          </form> 
+      </div>
+    )
+  }
 }
 
-export default CreatePlayer;
+const mapDispatchToProps = dispatch =>{
+  console.log("mapDispatch to props")
+  return{
+    add:value => dispatch(addPlayerDetails(value))
+  }
+}
+export default connect(null,mapDispatchToProps) (Create);

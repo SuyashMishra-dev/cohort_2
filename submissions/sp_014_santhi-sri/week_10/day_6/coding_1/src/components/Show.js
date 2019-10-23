@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from 'react-redux'
+import {Link} from "react-router-dom"
 // var  data= JSON.parse(localStorage.getItem("PlayerDetails"))
 
 const Show = (props) => {
@@ -21,7 +22,7 @@ const Show = (props) => {
                              return (
                             <tr>
                                 <th scope="row">{index+1}</th>
-                                <td>{item.player}</td>
+                                <td><Link to ={`Playername${index}`}> {item.player}</Link></td>
                                 <td>{item.selectedcountry}</td>
                                 <td>{item.T20score}</td>
                                 <td>{item.odiscore}</td>
@@ -39,7 +40,7 @@ const Show = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        orderList: state.orderList
+        orderList: state
     }
 }
 export default connect(

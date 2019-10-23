@@ -1,15 +1,53 @@
 <!DOCTYPE html>
 <html>
     <title>Week 6 Day 1</title>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <div class="btn-group dropright">
+            <button type="button" class="btn btn-secondary">
+              Company
+            </button>
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropright</span>
+            </button>
+            <div class="dropdown-menu">
+              <!-- Dropdown menu links -->
+            </div>
+          </div>
+          <div class="btn-group dropright">
+            <button type="button" class="btn btn-secondary">
+              Model
+            </button>
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropright</span>
+            </button>
+            <div class="dropdown-menu">
+              <!-- Dropdown menu links -->
+            </div>
+          </div>
+          <div class="btn-group dropright">
+            <button type="button" class="btn btn-secondary">
+              Top Speed
+            </button>
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropright</span>
+            </button>
+            <div class="dropdown-menu">
+              <!-- Dropdown menu links -->
+            </div>
+          </div>
+    </head>
     <body>
         <div>
             <label>Company</label>
-            <input type = "text">
+            <input type = "text" class = "inputValue">
             <label>Model</label>
-            <input type = "text">
+            <input type = "text" class = "inputValue">
             <label>Top Speed</label>
-            <input type = "text">
+            <input type = "text" class = "inputValue">
             <button type = "submit" id = "submitInfo">Submit</button>
+            <button type = "Display" id = "displayButton">Display</button>
         </div>
         
             <script src = index.js></script>

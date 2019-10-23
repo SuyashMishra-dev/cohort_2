@@ -3,43 +3,104 @@ class Car {
         this.carMake = carMake;
         this.model = model;
         this.topSpeed = topSpeed;
+        // this.dist = 0;
+        // this.submit = this.submit.bind(this)
     }
-    var dist = 0;
+    dist = 0;
 
-    travelDist(time = 1, speed = .5 * this.topSpeed) {
-        var dist = 0;
-        dist = time * speed;
-    }
+    submit () {
+        var carDetails = document.querySelectorAll('.carDetails');
+        var carMake = carDetails[0].value;
+        var model = carDetails[1].value;
+        var topSpeed = carDetails[2].value;
+        
+        var model = new Car(carMake, model, topSpeed);
 
-    presentStatus () {
+        // myCar = [...myCar, new Car(carMake, model, topSpeed)];
+        // donot delete the above line
+        myCar = [...myCar, model];
 
-    }
-}
-// var myCar = new Car('Maruti', 'Baleno', 120, 100);
-
-function submit () {
-    var carDetails = document.querySelectorAll('.carDetails');
-    // console.log(carDetails.length);
-    var carMake = carDetails[0].value;
-    var model = carDetails[1].value;
-    var topSpeed = carDetails[2].value;
-
-    var myCar = [];
-    myCar.push(new Car(carMake, model, topSpeed));
-    // console.log(myCar[0])
-    for(i = 0; i < myCar.length; i++) {
-        var carList = document.getElementById('carList');
+        // console.log(myCar)
+        
+        var carList = [];
+        carList = document.getElementById('carList');
         var options = document.createElement('option');
-        options.value = myCar[i].model;
-        options.textContent = myCar[i].model;
+        options.value = myCar[myCar.length-1].model;
+        options.textContent = myCar[myCar.length-1].model;
         carList.appendChild(options);
-
+    }
+    
+    travelDist (time = 1, speed) {
+        var carList = document.getElementById('carList');
+        var currentCar = carList.value;
+        time = document.getElementById('time').value;
+        speed = document.getElementById('speed').value;
+        var newDist = speed * time;
+        
+        for(var i = 0; i < myCar.length; i++) {
+            if(myCar[i].model = currentCar) {
+                myCar[i].dist = myCar[i].dist + newDist;
+            }
+        }
+        // console.log(myCar);
+    }
+    
+    presentStatus () {
+        var carList = document.getElementById('carList');
+        var currentCar = carList.value;
+        console.log(myCar)
+        var temp = myCar.filter(elem => elem.model === currentCar);
+        // console.log(temp);
+        var display = document.getElementById('display');
+        var div = document.createElement('div');
+        div.innerHTML = `${temp[0].carMake} ${temp[0].model} ${temp[0].topSpeed}km/hr ${temp[0].dist}km`;
+        display.appendChild(div);
     }
 }
+var honda = new Car('Maruti', 'Baleno', 120, 100);
+var myCar = [];
 
-// function travelDist (time, speed) {
-//     var carList = document.getElementById('carList');
-//     var currentCar = carList.value;
-//     console.log(currentCar);
+
+
+// function submit () {
+//     var carDetails = document.querySelectorAll('.carDetails');
+//     var carMake = carDetails[0].value;
+//     var model = carDetails[1].value;
+//     var topSpeed = carDetails[2].value;
+
+//     myCar = [...myCar, new Car(carMake, model, topSpeed)];
+//     console.log(myCar)
+
+//     var carList = [];
+//     carList = document.getElementById('carList');
+//     var options = document.createElement('option');
+//     options.value = myCar[myCar.length-1].model;
+//     options.textContent = myCar[myCar.length-1].model;
+//     carList.appendChild(options);
 // }
 
+// function travelDist (time = 1, speed) {
+//     var carList = document.getElementById('carList');
+//     var currentCar = carList.value;
+//     time = document.getElementById('time').value;
+//     speed = document.getElementById('speed').value;
+//     newDist = speed * time;
+    
+//     for(i = 0; i < myCar.length; i++) {
+//         if(myCar[i].model = currentCar) {
+//             myCar[i].dist = myCar[i].dist + newDist;
+//         }
+//     }
+//     console.log(myCar);
+// }
+
+// function presentStatus () {
+//     var carList = document.getElementById('carList');
+//     var currentCar = carList.value;
+//     var temp = myCar.filter(elem => elem.model === currentCar).map(elem => elem);
+//     console.log(temp)
+//     var display = document.getElementById('display');
+//     var div = document.createElement('div');
+//     div.innerHTML = `${temp[0].carMake} ${temp[0].model} ${temp[0].topSpeed}km/hr ${temp[0].dist}km`;
+//     display.appendChild(div)
+// }

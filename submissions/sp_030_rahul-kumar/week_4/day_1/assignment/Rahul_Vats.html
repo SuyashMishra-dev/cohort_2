@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="left">
+<div class="container left">    
+    <h2 class="align">TOTAL</h2> 
+    <input class="flex" id="total_score"></input> 
+    <div class="row">
+        <p class="align1">MIN</p>
+        <p class="align2">MAX</p>
+        <input class="flex1" id="min_id"></input> 
+        <input class="flex2" id="max_id"></input> 
+    </div>
+    <input class="display" id="input_id"></input>
+    <h3 class="align">Score</h3>
+    <div class="number">
+        <div class="num1" onclick = "showNumber1()">1</div>
+        <div class="num1" onclick = "showNumber2()">2</div>
+        <div class="num1" onclick = "showNumber3()">3</div>
+        <div>
+            <div class="num1" onclick = "showNumber4()">4</div>
+            <div class="num1" onclick = "showNumber5()">5</div>
+            <div class="num1" onclick = "showNumber6()">6</div>
+        </div>
+        <div>
+            <div class="num1" onclick = "showNumber7()">7</div>
+            <div class="num1" onclick = "showNumber8()">8</div>
+            <div class="num1" onclick = "showNumber9()">9</div>
+        </div>
+        <div class="num2" onclick = "showNumber0()">0</div>
+        <div class="enter" onclick = "totalCaculation()">Enter</div>
+    </div>
+</div>
+<div>
+        <div class="displayBox left">
+                <div class="total" id="score_id">Game Score</div>
+                <div>
+                        <div class="remove" onclick="clickRemoveAll()">REMOVE ALL</div>
+                        <div class="remove" onclick="removeOdd()">REMOVE ODD</div>
+                        <div class="remove" onclick="removeEven()">REMOVE EVEN</div>
+                        <div class="remove" onclick="clickRemoveLast()">REMOVE LAST</div>
+                </div>
+                
+                
+        </div>
+   </div>
+</div>
+<script type="text/javascript">
+    var total="";
+    document.getElementById("min_id").value = 50;
+    document.getElementById("max_id").value =100;
+    var min = document.getElementById("min_id");
+    var max = document.getElementById("max_id");
+    var myInput = document.getElementById("input_id");
+    var finalScore = document.getElementById("total_score");
+    
+    function showNumber1(){
+        var one = 1;
+        total +=one;
+        var score = document.getElementById("input_id").value = total; 
+    } 
+    function showNumber2(){
+        var two = 2;
+        total +=two;
+        var score = document.getElementById("input_id").value = total;
+    }
+    function showNumber3(){
+        var three = 3;
+        total+= three;
+        var score = document.getElementById("input_id").value = total;
+    }
+    function showNumber4(){
+        var four = 4;
+        total += four;
+        var score = document.getElementById("input_id").value = total;
+    }
+    function showNumber5(){
+        var five = 5;
+        total+= five;
+        var score =document.getElementById("input_id").value = total;    
+    }
+    function showNumber6(){
+        var six = 6;
+        total += six;
+        var score = document.getElementById("input_id").value = total;
+    }
+    function showNumber7(){
+        var seven = 7;
+        total+= seven;
+        var score = document.getElementById("input_id").value =total;
+    }
+    function showNumber8(){
+        var eight = 8;
+        total += eight;
+        var score = document.getElementById("input_id").value = total;
+    }
+    function showNumber9(){
+        var nine = 9;
+        total += nine;
+        var score = document.getElementById("input_id").value = total; 
+    }
+    function showNumber0(){
+        var zero = 0;
+        total += zero;
+        var score = document.getElementById("input_id").value = total;
+    }
+    var tscore = [];
+    var gameNo =0;
+    function totalCaculation(){
+        if(myInput.value < min.value*1){
+            min.value = myInput.value;
+            total="";
+            document.getElementById("input_id").value = total;
+        }
+        else if (myInput.value > max.value*1){
+            max.value = myInput.value;
+            total="";
+            document.getElementById("input_id").value = total;
+        }else{
+            total="";
+            document.getElementById("input_id").value =total;
+        }
+        finalScore.value = min.value*1 + max.value*1;
+        tscore[gameNo]= finalScore.value;
+        var headOne = document.createElement('div');
+        var next = document.getElementById('score_id');
+        headOne.innerHTML = "game " + (gameNo+1) +'--'+ tscore[gameNo];
+        gameNo++;
+        next.appendChild(headOne);
+    }
+    function clickRemoveAll(){
+        var next = document.getElementById('score_id');
+        var divs = next.querySelectorAll('div');
+        for (var i =0; i<divs.length;i++){
+            next.removeChild(divs[i]);
+        }
+    }
+    function removeOdd(){
+        var next =document.getElementById('score_id');
+        var divs =next.querySelectorAll('div');
+        for (var i=0;i<divs.length;i++){
+            next.removeChild(divs[i]);
+            
+        }
+        var gameNo=1;
+        for (var i=0;i<tscore.length;i++){
+            if(i%2==1){
+            var headOne = document.createElement('div');
+            headOne.innerHTML ="game " +gameNo + "--"+ tscore[i];
+            next.appendChild(headOne);
+            headOne++;
+            }
+        }
+    }
+    function removeEven(){
+        var gameNo =1;
+        var next =document.getElementById('score_id');
+        var divs =next.querySelectorAll('div');
+        for (var i=0; i<divs.length;i++){
+            next.removeChild(divs[i]);
+        }
+        for(var i=0;i<tscore.length;i++){
+            if(i%2==0){
+                var headOne = document.createElement('div');
+                headOne.innerHTML = "game "+ gameNo + '--'+ tscore[i];
+                next.appendChild(headOne);
+                gameNo++
+            }
+        }
+    }
+    function clickRemoveLast(){
+        var gameNo=1;
+        var next = document.getElementById('score_id');
+        var divs = next.querySelectorAll('div');
+        for (var i=0;i<divs.length;i++){
+            next.removeChild(divs[i]);
+        }
+        for (var i=0;i<tscore.length;i++){
+            var headOne= document.createElement('div');
+            headOne.innerHTML="Game-"+gameNo+"--"+tscore[i];
+            next.appendChild(headOne);
+            gameNo++;
+        }
+    }
+</script>
+</body>
+</html>
