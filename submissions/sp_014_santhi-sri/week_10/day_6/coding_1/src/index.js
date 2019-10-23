@@ -7,6 +7,7 @@ import {createStore} from 'redux'
 import {Provider} from "react-redux"
 
 const store = createStore(reducer)
+console.log("store called",store.getState())
 ReactDOM.render(<Provider store ={store}>
     <App/>
     </Provider>,

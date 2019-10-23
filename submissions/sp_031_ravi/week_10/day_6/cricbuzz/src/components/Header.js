@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
@@ -19,6 +18,7 @@ import AssessmentOutlinedIcon from '@material-ui/icons/AssessmentOutlined';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import CreatePlayer from './CreatePlayer'
 import AllPlayer from './AllPlayer'
+
 
 const drawerWidth = 240;
 
@@ -60,6 +60,7 @@ const useStyles = makeStyles(theme => ({
 
   button: {
     margin: theme.spacing(1),
+    
   }
 }));
 
@@ -85,7 +86,6 @@ function ResponsiveDrawer(props) {
         ))}
       </List>
       <Divider />
-     
     </div>
   );
   
@@ -107,6 +107,10 @@ function ResponsiveDrawer(props) {
             <Typography variant="h6" noWrap>
                 Cricbuzz
             </Typography>
+            <div style={{marginLeft:"780px"}}>
+              <Button variant="outlined" className={classes.button} ><Link to="/create" style={{color:"white" ,border:"white"}}>Create</Link></Button>
+              <Button variant="outlined" className={classes.button}><Link to="/show" style={{color:"white"}}>Show</Link></Button>
+            </div>
             </Toolbar>
         </AppBar>
         <nav className={classes.drawer} aria-label="mailbox folders">
@@ -139,16 +143,17 @@ function ResponsiveDrawer(props) {
                 {drawer}
             </Drawer>
             </Hidden>
+            
         </nav>
         <main className={classes.content}>
-            <div className={classes.toolbar} />
-                <Button variant="outlined" className={classes.button}><Link to="/create">Create</Link>
-                </Button>
-                <Button variant="outlined" className={classes.button}><Link to="/show">Show</Link></Button>
+            <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" style={{width:"1200px"}}></img>
+                
         </main>
         </div>
+        
         <Route path="/create"  component={CreatePlayer}/>
         <Route path="/show"  component={AllPlayer}/>
+                
     </Router>
   );
 }
