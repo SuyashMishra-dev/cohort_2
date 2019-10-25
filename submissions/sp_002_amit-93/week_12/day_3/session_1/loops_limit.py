@@ -1,4 +1,5 @@
+data = input("enter number")
 n = 0
-while n<=10:
+while n<=data:
     print(n)
     n += 1
